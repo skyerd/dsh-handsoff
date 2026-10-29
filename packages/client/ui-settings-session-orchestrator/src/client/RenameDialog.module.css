@@ -1,0 +1,21 @@
+/* Rename dialog: one field, no destructive affordance. */
+
+.dialog {
+  width: min(400px, 100%);
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.content {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.action {
+  min-width: 72px;
+}
+
+.confirm {
+  min-width: 88px;
+}

@@ -1,0 +1,101 @@
+{
+  "baselineCommit": "639ed015397290b3745d163aafe02ffee4aa3f84",
+  "generatedBy": "tests/zero-llm.spec.ts",
+  "staticScan": {
+    "host": {
+      "files": 34,
+      "violations": [],
+      "llmServiceModules": 1
+    },
+    "client": {
+      "files": 31,
+      "violations": []
+    }
+  },
+  "runtimeJournals": [
+    {
+      "scenario": "store + Remote snapshot",
+      "calls": {
+        "llmStream": 0,
+        "llmPrepare": 0,
+        "toolRegisters": 0,
+        "agentCreates": 0,
+        "agentResumes": 0,
+        "compactionCalls": 0,
+        "titleCalls": 0
+      }
+    },
+    {
+      "scenario": "scheduler dispatch",
+      "calls": {
+        "llmStream": 0,
+        "llmPrepare": 0,
+        "toolRegisters": 0,
+        "agentCreates": 0,
+        "agentResumes": 0,
+        "compactionCalls": 0,
+        "titleCalls": 0
+      }
+    },
+    {
+      "scenario": "recovery reconciliation",
+      "calls": {
+        "llmStream": 0,
+        "llmPrepare": 0,
+        "toolRegisters": 0,
+        "agentCreates": 0,
+        "agentResumes": 0,
+        "compactionCalls": 0,
+        "titleCalls": 0
+      }
+    },
+    {
+      "scenario": "rule-mode health pass",
+      "calls": {
+        "llmStream": 0,
+        "llmPrepare": 0,
+        "toolRegisters": 0,
+        "agentCreates": 0,
+        "agentResumes": 0,
+        "compactionCalls": 0,
+        "titleCalls": 0
+      }
+    },
+    {
+      "scenario": "pressure measurement and pricing",
+      "calls": {
+        "llmStream": 0,
+        "llmPrepare": 0,
+        "toolRegisters": 0,
+        "agentCreates": 0,
+        "agentResumes": 0,
+        "compactionCalls": 0,
+        "titleCalls": 0
+      }
+    },
+    {
+      "scenario": "handoff body rendering and delivery",
+      "calls": {
+        "llmStream": 0,
+        "llmPrepare": 0,
+        "toolRegisters": 0,
+        "agentCreates": 0,
+        "agentResumes": 0,
+        "compactionCalls": 0,
+        "titleCalls": 0
+      }
+    },
+    {
+      "scenario": "run supervision and settlement",
+      "calls": {
+        "llmStream": 0,
+        "llmPrepare": 0,
+        "toolRegisters": 0,
+        "agentCreates": 0,
+        "agentResumes": 0,
+        "compactionCalls": 0,
+        "titleCalls": 0
+      }
+    }
+  ]
+}

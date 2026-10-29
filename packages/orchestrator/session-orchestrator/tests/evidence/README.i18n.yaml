@@ -1,0 +1,25 @@
+# Bilingual-pair consistency record for README.md (docs/i18n/README.md): per heading
+# section, a hash of its English and Chinese blocks outside code blocks and generated regions.
+# After editing either side, bring the other along and re-record with:
+#   pnpm run verify-translation-pairing --write packages/orchestrator/session-orchestrator/tests/evidence/README.md
+/recovery-evidence-index-block-4:
+  en: c4643c73280a5b20
+  zh: b7a5305e12b14c58
+/recovery-evidence-index-block-4/artifacts:
+  en: 85d002dcf633166b
+  zh: 41177000f33f7101
+/recovery-evidence-index-block-4/c-001-c-008:
+  en: 6d037ea555efc007
+  zh: ec7e632bc77c14bb
+/recovery-evidence-index-block-4/f1-f10-artifact-cases:
+  en: b1cc176489232a8b
+  zh: 531f164c34a58339
+/recovery-evidence-index-block-4/crash-injection-durable-writes:
+  en: 4a2bb928a7c41da0
+  zh: 6241e1e8808a26f8
+/recovery-evidence-index-block-4/zero-llm-evidence:
+  en: fba2c00185f43f6b
+  zh: 0d3508d4b4424948
+/recovery-evidence-index-block-4/invariants-asserted-across-the-matrix:
+  en: e66c0d7268124668
+  zh: 171d11bfb34801c0

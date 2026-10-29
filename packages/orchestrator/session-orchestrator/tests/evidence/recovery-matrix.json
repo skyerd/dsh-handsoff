@@ -1,0 +1,2335 @@
+{
+  "baselineCommit": "639ed015397290b3745d163aafe02ffee4aa3f84",
+  "generatedBy": "tests/recovery-matrix.spec.ts",
+  "cases": [
+    {
+      "id": "F1-before-write",
+      "title": "ready run: the starting CAS never landed",
+      "variant": "before-write",
+      "runId": "run-1",
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "ready",
+            "revision": 0,
+            "generation": 0,
+            "sessionLineage": []
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "planned",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": []
+      },
+      "after": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "ready",
+            "revision": 0,
+            "generation": 0,
+            "sessionLineage": []
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "planned",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": []
+      },
+      "schedulerOpen": true,
+      "resumes": [],
+      "sessionCount": 0
+    },
+    {
+      "id": "F1-after-write",
+      "title": "starting run: no Session exists, so rollback is safe",
+      "variant": "after-write",
+      "runId": "run-1",
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "starting",
+            "revision": 0,
+            "generation": 0,
+            "sessionLineage": []
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "planned",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": []
+      },
+      "after": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "ready",
+            "revision": 2,
+            "generation": 0,
+            "sessionLineage": []
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "planned",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": []
+      },
+      "decision": {
+        "runId": "run-1",
+        "stateBefore": "ready",
+        "stateAfter": "ready",
+        "action": "rolled-back",
+        "reason": "nothing-created",
+        "detail": "no Session was created before the crash"
+      },
+      "schedulerOpen": true,
+      "resumes": [],
+      "sessionCount": 0
+    },
+    {
+      "id": "F1-response-lost",
+      "title": "starting run: the CAS landed but the caller crashed before observing it",
+      "variant": "response-lost",
+      "runId": "run-1",
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "starting",
+            "revision": 0,
+            "generation": 0,
+            "sessionLineage": []
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "planned",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": []
+      },
+      "after": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "ready",
+            "revision": 2,
+            "generation": 0,
+            "sessionLineage": []
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "planned",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": []
+      },
+      "decision": {
+        "runId": "run-1",
+        "stateBefore": "ready",
+        "stateAfter": "ready",
+        "action": "rolled-back",
+        "reason": "nothing-created",
+        "detail": "no Session was created before the crash"
+      },
+      "schedulerOpen": true,
+      "resumes": [],
+      "sessionCount": 0
+    },
+    {
+      "id": "F2-before-write",
+      "title": "Session creation never became durable",
+      "variant": "before-write",
+      "runId": "run-1",
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "starting",
+            "revision": 0,
+            "generation": 0,
+            "sessionLineage": []
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "planned",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": []
+      },
+      "after": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "ready",
+            "revision": 2,
+            "generation": 0,
+            "sessionLineage": []
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "planned",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": []
+      },
+      "decision": {
+        "runId": "run-1",
+        "stateBefore": "ready",
+        "stateAfter": "ready",
+        "action": "rolled-back",
+        "reason": "nothing-created",
+        "detail": "no Session was created before the crash"
+      },
+      "schedulerOpen": true,
+      "resumes": [],
+      "sessionCount": 0
+    },
+    {
+      "id": "F2-after-write",
+      "title": "Session exists at the deterministic identity",
+      "variant": "after-write",
+      "runId": "run-1",
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "starting",
+            "revision": 0,
+            "generation": 0,
+            "sessionLineage": []
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "planned",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 0
+          }
+        ]
+      },
+      "after": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "running",
+            "revision": 2,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "operationId": "operation-run-1-0",
+            "lease": {
+              "ownerId": "host-a",
+              "expiresAt": 11000
+            }
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "session-created",
+            "generation": 0,
+            "attempt": 1,
+            "targetSessionId": "session-run-1-0",
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 0
+          }
+        ]
+      },
+      "decision": {
+        "runId": "run-1",
+        "stateBefore": "running",
+        "stateAfter": "running",
+        "action": "resumed",
+        "reason": "resumed",
+        "detail": "session exists with no delivered prompt; resuming for one submission",
+        "operationId": "operation-run-1-0",
+        "operationPhaseBefore": "session-created",
+        "sessionId": "session-run-1-0",
+        "submitPrompt": true
+      },
+      "schedulerOpen": true,
+      "resumes": [
+        {
+          "sessionId": "session-run-1-0",
+          "operationId": "operation-run-1-0",
+          "submitPrompt": true
+        }
+      ],
+      "sessionCount": 1
+    },
+    {
+      "id": "F2-response-lost",
+      "title": "Session creation landed; the creator never observed the handle",
+      "variant": "response-lost",
+      "runId": "run-1",
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "starting",
+            "revision": 0,
+            "generation": 0,
+            "sessionLineage": []
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "planned",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 0
+          }
+        ]
+      },
+      "after": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "running",
+            "revision": 2,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "operationId": "operation-run-1-0",
+            "lease": {
+              "ownerId": "host-a",
+              "expiresAt": 11000
+            }
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "session-created",
+            "generation": 0,
+            "attempt": 1,
+            "targetSessionId": "session-run-1-0",
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 0
+          }
+        ]
+      },
+      "decision": {
+        "runId": "run-1",
+        "stateBefore": "running",
+        "stateAfter": "running",
+        "action": "resumed",
+        "reason": "resumed",
+        "detail": "session exists with no delivered prompt; resuming for one submission",
+        "operationId": "operation-run-1-0",
+        "operationPhaseBefore": "session-created",
+        "sessionId": "session-run-1-0",
+        "submitPrompt": true
+      },
+      "schedulerOpen": true,
+      "resumes": [
+        {
+          "sessionId": "session-run-1-0",
+          "operationId": "operation-run-1-0",
+          "submitPrompt": true
+        }
+      ],
+      "sessionCount": 1
+    },
+    {
+      "id": "F3-before-write",
+      "title": "operation target is durable; the run adoption CAS is not",
+      "variant": "before-write",
+      "runId": "run-1",
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "starting",
+            "revision": 0,
+            "generation": 0,
+            "sessionLineage": []
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "session-created",
+            "generation": 0,
+            "attempt": 1,
+            "targetSessionId": "session-run-1-0",
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 0
+          }
+        ]
+      },
+      "after": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "running",
+            "revision": 2,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "operationId": "operation-run-1-0",
+            "lease": {
+              "ownerId": "host-a",
+              "expiresAt": 11000
+            }
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "session-created",
+            "generation": 0,
+            "attempt": 1,
+            "targetSessionId": "session-run-1-0",
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 0
+          }
+        ]
+      },
+      "decision": {
+        "runId": "run-1",
+        "stateBefore": "running",
+        "stateAfter": "running",
+        "action": "resumed",
+        "reason": "resumed",
+        "detail": "session exists with no delivered prompt; resuming for one submission",
+        "operationId": "operation-run-1-0",
+        "operationPhaseBefore": "session-created",
+        "sessionId": "session-run-1-0",
+        "submitPrompt": true
+      },
+      "schedulerOpen": true,
+      "resumes": [
+        {
+          "sessionId": "session-run-1-0",
+          "operationId": "operation-run-1-0",
+          "submitPrompt": true
+        }
+      ],
+      "sessionCount": 1
+    },
+    {
+      "id": "F3-after-write",
+      "title": "run adoption landed",
+      "variant": "after-write",
+      "runId": "run-1",
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "running",
+            "revision": 0,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ]
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "session-created",
+            "generation": 0,
+            "attempt": 1,
+            "targetSessionId": "session-run-1-0",
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 0
+          }
+        ]
+      },
+      "after": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "running",
+            "revision": 1,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "lease": {
+              "ownerId": "host-a",
+              "expiresAt": 11000
+            }
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "session-created",
+            "generation": 0,
+            "attempt": 1,
+            "targetSessionId": "session-run-1-0",
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 0
+          }
+        ]
+      },
+      "decision": {
+        "runId": "run-1",
+        "stateBefore": "running",
+        "stateAfter": "running",
+        "action": "resumed",
+        "reason": "resumed",
+        "detail": "session exists with no delivered prompt; resuming for one submission",
+        "operationId": "operation-run-1-0",
+        "operationPhaseBefore": "session-created",
+        "sessionId": "session-run-1-0",
+        "submitPrompt": true
+      },
+      "schedulerOpen": true,
+      "resumes": [
+        {
+          "sessionId": "session-run-1-0",
+          "operationId": "operation-run-1-0",
+          "submitPrompt": true
+        }
+      ],
+      "sessionCount": 1
+    },
+    {
+      "id": "F3-conflict",
+      "title": "recorded target is absent from durable storage",
+      "variant": "after-write",
+      "runId": "run-1",
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "starting",
+            "revision": 0,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": []
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "session-created",
+            "generation": 0,
+            "attempt": 1,
+            "targetSessionId": "session-run-1-0",
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": []
+      },
+      "after": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "needs-attention",
+            "revision": 2,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [],
+            "operationId": "operation-run-1-0"
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "session-created",
+            "generation": 0,
+            "attempt": 1,
+            "targetSessionId": "session-run-1-0",
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": []
+      },
+      "decision": {
+        "runId": "run-1",
+        "stateBefore": "needs-attention",
+        "stateAfter": "needs-attention",
+        "action": "needs-attention",
+        "reason": "session-missing",
+        "detail": "session 'session-run-1-0' is recorded but absent from durable storage",
+        "operationId": "operation-run-1-0",
+        "operationPhaseBefore": "session-created",
+        "sessionId": "session-run-1-0"
+      },
+      "schedulerOpen": true,
+      "resumes": [],
+      "sessionCount": 0
+    },
+    {
+      "id": "F4-before-write",
+      "title": "followup was never made durable",
+      "variant": "before-write",
+      "runId": "run-1",
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "running",
+            "revision": 0,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ]
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "session-created",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 0
+          }
+        ]
+      },
+      "after": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "running",
+            "revision": 1,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "lease": {
+              "ownerId": "host-a",
+              "expiresAt": 11000
+            }
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "session-created",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 0
+          }
+        ]
+      },
+      "decision": {
+        "runId": "run-1",
+        "stateBefore": "running",
+        "stateAfter": "running",
+        "action": "resumed",
+        "reason": "resumed",
+        "detail": "session exists with no delivered prompt; resuming for one submission",
+        "operationId": "operation-run-1-0",
+        "operationPhaseBefore": "session-created",
+        "sessionId": "session-run-1-0",
+        "submitPrompt": true
+      },
+      "schedulerOpen": true,
+      "resumes": [
+        {
+          "sessionId": "session-run-1-0",
+          "operationId": "operation-run-1-0",
+          "submitPrompt": true
+        }
+      ],
+      "sessionCount": 1
+    },
+    {
+      "id": "F4-after-write",
+      "title": "prompt and turn/end are durable",
+      "variant": "after-write",
+      "runId": "run-1",
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "running",
+            "revision": 0,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ]
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "session-created",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 3
+          }
+        ]
+      },
+      "after": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "succeeded",
+            "revision": 2,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "operationId": "operation-run-1-0",
+            "claimedTurn": 1,
+            "acceptedTurnEndSeq": 2
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "session-created",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 3
+          }
+        ]
+      },
+      "decision": {
+        "runId": "run-1",
+        "stateBefore": "succeeded",
+        "stateAfter": "succeeded",
+        "action": "settled-succeeded",
+        "reason": "completed",
+        "detail": "durable turn 1 completed",
+        "operationId": "operation-run-1-0",
+        "operationPhaseBefore": "session-created",
+        "sessionId": "session-run-1-0",
+        "messageId": "9d56683f-29a7-4ebc-98b5-661789b68302",
+        "turn": 1
+      },
+      "schedulerOpen": true,
+      "resumes": [],
+      "sessionCount": 1
+    },
+    {
+      "id": "F4-response-lost",
+      "title": "followup landed; the submitted-phase write did not",
+      "variant": "response-lost",
+      "runId": "run-1",
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "running",
+            "revision": 0,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ]
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "session-created",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 3
+          }
+        ]
+      },
+      "after": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "succeeded",
+            "revision": 2,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "operationId": "operation-run-1-0",
+            "claimedTurn": 1,
+            "acceptedTurnEndSeq": 2
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "session-created",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 3
+          }
+        ]
+      },
+      "decision": {
+        "runId": "run-1",
+        "stateBefore": "succeeded",
+        "stateAfter": "succeeded",
+        "action": "settled-succeeded",
+        "reason": "completed",
+        "detail": "durable turn 1 completed",
+        "operationId": "operation-run-1-0",
+        "operationPhaseBefore": "session-created",
+        "sessionId": "session-run-1-0",
+        "messageId": "2299ae98-80a6-4d58-b03c-034bca550037",
+        "turn": 1
+      },
+      "schedulerOpen": true,
+      "resumes": [],
+      "sessionCount": 1
+    },
+    {
+      "id": "F5-before-write",
+      "title": "submitted phase is durable but followup never happened",
+      "variant": "before-write",
+      "runId": "run-1",
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "running",
+            "revision": 0,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ]
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "submitted",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 0
+          }
+        ]
+      },
+      "after": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "needs-attention",
+            "revision": 2,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "operationId": "operation-run-1-0"
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "submitted",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 0
+          }
+        ]
+      },
+      "decision": {
+        "runId": "run-1",
+        "stateBefore": "needs-attention",
+        "stateAfter": "needs-attention",
+        "action": "needs-attention",
+        "reason": "restart-uncertain",
+        "detail": "operation is 'submitted' but the log holds no prompt",
+        "operationId": "operation-run-1-0",
+        "operationPhaseBefore": "submitted",
+        "sessionId": "session-run-1-0"
+      },
+      "schedulerOpen": true,
+      "resumes": [],
+      "sessionCount": 1
+    },
+    {
+      "id": "F5-after-write",
+      "title": "submitted record names a message the log does not contain",
+      "variant": "after-write",
+      "runId": "run-1",
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "running",
+            "revision": 0,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ]
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "submitted",
+            "generation": 0,
+            "attempt": 1,
+            "messageId": "message-missing",
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 0
+          }
+        ]
+      },
+      "after": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "needs-attention",
+            "revision": 2,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "operationId": "operation-run-1-0"
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "submitted",
+            "generation": 0,
+            "attempt": 1,
+            "messageId": "message-missing",
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 0
+          }
+        ]
+      },
+      "decision": {
+        "runId": "run-1",
+        "stateBefore": "needs-attention",
+        "stateAfter": "needs-attention",
+        "action": "needs-attention",
+        "reason": "submission-unverified",
+        "detail": "prompt identity 'message-missing' has no durable Session message; refusing to replay",
+        "operationId": "operation-run-1-0",
+        "operationPhaseBefore": "submitted",
+        "sessionId": "session-run-1-0"
+      },
+      "schedulerOpen": true,
+      "resumes": [],
+      "sessionCount": 1
+    },
+    {
+      "id": "F5-record-lost",
+      "title": "delivery succeeded but the operation record write failed",
+      "variant": "response-lost",
+      "runId": "run-1",
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "running",
+            "revision": 0,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ]
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "session-created",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 3
+          }
+        ]
+      },
+      "after": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "succeeded",
+            "revision": 2,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "operationId": "operation-run-1-0",
+            "claimedTurn": 1,
+            "acceptedTurnEndSeq": 2
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "session-created",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 3
+          }
+        ]
+      },
+      "decision": {
+        "runId": "run-1",
+        "stateBefore": "succeeded",
+        "stateAfter": "succeeded",
+        "action": "settled-succeeded",
+        "reason": "completed",
+        "detail": "durable turn 1 completed",
+        "operationId": "operation-run-1-0",
+        "operationPhaseBefore": "session-created",
+        "sessionId": "session-run-1-0",
+        "messageId": "4a4f0852-214f-4b20-9901-46f2056b5358",
+        "turn": 1
+      },
+      "schedulerOpen": true,
+      "resumes": [],
+      "sessionCount": 1
+    },
+    {
+      "id": "F6-claimed",
+      "title": "claimed phase and message identity survive; the run mapping does not",
+      "variant": "after-write",
+      "runId": "run-1",
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "running",
+            "revision": 0,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ]
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "claimed",
+            "generation": 0,
+            "attempt": 1,
+            "messageId": "2f7a4e70-32e3-4db1-b465-7afd9404fb2c",
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 3
+          }
+        ]
+      },
+      "after": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "succeeded",
+            "revision": 2,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "operationId": "operation-run-1-0",
+            "claimedTurn": 1,
+            "acceptedTurnEndSeq": 2
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "claimed",
+            "generation": 0,
+            "attempt": 1,
+            "messageId": "2f7a4e70-32e3-4db1-b465-7afd9404fb2c",
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 3
+          }
+        ]
+      },
+      "decision": {
+        "runId": "run-1",
+        "stateBefore": "succeeded",
+        "stateAfter": "succeeded",
+        "action": "settled-succeeded",
+        "reason": "completed",
+        "detail": "durable turn 1 completed",
+        "operationId": "operation-run-1-0",
+        "operationPhaseBefore": "claimed",
+        "sessionId": "session-run-1-0",
+        "messageId": "2f7a4e70-32e3-4db1-b465-7afd9404fb2c",
+        "turn": 1
+      },
+      "schedulerOpen": true,
+      "resumes": [],
+      "sessionCount": 1
+    },
+    {
+      "id": "F6-unrelated",
+      "title": "a second turn belongs to another operation",
+      "variant": "control",
+      "runId": "run-1",
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "running",
+            "revision": 0,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ]
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "submitted",
+            "generation": 0,
+            "attempt": 1,
+            "messageId": "1f7c9e9e-5d29-4ad5-8280-88d1df2d9341",
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 6
+          }
+        ]
+      },
+      "after": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "succeeded",
+            "revision": 2,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "operationId": "operation-run-1-0",
+            "claimedTurn": 1,
+            "acceptedTurnEndSeq": 2
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "submitted",
+            "generation": 0,
+            "attempt": 1,
+            "messageId": "1f7c9e9e-5d29-4ad5-8280-88d1df2d9341",
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 6
+          }
+        ]
+      },
+      "decision": {
+        "runId": "run-1",
+        "stateBefore": "succeeded",
+        "stateAfter": "succeeded",
+        "action": "settled-succeeded",
+        "reason": "completed",
+        "detail": "durable turn 1 completed",
+        "operationId": "operation-run-1-0",
+        "operationPhaseBefore": "submitted",
+        "sessionId": "session-run-1-0",
+        "messageId": "1f7c9e9e-5d29-4ad5-8280-88d1df2d9341",
+        "turn": 1
+      },
+      "schedulerOpen": true,
+      "resumes": [],
+      "sessionCount": 1
+    },
+    {
+      "id": "F6-open-turn",
+      "title": "the claimed turn is still open",
+      "variant": "after-write",
+      "runId": "run-1",
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "running",
+            "revision": 0,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ]
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "claimed",
+            "generation": 0,
+            "attempt": 1,
+            "messageId": "07100dc3-2fe7-4bd6-bfc4-74c020747207",
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 2
+          }
+        ]
+      },
+      "after": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "running",
+            "revision": 1,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "lease": {
+              "ownerId": "host-a",
+              "expiresAt": 11000
+            }
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "claimed",
+            "generation": 0,
+            "attempt": 1,
+            "messageId": "07100dc3-2fe7-4bd6-bfc4-74c020747207",
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 2
+          }
+        ]
+      },
+      "decision": {
+        "runId": "run-1",
+        "stateBefore": "running",
+        "stateAfter": "running",
+        "action": "resumed",
+        "reason": "resumed",
+        "detail": "session exists with durable prompt evidence; resuming without replay",
+        "operationId": "operation-run-1-0",
+        "operationPhaseBefore": "claimed",
+        "sessionId": "session-run-1-0",
+        "messageId": "07100dc3-2fe7-4bd6-bfc4-74c020747207",
+        "turn": 1,
+        "submitPrompt": false
+      },
+      "schedulerOpen": true,
+      "resumes": [
+        {
+          "sessionId": "session-run-1-0",
+          "operationId": "operation-run-1-0",
+          "submitPrompt": false,
+          "messageId": "07100dc3-2fe7-4bd6-bfc4-74c020747207",
+          "claimedTurn": 1
+        }
+      ],
+      "sessionCount": 1
+    },
+    {
+      "id": "F7-before-flush",
+      "title": "turn/start is durable but the message and turn end are not",
+      "variant": "before-write",
+      "runId": "run-1",
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "running",
+            "revision": 0,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ]
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "submitted",
+            "generation": 0,
+            "attempt": 1,
+            "messageId": "message-missing",
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 1
+          }
+        ]
+      },
+      "after": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "needs-attention",
+            "revision": 2,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "operationId": "operation-run-1-0"
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "submitted",
+            "generation": 0,
+            "attempt": 1,
+            "messageId": "message-missing",
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 1
+          }
+        ]
+      },
+      "decision": {
+        "runId": "run-1",
+        "stateBefore": "needs-attention",
+        "stateAfter": "needs-attention",
+        "action": "needs-attention",
+        "reason": "submission-unverified",
+        "detail": "prompt identity 'message-missing' has no durable Session message; refusing to replay",
+        "operationId": "operation-run-1-0",
+        "operationPhaseBefore": "submitted",
+        "sessionId": "session-run-1-0"
+      },
+      "schedulerOpen": true,
+      "resumes": [],
+      "sessionCount": 1
+    },
+    {
+      "id": "F7-flushed-crash",
+      "title": "flush completed, then the process crashed before the success CAS",
+      "variant": "after-write",
+      "runId": "run-1",
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "running",
+            "revision": 0,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ]
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "submitted",
+            "generation": 0,
+            "attempt": 1,
+            "messageId": "1e5f78c1-8594-4c98-91e1-9e0cdcb40ae3",
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 3
+          }
+        ]
+      },
+      "after": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "succeeded",
+            "revision": 2,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "operationId": "operation-run-1-0",
+            "claimedTurn": 1,
+            "acceptedTurnEndSeq": 2
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "submitted",
+            "generation": 0,
+            "attempt": 1,
+            "messageId": "1e5f78c1-8594-4c98-91e1-9e0cdcb40ae3",
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 3
+          }
+        ]
+      },
+      "decision": {
+        "runId": "run-1",
+        "stateBefore": "succeeded",
+        "stateAfter": "succeeded",
+        "action": "settled-succeeded",
+        "reason": "completed",
+        "detail": "durable turn 1 completed",
+        "operationId": "operation-run-1-0",
+        "operationPhaseBefore": "submitted",
+        "sessionId": "session-run-1-0",
+        "messageId": "1e5f78c1-8594-4c98-91e1-9e0cdcb40ae3",
+        "turn": 1
+      },
+      "schedulerOpen": true,
+      "resumes": [],
+      "sessionCount": 1
+    },
+    {
+      "id": "F7-response-lost",
+      "title": "flush landed; its acknowledgement was lost",
+      "variant": "response-lost",
+      "runId": "run-1",
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "running",
+            "revision": 0,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ]
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "submitted",
+            "generation": 0,
+            "attempt": 1,
+            "messageId": "4376f760-0264-4d60-8f75-b28a8853ec16",
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 3
+          }
+        ]
+      },
+      "after": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "succeeded",
+            "revision": 2,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "operationId": "operation-run-1-0",
+            "claimedTurn": 1,
+            "acceptedTurnEndSeq": 2
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "submitted",
+            "generation": 0,
+            "attempt": 1,
+            "messageId": "4376f760-0264-4d60-8f75-b28a8853ec16",
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 3
+          }
+        ]
+      },
+      "decision": {
+        "runId": "run-1",
+        "stateBefore": "succeeded",
+        "stateAfter": "succeeded",
+        "action": "settled-succeeded",
+        "reason": "completed",
+        "detail": "durable turn 1 completed",
+        "operationId": "operation-run-1-0",
+        "operationPhaseBefore": "submitted",
+        "sessionId": "session-run-1-0",
+        "messageId": "4376f760-0264-4d60-8f75-b28a8853ec16",
+        "turn": 1
+      },
+      "schedulerOpen": true,
+      "resumes": [],
+      "sessionCount": 1
+    },
+    {
+      "id": "F8-settled",
+      "title": "success CAS landed; disposal did not",
+      "variant": "after-write",
+      "runId": "run-1",
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "succeeded",
+            "revision": 0,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "claimedTurn": 1,
+            "acceptedTurnEndSeq": 2
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "claimed",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 3
+          }
+        ]
+      },
+      "after": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "succeeded",
+            "revision": 0,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "claimedTurn": 1,
+            "acceptedTurnEndSeq": 2
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "claimed",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 3
+          }
+        ]
+      },
+      "schedulerOpen": true,
+      "resumes": [],
+      "sessionCount": 1
+    },
+    {
+      "id": "F8-response-lost",
+      "title": "the success write landed but the caller crashed before disposing",
+      "variant": "response-lost",
+      "runId": "run-1",
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "succeeded",
+            "revision": 0,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "claimedTurn": 1,
+            "acceptedTurnEndSeq": 2
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "claimed",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 3
+          }
+        ]
+      },
+      "after": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "succeeded",
+            "revision": 0,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "claimedTurn": 1,
+            "acceptedTurnEndSeq": 2
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "claimed",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 3
+          }
+        ]
+      },
+      "schedulerOpen": true,
+      "resumes": [],
+      "sessionCount": 1
+    },
+    {
+      "id": "F9-child-created",
+      "title": "child Session exists but no handoff message was delivered",
+      "variant": "after-write",
+      "runId": "run-1",
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "handing-off",
+            "revision": 0,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "operationId": "operation-handoff-run-1-1"
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-handoff-run-1-1",
+            "kind": "handoff",
+            "phase": "session-created",
+            "generation": 1,
+            "attempt": 1,
+            "targetSessionId": "session-run-1-1",
+            "sourceSessionId": "session-run-1-0",
+            "requestHash": "handoff|run-1|1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 0
+          },
+          {
+            "id": "session-run-1-1",
+            "events": 0
+          }
+        ]
+      },
+      "after": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "needs-attention",
+            "revision": 2,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "operationId": "operation-handoff-run-1-1"
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-handoff-run-1-1",
+            "kind": "handoff",
+            "phase": "session-created",
+            "generation": 1,
+            "attempt": 1,
+            "targetSessionId": "session-run-1-1",
+            "sourceSessionId": "session-run-1-0",
+            "requestHash": "handoff|run-1|1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 0
+          },
+          {
+            "id": "session-run-1-1",
+            "events": 0
+          }
+        ]
+      },
+      "decision": {
+        "runId": "run-1",
+        "stateBefore": "needs-attention",
+        "stateAfter": "needs-attention",
+        "action": "needs-attention",
+        "reason": "handoff-unverified",
+        "detail": "child session 'session-run-1-1' has no delivered handoff message; recovery will not create a second child",
+        "operationId": "operation-handoff-run-1-1",
+        "operationPhaseBefore": "session-created",
+        "sessionId": "session-run-1-0"
+      },
+      "schedulerOpen": true,
+      "resumes": [],
+      "sessionCount": 2
+    },
+    {
+      "id": "F9-child-missing",
+      "title": "handoff target is durable but the child Session is absent",
+      "variant": "before-write",
+      "runId": "run-1",
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "handing-off",
+            "revision": 0,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "operationId": "operation-handoff-run-1-1"
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-handoff-run-1-1",
+            "kind": "handoff",
+            "phase": "session-created",
+            "generation": 1,
+            "attempt": 1,
+            "targetSessionId": "session-run-1-1",
+            "sourceSessionId": "session-run-1-0",
+            "requestHash": "handoff|run-1|1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 0
+          }
+        ]
+      },
+      "after": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "needs-attention",
+            "revision": 2,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "operationId": "operation-handoff-run-1-1"
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-handoff-run-1-1",
+            "kind": "handoff",
+            "phase": "session-created",
+            "generation": 1,
+            "attempt": 1,
+            "targetSessionId": "session-run-1-1",
+            "sourceSessionId": "session-run-1-0",
+            "requestHash": "handoff|run-1|1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 0
+          }
+        ]
+      },
+      "decision": {
+        "runId": "run-1",
+        "stateBefore": "needs-attention",
+        "stateAfter": "needs-attention",
+        "action": "needs-attention",
+        "reason": "handoff-session-missing",
+        "detail": "child session 'session-run-1-1' is absent from durable storage",
+        "operationId": "operation-handoff-run-1-1",
+        "operationPhaseBefore": "session-created",
+        "sessionId": "session-run-1-0"
+      },
+      "schedulerOpen": true,
+      "resumes": [],
+      "sessionCount": 1
+    },
+    {
+      "id": "F9-response-lost",
+      "title": "child creation landed; the creator never observed the handle",
+      "variant": "response-lost",
+      "runId": "run-1",
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "handing-off",
+            "revision": 0,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "operationId": "operation-handoff-run-1-1"
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-handoff-run-1-1",
+            "kind": "handoff",
+            "phase": "session-created",
+            "generation": 1,
+            "attempt": 1,
+            "targetSessionId": "session-run-1-1",
+            "sourceSessionId": "session-run-1-0",
+            "requestHash": "handoff|run-1|1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 0
+          },
+          {
+            "id": "session-run-1-1",
+            "events": 0
+          }
+        ]
+      },
+      "after": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "needs-attention",
+            "revision": 2,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "operationId": "operation-handoff-run-1-1"
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-handoff-run-1-1",
+            "kind": "handoff",
+            "phase": "session-created",
+            "generation": 1,
+            "attempt": 1,
+            "targetSessionId": "session-run-1-1",
+            "sourceSessionId": "session-run-1-0",
+            "requestHash": "handoff|run-1|1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 0
+          },
+          {
+            "id": "session-run-1-1",
+            "events": 0
+          }
+        ]
+      },
+      "decision": {
+        "runId": "run-1",
+        "stateBefore": "needs-attention",
+        "stateAfter": "needs-attention",
+        "action": "needs-attention",
+        "reason": "handoff-unverified",
+        "detail": "child session 'session-run-1-1' has no delivered handoff message; recovery will not create a second child",
+        "operationId": "operation-handoff-run-1-1",
+        "operationPhaseBefore": "session-created",
+        "sessionId": "session-run-1-0"
+      },
+      "schedulerOpen": true,
+      "resumes": [],
+      "sessionCount": 2
+    },
+    {
+      "id": "F10-delivered",
+      "title": "child message is durable; the run still names the parent",
+      "variant": "after-write",
+      "runId": "run-1",
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "handing-off",
+            "revision": 0,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "operationId": "operation-handoff-run-1-1"
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-handoff-run-1-1",
+            "kind": "handoff",
+            "phase": "submitted",
+            "generation": 1,
+            "attempt": 1,
+            "targetSessionId": "session-run-1-1",
+            "sourceSessionId": "session-run-1-0",
+            "messageId": "246c4efe-833d-4caa-9abd-1f8db86b1d18",
+            "requestHash": "handoff|run-1|1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 0
+          },
+          {
+            "id": "session-run-1-1",
+            "events": 3
+          }
+        ]
+      },
+      "after": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "succeeded",
+            "revision": 3,
+            "activeSessionId": "session-run-1-1",
+            "generation": 1,
+            "sessionLineage": [
+              "session-run-1-0",
+              "session-run-1-1"
+            ],
+            "operationId": "operation-handoff-run-1-1",
+            "claimedTurn": 1,
+            "acceptedTurnEndSeq": 2
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-handoff-run-1-1",
+            "kind": "handoff",
+            "phase": "submitted",
+            "generation": 1,
+            "attempt": 1,
+            "targetSessionId": "session-run-1-1",
+            "sourceSessionId": "session-run-1-0",
+            "messageId": "246c4efe-833d-4caa-9abd-1f8db86b1d18",
+            "requestHash": "handoff|run-1|1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 0
+          },
+          {
+            "id": "session-run-1-1",
+            "events": 3
+          }
+        ]
+      },
+      "decision": {
+        "runId": "run-1",
+        "stateBefore": "succeeded",
+        "stateAfter": "succeeded",
+        "action": "settled-succeeded",
+        "reason": "completed",
+        "detail": "durable turn 1 completed",
+        "operationId": "operation-handoff-run-1-1",
+        "operationPhaseBefore": "submitted",
+        "sessionId": "session-run-1-1",
+        "messageId": "246c4efe-833d-4caa-9abd-1f8db86b1d18",
+        "turn": 1
+      },
+      "schedulerOpen": true,
+      "resumes": [],
+      "sessionCount": 2
+    },
+    {
+      "id": "F10-response-lost",
+      "title": "child delivery landed; the run CAS response was lost",
+      "variant": "response-lost",
+      "runId": "run-1",
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "handing-off",
+            "revision": 0,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "operationId": "operation-handoff-run-1-1"
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-handoff-run-1-1",
+            "kind": "handoff",
+            "phase": "submitted",
+            "generation": 1,
+            "attempt": 1,
+            "targetSessionId": "session-run-1-1",
+            "sourceSessionId": "session-run-1-0",
+            "messageId": "2924ac06-990e-4227-a623-02b8ff5151ea",
+            "requestHash": "handoff|run-1|1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 0
+          },
+          {
+            "id": "session-run-1-1",
+            "events": 3
+          }
+        ]
+      },
+      "after": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "succeeded",
+            "revision": 3,
+            "activeSessionId": "session-run-1-1",
+            "generation": 1,
+            "sessionLineage": [
+              "session-run-1-0",
+              "session-run-1-1"
+            ],
+            "operationId": "operation-handoff-run-1-1",
+            "claimedTurn": 1,
+            "acceptedTurnEndSeq": 2
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-handoff-run-1-1",
+            "kind": "handoff",
+            "phase": "submitted",
+            "generation": 1,
+            "attempt": 1,
+            "targetSessionId": "session-run-1-1",
+            "sourceSessionId": "session-run-1-0",
+            "messageId": "2924ac06-990e-4227-a623-02b8ff5151ea",
+            "requestHash": "handoff|run-1|1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 0
+          },
+          {
+            "id": "session-run-1-1",
+            "events": 3
+          }
+        ]
+      },
+      "decision": {
+        "runId": "run-1",
+        "stateBefore": "succeeded",
+        "stateAfter": "succeeded",
+        "action": "settled-succeeded",
+        "reason": "completed",
+        "detail": "durable turn 1 completed",
+        "operationId": "operation-handoff-run-1-1",
+        "operationPhaseBefore": "submitted",
+        "sessionId": "session-run-1-1",
+        "messageId": "2924ac06-990e-4227-a623-02b8ff5151ea",
+        "turn": 1
+      },
+      "schedulerOpen": true,
+      "resumes": [],
+      "sessionCount": 2
+    }
+  ]
+}

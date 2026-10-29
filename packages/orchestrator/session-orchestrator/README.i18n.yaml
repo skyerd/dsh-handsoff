@@ -1,0 +1,112 @@
+# Bilingual-pair consistency record for README.md (docs/i18n/README.md): per heading
+# section, a hash of its English and Chinese blocks outside code blocks and generated regions.
+# After editing either side, bring the other along and re-record with:
+#   pnpm run verify-translation-pairing --write packages/orchestrator/session-orchestrator/README.md
+/:
+  en: 32e9f8aec253d70f
+  zh: 110b7284e6e1e713
+/deepseek-ai-dsh-session-orchestrator:
+  en: 97e695ced61540bf
+  zh: f99fd645efbb73c5
+/deepseek-ai-dsh-session-orchestrator/summary:
+  en: b4a0d91791ba029f
+  zh: 8159662535c5a084
+/deepseek-ai-dsh-session-orchestrator/table-of-contents:
+  en: 1058c8a60b63efcb
+  zh: 61ce91414050cb5e
+/deepseek-ai-dsh-session-orchestrator/use-this-package:
+  en: fe19fe5cd69d0a71
+  zh: ec47b26d50f6ac2a
+/deepseek-ai-dsh-session-orchestrator/use-this-package/public-types:
+  en: 95b2b420283b1880
+  zh: 2a023fd441a0dc42
+/deepseek-ai-dsh-session-orchestrator/use-this-package/warden-modes-and-cost:
+  en: 0da0ee817607f351
+  zh: c80c2ef4df5a6a93
+/deepseek-ai-dsh-session-orchestrator/use-this-package/planning-and-scheduling:
+  en: f68b2f9eb72c321a
+  zh: 1fb21c06e3fc5d86
+/deepseek-ai-dsh-session-orchestrator/use-this-package/workspace-keys-and-locks:
+  en: 45e9f7a214a0ce1b
+  zh: 1622810dfa59b103
+/deepseek-ai-dsh-session-orchestrator/use-this-package/supervision-and-completion:
+  en: 66bdc300d19a0595
+  zh: 1b9193cc597b5826
+/deepseek-ai-dsh-session-orchestrator/use-this-package/pressure-measurement-and-decision:
+  en: 85995ddac5193757
+  zh: bd877b7ba9d07baa
+/deepseek-ai-dsh-session-orchestrator/use-this-package/safe-turn-handoff:
+  en: 58901d3b74880e92
+  zh: f9126010f867a28b
+/deepseek-ai-dsh-session-orchestrator/use-this-package/remote-controller:
+  en: 6c2728930ce6839d
+  zh: 4a122a99ac9e8458
+/deepseek-ai-dsh-session-orchestrator/use-this-package/host-conversation-adapters:
+  en: fff0a51afb888c60
+  zh: 4d819f3b51db790c
+/deepseek-ai-dsh-session-orchestrator/use-this-package/host-composition-and-recovery:
+  en: 9cbd874e2dda1863
+  zh: a6a2ad7b0242f65d
+/deepseek-ai-dsh-session-orchestrator/use-this-package/storage-domain:
+  en: e98e6f088598a017
+  zh: dbf714598b1b1ca2
+/deepseek-ai-dsh-session-orchestrator/use-this-package/writes-revisions-and-close:
+  en: 75b2994b39a221cf
+  zh: 29cbb8397dccaa68
+/deepseek-ai-dsh-session-orchestrator/use-this-package/operation-identity:
+  en: 48d071f3984352a4
+  zh: bf874416bb34830c
+/deepseek-ai-dsh-session-orchestrator/deployment-and-operations:
+  en: b4a593ac02c634ed
+  zh: e8670e60471dc604
+/deepseek-ai-dsh-session-orchestrator/deployment-and-operations/installation-and-profile-composition:
+  en: 4111c9b8ed456e11
+  zh: 02b798050cefd591
+/deepseek-ai-dsh-session-orchestrator/deployment-and-operations/data-migration:
+  en: 940c01d680e1089d
+  zh: 73901bfd4aec05e1
+/deepseek-ai-dsh-session-orchestrator/deployment-and-operations/recovery-limits:
+  en: 071a34903df32c92
+  zh: eb8283ac092527c1
+/deepseek-ai-dsh-session-orchestrator/deployment-and-operations/parallel-safety:
+  en: fb86b4a157e774ee
+  zh: db26d9c7342934c2
+/deepseek-ai-dsh-session-orchestrator/deployment-and-operations/test-evidence:
+  en: f8d24df306b25e50
+  zh: 93863981dae4bcd1
+/deepseek-ai-dsh-session-orchestrator/understand-the-implementation:
+  en: 42b15ac6321706aa
+  zh: c5500056b41ce570
+/deepseek-ai-dsh-session-orchestrator/understand-the-implementation/design-concept:
+  en: 876d6f08090bfea6
+  zh: d9e426c0c0cf17b0
+/deepseek-ai-dsh-session-orchestrator/understand-the-implementation/source-map:
+  en: 952d5ddfd2362d9f
+  zh: 4602ff3d33188bd4
+/deepseek-ai-dsh-session-orchestrator/understand-the-implementation/test-commands:
+  en: 29bae6bbd90eebdd
+  zh: 991eeae78a2db480
+/deepseek-ai-dsh-session-orchestrator/further-exploration:
+  en: 30fa17fc642469e4
+  zh: 55345a9542500429
+/deepseek-ai-dsh-session-orchestrator/model-experience:
+  en: 215e7ba838619b7b
+  zh: a311da3843709f90
+/deepseek-ai-dsh-session-orchestrator/model-experience/durable-orchestration-state:
+  en: e4751769c79bb0ce
+  zh: 353e060528313669
+/deepseek-ai-dsh-session-orchestrator/model-experience/durable-orchestration-state/what-the-model-sees:
+  en: a4529e496d16a845
+  zh: 5c7b5e10758d72bc
+/deepseek-ai-dsh-session-orchestrator/model-experience/durable-orchestration-state/token-effect:
+  en: 9bed06e97b0a595d
+  zh: 93ada41a7da3a83e
+/deepseek-ai-dsh-session-orchestrator/model-experience/durable-orchestration-state/kv-cache-effect:
+  en: cde4343680a2862a
+  zh: 0be5cc40fbb17914
+/deepseek-ai-dsh-session-orchestrator/known-limitations-and-deferred-work:
+  en: b31681bc1b9a8526
+  zh: 0694c46780b99763
+/deepseek-ai-dsh-session-orchestrator/known-limitations-and-deferred-work/dev-note:
+  en: b45d1530994ba292
+  zh: a2bbab86e9a8758c

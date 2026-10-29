@@ -1,0 +1,804 @@
+{
+  "baselineCommit": "639ed015397290b3745d163aafe02ffee4aa3f84",
+  "generatedBy": "tests/fault-injection.spec.ts",
+  "cases": [
+    {
+      "id": "IP-01-host-claim-after",
+      "title": "host claim landed; the claimant crashed before observing it",
+      "variant": "crash-after",
+      "fault": {
+        "method": "updateSettings",
+        "timing": "after",
+        "reason": "host-claim-response-lost"
+      },
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "starting",
+            "revision": 0,
+            "generation": 0,
+            "sessionLineage": []
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "planned",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": []
+      },
+      "crash": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "starting",
+            "revision": 0,
+            "generation": 0,
+            "sessionLineage": []
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "planned",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": []
+      },
+      "restarted": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "ready",
+            "revision": 2,
+            "generation": 0,
+            "sessionLineage": []
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "planned",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": []
+      },
+      "firstPass": "rejected",
+      "restartedDecisions": [
+        {
+          "runId": "run-1",
+          "stateBefore": "ready",
+          "stateAfter": "ready",
+          "action": "rolled-back",
+          "reason": "nothing-created",
+          "detail": "no Session was created before the crash"
+        }
+      ],
+      "restartedResumes": [],
+      "schedulerOpenAfterRestart": true
+    },
+    {
+      "id": "IP-02-host-claim-before",
+      "title": "host claim never reached the medium",
+      "variant": "crash-before",
+      "fault": {
+        "method": "updateSettings",
+        "timing": "before",
+        "reason": "host-claim-lost"
+      },
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "starting",
+            "revision": 0,
+            "generation": 0,
+            "sessionLineage": []
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "planned",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": []
+      },
+      "crash": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "starting",
+            "revision": 0,
+            "generation": 0,
+            "sessionLineage": []
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "planned",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": []
+      },
+      "restarted": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "ready",
+            "revision": 2,
+            "generation": 0,
+            "sessionLineage": []
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "planned",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": []
+      },
+      "firstPass": "rejected",
+      "restartedDecisions": [
+        {
+          "runId": "run-1",
+          "stateBefore": "ready",
+          "stateAfter": "ready",
+          "action": "rolled-back",
+          "reason": "nothing-created",
+          "detail": "no Session was created before the crash"
+        }
+      ],
+      "restartedResumes": [],
+      "schedulerOpenAfterRestart": true
+    },
+    {
+      "id": "IP-03-success-after",
+      "title": "success CAS landed; the commit response was lost",
+      "variant": "crash-after",
+      "fault": {
+        "method": "updateRun",
+        "timing": "after",
+        "reason": "success-response-lost"
+      },
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "running",
+            "revision": 0,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "lease": {
+              "ownerId": "host-a",
+              "expiresAt": 10500
+            }
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "submitted",
+            "generation": 0,
+            "attempt": 1,
+            "messageId": "33099e3d-98fa-43fa-874f-ad2d1122f63f",
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 3
+          }
+        ]
+      },
+      "crash": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "succeeded",
+            "revision": 1,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "operationId": "operation-run-1-0",
+            "claimedTurn": 1,
+            "acceptedTurnEndSeq": 2
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "submitted",
+            "generation": 0,
+            "attempt": 1,
+            "messageId": "33099e3d-98fa-43fa-874f-ad2d1122f63f",
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 3
+          }
+        ]
+      },
+      "restarted": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "succeeded",
+            "revision": 1,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "operationId": "operation-run-1-0",
+            "claimedTurn": 1,
+            "acceptedTurnEndSeq": 2
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "submitted",
+            "generation": 0,
+            "attempt": 1,
+            "messageId": "33099e3d-98fa-43fa-874f-ad2d1122f63f",
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 3
+          }
+        ]
+      },
+      "firstPass": "rejected",
+      "restartedDecisions": [],
+      "restartedResumes": [],
+      "schedulerOpenAfterRestart": true
+    },
+    {
+      "id": "IP-04-success-before",
+      "title": "success CAS never reached the medium",
+      "variant": "crash-before",
+      "fault": {
+        "method": "updateRun",
+        "timing": "before",
+        "reason": "success-write-lost"
+      },
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "running",
+            "revision": 0,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "lease": {
+              "ownerId": "host-a",
+              "expiresAt": 10500
+            }
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "submitted",
+            "generation": 0,
+            "attempt": 1,
+            "messageId": "4e501b87-45b2-4512-9780-d606bff4f91f",
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 3
+          }
+        ]
+      },
+      "crash": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "running",
+            "revision": 0,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "lease": {
+              "ownerId": "host-a",
+              "expiresAt": 10500
+            }
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "submitted",
+            "generation": 0,
+            "attempt": 1,
+            "messageId": "4e501b87-45b2-4512-9780-d606bff4f91f",
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 3
+          }
+        ]
+      },
+      "restarted": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "succeeded",
+            "revision": 1,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "operationId": "operation-run-1-0",
+            "claimedTurn": 1,
+            "acceptedTurnEndSeq": 2
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "submitted",
+            "generation": 0,
+            "attempt": 1,
+            "messageId": "4e501b87-45b2-4512-9780-d606bff4f91f",
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 3
+          }
+        ]
+      },
+      "firstPass": "rejected",
+      "restartedDecisions": [
+        {
+          "runId": "run-1",
+          "stateBefore": "succeeded",
+          "stateAfter": "succeeded",
+          "action": "settled-succeeded",
+          "reason": "completed",
+          "detail": "durable turn 1 completed",
+          "operationId": "operation-run-1-0",
+          "operationPhaseBefore": "submitted",
+          "sessionId": "session-run-1-0",
+          "messageId": "4e501b87-45b2-4512-9780-d606bff4f91f",
+          "turn": 1
+        }
+      ],
+      "restartedResumes": [],
+      "schedulerOpenAfterRestart": true
+    },
+    {
+      "id": "IP-05-target-after",
+      "title": "operation target landed; the adopt response was lost",
+      "variant": "crash-after",
+      "fault": {
+        "method": "advanceOperation",
+        "timing": "after",
+        "reason": "target-response-lost"
+      },
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "starting",
+            "revision": 0,
+            "generation": 0,
+            "sessionLineage": []
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "planned",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 0
+          }
+        ]
+      },
+      "crash": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "starting",
+            "revision": 1,
+            "generation": 0,
+            "sessionLineage": [],
+            "lease": {
+              "ownerId": "host-a",
+              "expiresAt": 11000
+            }
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "session-created",
+            "generation": 0,
+            "attempt": 1,
+            "targetSessionId": "session-run-1-0",
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 0
+          }
+        ]
+      },
+      "restarted": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "running",
+            "revision": 2,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "operationId": "operation-run-1-0",
+            "lease": {
+              "ownerId": "host-a",
+              "expiresAt": 11000
+            }
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "session-created",
+            "generation": 0,
+            "attempt": 1,
+            "targetSessionId": "session-run-1-0",
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 0
+          }
+        ]
+      },
+      "firstPass": "rejected",
+      "restartedDecisions": [
+        {
+          "runId": "run-1",
+          "stateBefore": "running",
+          "stateAfter": "running",
+          "action": "resumed",
+          "reason": "resumed",
+          "detail": "session exists with no delivered prompt; resuming for one submission",
+          "operationId": "operation-run-1-0",
+          "operationPhaseBefore": "session-created",
+          "sessionId": "session-run-1-0",
+          "submitPrompt": true
+        }
+      ],
+      "restartedResumes": [
+        {
+          "sessionId": "session-run-1-0",
+          "operationId": "operation-run-1-0",
+          "submitPrompt": true
+        }
+      ],
+      "schedulerOpenAfterRestart": true
+    },
+    {
+      "id": "IP-06-target-before",
+      "title": "operation target never reached the medium",
+      "variant": "crash-before",
+      "fault": {
+        "method": "advanceOperation",
+        "timing": "before",
+        "reason": "target-write-lost"
+      },
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "starting",
+            "revision": 0,
+            "generation": 0,
+            "sessionLineage": []
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "planned",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 0
+          }
+        ]
+      },
+      "crash": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "starting",
+            "revision": 1,
+            "generation": 0,
+            "sessionLineage": [],
+            "lease": {
+              "ownerId": "host-a",
+              "expiresAt": 11000
+            }
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "planned",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 0
+          }
+        ]
+      },
+      "restarted": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "running",
+            "revision": 2,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "operationId": "operation-run-1-0",
+            "lease": {
+              "ownerId": "host-a",
+              "expiresAt": 11000
+            }
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "session-created",
+            "generation": 0,
+            "attempt": 1,
+            "targetSessionId": "session-run-1-0",
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 0
+          }
+        ]
+      },
+      "firstPass": "rejected",
+      "restartedDecisions": [
+        {
+          "runId": "run-1",
+          "stateBefore": "running",
+          "stateAfter": "running",
+          "action": "resumed",
+          "reason": "resumed",
+          "detail": "session exists with no delivered prompt; resuming for one submission",
+          "operationId": "operation-run-1-0",
+          "operationPhaseBefore": "session-created",
+          "sessionId": "session-run-1-0",
+          "submitPrompt": true
+        }
+      ],
+      "restartedResumes": [
+        {
+          "sessionId": "session-run-1-0",
+          "operationId": "operation-run-1-0",
+          "submitPrompt": true
+        }
+      ],
+      "schedulerOpenAfterRestart": true
+    },
+    {
+      "id": "IP-07-delivery-record-lost",
+      "title": "prompt and turn/end are durable; the submitted-phase record is not",
+      "variant": "delivery-lost",
+      "before": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "running",
+            "revision": 0,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ]
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "session-created",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 3
+          }
+        ]
+      },
+      "crash": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "running",
+            "revision": 0,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ]
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "session-created",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 3
+          }
+        ]
+      },
+      "restarted": {
+        "runs": [
+          {
+            "id": "run-1",
+            "state": "succeeded",
+            "revision": 2,
+            "activeSessionId": "session-run-1-0",
+            "generation": 0,
+            "sessionLineage": [
+              "session-run-1-0"
+            ],
+            "operationId": "operation-run-1-0",
+            "claimedTurn": 1,
+            "acceptedTurnEndSeq": 2
+          }
+        ],
+        "operations": [
+          {
+            "id": "operation-run-1-0",
+            "kind": "initial-prompt",
+            "phase": "session-created",
+            "generation": 0,
+            "attempt": 1,
+            "requestHash": "run-1|0|1|initial-prompt|task-1"
+          }
+        ],
+        "sessions": [
+          {
+            "id": "session-run-1-0",
+            "events": 3
+          }
+        ]
+      },
+      "firstPass": "completed",
+      "restartedDecisions": [
+        {
+          "runId": "run-1",
+          "stateBefore": "succeeded",
+          "stateAfter": "succeeded",
+          "action": "settled-succeeded",
+          "reason": "completed",
+          "detail": "durable turn 1 completed",
+          "operationId": "operation-run-1-0",
+          "operationPhaseBefore": "session-created",
+          "sessionId": "session-run-1-0",
+          "messageId": "6f701bfa-23a4-4207-8625-ca827970d6ca",
+          "turn": 1
+        }
+      ],
+      "restartedResumes": [],
+      "schedulerOpenAfterRestart": true
+    }
+  ]
+}
