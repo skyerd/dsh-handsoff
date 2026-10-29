@@ -85,9 +85,20 @@ pnpm run build:web      # or pnpm run dev:web while iterating
 
 > On Windows: copy the two folders with Explorer in step 2; if `git apply` fails in step 3, follow [docs/integration.md](docs/integration.md) to edit the 4 upstream files by hand — each change is small.
 
-### Option B: `dsh plugin add` / plugin marketplace (planned)
+### Option B: one-command install (recommended)
 
-Standalone packaging is on the roadmap (see [Outlook](#outlook)). Until then, use Option A.
+The repository root IS an installable dsh bundle — build artifacts are committed, so installation runs no build scripts and downloads nothing:
+
+```bash
+dsh plugin --profile web add skyerd/dsh-handsoff
+```
+
+Restart dsh web once after installing. Replace `--profile` with the profile you actually use.
+
+> To try it out locally first: `dsh plugin --profile <name> add <path to this repo>`.
+> Compatibility: dsh 0.2.x (developed against 0.2.0-rc.2).
+
+This repository follows the [DSH Plugin Hub](https://dsh-plugin.org) listing requirements: public repo, `dsh-plugin` topic, a copyable install command, and a standard `apply(ctx)` plugin form.
 
 ## Usage
 
@@ -113,7 +124,8 @@ This project is **experimental**:
 
 - [ ] **Fully hand over projects to AI**: from requirements to delivery, no more energy spent on basic coding and pipeline babysitting.
 - [ ] **Specs and skills**: a detailed, AI-native project production standard and skill pack, so programming novices can safely turn ideas into projects.
-- [ ] **Standalone packaging**: a one-command `dsh plugin add` form, listed on the dsh plugin marketplace.
+- [x] **Standalone packaging**: the repo root installs as-is via one `dsh plugin add`.
+- [ ] **Marketplace listing**: published to DSH Plugin Hub listing requirements, working toward verified.
 - [ ] **More hosts**: deepen the WorkBuddy and Trae adapter surfaces.
 - [ ] **Configurable supervision**: expose the built-in thresholds (60% / 20 min / 90% / 50%) as settings.
 
@@ -121,6 +133,7 @@ This project is **experimental**:
 
 ```
 dsh-handsoff/
+├── package.json / cordis.patch.yml / client.js / lib/   # repo root = installable bundle (zero-build git install)
 ├── packages/
 │   ├── orchestrator/session-orchestrator/          # host: queues, scheduler, supervisor, handoff
 │   │   ├── src/                                    #   34 source files (pipeline/scheduler/pressure/warden…)
@@ -128,8 +141,9 @@ dsh-handsoff/
 │   └── client/ui-settings-session-orchestrator/    # client: the "HandsOff" settings page
 │       ├── src/client/                             #   four tabs, section components, zh/en copy
 │       └── tests/client/                           #   component & service tests
+├── scripts/                                        # standalone build + structural checks
 ├── patches/
-│   └── harness-0.2.0-rc.2-integration.patch        # integration diff against 4 upstream files
+│   └── harness-0.2.0-rc.2-integration.patch        # overlay route: integration diff against 4 upstream files
 └── docs/
     ├── images/                                     # avatar & screenshots
     └── integration.md                              # manual integration guide

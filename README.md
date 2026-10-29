@@ -88,9 +88,20 @@ pnpm run build:web      # 或 pnpm run dev:web 一边改一边看
 
 > Windows 用户：第 2 步直接用资源管理器复制两个文件夹即可；第 3 步若 `git apply` 失败，可按 [docs/integration.md](docs/integration.md) 手动修改 4 个上游文件，改动都很小。
 
-### 方式 B：`dsh plugin add` / 插件市场（规划中）
+### 方式 B：一键安装（推荐）
 
-打包为可独立安装的插件已在路线图上（见 [展望](#展望)）。完成前，请先使用方式 A。
+仓库根目录已是一个可直接安装的 dsh 组合包——构建产物随仓库提交，安装零构建脚本、零依赖下载：
+
+```bash
+dsh plugin --profile web add skyerd/dsh-handsoff
+```
+
+安装完成后重启一次 dsh web。`--profile` 填你实际使用的 profile 名称。
+
+> 也可以先本地试用：`dsh plugin --profile <name> add <本仓库路径>`。
+> 兼容范围：dsh 0.2.x（按 0.2.0-rc.2 开发）。
+
+本仓库已按 [DSH Plugin Hub](https://dsh-plugin.org) 的收录要求发布：公开仓库、`dsh-plugin` topic、可复制的安装命令、标准 `apply(ctx)` 插件形态。
 
 ## 使用方法
 
@@ -116,7 +127,8 @@ pnpm run build:web      # 或 pnpm run dev:web 一边改一边看
 
 - [ ] **完全交给 AI**：项目从头到尾由 AI 统筹交付，不再需要在基础的代码编写和流水线监工上消耗自己的精力。
 - [ ] **规范与 skills**：沉淀一套更详细的、专属于 AI 项目制作的规范与技能包，让编程小白也能安全地把想法变成项目。
-- [ ] **独立插件打包**：提供一键 `dsh plugin add` 的安装形态，并上架 dsh 插件市场。
+- [x] **独立插件打包**：仓库根即装即用，`dsh plugin add` 一键安装。
+- [ ] **插件市场上架**：已按 DSH Plugin Hub 收录要求发布，推进 verified 认证。
 - [ ] **更多运行平台**：完善 WorkBuddy、Trae 等宿主的适配与能力呈现。
 - [ ] **监工规则开放配置**：把内置阈值（60% / 20 分钟 / 90% / 50%）开放为可调参数。
 
@@ -124,6 +136,7 @@ pnpm run build:web      # 或 pnpm run dev:web 一边改一边看
 
 ```
 dsh-handsoff/
+├── package.json / cordis.patch.yml / client.js / lib/   # 仓库根即独立插件包（git 安装零构建）
 ├── packages/
 │   ├── orchestrator/session-orchestrator/          # 宿主侧：队列、调度、监工、交接
 │   │   ├── src/                                    #   34 个源文件（pipeline/scheduler/pressure/warden…）
@@ -131,8 +144,9 @@ dsh-handsoff/
 │   └── client/ui-settings-session-orchestrator/    # 界面侧：设置页「HandsOff」
 │       ├── src/client/                             #   四个标签页、六个区块组件、中英文案
 │       └── tests/client/                           #   组件与服务测试
+├── scripts/                                        # standalone 构建 + 结构校验脚本
 ├── patches/
-│   └── harness-0.2.0-rc.2-integration.patch        # 对上游 4 个文件的集成改动
+│   └── harness-0.2.0-rc.2-integration.patch        # 源码挂载路线：对上游 4 个文件的集成改动
 └── docs/
     ├── images/                                     # 头像与界面截图
     └── integration.md                              # 手动集成说明

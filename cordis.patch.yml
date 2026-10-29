@@ -1,0 +1,13 @@
+# HandsOff standalone bundle.
+#
+# The bare-name row carries both halves: the Host store plugin (lib/index.js,
+# the durable session_orchestrator storage domain) and the browser half
+# declared by `dsh.client` in package.json (client.js, which mounts the
+# generated sessionOrchestrator namespace and registers the settings page).
+# The /host row mounts the sessionOrchestrator Remote controller beside it.
+
+- insert:
+    - id: handsoff
+      name: 'dsh-handsoff'
+    - id: handsoff-controller
+      name: 'dsh-handsoff/host'

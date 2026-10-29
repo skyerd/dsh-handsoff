@@ -1,5 +1,7 @@
-# build artifacts
-lib/
+# nested package build outputs (the ROOT lib/ and client.js are committed
+# so that git-source installs need no build scripts)
+packages/**/lib/
+standalone/.build/
 dist/
 *.tsbuildinfo
 
