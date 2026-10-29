@@ -8,7 +8,7 @@
 
 ![license](https://img.shields.io/badge/license-MIT-2631463) ![dsh](https://img.shields.io/badge/dsh-0.2.0--rc.2-2f6f4f) ![status](https://img.shields.io/badge/status-%E5%AE%9E%E9%AA%8C%E9%98%B6%E6%AE%B5-f0a441) ![i18n](https://img.shields.io/badge/i18n-%E4%B8%AD%E6%96%87%20%C2%B7%20English-4b6fff)
 
-> 把要做的活儿提前写成一条任务流水线，交给 AI 自己排队执行、自己盯进度、自己纠偏。
+> 把要做的活提前写成一条任务流水线，交给 AI 自己排队执行、自己盯进度、自己纠偏。
 > 你只需要在最后，体验和感受结果。
 
 *Write the work up front as a task pipeline, hand it to AI: it queues, runs, watches and corrects itself — you just experience the result.*
@@ -103,9 +103,9 @@ pnpm run build:web      # 或 pnpm run dev:web 一边改一边看
 
 > 队列、任务与监工记录保存在本地 `session_orchestrator` 存储域，可随会话数据一起备份。
 
-## ⚠️ 实验阶段
+##  实验测试阶段
 
-本项目目前仍处于**实验阶段**，请带着预期使用：
+本项目目前仍处于**实验测试阶段**，请带着预期使用：
 
 - 自动处理的规则判断**不一定有那么强的准确性**：可能误拆、误停，也可能漏判。
 - 四阶段模板生成的是「可运行的起点」，不是「免验收的成品」——关键节点的产出请保持人工确认的习惯。
