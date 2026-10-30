@@ -6,7 +6,7 @@
 
 **简体中文** | [English](https://github.com/skyerd/dsh-handsoff/blob/main/README.en.md)
 
-![license](https://img.shields.io/badge/license-MIT-2631463) ![dsh](https://img.shields.io/badge/dsh-0.2.0--rc.2-2f6f4f) ![status](https://img.shields.io/badge/status-%E5%AE%9E%E9%AA%8C%E9%98%B6%E6%AE%B5-f0a441) ![i18n](https://img.shields.io/badge/i18n-%E4%B8%AD%E6%96%87%20%C2%B7%20English-4b6fff)
+![license](https://img.shields.io/badge/license-MIT%20%2B%20CC--BY--3.0-2631463) ![dsh](https://img.shields.io/badge/dsh-0.2.0--rc.2-2f6f4f) ![status](https://img.shields.io/badge/status-%E5%AE%9E%E9%AA%8C%E9%98%B6%E6%AE%B5-f0a441) ![i18n](https://img.shields.io/badge/i18n-%E4%B8%AD%E6%96%87%20%C2%B7%20English-4b6fff)
 
 > 把要做的活提前写成一条任务流水线，交给 AI 自己排队执行、自己盯进度、自己纠偏。
 > 你只需要在最后，体验和感受结果。
@@ -128,12 +128,57 @@ pnpm run build:web      # 或 pnpm run dev:web 一边改一边看
 
 ## 展望
 
-- [ ] **完全交给 AI**：项目从头到尾由 AI 统筹交付，不再需要在基础的代码编写和流水线监工上消耗自己的精力。
-- [ ] **规范与 skills**：沉淀一套更详细的、专属于 AI 项目制作的规范与技能包，让编程小白也能安全地把想法变成项目。
+
+
+### 自动处理：可配置、可明细、可自省
+
+- **模型自选**：管理单条队列的模型、为队列拆分任务的模型，都可以由用户分别指定——不同队列，可以使用不同的管理模型。
+- **阈值开放配置**：上下文占比、自动处理时限、缓存命中率的上下限，全部开放为可直接修改的数字，不再写死在代码里。
+- **Token 用量上限**：为单个模型设定消耗额度，一经触及立即交接任务；额度多少，由用户决定。
+- **处理明细**：自动处理页将完整记录每一次处理——动了哪条队列、处理了什么问题、原因是什么；一切正常时，也会明明白白写上一句「一切正常」。
+- **异常自省**：同类问题反复出现（例如连续三次超时、某一类任务消耗过高）时，管理模型会在页面上主动询问：是否由它自动优化处理策略？如果问题出在管理模型自身，则换用更强的模型来打磨它的调度方式——全过程向用户公开，优化结果沉淀到技能管理页。
+
+### Token 与时间的双重节省
+
+- **少读无用文件**：AI 大量阅读无关文件、把单个文件写得过长，都会在读与改之间白白消耗 token。为此引入代码段落限制与更细分的文件制作工程要求，从源头约束。
+- **负面反馈驱动改进**：读到大量无用文件、长时间运行命令却毫无结果时，自动记为负面反馈；管理模型据此改进当前任务的调度——对「该读什么」给出更准的指引，对「不该读什么」加上更严的限制。
+- **跨项目沉淀**：两个以上项目的流水线遇到同类问题时，对应的改进会进入技能管理的「全局改进」，一次修正，处处生效。
+- **上下文有效压缩**：只保留真正有价值的内容。我们的目标是社区里那种极致的 token 经济性——制作一小时的游戏实况视频、再看上两遍，也只花几毛钱的 token。
+
+### 技能管理
+
+顶部栏四个标签页之后，将新增**技能管理**入口：既可以自行添加技能，也可以直接使用我们预设的技能。页面分为三个分区：
+
+- **全局技能**：独属于这位用户的技能——从其日常项目里最常出现的问题中沉淀出的专门改进；也收录专业程序员撰写的通用优化技能，比如「少读无用文件」「多向用户提问，准确理解项目」「单个文档不超过 500–700 行」。
+- **专业任务技能**：我们预设的技能加上用户自建的技能，覆盖前端设计、后端设计、游戏设计、小说写作、文案写作等方向。分组之下还能再建分组，是完全属于用户的文件夹体系；每份技能文档都纳入 git 管理，即使被误改也能随时恢复。这些技能可以在流水线页面直接选用、注入对话，省下大量时间与 token。
+- **流水线调度中的技能**：展示每条流水线当前引用了哪些技能——既有用户手动添加的，也有调度模型自动挂载的。支持实时增删：「−」只是解除这条对话对该技能的引用，技能本身不会被删除；「+」添加后，AI 在下一轮对话中即刻生效。每条流水线可以有多个任务，每个任务可挂载专属技能，流水线整体也可以挂全局技能——让每个任务都引用一次。
+
+### 鱼的记忆
+
+技能管理右侧的另一个新入口。点开它，你会得到一位**自学习、拥有独立人格的 AI 大管家**：
+
+它不读大量文件，专注于项目的整体调度；它会与你对话、提醒你该留意的事；随着相处，它会慢慢养成自己的性格，懂得你平时在做什么，甚至有自己的情绪和小心思。
+
+#### 大肥鱼桌宠
+
+「鱼的记忆」页里的形象现在是一位 Q 版鲸鱼女仆「小鱼」：蓝色长发、鲸鳍耳、鱼尾，配深蓝/白色女仆装、围裙和鲸鱼徽章。内置立绘由 **Aeihu** 的 CC-BY 3.0 Q 版美人鱼改造而来（缩小、重绘女仆装、生成三个表情）；**代码仍是 MIT，内置立绘按 CC-BY 3.0 授权**，npm 包声明为 `MIT AND CC-BY-3.0`。
+
+它会根据队列与最新运行状态切换 `idle / working / attention / done / error / sleeping` 六种姿态，并用对话条汇报「已完成 / 运行中 / 队列数量」。点击「把小鱼移到桌面」后，它会变成整个 Harness 桌面窗口上的可拖拽悬浮层，位置保存在浏览器本地，也能一键收回。
+
+**自定义立绘**：点击「自定义立绘」可以导入本地 PNG/WebP 文件，文件名使用 `idle`、`joy`、`work`、`think`、`sleep`、`sad`、`wake` 等动作名。文件只写入当前浏览器的 IndexedDB，**不会上传、不会进入安装包、也不会随 npm 发布**。这样你可以把个人非商业的鲸鱼女仆立绘放在本机使用，而仓库本身不需要再分发这些素材。
+
+> **关于 Live2D 皮肤**：「DeepSeek-chan / 大肥鱼」Live2D 模型（`.moc3` + `model3.json`）不能直接导入本插件。它的使用须知允许个人直播、视频与署名二创，但**禁止重新分发完整模型文件**，也不适合作为商业产品的一部分；并且运行时资源约 60MB（另有 125MB PSD），远超 10MB 的轻量目标。建议在 VTube Studio 里使用，或先在 VTube Studio / Cubism 中导出 PNG 帧，再用「自定义立绘」本地导入。若要把它内置为默认形象，需要先取得原画/建模作者的书面许可。
+
+> **边界说明**：桌面模式是 Harness 桌面窗口内的置顶悬浮层，不是操作系统级窗口——浏览器端无法创建后者。若需要 OS 级透明置顶窗，可搭配原生桌宠项目；本仓库不启动、不打包任何第三方桌宠二进制。
+
+> **素材声明**：内置立绘按 [CC-BY 3.0](ASSETS-LICENSE.md) 使用并署名 Aeihu；`dsh-whale-maid` / `deepseek-dafeiyu-pet` 的提取立绘本身禁止再分发，因此只支持本地导入，不随包分发。完整记录见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+
+而更远处，我们还希望：
+
+- [ ] **完全交给 AI**：项目从头到尾由 AI 统筹交付，不再需要在基础的代码编写和流水线监工上消耗自己的精力——让编程小白也能安全地把想法变成项目。
 - [x] **独立插件打包**：仓库根即装即用，`dsh plugin add` 一键安装。
 - [ ] **插件市场上架**：已按 DSH Plugin Hub 收录要求发布，推进 verified 认证。
 - [ ] **更多运行平台**：完善 WorkBuddy、Trae 等宿主的适配与能力呈现。
-- [ ] **监工规则开放配置**：把内置阈值（60% / 20 分钟 / 90% / 50%）开放为可调参数。
 
 ## 项目结构
 
@@ -171,7 +216,7 @@ npm run check:standalone    # 校验 bundle 结构与 Remote 方法覆盖
 
 ### 维护者：发布到 npm
 
-`package.json` 的 `files` 白名单只放行运行时：`lib/`、`client.js`、`cordis.patch.yml`、两份 README 与 `LICENSE`；源码、测试、`scripts/`、`docs/` 都不会进入 tarball。
+`package.json` 的 `files` 白名单只放行运行时：`lib/`、`client.js`、`cordis.patch.yml`、两份 README、`LICENSE`、`ASSETS-LICENSE.md` 与 `THIRD_PARTY_NOTICES.md`；源码、测试、`scripts/`、`docs/` 都不会进入 tarball。
 
 ```bash
 npm pack --dry-run    # 检查 tarball，应只包含白名单文件
@@ -187,6 +232,8 @@ npm publish           # prepublishOnly 会先重建产物并跑结构校验
 
 ## 许可证
 
-[MIT](LICENSE) © skyerd and dsh-handsoff contributors
+**代码：[MIT](LICENSE) © skyerd and dsh-handsoff contributors。**
 
-上游 [deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) 同为 MIT 许可，Copyright (c) 2026 DeepSeek。头像为项目自有的插件形象素材（经裁切处理），仅用作项目标识。
+**内置桌宠立绘：[CC-BY 3.0](ASSETS-LICENSE.md)，基于 Aeihu 的 “Q-style cartoon mermaid” 改造，© Aeihu；改造部分 © skyerd and dsh-handsoff contributors。** 因此 npm 包声明为 `MIT AND CC-BY-3.0`。用户通过「自定义立绘」导入的文件不随包分发、不在此授权范围内，沿用其原授权。
+
+上游 [deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) 同为 MIT 许可，Copyright (c) 2026 DeepSeek。页面头像为项目自有素材。第三方项目、许可差异与本地导入说明见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。

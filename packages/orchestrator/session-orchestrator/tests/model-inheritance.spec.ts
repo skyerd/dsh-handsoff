@@ -12,7 +12,7 @@
 import { afterEach, describe, expect, it } from 'vitest'
 import { SessionId } from '@deepseek-ai/dsh-session'
 import { OperationId, QueueId, RunId, TaskId } from '../src/brand.ts'
-import { frozenModelOf, resolveTaskModel } from '../src/model-route.ts'
+import { frozenModelOf, previousConversationModel, resolveTaskModel } from '../src/model-route.ts'
 import { Scheduler } from '../src/scheduler.ts'
 import { RunSupervisor } from '../src/supervisor.ts'
 import type { OperationRecord, QueueRecord, RunRecord, TaskSpec } from '../src/types.ts'
@@ -129,14 +129,43 @@ afterEach(async () => {
 })
 
 describe('route resolution', () => {
-  it('prefers a pinned task route, then the pipeline route, then the host default', () => {
+  it('prefers a pinned task route, then the pipeline route, then the previous conversation, then the host default', () => {
     const pipeline = queue({ model: { kind: 'fixed', provider: 'p', model: 'm' } })
-    expect(resolveTaskModel(task(), pipeline)).toEqual({ kind: 'fixed', provider: 'p', model: 'm' })
-    expect(resolveTaskModel(task({ model: { kind: 'fixed', provider: 'own', model: 'own-m' } }), pipeline))
+    const previous = { kind: 'fixed' as const, provider: 'previous', model: 'previous-model' }
+    expect(resolveTaskModel(task(), pipeline, previous)).toEqual({ kind: 'fixed', provider: 'p', model: 'm' })
+    expect(resolveTaskModel(task({ model: { kind: 'fixed', provider: 'own', model: 'own-m' } }), pipeline, previous))
       .toEqual({ kind: 'fixed', provider: 'own', model: 'own-m' })
+    expect(resolveTaskModel(task(), queue({ model: { kind: 'inherit' } }), previous))
+      .toEqual(previous)
     expect(resolveTaskModel(task(), queue({ model: { kind: 'inherit' } })))
       .toEqual({ kind: 'inherit' })
     expect(resolveTaskModel(task(), undefined)).toEqual({ kind: 'inherit' })
+  })
+
+  it('reads the previous conversation route from its latest frozen snapshot', () => {
+    const tasks = [task(), task({ id: TaskId('task-2'), dependsOn: [TaskId('task-1')] })]
+    const pipeline = queue({ taskOrder: [TaskId('task-1'), TaskId('task-2')] })
+    const runs = [run({
+      state: 'succeeded',
+      configSnapshot: {
+        routeSource: 'completed-turn-header',
+        provider: 'previous',
+        model: 'previous-model',
+        reasoningEffort: 'high',
+        preset: { id: 'default' },
+        capturedAt: NOW,
+      },
+    })]
+    expect(previousConversationModel(tasks[1]!, pipeline, tasks, runs))
+      .toEqual({ kind: 'fixed', provider: 'previous', model: 'previous-model', reasoningEffort: 'high' })
+    expect(previousConversationModel(tasks[0]!, pipeline, tasks, runs)).toBeUndefined()
+
+    const switched = [
+      task({ model: { kind: 'fixed', provider: 'switched', model: 'switched-model' } }),
+      tasks[1]!,
+    ]
+    expect(previousConversationModel(tasks[1]!, pipeline, switched, runs))
+      .toEqual({ kind: 'fixed', provider: 'switched', model: 'switched-model' })
   })
 
   it('freezes the route a completed boundary already committed', () => {
@@ -206,6 +235,43 @@ describe('dispatch-time inheritance', () => {
     await scheduler.tick()
     expect(launcher.calls[0]?.request.task.model).toEqual({ kind: 'inherit' })
     expect(launcher.calls[0]?.request.providerKey).toBeUndefined()
+
+    await launcher.acceptAll()
+    await scheduler.drain()
+    await scheduler.close()
+  })
+
+  it('inherits the route the previous task conversation actually used', async () => {
+    const h = await harness()
+    openHarnesses.push(h)
+    await unpause(h)
+    const first = task({ model: { kind: 'fixed', provider: 'previous', model: 'previous-model', reasoningEffort: 'high' } })
+    const second = task({ id: TaskId('task-2'), dependsOn: [TaskId('task-1')] })
+    await h.store.createQueue(queue({ taskOrder: [first.id, second.id] }))
+    await h.store.createTask(first)
+    await h.store.createTask(second)
+    await h.store.createRun(run({
+      state: 'succeeded',
+      activeSessionId: SessionId('session-run-task-1-1-0'),
+      sessionLineage: [SessionId('session-run-task-1-1-0')],
+      configSnapshot: {
+        routeSource: 'completed-turn-header',
+        provider: 'previous',
+        model: 'previous-model',
+        reasoningEffort: 'high',
+        preset: { id: 'default' },
+        capturedAt: NOW + 1,
+      },
+    }))
+    const launcher = fakeLauncher()
+    const scheduler = schedulerOver(h, launcher)
+
+    const tick = await scheduler.tick()
+    expect(tick.started.map(start => String(start.taskId))).toEqual(['task-2'])
+    expect(launcher.calls[0]?.request.task.model).toEqual({
+      kind: 'fixed', provider: 'previous', model: 'previous-model', reasoningEffort: 'high',
+    })
+    expect(launcher.calls[0]?.request.providerKey).toBe('previous')
 
     await launcher.acceptAll()
     await scheduler.drain()

@@ -132,8 +132,8 @@ describe('queue composer', () => {
     })
     const form = view.getByRole('region', { name: en.pipelineCreateTitle })
     fireEvent.change(within(form).getByLabelText(en.pipelineCreatePrompt), { target: { value: 'Write it' } })
-    chooseOption(form, en.modelPolicy, new RegExp(`^${en.modelFixed}$`, 'u'))
-    chooseOption(form, en.modelName, /DeepSeek Chat/u)
+    fireEvent.click(within(form).getByRole('button', { name: new RegExp(`^${en.modelName}`, 'u') }))
+    fireEvent.click(within(form).getByRole('option', { name: /DeepSeek Chat/u }))
     chooseOption(form, en.composerSkills, /^Coding/u)
     fireEvent.click(within(form).getByRole('button', { name: en.composerStart }))
     await waitFor(() => {
@@ -339,7 +339,8 @@ describe('running tasks', () => {
       live: liveState({ queues: [queue()], tasks: [taskSummary()], runs: [attention] }),
     })
     fireEvent.click(view.getByRole('tab', { name: en.tabBoard }))
-    fireEvent.click(view.getByRole('button', { name: `${en.boardDetails} Task one` }))
+    fireEvent.click(view.getByRole('button', { name: `${en.conversationMenu} Task one` }))
+    fireEvent.click(view.getByRole('menuitem', { name: en.conversationRunActions }))
     fireEvent.click(view.getByRole('button', { name: `${en.runCardCancel} Task one` }))
     expect(view.getByRole('dialog', { name: en.cancelTitle })).toBeTruthy()
     fireEvent.click(view.getByLabelText(en.acknowledge))
@@ -393,7 +394,7 @@ describe('Chinese terminology', () => {
   it('uses the requested primary names', () => {
     expect(zh.title).toBe('HandsOff')
     expect(zh.tabQueue).toBe('创建任务队列')
-    expect(zh.tabBoard).toBe('正在执行中的任务')
+    expect(zh.tabBoard).toBe('运行中的任务')
     expect(zh.tabHosts).toBe('运行平台')
   })
 })

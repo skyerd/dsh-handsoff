@@ -74,7 +74,7 @@
 .rows {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -85,16 +85,23 @@
   flex-direction: column;
   gap: 6px;
   min-width: 0;
-  padding: 10px 12px;
+  padding: 10px 6px;
   box-sizing: border-box;
-  border: 1px solid var(--dsw-alias-border-l2);
+  border: none;
+  border-top: 1px solid var(--dsw-alias-separator-primary);
   border-radius: var(--dsw-radius-md);
-  background: var(--dsw-alias-bg-layer-2);
-  transition: border-color 160ms ease;
+  background: transparent;
+  transition: background-color 140ms ease, box-shadow 140ms ease;
 }
 
-.row:hover {
-  border-color: var(--dsw-alias-border-l3);
+.row:first-child {
+  border-top: none;
+}
+
+.row:hover,
+.row:focus-within {
+  background: var(--dsw-alias-bg-layer-2);
+  box-shadow: var(--dsw-shadow-lv1-blur);
 }
 
 .rowTop {
@@ -128,7 +135,7 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 10px;
   padding-left: 18px;
   font-size: 11px;
   line-height: 1.4;
@@ -136,10 +143,9 @@
 }
 
 .metric {
-  padding: 2px 7px;
-  border: 1px solid var(--dsw-alias-separator-primary);
-  border-radius: 6px;
-  background: var(--dsw-alias-bg-layer-1);
+  padding: 0;
+  border: none;
+  background: transparent;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
@@ -157,7 +163,8 @@
 
 .childRow {
   margin-left: 18px;
-  border-left: 2px solid var(--dsw-alias-state-business-primary);
+  padding-left: 10px;
+  border-left: 1px solid var(--dsw-alias-separator-primary);
 }
 
 .emptyCard {

@@ -6,7 +6,7 @@
 
 [简体中文](https://github.com/skyerd/dsh-handsoff/blob/main/README.md) | **English**
 
-![license](https://img.shields.io/badge/license-MIT-2631463) ![dsh](https://img.shields.io/badge/dsh-0.2.0--rc.2-2f6f4f) ![status](https://img.shields.io/badge/status-experimental-f0a441) ![i18n](https://img.shields.io/badge/i18n-%E4%B8%AD%E6%96%87%20%C2%B7%20English-4b6fff)
+![license](https://img.shields.io/badge/license-MIT%20%2B%20CC--BY--3.0-2631463) ![dsh](https://img.shields.io/badge/dsh-0.2.0--rc.2-2f6f4f) ![status](https://img.shields.io/badge/status-experimental-f0a441) ![i18n](https://img.shields.io/badge/i18n-%E4%B8%AD%E6%96%87%20%C2%B7%20English-4b6fff)
 
 > Write the work up front as a task pipeline, hand it to AI: it queues, runs, watches and corrects itself — you just experience the result.
 
@@ -41,6 +41,7 @@ So we turned the supervisor into a plugin: stop staring at progress bars; agree 
 ## What it does
 
 - **Task queue**: create a pipeline with a name, a folder and an ordered list of prompts. Tasks run top-to-bottom, with an optional "run with previous item" for parallelism.
+- **Fish-memory pet**: a CC-BY 3.0 chibi whale maid (derived from Aeihu's Q-style mermaid, with an original maid outfit) reacts to queue progress with six moods (`idle / working / attention / done / error / sleeping`) and a compact speech bubble. It can be dragged out of the settings page into a floating layer over the whole Harness desktop window; placement stays in browser-local storage. A local "Custom artwork" importer accepts PNG/WebP sprite files, stores them in IndexedDB only, and never bundles or redistributes them. Live2D `.moc3` / `model3.json` models are not imported directly: the popular DeepSeek-chan model forbids redistributing its complete files, its runtime is about 60 MB, and the recommended route is VTube Studio or exporting PNG frames locally for the importer.
 - **Four-stage template**: opt in via "More options" to generate Architecture → Breakdown → Implement → Test acceptance in one click; every stage prompt embeds your brief and reads the artifacts the previous stage left in `docs/pipeline`.
 - **Parallel board**: every task under five fixed statuses (running / needs response / waiting / paused / ended), with one-click access to its conversation.
 - **Automation (local rules, 0 tokens)**: context at 60% triggers a reorganization and re-queue; 20 minutes of silence triggers a progress question, then a pause; cache hit rate below 90% splits the remaining work, below 50% interrupts immediately; globally stop every queue when usable samples fall below 50%.
@@ -168,7 +169,7 @@ npm run check:standalone    # structural + Remote coverage checks
 
 ### Maintainers: publishing to npm
 
-The `files` whitelist in `package.json` ships runtime only: `lib/`, `client.js`, `cordis.patch.yml`, both READMEs and `LICENSE`. Sources, tests, `scripts/` and `docs/` never enter the tarball.
+The `files` whitelist in `package.json` ships runtime only: `lib/`, `client.js`, `cordis.patch.yml`, both READMEs, `LICENSE`, `ASSETS-LICENSE.md` and `THIRD_PARTY_NOTICES.md`. Sources, tests, `scripts/` and `docs/` never enter the tarball.
 
 ```bash
 npm pack --dry-run    # inspect the tarball — whitelisted files only
@@ -184,6 +185,10 @@ Issues and PRs are welcome — rule tuning, host adapters and translations are g
 
 ## License
 
-[MIT](LICENSE) © skyerd and dsh-handsoff contributors
+**Code: [MIT](LICENSE) © skyerd and dsh-handsoff contributors.**
 
-Upstream [deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) is also MIT-licensed, Copyright (c) 2026 DeepSeek. The avatar is the project's own plugin artwork (cropped) and is used only as the project identity.
+**Bundled pet artwork: [CC-BY 3.0](ASSETS-LICENSE.md), derived from Aeihu's “Q-style cartoon mermaid”, © Aeihu; modifications © skyerd and dsh-handsoff contributors.** The package therefore declares `MIT AND CC-BY-3.0`. Files imported through the local “Custom artwork” dialog are not bundled, are not sublicensed here, and keep their own licence.
+
+Upstream [deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) is also MIT-licensed, Copyright (c) 2026 DeepSeek. The page avatar is the project's own artwork. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for third-party references, licence differences and the local-import policy.
+
+Note: desktop mode is a draggable always-on-top layer inside the Harness desktop window, not an OS-level window — the browser half cannot create one. A true OS-level pet needs a native companion; this repository does not bundle or launch one.

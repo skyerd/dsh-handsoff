@@ -18,7 +18,7 @@
 import { createSnapshotStore, type SnapshotStore } from '@deepseek-ai/dsh-client-store'
 import type {
   CancelRunRequest, CreatePipelineTemplateRequest, CreateQueueRequest, DeleteDraftQueueRequest,
-  DeleteTaskRequest, DeleteTaskValue, DuplicateTaskRequest, DuplicateTaskValue,
+  DeleteTaskRequest, DeleteTaskValue, DuplicateTaskRequest, DuplicateTaskValue, GetQueueRequest,
   HandoffDto, HostCapabilityDto, InterventionDto, ModelPolicy, OrchestratorSnapshotFrame,
   PipelineTemplateValue, QueueDetailValue, QueueDto, QueueDraft, QueueValue, ReorderTasksRequest,
   RepairTaskListRequest, RetryRunRequest, RunDto, RunValue, SetTaskEnabledRequest, SettingsDto, SettingsDraft,
@@ -32,6 +32,29 @@ import { canCancelRun, canRetryRun, canSkipRun } from './model.ts'
 
 /** Connection phase of the snapshot stream. */
 export type LivePhase = 'connecting' | 'ready' | 'error'
+
+/** Browser-local preference: pipelines that no longer ask about future models. */
+const MODEL_SWITCH_MUTE_KEY = 'dsh-handsoff:model-switch-muted'
+
+/** Read the muted-pipeline set without letting storage failures break the page. */
+function mutedModelSwitchQueues(): Set<string> {
+  try {
+    const raw = globalThis.localStorage?.getItem(MODEL_SWITCH_MUTE_KEY)
+    const parsed: unknown = raw === null || raw === undefined ? [] : JSON.parse(raw)
+    return new Set(Array.isArray(parsed) ? parsed.filter((id): id is string => typeof id === 'string') : [])
+  } catch {
+    return new Set()
+  }
+}
+
+/** Persist the muted-pipeline set without letting storage failures break the page. */
+function writeMutedModelSwitchQueues(ids: ReadonlySet<string>): void {
+  try {
+    globalThis.localStorage?.setItem(MODEL_SWITCH_MUTE_KEY, JSON.stringify([...ids]))
+  } catch {
+    // A browser with storage disabled simply asks again on the next switch.
+  }
+}
 
 /** One creation-time model route the host catalog advertises. */
 export interface ModelChoice {
@@ -168,6 +191,36 @@ export interface AppendTaskInput {
   readonly presetId?: string
 }
 
+/** One conversation model switch and the tasks it should also retarget. */
+export interface SwitchConversationModelInput {
+  /** Task whose latest conversation is being retargeted. */
+  readonly taskId: string
+  /** Session to retarget in place; absent when the task has no conversation yet. */
+  readonly sessionId?: string
+  /** Fixed route the user picked. */
+  readonly model: ModelPolicy
+  /** Not-yet-started tasks in the same pipeline that should receive the same route. */
+  readonly applyFutureTaskIds?: readonly string[]
+  /** Persist "do not ask again" for this pipeline. */
+  readonly muteQueuePrompt?: boolean
+}
+
+/** One follow-up instruction that becomes a child conversation in the queue. */
+export interface FollowUpConversationInput {
+  /** Parent task whose conversation is being continued. */
+  readonly taskId: string
+  /** User text for the child conversation. */
+  readonly prompt: string
+}
+
+/** One conversation deletion and whether its DSH Session is archived. */
+export interface DeleteConversationInput {
+  /** Task that owns the conversation. */
+  readonly taskId: string
+  /** Archive the DSH Session while removing the HandsOff records. */
+  readonly archiveSession: boolean
+}
+
 /** Values the one-click pipeline template form collects. */
 export interface PipelineTemplateInput {
   /** Stable identity of the draft; reusing it makes a retry idempotent. */
@@ -261,6 +314,35 @@ export interface SessionOpenSurface {
    */
   knows(sessionId: string): boolean | undefined
   /**
+   * Pull the catalog again before trusting an absence.
+   *
+   * HandsOff creates its Sessions on the Host through the Agent registry, not
+   * through the browser's Session creation, so the browser catalog is not told
+   * about them and only refreshes when the connection is re-established. A
+   * catalog that is ready but stale therefore reports every automated Session
+   * as absent until the page is reloaded; refreshing on demand closes that gap.
+   * @returns completion of the current or newly started catalog pull.
+   */
+  refresh?(): Promise<void>
+  /**
+   * Switch the model one live conversation uses for its next turn.
+   * @param sessionId - Session identity to retarget.
+   * @param selection - fixed provider, model and optional reasoning effort.
+   * @returns completion after the Host installed the selection.
+   */
+  selectModel?(sessionId: string, selection: {
+    readonly provider: string
+    readonly model: string
+    readonly reasoningEffort?: string
+  }): Promise<void>
+  /**
+   * Deliver one follow-up instruction into a live conversation.
+   * @param sessionId - Session identity that receives the message.
+   * @param prompt - non-empty user text.
+   * @returns completion after the Host admitted the prompt.
+   */
+  prompt?(sessionId: string, prompt: string): Promise<void>
+  /**
    * Whether one Session is archived, so opening it would be refused.
    * @param sessionId - Session identity to look up.
    * @returns `true` when the Workspace registry reports it archived.
@@ -348,6 +430,18 @@ export interface OrchestratorActions {
   readonly retryRun: (runId: string) => Promise<void>
   readonly skipRun: (runId: string, actor: string, reason: string) => Promise<void>
   readonly openSession: (session: SessionLinkDto) => Promise<void>
+  /** Retarget one conversation's model and optionally the pipeline's future tasks. */
+  readonly switchConversationModel: (input: SwitchConversationModelInput) => Promise<boolean>
+  /** Insert one follow-up child conversation immediately after its parent. */
+  readonly followUpConversation: (input: FollowUpConversationInput) => Promise<boolean>
+  /** Insert one child conversation that reruns the unfinished part of its parent. */
+  readonly rerunConversation: (taskId: string, title: string) => Promise<boolean>
+  /** Remove one conversation's HandsOff records, optionally archiving its DSH Session. */
+  readonly deleteConversation: (input: DeleteConversationInput) => Promise<boolean>
+  /** Whether this pipeline suppresses the future-task model prompt. */
+  readonly modelSwitchPromptMuted: (queueId: string) => boolean
+  /** Persist the current pipeline's "do not ask again" choice. */
+  readonly muteModelSwitchPrompt: (queueId: string) => void
   readonly dismissError: (id: string) => void
   readonly clearErrors: () => void
 }
@@ -551,6 +645,16 @@ export class OrchestratorClient {
       retryRun: async (runId) => { await this.retryRun(runId) },
       skipRun: async (runId, actor, reason) => { await this.skipRun(runId, actor, reason) },
       openSession: async (session) => { await this.openSession(session) },
+      switchConversationModel: async input => await this.switchConversationModel(input),
+      followUpConversation: async input => await this.followUpConversation(input),
+      rerunConversation: async (taskId, title) => await this.rerunConversation(taskId, title),
+      deleteConversation: async input => await this.deleteConversation(input),
+      modelSwitchPromptMuted: queueId => mutedModelSwitchQueues().has(queueId),
+      muteModelSwitchPrompt: (queueId) => {
+        const muted = mutedModelSwitchQueues()
+        muted.add(queueId)
+        writeMutedModelSwitchQueues(muted)
+      },
       dismissError: (id) => { this.dismissError(id) },
       clearErrors: () => { this.clearErrors() },
     }
@@ -1713,13 +1817,26 @@ export class OrchestratorClient {
    *
    * A route carries no DTO, so the surface is the authority here: the catalog
    * decides whether the Session still exists and the Workspace registry whether
-   * it was archived.
+   * it was archived. The catalog is refreshed once before an absence is trusted,
+   * because a Session created by an automated run never entered it through the
+   * browser's own creation path.
    * @param sessionId - Session identity a route named.
    */
   async openSessionById(sessionId: string): Promise<void> {
     const surface = this.resolveSurface?.()
     if (surface === undefined) {
       return this.localError('openSession', 'ui/session-unsupported', sessionId)
+    }
+    // Automated runs create their Session on the Host, bypassing the browser's
+    // own Session creation, so a ready catalog can still predate that Session.
+    // Pull once before an absence is treated as proof; a still-missing identity
+    // after the refresh keeps the explicit refusal instead of failing silently.
+    if (surface.knows(sessionId) !== true && surface.refresh !== undefined) {
+      try {
+        await surface.refresh()
+      } catch (error) {
+        console.warn('session-orchestrator UI: could not refresh the Session catalog', error)
+      }
     }
     if (surface.knows(sessionId) === false) {
       return this.localError('openSession', 'ui/session-missing', sessionId)
@@ -1732,6 +1849,223 @@ export class OrchestratorClient {
     } catch (error) {
       this.recordFailure('openSession', error)
     }
+  }
+
+  /**
+   * Retarget one conversation and, when asked, the pipeline's unstarted tasks.
+   *
+   * A live conversation takes the route through the native Session controller,
+   * so its next turn uses the chosen model. Nothing else changes unless the
+   * caller explicitly names future tasks: switching one conversation never
+   * silently alters its successors.
+   * @param input - task, optional live Session, fixed route and future task ids.
+   * @returns whether the switch was applied.
+   */
+  async switchConversationModel(input: SwitchConversationModelInput): Promise<boolean> {
+    if (input.model.kind !== 'fixed') {
+      this.localError('switchConversationModel', 'ui/model-route-required')
+      return false
+    }
+    const context = await this.conversationDetail(input.taskId, 'switchConversationModel')
+    if (context === undefined) return false
+    if (input.sessionId !== undefined) {
+      const surface = this.resolveSurface?.()
+      if (surface?.selectModel === undefined) {
+        this.localError('switchConversationModel', 'ui/session-unsupported', input.sessionId)
+        return false
+      }
+      try {
+        await surface.selectModel(input.sessionId, {
+          provider: input.model.provider,
+          model: input.model.model,
+          ...(input.model.reasoningEffort === undefined
+            ? {}
+            : { reasoningEffort: input.model.reasoningEffort }),
+        })
+      } catch (error) {
+        this.recordFailure('switchConversationModel', error)
+        return false
+      }
+    }
+    const targets = new Map<string, TaskDto>()
+    for (const taskId of input.applyFutureTaskIds ?? []) {
+      if (taskId === context.task.id) continue
+      const target = context.detail.tasks.find(candidate => candidate.id === taskId)
+      if (target !== undefined) targets.set(target.id, target)
+    }
+    for (const target of targets.values()) {
+      const value = await this.call<TaskValue>('switchConversationModel', () => this.remote.upsertTask({
+        taskId: target.id,
+        expectedRevision: target.revision,
+        draft: { ...taskDraftOf(target), model: input.model },
+      } satisfies UpsertTaskRequest))
+      if (value === undefined) return false
+      this.mergeTask(value.task)
+      if (value.queue !== undefined) this.mergeQueue(value.queue)
+    }
+    if (input.muteQueuePrompt === true) {
+      const muted = mutedModelSwitchQueues()
+      muted.add(context.queue.id)
+      writeMutedModelSwitchQueues(muted)
+    }
+    return true
+  }
+
+  /**
+   * Insert one follow-up child conversation immediately after its parent.
+   *
+   * The child is a normal queued task with `parentTaskId` and a dependency on the
+   * parent, so it persists, inherits the parent's workspace/preset, and is
+   * scheduled before the parent can count as complete. The chosen text becomes
+   * the child prompt with the parent task as context.
+   * @param input - parent task and the user's follow-up text.
+   * @returns whether the child was stored.
+   */
+  async followUpConversation(input: FollowUpConversationInput): Promise<boolean> {
+    const prompt = input.prompt.trim()
+    if (prompt === '') {
+      this.localError('followUpConversation', 'ui/pipeline-prompt-required')
+      return false
+    }
+    return await this.createChildConversation(
+      input.taskId,
+      titleFromPrompt(prompt),
+      parent => `继续上一轮对话「${parent.title}」。\n原任务提示词：${parent.prompt}\n\n追问：${prompt}`,
+      'followUpConversation',
+    )
+  }
+
+  /**
+   * Insert one child conversation that reruns the unfinished part of its parent.
+   * @param taskId - parent task whose conversation is being continued.
+   * @param title - localized child title supplied by the page.
+   * @returns whether the child was stored.
+   */
+  async rerunConversation(taskId: string, title: string): Promise<boolean> {
+    return await this.createChildConversation(
+      taskId,
+      title,
+      parent => `重新执行上一轮对话未完成部分。\n原任务提示词：${parent.prompt}`,
+      'rerunConversation',
+    )
+  }
+
+  /**
+   * Remove one conversation and no other task in its pipeline.
+   *
+   * The caller may first archive the native Session; the durable Session and
+   * workspace files are never deleted here. Removing the task also purges its
+   * attempts and operation records through the Host's delete contract.
+   * @param input - owning task and whether to archive its Session.
+   * @returns whether the conversation was removed.
+   */
+  async deleteConversation(input: DeleteConversationInput): Promise<boolean> {
+    const context = await this.conversationDetail(input.taskId, 'deleteConversation')
+    if (context === undefined) return false
+    const sessionId = context.task.session?.sessionId
+    if (input.archiveSession && sessionId !== undefined) {
+      const surface = this.resolveSurface?.()
+      if (surface?.archive === undefined) {
+        this.localError('deleteConversation', 'ui/archive-unavailable', sessionId)
+        return false
+      }
+      try {
+        await surface.archive(sessionId)
+      } catch (error) {
+        this.recordFailure('deleteConversation', error)
+        return false
+      }
+    }
+    const value = await this.call<DeleteTaskValue>('deleteConversation', () => this.remote.deleteTask({
+      queueId: context.queue.id,
+      taskId: input.taskId,
+      expectedRevision: context.queue.revision,
+    } satisfies DeleteTaskRequest))
+    if (value === undefined) return false
+    this.mergeQueue(value.queue)
+    this.adoptQueueRevision(value.queue)
+    this.live.update((state) => {
+      state.tasks = state.tasks.filter(candidate => candidate.id !== input.taskId)
+      state.runs = state.runs.filter(candidate => candidate.taskId !== input.taskId)
+    })
+    this.drafts.update((state) => {
+      state.queueTasks = state.queueTasks.filter(candidate => candidate.id !== input.taskId)
+      if (state.task?.draft.id === input.taskId) state.task = null
+    })
+    return true
+  }
+
+  /** Read the queue and full task a conversation action addresses. */
+  private async conversationDetail(
+    taskId: string,
+    operation: string,
+  ): Promise<{ detail: QueueDetailValue; queue: QueueDto; task: TaskDto } | undefined> {
+    const summary = this.live.getSnapshot().tasks.find(candidate => candidate.id === taskId)
+    if (summary === undefined) {
+      this.localError(operation, 'ui/task-missing')
+      return undefined
+    }
+    const detail = await this.call<QueueDetailValue>(operation, () => this.remote.getQueue({
+      queueId: summary.queueId,
+    } satisfies GetQueueRequest))
+    if (detail === undefined) return undefined
+    const task = detail.tasks.find(candidate => candidate.id === taskId)
+    if (task === undefined) {
+      this.localError(operation, 'ui/task-missing')
+      return undefined
+    }
+    return { detail, queue: detail.queue, task }
+  }
+
+  /** Build and insert one persistent child conversation under its parent. */
+  private async createChildConversation(
+    parentTaskId: string,
+    title: string,
+    promptOf: (parent: TaskDto) => string,
+    operation: string,
+  ): Promise<boolean> {
+    const context = await this.conversationDetail(parentTaskId, operation)
+    if (context === undefined) return false
+    const { detail, queue, task: parent } = context
+    if (parent.session === undefined) {
+      this.localError(operation, 'ui/session-missing', parentTaskId)
+      return false
+    }
+    const order = queue.taskOrder
+    const parentIndex = order.indexOf(parent.id)
+    let position = parentIndex < 0 ? order.length : parentIndex + 1
+    const childIds = new Set(detail.tasks
+      .filter(candidate => candidate.parentTaskId === parent.id)
+      .map(candidate => candidate.id))
+    while (position < order.length && childIds.has(order[position]!)) position += 1
+    const taskId = internalTaskId(queue.id, this.now())
+    const draft: TaskDraft = {
+      ...emptyTaskDraft(queue.id),
+      id: taskId,
+      title,
+      prompt: promptOf(parent),
+      workspaceId: parent.workspaceId,
+      cwd: parent.cwd,
+      preset: parent.preset,
+      model: { kind: 'inherit' },
+      skills: parent.skills,
+      dependsOn: [parent.id],
+      parentTaskId: parent.id,
+      priority: parent.priority,
+      handoff: parent.handoff,
+      enabled: true,
+    }
+    const value = await this.call<TaskValue>(operation, () => this.remote.upsertTask({
+      taskId,
+      expectedRevision: 0,
+      draft,
+      position,
+      queueRevision: queue.revision,
+    } satisfies UpsertTaskRequest))
+    if (value === undefined) return false
+    this.mergeTask(value.task)
+    if (value.queue !== undefined) this.mergeQueue(value.queue)
+    return true
   }
 
   /** Remove one retained failure. */

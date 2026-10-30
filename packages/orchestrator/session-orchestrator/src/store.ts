@@ -278,6 +278,48 @@ export class SessionOrchestrator extends Service {
   }
 
   /**
+   * Remove every orchestration record owned by one task identity.
+   *
+   * A conversation deletion removes the task's attempts, operations, handoffs,
+   * skips, interventions and warden audits while leaving every other task in the
+   * queue untouched. The task definition itself is deleted with it. Workspace
+   * files and Sessions are outside this domain; the caller archives them
+   * separately when requested.
+   * @param id - Task identity whose records must be removed.
+   * @returns resolution after durability.
+   */
+  deleteTaskRecords(id: TaskId): Promise<void> {
+    return this.enqueue(async () => {
+      const {
+        tasks, runs, operations, handoffs, skips, interventions, wardenAudits,
+      } = this.requireTables()
+      const runIds = new Set<RunId>()
+      for (const [runId, run] of runs.entries()) {
+        if (run.taskId === id) runIds.add(runId)
+      }
+      const operationIds = new Set<OperationId>()
+      for (const [operationId, operation] of operations.entries()) {
+        if (runIds.has(operation.runId)) operationIds.add(operationId)
+      }
+      for (const [operationId, handoff] of handoffs.entries()) {
+        if (operationIds.has(handoff.operationId)) await handoffs.delete(operationId)
+      }
+      for (const [runId] of skips.entries()) {
+        if (runIds.has(runId)) await skips.delete(runId)
+      }
+      for (const [recordId, record] of interventions.entries()) {
+        if (runIds.has(record.runId) || record.taskId === id) await interventions.delete(recordId)
+      }
+      for (const [recordId, record] of wardenAudits.entries()) {
+        if (runIds.has(record.runId) || record.taskId === id) await wardenAudits.delete(recordId)
+      }
+      for (const operationId of operationIds) await operations.delete(operationId)
+      for (const runId of runIds) await runs.delete(runId)
+      await tasks.delete(id)
+    })
+  }
+
+  /**
    * Apply one ordered-list edit as a single store-chain job.
    *
    * Deletes, rewritten dependencies, new tasks and the queue revision are

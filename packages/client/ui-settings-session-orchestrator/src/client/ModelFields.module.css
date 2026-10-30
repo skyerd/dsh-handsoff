@@ -1,0 +1,224 @@
+.group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+}
+
+.rowWrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.rowWrap + .rowWrap {
+  border-top: 1px solid var(--dsw-alias-separator-primary);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6px;
+  width: 100%;
+  min-width: 0;
+  padding: 7px 6px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: var(--dsw-radius-md);
+  background: transparent;
+  color: var(--dsw-alias-label-primary);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 140ms ease, box-shadow 140ms ease;
+}
+
+.row:hover:not(:disabled) {
+  background: var(--dsw-alias-bg-layer-1);
+  box-shadow: var(--dsw-shadow-lv1-blur);
+}
+
+.row:focus-visible {
+  outline: none;
+  background: var(--dsw-alias-bg-layer-1);
+  box-shadow:
+    0 0 0 1px var(--dsw-alias-border-l3),
+    var(--dsw-shadow-lv1-blur);
+}
+
+.row:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.rowLabel {
+  flex: none;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--dsw-alias-label-secondary);
+}
+
+.rowValue {
+  min-width: 0;
+  margin-left: 6px;
+  overflow: hidden;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--dsw-alias-label-primary);
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chevron,
+.chevronUp {
+  flex: none;
+  margin-left: 2px;
+  color: var(--dsw-alias-label-tertiary);
+}
+
+.chevronUp {
+  transform: rotate(180deg);
+}
+
+/* The option panel floats below its row and never changes the form height. */
+.popover {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: min(340px, calc(100vw - 48px));
+  max-height: 310px;
+  padding: 6px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 1px solid var(--dsw-alias-border-l2);
+  border-radius: var(--dsw-radius-md);
+  background: var(--dsw-alias-bg-layer-1);
+  box-shadow: var(--dsw-shadow-lv2);
+  animation: modelMenuIn 140ms ease-out;
+}
+
+.popoverUp {
+  top: auto;
+  bottom: calc(100% + 4px);
+}
+
+@keyframes modelMenuIn {
+  from {
+    opacity: 0;
+    transform: translateY(-3px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.search {
+  margin: 2px 4px 4px;
+  padding: 6px 8px;
+  border: none;
+  border-bottom: 1px solid var(--dsw-alias-separator-primary);
+  background: transparent;
+  color: var(--dsw-alias-label-primary);
+  font: inherit;
+  font-size: 11px;
+  outline: none;
+}
+
+.search::placeholder {
+  color: var(--dsw-alias-label-tertiary);
+}
+
+.optionList {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  max-height: 260px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+  padding: 7px 8px;
+  border: none;
+  border-radius: var(--dsw-radius-sm);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 120ms ease, box-shadow 120ms ease;
+}
+
+.option:hover,
+.option:focus-visible {
+  outline: none;
+  background: var(--dsw-alias-bg-layer-2);
+  box-shadow: var(--dsw-shadow-lv1-blur);
+}
+
+.option[aria-selected='true'],
+.optionSelected {
+  background: var(--dsw-alias-bg-module-platform);
+}
+
+.optionText {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.optionLabel {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--dsw-alias-label-primary);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.45;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.optionDescription {
+  color: var(--dsw-alias-label-tertiary);
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.check {
+  flex: none;
+  color: var(--dsw-alias-label-primary);
+}
+
+.hint {
+  padding: 5px 6px 3px;
+  color: var(--dsw-alias-label-tertiary);
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .row,
+  .option,
+  .popover {
+    animation: none;
+    transition: none;
+  }
+}

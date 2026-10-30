@@ -832,6 +832,7 @@ function fakeSurface(options: {
   readonly known?: boolean
   readonly archived?: boolean
   readonly fail?: Error
+  readonly refresh?: () => Promise<void>
 } = {}): { readonly opened: string[]; readonly surface: SessionOpenSurface } {
   const opened: string[] = []
   const surface: SessionOpenSurface = {
@@ -840,6 +841,7 @@ function fakeSurface(options: {
       opened.push(sessionId)
     },
     knows: () => options.known,
+    ...(options.refresh === undefined ? {} : { refresh: options.refresh }),
     ...(options.archived === undefined ? {} : { archived: () => options.archived === true }),
   }
   return { opened, surface }
@@ -894,6 +896,64 @@ describe('conversation links', () => {
       detail: 'session-1',
     })
     expect(opened).toEqual([])
+  })
+
+  it('refreshes a stale catalog before refusing a Host-created Session', async () => {
+    let known = false
+    let refreshes = 0
+    const opened: string[] = []
+    const surface: SessionOpenSurface = {
+      open: (sessionId) => { opened.push(sessionId) },
+      knows: () => known,
+      refresh: async () => {
+        refreshes += 1
+        known = true
+      },
+    }
+    const service = makeLinkedClient(new FakeOrchestratorRemote(), surface)
+    cleanups.push(() => service.dispose())
+
+    // Automated runs create Sessions on the Host, so a ready snapshot can
+    // predate them; the link must pull once and then open the exact identity.
+    await service.openSession(sessionLink({ sessionId: 'session-run-1' }))
+    expect(refreshes).toBe(1)
+    expect(opened).toEqual(['session-run-1'])
+    expect(service.drafts.getSnapshot().errors).toEqual([])
+  })
+
+  it('keeps the missing refusal when the refreshed catalog still lacks it', async () => {
+    const remote = new FakeOrchestratorRemote()
+    const { opened, surface } = fakeSurface({ known: false, refresh: async () => {} })
+    const service = makeLinkedClient(remote, surface)
+    cleanups.push(() => service.dispose())
+
+    await service.openSession(sessionLink())
+    expect(service.drafts.getSnapshot().errors[0]).toMatchObject({ code: 'ui/session-missing' })
+    expect(opened).toEqual([])
+  })
+
+  it('falls back to the current catalog when the refresh itself fails', async () => {
+    const remote = new FakeOrchestratorRemote()
+    const refresh = async () => { throw new Error('catalog offline') }
+    const { opened, surface } = fakeSurface({ known: false, refresh })
+    const service = makeLinkedClient(remote, surface)
+    cleanups.push(() => service.dispose())
+
+    await service.openSession(sessionLink())
+    expect(service.drafts.getSnapshot().errors[0]).toMatchObject({ code: 'ui/session-missing' })
+    expect(opened).toEqual([])
+  })
+
+  it('does not pull the catalog when it already knows the Session', async () => {
+    const remote = new FakeOrchestratorRemote()
+    const refresh = vi.fn(async () => {})
+    const { opened, surface } = fakeSurface({ known: true, refresh })
+    const service = makeLinkedClient(remote, surface)
+    cleanups.push(() => service.dispose())
+
+    await service.openSession(sessionLink())
+    expect(refresh).not.toHaveBeenCalled()
+    expect(opened).toEqual(['session-1'])
   })
 
   it('opens a route by identity and reports what the catalog and archive say', async () => {

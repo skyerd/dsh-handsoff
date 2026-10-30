@@ -14,3 +14,17 @@ node_modules/
 *.log
 .DS_Store
 Thumbs.db
+
+# Local design notes and scratch material — never published.
+没必要读这个文件夹/
+
+# User-supplied Live2D skins and locally exported frames. These follow their
+# own personal/non-commercial terms and must never enter the repository or npm.
+DeepSeek免费公皮/
+*.moc3
+*.model3.json
+*.motion3.json
+*.exp3.json
+*.physics3.json
+*.cdi3.json
+*.psd

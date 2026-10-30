@@ -93,9 +93,12 @@ describe('settings section contribution', () => {
     await fiber
 
     expect(locale.bind(NS)('nav')).toBe(en.nav)
-    // The page owns two seats: the settings section and the frame-wide notice
-    // that reports a conversation link this browser could not open.
-    expect(slots.entries.map(entry => entry.options.name)).toEqual(['shell.overlay', 'settings.section'])
+    // The page owns three seats: the settings section, the frame-wide notice
+    // for a conversation link this browser could not open, and the opt-in
+    // desktop pet that floats over the whole Harness window.
+    expect(slots.entries.map(entry => entry.options.name)).toEqual([
+      'shell.overlay', 'shell.overlay', 'settings.section',
+    ])
     const entry = slots.entries.find(candidate => candidate.options.name === 'settings.section')
     expect(entry?.options).toMatchObject({
       name: 'settings.section',
@@ -105,9 +108,12 @@ describe('settings section contribution', () => {
     })
     expect(entry?.options.label?.()).toBe(en.nav)
     expect(typeof entry?.options.inject).toBe('function')
-    const notice = slots.entries.find(candidate => candidate.options.name === 'shell.overlay')
+    const notice = slots.entries.find(candidate => candidate.options.id === 'session-orchestrator-session-notice')
     expect(notice?.options).toMatchObject({ id: 'session-orchestrator-session-notice', locale: NS })
     expect(typeof notice?.options.inject).toBe('function')
+    const pet = slots.entries.find(candidate => candidate.options.id === 'session-orchestrator-desktop-pet')
+    expect(pet?.options).toMatchObject({ id: 'session-orchestrator-desktop-pet', locale: NS })
+    expect(typeof pet?.options.inject).toBe('function')
     expect(remote.opened).toBe(true)
     expect(remote.signal?.aborted).toBe(false)
 

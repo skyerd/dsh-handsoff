@@ -187,7 +187,7 @@ export type {
   PlannerSkipped,
 } from './planner.ts'
 export { LaunchFailure, Scheduler, taskProviderKey } from './scheduler.ts'
-export { frozenModelOf, resolveTaskModel } from './model-route.ts'
+export { frozenModelOf, previousConversationModel, resolveTaskModel } from './model-route.ts'
 export type {
   RunLauncher,
   RunLauncherRequest,

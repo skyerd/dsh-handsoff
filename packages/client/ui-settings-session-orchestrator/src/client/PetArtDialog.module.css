@@ -1,0 +1,128 @@
+/* Local artwork importer. */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 46;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgb(20 20 19 / 55%);
+  backdrop-filter: blur(2px);
+}
+
+.dialog {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  width: min(620px, 100%);
+  max-height: 88vh;
+  overflow-y: auto;
+  padding: 18px;
+  border: 1px solid var(--dsw-alias-border-l2);
+  border-radius: var(--dsw-radius-lg);
+  background: var(--dsw-alias-bg-layer-1);
+  box-shadow: var(--dsw-shadow-lv2);
+  box-sizing: border-box;
+}
+
+.head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.eyebrow {
+  font-size: 9.5px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dsw-alias-label-tertiary);
+}
+
+.title {
+  margin: 0;
+  font-family: 'Poppins', var(--dsw-font-family-brand);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--dsw-alias-label-primary);
+}
+
+.intro,
+.note,
+.localOnly,
+.license,
+.empty,
+.message,
+.error {
+  margin: 0;
+  font-size: 11.5px;
+  line-height: 1.55;
+  color: var(--dsw-alias-label-secondary);
+}
+
+.note {
+  color: var(--dsw-alias-label-tertiary);
+  font-size: 10.5px;
+}
+
+.localOnly {
+  padding: 8px 10px;
+  border-left: 3px solid #d98600;
+  border-radius: 8px;
+  background: var(--dsw-alias-bg-layer-2);
+  color: var(--dsw-alias-label-primary);
+}
+
+.expected {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-top: 8px;
+  border-top: 1px solid var(--dsw-alias-separator-primary);
+}
+
+.names,
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.message {
+  color: var(--dsw-alias-label-primary);
+}
+
+.error {
+  color: var(--dsw-alias-state-error-primary);
+}
+
+.installed {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 8px;
+  border-top: 1px solid var(--dsw-alias-separator-primary);
+}
+
+.license {
+  font-size: 10px;
+  color: var(--dsw-alias-label-tertiary);
+}
+
+@media (max-width: 640px) {
+  .dialog {
+    padding: 12px;
+  }
+}

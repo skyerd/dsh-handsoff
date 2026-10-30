@@ -35,9 +35,9 @@ import { SessionId } from '@deepseek-ai/dsh-session'
 import type {} from '@deepseek-ai/dsh-user-approval'
 import type { OperationId, RunId } from './brand.ts'
 import { OrchestratorError } from './errors.ts'
-import { frozenModelOf, resolveTaskModel } from './model-route.ts'
+import { frozenModelOf, previousConversationModel, resolveTaskModel } from './model-route.ts'
 import type { SessionOrchestratorMessageSource } from './message-source.ts'
-import type { OperationRecord, QueueRecord, RunRecord, TaskSpec } from './schema.ts'
+import type { OperationRecord, QueueRecord, RunRecord, TaskSpec, ModelPolicy } from './schema.ts'
 
 /** Persisted run, queue and operation state the supervisor advances under CAS. */
 export interface SupervisorStore {
@@ -56,6 +56,23 @@ export interface SupervisorStore {
    * @returns the stored queue, or `undefined` when absent.
    */
   getQueue?(id: TaskSpec['queueId']): QueueRecord | undefined
+  /**
+   * Read every stored task, when the store exposes tasks.
+   *
+   * The supervisor uses it to walk backwards from an inheriting task to the
+   * previous conversation's effective route. A store without tasks keeps the
+   * legacy task-only resolution.
+   * @returns stored tasks in key order.
+   */
+  listTasks?(): readonly TaskSpec[]
+  /**
+   * Read every stored run, when the store exposes runs.
+   *
+   * Together with {@link listTasks}, this resolves the previous task's latest
+   * attempt so a route change that already happened can be inherited.
+   * @returns stored attempts in key order.
+   */
+  listRuns?(): readonly RunRecord[]
   /**
    * Replace one run under revision CAS.
    * @param id - run identity.
@@ -765,7 +782,7 @@ export class RunSupervisor {
     // run without that snapshot may resolve the task/pipeline policy, and even
     // then the route is fixed before the handle is re-held.
     const model = run.configSnapshot === undefined
-      ? resolveTaskModel(request.task, this.store.getQueue?.(request.task.queueId))
+      ? resolveTaskModel(request.task, this.store.getQueue?.(request.task.queueId), this.previousModelOf(request.task))
       : frozenModelOf(run.configSnapshot)
     const agentOptions: AgentOptions = {}
     if (model.kind === 'fixed') {
@@ -934,6 +951,25 @@ export class RunSupervisor {
   }
 
   /**
+   * Resolve the route the previous task's conversation actually used.
+   *
+   * The walk starts at the task immediately before this one in the pipeline's
+   * order and skips a predecessor that never ran and never pinned a route.
+   * Besides the durable run snapshot, a fixed predecessor policy is used when
+   * the run record predates the completed boundary that captures it.
+   * @param task - task whose inherited route is required.
+   * @returns a fixed route to inherit, or undefined when no predecessor has one.
+   */
+  private previousModelOf(task: TaskSpec): ModelPolicy | undefined {
+    return previousConversationModel(
+      task,
+      this.store.getQueue?.(task.queueId),
+      this.store.listTasks?.() ?? [],
+      this.store.listRuns?.() ?? [],
+    )
+  }
+
+  /**
    * Create the agent and install its observation without submitting anything.
    * @param task - the task whose model/preset select the agent.
    * @param run - the stored run, the durable authority for this attempt.
@@ -948,7 +984,7 @@ export class RunSupervisor {
     sessionId: SessionId,
   ): Promise<OpenedRun> {
     const workspace = this.resolveWorkspace(task)
-    const model = resolveTaskModel(task, this.store.getQueue?.(task.queueId))
+    const model = resolveTaskModel(task, this.store.getQueue?.(task.queueId), this.previousModelOf(task))
     const agentOptions: AgentOptions = {}
     if (model.kind === 'fixed') {
       agentOptions.provider = model.provider

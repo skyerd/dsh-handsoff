@@ -65,6 +65,7 @@ let mounted
 let disposed = false
 const stubNamespace = new Proxy({}, { get: (_t, key) => (typeof key === 'string' ? async () => ({}) : undefined) })
 const slots = []
+const slotDefinitions = []
 const effects = []
 const sandboxCtx = {
   remote: {
@@ -79,7 +80,7 @@ const sandboxCtx = {
   inject: (names) => { effects.push(`inject:${names.join(',')}`) },
   slots: {
     inject: (slot, register) => { slots.push(slot); return register() },
-    register: (definition) => definition,
+    register: (definition) => { slotDefinitions.push(definition); return definition },
   },
 }
 const disposer = await exports.apply(sandboxCtx)
@@ -96,7 +97,10 @@ const missing = required.filter((name) => !ids.has(name))
 check(`mounted manifest covers all ${required.length} required methods`, missing.length === 0,
   `${ids.size} methods mounted${missing.length ? `, missing: ${missing.join(',')}` : ''}`)
 check('settings.section registered', slots.includes('settings.section'))
-check('shell.overlay (SessionNotice) registered', slots.includes('shell.overlay'))
+check('shell.overlay (SessionNotice) registered',
+  slotDefinitions.some(definition => definition.id === 'session-orchestrator-session-notice'))
+check('shell.overlay (DesktopPet) registered',
+  slotDefinitions.some(definition => definition.id === 'session-orchestrator-desktop-pet'))
 check('apply() returns a disposer', typeof disposer === 'function')
 
 // ---- 2. host halves: parse -------------------------------------------------

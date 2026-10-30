@@ -836,7 +836,12 @@ export class SessionOrchestratorController extends TypertRemoteService {
   }
 
   /**
-   * Delete one task and rewrite every remaining dependency in the same commit.
+   * Delete one task, its conversation records and every remaining dependency.
+   *
+   * A conversation deletion is scoped to this task: its attempts, operations,
+   * handoffs, skips, interventions and warden audits are removed too, while every
+   * other task in the pipeline stays untouched. Workspace files and Sessions
+   * remain outside this domain.
    * @param request - queue identity, task identity and observed queue revision.
    * @param signal - carrier cancellation; checked before the durable write.
    * @returns the queue and the deleted identity.
@@ -855,15 +860,13 @@ export class SessionOrchestratorController extends TypertRemoteService {
     if (queue.revision !== expectedRevision) throw revisionConflict('queue', queueId, expectedRevision)
     const task = store.getTask(TaskId(taskId))
     if (task === undefined || task.queueId !== queueId) throw notFound('task', taskId)
-    if (store.listRuns().some(run => run.taskId === task.id)) {
-      throw invalidTransition('task', taskId)
-    }
     const tasks = this.queueTaskList(queue.id)
     const final = new Map(tasks.filter(candidate => candidate.id !== task.id)
       .map(candidate => [candidate.id, candidate]))
     const order = this.normalizedTaskOrder(queue, tasks).filter(candidate => candidate !== task.id)
     try {
       const written = await this.writeTaskList(queue, order, final, [], [task.id], new Set())
+      await store.deleteTaskRecords(task.id)
       return { queue: this.queueDto(written), deletedTaskId: taskId }
     } catch (error) {
       this.reject(error, { kind: 'task', id: taskId }, expectedRevision)

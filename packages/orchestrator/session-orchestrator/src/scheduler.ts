@@ -26,7 +26,7 @@ import type { GlobalSettings, OperationRecord, QueueRecord, RunRecord, TaskSpec 
 import { OrchestratorError } from './errors.ts'
 import { MAX_CONCURRENT_RUNS } from './limits.ts'
 import { initialPromptOperationId, initialPromptRequestHash } from './operation.ts'
-import { resolveTaskModel } from './model-route.ts'
+import { previousConversationModel, resolveTaskModel } from './model-route.ts'
 import { isActiveRunState, planReadyTasks } from './planner.ts'
 import type { HumanSkip, PlannerReady } from './planner.ts'
 import type { WorkspaceKeyResolver } from './workspace-key.ts'
@@ -338,9 +338,18 @@ export class Scheduler {
       const task = tasksById.get(entry.taskId)
       if (task === undefined) continue
       // Resolve inheritance once, before the Session exists: a fixed pipeline
-      // route becomes this attempt's route, and later draft edits never switch
-      // the conversation this launch creates.
-      const routed = { ...task, model: resolveTaskModel(task, queuesById.get(task.queueId)) }
+      // route becomes this attempt's route, and an inheriting task takes the
+      // route its previous conversation actually used. Later draft edits never
+      // switch the conversation this launch creates.
+      const queue = queuesById.get(task.queueId)
+      const routed = {
+        ...task,
+        model: resolveTaskModel(
+          task,
+          queue,
+          previousConversationModel(task, queue, tasks, runs),
+        ),
+      }
 
       const key = this.workspaceKeys.resolve(routed)
       if (!key.ok) {

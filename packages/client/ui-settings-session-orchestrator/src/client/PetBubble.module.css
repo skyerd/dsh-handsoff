@@ -1,0 +1,128 @@
+/* One compact speech card, reused in the page and in the floating overlay. */
+
+.bubble {
+  --pet-accent: #4b7bff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px 10px;
+  border: 1px solid var(--dsw-alias-border-l2);
+  border-left: 3px solid var(--pet-accent);
+  border-radius: 12px 12px 12px 5px;
+  background: var(--dsw-alias-bg-layer-1);
+  box-shadow: 0 4px 14px rgb(18 36 92 / 10%);
+  box-sizing: border-box;
+}
+
+.inline {
+  width: 100%;
+  max-width: 360px;
+}
+
+.floating {
+  width: 252px;
+  padding: 9px 11px;
+  box-shadow: 0 10px 28px rgb(18 36 92 / 20%);
+}
+
+.toneInfo {
+  --pet-accent: #4b7bff;
+}
+
+.toneSuccess {
+  --pet-accent: #2c9b6a;
+}
+
+.toneWarning {
+  --pet-accent: #d98600;
+}
+
+.toneDanger {
+  --pet-accent: #d14b4b;
+}
+
+.textRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  min-width: 0;
+}
+
+.text {
+  margin: 0;
+  flex: 1;
+  font-family: 'Lora', Georgia, var(--dsw-font-family-brand);
+  font-size: 11.5px;
+  line-height: 1.55;
+  color: var(--dsw-alias-label-primary);
+  overflow-wrap: anywhere;
+}
+
+.dismiss {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin: -1px -3px 0 0;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--dsw-alias-label-tertiary);
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.dismiss:hover,
+.dismiss:focus-visible {
+  background: var(--dsw-alias-bg-layer-2);
+  color: var(--dsw-alias-label-primary);
+}
+
+.detail {
+  font-size: 9.5px;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  color: var(--dsw-alias-label-tertiary);
+  font-variant-numeric: tabular-nums;
+}
+
+.progress {
+  width: 100%;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--dsw-alias-bg-layer-2);
+  overflow: hidden;
+}
+
+.progressFill {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--pet-accent);
+  transition: width 240ms ease;
+}
+
+.tail {
+  position: absolute;
+  right: 26px;
+  bottom: -6px;
+  width: 11px;
+  height: 11px;
+  border-right: 1px solid var(--dsw-alias-border-l2);
+  border-bottom: 1px solid var(--dsw-alias-border-l2);
+  background: var(--dsw-alias-bg-layer-1);
+  transform: rotate(45deg);
+}
+
+.tailLeft {
+  right: auto;
+  left: 38px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progressFill {
+    transition: none;
+  }
+}

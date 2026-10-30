@@ -228,6 +228,7 @@ export function errorExplanationKey(code: string): SessionOrchestratorSettingsLo
     case 'ui/session-archived': return 'explanationUiSessionArchived'
     case 'ui/session-missing': return 'explanationUiSessionMissing'
     case 'ui/session-open-failed': return 'explanationUiSessionOpenFailed'
+    case 'ui/model-route-required': return 'explanationUiModelRouteRequired'
     case 'ui/archive-unavailable': return 'explanationUiArchiveUnavailable'
     case 'ui/archive-failed': return 'explanationUiArchiveFailed'
     default: return 'explanationUnknown'

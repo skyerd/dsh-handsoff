@@ -7,7 +7,7 @@ window.__ModuleLoader__.load({
 	try {
 		const tag = document.createElement("style");
 		tag.setAttribute("data-dsh-handsoff", "");
-		tag.textContent = "/* packages/client/ui-settings-session-orchestrator/src/client/ErrorPanel.module.css */\n.ErrorPanel_panel {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  padding: 10px 12px;\n  border: 1px solid var(--dsw-alias-state-error-primary);\n  border-radius: 10px;\n  background: var(--dsw-alias-interactive-bg-hover-danger);\n}\n.ErrorPanel_header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 8px;\n}\n.ErrorPanel_title {\n  margin: 0;\n  font-size: 12px;\n  font-weight: 700;\n  color: var(--dsw-alias-state-error-primary);\n}\n.ErrorPanel_list {\n  margin: 0;\n  padding: 0;\n  list-style: none;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.ErrorPanel_row {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  padding-top: 8px;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n}\n.ErrorPanel_row:first-child {\n  padding-top: 0;\n  border-top: none;\n}\n.ErrorPanel_rowHead {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  flex-wrap: wrap;\n}\n.ErrorPanel_operation {\n  font-size: 11px;\n  font-family: var(--dsw-font-mono, ui-monospace, monospace);\n  color: var(--dsw-alias-label-secondary);\n}\n.ErrorPanel_disclosure {\n  font-size: 11px;\n  color: var(--dsw-alias-label-tertiary);\n}\n.ErrorPanel_facts {\n  display: grid;\n  grid-template-columns: max-content minmax(0, 1fr);\n  gap: 4px 10px;\n  margin: 6px 0 0;\n  overflow-wrap: anywhere;\n}\n.ErrorPanel_facts dt {\n  color: var(--dsw-alias-label-tertiary);\n}\n.ErrorPanel_facts dd {\n  margin: 0;\n  color: var(--dsw-alias-label-secondary);\n}\n.ErrorPanel_facts code {\n  font-family: var(--dsw-font-mono, ui-monospace, monospace);\n  font-size: 11px;\n}\n.ErrorPanel_time {\n  font-size: 11px;\n  color: var(--dsw-alias-label-tertiary);\n}\n.ErrorPanel_message,\n.ErrorPanel_explanation,\n.ErrorPanel_detail {\n  margin: 0;\n  font-size: 12px;\n  line-height: 1.5;\n}\n.ErrorPanel_message {\n  color: var(--dsw-alias-label-primary);\n}\n.ErrorPanel_explanation {\n  color: var(--dsw-alias-label-secondary);\n}\n.ErrorPanel_detail {\n  color: var(--dsw-alias-label-tertiary);\n  overflow-wrap: anywhere;\n}\n.ErrorPanel_detail code {\n  font-family: var(--dsw-font-mono, ui-monospace, monospace);\n  font-size: 11px;\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/QueueDeleteDialog.module.css */\n.QueueDeleteDialog_dialog {\n  width: min(440px, 100%);\n  max-height: 100%;\n  overflow: hidden;\n}\n.QueueDeleteDialog_content {\n  min-height: 0;\n  overflow-y: auto;\n  overscroll-behavior: contain;\n}\n.QueueDeleteDialog_notice {\n  margin: 0;\n  font-size: 12.5px;\n  line-height: 1.65;\n  color: var(--dsw-alias-label-secondary);\n}\n.QueueDeleteDialog_archiveBlock {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  margin-top: 16px;\n  padding: 10px 12px;\n  border: 1px solid var(--dsw-alias-separator-primary);\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-2);\n}\n.QueueDeleteDialog_hint {\n  margin: 0 0 0 24px;\n  font-size: 10.5px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-tertiary);\n}\n.QueueDeleteDialog_acknowledgeRow {\n  margin-top: 16px;\n  padding-top: 14px;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n}\n.QueueDeleteDialog_action {\n  min-width: 72px;\n}\n.QueueDeleteDialog_confirm {\n  min-width: 112px;\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/SelectMenu.module.css */\n.SelectMenu_root {\n  position: relative;\n  min-width: 0;\n}\n.SelectMenu_trigger {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  width: 100%;\n  min-width: 0;\n  height: 34px;\n  padding: 0 9px;\n  box-sizing: border-box;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-sm);\n  background: var(--dsw-alias-bg-layer-1);\n  color: var(--dsw-alias-label-primary);\n  font: inherit;\n  font-size: 12px;\n  line-height: 1.5;\n  text-align: left;\n  cursor: pointer;\n  transition: border-color 140ms ease, background-color 120ms ease;\n}\n.SelectMenu_trigger:hover:not(:disabled),\n.SelectMenu_trigger[aria-expanded=true] {\n  border-color: var(--dsw-alias-border-l3);\n}\n.SelectMenu_trigger:focus-visible {\n  outline: 2px solid var(--dsw-alias-state-business-primary);\n  outline-offset: 1px;\n}\n.SelectMenu_trigger:disabled {\n  opacity: 0.55;\n  cursor: not-allowed;\n}\n.SelectMenu_leading {\n  display: inline-flex;\n  flex: none;\n  align-items: center;\n  color: var(--dsw-alias-label-tertiary);\n}\n.SelectMenu_value {\n  flex: 1;\n  min-width: 0;\n  overflow: hidden;\n  font-weight: 500;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.SelectMenu_placeholder {\n  font-weight: 400;\n  color: var(--dsw-alias-label-tertiary);\n}\n.SelectMenu_chevron {\n  flex: none;\n  margin-left: auto;\n  color: var(--dsw-alias-label-tertiary);\n  transition: transform 160ms ease;\n}\n.SelectMenu_chevronOpen {\n  transform: rotate(180deg);\n}\n.SelectMenu_menu {\n  position: absolute;\n  top: calc(100% + 4px);\n  left: 0;\n  z-index: 12;\n  display: flex;\n  flex-direction: column;\n  gap: 1px;\n  width: 100%;\n  min-width: 0;\n  max-width: 100%;\n  max-height: 216px;\n  padding: 4px;\n  overflow-y: auto;\n  overscroll-behavior: contain;\n  box-sizing: border-box;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: var(--dsw-shadow-lv2);\n  animation: SelectMenu_selectMenuIn 140ms ease-out;\n}\n.SelectMenu_menuUp {\n  top: auto;\n  bottom: calc(100% + 4px);\n}\n@keyframes SelectMenu_selectMenuIn {\n  from {\n    opacity: 0;\n    transform: translateY(-3px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.SelectMenu_option {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  width: 100%;\n  min-width: 0;\n  padding: 7px 8px;\n  border: none;\n  border-radius: var(--dsw-radius-sm);\n  background: transparent;\n  color: inherit;\n  font: inherit;\n  text-align: left;\n  cursor: pointer;\n  transition: background-color 120ms ease;\n}\n.SelectMenu_option:hover,\n.SelectMenu_option[data-active=true] {\n  background: var(--dsw-alias-bg-layer-2);\n}\n.SelectMenu_option[aria-selected=true] {\n  background: var(--dsw-alias-state-business-tertiary);\n}\n.SelectMenu_optionText {\n  display: flex;\n  flex: 1;\n  flex-direction: column;\n  gap: 1px;\n  min-width: 0;\n}\n.SelectMenu_optionLabel,\n.SelectMenu_optionMuted {\n  min-width: 0;\n  overflow: hidden;\n  font-size: 12px;\n  font-weight: 500;\n  line-height: 1.45;\n  color: var(--dsw-alias-label-primary);\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.SelectMenu_optionMuted {\n  font-weight: 400;\n  color: var(--dsw-alias-label-tertiary);\n}\n.SelectMenu_optionDescription {\n  min-width: 0;\n  overflow: hidden;\n  font-size: 10px;\n  line-height: 1.4;\n  color: var(--dsw-alias-label-tertiary);\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.SelectMenu_check {\n  flex: none;\n  color: var(--dsw-alias-state-business-primary);\n}\n@media (prefers-reduced-motion: reduce) {\n  .SelectMenu_menu {\n    animation: none;\n  }\n  .SelectMenu_chevron {\n    transition: none;\n  }\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/Fields.module.css */\n.Fields_field {\n  display: flex;\n  flex-direction: column;\n  gap: 5px;\n  min-width: 0;\n}\n.Fields_label {\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 1.4;\n  letter-spacing: 0.01em;\n  color: var(--dsw-alias-label-secondary);\n}\n.Fields_hint {\n  font-size: 10px;\n  line-height: 1.4;\n  color: var(--dsw-alias-label-tertiary);\n}\n.Fields_textarea {\n  width: 100%;\n  box-sizing: border-box;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-sm);\n  padding: 7px 9px;\n  background: var(--dsw-alias-bg-layer-1);\n  color: var(--dsw-alias-label-primary);\n  font: inherit;\n  font-size: 12px;\n  line-height: 1.55;\n  resize: vertical;\n  min-height: 92px;\n  transition: border-color 140ms ease;\n}\n.Fields_textarea:hover:not(:disabled) {\n  border-color: var(--dsw-alias-border-l3);\n}\n.Fields_textarea:focus-visible {\n  outline: 2px solid var(--dsw-alias-state-business-primary);\n  outline-offset: 1px;\n}\n.Fields_textarea:disabled {\n  opacity: 0.55;\n  cursor: not-allowed;\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/RenameDialog.module.css */\n.RenameDialog_dialog {\n  width: min(400px, 100%);\n  max-height: 100%;\n  overflow: hidden;\n}\n.RenameDialog_content {\n  min-height: 0;\n  overflow-y: auto;\n  overscroll-behavior: contain;\n}\n.RenameDialog_action {\n  min-width: 72px;\n}\n.RenameDialog_confirm {\n  min-width: 88px;\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/RowMenu.module.css */\n.RowMenu_root {\n  position: relative;\n  display: inline-flex;\n  flex: none;\n}\n.RowMenu_list {\n  position: absolute;\n  right: 0;\n  bottom: calc(100% + 6px);\n  z-index: 14;\n  display: flex;\n  flex-direction: column;\n  gap: 1px;\n  min-width: 152px;\n  padding: 5px;\n  box-sizing: border-box;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: var(--dsw-shadow-lv2);\n  animation: RowMenu_rowMenuIn 140ms ease-out;\n}\n@keyframes RowMenu_rowMenuIn {\n  from {\n    opacity: 0;\n    transform: translateY(3px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.RowMenu_item {\n  display: block;\n  width: 100%;\n  padding: 7px 10px;\n  border: none;\n  border-radius: var(--dsw-radius-sm);\n  background: transparent;\n  color: var(--dsw-alias-label-primary);\n  font: inherit;\n  font-size: 12px;\n  line-height: 1.45;\n  text-align: left;\n  white-space: nowrap;\n  cursor: pointer;\n  transition: background-color 120ms ease;\n}\n.RowMenu_item:hover:not(:disabled),\n.RowMenu_item:focus-visible {\n  background: var(--dsw-alias-bg-layer-2);\n  outline: none;\n}\n.RowMenu_item:disabled {\n  opacity: 0.55;\n  cursor: not-allowed;\n}\n.RowMenu_danger {\n  color: var(--dsw-alias-state-error-primary);\n}\n.RowMenu_danger:hover:not(:disabled),\n.RowMenu_danger:focus-visible {\n  background: var(--dsw-alias-interactive-bg-hover-danger);\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/WorkspaceField.module.css */\n.WorkspaceField_field {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  gap: 5px;\n  min-width: 0;\n}\n.WorkspaceField_label {\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 1.4;\n  letter-spacing: 0.01em;\n  color: var(--dsw-alias-label-secondary);\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/PipelineCreateDialog.module.css */\n.PipelineCreateDialog_panel {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n  padding: 16px;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-lg);\n  background:\n    linear-gradient(\n      180deg,\n      color-mix(in srgb, var(--dsw-alias-state-business-tertiary) 42%, transparent) 0%,\n      transparent 112px),\n    var(--dsw-alias-bg-layer-1);\n  box-shadow: var(--dsw-shadow-lv1-blur);\n}\n.PipelineCreateDialog_header {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  gap: 12px;\n  flex-wrap: wrap;\n  padding-bottom: 12px;\n  border-bottom: 1px solid var(--dsw-alias-separator-primary);\n}\n.PipelineCreateDialog_heading {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n}\n.PipelineCreateDialog_title {\n  margin: 0;\n  font-family: var(--dsw-font-family-brand);\n  font-size: 17px;\n  font-weight: 600;\n  line-height: 1.25;\n  letter-spacing: -0.015em;\n  color: var(--dsw-alias-label-primary);\n}\n.PipelineCreateDialog_badges {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 6px;\n}\n.PipelineCreateDialog_metaGrid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));\n  gap: 10px;\n  align-items: end;\n}\n.PipelineCreateDialog_stepsHead {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 8px;\n  padding-top: 2px;\n}\n.PipelineCreateDialog_stepsLabel {\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--dsw-alias-label-primary);\n}\n.PipelineCreateDialog_stepsMeta {\n  font-size: 11px;\n  color: var(--dsw-alias-label-tertiary);\n}\n.PipelineCreateDialog_promptList {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n}\n.PipelineCreateDialog_taskRow {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  padding: 12px;\n  box-sizing: border-box;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-2);\n  transition: border-color 160ms ease;\n}\n.PipelineCreateDialog_taskRow:focus-within {\n  border-color: var(--dsw-alias-border-l3);\n}\n.PipelineCreateDialog_taskHead {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  min-width: 0;\n}\n.PipelineCreateDialog_stepBadge {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  width: 24px;\n  height: 24px;\n  flex: none;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: 50%;\n  background: var(--dsw-alias-bg-layer-1);\n  color: var(--dsw-alias-label-secondary);\n  font-size: 11px;\n  font-weight: 600;\n  font-variant-numeric: tabular-nums;\n}\n.PipelineCreateDialog_taskName {\n  flex: 1;\n  min-width: 0;\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--dsw-alias-label-primary);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.PipelineCreateDialog_collapseButton {\n  width: 26px;\n  min-width: 26px;\n  height: 26px;\n  padding: 0;\n}\n.PipelineCreateDialog_chevron {\n  color: var(--dsw-alias-label-tertiary);\n  transition: transform 160ms ease;\n}\n.PipelineCreateDialog_chevronCollapsed {\n  color: var(--dsw-alias-label-tertiary);\n  transform: rotate(180deg);\n}\n.PipelineCreateDialog_taskRowCollapsed {\n  gap: 7px;\n  padding: 10px 12px;\n}\n.PipelineCreateDialog_taskPreview {\n  display: flex;\n  align-items: flex-start;\n  gap: 8px;\n  min-width: 0;\n}\n.PipelineCreateDialog_previewText {\n  flex: 1;\n  min-width: 0;\n  margin: 0;\n  font-size: 11px;\n  line-height: 1.55;\n  color: var(--dsw-alias-label-secondary);\n  display: -webkit-box;\n  -webkit-line-clamp: 2;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n  overflow-wrap: anywhere;\n}\n.PipelineCreateDialog_taskControls {\n  display: flex;\n  align-items: flex-end;\n  flex-wrap: wrap;\n  gap: 10px;\n}\n.PipelineCreateDialog_routeFields {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));\n  gap: 8px;\n  flex: 1 1 240px;\n  min-width: 0;\n}\n.PipelineCreateDialog_skillField {\n  flex: 0 1 150px;\n  min-width: 130px;\n}\n.PipelineCreateDialog_taskFoot {\n  display: flex;\n  align-items: flex-end;\n  justify-content: flex-end;\n  flex: 0 0 auto;\n  margin-left: auto;\n}\n.PipelineCreateDialog_footer {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 8px;\n  flex-wrap: wrap;\n  padding-top: 10px;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n}\n.PipelineCreateDialog_footerActions {\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n  flex-wrap: wrap;\n  gap: 8px;\n  margin-left: auto;\n}\n.PipelineCreateDialog_warning {\n  margin: 0;\n  font-size: 11px;\n  line-height: 1.5;\n  color: var(--dsw-alias-state-warn-label);\n}\n.PipelineCreateDialog_optional {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  gap: 8px;\n  padding-top: 8px;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n  font-size: 11px;\n  color: var(--dsw-alias-label-tertiary);\n}\n.PipelineCreateDialog_optional > summary {\n  cursor: pointer;\n  color: var(--dsw-alias-label-tertiary);\n}\n.PipelineCreateDialog_optional > summary:hover {\n  color: var(--dsw-alias-label-secondary);\n}\n@media (max-width: 640px) {\n  .PipelineCreateDialog_panel {\n    padding: 14px;\n  }\n  .PipelineCreateDialog_metaGrid {\n    grid-template-columns: minmax(0, 1fr);\n  }\n  .PipelineCreateDialog_routeFields,\n  .PipelineCreateDialog_skillField {\n    flex: 1 1 100%;\n    min-width: 0;\n  }\n  .PipelineCreateDialog_taskFoot {\n    margin-left: 0;\n  }\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/PipelineTemplateDialog.module.css */\n.PipelineTemplateDialog_panel {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n  padding: 16px;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-lg);\n  background:\n    linear-gradient(\n      180deg,\n      color-mix(in srgb, var(--dsw-alias-state-business-tertiary) 36%, transparent) 0%,\n      transparent 106px),\n    var(--dsw-alias-bg-layer-1);\n  box-shadow: var(--dsw-shadow-lv1-blur);\n}\n.PipelineTemplateDialog_header {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  gap: 10px;\n  flex-wrap: wrap;\n  padding-bottom: 12px;\n  border-bottom: 1px solid var(--dsw-alias-separator-primary);\n}\n.PipelineTemplateDialog_heading {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n}\n.PipelineTemplateDialog_eyebrow {\n  font-size: 10px;\n  font-weight: 600;\n  letter-spacing: 0.08em;\n  text-transform: uppercase;\n  color: var(--dsw-alias-state-business-primary);\n}\n.PipelineTemplateDialog_title {\n  margin: 0;\n  font-family: var(--dsw-font-family-brand);\n  font-size: 17px;\n  font-weight: 600;\n  line-height: 1.25;\n  letter-spacing: -0.015em;\n  color: var(--dsw-alias-label-primary);\n}\n.PipelineTemplateDialog_grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));\n  gap: 10px;\n  align-items: end;\n}\n.PipelineTemplateDialog_stageBlock {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.PipelineTemplateDialog_stageLabel {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--dsw-alias-label-secondary);\n}\n.PipelineTemplateDialog_stageList {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 6px;\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\n.PipelineTemplateDialog_stage {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 4px 10px 4px 4px;\n  border: 1px solid var(--dsw-alias-separator-primary);\n  border-radius: 999px;\n  background: var(--dsw-alias-bg-layer-2);\n  font-size: 11px;\n  color: var(--dsw-alias-label-primary);\n}\n.PipelineTemplateDialog_stageIndex {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  width: 18px;\n  height: 18px;\n  border-radius: 50%;\n  background: var(--dsw-alias-bg-layer-1);\n  font-size: 10px;\n  font-weight: 600;\n  font-variant-numeric: tabular-nums;\n  color: var(--dsw-alias-label-tertiary);\n}\n.PipelineTemplateDialog_stageName {\n  white-space: nowrap;\n}\n.PipelineTemplateDialog_note {\n  margin: 0;\n  padding: 8px 10px;\n  border-radius: var(--dsw-radius-sm);\n  background: var(--dsw-alias-bg-layer-2);\n  font-size: 10.5px;\n  line-height: 1.55;\n  color: var(--dsw-alias-label-tertiary);\n}\n.PipelineTemplateDialog_footer {\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n  gap: 8px;\n  padding-top: 10px;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n}\n@media (max-width: 640px) {\n  .PipelineTemplateDialog_panel {\n    padding: 14px;\n  }\n  .PipelineTemplateDialog_grid {\n    grid-template-columns: minmax(0, 1fr);\n  }\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/Summary.module.css */\n.Summary_strip {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));\n  margin: 0;\n  overflow: hidden;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-lg);\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: var(--dsw-shadow-lv1-blur);\n}\n.Summary_metric {\n  display: flex;\n  flex-direction: column-reverse;\n  justify-content: flex-end;\n  gap: 1px;\n  min-width: 0;\n  padding: 10px 14px;\n}\n.Summary_metric + .Summary_metric {\n  border-left: 1px solid var(--dsw-alias-separator-primary);\n}\n.Summary_label {\n  font-size: 11px;\n  line-height: 1.4;\n  color: var(--dsw-alias-label-tertiary);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.Summary_value {\n  margin: 0;\n  font-family: var(--dsw-font-family-brand);\n  font-size: 20px;\n  font-weight: 600;\n  line-height: 1.15;\n  font-variant-numeric: tabular-nums;\n  letter-spacing: -0.02em;\n  color: var(--dsw-alias-label-primary);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n@media (max-width: 480px) {\n  .Summary_metric {\n    padding: 8px 10px;\n  }\n  .Summary_value {\n    font-size: 17px;\n  }\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/TaskEditor.module.css */\n.TaskEditor_editor {\n  display: flex;\n  flex-direction: column;\n  gap: 14px;\n  padding: 16px;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-lg);\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: var(--dsw-shadow-lv1-blur);\n}\n.TaskEditor_header {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  gap: 10px;\n  flex-wrap: wrap;\n  padding-bottom: 12px;\n  border-bottom: 1px solid var(--dsw-alias-separator-primary);\n}\n.TaskEditor_heading {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n}\n.TaskEditor_eyebrow {\n  font-size: 10px;\n  font-weight: 600;\n  letter-spacing: 0.08em;\n  text-transform: uppercase;\n  color: var(--dsw-alias-label-tertiary);\n}\n.TaskEditor_title {\n  margin: 0;\n  font-family: var(--dsw-font-family-brand);\n  font-size: 16px;\n  font-weight: 600;\n  line-height: 1.25;\n  letter-spacing: -0.015em;\n  color: var(--dsw-alias-label-primary);\n}\n.TaskEditor_badges {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 6px;\n}\n.TaskEditor_stale {\n  margin: 0;\n  padding: 8px 10px;\n  border-radius: var(--dsw-radius-sm);\n  background: var(--dsw-alias-state-warn-tertiary);\n  color: var(--dsw-alias-state-warn-label);\n  font-size: 11px;\n  line-height: 1.5;\n}\n.TaskEditor_group {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.TaskEditor_groupTitle {\n  margin: 0;\n  font-size: 11px;\n  font-weight: 600;\n  letter-spacing: 0.03em;\n  color: var(--dsw-alias-label-secondary);\n}\n.TaskEditor_grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));\n  gap: 10px;\n  align-items: end;\n}\n.TaskEditor_note {\n  margin: 0;\n  font-size: 10px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-tertiary);\n}\n.TaskEditor_handoff {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  padding: 12px;\n  border: 1px solid var(--dsw-alias-separator-primary);\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-2);\n}\n.TaskEditor_handoffHeader {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.TaskEditor_handoffLead {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n}\n.TaskEditor_footer {\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n  flex-wrap: wrap;\n  gap: 6px;\n  padding-top: 12px;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n}\n@media (max-width: 640px) {\n  .TaskEditor_editor {\n    padding: 14px;\n  }\n  .TaskEditor_grid {\n    grid-template-columns: minmax(0, 1fr);\n  }\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/SessionRoute.module.css */\n.SessionRoute_row {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 6px;\n  min-width: 0;\n}\n.SessionRoute_route {\n  font-size: 11px;\n  color: var(--dsw-alias-label-tertiary);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  max-width: 22ch;\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/TaskTab.module.css */\n.TaskTab_tab {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n  min-width: 0;\n}\n.TaskTab_toolbar {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 12px;\n  flex-wrap: nowrap;\n  padding: 2px 2px 0;\n}\n.TaskTab_toolbarTitle {\n  margin: 0;\n  min-width: 0;\n  font-family: var(--dsw-font-family-brand);\n  font-size: 18px;\n  font-weight: 600;\n  line-height: 1.2;\n  letter-spacing: -0.02em;\n  color: var(--dsw-alias-label-primary);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.TaskTab_queuePicker {\n  min-width: 0;\n}\n.TaskTab_emptyCard {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 16px;\n  border: 1px dashed var(--dsw-alias-border-l3);\n  border-radius: var(--dsw-radius-lg);\n  background: var(--dsw-alias-bg-layer-1);\n}\n.TaskTab_emptyMark {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  width: 34px;\n  height: 34px;\n  flex: none;\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-state-business-tertiary);\n  color: var(--dsw-alias-state-business-primary);\n  font-family: var(--dsw-font-family-brand);\n  font-size: 13px;\n  font-weight: 600;\n  font-variant-numeric: tabular-nums;\n}\n.TaskTab_emptyText {\n  flex: 1;\n  margin: 0;\n  font-size: 12px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-secondary);\n}\n.TaskTab_queueCard,\n.TaskTab_taskCard {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n  padding: 14px;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-lg);\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: var(--dsw-shadow-lv1-blur);\n  min-width: 0;\n}\n.TaskTab_cardHead {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.TaskTab_cardHeading {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n}\n.TaskTab_eyebrow {\n  font-size: 10px;\n  font-weight: 600;\n  line-height: 1.4;\n  letter-spacing: 0.08em;\n  text-transform: uppercase;\n  color: var(--dsw-alias-label-tertiary);\n}\n.TaskTab_cardTitle {\n  margin: 0;\n  font-family: var(--dsw-font-family-brand);\n  font-size: 16px;\n  font-weight: 600;\n  line-height: 1.25;\n  letter-spacing: -0.015em;\n  color: var(--dsw-alias-label-primary);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.TaskTab_cardMeta {\n  margin: 0;\n  font-size: 11px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-tertiary);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.TaskTab_cardActions {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 6px;\n}\n.TaskTab_queueFields {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));\n  gap: 10px;\n  align-items: end;\n}\n.TaskTab_cardFoot {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 10px;\n  flex-wrap: wrap;\n  padding-top: 10px;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n}\n.TaskTab_cardFootActions {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 6px;\n}\n.TaskTab_taskList {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\n.TaskTab_taskRow {\n  display: flex;\n  align-items: flex-start;\n  gap: 10px;\n  flex-wrap: wrap;\n  min-width: 0;\n  padding: 10px;\n  box-sizing: border-box;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-2);\n  transition: border-color 160ms ease, background-color 160ms ease;\n}\n.TaskTab_taskRow:hover {\n  border-color: var(--dsw-alias-border-l3);\n}\n.TaskTab_taskRowDrop {\n  box-shadow: inset 3px 0 0 var(--dsw-alias-state-business-primary);\n}\n.TaskTab_taskLead {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  flex: none;\n  padding-top: 1px;\n}\n.TaskTab_dragHandle {\n  color: var(--dsw-alias-label-tertiary);\n  cursor: grab;\n  font-size: 12px;\n  letter-spacing: -2px;\n  user-select: none;\n}\n.TaskTab_taskIndex {\n  min-width: 18px;\n  font-size: 11px;\n  font-weight: 600;\n  font-variant-numeric: tabular-nums;\n  text-align: right;\n  color: var(--dsw-alias-label-tertiary);\n}\n.TaskTab_taskMain {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  min-width: 160px;\n  flex: 1 1 200px;\n}\n.TaskTab_taskTitleLine {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  min-width: 0;\n}\n.TaskTab_taskTitle {\n  font-size: 12px;\n  font-weight: 600;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-primary);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.TaskTab_taskMeta {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 6px;\n  font-size: 11px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-tertiary);\n}\n.TaskTab_metaItem {\n  min-width: 0;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.TaskTab_metaItem + .TaskTab_metaItem {\n  padding-left: 9px;\n  position: relative;\n}\n.TaskTab_metaItem + .TaskTab_metaItem::before {\n  content: \"\\b7\";\n  position: absolute;\n  left: 0;\n  color: var(--dsw-alias-border-l3);\n}\n.TaskTab_taskToggles {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 10px;\n  font-size: 11px;\n  color: var(--dsw-alias-label-secondary);\n}\n.TaskTab_taskActions {\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n  flex-wrap: wrap;\n  gap: 4px;\n  flex: 1 0 auto;\n  max-width: 100%;\n}\n.TaskTab_rowMenu {\n  position: relative;\n}\n.TaskTab_rowMenu > summary {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 26px;\n  height: 26px;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-sm);\n  color: var(--dsw-alias-label-tertiary);\n  cursor: pointer;\n  list-style: none;\n  font-size: 13px;\n  line-height: 1;\n  user-select: none;\n}\n.TaskTab_rowMenu > summary::-webkit-details-marker {\n  display: none;\n}\n.TaskTab_rowMenu[open] > summary {\n  border-color: var(--dsw-alias-border-l3);\n  color: var(--dsw-alias-label-primary);\n}\n.TaskTab_rowMenuBody {\n  position: absolute;\n  top: calc(100% + 4px);\n  right: 0;\n  z-index: 4;\n  display: flex;\n  flex-direction: column;\n  gap: 1px;\n  min-width: 128px;\n  max-height: 216px;\n  padding: 4px;\n  overflow-y: auto;\n  overscroll-behavior: contain;\n  box-sizing: border-box;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: var(--dsw-shadow-lv2);\n}\n.TaskTab_rowMenuBodyUp {\n  top: auto;\n  bottom: calc(100% + 4px);\n}\n.TaskTab_rowMenuBody > * {\n  justify-content: flex-start;\n  width: 100%;\n}\n.TaskTab_issuePanel {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  gap: 8px;\n  padding: 12px;\n  border: 1px solid var(--dsw-alias-state-warn-label);\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-state-warn-tertiary);\n}\n.TaskTab_issueTitle {\n  margin: 0;\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--dsw-alias-state-warn-label);\n}\n.TaskTab_issues {\n  margin: 0;\n  padding-left: 18px;\n  font-size: 11px;\n  line-height: 1.5;\n  color: var(--dsw-alias-state-warn-label);\n}\n.TaskTab_issueHint {\n  margin: 0;\n  font-size: 11px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-secondary);\n}\n.TaskTab_empty {\n  margin: 0;\n  padding: 10px 2px;\n  font-size: 12px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-tertiary);\n}\n.TaskTab_advanced {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n}\n.TaskTab_advancedSummary {\n  cursor: pointer;\n  padding: 4px 2px;\n  font-size: 11px;\n  font-weight: 600;\n  letter-spacing: 0.02em;\n  color: var(--dsw-alias-label-tertiary);\n}\n.TaskTab_advancedBody {\n  min-width: 0;\n}\n@media (max-width: 640px) {\n  .TaskTab_cardActions {\n    width: 100%;\n  }\n  .TaskTab_taskActions {\n    justify-content: flex-start;\n    width: 100%;\n  }\n  .TaskTab_queueFields {\n    grid-template-columns: minmax(0, 1fr);\n  }\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/RunActions.module.css */\n.RunActions_controls {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.RunActions_buttons {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 6px;\n}\n.RunActions_skip {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: flex-end;\n  gap: 6px;\n}\n.RunActions_skipField {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  min-width: 120px;\n  font-size: 11px;\n  color: var(--dsw-alias-label-tertiary);\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/BoardTab.module.css */\n.BoardTab_tab {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n  min-width: 0;\n}\n.BoardTab_queue {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  padding: 14px;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-lg);\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: var(--dsw-shadow-lv1-blur);\n  min-width: 0;\n}\n.BoardTab_queueHead {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  gap: 10px;\n  flex-wrap: wrap;\n  padding-bottom: 10px;\n  border-bottom: 1px solid var(--dsw-alias-separator-primary);\n}\n.BoardTab_queueIdentity {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  min-width: 0;\n}\n.BoardTab_queueTitle {\n  margin: 0;\n  font-family: var(--dsw-font-family-brand);\n  font-size: 16px;\n  font-weight: 600;\n  line-height: 1.25;\n  letter-spacing: -0.015em;\n  color: var(--dsw-alias-label-primary);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.BoardTab_queueMeta {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 8px;\n  font-size: 11px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-tertiary);\n}\n.BoardTab_metaText {\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  max-width: 42ch;\n}\n.BoardTab_queueActions {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 6px;\n}\n.BoardTab_rows {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\n.BoardTab_row {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  min-width: 0;\n  padding: 10px 12px;\n  box-sizing: border-box;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-2);\n  transition: border-color 160ms ease;\n}\n.BoardTab_row:hover {\n  border-color: var(--dsw-alias-border-l3);\n}\n.BoardTab_rowTop {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  min-width: 0;\n}\n.BoardTab_title {\n  flex: 1;\n  min-width: 0;\n  font-size: 12px;\n  font-weight: 600;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-primary);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.BoardTab_rowActions {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 4px;\n  flex: none;\n}\n.BoardTab_metrics {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 6px;\n  padding-left: 18px;\n  font-size: 11px;\n  line-height: 1.4;\n  color: var(--dsw-alias-label-tertiary);\n}\n.BoardTab_metric {\n  padding: 2px 7px;\n  border: 1px solid var(--dsw-alias-separator-primary);\n  border-radius: 6px;\n  background: var(--dsw-alias-bg-layer-1);\n  font-variant-numeric: tabular-nums;\n  white-space: nowrap;\n}\n.BoardTab_details {\n  padding: 2px 0 0 18px;\n}\n.BoardTab_error {\n  margin: 0 0 0 18px;\n  font-size: 11px;\n  line-height: 1.5;\n  color: var(--dsw-alias-state-error-primary);\n}\n.BoardTab_childRow {\n  margin-left: 18px;\n  border-left: 2px solid var(--dsw-alias-state-business-primary);\n}\n.BoardTab_emptyCard {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 16px;\n  border: 1px dashed var(--dsw-alias-border-l3);\n  border-radius: var(--dsw-radius-lg);\n  background: var(--dsw-alias-bg-layer-1);\n}\n.BoardTab_emptyMark {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  width: 34px;\n  height: 34px;\n  flex: none;\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-state-business-tertiary);\n  color: var(--dsw-alias-state-business-primary);\n  font-family: var(--dsw-font-family-brand);\n  font-size: 15px;\n  font-weight: 600;\n}\n.BoardTab_empty {\n  margin: 0;\n  padding: 8px 2px;\n  font-size: 12px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-tertiary);\n}\n.BoardTab_tempAdd {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  padding: 10px;\n  border: 1px dashed var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-2);\n}\n.BoardTab_tempGrid {\n  display: flex;\n  align-items: flex-end;\n  justify-content: space-between;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.BoardTab_tempGrid > :first-child {\n  flex: 1 1 180px;\n  min-width: 150px;\n}\n.BoardTab_tempActions {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  margin-left: auto;\n}\n@media (max-width: 640px) {\n  .BoardTab_queue {\n    padding: 12px;\n  }\n  .BoardTab_rowActions {\n    width: 100%;\n    justify-content: flex-start;\n    padding-left: 18px;\n  }\n}\n.BoardTab_queueFoot {\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n  gap: 6px;\n  margin-top: -2px;\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/PressureTab.module.css */\n.PressureTab_tab {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n  min-width: 0;\n}\n.PressureTab_block {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  padding: 14px;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-lg);\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: var(--dsw-shadow-lv1-blur);\n}\n.PressureTab_head {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.PressureTab_heading {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n}\n.PressureTab_eyebrow {\n  font-size: 10px;\n  font-weight: 600;\n  letter-spacing: 0.08em;\n  text-transform: uppercase;\n  color: var(--dsw-alias-label-tertiary);\n}\n.PressureTab_title {\n  margin: 0;\n  font-family: var(--dsw-font-family-brand);\n  font-size: 16px;\n  font-weight: 600;\n  line-height: 1.25;\n  letter-spacing: -0.015em;\n  color: var(--dsw-alias-label-primary);\n}\n.PressureTab_subtitle {\n  margin: 0;\n  font-size: 12px;\n  font-weight: 600;\n  line-height: 1.4;\n  color: var(--dsw-alias-label-primary);\n}\n.PressureTab_meta {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 8px;\n}\n.PressureTab_metaText {\n  font-size: 10.5px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-tertiary);\n}\n.PressureTab_ruleGrid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));\n  gap: 8px;\n}\n.PressureTab_rule {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  padding: 11px;\n  border: 1px solid var(--dsw-alias-separator-primary);\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-2);\n  transition: border-color 160ms ease;\n}\n.PressureTab_rule:hover {\n  border-color: var(--dsw-alias-border-l3);\n}\n.PressureTab_ruleIndex {\n  font-family: var(--dsw-font-family-brand);\n  font-size: 11px;\n  font-weight: 600;\n  font-variant-numeric: tabular-nums;\n  letter-spacing: 0.04em;\n  color: var(--dsw-alias-state-business-primary);\n}\n.PressureTab_ruleBody {\n  margin: 0;\n  font-size: 10.5px;\n  line-height: 1.55;\n  color: var(--dsw-alias-label-secondary);\n}\n.PressureTab_costBody {\n  margin: 0;\n  font-size: 11px;\n  line-height: 1.55;\n  color: var(--dsw-alias-label-secondary);\n}\n.PressureTab_details {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  padding-top: 8px;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n}\n.PressureTab_disclosure {\n  cursor: pointer;\n  font-size: 10.5px;\n  font-weight: 600;\n  color: var(--dsw-alias-label-tertiary);\n}\n.PressureTab_disclosure:hover {\n  color: var(--dsw-alias-label-secondary);\n}\n.PressureTab_note {\n  margin: 0;\n  font-size: 10.5px;\n  line-height: 1.55;\n  color: var(--dsw-alias-label-tertiary);\n}\n.PressureTab_empty {\n  margin: 0;\n  font-size: 12px;\n  color: var(--dsw-alias-label-tertiary);\n}\n@media (max-width: 640px) {\n  .PressureTab_block {\n    padding: 12px;\n  }\n  .PressureTab_ruleGrid {\n    grid-template-columns: minmax(0, 1fr);\n  }\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/HostsTab.module.css */\n.HostsTab_tab {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n  min-width: 0;\n}\n.HostsTab_providers,\n.HostsTab_platformSection {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  padding: 14px;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-lg);\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: var(--dsw-shadow-lv1-blur);\n  min-width: 0;\n}\n.HostsTab_sectionHead {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.HostsTab_heading {\n  display: flex;\n  flex-direction: column;\n  gap: 3px;\n  min-width: 0;\n}\n.HostsTab_eyebrow {\n  font-size: 10px;\n  font-weight: 600;\n  letter-spacing: 0.08em;\n  text-transform: uppercase;\n  color: var(--dsw-alias-label-tertiary);\n}\n.HostsTab_sectionTitle {\n  margin: 0;\n  font-family: var(--dsw-font-family-brand);\n  font-size: 16px;\n  font-weight: 600;\n  line-height: 1.25;\n  letter-spacing: -0.015em;\n  color: var(--dsw-alias-label-primary);\n}\n.HostsTab_hint {\n  margin: 0;\n  max-width: 64ch;\n  font-size: 10.5px;\n  line-height: 1.55;\n  color: var(--dsw-alias-label-tertiary);\n}\n.HostsTab_saveRow {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 8px;\n}\n.HostsTab_saved {\n  font-size: 10px;\n  color: var(--dsw-alias-state-success-primary);\n}\n.HostsTab_empty {\n  margin: 0;\n  padding: 8px 2px;\n  font-size: 12px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-tertiary);\n}\n.HostsTab_providerList {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\n.HostsTab_provider {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  padding: 11px;\n  border: 1px solid var(--dsw-alias-separator-primary);\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-2);\n  transition: border-color 160ms ease;\n}\n.HostsTab_provider:hover {\n  border-color: var(--dsw-alias-border-l3);\n}\n.HostsTab_providerHead {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  min-width: 0;\n}\n.HostsTab_providerMark {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  width: 28px;\n  height: 28px;\n  flex: none;\n  border-radius: var(--dsw-radius-sm);\n  background: var(--dsw-alias-state-business-tertiary);\n  color: var(--dsw-alias-state-business-primary);\n  font-size: 10px;\n  font-weight: 700;\n  letter-spacing: 0.02em;\n}\n.HostsTab_providerText {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  min-width: 0;\n  flex-wrap: wrap;\n}\n.HostsTab_providerName {\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--dsw-alias-label-primary);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.HostsTab_models {\n  display: flex;\n  align-items: flex-start;\n  flex-wrap: wrap;\n  gap: 5px;\n  min-height: 18px;\n}\n.HostsTab_moreModels {\n  display: inline-flex;\n  align-items: center;\n  padding: 0 4px;\n  font-size: 10.5px;\n  font-weight: 600;\n  font-variant-numeric: tabular-nums;\n  color: var(--dsw-alias-label-tertiary);\n  cursor: default;\n}\n.HostsTab_quota {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 8px;\n  padding-top: 8px;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n  font-size: 10.5px;\n  color: var(--dsw-alias-label-tertiary);\n}\n.HostsTab_quotaLabel {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.HostsTab_quota input {\n  width: 68px;\n  padding: 4px 7px;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: 6px;\n  background: var(--dsw-alias-bg-layer-1);\n  color: var(--dsw-alias-label-primary);\n  font: inherit;\n  font-size: 11px;\n  font-variant-numeric: tabular-nums;\n}\n.HostsTab_quota input:focus-visible {\n  outline: 2px solid var(--dsw-alias-state-business-primary);\n  outline-offset: 1px;\n}\n.HostsTab_list {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.HostsTab_host {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  padding: 12px;\n  border: 1px solid var(--dsw-alias-separator-primary);\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-2);\n}\n.HostsTab_hostHead {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.HostsTab_hostIdentity {\n  display: flex;\n  align-items: flex-start;\n  gap: 9px;\n  min-width: 0;\n  flex: 1 1 240px;\n}\n.HostsTab_hostMark {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  flex: none;\n  border-radius: var(--dsw-radius-sm);\n  background: var(--dsw-alias-bg-layer-1);\n  border: 1px solid var(--dsw-alias-border-l2);\n  color: var(--dsw-alias-label-secondary);\n  font-size: 10px;\n  font-weight: 700;\n}\n.HostsTab_hostText {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n}\n.HostsTab_hostName {\n  margin: 0;\n  font-family: var(--dsw-font-family-brand);\n  font-size: 14px;\n  font-weight: 600;\n  line-height: 1.3;\n  color: var(--dsw-alias-label-primary);\n}\n.HostsTab_summary {\n  margin: 0;\n  font-size: 10.5px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-secondary);\n}\n.HostsTab_tags {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 6px;\n}\n.HostsTab_details {\n  margin-top: 2px;\n}\n.HostsTab_disclosure {\n  cursor: pointer;\n  font-size: 10.5px;\n  font-weight: 600;\n  color: var(--dsw-alias-label-tertiary);\n}\n.HostsTab_disclosure:hover {\n  color: var(--dsw-alias-label-secondary);\n}\n.HostsTab_table {\n  width: 100%;\n  margin-top: 6px;\n  border-collapse: collapse;\n  font-size: 11px;\n  color: var(--dsw-alias-label-primary);\n}\n.HostsTab_table th,\n.HostsTab_table td {\n  padding: 5px 8px;\n  text-align: left;\n  vertical-align: top;\n  border-bottom: 1px solid var(--dsw-alias-separator-primary);\n}\n.HostsTab_table th {\n  font-weight: 600;\n  color: var(--dsw-alias-label-secondary);\n}\n.HostsTab_detail {\n  color: var(--dsw-alias-label-secondary);\n  overflow-wrap: anywhere;\n}\n@media (max-width: 640px) {\n  .HostsTab_providers,\n  .HostsTab_platformSection {\n    padding: 12px;\n  }\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/Section.module.css */\n.Section_section {\n  display: flex;\n  flex-direction: column;\n  gap: 14px;\n  width: 100%;\n  min-width: 0;\n  padding: 20px;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-xl);\n  background:\n    radial-gradient(\n      120% 160% at 0% 0%,\n      var(--dsw-alias-state-business-tertiary) 0%,\n      transparent 58%),\n    var(--dsw-alias-bg-layer-1);\n  box-shadow: var(--dsw-shadow-lv2);\n  box-sizing: border-box;\n}\n.Section_hero {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n  padding-bottom: 14px;\n  border-bottom: 1px solid var(--dsw-alias-separator-primary);\n}\n.Section_identity {\n  display: flex;\n  align-items: center;\n  gap: 14px;\n  min-width: 0;\n}\n.Section_avatar {\n  width: 56px;\n  height: 56px;\n  flex: none;\n  object-fit: cover;\n  object-position: 50% 18%;\n  border: 1px solid var(--dsw-alias-border-l3);\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-2);\n  box-shadow: var(--dsw-shadow-lv1-blur);\n  user-select: none;\n}\n.Section_titleBlock {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n}\n.Section_title {\n  margin: 0;\n  font-family: var(--dsw-font-family-brand);\n  font-size: 24px;\n  font-weight: 600;\n  line-height: 1.15;\n  letter-spacing: -0.02em;\n  color: var(--dsw-alias-label-primary);\n  white-space: nowrap;\n}\n.Section_description {\n  margin: 0;\n  font-size: 12px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-secondary);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.Section_status {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  justify-content: flex-end;\n  gap: 6px;\n  flex-shrink: 0;\n}\n.Section_tabs {\n  padding: 5px;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-lg);\n  background: var(--dsw-alias-bg-module-platform);\n  overflow-x: auto;\n  scrollbar-width: none;\n}\n.Section_tabs::-webkit-scrollbar {\n  display: none;\n}\n.Section_tabs [role=tab] {\n  height: 32px;\n  padding: 0 8px;\n  font-size: 12px;\n  line-height: 18px;\n  letter-spacing: 0.01em;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.Section_panel {\n  min-width: 0;\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n  padding-top: 2px;\n}\n@media (max-width: 640px) {\n  .Section_section {\n    padding: 16px;\n    border-radius: var(--dsw-radius-lg);\n  }\n  .Section_hero {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 10px;\n  }\n  .Section_status {\n    justify-content: flex-start;\n  }\n  .Section_title {\n    font-size: 21px;\n  }\n  .Section_description {\n    white-space: normal;\n  }\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/SessionNotice.module.css */\n.SessionNotice_notice {\n  position: fixed;\n  top: 56px;\n  left: 50%;\n  transform: translateX(-50%);\n  z-index: 40;\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  max-width: min(520px, calc(100vw - 32px));\n  padding: 10px 12px;\n  border: 1px solid var(--dsw-alias-separator-primary);\n  border-left: 3px solid var(--dsw-alias-label-warning, #d98600);\n  border-radius: 10px;\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: 0 6px 20px rgb(0 0 0 / 12%);\n}\n.SessionNotice_head {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 8px;\n}\n.SessionNotice_reason {\n  margin: 0;\n  font-size: 12px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-primary);\n}\n.SessionNotice_detail {\n  font-size: 11px;\n  color: var(--dsw-alias-label-tertiary);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n";
+		tag.textContent = "/* packages/client/ui-settings-session-orchestrator/src/client/ErrorPanel.module.css */\n.ErrorPanel_panel {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  padding: 10px 12px;\n  border: 1px solid var(--dsw-alias-state-error-primary);\n  border-radius: 10px;\n  background: var(--dsw-alias-interactive-bg-hover-danger);\n}\n.ErrorPanel_header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 8px;\n}\n.ErrorPanel_title {\n  margin: 0;\n  font-size: 12px;\n  font-weight: 700;\n  color: var(--dsw-alias-state-error-primary);\n}\n.ErrorPanel_list {\n  margin: 0;\n  padding: 0;\n  list-style: none;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.ErrorPanel_row {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  padding-top: 8px;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n}\n.ErrorPanel_row:first-child {\n  padding-top: 0;\n  border-top: none;\n}\n.ErrorPanel_rowHead {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  flex-wrap: wrap;\n}\n.ErrorPanel_operation {\n  font-size: 11px;\n  font-family: var(--dsw-font-mono, ui-monospace, monospace);\n  color: var(--dsw-alias-label-secondary);\n}\n.ErrorPanel_disclosure {\n  font-size: 11px;\n  color: var(--dsw-alias-label-tertiary);\n}\n.ErrorPanel_facts {\n  display: grid;\n  grid-template-columns: max-content minmax(0, 1fr);\n  gap: 4px 10px;\n  margin: 6px 0 0;\n  overflow-wrap: anywhere;\n}\n.ErrorPanel_facts dt {\n  color: var(--dsw-alias-label-tertiary);\n}\n.ErrorPanel_facts dd {\n  margin: 0;\n  color: var(--dsw-alias-label-secondary);\n}\n.ErrorPanel_facts code {\n  font-family: var(--dsw-font-mono, ui-monospace, monospace);\n  font-size: 11px;\n}\n.ErrorPanel_time {\n  font-size: 11px;\n  color: var(--dsw-alias-label-tertiary);\n}\n.ErrorPanel_message,\n.ErrorPanel_explanation,\n.ErrorPanel_detail {\n  margin: 0;\n  font-size: 12px;\n  line-height: 1.5;\n}\n.ErrorPanel_message {\n  color: var(--dsw-alias-label-primary);\n}\n.ErrorPanel_explanation {\n  color: var(--dsw-alias-label-secondary);\n}\n.ErrorPanel_detail {\n  color: var(--dsw-alias-label-tertiary);\n  overflow-wrap: anywhere;\n}\n.ErrorPanel_detail code {\n  font-family: var(--dsw-font-mono, ui-monospace, monospace);\n  font-size: 11px;\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/QueueDeleteDialog.module.css */\n.QueueDeleteDialog_dialog {\n  width: min(440px, 100%);\n  max-height: 100%;\n  overflow: hidden;\n}\n.QueueDeleteDialog_content {\n  min-height: 0;\n  overflow-y: auto;\n  overscroll-behavior: contain;\n}\n.QueueDeleteDialog_notice {\n  margin: 0;\n  font-size: 12.5px;\n  line-height: 1.65;\n  color: var(--dsw-alias-label-secondary);\n}\n.QueueDeleteDialog_archiveBlock {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  margin-top: 16px;\n  padding: 10px 12px;\n  border: 1px solid var(--dsw-alias-separator-primary);\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-2);\n}\n.QueueDeleteDialog_hint {\n  margin: 0 0 0 24px;\n  font-size: 10.5px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-tertiary);\n}\n.QueueDeleteDialog_acknowledgeRow {\n  margin-top: 16px;\n  padding-top: 14px;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n}\n.QueueDeleteDialog_action {\n  min-width: 72px;\n}\n.QueueDeleteDialog_confirm {\n  min-width: 112px;\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/SelectMenu.module.css */\n.SelectMenu_root {\n  position: relative;\n  min-width: 0;\n}\n.SelectMenu_trigger {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  width: 100%;\n  min-width: 0;\n  height: 34px;\n  padding: 0 9px;\n  box-sizing: border-box;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-sm);\n  background: var(--dsw-alias-bg-layer-1);\n  color: var(--dsw-alias-label-primary);\n  font: inherit;\n  font-size: 12px;\n  line-height: 1.5;\n  text-align: left;\n  cursor: pointer;\n  transition: border-color 140ms ease, background-color 120ms ease;\n}\n.SelectMenu_trigger:hover:not(:disabled),\n.SelectMenu_trigger[aria-expanded=true] {\n  border-color: var(--dsw-alias-border-l3);\n}\n.SelectMenu_trigger:focus-visible {\n  outline: 2px solid var(--dsw-alias-state-business-primary);\n  outline-offset: 1px;\n}\n.SelectMenu_trigger:disabled {\n  opacity: 0.55;\n  cursor: not-allowed;\n}\n.SelectMenu_leading {\n  display: inline-flex;\n  flex: none;\n  align-items: center;\n  color: var(--dsw-alias-label-tertiary);\n}\n.SelectMenu_value {\n  flex: 1;\n  min-width: 0;\n  overflow: hidden;\n  font-weight: 500;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.SelectMenu_placeholder {\n  font-weight: 400;\n  color: var(--dsw-alias-label-tertiary);\n}\n.SelectMenu_chevron {\n  flex: none;\n  margin-left: auto;\n  color: var(--dsw-alias-label-tertiary);\n  transition: transform 160ms ease;\n}\n.SelectMenu_chevronOpen {\n  transform: rotate(180deg);\n}\n.SelectMenu_menu {\n  position: absolute;\n  top: calc(100% + 4px);\n  left: 0;\n  z-index: 12;\n  display: flex;\n  flex-direction: column;\n  gap: 1px;\n  width: 100%;\n  min-width: 0;\n  max-width: 100%;\n  max-height: 216px;\n  padding: 4px;\n  overflow-y: auto;\n  overscroll-behavior: contain;\n  box-sizing: border-box;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: var(--dsw-shadow-lv2);\n  animation: SelectMenu_selectMenuIn 140ms ease-out;\n}\n.SelectMenu_menuUp {\n  top: auto;\n  bottom: calc(100% + 4px);\n}\n@keyframes SelectMenu_selectMenuIn {\n  from {\n    opacity: 0;\n    transform: translateY(-3px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.SelectMenu_option {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  width: 100%;\n  min-width: 0;\n  padding: 7px 8px;\n  border: none;\n  border-radius: var(--dsw-radius-sm);\n  background: transparent;\n  color: inherit;\n  font: inherit;\n  text-align: left;\n  cursor: pointer;\n  transition: background-color 120ms ease;\n}\n.SelectMenu_option:hover,\n.SelectMenu_option[data-active=true] {\n  background: var(--dsw-alias-bg-layer-2);\n}\n.SelectMenu_option[aria-selected=true] {\n  background: var(--dsw-alias-state-business-tertiary);\n}\n.SelectMenu_optionText {\n  display: flex;\n  flex: 1;\n  flex-direction: column;\n  gap: 1px;\n  min-width: 0;\n}\n.SelectMenu_optionLabel,\n.SelectMenu_optionMuted {\n  min-width: 0;\n  overflow: hidden;\n  font-size: 12px;\n  font-weight: 500;\n  line-height: 1.45;\n  color: var(--dsw-alias-label-primary);\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.SelectMenu_optionMuted {\n  font-weight: 400;\n  color: var(--dsw-alias-label-tertiary);\n}\n.SelectMenu_optionDescription {\n  min-width: 0;\n  overflow: hidden;\n  font-size: 10px;\n  line-height: 1.4;\n  color: var(--dsw-alias-label-tertiary);\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.SelectMenu_check {\n  flex: none;\n  color: var(--dsw-alias-state-business-primary);\n}\n@media (prefers-reduced-motion: reduce) {\n  .SelectMenu_menu {\n    animation: none;\n  }\n  .SelectMenu_chevron {\n    transition: none;\n  }\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/Fields.module.css */\n.Fields_field {\n  display: flex;\n  flex-direction: column;\n  gap: 5px;\n  min-width: 0;\n}\n.Fields_label {\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 1.4;\n  letter-spacing: 0.01em;\n  color: var(--dsw-alias-label-secondary);\n}\n.Fields_hint {\n  font-size: 10px;\n  line-height: 1.4;\n  color: var(--dsw-alias-label-tertiary);\n}\n.Fields_textarea {\n  width: 100%;\n  box-sizing: border-box;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-sm);\n  padding: 7px 9px;\n  background: var(--dsw-alias-bg-layer-1);\n  color: var(--dsw-alias-label-primary);\n  font: inherit;\n  font-size: 12px;\n  line-height: 1.55;\n  resize: vertical;\n  min-height: 92px;\n  transition: border-color 140ms ease;\n}\n.Fields_textarea:hover:not(:disabled) {\n  border-color: var(--dsw-alias-border-l3);\n}\n.Fields_textarea:focus-visible {\n  outline: 2px solid var(--dsw-alias-state-business-primary);\n  outline-offset: 1px;\n}\n.Fields_textarea:disabled {\n  opacity: 0.55;\n  cursor: not-allowed;\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/ModelFields.module.css */\n.ModelFields_group {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n  min-width: 0;\n}\n.ModelFields_rowWrap {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  min-width: 0;\n}\n.ModelFields_rowWrap + .ModelFields_rowWrap {\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n}\n.ModelFields_row {\n  display: flex;\n  align-items: center;\n  justify-content: flex-start;\n  gap: 6px;\n  width: 100%;\n  min-width: 0;\n  padding: 7px 6px;\n  box-sizing: border-box;\n  border: none;\n  border-radius: var(--dsw-radius-md);\n  background: transparent;\n  color: var(--dsw-alias-label-primary);\n  font: inherit;\n  text-align: left;\n  cursor: pointer;\n  transition: background-color 140ms ease, box-shadow 140ms ease;\n}\n.ModelFields_row:hover:not(:disabled) {\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: var(--dsw-shadow-lv1-blur);\n}\n.ModelFields_row:focus-visible {\n  outline: none;\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: 0 0 0 1px var(--dsw-alias-border-l3), var(--dsw-shadow-lv1-blur);\n}\n.ModelFields_row:disabled {\n  opacity: 0.55;\n  cursor: not-allowed;\n}\n.ModelFields_rowLabel {\n  flex: none;\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 1.4;\n  color: var(--dsw-alias-label-secondary);\n}\n.ModelFields_rowValue {\n  min-width: 0;\n  margin-left: 6px;\n  overflow: hidden;\n  font-size: 11px;\n  line-height: 1.4;\n  color: var(--dsw-alias-label-primary);\n  text-align: left;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.ModelFields_chevron,\n.ModelFields_chevronUp {\n  flex: none;\n  margin-left: 2px;\n  color: var(--dsw-alias-label-tertiary);\n}\n.ModelFields_chevronUp {\n  transform: rotate(180deg);\n}\n.ModelFields_popover {\n  position: absolute;\n  top: calc(100% + 4px);\n  left: 0;\n  z-index: 30;\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  width: min(340px, calc(100vw - 48px));\n  max-height: 310px;\n  padding: 6px;\n  box-sizing: border-box;\n  overflow: hidden;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: var(--dsw-shadow-lv2);\n  animation: ModelFields_modelMenuIn 140ms ease-out;\n}\n.ModelFields_popoverUp {\n  top: auto;\n  bottom: calc(100% + 4px);\n}\n@keyframes ModelFields_modelMenuIn {\n  from {\n    opacity: 0;\n    transform: translateY(-3px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.ModelFields_search {\n  margin: 2px 4px 4px;\n  padding: 6px 8px;\n  border: none;\n  border-bottom: 1px solid var(--dsw-alias-separator-primary);\n  background: transparent;\n  color: var(--dsw-alias-label-primary);\n  font: inherit;\n  font-size: 11px;\n  outline: none;\n}\n.ModelFields_search::placeholder {\n  color: var(--dsw-alias-label-tertiary);\n}\n.ModelFields_optionList {\n  display: flex;\n  flex-direction: column;\n  gap: 1px;\n  max-height: 260px;\n  overflow-y: auto;\n  overscroll-behavior: contain;\n}\n.ModelFields_option {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  width: 100%;\n  min-width: 0;\n  padding: 7px 8px;\n  border: none;\n  border-radius: var(--dsw-radius-sm);\n  background: transparent;\n  color: inherit;\n  font: inherit;\n  text-align: left;\n  cursor: pointer;\n  transition: background-color 120ms ease, box-shadow 120ms ease;\n}\n.ModelFields_option:hover,\n.ModelFields_option:focus-visible {\n  outline: none;\n  background: var(--dsw-alias-bg-layer-2);\n  box-shadow: var(--dsw-shadow-lv1-blur);\n}\n.ModelFields_option[aria-selected=true],\n.ModelFields_optionSelected {\n  background: var(--dsw-alias-bg-module-platform);\n}\n.ModelFields_optionText {\n  display: flex;\n  flex: 1;\n  flex-direction: column;\n  gap: 1px;\n  min-width: 0;\n}\n.ModelFields_optionLabel {\n  min-width: 0;\n  overflow: hidden;\n  color: var(--dsw-alias-label-primary);\n  font-size: 12px;\n  font-weight: 500;\n  line-height: 1.45;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.ModelFields_optionDescription {\n  color: var(--dsw-alias-label-tertiary);\n  font-size: 10px;\n  line-height: 1.4;\n}\n.ModelFields_check {\n  flex: none;\n  color: var(--dsw-alias-label-primary);\n}\n.ModelFields_hint {\n  padding: 5px 6px 3px;\n  color: var(--dsw-alias-label-tertiary);\n  font-size: 10px;\n  line-height: 1.4;\n}\n@media (prefers-reduced-motion: reduce) {\n  .ModelFields_row,\n  .ModelFields_option,\n  .ModelFields_popover {\n    animation: none;\n    transition: none;\n  }\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/RenameDialog.module.css */\n.RenameDialog_dialog {\n  width: min(400px, 100%);\n  max-height: 100%;\n  overflow: hidden;\n}\n.RenameDialog_content {\n  min-height: 0;\n  overflow-y: auto;\n  overscroll-behavior: contain;\n}\n.RenameDialog_action {\n  min-width: 72px;\n}\n.RenameDialog_confirm {\n  min-width: 88px;\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/RowMenu.module.css */\n.RowMenu_root {\n  position: relative;\n  display: inline-flex;\n  flex: none;\n}\n.RowMenu_list {\n  position: absolute;\n  right: 0;\n  bottom: calc(100% + 6px);\n  z-index: 14;\n  display: flex;\n  flex-direction: column;\n  gap: 1px;\n  min-width: 152px;\n  padding: 5px;\n  box-sizing: border-box;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: var(--dsw-shadow-lv2);\n  animation: RowMenu_rowMenuIn 140ms ease-out;\n}\n@keyframes RowMenu_rowMenuIn {\n  from {\n    opacity: 0;\n    transform: translateY(3px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.RowMenu_item {\n  display: block;\n  width: 100%;\n  padding: 7px 10px;\n  border: none;\n  border-radius: var(--dsw-radius-sm);\n  background: transparent;\n  color: var(--dsw-alias-label-primary);\n  font: inherit;\n  font-size: 12px;\n  line-height: 1.45;\n  text-align: left;\n  white-space: nowrap;\n  cursor: pointer;\n  transition: background-color 120ms ease;\n}\n.RowMenu_item:hover:not(:disabled),\n.RowMenu_item:focus-visible {\n  background: var(--dsw-alias-bg-layer-2);\n  outline: none;\n}\n.RowMenu_item:disabled {\n  opacity: 0.55;\n  cursor: not-allowed;\n}\n.RowMenu_danger {\n  color: var(--dsw-alias-state-error-primary);\n}\n.RowMenu_danger:hover:not(:disabled),\n.RowMenu_danger:focus-visible {\n  background: var(--dsw-alias-interactive-bg-hover-danger);\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/WorkspaceField.module.css */\n.WorkspaceField_field {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  gap: 5px;\n  min-width: 0;\n}\n.WorkspaceField_label {\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 1.4;\n  letter-spacing: 0.01em;\n  color: var(--dsw-alias-label-secondary);\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/PipelineCreateDialog.module.css */\n.PipelineCreateDialog_panel {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n  padding: 16px;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-lg);\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: var(--dsw-shadow-lv1-blur);\n}\n.PipelineCreateDialog_panel input,\n.PipelineCreateDialog_panel textarea,\n.PipelineCreateDialog_panel [aria-haspopup=listbox] {\n  border: none;\n  border-radius: var(--dsw-radius-md);\n  background: transparent;\n  box-shadow: none;\n  transition: background-color 140ms ease, box-shadow 140ms ease;\n}\n.PipelineCreateDialog_panel input:hover:not(:disabled),\n.PipelineCreateDialog_panel textarea:hover:not(:disabled),\n.PipelineCreateDialog_panel [aria-haspopup=listbox]:hover:not(:disabled),\n.PipelineCreateDialog_panel [aria-haspopup=listbox][aria-expanded=true] {\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: var(--dsw-shadow-lv1-blur);\n}\n.PipelineCreateDialog_panel input:focus-visible,\n.PipelineCreateDialog_panel textarea:focus-visible,\n.PipelineCreateDialog_panel [aria-haspopup=listbox]:focus-visible {\n  outline: none;\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: 0 0 0 1px var(--dsw-alias-border-l3), var(--dsw-shadow-lv1-blur);\n}\n.PipelineCreateDialog_panel [aria-haspopup=listbox] > span {\n  flex: 0 1 auto;\n  min-width: 0;\n}\n.PipelineCreateDialog_panel [aria-haspopup=listbox] > svg:last-child {\n  margin-left: 2px;\n}\n.PipelineCreateDialog_header {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  gap: 12px;\n  flex-wrap: wrap;\n  padding-bottom: 12px;\n  border-bottom: 1px solid var(--dsw-alias-separator-primary);\n}\n.PipelineCreateDialog_heading {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n}\n.PipelineCreateDialog_title {\n  margin: 0;\n  font-family: var(--dsw-font-family-brand);\n  font-size: 17px;\n  font-weight: 600;\n  line-height: 1.25;\n  letter-spacing: -0.015em;\n  color: var(--dsw-alias-label-primary);\n}\n.PipelineCreateDialog_badges {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 6px;\n}\n.PipelineCreateDialog_metaGrid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));\n  gap: 10px;\n  align-items: end;\n}\n.PipelineCreateDialog_stepsHead {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 8px;\n  padding-top: 2px;\n}\n.PipelineCreateDialog_stepsLabel {\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--dsw-alias-label-primary);\n}\n.PipelineCreateDialog_stepsMeta {\n  font-size: 11px;\n  color: var(--dsw-alias-label-tertiary);\n}\n.PipelineCreateDialog_promptList {\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n}\n.PipelineCreateDialog_taskRow {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  padding: 12px 4px;\n  box-sizing: border-box;\n  border: none;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n  border-radius: var(--dsw-radius-md);\n  background: transparent;\n  transition: background-color 140ms ease, box-shadow 140ms ease;\n}\n.PipelineCreateDialog_taskRow:first-child {\n  border-top: none;\n}\n.PipelineCreateDialog_taskRow:hover,\n.PipelineCreateDialog_taskRow:focus-within {\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: var(--dsw-shadow-lv1-blur);\n}\n.PipelineCreateDialog_taskHead {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  min-width: 0;\n}\n.PipelineCreateDialog_stepBadge {\n  display: inline-flex;\n  align-items: center;\n  justify-content: flex-start;\n  min-width: 18px;\n  flex: none;\n  border: none;\n  background: transparent;\n  color: var(--dsw-alias-label-tertiary);\n  font-size: 10.5px;\n  font-weight: 600;\n  font-variant-numeric: tabular-nums;\n}\n.PipelineCreateDialog_taskName {\n  flex: 1;\n  min-width: 0;\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--dsw-alias-label-primary);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.PipelineCreateDialog_collapseButton {\n  width: 26px;\n  min-width: 26px;\n  height: 26px;\n  padding: 0;\n}\n.PipelineCreateDialog_chevron {\n  color: var(--dsw-alias-label-tertiary);\n  transition: transform 160ms ease;\n}\n.PipelineCreateDialog_chevronCollapsed {\n  color: var(--dsw-alias-label-tertiary);\n  transform: rotate(180deg);\n}\n.PipelineCreateDialog_taskRowCollapsed {\n  gap: 7px;\n  padding: 10px 4px;\n}\n.PipelineCreateDialog_taskPreview {\n  display: flex;\n  align-items: flex-start;\n  gap: 8px;\n  min-width: 0;\n}\n.PipelineCreateDialog_previewText {\n  flex: 1;\n  min-width: 0;\n  margin: 0;\n  font-size: 11px;\n  line-height: 1.55;\n  color: var(--dsw-alias-label-secondary);\n  display: -webkit-box;\n  -webkit-line-clamp: 2;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n  overflow-wrap: anywhere;\n}\n.PipelineCreateDialog_taskControls {\n  display: flex;\n  align-items: flex-end;\n  flex-wrap: wrap;\n  gap: 10px;\n}\n.PipelineCreateDialog_routeFields {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));\n  gap: 8px;\n  flex: 1 1 240px;\n  min-width: 0;\n}\n.PipelineCreateDialog_skillField {\n  flex: 0 1 150px;\n  min-width: 130px;\n}\n.PipelineCreateDialog_taskFoot {\n  display: flex;\n  align-items: flex-end;\n  justify-content: flex-end;\n  flex: 0 0 auto;\n  margin-left: auto;\n}\n.PipelineCreateDialog_footer {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 8px;\n  flex-wrap: wrap;\n  padding-top: 10px;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n}\n.PipelineCreateDialog_footerActions {\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n  flex-wrap: wrap;\n  gap: 8px;\n  margin-left: auto;\n}\n.PipelineCreateDialog_warning {\n  margin: 0;\n  font-size: 11px;\n  line-height: 1.5;\n  color: var(--dsw-alias-state-warn-label);\n}\n.PipelineCreateDialog_optional {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  gap: 8px;\n  padding-top: 8px;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n  font-size: 11px;\n  color: var(--dsw-alias-label-tertiary);\n}\n.PipelineCreateDialog_optional > summary {\n  cursor: pointer;\n  color: var(--dsw-alias-label-tertiary);\n}\n.PipelineCreateDialog_optional > summary:hover {\n  color: var(--dsw-alias-label-secondary);\n}\n@media (max-width: 640px) {\n  .PipelineCreateDialog_panel {\n    padding: 14px;\n  }\n  .PipelineCreateDialog_metaGrid {\n    grid-template-columns: minmax(0, 1fr);\n  }\n  .PipelineCreateDialog_routeFields,\n  .PipelineCreateDialog_skillField {\n    flex: 1 1 100%;\n    min-width: 0;\n  }\n  .PipelineCreateDialog_taskFoot {\n    margin-left: 0;\n  }\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/PipelineTemplateDialog.module.css */\n.PipelineTemplateDialog_panel {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n  padding: 16px;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-lg);\n  background:\n    linear-gradient(\n      180deg,\n      color-mix(in srgb, var(--dsw-alias-state-business-tertiary) 36%, transparent) 0%,\n      transparent 106px),\n    var(--dsw-alias-bg-layer-1);\n  box-shadow: var(--dsw-shadow-lv1-blur);\n}\n.PipelineTemplateDialog_header {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  gap: 10px;\n  flex-wrap: wrap;\n  padding-bottom: 12px;\n  border-bottom: 1px solid var(--dsw-alias-separator-primary);\n}\n.PipelineTemplateDialog_heading {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n}\n.PipelineTemplateDialog_eyebrow {\n  font-size: 10px;\n  font-weight: 600;\n  letter-spacing: 0.08em;\n  text-transform: uppercase;\n  color: var(--dsw-alias-state-business-primary);\n}\n.PipelineTemplateDialog_title {\n  margin: 0;\n  font-family: var(--dsw-font-family-brand);\n  font-size: 17px;\n  font-weight: 600;\n  line-height: 1.25;\n  letter-spacing: -0.015em;\n  color: var(--dsw-alias-label-primary);\n}\n.PipelineTemplateDialog_grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));\n  gap: 10px;\n  align-items: end;\n}\n.PipelineTemplateDialog_stageBlock {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.PipelineTemplateDialog_stageLabel {\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--dsw-alias-label-secondary);\n}\n.PipelineTemplateDialog_stageList {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 6px;\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\n.PipelineTemplateDialog_stage {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  padding: 4px 10px 4px 4px;\n  border: 1px solid var(--dsw-alias-separator-primary);\n  border-radius: 999px;\n  background: var(--dsw-alias-bg-layer-2);\n  font-size: 11px;\n  color: var(--dsw-alias-label-primary);\n}\n.PipelineTemplateDialog_stageIndex {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  width: 18px;\n  height: 18px;\n  border-radius: 50%;\n  background: var(--dsw-alias-bg-layer-1);\n  font-size: 10px;\n  font-weight: 600;\n  font-variant-numeric: tabular-nums;\n  color: var(--dsw-alias-label-tertiary);\n}\n.PipelineTemplateDialog_stageName {\n  white-space: nowrap;\n}\n.PipelineTemplateDialog_note {\n  margin: 0;\n  padding: 8px 10px;\n  border-radius: var(--dsw-radius-sm);\n  background: var(--dsw-alias-bg-layer-2);\n  font-size: 10.5px;\n  line-height: 1.55;\n  color: var(--dsw-alias-label-tertiary);\n}\n.PipelineTemplateDialog_footer {\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n  gap: 8px;\n  padding-top: 10px;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n}\n@media (max-width: 640px) {\n  .PipelineTemplateDialog_panel {\n    padding: 14px;\n  }\n  .PipelineTemplateDialog_grid {\n    grid-template-columns: minmax(0, 1fr);\n  }\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/Summary.module.css */\n.Summary_strip {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));\n  margin: 0;\n  overflow: hidden;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-lg);\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: var(--dsw-shadow-lv1-blur);\n}\n.Summary_metric,\n.Summary_metricAction {\n  display: flex;\n  flex-direction: column-reverse;\n  justify-content: flex-end;\n  gap: 1px;\n  min-width: 0;\n  padding: 10px 14px;\n}\n.Summary_metric + .Summary_metric,\n.Summary_metricAction + .Summary_metric,\n.Summary_metric + .Summary_metricAction,\n.Summary_metricAction + .Summary_metricAction {\n  border-left: 1px solid var(--dsw-alias-separator-primary);\n}\n.Summary_metricAction {\n  cursor: pointer;\n  transition: background-color 140ms ease;\n}\n.Summary_metricAction:hover {\n  background: var(--dsw-alias-bg-module-platform);\n}\n.Summary_metricAction:focus-visible {\n  outline: 2px solid var(--dsw-alias-border-l3);\n  outline-offset: -2px;\n}\n.Summary_labelLine {\n  display: flex;\n  align-items: center;\n  gap: 5px;\n  min-width: 0;\n}\n.Summary_icon {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  flex: none;\n  color: var(--dsw-alias-label-secondary);\n}\n.Summary_label {\n  font-size: 11px;\n  line-height: 1.4;\n  color: var(--dsw-alias-label-tertiary);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.Summary_value {\n  margin: 0;\n  font-family: var(--dsw-font-family-brand);\n  font-size: 20px;\n  font-weight: 600;\n  line-height: 1.15;\n  font-variant-numeric: tabular-nums;\n  letter-spacing: -0.02em;\n  color: var(--dsw-alias-label-primary);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n@media (max-width: 480px) {\n  .Summary_metric {\n    padding: 8px 10px;\n  }\n  .Summary_value {\n    font-size: 17px;\n  }\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/TaskEditor.module.css */\n.TaskEditor_editor {\n  display: flex;\n  flex-direction: column;\n  gap: 14px;\n  padding: 16px;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-lg);\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: var(--dsw-shadow-lv1-blur);\n}\n.TaskEditor_header {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  gap: 10px;\n  flex-wrap: wrap;\n  padding-bottom: 12px;\n  border-bottom: 1px solid var(--dsw-alias-separator-primary);\n}\n.TaskEditor_heading {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n}\n.TaskEditor_eyebrow {\n  font-size: 10px;\n  font-weight: 600;\n  letter-spacing: 0.08em;\n  text-transform: uppercase;\n  color: var(--dsw-alias-label-tertiary);\n}\n.TaskEditor_title {\n  margin: 0;\n  font-family: var(--dsw-font-family-brand);\n  font-size: 16px;\n  font-weight: 600;\n  line-height: 1.25;\n  letter-spacing: -0.015em;\n  color: var(--dsw-alias-label-primary);\n}\n.TaskEditor_badges {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 6px;\n}\n.TaskEditor_stale {\n  margin: 0;\n  padding: 8px 10px;\n  border-radius: var(--dsw-radius-sm);\n  background: var(--dsw-alias-state-warn-tertiary);\n  color: var(--dsw-alias-state-warn-label);\n  font-size: 11px;\n  line-height: 1.5;\n}\n.TaskEditor_group {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.TaskEditor_groupTitle {\n  margin: 0;\n  font-size: 11px;\n  font-weight: 600;\n  letter-spacing: 0.03em;\n  color: var(--dsw-alias-label-secondary);\n}\n.TaskEditor_grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));\n  gap: 10px;\n  align-items: end;\n}\n.TaskEditor_note {\n  margin: 0;\n  font-size: 10px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-tertiary);\n}\n.TaskEditor_handoff {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  padding: 12px;\n  border: 1px solid var(--dsw-alias-separator-primary);\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-2);\n}\n.TaskEditor_handoffHeader {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.TaskEditor_handoffLead {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n}\n.TaskEditor_footer {\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n  flex-wrap: wrap;\n  gap: 6px;\n  padding-top: 12px;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n}\n@media (max-width: 640px) {\n  .TaskEditor_editor {\n    padding: 14px;\n  }\n  .TaskEditor_grid {\n    grid-template-columns: minmax(0, 1fr);\n  }\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/SessionRoute.module.css */\n.SessionRoute_row {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 6px;\n  min-width: 0;\n}\n.SessionRoute_route {\n  font-size: 11px;\n  color: var(--dsw-alias-label-tertiary);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  max-width: 22ch;\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/TaskTab.module.css */\n.TaskTab_tab {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n  min-width: 0;\n}\n.TaskTab_toolbar {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 12px;\n  flex-wrap: nowrap;\n  padding: 2px 2px 0;\n}\n.TaskTab_toolbarTitle {\n  margin: 0;\n  min-width: 0;\n  font-family: var(--dsw-font-family-brand);\n  font-size: 18px;\n  font-weight: 600;\n  line-height: 1.2;\n  letter-spacing: -0.02em;\n  color: var(--dsw-alias-label-primary);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.TaskTab_queuePicker {\n  min-width: 0;\n}\n.TaskTab_emptyCard {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 16px;\n  border: 1px dashed var(--dsw-alias-border-l3);\n  border-radius: var(--dsw-radius-lg);\n  background: var(--dsw-alias-bg-layer-1);\n}\n.TaskTab_emptyMark {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  width: 34px;\n  height: 34px;\n  flex: none;\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-state-business-tertiary);\n  color: var(--dsw-alias-state-business-primary);\n  font-family: var(--dsw-font-family-brand);\n  font-size: 13px;\n  font-weight: 600;\n  font-variant-numeric: tabular-nums;\n}\n.TaskTab_emptyText {\n  flex: 1;\n  margin: 0;\n  font-size: 12px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-secondary);\n}\n.TaskTab_queueCard,\n.TaskTab_taskCard {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n  padding: 14px;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-lg);\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: var(--dsw-shadow-lv1-blur);\n  min-width: 0;\n}\n.TaskTab_cardHead {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.TaskTab_cardHeading {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n}\n.TaskTab_eyebrow {\n  font-size: 10px;\n  font-weight: 600;\n  line-height: 1.4;\n  letter-spacing: 0.08em;\n  text-transform: uppercase;\n  color: var(--dsw-alias-label-tertiary);\n}\n.TaskTab_cardTitle {\n  margin: 0;\n  font-family: var(--dsw-font-family-brand);\n  font-size: 16px;\n  font-weight: 600;\n  line-height: 1.25;\n  letter-spacing: -0.015em;\n  color: var(--dsw-alias-label-primary);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.TaskTab_cardMeta {\n  margin: 0;\n  font-size: 11px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-tertiary);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.TaskTab_cardActions {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 6px;\n}\n.TaskTab_queueFields {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));\n  gap: 10px;\n  align-items: end;\n}\n.TaskTab_cardFoot {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 10px;\n  flex-wrap: wrap;\n  padding-top: 10px;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n}\n.TaskTab_cardFootActions {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 6px;\n}\n.TaskTab_taskList {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\n.TaskTab_taskRow {\n  display: flex;\n  align-items: flex-start;\n  gap: 10px;\n  flex-wrap: wrap;\n  min-width: 0;\n  padding: 10px;\n  box-sizing: border-box;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-2);\n  transition: border-color 160ms ease, background-color 160ms ease;\n}\n.TaskTab_taskRow:hover {\n  border-color: var(--dsw-alias-border-l3);\n}\n.TaskTab_taskRowDrop {\n  box-shadow: inset 3px 0 0 var(--dsw-alias-state-business-primary);\n}\n.TaskTab_taskLead {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  flex: none;\n  padding-top: 1px;\n}\n.TaskTab_dragHandle {\n  color: var(--dsw-alias-label-tertiary);\n  cursor: grab;\n  font-size: 12px;\n  letter-spacing: -2px;\n  user-select: none;\n}\n.TaskTab_taskIndex {\n  min-width: 18px;\n  font-size: 11px;\n  font-weight: 600;\n  font-variant-numeric: tabular-nums;\n  text-align: right;\n  color: var(--dsw-alias-label-tertiary);\n}\n.TaskTab_taskMain {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  min-width: 160px;\n  flex: 1 1 200px;\n}\n.TaskTab_taskTitleLine {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  min-width: 0;\n}\n.TaskTab_taskTitle {\n  font-size: 12px;\n  font-weight: 600;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-primary);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.TaskTab_taskMeta {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 6px;\n  font-size: 11px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-tertiary);\n}\n.TaskTab_metaItem {\n  min-width: 0;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.TaskTab_metaItem + .TaskTab_metaItem {\n  padding-left: 9px;\n  position: relative;\n}\n.TaskTab_metaItem + .TaskTab_metaItem::before {\n  content: \"\\b7\";\n  position: absolute;\n  left: 0;\n  color: var(--dsw-alias-border-l3);\n}\n.TaskTab_taskToggles {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 10px;\n  font-size: 11px;\n  color: var(--dsw-alias-label-secondary);\n}\n.TaskTab_taskActions {\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n  flex-wrap: wrap;\n  gap: 4px;\n  flex: 1 0 auto;\n  max-width: 100%;\n}\n.TaskTab_rowMenu {\n  position: relative;\n}\n.TaskTab_rowMenu > summary {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 26px;\n  height: 26px;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-sm);\n  color: var(--dsw-alias-label-tertiary);\n  cursor: pointer;\n  list-style: none;\n  font-size: 13px;\n  line-height: 1;\n  user-select: none;\n}\n.TaskTab_rowMenu > summary::-webkit-details-marker {\n  display: none;\n}\n.TaskTab_rowMenu[open] > summary {\n  border-color: var(--dsw-alias-border-l3);\n  color: var(--dsw-alias-label-primary);\n}\n.TaskTab_rowMenuBody {\n  position: absolute;\n  top: calc(100% + 4px);\n  right: 0;\n  z-index: 4;\n  display: flex;\n  flex-direction: column;\n  gap: 1px;\n  min-width: 128px;\n  max-height: 216px;\n  padding: 4px;\n  overflow-y: auto;\n  overscroll-behavior: contain;\n  box-sizing: border-box;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: var(--dsw-shadow-lv2);\n}\n.TaskTab_rowMenuBodyUp {\n  top: auto;\n  bottom: calc(100% + 4px);\n}\n.TaskTab_rowMenuBody > * {\n  justify-content: flex-start;\n  width: 100%;\n}\n.TaskTab_issuePanel {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  gap: 8px;\n  padding: 12px;\n  border: 1px solid var(--dsw-alias-state-warn-label);\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-state-warn-tertiary);\n}\n.TaskTab_issueTitle {\n  margin: 0;\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--dsw-alias-state-warn-label);\n}\n.TaskTab_issues {\n  margin: 0;\n  padding-left: 18px;\n  font-size: 11px;\n  line-height: 1.5;\n  color: var(--dsw-alias-state-warn-label);\n}\n.TaskTab_issueHint {\n  margin: 0;\n  font-size: 11px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-secondary);\n}\n.TaskTab_empty {\n  margin: 0;\n  padding: 10px 2px;\n  font-size: 12px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-tertiary);\n}\n.TaskTab_advanced {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n}\n.TaskTab_advancedSummary {\n  cursor: pointer;\n  padding: 4px 2px;\n  font-size: 11px;\n  font-weight: 600;\n  letter-spacing: 0.02em;\n  color: var(--dsw-alias-label-tertiary);\n}\n.TaskTab_advancedBody {\n  min-width: 0;\n}\n@media (max-width: 640px) {\n  .TaskTab_cardActions {\n    width: 100%;\n  }\n  .TaskTab_taskActions {\n    justify-content: flex-start;\n    width: 100%;\n  }\n  .TaskTab_queueFields {\n    grid-template-columns: minmax(0, 1fr);\n  }\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/ConversationDialogs.module.css */\n.ConversationDialogs_body {\n  margin: 0;\n  font-size: 12px;\n  line-height: 1.6;\n  color: var(--dsw-alias-label-secondary);\n}\n.ConversationDialogs_hint {\n  margin: 0;\n  font-size: 10.5px;\n  line-height: 1.55;\n  color: var(--dsw-alias-label-tertiary);\n}\n.ConversationDialogs_future {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  padding: 10px;\n  border: 1px solid var(--dsw-alias-separator-primary);\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-2);\n}\n.ConversationDialogs_futureList {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  max-height: 180px;\n  overflow-y: auto;\n  overscroll-behavior: contain;\n  padding-left: 2px;\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/RunActions.module.css */\n.RunActions_controls {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.RunActions_buttons {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 6px;\n}\n.RunActions_skip {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: flex-end;\n  gap: 6px;\n}\n.RunActions_skipField {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  min-width: 120px;\n  font-size: 11px;\n  color: var(--dsw-alias-label-tertiary);\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/BoardTab.module.css */\n.BoardTab_tab {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n  min-width: 0;\n}\n.BoardTab_queue {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  padding: 14px;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-lg);\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: var(--dsw-shadow-lv1-blur);\n  min-width: 0;\n}\n.BoardTab_queueHead {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  gap: 10px;\n  flex-wrap: wrap;\n  padding-bottom: 10px;\n  border-bottom: 1px solid var(--dsw-alias-separator-primary);\n}\n.BoardTab_queueIdentity {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  min-width: 0;\n}\n.BoardTab_queueTitle {\n  margin: 0;\n  font-family: var(--dsw-font-family-brand);\n  font-size: 16px;\n  font-weight: 600;\n  line-height: 1.25;\n  letter-spacing: -0.015em;\n  color: var(--dsw-alias-label-primary);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.BoardTab_queueMeta {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 8px;\n  font-size: 11px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-tertiary);\n}\n.BoardTab_metaText {\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  max-width: 42ch;\n}\n.BoardTab_queueActions {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 6px;\n}\n.BoardTab_rows {\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\n.BoardTab_row {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  min-width: 0;\n  padding: 10px 6px;\n  box-sizing: border-box;\n  border: none;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n  border-radius: var(--dsw-radius-md);\n  background: transparent;\n  transition: background-color 140ms ease, box-shadow 140ms ease;\n}\n.BoardTab_row:first-child {\n  border-top: none;\n}\n.BoardTab_row:hover,\n.BoardTab_row:focus-within {\n  background: var(--dsw-alias-bg-layer-2);\n  box-shadow: var(--dsw-shadow-lv1-blur);\n}\n.BoardTab_rowTop {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  min-width: 0;\n}\n.BoardTab_title {\n  flex: 1;\n  min-width: 0;\n  font-size: 12px;\n  font-weight: 600;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-primary);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.BoardTab_rowActions {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 4px;\n  flex: none;\n}\n.BoardTab_metrics {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 10px;\n  padding-left: 18px;\n  font-size: 11px;\n  line-height: 1.4;\n  color: var(--dsw-alias-label-tertiary);\n}\n.BoardTab_metric {\n  padding: 0;\n  border: none;\n  background: transparent;\n  font-variant-numeric: tabular-nums;\n  white-space: nowrap;\n}\n.BoardTab_details {\n  padding: 2px 0 0 18px;\n}\n.BoardTab_error {\n  margin: 0 0 0 18px;\n  font-size: 11px;\n  line-height: 1.5;\n  color: var(--dsw-alias-state-error-primary);\n}\n.BoardTab_childRow {\n  margin-left: 18px;\n  padding-left: 10px;\n  border-left: 1px solid var(--dsw-alias-separator-primary);\n}\n.BoardTab_emptyCard {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 16px;\n  border: 1px dashed var(--dsw-alias-border-l3);\n  border-radius: var(--dsw-radius-lg);\n  background: var(--dsw-alias-bg-layer-1);\n}\n.BoardTab_emptyMark {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  width: 34px;\n  height: 34px;\n  flex: none;\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-state-business-tertiary);\n  color: var(--dsw-alias-state-business-primary);\n  font-family: var(--dsw-font-family-brand);\n  font-size: 15px;\n  font-weight: 600;\n}\n.BoardTab_empty {\n  margin: 0;\n  padding: 8px 2px;\n  font-size: 12px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-tertiary);\n}\n.BoardTab_tempAdd {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  padding: 10px;\n  border: 1px dashed var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-2);\n}\n.BoardTab_tempGrid {\n  display: flex;\n  align-items: flex-end;\n  justify-content: space-between;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.BoardTab_tempGrid > :first-child {\n  flex: 1 1 180px;\n  min-width: 150px;\n}\n.BoardTab_tempActions {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  margin-left: auto;\n}\n@media (max-width: 640px) {\n  .BoardTab_queue {\n    padding: 12px;\n  }\n  .BoardTab_rowActions {\n    width: 100%;\n    justify-content: flex-start;\n    padding-left: 18px;\n  }\n}\n.BoardTab_queueFoot {\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n  gap: 6px;\n  margin-top: -2px;\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/PressureTab.module.css */\n.PressureTab_tab {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n  min-width: 0;\n}\n.PressureTab_block {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  padding: 14px;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-lg);\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: var(--dsw-shadow-lv1-blur);\n}\n.PressureTab_head {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.PressureTab_heading {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n}\n.PressureTab_eyebrow {\n  font-size: 10px;\n  font-weight: 600;\n  letter-spacing: 0.08em;\n  text-transform: uppercase;\n  color: var(--dsw-alias-label-tertiary);\n}\n.PressureTab_title {\n  margin: 0;\n  font-family: var(--dsw-font-family-brand);\n  font-size: 16px;\n  font-weight: 600;\n  line-height: 1.25;\n  letter-spacing: -0.015em;\n  color: var(--dsw-alias-label-primary);\n}\n.PressureTab_subtitle {\n  margin: 0;\n  font-size: 12px;\n  font-weight: 600;\n  line-height: 1.4;\n  color: var(--dsw-alias-label-primary);\n}\n.PressureTab_meta {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 8px;\n}\n.PressureTab_metaText {\n  font-size: 10.5px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-tertiary);\n}\n.PressureTab_ruleGrid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));\n  gap: 8px;\n}\n.PressureTab_rule {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  padding: 11px;\n  border: 1px solid var(--dsw-alias-separator-primary);\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-2);\n  transition: border-color 160ms ease;\n}\n.PressureTab_rule:hover {\n  border-color: var(--dsw-alias-border-l3);\n}\n.PressureTab_ruleIndex {\n  font-family: var(--dsw-font-family-brand);\n  font-size: 11px;\n  font-weight: 600;\n  font-variant-numeric: tabular-nums;\n  letter-spacing: 0.04em;\n  color: var(--dsw-alias-state-business-primary);\n}\n.PressureTab_ruleBody {\n  margin: 0;\n  font-size: 10.5px;\n  line-height: 1.55;\n  color: var(--dsw-alias-label-secondary);\n}\n.PressureTab_costBody {\n  margin: 0;\n  font-size: 11px;\n  line-height: 1.55;\n  color: var(--dsw-alias-label-secondary);\n}\n.PressureTab_details {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  padding-top: 8px;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n}\n.PressureTab_disclosure {\n  cursor: pointer;\n  font-size: 10.5px;\n  font-weight: 600;\n  color: var(--dsw-alias-label-tertiary);\n}\n.PressureTab_disclosure:hover {\n  color: var(--dsw-alias-label-secondary);\n}\n.PressureTab_note {\n  margin: 0;\n  font-size: 10.5px;\n  line-height: 1.55;\n  color: var(--dsw-alias-label-tertiary);\n}\n.PressureTab_empty {\n  margin: 0;\n  font-size: 12px;\n  color: var(--dsw-alias-label-tertiary);\n}\n.PressureTab_intro {\n  margin: 2px 0 0;\n  font-size: 11px;\n  line-height: 1.55;\n  color: var(--dsw-alias-label-tertiary);\n}\n.PressureTab_queueModels {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));\n  gap: 8px;\n}\n.PressureTab_queueModel {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  padding: 11px;\n  border: 1px solid var(--dsw-alias-separator-primary);\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-2);\n}\n.PressureTab_queueModelHead,\n.PressureTab_queueModelFoot {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  gap: 8px;\n  flex-wrap: wrap;\n}\n.PressureTab_queueModelIdentity {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n}\n.PressureTab_modelGrid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));\n  gap: 8px;\n}\n.PressureTab_queueModelFoot {\n  padding-top: 8px;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n}\n.PressureTab_formGrid {\n  display: grid;\n  grid-template-columns: repeat(2, minmax(0, 1fr));\n  column-gap: 16px;\n  row-gap: 14px;\n  align-items: start;\n}\n.PressureTab_formFoot {\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n  gap: 10px;\n  flex-wrap: wrap;\n  padding-top: 8px;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n}\n.PressureTab_clearBox {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 12px;\n  border: 1px solid var(--dsw-alias-separator-primary);\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-2);\n}\n.PressureTab_clearMark {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  width: 28px;\n  height: 28px;\n  flex: none;\n  border: 1px solid var(--dsw-alias-separator-primary);\n  border-radius: 50%;\n  background: var(--dsw-alias-bg-module-platform);\n  color: var(--dsw-alias-label-primary);\n  font-size: 14px;\n  font-weight: 600;\n}\n.PressureTab_clearTitle {\n  margin: 0;\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--dsw-alias-label-primary);\n}\n.PressureTab_clearBody {\n  margin: 2px 0 0;\n  font-size: 11px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-secondary);\n}\n.PressureTab_tableWrap {\n  overflow-x: auto;\n}\n.PressureTab_table {\n  width: 100%;\n  border-collapse: collapse;\n  font-size: 11px;\n}\n.PressureTab_table th {\n  text-align: left;\n  padding: 6px 8px;\n  font-weight: 600;\n  color: var(--dsw-alias-label-secondary);\n  border-bottom: 1px solid var(--dsw-alias-separator-primary);\n  white-space: nowrap;\n}\n.PressureTab_table td {\n  padding: 7px 8px;\n  vertical-align: top;\n  color: var(--dsw-alias-label-primary);\n  border-bottom: 1px solid var(--dsw-alias-separator-primary);\n}\n.PressureTab_tableStrong {\n  display: block;\n  font-weight: 600;\n}\n.PressureTab_tableMuted {\n  display: block;\n  margin-top: 2px;\n  color: var(--dsw-alias-label-tertiary);\n  font-size: 10.5px;\n}\n.PressureTab_noticeText {\n  margin: 0;\n  padding: 8px 10px;\n  border-radius: var(--dsw-radius-sm);\n  background: var(--dsw-alias-state-business-tertiary);\n  color: var(--dsw-alias-label-secondary);\n  font-size: 11px;\n  line-height: 1.5;\n}\n.PressureTab_savingsGrid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));\n  gap: 8px;\n}\n.PressureTab_savingCell {\n  display: flex;\n  flex-direction: column;\n  gap: 3px;\n  padding: 9px 10px;\n  border: 1px solid var(--dsw-alias-separator-primary);\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-2);\n}\n.PressureTab_savingLabel {\n  font-size: 10px;\n  letter-spacing: 0.04em;\n  text-transform: uppercase;\n  color: var(--dsw-alias-label-tertiary);\n}\n.PressureTab_savingValue {\n  font-family: var(--dsw-font-family-brand);\n  font-size: 16px;\n  font-weight: 600;\n  font-variant-numeric: tabular-nums;\n  color: var(--dsw-alias-label-primary);\n}\n.PressureTab_feedbackGrid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));\n  gap: 8px;\n}\n.PressureTab_feedbackCard {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  padding: 10px;\n  border: 1px solid var(--dsw-alias-separator-primary);\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-2);\n}\n.PressureTab_feedbackWarn {\n  border-color: var(--dsw-alias-border-l3);\n}\n.PressureTab_feedbackHead {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 6px;\n}\n.PressureTab_feedbackBody {\n  margin: 0;\n  font-size: 10.5px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-secondary);\n}\n.PressureTab_strategyRow {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 6px;\n  padding: 8px 10px;\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-2);\n  border: 1px solid var(--dsw-alias-separator-primary);\n}\n.PressureTab_strategyLabel {\n  font-size: 9.5px;\n  font-weight: 600;\n  letter-spacing: 0.06em;\n  text-transform: uppercase;\n  color: var(--dsw-alias-label-tertiary);\n}\n.PressureTab_strategyText {\n  flex: 1 1 180px;\n  min-width: 0;\n  font-size: 10.5px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-secondary);\n}\n.PressureTab_positiveBox {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  padding-top: 10px;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n}\n.PressureTab_positiveList {\n  margin: 0;\n  padding-left: 18px;\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  font-size: 11px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-secondary);\n}\n.PressureTab_beforeAfter {\n  display: grid;\n  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);\n  gap: 8px;\n  align-items: stretch;\n}\n.PressureTab_compareCol {\n  display: flex;\n  flex-direction: column;\n  gap: 3px;\n  padding: 8px 10px;\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-2);\n  border: 1px solid var(--dsw-alias-separator-primary);\n}\n.PressureTab_compareLabel {\n  font-size: 9.5px;\n  font-weight: 600;\n  letter-spacing: 0.06em;\n  text-transform: uppercase;\n  color: var(--dsw-alias-label-tertiary);\n}\n.PressureTab_compareText {\n  margin: 0;\n  font-size: 10.5px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-secondary);\n}\n.PressureTab_compareArrow {\n  align-self: center;\n  color: var(--dsw-alias-label-tertiary);\n  font-size: 14px;\n  font-weight: 600;\n}\n.PressureTab_overlay {\n  position: fixed;\n  inset: 0;\n  z-index: 40;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 20px;\n  background: rgba(20, 20, 19, 0.55);\n  backdrop-filter: blur(2px);\n}\n.PressureTab_dialog {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n  width: min(520px, 100%);\n  max-height: 88vh;\n  overflow-y: auto;\n  padding: 18px;\n  box-sizing: border-box;\n  border: 1px solid var(--dsw-alias-border-l3);\n  border-radius: var(--dsw-radius-lg);\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: var(--dsw-shadow-lv2);\n}\n.PressureTab_dialogHead {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.PressureTab_dialogKicker {\n  font-size: 10px;\n  font-weight: 600;\n  letter-spacing: 0.08em;\n  text-transform: uppercase;\n  color: var(--dsw-alias-label-tertiary);\n}\n.PressureTab_dialogTitle {\n  margin: 0;\n  font-family: var(--dsw-font-family-brand);\n  font-size: 18px;\n  font-weight: 600;\n  line-height: 1.25;\n  letter-spacing: -0.02em;\n  color: var(--dsw-alias-label-primary);\n}\n.PressureTab_dialogBody {\n  margin: 0;\n  font-size: 12px;\n  line-height: 1.6;\n  color: var(--dsw-alias-label-secondary);\n}\n.PressureTab_reasonBox {\n  display: flex;\n  flex-direction: column;\n  gap: 3px;\n  padding: 10px;\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-2);\n  border: 1px solid var(--dsw-alias-separator-primary);\n}\n.PressureTab_reasonLabel {\n  font-size: 9.5px;\n  font-weight: 600;\n  letter-spacing: 0.06em;\n  text-transform: uppercase;\n  color: var(--dsw-alias-label-tertiary);\n}\n.PressureTab_reasonText {\n  margin: 0;\n  font-size: 11px;\n  line-height: 1.55;\n  color: var(--dsw-alias-label-secondary);\n}\n.PressureTab_dialogActions {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 6px;\n  padding-top: 4px;\n}\n.PressureTab_resultBox {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  gap: 6px;\n  padding: 12px;\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-2);\n  border: 1px solid var(--dsw-alias-separator-primary);\n}\n.PressureTab_resultText {\n  margin: 0;\n  font-size: 11px;\n  line-height: 1.55;\n  color: var(--dsw-alias-label-secondary);\n}\n@media (max-width: 640px) {\n  .PressureTab_block {\n    padding: 12px;\n  }\n  .PressureTab_ruleGrid,\n  .PressureTab_formGrid {\n    grid-template-columns: minmax(0, 1fr);\n  }\n  .PressureTab_beforeAfter {\n    grid-template-columns: minmax(0, 1fr);\n  }\n  .PressureTab_compareArrow {\n    justify-self: center;\n    transform: rotate(90deg);\n  }\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/HostsTab.module.css */\n.HostsTab_tab {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n  min-width: 0;\n}\n.HostsTab_providers,\n.HostsTab_platformSection {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  padding: 14px;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-lg);\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: var(--dsw-shadow-lv1-blur);\n  min-width: 0;\n}\n.HostsTab_sectionHead {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.HostsTab_heading {\n  display: flex;\n  flex-direction: column;\n  gap: 3px;\n  min-width: 0;\n}\n.HostsTab_eyebrow {\n  font-size: 10px;\n  font-weight: 600;\n  letter-spacing: 0.08em;\n  text-transform: uppercase;\n  color: var(--dsw-alias-label-tertiary);\n}\n.HostsTab_sectionTitle {\n  margin: 0;\n  font-family: var(--dsw-font-family-brand);\n  font-size: 16px;\n  font-weight: 600;\n  line-height: 1.25;\n  letter-spacing: -0.015em;\n  color: var(--dsw-alias-label-primary);\n}\n.HostsTab_hint {\n  margin: 0;\n  max-width: 64ch;\n  font-size: 10.5px;\n  line-height: 1.55;\n  color: var(--dsw-alias-label-tertiary);\n}\n.HostsTab_saveRow {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 8px;\n}\n.HostsTab_saved {\n  font-size: 10px;\n  color: var(--dsw-alias-state-success-primary);\n}\n.HostsTab_empty {\n  margin: 0;\n  padding: 8px 2px;\n  font-size: 12px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-tertiary);\n}\n.HostsTab_providerList {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\n.HostsTab_provider {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  padding: 11px;\n  border: 1px solid var(--dsw-alias-separator-primary);\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-2);\n  transition: border-color 160ms ease;\n}\n.HostsTab_provider:hover {\n  border-color: var(--dsw-alias-border-l3);\n}\n.HostsTab_providerHead {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  min-width: 0;\n}\n.HostsTab_providerMark {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  width: 28px;\n  height: 28px;\n  flex: none;\n  border-radius: var(--dsw-radius-sm);\n  background: var(--dsw-alias-state-business-tertiary);\n  color: var(--dsw-alias-state-business-primary);\n  font-size: 10px;\n  font-weight: 700;\n  letter-spacing: 0.02em;\n}\n.HostsTab_providerText {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  min-width: 0;\n  flex-wrap: wrap;\n}\n.HostsTab_providerName {\n  font-size: 12px;\n  font-weight: 600;\n  color: var(--dsw-alias-label-primary);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.HostsTab_models {\n  display: flex;\n  align-items: flex-start;\n  flex-wrap: wrap;\n  gap: 5px;\n  min-height: 18px;\n}\n.HostsTab_moreModels {\n  display: inline-flex;\n  align-items: center;\n  padding: 0 4px;\n  font-size: 10.5px;\n  font-weight: 600;\n  font-variant-numeric: tabular-nums;\n  color: var(--dsw-alias-label-tertiary);\n  cursor: default;\n}\n.HostsTab_quota {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 8px;\n  padding-top: 8px;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n  font-size: 10.5px;\n  color: var(--dsw-alias-label-tertiary);\n}\n.HostsTab_quotaLabel {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.HostsTab_quota input {\n  width: 68px;\n  padding: 4px 7px;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: 6px;\n  background: var(--dsw-alias-bg-layer-1);\n  color: var(--dsw-alias-label-primary);\n  font: inherit;\n  font-size: 11px;\n  font-variant-numeric: tabular-nums;\n}\n.HostsTab_quota input:focus-visible {\n  outline: 2px solid var(--dsw-alias-state-business-primary);\n  outline-offset: 1px;\n}\n.HostsTab_list {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.HostsTab_host {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  padding: 12px;\n  border: 1px solid var(--dsw-alias-separator-primary);\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-2);\n}\n.HostsTab_hostHead {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.HostsTab_hostIdentity {\n  display: flex;\n  align-items: flex-start;\n  gap: 9px;\n  min-width: 0;\n  flex: 1 1 240px;\n}\n.HostsTab_hostMark {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  flex: none;\n  border-radius: var(--dsw-radius-sm);\n  background: var(--dsw-alias-bg-layer-1);\n  border: 1px solid var(--dsw-alias-border-l2);\n  color: var(--dsw-alias-label-secondary);\n  font-size: 10px;\n  font-weight: 700;\n}\n.HostsTab_hostText {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n}\n.HostsTab_hostName {\n  margin: 0;\n  font-family: var(--dsw-font-family-brand);\n  font-size: 14px;\n  font-weight: 600;\n  line-height: 1.3;\n  color: var(--dsw-alias-label-primary);\n}\n.HostsTab_summary {\n  margin: 0;\n  font-size: 10.5px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-secondary);\n}\n.HostsTab_tags {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 6px;\n}\n.HostsTab_details {\n  margin-top: 2px;\n}\n.HostsTab_disclosure {\n  cursor: pointer;\n  font-size: 10.5px;\n  font-weight: 600;\n  color: var(--dsw-alias-label-tertiary);\n}\n.HostsTab_disclosure:hover {\n  color: var(--dsw-alias-label-secondary);\n}\n.HostsTab_table {\n  width: 100%;\n  margin-top: 6px;\n  border-collapse: collapse;\n  font-size: 11px;\n  color: var(--dsw-alias-label-primary);\n}\n.HostsTab_table th,\n.HostsTab_table td {\n  padding: 5px 8px;\n  text-align: left;\n  vertical-align: top;\n  border-bottom: 1px solid var(--dsw-alias-separator-primary);\n}\n.HostsTab_table th {\n  font-weight: 600;\n  color: var(--dsw-alias-label-secondary);\n}\n.HostsTab_detail {\n  color: var(--dsw-alias-label-secondary);\n  overflow-wrap: anywhere;\n}\n@media (max-width: 640px) {\n  .HostsTab_providers,\n  .HostsTab_platformSection {\n    padding: 12px;\n  }\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/SkillsTab.module.css */\n.SkillsTab_tab {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n  min-width: 0;\n}\n.SkillsTab_tabs {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: flex-start;\n  gap: 4px;\n  padding: 5px;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-lg);\n  background: var(--dsw-alias-bg-module-platform);\n  overflow: visible;\n}\n.SkillsTab_tabButton {\n  position: relative;\n  display: inline-flex;\n  flex: 0 0 auto;\n  align-items: center;\n  justify-content: center;\n  width: auto;\n  min-height: 30px;\n  max-width: 100%;\n  padding: 5px 10px;\n  box-sizing: border-box;\n  border: none;\n  border-radius: var(--dsw-radius-md);\n  background: transparent;\n  color: var(--dsw-alias-label-secondary);\n  font-size: 12px;\n  font-weight: 500;\n  line-height: 1.3;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  cursor: pointer;\n  transition:\n    background-color 140ms ease,\n    color 140ms ease,\n    box-shadow 140ms ease;\n}\n.SkillsTab_tabButton:hover {\n  background: var(--dsw-alias-bg-layer-1);\n  color: var(--dsw-alias-label-primary);\n}\n.SkillsTab_tabButton:focus-visible {\n  outline: 2px solid var(--dsw-alias-border-l3);\n  outline-offset: -2px;\n}\n.SkillsTab_tabButtonActive {\n  background: var(--dsw-alias-bg-layer-1);\n  color: var(--dsw-alias-label-primary);\n  font-weight: 600;\n  box-shadow: 0 2px 8px rgba(20, 20, 19, 0.12), 0 1px 2px rgba(20, 20, 19, 0.08);\n}\n.SkillsTab_tabButtonActive::after {\n  content: \"\";\n  position: absolute;\n  left: 50%;\n  bottom: 3px;\n  width: 16px;\n  height: 2px;\n  border-radius: 1px;\n  background: var(--dsw-alias-label-primary);\n  transform: translateX(-50%);\n}\n.SkillsTab_pageHead,\n.SkillsTab_head {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  gap: 10px;\n  flex-wrap: wrap;\n}\n.SkillsTab_heading {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n}\n.SkillsTab_eyebrow {\n  font-size: 10px;\n  font-weight: 600;\n  line-height: 1.4;\n  letter-spacing: 0.08em;\n  text-transform: uppercase;\n  color: var(--dsw-alias-label-tertiary);\n}\n.SkillsTab_title {\n  margin: 0;\n  font-family: var(--dsw-font-family-brand);\n  font-size: 16px;\n  font-weight: 600;\n  line-height: 1.25;\n  letter-spacing: -0.015em;\n  color: var(--dsw-alias-label-primary);\n}\n.SkillsTab_intro {\n  margin: 2px 0 0;\n  font-size: 11px;\n  line-height: 1.55;\n  color: var(--dsw-alias-label-tertiary);\n}\n.SkillsTab_block {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  padding: 14px;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-lg);\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: var(--dsw-shadow-lv1-blur);\n}\n.SkillsTab_skillGrid {\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n  align-items: stretch;\n}\n.SkillsTab_skillCard {\n  display: flex;\n  flex-direction: column;\n  gap: 7px;\n  min-width: 0;\n  padding: 11px 2px;\n  border: none;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n  border-radius: 0;\n  background: transparent;\n}\n.SkillsTab_skillCard:first-child {\n  border-top: none;\n}\n.SkillsTab_skillHead {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  gap: 8px;\n}\n.SkillsTab_skillIdentity {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  min-width: 0;\n}\n.SkillsTab_skillName {\n  margin: 0;\n  font-family: var(--dsw-font-family-brand);\n  font-size: 13px;\n  font-weight: 600;\n  line-height: 1.3;\n  color: var(--dsw-alias-label-primary);\n}\n.SkillsTab_skillBadges {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 4px;\n}\n.SkillsTab_skillDescription {\n  margin: 0;\n  font-size: 11px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-secondary);\n}\n.SkillsTab_skillMeta {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 8px;\n  font-size: 10px;\n  color: var(--dsw-alias-label-tertiary);\n}\n.SkillsTab_skillContent {\n  margin: 0;\n  max-height: 132px;\n  overflow-y: auto;\n  padding: 2px 0 2px 9px;\n  border-left: 1px solid var(--dsw-alias-separator-primary);\n  background: transparent;\n  font-size: 10.5px;\n  line-height: 1.6;\n  color: var(--dsw-alias-label-secondary);\n  white-space: pre-wrap;\n}\n.SkillsTab_skillActions,\n.SkillsTab_inlineActions,\n.SkillsTab_dialogActions {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 6px;\n}\n.SkillsTab_editForm {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  padding-top: 8px;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n}\n.SkillsTab_successNote,\n.SkillsTab_successText {\n  margin: 0;\n  padding-left: 8px;\n  border-left: 1px solid var(--dsw-alias-separator-primary);\n  color: var(--dsw-alias-label-secondary);\n  font-size: 10.5px;\n  line-height: 1.5;\n}\n.SkillsTab_importRow {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 8px;\n  padding-top: 8px;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n}\n.SkillsTab_importHint {\n  font-size: 10.5px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-tertiary);\n}\n.SkillsTab_folderForm {\n  display: grid;\n  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;\n  gap: 8px;\n  align-items: end;\n}\n.SkillsTab_addGrid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));\n  gap: 8px;\n  align-items: end;\n}\n.SkillsTab_groupNav {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: flex-start;\n  gap: 4px;\n}\n.SkillsTab_groupChip {\n  display: inline-flex;\n  flex: 0 0 auto;\n  align-items: center;\n  gap: 6px;\n  min-height: 28px;\n  padding: 4px 9px;\n  box-sizing: border-box;\n  border: none;\n  border-radius: var(--dsw-radius-md);\n  background: transparent;\n  color: var(--dsw-alias-label-secondary);\n  font-size: 11px;\n  line-height: 1.3;\n  cursor: pointer;\n  transition:\n    background-color 140ms ease,\n    color 140ms ease,\n    box-shadow 140ms ease;\n}\n.SkillsTab_groupChip:hover {\n  background: var(--dsw-alias-bg-layer-1);\n  color: var(--dsw-alias-label-primary);\n}\n.SkillsTab_groupChip:focus-visible {\n  outline: 2px solid var(--dsw-alias-border-l3);\n  outline-offset: -2px;\n}\n.SkillsTab_groupChipActive {\n  background: var(--dsw-alias-bg-layer-1);\n  color: var(--dsw-alias-label-primary);\n  font-weight: 600;\n  box-shadow: 0 2px 8px rgba(20, 20, 19, 0.12), 0 1px 2px rgba(20, 20, 19, 0.08);\n}\n.SkillsTab_groupCount {\n  color: var(--dsw-alias-label-tertiary);\n  font-size: 10px;\n  font-variant-numeric: tabular-nums;\n}\n.SkillsTab_tree {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  max-height: 620px;\n  overflow-y: auto;\n  padding-right: 2px;\n}\n.SkillsTab_branch {\n  display: flex;\n  flex-direction: column;\n  gap: 7px;\n}\n.SkillsTab_branchHead {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  padding: 7px 0 5px;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n  background: transparent;\n}\n.SkillsTab_branchMark {\n  color: var(--dsw-alias-label-tertiary);\n  font-size: 11px;\n}\n.SkillsTab_branchName {\n  font-size: 11.5px;\n  font-weight: 600;\n  color: var(--dsw-alias-label-primary);\n}\n.SkillsTab_branchSkills {\n  display: block;\n}\n.SkillsTab_refBlock {\n  display: flex;\n  flex-direction: column;\n  gap: 5px;\n}\n.SkillsTab_refLabel,\n.SkillsTab_scopeLabel {\n  font-size: 10px;\n  font-weight: 600;\n  letter-spacing: 0.06em;\n  text-transform: uppercase;\n  color: var(--dsw-alias-label-tertiary);\n}\n.SkillsTab_refChips {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 5px;\n}\n.SkillsTab_refChip {\n  display: inline-flex;\n  align-items: center;\n  gap: 5px;\n  padding: 4px 7px;\n  border: 1px solid var(--dsw-alias-separator-primary);\n  border-radius: 999px;\n  background: var(--dsw-alias-bg-layer-2);\n  color: var(--dsw-alias-label-secondary);\n  font-size: 10.5px;\n  line-height: 1.4;\n  cursor: pointer;\n  transition: border-color 140ms ease, background-color 140ms ease;\n}\n.SkillsTab_refChip:hover {\n  border-color: var(--dsw-alias-border-l3);\n}\n.SkillsTab_refChipOn {\n  border-color: var(--dsw-alias-border-l3);\n  background: var(--dsw-alias-bg-module-platform);\n  color: var(--dsw-alias-label-primary);\n}\n.SkillsTab_refDot,\n.SkillsTab_refDotOn {\n  width: 6px;\n  height: 6px;\n  flex: none;\n  border-radius: 50%;\n  background: var(--dsw-alias-label-tertiary);\n}\n.SkillsTab_refDotOn {\n  background: var(--dsw-alias-label-secondary);\n}\n.SkillsTab_refName {\n  max-width: 190px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.SkillsTab_refSign {\n  font-family: var(--dsw-font-family-brand);\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--dsw-alias-label-secondary);\n}\n.SkillsTab_pipelineList {\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n}\n.SkillsTab_pipeline {\n  display: flex;\n  flex-direction: column;\n  gap: 9px;\n  padding: 11px 2px;\n  border: none;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n  border-radius: 0;\n  background: transparent;\n}\n.SkillsTab_pipeline:first-child {\n  border-top: none;\n}\n.SkillsTab_pipelineHead {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 8px;\n}\n.SkillsTab_pipelineTitle {\n  margin: 0;\n  font-family: var(--dsw-font-family-brand);\n  font-size: 14px;\n  font-weight: 600;\n  color: var(--dsw-alias-label-primary);\n}\n.SkillsTab_pipelineScope {\n  display: flex;\n  flex-direction: column;\n  gap: 5px;\n  padding-top: 7px;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n}\n.SkillsTab_taskRefs {\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n}\n.SkillsTab_taskRef {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  padding: 7px 0;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n  background: transparent;\n}\n.SkillsTab_taskRef:first-child {\n  border-top: none;\n}\n.SkillsTab_taskRefHead {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 8px;\n  flex-wrap: wrap;\n}\n.SkillsTab_taskRefTitle {\n  font-size: 11.5px;\n  font-weight: 600;\n  color: var(--dsw-alias-label-primary);\n}\n.SkillsTab_improvementList {\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n}\n.SkillsTab_improvement {\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  padding: 11px 2px;\n  border: none;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n  border-radius: 0;\n  background: transparent;\n}\n.SkillsTab_improvement:first-child {\n  border-top: none;\n}\n.SkillsTab_improvementHead {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  gap: 8px;\n  flex-wrap: wrap;\n}\n.SkillsTab_improvementTitle {\n  margin: 0;\n  font-family: var(--dsw-font-family-brand);\n  font-size: 13px;\n  font-weight: 600;\n  color: var(--dsw-alias-label-primary);\n}\n.SkillsTab_improvementProjects {\n  margin: 0;\n  font-size: 10px;\n  color: var(--dsw-alias-label-tertiary);\n}\n.SkillsTab_improvementMeta {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));\n  gap: 8px;\n  margin: 0;\n}\n.SkillsTab_improvementMeta dt {\n  font-size: 9.5px;\n  font-weight: 600;\n  letter-spacing: 0.06em;\n  text-transform: uppercase;\n  color: var(--dsw-alias-label-tertiary);\n}\n.SkillsTab_improvementMeta dd {\n  margin: 2px 0 0;\n  font-size: 10.5px;\n  line-height: 1.55;\n  color: var(--dsw-alias-label-secondary);\n}\n.SkillsTab_improvementResult {\n  color: var(--dsw-alias-label-primary);\n}\n.SkillsTab_empty {\n  margin: 0;\n  font-size: 12px;\n  color: var(--dsw-alias-label-tertiary);\n}\n.SkillsTab_overlay {\n  position: fixed;\n  inset: 0;\n  z-index: 45;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 20px;\n  background: rgba(20, 20, 19, 0.55);\n  backdrop-filter: blur(2px);\n}\n.SkillsTab_historyDialog {\n  display: flex;\n  flex-direction: column;\n  gap: 11px;\n  width: min(680px, 100%);\n  max-height: 90vh;\n  overflow-y: auto;\n  padding: 18px;\n  box-sizing: border-box;\n  border: 1px solid var(--dsw-alias-border-l3);\n  border-radius: var(--dsw-radius-lg);\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: var(--dsw-shadow-lv2);\n}\n.SkillsTab_dialogHead {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n}\n.SkillsTab_dialogKicker {\n  font-size: 10px;\n  font-weight: 600;\n  letter-spacing: 0.08em;\n  text-transform: uppercase;\n  color: var(--dsw-alias-label-tertiary);\n}\n.SkillsTab_dialogTitle {\n  margin: 0;\n  font-family: var(--dsw-font-family-brand);\n  font-size: 18px;\n  font-weight: 600;\n  line-height: 1.25;\n  color: var(--dsw-alias-label-primary);\n}\n.SkillsTab_dialogBody {\n  margin: 0;\n  font-size: 11px;\n  line-height: 1.55;\n  color: var(--dsw-alias-label-tertiary);\n}\n.SkillsTab_historyList {\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n  max-height: 180px;\n  overflow-y: auto;\n}\n.SkillsTab_historyRow {\n  display: flex;\n  flex-direction: column;\n  gap: 3px;\n  width: 100%;\n  padding: 8px 6px;\n  border: none;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n  background: transparent;\n  text-align: left;\n  cursor: pointer;\n}\n.SkillsTab_historyRow:first-child {\n  border-top: none;\n}\n.SkillsTab_historyRowActive {\n  background: var(--dsw-alias-bg-module-platform);\n}\n.SkillsTab_historyRowTop {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 8px;\n}\n.SkillsTab_historyIndex {\n  font-size: 10.5px;\n  font-weight: 600;\n  color: var(--dsw-alias-label-primary);\n}\n.SkillsTab_historyPreview {\n  font-size: 10px;\n  line-height: 1.4;\n  color: var(--dsw-alias-label-tertiary);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.SkillsTab_diffGrid {\n  display: grid;\n  grid-template-columns: repeat(2, minmax(0, 1fr));\n  gap: 8px;\n}\n.SkillsTab_diffPane {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  min-width: 0;\n}\n.SkillsTab_diffLabel {\n  font-size: 9.5px;\n  font-weight: 600;\n  letter-spacing: 0.06em;\n  text-transform: uppercase;\n  color: var(--dsw-alias-label-tertiary);\n}\n.SkillsTab_diffText {\n  margin: 0;\n  min-height: 100px;\n  max-height: 200px;\n  overflow: auto;\n  padding: 9px;\n  border-radius: var(--dsw-radius-sm);\n  border: 1px solid var(--dsw-alias-separator-primary);\n  background: var(--dsw-alias-bg-layer-2);\n  color: var(--dsw-alias-label-secondary);\n  font-family: var(--dsw-font-mono, ui-monospace, monospace);\n  font-size: 10px;\n  line-height: 1.55;\n  white-space: pre-wrap;\n}\n.SkillsTab_diffCaption {\n  margin: 0;\n  font-size: 10px;\n  color: var(--dsw-alias-label-tertiary);\n}\n@media (max-width: 640px) {\n  .SkillsTab_block {\n    padding: 12px;\n  }\n  .SkillsTab_folderForm,\n  .SkillsTab_diffGrid {\n    grid-template-columns: minmax(0, 1fr);\n  }\n  .SkillsTab_refName {\n    max-width: 130px;\n  }\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/PetArtDialog.module.css */\n.PetArtDialog_overlay {\n  position: fixed;\n  inset: 0;\n  z-index: 46;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 20px;\n  background: rgb(20 20 19 / 55%);\n  backdrop-filter: blur(2px);\n}\n.PetArtDialog_dialog {\n  display: flex;\n  flex-direction: column;\n  gap: 9px;\n  width: min(620px, 100%);\n  max-height: 88vh;\n  overflow-y: auto;\n  padding: 18px;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-lg);\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: var(--dsw-shadow-lv2);\n  box-sizing: border-box;\n}\n.PetArtDialog_head {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  gap: 8px;\n}\n.PetArtDialog_eyebrow {\n  font-size: 9.5px;\n  font-weight: 600;\n  line-height: 1.4;\n  letter-spacing: 0.08em;\n  text-transform: uppercase;\n  color: var(--dsw-alias-label-tertiary);\n}\n.PetArtDialog_title {\n  margin: 0;\n  font-family: \"Poppins\", var(--dsw-font-family-brand);\n  font-size: 16px;\n  font-weight: 600;\n  line-height: 1.25;\n  color: var(--dsw-alias-label-primary);\n}\n.PetArtDialog_intro,\n.PetArtDialog_note,\n.PetArtDialog_localOnly,\n.PetArtDialog_license,\n.PetArtDialog_empty,\n.PetArtDialog_message,\n.PetArtDialog_error {\n  margin: 0;\n  font-size: 11.5px;\n  line-height: 1.55;\n  color: var(--dsw-alias-label-secondary);\n}\n.PetArtDialog_note {\n  color: var(--dsw-alias-label-tertiary);\n  font-size: 10.5px;\n}\n.PetArtDialog_localOnly {\n  padding: 8px 10px;\n  border-left: 3px solid #d98600;\n  border-radius: 8px;\n  background: var(--dsw-alias-bg-layer-2);\n  color: var(--dsw-alias-label-primary);\n}\n.PetArtDialog_expected {\n  display: flex;\n  flex-direction: column;\n  gap: 5px;\n  padding-top: 8px;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n}\n.PetArtDialog_names,\n.PetArtDialog_chips {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 4px;\n}\n.PetArtDialog_actions {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 8px;\n  align-items: center;\n}\n.PetArtDialog_message {\n  color: var(--dsw-alias-label-primary);\n}\n.PetArtDialog_error {\n  color: var(--dsw-alias-state-error-primary);\n}\n.PetArtDialog_installed {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  padding-top: 8px;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n}\n.PetArtDialog_license {\n  font-size: 10px;\n  color: var(--dsw-alias-label-tertiary);\n}\n@media (max-width: 640px) {\n  .PetArtDialog_dialog {\n    padding: 12px;\n  }\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/PetBubble.module.css */\n.PetBubble_bubble {\n  --pet-accent: #4b7bff;\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  gap: 5px;\n  padding: 8px 10px;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-left: 3px solid var(--pet-accent);\n  border-radius: 12px 12px 12px 5px;\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: 0 4px 14px rgb(18 36 92 / 10%);\n  box-sizing: border-box;\n}\n.PetBubble_inline {\n  width: 100%;\n  max-width: 360px;\n}\n.PetBubble_floating {\n  width: 252px;\n  padding: 9px 11px;\n  box-shadow: 0 10px 28px rgb(18 36 92 / 20%);\n}\n.PetBubble_toneInfo {\n  --pet-accent: #4b7bff;\n}\n.PetBubble_toneSuccess {\n  --pet-accent: #2c9b6a;\n}\n.PetBubble_toneWarning {\n  --pet-accent: #d98600;\n}\n.PetBubble_toneDanger {\n  --pet-accent: #d14b4b;\n}\n.PetBubble_textRow {\n  display: flex;\n  align-items: flex-start;\n  gap: 6px;\n  min-width: 0;\n}\n.PetBubble_text {\n  margin: 0;\n  flex: 1;\n  font-family:\n    \"Lora\",\n    Georgia,\n    var(--dsw-font-family-brand);\n  font-size: 11.5px;\n  line-height: 1.55;\n  color: var(--dsw-alias-label-primary);\n  overflow-wrap: anywhere;\n}\n.PetBubble_dismiss {\n  flex: none;\n  width: 18px;\n  height: 18px;\n  margin: -1px -3px 0 0;\n  padding: 0;\n  border: none;\n  border-radius: 6px;\n  background: transparent;\n  color: var(--dsw-alias-label-tertiary);\n  font-size: 15px;\n  line-height: 1;\n  cursor: pointer;\n}\n.PetBubble_dismiss:hover,\n.PetBubble_dismiss:focus-visible {\n  background: var(--dsw-alias-bg-layer-2);\n  color: var(--dsw-alias-label-primary);\n}\n.PetBubble_detail {\n  font-size: 9.5px;\n  line-height: 1.4;\n  letter-spacing: 0.01em;\n  color: var(--dsw-alias-label-tertiary);\n  font-variant-numeric: tabular-nums;\n}\n.PetBubble_progress {\n  width: 100%;\n  height: 4px;\n  border-radius: 999px;\n  background: var(--dsw-alias-bg-layer-2);\n  overflow: hidden;\n}\n.PetBubble_progressFill {\n  display: block;\n  height: 100%;\n  border-radius: 999px;\n  background: var(--pet-accent);\n  transition: width 240ms ease;\n}\n.PetBubble_tail {\n  position: absolute;\n  right: 26px;\n  bottom: -6px;\n  width: 11px;\n  height: 11px;\n  border-right: 1px solid var(--dsw-alias-border-l2);\n  border-bottom: 1px solid var(--dsw-alias-border-l2);\n  background: var(--dsw-alias-bg-layer-1);\n  transform: rotate(45deg);\n}\n.PetBubble_tailLeft {\n  right: auto;\n  left: 38px;\n}\n@media (prefers-reduced-motion: reduce) {\n  .PetBubble_progressFill {\n    transition: none;\n  }\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/PetSprite.module.css */\n.PetSprite_root {\n  position: relative;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  flex: none;\n  line-height: 0;\n  user-select: none;\n  -webkit-user-drag: none;\n  isolation: isolate;\n}\n.PetSprite_sizeInline {\n  width: 96px;\n  height: 96px;\n}\n.PetSprite_sizeDesktop {\n  width: 144px;\n  height: 144px;\n}\n.PetSprite_glow {\n  position: absolute;\n  inset: 8% 6% 2%;\n  z-index: 0;\n  border-radius: 50%;\n  background:\n    radial-gradient(\n      circle at 50% 45%,\n      rgb(91 164 255 / 26%) 0%,\n      rgb(91 164 255 / 8%) 45%,\n      transparent 70%);\n  animation: PetSprite_petGlow 4.4s ease-in-out infinite;\n  pointer-events: none;\n}\n.PetSprite_character {\n  position: absolute;\n  inset: 0;\n  z-index: 1;\n  transform-origin: 50% 85%;\n  filter: drop-shadow(0 8px 10px rgb(18 36 92 / 16%));\n  animation: PetSprite_petFloat 4.4s ease-in-out infinite;\n  will-change: transform;\n}\n.PetSprite_art {\n  position: absolute;\n  inset: 0;\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: contain;\n  image-rendering: auto;\n}\n.PetSprite_spout {\n  position: absolute;\n  top: 2%;\n  left: 16%;\n  width: 46%;\n  height: 28%;\n  opacity: 0;\n  pointer-events: none;\n}\n.PetSprite_spout i {\n  position: absolute;\n  display: block;\n  width: 18%;\n  height: 38%;\n  border-radius: 50% 50% 45% 45%;\n  background:\n    linear-gradient(\n      180deg,\n      #b8f2ff 0%,\n      #6fdcff 100%);\n  transform: rotate(-8deg);\n}\n.PetSprite_spout i:nth-child(2) {\n  left: 34%;\n  top: -8%;\n  height: 52%;\n  transform: rotate(7deg);\n}\n.PetSprite_spout i:nth-child(3) {\n  left: 66%;\n  top: 12%;\n  height: 30%;\n  transform: rotate(16deg);\n}\n.PetSprite_bubbles {\n  position: absolute;\n  inset: 0;\n  opacity: 0.35;\n  pointer-events: none;\n}\n.PetSprite_bubbles i {\n  position: absolute;\n  display: block;\n  border-radius: 50%;\n  background: rgb(255 255 255 / 85%);\n  box-shadow: 0 0 0 1px rgb(111 192 255 / 45%);\n  width: 8px;\n  height: 8px;\n  left: 82%;\n  top: 38%;\n  animation: PetSprite_petBubbleRise 5.5s ease-in-out infinite;\n}\n.PetSprite_bubbles i:nth-child(2) {\n  width: 5px;\n  height: 5px;\n  left: 90%;\n  top: 28%;\n  animation-delay: -1.8s;\n}\n.PetSprite_bubbles i:nth-child(3) {\n  width: 10px;\n  height: 10px;\n  left: 74%;\n  top: 18%;\n  animation-delay: -3.4s;\n}\n.PetSprite_attentionMark {\n  position: absolute;\n  top: 1%;\n  right: 3%;\n  display: grid;\n  place-items: center;\n  width: 23px;\n  height: 23px;\n  border-radius: 50%;\n  background: #f0a441;\n  color: #fff;\n  font-size: 14px;\n  font-weight: 800;\n  line-height: 1;\n  box-shadow: 0 3px 10px rgb(208 133 23 / 35%);\n  opacity: 0;\n  pointer-events: none;\n}\n.PetSprite_sparkles {\n  position: absolute;\n  top: 8%;\n  right: 6%;\n  color: #ffe08a;\n  font-size: 20px;\n  line-height: 1;\n  text-shadow: 0 0 8px rgb(255 224 138 / 70%);\n  opacity: 0;\n  pointer-events: none;\n}\n.PetSprite_sweat {\n  position: absolute;\n  top: 28%;\n  right: 7%;\n  width: 10px;\n  height: 14px;\n  border-radius: 55% 55% 60% 0;\n  background:\n    linear-gradient(\n      180deg,\n      #cdefff 0%,\n      #84d7ff 100%);\n  transform: rotate(-42deg);\n  opacity: 0;\n  pointer-events: none;\n}\n.PetSprite_zzz {\n  position: absolute;\n  top: 6%;\n  right: 2%;\n  display: flex;\n  flex-direction: column;\n  align-items: flex-end;\n  gap: 1px;\n  color: #7fb5ff;\n  font-size: 15px;\n  font-weight: 800;\n  line-height: 0.9;\n  text-shadow: 0 0 6px rgb(180 220 255 / 80%);\n  opacity: 0;\n  pointer-events: none;\n}\n.PetSprite_zzz i {\n  font-style: normal;\n  animation: PetSprite_petZ 3.2s ease-in-out infinite;\n}\n.PetSprite_zzz i:nth-child(2) {\n  font-size: 11px;\n  animation-delay: 0.35s;\n}\n.PetSprite_zzz i:nth-child(3) {\n  font-size: 8px;\n  animation-delay: 0.7s;\n}\n.PetSprite_moodIdle .PetSprite_bubbles {\n  opacity: 0.3;\n}\n.PetSprite_moodWorking .PetSprite_character {\n  animation-duration: 1.55s;\n}\n.PetSprite_moodWorking .PetSprite_spout {\n  opacity: 1;\n  animation: PetSprite_petSpout 1.2s ease-in-out infinite;\n}\n.PetSprite_moodWorking .PetSprite_bubbles {\n  opacity: 0.9;\n}\n.PetSprite_moodWorking .PetSprite_bubbles i {\n  animation-duration: 2.4s;\n}\n.PetSprite_moodAttention .PetSprite_character {\n  animation: PetSprite_petHop 0.9s cubic-bezier(0.28, 0.7, 0.35, 1) infinite;\n}\n.PetSprite_moodAttention .PetSprite_attentionMark {\n  opacity: 1;\n  animation: PetSprite_petBang 0.9s ease-in-out infinite;\n}\n.PetSprite_moodDone .PetSprite_character {\n  animation: PetSprite_petCelebrate 1.1s cubic-bezier(0.3, 0.75, 0.35, 1) 2;\n}\n.PetSprite_moodDone .PetSprite_sparkles {\n  opacity: 1;\n  animation: PetSprite_petSparkle 1.5s ease-in-out infinite;\n}\n.PetSprite_moodDone .PetSprite_bubbles {\n  opacity: 0.75;\n}\n.PetSprite_moodError .PetSprite_character {\n  animation: PetSprite_petShake 0.45s ease-in-out 2;\n}\n.PetSprite_moodError .PetSprite_sweat {\n  opacity: 1;\n  animation: PetSprite_petSweat 1.3s ease-in-out infinite;\n}\n.PetSprite_moodConnecting .PetSprite_character {\n  animation: PetSprite_petSearch 2.8s ease-in-out infinite;\n}\n.PetSprite_moodConnecting .PetSprite_bubbles {\n  opacity: 0.8;\n}\n.PetSprite_moodSleeping .PetSprite_character {\n  animation: PetSprite_petSleep 5s ease-in-out infinite;\n}\n.PetSprite_moodSleeping .PetSprite_zzz {\n  opacity: 1;\n}\n.PetSprite_moodSleeping .PetSprite_bubbles {\n  opacity: 0.18;\n}\n@keyframes PetSprite_petGlow {\n  0%, 100% {\n    opacity: 0.6;\n    transform: scale(1);\n  }\n  50% {\n    opacity: 0.95;\n    transform: scale(1.04);\n  }\n}\n@keyframes PetSprite_petFloat {\n  0%, 100% {\n    transform: translateY(0) rotate(-1.2deg);\n  }\n  50% {\n    transform: translateY(-5px) rotate(1.2deg);\n  }\n}\n@keyframes PetSprite_petBubbleRise {\n  0% {\n    transform: translateY(4px) scale(0.8);\n    opacity: 0.35;\n  }\n  45% {\n    transform: translateY(-6px) scale(1);\n    opacity: 0.9;\n  }\n  100% {\n    transform: translateY(-16px) scale(0.7);\n    opacity: 0;\n  }\n}\n@keyframes PetSprite_petSpout {\n  0%, 100% {\n    transform: translateY(0) scaleY(0.9);\n    opacity: 0.65;\n  }\n  50% {\n    transform: translateY(-6px) scaleY(1.08);\n    opacity: 1;\n  }\n}\n@keyframes PetSprite_petHop {\n  0%, 100% {\n    transform: translateY(0) rotate(0);\n  }\n  35% {\n    transform: translateY(-10px) rotate(-2deg);\n  }\n  60% {\n    transform: translateY(0) rotate(1deg);\n  }\n}\n@keyframes PetSprite_petBang {\n  0%, 100% {\n    transform: scale(0.8) rotate(-8deg);\n    opacity: 0.4;\n  }\n  40% {\n    transform: scale(1.08) rotate(4deg);\n    opacity: 1;\n  }\n  70% {\n    transform: scale(0.96) rotate(0);\n    opacity: 1;\n  }\n}\n@keyframes PetSprite_petCelebrate {\n  0%, 100% {\n    transform: translateY(0) rotate(0);\n  }\n  25% {\n    transform: translateY(-12px) rotate(-7deg);\n  }\n  55% {\n    transform: translateY(-4px) rotate(6deg);\n  }\n  75% {\n    transform: translateY(-9px) rotate(-3deg);\n  }\n}\n@keyframes PetSprite_petSparkle {\n  0%, 100% {\n    transform: scale(0.8) rotate(0);\n    opacity: 0.35;\n  }\n  50% {\n    transform: scale(1.08) rotate(16deg);\n    opacity: 1;\n  }\n}\n@keyframes PetSprite_petShake {\n  0%, 100% {\n    transform: translateX(0) rotate(0);\n  }\n  25% {\n    transform: translateX(-5px) rotate(-2deg);\n  }\n  50% {\n    transform: translateX(4px) rotate(2deg);\n  }\n  75% {\n    transform: translateX(-2px) rotate(-1deg);\n  }\n}\n@keyframes PetSprite_petSweat {\n  0%, 100% {\n    transform: translateY(0) rotate(-42deg);\n    opacity: 0.4;\n  }\n  50% {\n    transform: translateY(4px) rotate(-42deg);\n    opacity: 1;\n  }\n}\n@keyframes PetSprite_petSearch {\n  0%, 100% {\n    transform: rotate(-5deg);\n  }\n  30% {\n    transform: rotate(5deg);\n  }\n  60% {\n    transform: rotate(-2deg);\n  }\n}\n@keyframes PetSprite_petSleep {\n  0%, 100% {\n    transform: translateY(0) scaleY(0.98);\n  }\n  50% {\n    transform: translateY(-2px) scaleY(1.02);\n  }\n}\n@keyframes PetSprite_petZ {\n  0% {\n    opacity: 0;\n    transform: translateY(4px);\n  }\n  35% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n    transform: translateY(-9px);\n  }\n}\n@media (prefers-reduced-motion: reduce) {\n  .PetSprite_root *,\n  .PetSprite_root {\n    animation: none !important;\n    transition: none !important;\n  }\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/MemoryTab.module.css */\n.MemoryTab_tab {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n  min-width: 0;\n}\n.MemoryTab_hero,\n.MemoryTab_card,\n.MemoryTab_drawer,\n.MemoryTab_mailDialog {\n  display: flex;\n  flex-direction: column;\n  gap: 9px;\n  padding: 14px;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-lg);\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: var(--dsw-shadow-lv1-blur);\n}\n.MemoryTab_hero {\n  display: grid;\n  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);\n  gap: 10px;\n  padding: 16px;\n}\n.MemoryTab_persona {\n  display: flex;\n  align-items: flex-start;\n  gap: 13px;\n  min-width: 0;\n}\n.MemoryTab_petButton {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  width: 96px;\n  height: 96px;\n  flex: none;\n  padding: 0;\n  border: 1px solid transparent;\n  border-radius: 24px 24px 24px 9px;\n  background:\n    radial-gradient(\n      120% 120% at 50% 18%,\n      rgb(75 123 255 / 16%) 0%,\n      transparent 62%),\n    var(--dsw-alias-bg-module-platform);\n  cursor: pointer;\n  transition: transform 180ms ease, background 180ms ease;\n}\n.MemoryTab_petButton:hover {\n  transform: translateY(-2px);\n  background:\n    radial-gradient(\n      120% 120% at 50% 18%,\n      rgb(75 123 255 / 24%) 0%,\n      transparent 66%),\n    var(--dsw-alias-bg-module-platform);\n}\n.MemoryTab_petButton:focus-visible {\n  outline: 2px solid #4b7bff;\n  outline-offset: 2px;\n}\n.MemoryTab_petPreview {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  width: 96px;\n  height: 96px;\n  flex: none;\n  border: 1px solid transparent;\n  border-radius: 24px 24px 24px 9px;\n  background:\n    radial-gradient(\n      120% 120% at 50% 18%,\n      rgb(75 123 255 / 12%) 0%,\n      transparent 62%),\n    var(--dsw-alias-bg-module-platform);\n  opacity: 0.86;\n}\n.MemoryTab_personaBubble {\n  width: 100%;\n  max-width: 360px;\n  margin-top: 6px;\n}\n.MemoryTab_personaText {\n  display: flex;\n  flex-direction: column;\n  gap: 3px;\n  min-width: 0;\n}\n.MemoryTab_personaNameLine {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 6px;\n}\n.MemoryTab_personaName {\n  margin: 0;\n  font-family: \"Poppins\", var(--dsw-font-family-brand);\n  font-size: 22px;\n  font-weight: 600;\n  line-height: 1.15;\n  letter-spacing: -0.02em;\n  color: var(--dsw-alias-label-primary);\n}\n.MemoryTab_personaRole {\n  margin: 0;\n  font-size: 11px;\n  font-weight: 600;\n  color: var(--dsw-alias-label-secondary);\n}\n.MemoryTab_personaIntro {\n  margin: 0;\n  font-family:\n    \"Lora\",\n    Georgia,\n    var(--dsw-font-family-brand);\n  font-size: 11.5px;\n  line-height: 1.55;\n  color: var(--dsw-alias-label-secondary);\n}\n.MemoryTab_roleCard {\n  display: flex;\n  flex-direction: column;\n  gap: 5px;\n  padding-top: 8px;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n}\n.MemoryTab_eyebrow {\n  font-size: 9.5px;\n  font-weight: 600;\n  line-height: 1.4;\n  letter-spacing: 0.08em;\n  text-transform: uppercase;\n  color: var(--dsw-alias-label-tertiary);\n}\n.MemoryTab_roleText {\n  margin: 0;\n  font-family:\n    \"Lora\",\n    Georgia,\n    var(--dsw-font-family-brand);\n  font-size: 11px;\n  line-height: 1.6;\n  color: var(--dsw-alias-label-secondary);\n}\n.MemoryTab_statusLine,\n.MemoryTab_boundaryFooter {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 5px;\n}\n.MemoryTab_statusPill {\n  display: inline-flex;\n  align-items: center;\n  padding: 3px 8px;\n  border: 1px solid var(--dsw-alias-separator-primary);\n  border-radius: 999px;\n  background: var(--dsw-alias-bg-layer-2);\n  color: var(--dsw-alias-label-secondary);\n  font-size: 10px;\n  line-height: 1.4;\n}\n.MemoryTab_grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));\n  gap: 10px;\n}\n.MemoryTab_cardHead,\n.MemoryTab_drawerHead {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 6px;\n}\n.MemoryTab_drawerHead {\n  justify-content: space-between;\n}\n.MemoryTab_cardHead .MemoryTab_eyebrow {\n  width: 100%;\n}\n.MemoryTab_title {\n  margin: 0;\n  font-family: \"Poppins\", var(--dsw-font-family-brand);\n  font-size: 15px;\n  font-weight: 600;\n  line-height: 1.25;\n  letter-spacing: -0.015em;\n  color: var(--dsw-alias-label-primary);\n}\n.MemoryTab_subtitle {\n  margin: 0;\n  font-size: 11.5px;\n  font-weight: 600;\n  color: var(--dsw-alias-label-primary);\n}\n.MemoryTab_growthRow {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n}\n.MemoryTab_growthBar {\n  flex: 1;\n  height: 7px;\n  border-radius: 999px;\n  background: var(--dsw-alias-bg-layer-2);\n  overflow: hidden;\n}\n.MemoryTab_growthFill {\n  display: block;\n  height: 100%;\n  border-radius: 999px;\n  background: var(--dsw-alias-label-secondary);\n}\n.MemoryTab_growthValue {\n  font-family: \"Poppins\", var(--dsw-font-family-brand);\n  font-size: 12px;\n  font-weight: 600;\n  font-variant-numeric: tabular-nums;\n  color: var(--dsw-alias-label-primary);\n}\n.MemoryTab_traitRow {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 4px;\n}\n.MemoryTab_littleThought,\n.MemoryTab_memoryBox {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  padding-top: 8px;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n}\n.MemoryTab_thoughtText {\n  margin: 0;\n  font-family:\n    \"Lora\",\n    Georgia,\n    var(--dsw-font-family-brand);\n  font-size: 10.5px;\n  line-height: 1.55;\n  color: var(--dsw-alias-label-secondary);\n}\n.MemoryTab_habitList,\n.MemoryTab_boundaryList {\n  margin: 0;\n  padding-left: 18px;\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  font-family:\n    \"Lora\",\n    Georgia,\n    var(--dsw-font-family-brand);\n  font-size: 11px;\n  line-height: 1.55;\n  color: var(--dsw-alias-label-secondary);\n}\n.MemoryTab_bodyText {\n  margin: 0;\n  font-family:\n    \"Lora\",\n    Georgia,\n    var(--dsw-font-family-brand);\n  font-size: 10.5px;\n  line-height: 1.55;\n  color: var(--dsw-alias-label-secondary);\n}\n.MemoryTab_memoryChips {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 4px;\n}\n.MemoryTab_chat {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  max-height: 330px;\n  overflow-y: auto;\n  padding: 8px 0;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n  border-bottom: 1px solid var(--dsw-alias-separator-primary);\n}\n.MemoryTab_bubbleRow {\n  display: flex;\n  justify-content: flex-start;\n}\n.MemoryTab_bubbleRowUser {\n  justify-content: flex-end;\n}\n.MemoryTab_bubble {\n  display: flex;\n  flex-direction: column;\n  gap: 3px;\n  max-width: min(78%, 520px);\n  padding: 8px 10px;\n  border: 1px solid var(--dsw-alias-separator-primary);\n  border-radius: 12px 12px 12px 4px;\n  background: var(--dsw-alias-bg-layer-2);\n}\n.MemoryTab_bubbleUser {\n  border-radius: 12px 12px 4px 12px;\n  background: var(--dsw-alias-bg-module-platform);\n}\n.MemoryTab_bubbleRole {\n  font-size: 9px;\n  font-weight: 600;\n  letter-spacing: 0.06em;\n  text-transform: uppercase;\n  color: var(--dsw-alias-label-tertiary);\n}\n.MemoryTab_bubbleText {\n  margin: 0;\n  font-family:\n    \"Lora\",\n    Georgia,\n    var(--dsw-font-family-brand);\n  font-size: 11px;\n  line-height: 1.55;\n  color: var(--dsw-alias-label-primary);\n}\n.MemoryTab_bubbleTime {\n  font-size: 9px;\n  color: var(--dsw-alias-label-tertiary);\n}\n.MemoryTab_composer {\n  display: grid;\n  grid-template-columns: minmax(0, 1fr) auto;\n  gap: 8px;\n  align-items: end;\n}\n.MemoryTab_notice {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  gap: 8px;\n  padding: 9px 0;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n}\n.MemoryTab_noticeText {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n}\n.MemoryTab_noticeTime {\n  font-size: 9.5px;\n  color: var(--dsw-alias-label-tertiary);\n}\n.MemoryTab_empty {\n  margin: 0;\n  font-size: 12px;\n  color: var(--dsw-alias-label-tertiary);\n}\n.MemoryTab_boundaryFooter {\n  padding-top: 8px;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n}\n.MemoryTab_watchGrid,\n.MemoryTab_stateGrid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));\n  gap: 12px;\n}\n.MemoryTab_watchColumn,\n.MemoryTab_stateItem {\n  display: flex;\n  flex-direction: column;\n  gap: 5px;\n  min-width: 0;\n  padding-top: 8px;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n}\n.MemoryTab_queueList {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\n.MemoryTab_queueRow {\n  display: flex;\n  align-items: baseline;\n  justify-content: space-between;\n  gap: 8px;\n  padding: 5px 0;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n}\n.MemoryTab_queueRow:first-child {\n  border-top: none;\n}\n.MemoryTab_queueName {\n  font-size: 11.5px;\n  font-weight: 600;\n  color: var(--dsw-alias-label-primary);\n}\n.MemoryTab_queueMeta {\n  font-size: 10px;\n  color: var(--dsw-alias-label-tertiary);\n}\n.MemoryTab_stateValueLine {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 6px;\n}\n.MemoryTab_stateValue {\n  font-family: \"Poppins\", var(--dsw-font-family-brand);\n  font-size: 15px;\n  font-weight: 600;\n  color: var(--dsw-alias-label-primary);\n}\n.MemoryTab_contextBar {\n  width: 100%;\n  height: 6px;\n  margin-top: 3px;\n  border-radius: 999px;\n  background: var(--dsw-alias-bg-layer-2);\n  overflow: hidden;\n}\n.MemoryTab_contextFill {\n  display: block;\n  height: 100%;\n  border-radius: 999px;\n  background: var(--dsw-alias-label-secondary);\n}\n.MemoryTab_overlay {\n  position: fixed;\n  inset: 0;\n  z-index: 45;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 20px;\n  background: rgba(20, 20, 19, 0.55);\n  backdrop-filter: blur(2px);\n}\n.MemoryTab_mailDialog {\n  width: min(760px, 100%);\n  max-height: 88vh;\n  overflow-y: auto;\n  padding: 18px;\n  box-sizing: border-box;\n}\n.MemoryTab_mailLayout {\n  display: grid;\n  grid-template-columns: minmax(200px, 0.8fr) minmax(0, 1.4fr);\n  gap: 14px;\n  min-height: 280px;\n}\n.MemoryTab_mailList {\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n  padding-right: 12px;\n  border-right: 1px solid var(--dsw-alias-separator-primary);\n}\n.MemoryTab_mailRow {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  width: 100%;\n  padding: 9px 8px;\n  border: none;\n  border-top: 1px solid var(--dsw-alias-separator-primary);\n  background: transparent;\n  text-align: left;\n  cursor: pointer;\n  color: var(--dsw-alias-label-secondary);\n}\n.MemoryTab_mailRow:first-child {\n  border-top: none;\n}\n.MemoryTab_mailRowActive {\n  background: var(--dsw-alias-bg-module-platform);\n  color: var(--dsw-alias-label-primary);\n}\n.MemoryTab_mailSubject {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  font-size: 11.5px;\n  font-weight: 600;\n  line-height: 1.4;\n}\n.MemoryTab_mailDate {\n  font-size: 10px;\n  color: var(--dsw-alias-label-tertiary);\n}\n.MemoryTab_unreadDot {\n  width: 6px;\n  height: 6px;\n  flex: none;\n  border-radius: 50%;\n  background: var(--dsw-alias-label-primary);\n}\n.MemoryTab_mailDetail {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  min-width: 0;\n}\n.MemoryTab_mailDetailTitle {\n  margin: 0;\n  font-family: \"Poppins\", var(--dsw-font-family-brand);\n  font-size: 16px;\n  font-weight: 600;\n  line-height: 1.3;\n  color: var(--dsw-alias-label-primary);\n}\n.MemoryTab_mailMeta {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 10px;\n  font-size: 10px;\n  color: var(--dsw-alias-label-tertiary);\n}\n.MemoryTab_mailBody {\n  margin: 0;\n  font-family:\n    \"Lora\",\n    Georgia,\n    var(--dsw-font-family-brand);\n  font-size: 11.5px;\n  line-height: 1.65;\n  color: var(--dsw-alias-label-secondary);\n}\n.MemoryTab_mailActions {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 8px;\n}\n.MemoryTab_successText {\n  font-size: 10.5px;\n  color: var(--dsw-alias-label-secondary);\n}\n@media (max-width: 640px) {\n  .MemoryTab_hero,\n  .MemoryTab_mailLayout {\n    grid-template-columns: minmax(0, 1fr);\n  }\n  .MemoryTab_card,\n  .MemoryTab_drawer,\n  .MemoryTab_mailDialog {\n    padding: 12px;\n  }\n  .MemoryTab_mailList {\n    padding-right: 0;\n    padding-bottom: 10px;\n    border-right: none;\n    border-bottom: 1px solid var(--dsw-alias-separator-primary);\n  }\n  .MemoryTab_composer {\n    grid-template-columns: minmax(0, 1fr);\n  }\n  .MemoryTab_bubble {\n    max-width: 92%;\n  }\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/Section.module.css */\n.Section_section {\n  display: flex;\n  flex-direction: column;\n  gap: 14px;\n  width: 100%;\n  min-width: 0;\n  padding: 20px;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-xl);\n  background:\n    radial-gradient(\n      120% 160% at 0% 0%,\n      var(--dsw-alias-state-business-tertiary) 0%,\n      transparent 58%),\n    var(--dsw-alias-bg-layer-1);\n  box-shadow: var(--dsw-shadow-lv2);\n  box-sizing: border-box;\n}\n.Section_hero {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n  padding-bottom: 14px;\n  border-bottom: 1px solid var(--dsw-alias-separator-primary);\n}\n.Section_identity {\n  display: flex;\n  align-items: center;\n  gap: 14px;\n  min-width: 0;\n}\n.Section_avatar {\n  width: 56px;\n  height: 56px;\n  flex: none;\n  object-fit: cover;\n  object-position: 50% 18%;\n  border: 1px solid var(--dsw-alias-border-l3);\n  border-radius: var(--dsw-radius-md);\n  background: var(--dsw-alias-bg-layer-2);\n  box-shadow: var(--dsw-shadow-lv1-blur);\n  user-select: none;\n}\n.Section_titleBlock {\n  display: flex;\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n}\n.Section_title {\n  margin: 0;\n  font-family: var(--dsw-font-family-brand);\n  font-size: 24px;\n  font-weight: 600;\n  line-height: 1.15;\n  letter-spacing: -0.02em;\n  color: var(--dsw-alias-label-primary);\n  white-space: nowrap;\n}\n.Section_description {\n  margin: 0;\n  font-size: 12px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-secondary);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.Section_status {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  justify-content: flex-end;\n  gap: 6px;\n  flex-shrink: 0;\n}\n.Section_star {\n  display: inline-flex;\n  align-items: center;\n  gap: 5px;\n  height: 28px;\n  padding: 0 10px;\n  box-sizing: border-box;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-lg);\n  background: var(--dsw-alias-bg-layer-1);\n  color: var(--dsw-alias-label-primary);\n  font-size: 11px;\n  font-weight: 600;\n  line-height: 1;\n  text-decoration: none;\n  white-space: nowrap;\n  transition: border-color 140ms ease, background-color 140ms ease;\n}\n.Section_star:hover {\n  border-color: var(--dsw-alias-border-l3);\n  background: var(--dsw-alias-bg-module-platform);\n}\n.Section_starIcon {\n  width: 13px;\n  height: 13px;\n  flex: none;\n}\n.Section_tabs {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: flex-start;\n  gap: 4px;\n  padding: 6px;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: var(--dsw-radius-lg);\n  background: var(--dsw-alias-bg-module-platform);\n}\n.Section_tabButton {\n  position: relative;\n  display: inline-flex;\n  flex: 0 0 auto;\n  align-items: center;\n  justify-content: center;\n  width: auto;\n  min-height: 32px;\n  max-width: 100%;\n  padding: 5px 12px;\n  box-sizing: border-box;\n  border: none;\n  border-radius: var(--dsw-radius-md);\n  background: transparent;\n  color: var(--dsw-alias-label-secondary);\n  font-size: 12px;\n  font-weight: 500;\n  line-height: 1.3;\n  letter-spacing: 0.01em;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  cursor: pointer;\n  transition:\n    background-color 140ms ease,\n    color 140ms ease,\n    box-shadow 140ms ease;\n}\n.Section_tabButton:hover {\n  background: var(--dsw-alias-bg-layer-1);\n  color: var(--dsw-alias-label-primary);\n}\n.Section_tabButton:focus-visible {\n  outline: 2px solid var(--dsw-alias-border-l3);\n  outline-offset: -2px;\n}\n.Section_tabButtonActive {\n  background: var(--dsw-alias-bg-layer-1);\n  color: var(--dsw-alias-label-primary);\n  font-weight: 600;\n  box-shadow: 0 2px 8px rgba(20, 20, 19, 0.12), 0 1px 2px rgba(20, 20, 19, 0.08);\n}\n.Section_tabButtonActive::after {\n  content: \"\";\n  position: absolute;\n  left: 50%;\n  bottom: 3px;\n  width: 18px;\n  height: 2px;\n  border-radius: 1px;\n  background: var(--dsw-alias-label-primary);\n  transform: translateX(-50%);\n}\n.Section_panel {\n  min-width: 0;\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n  padding-top: 2px;\n}\n@media (max-width: 640px) {\n  .Section_section {\n    padding: 16px;\n    border-radius: var(--dsw-radius-lg);\n  }\n  .Section_hero {\n    flex-direction: column;\n    align-items: flex-start;\n    gap: 10px;\n  }\n  .Section_status {\n    justify-content: flex-start;\n  }\n  .Section_tabButton {\n    padding: 5px 10px;\n  }\n  .Section_title {\n    font-size: 21px;\n  }\n  .Section_description {\n    white-space: normal;\n  }\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/SessionNotice.module.css */\n.SessionNotice_notice {\n  position: fixed;\n  top: 56px;\n  left: 50%;\n  transform: translateX(-50%);\n  z-index: 40;\n  display: flex;\n  flex-direction: column;\n  gap: 6px;\n  max-width: min(520px, calc(100vw - 32px));\n  padding: 10px 12px;\n  border: 1px solid var(--dsw-alias-separator-primary);\n  border-left: 3px solid var(--dsw-alias-label-warning, #d98600);\n  border-radius: 10px;\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: 0 6px 20px rgb(0 0 0 / 12%);\n}\n.SessionNotice_head {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 8px;\n}\n.SessionNotice_reason {\n  margin: 0;\n  font-size: 12px;\n  line-height: 1.5;\n  color: var(--dsw-alias-label-primary);\n}\n.SessionNotice_detail {\n  font-size: 11px;\n  color: var(--dsw-alias-label-tertiary);\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n\n/* packages/client/ui-settings-session-orchestrator/src/client/DesktopPet.module.css */\n.DesktopPet_layer {\n  position: fixed;\n  z-index: 60;\n  width: 144px;\n  height: 144px;\n  pointer-events: none;\n}\n.DesktopPet_petAnchor {\n  display: flex;\n  align-items: flex-end;\n  justify-content: center;\n  width: 100%;\n  height: 100%;\n  pointer-events: auto;\n  touch-action: none;\n  cursor: grab;\n  border-radius: 26px;\n  outline: none;\n  filter: drop-shadow(0 10px 14px rgb(18 36 92 / 18%));\n  transition: filter 180ms ease, transform 180ms ease;\n}\n.DesktopPet_petAnchor:hover {\n  filter: drop-shadow(0 14px 18px rgb(18 36 92 / 24%));\n  transform: translateY(-2px);\n}\n.DesktopPet_petAnchor:focus-visible {\n  outline: 2px solid #4b7bff;\n  outline-offset: 4px;\n}\n.DesktopPet_dragging {\n  cursor: grabbing;\n  transform: scale(0.97);\n  filter: drop-shadow(0 6px 10px rgb(18 36 92 / 16%));\n}\n.DesktopPet_bubbleSlot {\n  position: absolute;\n  bottom: calc(100% + 12px);\n  pointer-events: auto;\n}\n.DesktopPet_bubbleRight {\n  right: 0;\n}\n.DesktopPet_bubbleLeft {\n  left: 0;\n}\n.DesktopPet_controls {\n  position: absolute;\n  top: calc(100% + 2px);\n  right: 2px;\n  display: flex;\n  gap: 4px;\n  pointer-events: auto;\n  opacity: 0.58;\n  transform: translateY(-2px);\n  transition: opacity 160ms ease, transform 160ms ease;\n}\n.DesktopPet_layer:hover .DesktopPet_controls,\n.DesktopPet_layer:focus-within .DesktopPet_controls {\n  opacity: 1;\n  transform: none;\n}\n.DesktopPet_control {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  width: 22px;\n  height: 22px;\n  padding: 0;\n  border: 1px solid var(--dsw-alias-border-l2);\n  border-radius: 7px;\n  background: var(--dsw-alias-bg-layer-1);\n  box-shadow: 0 2px 8px rgb(18 36 92 / 12%);\n  color: var(--dsw-alias-label-secondary);\n  font-size: 12px;\n  line-height: 1;\n  cursor: pointer;\n}\n.DesktopPet_control:hover,\n.DesktopPet_control:focus-visible {\n  color: var(--dsw-alias-label-primary);\n  background: var(--dsw-alias-bg-layer-2);\n}\n@media (prefers-reduced-motion: reduce) {\n  .DesktopPet_petAnchor,\n  .DesktopPet_controls {\n    transition: none;\n  }\n}\n";
 		document.head.appendChild(tag);
 	} catch {
 	}
@@ -21,9 +21,9 @@ var __export = (target, all) => {
 };
 var __copyProps = (to, from, except, desc) => {
   if (from && typeof from === "object" || typeof from === "function") {
-    for (let key of __getOwnPropNames(from))
-      if (!__hasOwnProp.call(to, key) && key !== except)
-        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+    for (let key2 of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key2) && key2 !== except)
+        __defProp(to, key2, { get: () => from[key2], enumerable: !(desc = __getOwnPropDesc(from, key2)) || desc.enumerable });
   }
   return to;
 };
@@ -759,9 +759,9 @@ function floatSafeRemainder(val, step) {
   return ratio - roundedRatio;
 }
 var EVALUATING = /* @__PURE__ */ Symbol("evaluating");
-function defineLazy(object2, key, getter) {
+function defineLazy(object2, key2, getter) {
   let value = void 0;
-  Object.defineProperty(object2, key, {
+  Object.defineProperty(object2, key2, {
     get() {
       if (value === EVALUATING) {
         return void 0;
@@ -773,7 +773,7 @@ function defineLazy(object2, key, getter) {
       return value;
     },
     set(v) {
-      Object.defineProperty(object2, key, {
+      Object.defineProperty(object2, key2, {
         value: v
         // configurable: true,
       });
@@ -806,11 +806,11 @@ function cloneDef(schema) {
 function getElementAtPath(obj, path) {
   if (!path)
     return obj;
-  return path.reduce((acc, key) => acc?.[key], obj);
+  return path.reduce((acc, key2) => acc?.[key2], obj);
 }
 function promiseAllObject(promisesObj) {
   const keys = Object.keys(promisesObj);
-  const promises = keys.map((key) => promisesObj[key]);
+  const promises = keys.map((key2) => promisesObj[key2]);
   return Promise.all(promises).then((results) => {
     const resolvedObj = {};
     for (let i = 0; i < keys.length; i++) {
@@ -882,8 +882,8 @@ function shallowClone(o) {
 }
 function numKeys(data) {
   let keyCount = 0;
-  for (const key in data) {
-    if (Object.prototype.hasOwnProperty.call(data, key)) {
+  for (const key2 in data) {
+    if (Object.prototype.hasOwnProperty.call(data, key2)) {
       keyCount++;
     }
   }
@@ -1033,13 +1033,13 @@ function pick(schema, mask) {
   const def = mergeDefs(schema._zod.def, {
     get shape() {
       const newShape = {};
-      for (const key in mask) {
-        if (!(key in currDef.shape)) {
-          throw new Error(`Unrecognized key: "${key}"`);
+      for (const key2 in mask) {
+        if (!(key2 in currDef.shape)) {
+          throw new Error(`Unrecognized key: "${key2}"`);
         }
-        if (!mask[key])
+        if (!mask[key2])
           continue;
-        newShape[key] = currDef.shape[key];
+        newShape[key2] = currDef.shape[key2];
       }
       assignProp(this, "shape", newShape);
       return newShape;
@@ -1058,13 +1058,13 @@ function omit(schema, mask) {
   const def = mergeDefs(schema._zod.def, {
     get shape() {
       const newShape = { ...schema._zod.def.shape };
-      for (const key in mask) {
-        if (!(key in currDef.shape)) {
-          throw new Error(`Unrecognized key: "${key}"`);
+      for (const key2 in mask) {
+        if (!(key2 in currDef.shape)) {
+          throw new Error(`Unrecognized key: "${key2}"`);
         }
-        if (!mask[key])
+        if (!mask[key2])
           continue;
-        delete newShape[key];
+        delete newShape[key2];
       }
       assignProp(this, "shape", newShape);
       return newShape;
@@ -1081,8 +1081,8 @@ function extend(schema, shape) {
   const hasChecks = checks && checks.length > 0;
   if (hasChecks) {
     const existingShape = schema._zod.def.shape;
-    for (const key in shape) {
-      if (Object.getOwnPropertyDescriptor(existingShape, key) !== void 0) {
+    for (const key2 in shape) {
+      if (Object.getOwnPropertyDescriptor(existingShape, key2) !== void 0) {
         throw new Error("Cannot overwrite keys on object schemas containing refinements. Use `.safeExtend()` instead.");
       }
     }
@@ -1138,23 +1138,23 @@ function partial(Class2, schema, mask) {
       const oldShape = schema._zod.def.shape;
       const shape = { ...oldShape };
       if (mask) {
-        for (const key in mask) {
-          if (!(key in oldShape)) {
-            throw new Error(`Unrecognized key: "${key}"`);
+        for (const key2 in mask) {
+          if (!(key2 in oldShape)) {
+            throw new Error(`Unrecognized key: "${key2}"`);
           }
-          if (!mask[key])
+          if (!mask[key2])
             continue;
-          shape[key] = Class2 ? new Class2({
+          shape[key2] = Class2 ? new Class2({
             type: "optional",
-            innerType: oldShape[key]
-          }) : oldShape[key];
+            innerType: oldShape[key2]
+          }) : oldShape[key2];
         }
       } else {
-        for (const key in oldShape) {
-          shape[key] = Class2 ? new Class2({
+        for (const key2 in oldShape) {
+          shape[key2] = Class2 ? new Class2({
             type: "optional",
-            innerType: oldShape[key]
-          }) : oldShape[key];
+            innerType: oldShape[key2]
+          }) : oldShape[key2];
         }
       }
       assignProp(this, "shape", shape);
@@ -1170,22 +1170,22 @@ function required(Class2, schema, mask) {
       const oldShape = schema._zod.def.shape;
       const shape = { ...oldShape };
       if (mask) {
-        for (const key in mask) {
-          if (!(key in shape)) {
-            throw new Error(`Unrecognized key: "${key}"`);
+        for (const key2 in mask) {
+          if (!(key2 in shape)) {
+            throw new Error(`Unrecognized key: "${key2}"`);
           }
-          if (!mask[key])
+          if (!mask[key2])
             continue;
-          shape[key] = new Class2({
+          shape[key2] = new Class2({
             type: "nonoptional",
-            innerType: oldShape[key]
+            innerType: oldShape[key2]
           });
         }
       } else {
-        for (const key in oldShape) {
-          shape[key] = new Class2({
+        for (const key2 in oldShape) {
+          shape[key2] = new Class2({
             type: "nonoptional",
-            innerType: oldShape[key]
+            innerType: oldShape[key2]
           });
         }
       }
@@ -2966,13 +2966,13 @@ var $ZodArray = /* @__PURE__ */ $constructor("$ZodArray", (inst, def) => {
     return payload;
   };
 });
-function handlePropertyResult(result, final, key, input, isOptionalIn, isOptionalOut) {
-  const isPresent = key in input;
+function handlePropertyResult(result, final, key2, input, isOptionalIn, isOptionalOut) {
+  const isPresent = key2 in input;
   if (result.issues.length) {
     if (isOptionalIn && isOptionalOut && !isPresent) {
       return;
     }
-    final.issues.push(...prefixIssues(key, result.issues));
+    final.issues.push(...prefixIssues(key2, result.issues));
   }
   if (!isPresent && !isOptionalIn) {
     if (!result.issues.length) {
@@ -2980,17 +2980,17 @@ function handlePropertyResult(result, final, key, input, isOptionalIn, isOptiona
         code: "invalid_type",
         expected: "nonoptional",
         input: void 0,
-        path: [key]
+        path: [key2]
       });
     }
     return;
   }
   if (result.value === void 0) {
     if (isPresent) {
-      final.value[key] = void 0;
+      final.value[key2] = void 0;
     }
   } else {
-    final.value[key] = result.value;
+    final.value[key2] = result.value;
   }
 }
 function normalizeDef(def) {
@@ -3016,20 +3016,20 @@ function handleCatchall(proms, input, payload, ctx, def, inst) {
   const t = _catchall.def.type;
   const isOptionalIn = _catchall.optin === "optional";
   const isOptionalOut = _catchall.optout === "optional";
-  for (const key in input) {
-    if (key === "__proto__")
+  for (const key2 in input) {
+    if (key2 === "__proto__")
       continue;
-    if (keySet.has(key))
+    if (keySet.has(key2))
       continue;
     if (t === "never") {
-      unrecognized.push(key);
+      unrecognized.push(key2);
       continue;
     }
-    const r = _catchall.run({ value: input[key], issues: [] }, ctx);
+    const r = _catchall.run({ value: input[key2], issues: [] }, ctx);
     if (r instanceof Promise) {
-      proms.push(r.then((r2) => handlePropertyResult(r2, payload, key, input, isOptionalIn, isOptionalOut)));
+      proms.push(r.then((r2) => handlePropertyResult(r2, payload, key2, input, isOptionalIn, isOptionalOut)));
     } else {
-      handlePropertyResult(r, payload, key, input, isOptionalIn, isOptionalOut);
+      handlePropertyResult(r, payload, key2, input, isOptionalIn, isOptionalOut);
     }
   }
   if (unrecognized.length) {
@@ -3065,12 +3065,12 @@ var $ZodObject = /* @__PURE__ */ $constructor("$ZodObject", (inst, def) => {
   defineLazy(inst._zod, "propValues", () => {
     const shape = def.shape;
     const propValues = {};
-    for (const key in shape) {
-      const field = shape[key]._zod;
+    for (const key2 in shape) {
+      const field = shape[key2]._zod;
       if (field.values) {
-        propValues[key] ?? (propValues[key] = /* @__PURE__ */ new Set());
+        propValues[key2] ?? (propValues[key2] = /* @__PURE__ */ new Set());
         for (const v of field.values)
-          propValues[key].add(v);
+          propValues[key2].add(v);
       }
     }
     return propValues;
@@ -3093,15 +3093,15 @@ var $ZodObject = /* @__PURE__ */ $constructor("$ZodObject", (inst, def) => {
     payload.value = {};
     const proms = [];
     const shape = value.shape;
-    for (const key of value.keys) {
-      const el = shape[key];
+    for (const key2 of value.keys) {
+      const el = shape[key2];
       const isOptionalIn = el._zod.optin === "optional";
       const isOptionalOut = el._zod.optout === "optional";
-      const r = el._zod.run({ value: input[key], issues: [] }, ctx);
+      const r = el._zod.run({ value: input[key2], issues: [] }, ctx);
       if (r instanceof Promise) {
-        proms.push(r.then((r2) => handlePropertyResult(r2, payload, key, input, isOptionalIn, isOptionalOut)));
+        proms.push(r.then((r2) => handlePropertyResult(r2, payload, key2, input, isOptionalIn, isOptionalOut)));
       } else {
-        handlePropertyResult(r, payload, key, input, isOptionalIn, isOptionalOut);
+        handlePropertyResult(r, payload, key2, input, isOptionalIn, isOptionalOut);
       }
     }
     if (!catchall) {
@@ -3117,24 +3117,24 @@ var $ZodObjectJIT = /* @__PURE__ */ $constructor("$ZodObjectJIT", (inst, def) =>
   const generateFastpass = (shape) => {
     const doc = new Doc(["shape", "payload", "ctx"]);
     const normalized = _normalized.value;
-    const parseStr = (key) => {
-      const k = esc(key);
+    const parseStr = (key2) => {
+      const k = esc(key2);
       return `shape[${k}]._zod.run({ value: input[${k}], issues: [] }, ctx)`;
     };
     doc.write(`const input = payload.value;`);
     const ids = /* @__PURE__ */ Object.create(null);
     let counter = 0;
-    for (const key of normalized.keys) {
-      ids[key] = `key_${counter++}`;
+    for (const key2 of normalized.keys) {
+      ids[key2] = `key_${counter++}`;
     }
     doc.write(`const newResult = {};`);
-    for (const key of normalized.keys) {
-      const id = ids[key];
-      const k = esc(key);
-      const schema = shape[key];
+    for (const key2 of normalized.keys) {
+      const id = ids[key2];
+      const k = esc(key2);
+      const schema = shape[key2];
       const isOptionalIn = schema?._zod?.optin === "optional";
       const isOptionalOut = schema?._zod?.optout === "optional";
-      doc.write(`const ${id} = ${parseStr(key)};`);
+      doc.write(`const ${id} = ${parseStr(key2)};`);
       if (isOptionalIn && isOptionalOut) {
         doc.write(`
         if (${id}.issues.length) {
@@ -3446,17 +3446,17 @@ function mergeValues(a, b) {
   }
   if (isPlainObject(a) && isPlainObject(b)) {
     const bKeys = Object.keys(b);
-    const sharedKeys = Object.keys(a).filter((key) => bKeys.indexOf(key) !== -1);
+    const sharedKeys = Object.keys(a).filter((key2) => bKeys.indexOf(key2) !== -1);
     const newObj = { ...a, ...b };
-    for (const key of sharedKeys) {
-      const sharedValue = mergeValues(a[key], b[key]);
+    for (const key2 of sharedKeys) {
+      const sharedValue = mergeValues(a[key2], b[key2]);
       if (!sharedValue.valid) {
         return {
           valid: false,
-          mergeErrorPath: [key, ...sharedValue.mergeErrorPath]
+          mergeErrorPath: [key2, ...sharedValue.mergeErrorPath]
         };
       }
-      newObj[key] = sharedValue.data;
+      newObj[key2] = sharedValue.data;
     }
     return { valid: true, data: newObj };
   }
@@ -3591,9 +3591,9 @@ var $ZodTuple = /* @__PURE__ */ $constructor("$ZodTuple", (inst, def) => {
     return handleTupleResults(itemResults, payload, items, input, optoutStart);
   };
 });
-function getTupleOptStart(items, key) {
+function getTupleOptStart(items, key2) {
   for (let i = items.length - 1; i >= 0; i--) {
-    if (items[i]._zod[key] !== "optional")
+    if (items[i]._zod[key2] !== "optional")
       return i + 1;
   }
   return 0;
@@ -3644,10 +3644,10 @@ var $ZodRecord = /* @__PURE__ */ $constructor("$ZodRecord", (inst, def) => {
     if (values) {
       payload.value = {};
       const recordKeys = /* @__PURE__ */ new Set();
-      for (const key of values) {
-        if (typeof key === "string" || typeof key === "number" || typeof key === "symbol") {
-          recordKeys.add(typeof key === "number" ? key.toString() : key);
-          const keyResult = def.keyType._zod.run({ value: key, issues: [] }, ctx);
+      for (const key2 of values) {
+        if (typeof key2 === "string" || typeof key2 === "number" || typeof key2 === "symbol") {
+          recordKeys.add(typeof key2 === "number" ? key2.toString() : key2);
+          const keyResult = def.keyType._zod.run({ value: key2, issues: [] }, ctx);
           if (keyResult instanceof Promise) {
             throw new Error("Async schemas not supported in object keys currently");
           }
@@ -3656,34 +3656,34 @@ var $ZodRecord = /* @__PURE__ */ $constructor("$ZodRecord", (inst, def) => {
               code: "invalid_key",
               origin: "record",
               issues: keyResult.issues.map((iss) => finalizeIssue(iss, ctx, config())),
-              input: key,
-              path: [key],
+              input: key2,
+              path: [key2],
               inst
             });
             continue;
           }
           const outKey = keyResult.value;
-          const result = def.valueType._zod.run({ value: input[key], issues: [] }, ctx);
+          const result = def.valueType._zod.run({ value: input[key2], issues: [] }, ctx);
           if (result instanceof Promise) {
             proms.push(result.then((result2) => {
               if (result2.issues.length) {
-                payload.issues.push(...prefixIssues(key, result2.issues));
+                payload.issues.push(...prefixIssues(key2, result2.issues));
               }
               payload.value[outKey] = result2.value;
             }));
           } else {
             if (result.issues.length) {
-              payload.issues.push(...prefixIssues(key, result.issues));
+              payload.issues.push(...prefixIssues(key2, result.issues));
             }
             payload.value[outKey] = result.value;
           }
         }
       }
       let unrecognized;
-      for (const key in input) {
-        if (!recordKeys.has(key)) {
+      for (const key2 in input) {
+        if (!recordKeys.has(key2)) {
           unrecognized = unrecognized ?? [];
-          unrecognized.push(key);
+          unrecognized.push(key2);
         }
       }
       if (unrecognized && unrecognized.length > 0) {
@@ -3696,18 +3696,18 @@ var $ZodRecord = /* @__PURE__ */ $constructor("$ZodRecord", (inst, def) => {
       }
     } else {
       payload.value = {};
-      for (const key of Reflect.ownKeys(input)) {
-        if (key === "__proto__")
+      for (const key2 of Reflect.ownKeys(input)) {
+        if (key2 === "__proto__")
           continue;
-        if (!Object.prototype.propertyIsEnumerable.call(input, key))
+        if (!Object.prototype.propertyIsEnumerable.call(input, key2))
           continue;
-        let keyResult = def.keyType._zod.run({ value: key, issues: [] }, ctx);
+        let keyResult = def.keyType._zod.run({ value: key2, issues: [] }, ctx);
         if (keyResult instanceof Promise) {
           throw new Error("Async schemas not supported in object keys currently");
         }
-        const checkNumericKey = typeof key === "string" && number.test(key) && keyResult.issues.length;
+        const checkNumericKey = typeof key2 === "string" && number.test(key2) && keyResult.issues.length;
         if (checkNumericKey) {
-          const retryResult = def.keyType._zod.run({ value: Number(key), issues: [] }, ctx);
+          const retryResult = def.keyType._zod.run({ value: Number(key2), issues: [] }, ctx);
           if (retryResult instanceof Promise) {
             throw new Error("Async schemas not supported in object keys currently");
           }
@@ -3717,30 +3717,30 @@ var $ZodRecord = /* @__PURE__ */ $constructor("$ZodRecord", (inst, def) => {
         }
         if (keyResult.issues.length) {
           if (def.mode === "loose") {
-            payload.value[key] = input[key];
+            payload.value[key2] = input[key2];
           } else {
             payload.issues.push({
               code: "invalid_key",
               origin: "record",
               issues: keyResult.issues.map((iss) => finalizeIssue(iss, ctx, config())),
-              input: key,
-              path: [key],
+              input: key2,
+              path: [key2],
               inst
             });
           }
           continue;
         }
-        const result = def.valueType._zod.run({ value: input[key], issues: [] }, ctx);
+        const result = def.valueType._zod.run({ value: input[key2], issues: [] }, ctx);
         if (result instanceof Promise) {
           proms.push(result.then((result2) => {
             if (result2.issues.length) {
-              payload.issues.push(...prefixIssues(key, result2.issues));
+              payload.issues.push(...prefixIssues(key2, result2.issues));
             }
             payload.value[keyResult.value] = result2.value;
           }));
         } else {
           if (result.issues.length) {
-            payload.issues.push(...prefixIssues(key, result.issues));
+            payload.issues.push(...prefixIssues(key2, result.issues));
           }
           payload.value[keyResult.value] = result.value;
         }
@@ -3767,15 +3767,15 @@ var $ZodMap = /* @__PURE__ */ $constructor("$ZodMap", (inst, def) => {
     }
     const proms = [];
     payload.value = /* @__PURE__ */ new Map();
-    for (const [key, value] of input) {
-      const keyResult = def.keyType._zod.run({ value: key, issues: [] }, ctx);
+    for (const [key2, value] of input) {
+      const keyResult = def.keyType._zod.run({ value: key2, issues: [] }, ctx);
       const valueResult = def.valueType._zod.run({ value, issues: [] }, ctx);
       if (keyResult instanceof Promise || valueResult instanceof Promise) {
         proms.push(Promise.all([keyResult, valueResult]).then(([keyResult2, valueResult2]) => {
-          handleMapResult(keyResult2, valueResult2, payload, key, input, inst, ctx);
+          handleMapResult(keyResult2, valueResult2, payload, key2, input, inst, ctx);
         }));
       } else {
-        handleMapResult(keyResult, valueResult, payload, key, input, inst, ctx);
+        handleMapResult(keyResult, valueResult, payload, key2, input, inst, ctx);
       }
     }
     if (proms.length)
@@ -3783,10 +3783,10 @@ var $ZodMap = /* @__PURE__ */ $constructor("$ZodMap", (inst, def) => {
     return payload;
   };
 });
-function handleMapResult(keyResult, valueResult, final, key, input, inst, ctx) {
+function handleMapResult(keyResult, valueResult, final, key2, input, inst, ctx) {
   if (keyResult.issues.length) {
-    if (propertyKeyTypes.has(typeof key)) {
-      final.issues.push(...prefixIssues(key, keyResult.issues));
+    if (propertyKeyTypes.has(typeof key2)) {
+      final.issues.push(...prefixIssues(key2, keyResult.issues));
     } else {
       final.issues.push({
         code: "invalid_key",
@@ -3798,15 +3798,15 @@ function handleMapResult(keyResult, valueResult, final, key, input, inst, ctx) {
     }
   }
   if (valueResult.issues.length) {
-    if (propertyKeyTypes.has(typeof key)) {
-      final.issues.push(...prefixIssues(key, valueResult.issues));
+    if (propertyKeyTypes.has(typeof key2)) {
+      final.issues.push(...prefixIssues(key2, valueResult.issues));
     } else {
       final.issues.push({
         origin: "map",
         code: "invalid_element",
         input,
         inst,
-        key,
+        key: key2,
         issues: valueResult.issues.map((iss) => finalizeIssue(iss, ctx, config()))
       });
     }
@@ -7675,8 +7675,8 @@ function ko_default() {
 }
 
 // node_modules/zod/v4/locales/lt.js
-var capitalizeFirstCharacter = (text) => {
-  return text.charAt(0).toUpperCase() + text.slice(1);
+var capitalizeFirstCharacter = (text2) => {
+  return text2.charAt(0).toUpperCase() + text2.slice(1);
 };
 function getUnitTypeFromNumber(number4) {
   const abs = Math.abs(number4);
@@ -11567,8 +11567,8 @@ function extractDefs(ctx, schema) {
     if (defId)
       seen.defId = defId;
     const schema2 = seen.schema;
-    for (const key in schema2) {
-      delete schema2[key];
+    for (const key2 in schema2) {
+      delete schema2[key2];
     }
     schema2.$ref = ref;
   };
@@ -11637,20 +11637,20 @@ function finalize(ctx, schema) {
       Object.assign(schema2, _cached);
       const isParentRef = zodSchema._zod.parent === ref;
       if (isParentRef) {
-        for (const key in schema2) {
-          if (key === "$ref" || key === "allOf")
+        for (const key2 in schema2) {
+          if (key2 === "$ref" || key2 === "allOf")
             continue;
-          if (!(key in _cached)) {
-            delete schema2[key];
+          if (!(key2 in _cached)) {
+            delete schema2[key2];
           }
         }
       }
       if (refSchema.$ref && refSeen.def) {
-        for (const key in schema2) {
-          if (key === "$ref" || key === "allOf")
+        for (const key2 in schema2) {
+          if (key2 === "$ref" || key2 === "allOf")
             continue;
-          if (key in refSeen.def && JSON.stringify(schema2[key]) === JSON.stringify(refSeen.def[key])) {
-            delete schema2[key];
+          if (key2 in refSeen.def && JSON.stringify(schema2[key2]) === JSON.stringify(refSeen.def[key2])) {
+            delete schema2[key2];
           }
         }
       }
@@ -11662,11 +11662,11 @@ function finalize(ctx, schema) {
       if (parentSeen?.schema.$ref) {
         schema2.$ref = parentSeen.schema.$ref;
         if (parentSeen.def) {
-          for (const key in schema2) {
-            if (key === "$ref" || key === "allOf")
+          for (const key2 in schema2) {
+            if (key2 === "$ref" || key2 === "allOf")
               continue;
-            if (key in parentSeen.def && JSON.stringify(schema2[key]) === JSON.stringify(parentSeen.def[key])) {
-              delete schema2[key];
+            if (key2 in parentSeen.def && JSON.stringify(schema2[key2]) === JSON.stringify(parentSeen.def[key2])) {
+              delete schema2[key2];
             }
           }
         }
@@ -11767,8 +11767,8 @@ function isTransforming(_schema, _ctx) {
     return isTransforming(def.in, ctx) || isTransforming(def.out, ctx);
   }
   if (def.type === "object") {
-    for (const key in def.shape) {
-      if (isTransforming(def.shape[key], ctx))
+    for (const key2 in def.shape) {
+      if (isTransforming(def.shape[key2], ctx))
         return true;
     }
     return false;
@@ -12057,15 +12057,15 @@ var objectProcessor = (schema, ctx, _json, params) => {
   json2.type = "object";
   json2.properties = {};
   const shape = def.shape;
-  for (const key in shape) {
-    json2.properties[key] = process(shape[key], ctx, {
+  for (const key2 in shape) {
+    json2.properties[key2] = process(shape[key2], ctx, {
       ...params,
-      path: [...params.path, "properties", key]
+      path: [...params.path, "properties", key2]
     });
   }
   const allKeys = new Set(Object.keys(shape));
-  const requiredKeys = new Set([...allKeys].filter((key) => {
-    const v = def.shape[key]._zod;
+  const requiredKeys = new Set([...allKeys].filter((key2) => {
+    const v = def.shape[key2]._zod;
     if (ctx.io === "input") {
       return v.optin === void 0;
     } else {
@@ -12331,9 +12331,9 @@ function toJSONSchema(input, params) {
     };
     ctx2.external = external;
     for (const entry of registry2._idmap.entries()) {
-      const [key, schema] = entry;
+      const [key2, schema] = entry;
       extractDefs(ctx2, schema);
-      schemas[key] = finalize(ctx2, schema);
+      schemas[key2] = finalize(ctx2, schema);
     }
     if (Object.keys(defs).length > 0) {
       const defsSegment = ctx2.target === "draft-2020-12" ? "$defs" : "definitions";
@@ -12739,14 +12739,14 @@ function _installLazyMethods(inst, group, methods) {
   if (installed.has(group))
     return;
   installed.add(group);
-  for (const key in methods) {
-    const fn = methods[key];
-    Object.defineProperty(proto, key, {
+  for (const key2 in methods) {
+    const fn = methods[key2];
+    Object.defineProperty(proto, key2, {
       configurable: true,
       enumerable: false,
       get() {
         const bound = fn.bind(this);
-        Object.defineProperty(this, key, {
+        Object.defineProperty(this, key2, {
           configurable: true,
           writable: true,
           enumerable: true,
@@ -12755,7 +12755,7 @@ function _installLazyMethods(inst, group, methods) {
         return bound;
       },
       set(v) {
-        Object.defineProperty(this, key, {
+        Object.defineProperty(this, key2, {
           configurable: true,
           writable: true,
           enumerable: true,
@@ -14143,11 +14143,11 @@ function resolveRef(ref, ctx) {
   }
   const defsKey = ctx.version === "draft-2020-12" ? "$defs" : "definitions";
   if (path[0] === defsKey) {
-    const key = path[1];
-    if (!key || !ctx.defs[key]) {
+    const key2 = path[1];
+    if (!key2 || !ctx.defs[key2]) {
       throw new Error(`Reference not found: ${ref}`);
     }
-    return ctx.defs[key];
+    return ctx.defs[key2];
   }
   throw new Error(`Reference not found: ${ref}`);
 }
@@ -14333,9 +14333,9 @@ function convertBaseSchema(schema, ctx) {
       const shape = {};
       const properties = schema.properties || {};
       const requiredSet = new Set(schema.required || []);
-      for (const [key, propSchema] of Object.entries(properties)) {
+      for (const [key2, propSchema] of Object.entries(properties)) {
         const propZodSchema = convertSchema(propSchema, ctx);
-        shape[key] = requiredSet.has(key) ? propZodSchema : propZodSchema.optional();
+        shape[key2] = requiredSet.has(key2) ? propZodSchema : propZodSchema.optional();
       }
       if (schema.propertyNames) {
         const keySchema = convertSchema(schema.propertyNames, ctx);
@@ -14476,20 +14476,20 @@ function convertSchema(schema, ctx) {
   }
   const extraMeta = {};
   const coreMetadataKeys = ["$id", "id", "$comment", "$anchor", "$vocabulary", "$dynamicRef", "$dynamicAnchor"];
-  for (const key of coreMetadataKeys) {
-    if (key in schema) {
-      extraMeta[key] = schema[key];
+  for (const key2 of coreMetadataKeys) {
+    if (key2 in schema) {
+      extraMeta[key2] = schema[key2];
     }
   }
   const contentMetadataKeys = ["contentEncoding", "contentMediaType", "contentSchema"];
-  for (const key of contentMetadataKeys) {
-    if (key in schema) {
-      extraMeta[key] = schema[key];
+  for (const key2 of contentMetadataKeys) {
+    if (key2 in schema) {
+      extraMeta[key2] = schema[key2];
     }
   }
-  for (const key of Object.keys(schema)) {
-    if (!RECOGNIZED_KEYS.has(key)) {
-      extraMeta[key] = schema[key];
+  for (const key2 of Object.keys(schema)) {
+    if (!RECOGNIZED_KEYS.has(key2)) {
+      extraMeta[key2] = schema[key2];
     }
   }
   if (Object.keys(extraMeta).length > 0) {
@@ -16629,8 +16629,8 @@ function isRecord(value) {
 function boundedDetail(details) {
   if (Object.keys(details).length === 0) return void 0;
   try {
-    const text = JSON.stringify(details);
-    return text.length <= 240 ? text : `${text.slice(0, 237)}...`;
+    const text2 = JSON.stringify(details);
+    return text2.length <= 240 ? text2 : `${text2.slice(0, 237)}...`;
   } catch {
     return void 0;
   }
@@ -16663,8 +16663,8 @@ function clientErrorFrom(operation, failure, at, id) {
 }
 
 // packages/client/ui-settings-session-orchestrator/src/client/model.ts
-function runStateTone(state) {
-  switch (state) {
+function runStateTone(state4) {
+  switch (state4) {
     case "succeeded":
       return "done";
     case "needs-attention":
@@ -16683,8 +16683,8 @@ function runStateTone(state) {
       return "idle";
   }
 }
-function canCancelRun(state) {
-  return state === "ready" || state === "starting" || state === "running" || state === "handoff-pending" || state === "needs-attention" || state === "paused";
+function canCancelRun(state4) {
+  return state4 === "ready" || state4 === "starting" || state4 === "running" || state4 === "handoff-pending" || state4 === "needs-attention" || state4 === "paused";
 }
 function canRetryRun(run) {
   return run.state === "needs-attention" || run.state === "failed" || run.state === "cancelled" || run.state === "paused";
@@ -16800,6 +16800,22 @@ function pinnedRouteOf(choices) {
 }
 
 // packages/client/ui-settings-session-orchestrator/src/client/service.ts
+var MODEL_SWITCH_MUTE_KEY = "dsh-handsoff:model-switch-muted";
+function mutedModelSwitchQueues() {
+  try {
+    const raw = globalThis.localStorage?.getItem(MODEL_SWITCH_MUTE_KEY);
+    const parsed = raw === null || raw === void 0 ? [] : JSON.parse(raw);
+    return new Set(Array.isArray(parsed) ? parsed.filter((id) => typeof id === "string") : []);
+  } catch {
+    return /* @__PURE__ */ new Set();
+  }
+}
+function writeMutedModelSwitchQueues(ids) {
+  try {
+    globalThis.localStorage?.setItem(MODEL_SWITCH_MUTE_KEY, JSON.stringify([...ids]));
+  } catch {
+  }
+}
 function initialLive() {
   return {
     phase: "connecting",
@@ -17016,6 +17032,16 @@ var OrchestratorClient = class {
       openSession: async (session) => {
         await this.openSession(session);
       },
+      switchConversationModel: async (input) => await this.switchConversationModel(input),
+      followUpConversation: async (input) => await this.followUpConversation(input),
+      rerunConversation: async (taskId, title) => await this.rerunConversation(taskId, title),
+      deleteConversation: async (input) => await this.deleteConversation(input),
+      modelSwitchPromptMuted: (queueId) => mutedModelSwitchQueues().has(queueId),
+      muteModelSwitchPrompt: (queueId) => {
+        const muted = mutedModelSwitchQueues();
+        muted.add(queueId);
+        writeMutedModelSwitchQueues(muted);
+      },
       dismissError: (id) => {
         this.dismissError(id);
       },
@@ -17027,8 +17053,8 @@ var OrchestratorClient = class {
   /** Reopen the stream after an abrupt carrier failure. */
   async pump(signal) {
     while (!signal.aborted) {
-      this.live.update((state) => {
-        if (state.phase !== "ready") state.phase = "connecting";
+      this.live.update((state4) => {
+        if (state4.phase !== "ready") state4.phase = "connecting";
       });
       try {
         for await (const frame of this.remote.changed(signal)) {
@@ -17037,8 +17063,8 @@ var OrchestratorClient = class {
         }
       } catch (error51) {
         if (signal.aborted) break;
-        this.live.update((state) => {
-          state.phase = "error";
+        this.live.update((state4) => {
+          state4.phase = "error";
         });
         this.recordFailure("stream", error51);
       }
@@ -17048,19 +17074,19 @@ var OrchestratorClient = class {
   }
   /** Accept one whole snapshot unless a newer generation already won. */
   accept(frame) {
-    this.live.update((state) => {
-      if (frame.revision < state.revision) return;
-      state.phase = "ready";
-      state.revision = frame.revision;
-      state.generatedAt = frame.generatedAt;
-      state.settings = frame.settings;
-      state.queues = frame.queues;
-      state.tasks = frame.tasks;
-      state.runs = frame.runs;
-      state.handoffs = frame.handoffs;
-      state.interventions = frame.interventions;
-      state.wardenAudits = frame.wardenAudits;
-      state.hosts = frame.hosts;
+    this.live.update((state4) => {
+      if (frame.revision < state4.revision) return;
+      state4.phase = "ready";
+      state4.revision = frame.revision;
+      state4.generatedAt = frame.generatedAt;
+      state4.settings = frame.settings;
+      state4.queues = frame.queues;
+      state4.tasks = frame.tasks;
+      state4.runs = frame.runs;
+      state4.handoffs = frame.handoffs;
+      state4.interventions = frame.interventions;
+      state4.wardenAudits = frame.wardenAudits;
+      state4.hosts = frame.hosts;
     });
     if (frame.revision === this.live.getSnapshot().revision) this.rebaseCleanQueueDraft(frame.queues);
   }
@@ -17087,25 +17113,25 @@ var OrchestratorClient = class {
     if (this.blockDirty("selectQueue")) return;
     const value = await this.call("getQueue", () => this.remote.getQueue({ queueId }));
     if (value === void 0) return;
-    this.drafts.update((state) => {
-      state.selectedQueueId = value.queue.id;
-      state.queue = {
+    this.drafts.update((state4) => {
+      state4.selectedQueueId = value.queue.id;
+      state4.queue = {
         draft: queueDraftOf(value.queue),
         baseRevision: value.queue.revision,
         dirty: false,
         saving: false
       };
-      state.queueTasks = value.tasks;
+      state4.queueTasks = value.tasks;
     });
   }
   /** Start a blank queue draft at revision zero. */
   newQueue() {
     if (this.blockDirty("newQueue")) return;
-    this.drafts.update((state) => {
-      state.queue = { draft: emptyQueueDraft(), baseRevision: 0, dirty: false, saving: false };
-      state.task = null;
-      state.queueTasks = [];
-      state.selectedQueueId = void 0;
+    this.drafts.update((state4) => {
+      state4.queue = { draft: emptyQueueDraft(), baseRevision: 0, dirty: false, saving: false };
+      state4.task = null;
+      state4.queueTasks = [];
+      state4.selectedQueueId = void 0;
     });
   }
   /**
@@ -17113,10 +17139,10 @@ var OrchestratorClient = class {
    * @param patch - changed queue fields.
    */
   editQueue(patch) {
-    this.drafts.update((state) => {
-      const current = state.queue;
+    this.drafts.update((state4) => {
+      const current = state4.queue;
       if (current === null) return;
-      state.queue = {
+      state4.queue = {
         ...current,
         draft: {
           id: patch.id ?? current.draft.id,
@@ -17167,9 +17193,9 @@ var OrchestratorClient = class {
     this.setSaving("queue", false);
     if (value === void 0) return;
     this.mergeQueue(value.queue);
-    this.drafts.update((state) => {
-      state.selectedQueueId = value.queue.id;
-      state.queue = {
+    this.drafts.update((state4) => {
+      state4.selectedQueueId = value.queue.id;
+      state4.queue = {
         draft: queueDraftOf(value.queue),
         baseRevision: value.queue.revision,
         dirty: false,
@@ -17213,16 +17239,16 @@ var OrchestratorClient = class {
     if (value === void 0) return false;
     this.mergeQueue(value.queue);
     for (const task of value.tasks) this.mergeTask(task);
-    this.drafts.update((state) => {
-      state.selectedQueueId = value.queue.id;
-      state.queue = {
+    this.drafts.update((state4) => {
+      state4.selectedQueueId = value.queue.id;
+      state4.queue = {
         draft: queueDraftOf(value.queue),
         baseRevision: value.queue.revision,
         dirty: false,
         saving: false
       };
-      state.queueTasks = value.tasks;
-      state.task = null;
+      state4.queueTasks = value.tasks;
+      state4.task = null;
     });
     return true;
   }
@@ -17334,16 +17360,16 @@ var OrchestratorClient = class {
       queue = detail.queue;
       this.mergeQueue(queue);
     }
-    this.drafts.update((state) => {
-      state.selectedQueueId = queueId;
-      state.queue = {
+    this.drafts.update((state4) => {
+      state4.selectedQueueId = queueId;
+      state4.queue = {
         draft: queueDraftOf(queue),
         baseRevision: queue.revision,
         dirty: false,
         saving: false
       };
-      state.queueTasks = tasks;
-      state.task = null;
+      state4.queueTasks = tasks;
+      state4.task = null;
     });
     await this.controlQueue("startQueue", queueId);
     return true;
@@ -17392,18 +17418,18 @@ var OrchestratorClient = class {
   }
   /** Reload the selected queue from the live snapshot, or clear the draft. */
   discardQueue() {
-    this.drafts.update((state) => {
-      const id = state.selectedQueueId;
+    this.drafts.update((state4) => {
+      const id = state4.selectedQueueId;
       const queue = id === void 0 ? void 0 : this.live.getSnapshot().queues.find((candidate) => candidate.id === id);
-      state.queue = queue === void 0 ? null : {
+      state4.queue = queue === void 0 ? null : {
         draft: queueDraftOf(queue),
         baseRevision: queue.revision,
         dirty: false,
         saving: false
       };
-      state.task = null;
-      state.queueTasks = [];
-      if (queue === void 0) state.selectedQueueId = void 0;
+      state4.task = null;
+      state4.queueTasks = [];
+      if (queue === void 0) state4.selectedQueueId = void 0;
     });
   }
   /**
@@ -17458,17 +17484,17 @@ var OrchestratorClient = class {
       expectedRevision: queue.revision
     }));
     if (value === void 0) return;
-    this.live.update((state) => {
-      state.queues = state.queues.filter((candidate) => candidate.id !== id);
-      state.tasks = state.tasks.filter((task) => task.queueId !== id);
-      state.runs = state.runs.filter((run) => !queueTasks.some((task) => task.id === run.taskId));
+    this.live.update((state4) => {
+      state4.queues = state4.queues.filter((candidate) => candidate.id !== id);
+      state4.tasks = state4.tasks.filter((task) => task.queueId !== id);
+      state4.runs = state4.runs.filter((run) => !queueTasks.some((task) => task.id === run.taskId));
     });
     if (selected !== id) return;
-    this.drafts.update((state) => {
-      state.queue = null;
-      state.task = null;
-      state.queueTasks = [];
-      state.selectedQueueId = void 0;
+    this.drafts.update((state4) => {
+      state4.queue = null;
+      state4.task = null;
+      state4.queueTasks = [];
+      state4.selectedQueueId = void 0;
     });
   }
   /**
@@ -17498,9 +17524,9 @@ var OrchestratorClient = class {
     }));
     if (value === void 0) return;
     this.mergeQueue(value.queue);
-    this.drafts.update((state) => {
-      if (state.queue === null || state.queue.draft.id !== queueId || state.queue.dirty) return;
-      state.queue = {
+    this.drafts.update((state4) => {
+      if (state4.queue === null || state4.queue.draft.id !== queueId || state4.queue.dirty) return;
+      state4.queue = {
         draft: queueDraftOf(value.queue),
         baseRevision: value.queue.revision,
         dirty: false,
@@ -17520,8 +17546,8 @@ var OrchestratorClient = class {
     if (current.phase === "ready" || current.phase === "loading") return;
     const source = this.resolveModels?.();
     if (source === void 0) {
-      this.live.update((state) => {
-        state.models = {
+      this.live.update((state4) => {
+        state4.models = {
           phase: "error",
           choices: [],
           error: "this host exposes no model catalog service"
@@ -17529,17 +17555,17 @@ var OrchestratorClient = class {
       });
       return;
     }
-    this.live.update((state) => {
-      state.models = { phase: "loading", choices: [] };
+    this.live.update((state4) => {
+      state4.models = { phase: "loading", choices: [] };
     });
     try {
       const choices = await source.load();
-      this.live.update((state) => {
-        state.models = { phase: "ready", choices };
+      this.live.update((state4) => {
+        state4.models = { phase: "ready", choices };
       });
     } catch (error51) {
-      this.live.update((state) => {
-        state.models = {
+      this.live.update((state4) => {
+        state4.models = {
           phase: "error",
           choices: [],
           error: error51 instanceof Error ? error51.message : String(error51)
@@ -17558,8 +17584,8 @@ var OrchestratorClient = class {
     if (current.phase === "ready" || current.phase === "loading") return;
     const source = this.resolvePresets?.();
     if (source === void 0) {
-      this.live.update((state) => {
-        state.presets = {
+      this.live.update((state4) => {
+        state4.presets = {
           phase: "error",
           choices: [],
           error: "this host exposes no agent-preset catalog"
@@ -17567,17 +17593,17 @@ var OrchestratorClient = class {
       });
       return;
     }
-    this.live.update((state) => {
-      state.presets = { phase: "loading", choices: [] };
+    this.live.update((state4) => {
+      state4.presets = { phase: "loading", choices: [] };
     });
     try {
       const choices = await source.load();
-      this.live.update((state) => {
-        state.presets = { phase: "ready", choices };
+      this.live.update((state4) => {
+        state4.presets = { phase: "ready", choices };
       });
     } catch (error51) {
-      this.live.update((state) => {
-        state.presets = {
+      this.live.update((state4) => {
+        state4.presets = {
           phase: "error",
           choices: [],
           error: error51 instanceof Error ? error51.message : String(error51)
@@ -17601,19 +17627,19 @@ var OrchestratorClient = class {
     if (value === void 0) return;
     const detail = value.tasks.find((task) => task.id === taskId);
     if (detail === void 0) return this.localError("loadTask", "ui/task-hidden");
-    this.drafts.update((state) => {
-      const queueWasClean = state.queue === null || state.queue.dirty !== true;
+    this.drafts.update((state4) => {
+      const queueWasClean = state4.queue === null || state4.queue.dirty !== true;
       if (queueWasClean) {
-        state.selectedQueueId = value.queue.id;
-        state.queue = {
+        state4.selectedQueueId = value.queue.id;
+        state4.queue = {
           draft: queueDraftOf(value.queue),
           baseRevision: value.queue.revision,
           dirty: false,
           saving: false
         };
       }
-      state.queueTasks = value.tasks;
-      state.task = {
+      state4.queueTasks = value.tasks;
+      state4.task = {
         mode: "edit",
         draft: taskDraftOf(detail),
         baseRevision: detail.revision,
@@ -17628,8 +17654,8 @@ var OrchestratorClient = class {
    */
   newTask(atIndex) {
     if (this.blockDirtyTask("newTask")) return;
-    const state = this.drafts.getSnapshot();
-    const queueId = state.selectedQueueId ?? state.queue?.draft.id;
+    const state4 = this.drafts.getSnapshot();
+    const queueId = state4.selectedQueueId ?? state4.queue?.draft.id;
     if (queueId === void 0 || queueId === "") return this.localError("newTask", "ui/no-queue");
     this.drafts.update((draft) => {
       const inherited = draft.queue?.draft;
@@ -17654,8 +17680,8 @@ var OrchestratorClient = class {
    * @param patch - changed task fields.
    */
   editTask(patch) {
-    this.drafts.update((state) => {
-      const current = state.task;
+    this.drafts.update((state4) => {
+      const current = state4.task;
       if (current === null) return;
       const next = {
         ...current.draft,
@@ -17675,7 +17701,7 @@ var OrchestratorClient = class {
         ...patch.enabled === void 0 ? {} : { enabled: patch.enabled },
         ...patch.concurrencyGroup === void 0 ? current.draft.concurrencyGroup === void 0 ? {} : { concurrencyGroup: current.draft.concurrencyGroup } : patch.concurrencyGroup === "" ? {} : { concurrencyGroup: patch.concurrencyGroup }
       };
-      state.task = { ...current, draft: next, dirty: true };
+      state4.task = { ...current, draft: next, dirty: true };
     });
   }
   /** Create or update the task under its draft revision. */
@@ -17706,20 +17732,20 @@ var OrchestratorClient = class {
     if (value === void 0) return;
     this.mergeTask(value.task);
     if (value.queue !== void 0) this.mergeQueue(value.queue);
-    this.drafts.update((state) => {
-      const latest = state.task;
+    this.drafts.update((state4) => {
+      const latest = state4.task;
       if (latest === null) return;
-      state.task = {
+      state4.task = {
         mode: "edit",
         draft: taskDraftOf(value.task),
         baseRevision: value.task.revision,
         dirty: false,
         saving: false
       };
-      state.queueTasks = replaceTask(state.queueTasks, value.task);
-      if (state.queue !== null && state.queue.dirty !== true && value.queue !== void 0) {
-        state.queue = {
-          ...state.queue,
+      state4.queueTasks = replaceTask(state4.queueTasks, value.task);
+      if (state4.queue !== null && state4.queue.dirty !== true && value.queue !== void 0) {
+        state4.queue = {
+          ...state4.queue,
           draft: queueDraftOf(value.queue),
           baseRevision: value.queue.revision
         };
@@ -17728,8 +17754,8 @@ var OrchestratorClient = class {
   }
   /** Discard the task draft without writing. */
   discardTask() {
-    this.drafts.update((state) => {
-      state.task = null;
+    this.drafts.update((state4) => {
+      state4.task = null;
     });
   }
   /**
@@ -17836,12 +17862,12 @@ var OrchestratorClient = class {
     if (value === void 0) return;
     this.mergeQueue(value.queue);
     this.adoptQueueRevision(value.queue);
-    this.live.update((state) => {
-      state.tasks = state.tasks.filter((candidate) => candidate.id !== taskId);
+    this.live.update((state4) => {
+      state4.tasks = state4.tasks.filter((candidate) => candidate.id !== taskId);
     });
-    this.drafts.update((state) => {
-      state.queueTasks = state.queueTasks.filter((candidate) => candidate.id !== taskId);
-      if (state.task?.draft.id === taskId) state.task = null;
+    this.drafts.update((state4) => {
+      state4.queueTasks = state4.queueTasks.filter((candidate) => candidate.id !== taskId);
+      if (state4.task?.draft.id === taskId) state4.task = null;
     });
   }
   /** Rewrite every dependency from the current list order. */
@@ -17881,11 +17907,11 @@ var OrchestratorClient = class {
   }
   /** Keep a clean queue draft on the new revision after an order commit. */
   adoptQueueRevision(queue) {
-    this.drafts.update((state) => {
-      if (state.selectedQueueId !== queue.id) return;
-      if (state.queue === null || state.queue.dirty === true) return;
-      state.queue = {
-        ...state.queue,
+    this.drafts.update((state4) => {
+      if (state4.selectedQueueId !== queue.id) return;
+      if (state4.queue === null || state4.queue.dirty === true) return;
+      state4.queue = {
+        ...state4.queue,
         draft: queueDraftOf(queue),
         baseRevision: queue.revision
       };
@@ -17897,8 +17923,8 @@ var OrchestratorClient = class {
     if (current?.dirty === true) return;
     const settings = this.live.getSnapshot().settings;
     if (settings === void 0) return;
-    this.drafts.update((state) => {
-      state.settings = {
+    this.drafts.update((state4) => {
+      state4.settings = {
         draft: {
           paused: settings.paused,
           maxConcurrentRuns: settings.maxConcurrentRuns,
@@ -17915,10 +17941,10 @@ var OrchestratorClient = class {
    * @param patch - changed settings fields.
    */
   editSettings(patch) {
-    this.drafts.update((state) => {
-      const current = state.settings;
+    this.drafts.update((state4) => {
+      const current = state4.settings;
       if (current === null) return;
-      state.settings = {
+      state4.settings = {
         ...current,
         draft: {
           paused: patch.paused ?? current.draft.paused,
@@ -17931,13 +17957,13 @@ var OrchestratorClient = class {
   }
   /** Add, replace, or remove one provider quota in the draft. */
   setProviderQuota(provider, quota) {
-    this.drafts.update((state) => {
-      const current = state.settings;
+    this.drafts.update((state4) => {
+      const current = state4.settings;
       if (current === null) return;
       const quotas = { ...current.draft.providerQuotas };
       if (quota === void 0) delete quotas[provider];
       else quotas[provider] = quota;
-      state.settings = { ...current, draft: { ...current.draft, providerQuotas: quotas }, dirty: true };
+      state4.settings = { ...current, draft: { ...current.draft, providerQuotas: quotas }, dirty: true };
     });
   }
   /** Replace host settings under the settings draft revision. */
@@ -17952,8 +17978,8 @@ var OrchestratorClient = class {
     this.setSaving("settings", false);
     if (value === void 0) return;
     this.mergeSettings(value.settings);
-    this.drafts.update((state) => {
-      state.settings = {
+    this.drafts.update((state4) => {
+      state4.settings = {
         draft: {
           paused: value.settings.paused,
           maxConcurrentRuns: value.settings.maxConcurrentRuns,
@@ -17967,8 +17993,8 @@ var OrchestratorClient = class {
   }
   /** Seed or reload the settings draft from the live record. */
   discardSettings() {
-    this.drafts.update((state) => {
-      state.settings = null;
+    this.drafts.update((state4) => {
+      state4.settings = null;
     });
     this.loadSettingsDraft();
   }
@@ -18058,8 +18084,8 @@ var OrchestratorClient = class {
       reason
     }));
     if (value === void 0) return;
-    this.live.update((state) => {
-      state.runs = state.runs.map((candidate) => candidate.id === runId ? { ...candidate, skipped: true } : candidate);
+    this.live.update((state4) => {
+      state4.runs = state4.runs.map((candidate) => candidate.id === runId ? { ...candidate, skipped: true } : candidate);
     });
   }
   /**
@@ -18085,13 +18111,22 @@ var OrchestratorClient = class {
    *
    * A route carries no DTO, so the surface is the authority here: the catalog
    * decides whether the Session still exists and the Workspace registry whether
-   * it was archived.
+   * it was archived. The catalog is refreshed once before an absence is trusted,
+   * because a Session created by an automated run never entered it through the
+   * browser's own creation path.
    * @param sessionId - Session identity a route named.
    */
   async openSessionById(sessionId) {
     const surface = this.resolveSurface?.();
     if (surface === void 0) {
       return this.localError("openSession", "ui/session-unsupported", sessionId);
+    }
+    if (surface.knows(sessionId) !== true && surface.refresh !== void 0) {
+      try {
+        await surface.refresh();
+      } catch (error51) {
+        console.warn("session-orchestrator UI: could not refresh the Session catalog", error51);
+      }
     }
     if (surface.knows(sessionId) === false) {
       return this.localError("openSession", "ui/session-missing", sessionId);
@@ -18105,16 +18140,219 @@ var OrchestratorClient = class {
       this.recordFailure("openSession", error51);
     }
   }
+  /**
+   * Retarget one conversation and, when asked, the pipeline's unstarted tasks.
+   *
+   * A live conversation takes the route through the native Session controller,
+   * so its next turn uses the chosen model. Nothing else changes unless the
+   * caller explicitly names future tasks: switching one conversation never
+   * silently alters its successors.
+   * @param input - task, optional live Session, fixed route and future task ids.
+   * @returns whether the switch was applied.
+   */
+  async switchConversationModel(input) {
+    if (input.model.kind !== "fixed") {
+      this.localError("switchConversationModel", "ui/model-route-required");
+      return false;
+    }
+    const context = await this.conversationDetail(input.taskId, "switchConversationModel");
+    if (context === void 0) return false;
+    if (input.sessionId !== void 0) {
+      const surface = this.resolveSurface?.();
+      if (surface?.selectModel === void 0) {
+        this.localError("switchConversationModel", "ui/session-unsupported", input.sessionId);
+        return false;
+      }
+      try {
+        await surface.selectModel(input.sessionId, {
+          provider: input.model.provider,
+          model: input.model.model,
+          ...input.model.reasoningEffort === void 0 ? {} : { reasoningEffort: input.model.reasoningEffort }
+        });
+      } catch (error51) {
+        this.recordFailure("switchConversationModel", error51);
+        return false;
+      }
+    }
+    const targets = /* @__PURE__ */ new Map();
+    for (const taskId of input.applyFutureTaskIds ?? []) {
+      if (taskId === context.task.id) continue;
+      const target = context.detail.tasks.find((candidate) => candidate.id === taskId);
+      if (target !== void 0) targets.set(target.id, target);
+    }
+    for (const target of targets.values()) {
+      const value = await this.call("switchConversationModel", () => this.remote.upsertTask({
+        taskId: target.id,
+        expectedRevision: target.revision,
+        draft: { ...taskDraftOf(target), model: input.model }
+      }));
+      if (value === void 0) return false;
+      this.mergeTask(value.task);
+      if (value.queue !== void 0) this.mergeQueue(value.queue);
+    }
+    if (input.muteQueuePrompt === true) {
+      const muted = mutedModelSwitchQueues();
+      muted.add(context.queue.id);
+      writeMutedModelSwitchQueues(muted);
+    }
+    return true;
+  }
+  /**
+   * Insert one follow-up child conversation immediately after its parent.
+   *
+   * The child is a normal queued task with `parentTaskId` and a dependency on the
+   * parent, so it persists, inherits the parent's workspace/preset, and is
+   * scheduled before the parent can count as complete. The chosen text becomes
+   * the child prompt with the parent task as context.
+   * @param input - parent task and the user's follow-up text.
+   * @returns whether the child was stored.
+   */
+  async followUpConversation(input) {
+    const prompt = input.prompt.trim();
+    if (prompt === "") {
+      this.localError("followUpConversation", "ui/pipeline-prompt-required");
+      return false;
+    }
+    return await this.createChildConversation(
+      input.taskId,
+      titleFromPrompt(prompt),
+      (parent) => `\u7EE7\u7EED\u4E0A\u4E00\u8F6E\u5BF9\u8BDD\u300C${parent.title}\u300D\u3002
+\u539F\u4EFB\u52A1\u63D0\u793A\u8BCD\uFF1A${parent.prompt}
+
+\u8FFD\u95EE\uFF1A${prompt}`,
+      "followUpConversation"
+    );
+  }
+  /**
+   * Insert one child conversation that reruns the unfinished part of its parent.
+   * @param taskId - parent task whose conversation is being continued.
+   * @param title - localized child title supplied by the page.
+   * @returns whether the child was stored.
+   */
+  async rerunConversation(taskId, title) {
+    return await this.createChildConversation(
+      taskId,
+      title,
+      (parent) => `\u91CD\u65B0\u6267\u884C\u4E0A\u4E00\u8F6E\u5BF9\u8BDD\u672A\u5B8C\u6210\u90E8\u5206\u3002
+\u539F\u4EFB\u52A1\u63D0\u793A\u8BCD\uFF1A${parent.prompt}`,
+      "rerunConversation"
+    );
+  }
+  /**
+   * Remove one conversation and no other task in its pipeline.
+   *
+   * The caller may first archive the native Session; the durable Session and
+   * workspace files are never deleted here. Removing the task also purges its
+   * attempts and operation records through the Host's delete contract.
+   * @param input - owning task and whether to archive its Session.
+   * @returns whether the conversation was removed.
+   */
+  async deleteConversation(input) {
+    const context = await this.conversationDetail(input.taskId, "deleteConversation");
+    if (context === void 0) return false;
+    const sessionId = context.task.session?.sessionId;
+    if (input.archiveSession && sessionId !== void 0) {
+      const surface = this.resolveSurface?.();
+      if (surface?.archive === void 0) {
+        this.localError("deleteConversation", "ui/archive-unavailable", sessionId);
+        return false;
+      }
+      try {
+        await surface.archive(sessionId);
+      } catch (error51) {
+        this.recordFailure("deleteConversation", error51);
+        return false;
+      }
+    }
+    const value = await this.call("deleteConversation", () => this.remote.deleteTask({
+      queueId: context.queue.id,
+      taskId: input.taskId,
+      expectedRevision: context.queue.revision
+    }));
+    if (value === void 0) return false;
+    this.mergeQueue(value.queue);
+    this.adoptQueueRevision(value.queue);
+    this.live.update((state4) => {
+      state4.tasks = state4.tasks.filter((candidate) => candidate.id !== input.taskId);
+      state4.runs = state4.runs.filter((candidate) => candidate.taskId !== input.taskId);
+    });
+    this.drafts.update((state4) => {
+      state4.queueTasks = state4.queueTasks.filter((candidate) => candidate.id !== input.taskId);
+      if (state4.task?.draft.id === input.taskId) state4.task = null;
+    });
+    return true;
+  }
+  /** Read the queue and full task a conversation action addresses. */
+  async conversationDetail(taskId, operation) {
+    const summary = this.live.getSnapshot().tasks.find((candidate) => candidate.id === taskId);
+    if (summary === void 0) {
+      this.localError(operation, "ui/task-missing");
+      return void 0;
+    }
+    const detail = await this.call(operation, () => this.remote.getQueue({
+      queueId: summary.queueId
+    }));
+    if (detail === void 0) return void 0;
+    const task = detail.tasks.find((candidate) => candidate.id === taskId);
+    if (task === void 0) {
+      this.localError(operation, "ui/task-missing");
+      return void 0;
+    }
+    return { detail, queue: detail.queue, task };
+  }
+  /** Build and insert one persistent child conversation under its parent. */
+  async createChildConversation(parentTaskId, title, promptOf, operation) {
+    const context = await this.conversationDetail(parentTaskId, operation);
+    if (context === void 0) return false;
+    const { detail, queue, task: parent } = context;
+    if (parent.session === void 0) {
+      this.localError(operation, "ui/session-missing", parentTaskId);
+      return false;
+    }
+    const order = queue.taskOrder;
+    const parentIndex = order.indexOf(parent.id);
+    let position = parentIndex < 0 ? order.length : parentIndex + 1;
+    const childIds = new Set(detail.tasks.filter((candidate) => candidate.parentTaskId === parent.id).map((candidate) => candidate.id));
+    while (position < order.length && childIds.has(order[position])) position += 1;
+    const taskId = internalTaskId(queue.id, this.now());
+    const draft = {
+      ...emptyTaskDraft(queue.id),
+      id: taskId,
+      title,
+      prompt: promptOf(parent),
+      workspaceId: parent.workspaceId,
+      cwd: parent.cwd,
+      preset: parent.preset,
+      model: { kind: "inherit" },
+      skills: parent.skills,
+      dependsOn: [parent.id],
+      parentTaskId: parent.id,
+      priority: parent.priority,
+      handoff: parent.handoff,
+      enabled: true
+    };
+    const value = await this.call(operation, () => this.remote.upsertTask({
+      taskId,
+      expectedRevision: 0,
+      draft,
+      position,
+      queueRevision: queue.revision
+    }));
+    if (value === void 0) return false;
+    this.mergeTask(value.task);
+    if (value.queue !== void 0) this.mergeQueue(value.queue);
+    return true;
+  }
   /** Remove one retained failure. */
   dismissError(id) {
-    this.drafts.update((state) => {
-      state.errors = state.errors.filter((error51) => error51.id !== id);
+    this.drafts.update((state4) => {
+      state4.errors = state4.errors.filter((error51) => error51.id !== id);
     });
   }
   /** Remove every retained failure. */
   clearErrors() {
-    this.drafts.update((state) => {
-      state.errors = [];
+    this.drafts.update((state4) => {
+      state4.errors = [];
     });
   }
   /** Invoke one Remote method while marking the page busy and retaining failure. */
@@ -18127,8 +18365,8 @@ var OrchestratorClient = class {
       this.localError(operation, "ui/busy");
       return void 0;
     }
-    this.drafts.update((state) => {
-      state.busy = operation;
+    this.drafts.update((state4) => {
+      state4.busy = operation;
     });
     try {
       const result = await invoke();
@@ -18139,8 +18377,8 @@ var OrchestratorClient = class {
       this.recordFailure(operation, error51);
       return void 0;
     } finally {
-      this.drafts.update((state) => {
-        state.busy = void 0;
+      this.drafts.update((state4) => {
+        state4.busy = void 0;
       });
     }
   }
@@ -18148,8 +18386,8 @@ var OrchestratorClient = class {
   recordFailure(operation, failure) {
     this.errorSequence += 1;
     const error51 = clientErrorFrom(operation, failure, this.now(), `error-${this.errorSequence}`);
-    this.drafts.update((state) => {
-      state.errors = [error51, ...state.errors];
+    this.drafts.update((state4) => {
+      state4.errors = [error51, ...state4.errors];
     });
   }
   /**
@@ -18168,18 +18406,18 @@ var OrchestratorClient = class {
       message: "",
       ...detail === void 0 ? {} : { detail }
     };
-    this.drafts.update((state) => {
-      state.errors = [error51, ...state.errors];
+    this.drafts.update((state4) => {
+      state4.errors = [error51, ...state4.errors];
     });
   }
   /** Block a queue or task switch while an unsaved draft exists. */
   blockDirty(operation) {
-    const state = this.drafts.getSnapshot();
-    if (state.queue?.dirty === true) {
+    const state4 = this.drafts.getSnapshot();
+    if (state4.queue?.dirty === true) {
       this.localError(operation, "ui/unsaved-queue");
       return true;
     }
-    if (state.task?.dirty === true) {
+    if (state4.task?.dirty === true) {
       this.localError(operation, "ui/unsaved-task");
       return true;
     }
@@ -18193,18 +18431,18 @@ var OrchestratorClient = class {
   }
   /** Set one draft's saving flag. */
   setSaving(field, saving) {
-    this.drafts.update((state) => {
-      if (field === "queue" && state.queue !== null) state.queue = { ...state.queue, saving };
-      if (field === "task" && state.task !== null) state.task = { ...state.task, saving };
-      if (field === "settings" && state.settings !== null) state.settings = { ...state.settings, saving };
+    this.drafts.update((state4) => {
+      if (field === "queue" && state4.queue !== null) state4.queue = { ...state4.queue, saving };
+      if (field === "task" && state4.task !== null) state4.task = { ...state4.task, saving };
+      if (field === "settings" && state4.settings !== null) state4.settings = { ...state4.settings, saving };
     });
   }
   /** Replace one live queue projection. */
   mergeQueue(queue) {
-    this.live.update((state) => {
-      const index = state.queues.findIndex((candidate) => candidate.id === queue.id);
-      const queues = index < 0 ? [...state.queues, queue] : state.queues.map((candidate) => candidate.id === queue.id ? queue : candidate);
-      state.queues = queues;
+    this.live.update((state4) => {
+      const index = state4.queues.findIndex((candidate) => candidate.id === queue.id);
+      const queues = index < 0 ? [...state4.queues, queue] : state4.queues.map((candidate) => candidate.id === queue.id ? queue : candidate);
+      state4.queues = queues;
     });
     this.rebaseCleanQueueDraft(this.live.getSnapshot().queues);
   }
@@ -18224,14 +18462,14 @@ var OrchestratorClient = class {
     if (current === null || current.dirty || current.saving || current.baseRevision === 0) return;
     const live = queues.find((queue) => queue.id === current.draft.id);
     if (live === void 0 || live.revision === current.baseRevision) return;
-    this.drafts.update((state) => {
-      state.queue = { ...current, baseRevision: live.revision };
+    this.drafts.update((state4) => {
+      state4.queue = { ...current, baseRevision: live.revision };
     });
   }
   /** Replace one live run projection, or append a fresh attempt. */
   mergeRun(run) {
-    this.live.update((state) => {
-      state.runs = state.runs.some((candidate) => candidate.id === run.id) ? state.runs.map((candidate) => candidate.id === run.id ? run : candidate) : [...state.runs, run];
+    this.live.update((state4) => {
+      state4.runs = state4.runs.some((candidate) => candidate.id === run.id) ? state4.runs.map((candidate) => candidate.id === run.id ? run : candidate) : [...state4.runs, run];
     });
   }
   /** Replace one live task summary and its loaded detail projection. */
@@ -18251,17 +18489,17 @@ var OrchestratorClient = class {
       ...task.parentTaskId === void 0 ? {} : { parentTaskId: task.parentTaskId },
       revision: task.revision
     };
-    this.live.update((state) => {
-      state.tasks = state.tasks.some((candidate) => candidate.id === task.id) ? state.tasks.map((candidate) => candidate.id === task.id ? summary : candidate) : [...state.tasks, summary];
+    this.live.update((state4) => {
+      state4.tasks = state4.tasks.some((candidate) => candidate.id === task.id) ? state4.tasks.map((candidate) => candidate.id === task.id ? summary : candidate) : [...state4.tasks, summary];
     });
-    this.drafts.update((state) => {
-      state.queueTasks = replaceTask(state.queueTasks, task);
+    this.drafts.update((state4) => {
+      state4.queueTasks = replaceTask(state4.queueTasks, task);
     });
   }
   /** Replace one live settings projection. */
   mergeSettings(settings) {
-    this.live.update((state) => {
-      state.settings = settings;
+    this.live.update((state4) => {
+      state4.settings = settings;
     });
   }
 };
@@ -18336,6 +18574,8 @@ var en = {
   tabPressure: "Automation rules",
   tabHandoff: "Handoff & audit",
   tabLabel: "HandsOff views",
+  starGithub: "Star on GitHub",
+  starHint: "Open the GitHub repository and star it",
   refresh: "Refresh",
   reload: "Reload",
   save: "Save",
@@ -18647,6 +18887,7 @@ var en = {
   modelDefaultTag: "system default",
   modelProvider: "Provider",
   modelName: "Model",
+  modelSearchPlaceholder: "Search models\u2026",
   modelReasoning: "Reasoning effort",
   modelInheritPipeline: "Inherit the pipeline route",
   modelInheritHost: "Inherit the system default",
@@ -18700,6 +18941,36 @@ var en = {
   boardNoActivity: "No activity yet",
   boardDetails: "Details",
   boardHideDetails: "Hide details",
+  conversationMenu: "Conversation actions",
+  conversationSwitchModel: "Switch conversation model",
+  conversationFollowUp: "Ask a follow-up",
+  conversationRerun: "Rerun conversation",
+  conversationDelete: "Delete this conversation",
+  conversationSwitchTitle: "Switch this conversation model",
+  conversationSwitchBody: "The chosen route applies to this conversation next turn. It changes no other conversation unless you select future tasks below.",
+  conversationSwitchFuture: "Also switch future conversations",
+  conversationSwitchFutureHint: "Only tasks that have not started are listed. Select all or choose individually.",
+  conversationSwitchAll: "Select all",
+  conversationSwitchMute: "Do not ask again for this pipeline",
+  conversationSwitchMutedHint: "This pipeline no longer asks about future conversations; switching here changes this conversation only.",
+  conversationSwitchApply: "Switch model",
+  conversationFollowUpTitle: "Ask a follow-up",
+  conversationFollowUpLabel: "Follow-up text",
+  conversationFollowUpHint: "This becomes a child conversation inserted immediately after the current task, so the pipeline stays serialized.",
+  conversationFollowUpApply: "Create child conversation",
+  conversationRerunTitle: "Rerun this conversation?",
+  conversationRerunBody: "A child conversation is inserted after \u201C{title}\u201D with \u201C\u91CD\u65B0\u6267\u884C\u4E0A\u4E00\u8F6E\u5BF9\u8BDD\u672A\u5B8C\u6210\u90E8\u5206\u201D as its prompt. The original conversation is kept.",
+  conversationDeleteTitle: "Delete this conversation?",
+  conversationDeleteBody: "Only this conversation\u2019s HandsOff records are removed. Other conversations in the pipeline and workspace files stay untouched.",
+  conversationDeleteArchive: "Also archive the DSH conversation",
+  conversationDeleteArchiveHint: "The conversation is hidden from the workspace sidebar; its DSH log is retained.",
+  conversationDeleteNoSession: "No DSH conversation is attached; only the HandsOff records will be removed.",
+  conversationDeleteAcknowledge: "I understand only this one conversation is removed.",
+  conversationDeleteApply: "Delete conversation",
+  conversationRunActions: "Run actions",
+  conversationHideRunActions: "Hide run actions",
+  conversationModelRequired: "Choose a model route first.",
+  conversationFutureCount: "{count} unstarted conversations",
   boardRunId: "Run ID",
   boardAttempt: "Attempt",
   boardGeneration: "Generation",
@@ -18888,6 +19159,363 @@ var en = {
   timeDays: "{count}d",
   timeMonths: "{count}mo",
   timeYears: "{count}y",
+  tabSkills: "Skill management",
+  tabMemory: "Fish memory",
+  pressureQueueModelsTitle: "Queue model routing",
+  pressureQueueModelsIntro: "Choose a management model and a task-splitting model for each pipeline.",
+  pressureQueueSupervisor: "Management model",
+  pressureQueueSplitter: "Task-splitting model",
+  pressureQueueModelInherit: "Host default",
+  pressureQueueModelSave: "Save models",
+  pressureQueueModelSaved: "Saved",
+  pressureQueueNoQueues: "No pipelines are visible. Create one first.",
+  pressureParamsTitle: "Automatic handling thresholds",
+  pressureParamsIntro: "These numbers decide when a task is handed over, split or stopped.",
+  pressureParamContext: "Context threshold (%)",
+  pressureParamContextHint: "Allowed 10\u201395%. The task hands over when context reaches this share.",
+  pressureParamIdle: "Silence before a probe (minutes)",
+  pressureParamIdleHint: "Allowed 1\u2013240 minutes. A probe runs first; no answer pauses the pipeline.",
+  pressureParamCacheWarn: "Cache hit upper bound (%)",
+  pressureParamCacheWarnHint: "Allowed 5\u2013100%. Below it the manager splits the remaining work.",
+  pressureParamCacheAbort: "Cache hit lower bound (%)",
+  pressureParamCacheAbortHint: "Must stay below the upper bound. Below it every queue stops.",
+  pressureParamTokenLimit: "Token limit per model",
+  pressureParamTokenLimitHint: "Allowed 1,000\u2013100,000,000. Reaching it hands the task over.",
+  pressureParamInvalidContext: "Context must stay between 10% and 95%.",
+  pressureParamInvalidIdle: "Silence must stay between 1 and 240 minutes.",
+  pressureParamInvalidCache: "The upper bound must be above the lower bound, within 5\u2013100%.",
+  pressureParamInvalidToken: "Token limit must stay between 1,000 and 100,000,000.",
+  pressureParamsSaved: "Thresholds applied",
+  pressureParamsDirty: "Unsaved changes",
+  pressureDetailsTitle: "Automatic handling detail",
+  pressureDetailsIntro: "Which pipeline needed help, what the system saw and why it acted.",
+  pressureDetailsNormal: "All clear",
+  pressureDetailsNormalHint: "No queue needed an automatic intervention in this snapshot.",
+  pressureDetailsQueue: "Pipeline",
+  pressureDetailsIssue: "Issue",
+  pressureDetailsReason: "Reason",
+  pressureDetailsAt: "When",
+  pressureDetailsCount: "{count} items",
+  pressureKindPauseContext: "Context handoff",
+  pressureKindPauseIdle: "Long silence",
+  pressureKindDecompose: "Remaining work split",
+  pressureKindRefine: "Split refined",
+  pressureKindAbortAll: "All queues stopped",
+  pressureKindStopNotify: "Queue paused for a person",
+  pressureAlertTitle: "The management AI needs a decision",
+  pressureAlertBody: "Three long pauses were recorded, or one task class is using a disproportionate share of the token budget.",
+  pressureAlertIdleReason: "Three consecutive long waits crossed the response window.",
+  pressureAlertCostReason: "One task class crossed the per-model token limit.",
+  pressureAlertConfirm: "Optimise automatically",
+  pressureAlertDecline: "Not now",
+  pressureAlertLater: "Ask me later",
+  pressureAlertDismissed: "The request was postponed and added to the butler reminders.",
+  pressureOptimizeTitle: "Choose a model to review the strategy",
+  pressureOptimizeBody: "The management AI suspects its own routing rules caused this. Pick a model that can rewrite the management strategy; it will not read project files.",
+  pressureOptimizeReason: "Why the manager intervened",
+  pressureOptimizeModel: "Better model for management",
+  pressureOptimizeModelHint: "The selected route reviews thresholds and routing only. Its cost is billed to that route.",
+  pressureOptimizeApply: "Apply and record improvement",
+  pressureOptimizeResultTitle: "Improvement recorded",
+  pressureOptimizeResultBody: "The new strategy is listed under Skill management \u2192 Global improvements and will apply to the next conversation in matching pipelines.",
+  pressureOptimizeDone: "Close",
+  pressureOptimizeNoticeTitle: "Automation needs your review",
+  pressureOptimizeNoticeBody: "Long waits repeated and token spending concentrated in one task class. Open Automation rules to choose a better management model.",
+  pressureSavingsTitle: "Savings and efficiency",
+  pressureSavingsIntro: "Measured token use, avoided context growth and time the manager recovered.",
+  pressureSavingsMeasured: "Measured tokens",
+  pressureSavingsTokens: "Tokens saved",
+  pressureSavingsTime: "Time saved",
+  pressureSavingsContext: "Contexts compressed",
+  pressureSavingsCompression: "Compression rule",
+  pressureSavingsCompressionValue: "Handoff at {percent}%",
+  pressureSavingsSuggestion: "Hand over before the window fills; the next conversation starts with a short structured brief.",
+  pressureSavingsNone: "Savings appear after the first automatic handoff.",
+  pressureEngineeringTitle: "Engineering guardrails",
+  pressureEngineeringIntro: "Tell every task how much code to add, how to split deliverables, and which files to read first.",
+  pressureCodeLimit: "Code paragraph limit (lines)",
+  pressureCodeLimitHint: "Allowed 100\u20132,000 lines. A task splits the file before exceeding this.",
+  pressureFileSplit: "File delivery requirement",
+  pressureFileSplitHint: "For example: one component per file, tests beside the source, no generated files.",
+  pressureReadScope: "Read first",
+  pressureReadScopeHint: "Paths and symbols a task should inspect before running commands.",
+  pressureExcludeScope: "Do not read",
+  pressureExcludeScopeHint: "Directories, generated files and archives the task must skip.",
+  pressurePreserveContent: "Content to preserve during compression",
+  pressurePreserveContentHint: "Keep these symbols, decisions or acceptance rules even when the context is trimmed.",
+  pressurePreserveEmpty: "No special content is preserved yet.",
+  pressureTokenStrategy: "Token-saving strategy",
+  pressureStrategyStrict: "Strict profile",
+  pressureEngineeringSaved: "Guardrails applied",
+  pressureEngineeringInvalid: "The code paragraph limit must stay between 100 and 2,000 lines.",
+  pressureFeedbackTitle: "Waste feedback and correction",
+  pressureNegativeTitle: "Wasted effort detected",
+  pressureNegativeFiles: "Useless file reads",
+  pressureNegativeCommands: "Commands without a result",
+  pressureNegativeTime: "Lost waiting time",
+  pressureNegativeTokens: "Wasted tokens",
+  pressureNegativeFilesDetail: "The manager saw repeated context fills without a matching answer.",
+  pressureNegativeCommandsDetail: "A command finished without a usable result while the task kept running.",
+  pressureNegativeTimeDetail: "A task stayed silent past the configured response window.",
+  pressureNegativeTokensDetail: "One route crossed the token budget stored for its model.",
+  pressureNegativeNone: "No waste signal is visible in this snapshot.",
+  pressurePositiveTitle: "Positive correction",
+  pressurePositiveFiles: "Read guidance now points at entry files first.",
+  pressurePositiveExclude: "The exclude list now protects generated and vendor folders.",
+  pressurePositiveDispatch: "Dispatch hands over before the context window fills.",
+  pressureBeforeAfter: "Before \u2192 after",
+  pressureBefore: "Before",
+  pressureAfter: "After",
+  pressureFeedbackSource: "Source",
+  skillsTitle: "Skill management",
+  skillsIntro: "Global rules, professional task skills, and the exact references each pipeline uses.",
+  skillsTabGlobal: "Global skills",
+  skillsTabProfessional: "Professional task skills",
+  skillsTabPipeline: "Skills in pipeline scheduling",
+  skillsTabLabel: "Skill management views",
+  skillsGlobalUserTitle: "User-specific improvements",
+  skillsGlobalProTitle: "Professional programming skills",
+  skillsGlobalIntro: "Global skills teach the manager what to avoid across every project.",
+  skillsBadgeUser: "User",
+  skillsBadgeProfessional: "Professional",
+  skillsBadgePreset: "Preset",
+  skillsBadgeCustom: "Custom",
+  skillsEnabled: "Enabled",
+  skillsDisabled: "Disabled",
+  skillsEditContent: "Edit document",
+  skillsHideContent: "Collapse document",
+  skillsGitHistory: "Git restore",
+  skillsHistoryTitle: "Skill document history",
+  skillsHistoryHint: "Every edit and restore creates a new revision. Restore when a change harmed an existing workflow.",
+  skillsHistoryCurrent: "Current document",
+  skillsHistorySelected: "Selected revision",
+  skillsHistoryRestore: "Restore this revision",
+  skillsHistoryRestored: "Restored. A new revision records this action.",
+  skillsHistoryDiff: "Version comparison",
+  skillsHistoryEmpty: "No earlier revision is stored.",
+  skillsHistoryVersionNote: "Revision {index} \xB7 {note}",
+  skillsType: "Type",
+  skillsGroup: "Folder",
+  skillsGroupRoot: "Ungrouped",
+  skillsGroupEmpty: "No skill is in this folder yet.",
+  skillsGroupNew: "New folder",
+  skillsGroupName: "Folder name",
+  skillsGroupAdd: "Add folder",
+  skillsGroupCreated: "Folder added",
+  skillsAddTitle: "Add a professional skill",
+  skillsAddHint: "Write the rule once, then reference it from any pipeline.",
+  skillsName: "Skill name",
+  skillsDescription: "Short description",
+  skillsContent: "Skill document",
+  skillsAdd: "Add skill",
+  skillsPresetTitle: "Preset skills",
+  skillsCustomTitle: "Your skills",
+  skillsTreeTitle: "Skill folders",
+  skillsTreeHint: "Folders can contain more folders. Move a skill by editing its folder.",
+  skillsUngrouped: "Ungrouped skills",
+  skillsPipelineEntry: "Pipeline skill entry",
+  skillsPipelineEntryHint: "Add a skill to the selected pipeline, then reference it from the task you are about to run.",
+  skillsAddToConversation: "Add to current pipeline",
+  skillsAddedToConversation: "Added to the current pipeline conversation.",
+  skillsReferenced: "Referenced",
+  skillsAdded: "Skill added",
+  skillsImportLocal: "Choose local skills",
+  skillsImportHint: "Read Markdown, text or JSON skill files from this computer.",
+  skillsImportDone: "Imported {count} skills.",
+  skillsImportInvalid: "No readable skill was found in the selected files.",
+  skillsCurrentPipeline: "Current pipeline: {title}",
+  skillsNoPipeline: "Select a pipeline first.",
+  skillsGlobalImprovementsTitle: "Global improvements",
+  skillsGlobalImprovementsHint: "Improvements shared by two or more projects are marked as global.",
+  skillsCrossProject: "Cross-project \xB7 {count} projects",
+  skillsSingleProject: "Single project",
+  skillsImprovementCause: "Cause",
+  skillsImprovementAction: "Improvement",
+  skillsImprovementResult: "Result",
+  skillsNoImprovements: "No improvement has been recorded yet.",
+  skillsImprovementProjects: "Observed in {projects}",
+  skillsGeneratedBadge: "New",
+  skillsPipelineTitle: "Skills in pipeline scheduling",
+  skillsPipelineHint: "Pipeline-wide skills apply to every task. Task skills apply only to that task. Minus removes a reference without deleting the skill.",
+  skillsPipelineGlobal: "Pipeline-wide skills",
+  skillsPipelineTasks: "Tasks",
+  skillsPipelineTaskSkills: "Task skills",
+  skillsPipelineNoQueue: "No pipeline is visible. Create one to assign skills.",
+  skillsPipelineNoTasks: "This pipeline has no tasks yet.",
+  skillsLibraryTitle: "Skill library",
+  skillsAddRef: "Add reference",
+  skillsRemoveRef: "Remove reference",
+  skillsRefAdded: "Reference added. The next turn in this conversation uses it.",
+  skillsRefRemoved: "Reference removed. The skill stays in the library, and the next turn no longer uses it.",
+  skillsRefLive: "Reference state updates immediately.",
+  skillsRefNone: "No skill is referenced here.",
+  skillSeedUserConfirmName: "Confirm scope before reading",
+  skillSeedUserConfirmDesc: "Daily projects: ask one short question before opening a large area.",
+  skillSeedUserConfirmBody: "Before reading more than three files, restate the goal and ask the user which entry point matters. Keep the question short and continue after the answer.",
+  skillSeedUserCrossName: "Reuse cross-project fixes",
+  skillSeedUserCrossDesc: "Promote a fix when two projects hit the same failure.",
+  skillSeedUserCrossBody: "When the same failure appears in two projects, record the cause and the correction once. Future pipelines should reference that skill instead of rediscovering it.",
+  skillSeedNoReadName: "Avoid useless file reads",
+  skillSeedNoReadDesc: "Read the entry point and the changed module first.",
+  skillSeedNoReadBody: "Start from the entry file, then the module named by the task. Skip vendor folders, generated output, archives and lock files. Search before opening a whole directory.",
+  skillSeedAskName: "Ask the user more often",
+  skillSeedAskDesc: "Stop when a decision changes the deliverable.",
+  skillSeedAskBody: "Ask one precise question when the goal, the target file or the acceptance rule is ambiguous. Do not guess a product decision the user has not made.",
+  skillSeedDocName: "Keep documents at 500\u2013700 lines",
+  skillSeedDocDesc: "Split a growing source file before it becomes hard to review.",
+  skillSeedDocBody: "Keep one source document between 500 and 700 lines. If it grows past that, split it by responsibility and leave a short index that points at the new files.",
+  skillSeedReviewName: "Review the change before reporting",
+  skillSeedReviewDesc: "Preset skill for code review pipelines.",
+  skillSeedReviewBody: "Read the diff, run the relevant check, then report what changed, what passed and what remains. Never claim a test passed without its output.",
+  skillSeedSplitName: "Split work by deliverable",
+  skillSeedSplitDesc: "Preset skill for front-end and engineering pipelines.",
+  skillSeedSplitBody: "Turn one large request into files with one responsibility each. Name the owner of every file, keep tests beside the source, and avoid a single file that owns both state and rendering.",
+  skillSeedMigrationName: "Database migration safety",
+  skillSeedMigrationDesc: "User skill for schema changes.",
+  skillSeedMigrationBody: "Read the current schema before editing it. Write the forward migration, a rollback path and a verification query. Never run a destructive statement without an explicit confirmation.",
+  skillSeedVersionContent: "Open every related file before editing. When unsure, keep reading until the whole module is loaded.",
+  skillVersionNoteInitial: "Initial document",
+  skillVersionNoteImproved: "Refined after feedback",
+  skillVersionNoteEdited: "Edited by the user",
+  skillVersionNoteRestore: "Restored an earlier revision",
+  skillGroupBackend: "Backend",
+  skillGroupDatabase: "Database",
+  skillGroupFrontend: "Frontend",
+  improvementProjectOne: "Project A",
+  improvementProjectTwo: "Project B",
+  improvementCrossTitle: "Read the entry point before the folder",
+  improvementCrossCause: "Two projects wasted tokens by opening generated and vendor folders before the entry file.",
+  improvementCrossAction: "The manager now names the entry file first and excludes generated folders.",
+  improvementCrossResult: "Fewer useless reads and a shorter path to the first useful answer.",
+  improvementLocalTitle: "Stop repeating a failed command",
+  improvementLocalCause: "One pipeline ran the same command three times without a result.",
+  improvementLocalAction: "After one empty result the manager asks for the error output before retrying.",
+  improvementLocalResult: "One retry instead of an unbounded loop; the user sees the blocker sooner.",
+  improvementGeneratedTitle: "Management strategy reviewed with {model}",
+  improvementGeneratedCause: "Three long waits and one task class crossing its token budget.",
+  improvementGeneratedAction: "The manager hands over earlier, narrows the read scope and asks before a costly retry.",
+  improvementGeneratedResult: "Projected 24% fewer tokens and 31% less waiting on the next matching pipeline.",
+  memoryTitle: "Fish memory",
+  memorySubtitle: "The butler that schedules, reminds and talks to you without reading project files.",
+  memoryOnline: "Online",
+  memoryPersonaName: "Little Fish",
+  memoryPersonaRole: "Project butler \xB7 scheduler",
+  memoryGrowth: "Personality growth",
+  memoryMood: "Mood",
+  memoryMoodFocused: "Focused",
+  memoryTraitWarm: "Warm",
+  memoryTraitPrecise: "Precise",
+  memoryTraitCurious: "Curious",
+  memoryTraitSteady: "Steady",
+  memoryLittleThoughtTitle: "A small thought",
+  memoryLittleThought: "Three pipelines are waiting for your call. I will nudge you before the fourth one piles up.",
+  memoryCognitionTitle: "What I know about your work",
+  memoryCognitionHabit: "You prefer short answers before long reports.",
+  memoryCognitionFocus: "Most work happens in the afternoon, in one folder.",
+  memoryCognitionRhythm: "You pause before approving destructive changes.",
+  memoryMemoryTitle: "Memory summary",
+  memoryMemorySummary: "I keep goals, reminders and recurring problems. I do not keep full file contents.",
+  memoryMemoryProjects: "Remembered projects: {count}",
+  memoryMemoryPreference: "Preference: ask one precise question instead of a long checklist.",
+  memoryChatTitle: "Talk to the butler",
+  memoryChatInput: "Message",
+  memoryChatPlaceholder: "Ask for status, a reminder, or help choosing a pipeline\u2026",
+  memoryChatSend: "Send",
+  memoryUserLabel: "You",
+  memoryButlerLabel: "Little Fish",
+  memoryGreeting: "I am here. I watch the queues, carry your reminders, and keep the conversation short.",
+  memoryReply: "I wrote this down: \u201C{text}\u201D. I will remind you at the right moment and keep the full file reading out of this conversation.",
+  memoryReplyStatus: "Two pipelines are running and one is waiting. Nothing needs a decision right now; I will tell you before it does.",
+  memoryNoticesTitle: "Proactive reminders",
+  memoryNoticeDefaultTitle: "A pipeline is waiting",
+  memoryNoticeDefaultBody: "The task has been silent past the probe window. Open Running tasks to see the last activity.",
+  memoryNoticeDismiss: "Dismiss reminder",
+  memoryNoticeAutomationTitle: "Automation needs your review",
+  memoryNoticeAutomationBody: "The manager asked for a better strategy model. Open Automation rules when you are ready.",
+  memoryRoleTitle: "Scheduling position",
+  memoryRoleBody: "I am the project-level butler. I hand work to task conversations, watch their state, and bring decisions back to you.",
+  memoryBoundaryTitle: "What I deliberately do not do",
+  memoryBoundaryRead: "I do not read large file sets or project contents.",
+  memoryBoundaryInteract: "I do not replace the task conversation that writes the code.",
+  memoryBoundaryDispatch: "I do not change thresholds without your confirmation.",
+  memoryDispatchStatus: "Dispatch status",
+  memoryReminderStatus: "Reminder status",
+  memoryDispatchActive: "{count} queues running",
+  memoryReminderArmed: "{count} reminders armed",
+  memoryReminderWaiting: "No reminder is waiting",
+  memoryMetricNotices: "Reminders",
+  memoryMetricQueues: "Active queues",
+  memoryMetricMood: "Mood",
+  memoryMetricState: "Current state",
+  memoryMetricMail: "Mail",
+  memoryQuiet: "Quiet",
+  memoryMoodBored: "Bored\u2026",
+  memoryMoodSpaced: "Spacing out\u2026",
+  memoryMoodFocusedState: "Focusing\u2026",
+  memoryMoodExcited: "Excited\u2026",
+  memoryMoodThinking: "Thinking\u2026",
+  memoryMoodDrooling: "Drooling\u2026",
+  memoryMoodAuto: "Chosen by the AI",
+  memoryStatusHint: "Open thoughts, mood and context",
+  memoryStatusDetailTitle: "AI state",
+  memoryCurrentMood: "Mood state",
+  memoryContextLength: "Context length",
+  memoryContextValue: "{used} / {limit} tokens",
+  memoryThoughtsTitle: "Inner monologue",
+  memoryThoughtsBody: "The queues are quiet. I keep the schedule, the reminders and your preferences close, without reading project files.",
+  memoryQueuesTitle: "Queue watch",
+  memoryManaging: "Being managed now",
+  memoryScheduled: "Scheduled next",
+  memoryNoManaging: "No queue is being managed right now.",
+  memoryNoScheduled: "No queue is waiting for a scheduled turn.",
+  memoryQueuedTasks: "{count} tasks queued",
+  memoryMailTitle: "Mailbox",
+  memoryMailFromScheduler: "Scheduler",
+  memoryMailFromAutomation: "Automation",
+  memoryMailSubjectDispatch: "Pipeline schedule needs a decision",
+  memoryMailBodyDispatch: "Two queues are waiting for a scheduled turn. The manager suggests running the front-end pipeline first and leaving the database migration until the schema review is done.",
+  memoryMailSubjectWaiting: "A queue stayed silent past the probe window",
+  memoryMailBodyWaiting: "One task has not reported progress for 20 minutes. The manager has not paused the queue yet; it is waiting for your reply.",
+  memoryMailSelect: "Select an email to read it.",
+  memoryMailDate: "Date",
+  memoryMailReply: "Reply",
+  memoryMailReplyPlaceholder: "Reply about scheduling, a reminder, or a decision\u2026",
+  memoryMailSend: "Send reply",
+  memoryMailSent: "Reply sent to the butler as a user prompt.",
+  petSendToDesktop: "Move the fish to the desktop",
+  petDockBack: "Bring the fish back here",
+  petFloatingTag: "Floating on the desktop",
+  petShowBubble: "Show the fish bubble",
+  petHideBubble: "Hide the fish bubble",
+  petBubbleConnecting: "Waking up the schedule feed\u2026",
+  petBubbleEmpty: "No pipeline yet. Write one and I will queue it for you.",
+  petBubbleIdle: "All quiet. {done}/{total} tasks are done; I am keeping watch.",
+  petBubbleWorking: "{running} task(s) running across {queues} queue(s). {done}/{total} tasks done.",
+  petBubbleAttention: "{count} task(s) need your decision. I paused politely.",
+  petBubbleError: "The schedule feed dropped. I am retrying; your queues are safe.",
+  petBubbleFailed: "{count} task(s) failed. The queue is intact; decide whether to retry or skip.",
+  petBubbleDone: "All {total} tasks are done. Go enjoy the result.",
+  petBubbleSleeping: "Nothing is moving, so I am resting one eye.",
+  petProgressDetail: "{done}/{total} tasks done \xB7 {running} running \xB7 {queues} queues",
+  petProgressDetailNotices: "{done}/{total} tasks done \xB7 {running} running \xB7 {count} reminders",
+  petReminderDetail: "{count} reminder(s) waiting",
+  petArtButton: "Custom artwork",
+  petArtTitle: "Import a whale-maid sprite",
+  petArtIntro: "Choose local PNG/WebP files named after the actions below. Files are stored only in this browser (IndexedDB); they are never uploaded or added to the package.",
+  petArtLive2DNote: "Live2D models (.moc3 / .model3.json) are not imported directly. Export PNG frames from VTube Studio or Cubism first, then choose them here.",
+  petArtLocalOnly: "Only import artwork you are allowed to use. The popular whale-maid sprites are personal, non-commercial material; this repository does not bundle or redistribute them.",
+  petArtConfirm: "I confirm I have the right to use these files; non-commercial artwork will stay on this machine only.",
+  petArtExpected: "Supported file names",
+  petArtChoose: "Choose sprite files",
+  petArtImporting: "Reading files\u2026",
+  petArtImported: "Imported {count} sprite(s).",
+  petArtSkipped: "{count} file(s) were ignored because the name or image was not supported.",
+  petArtClear: "Remove custom sprites",
+  petArtCleared: "Custom sprites removed; the bundled artwork is back.",
+  petArtInstalled: "Installed locally",
+  petArtNone: "Using the bundled chibi whale maid.",
+  petArtError: "Local storage failed: {message}",
+  petArtLicense: "Code MIT \xB7 bundled art CC-BY 3.0 \xB7 user-imported art keeps its own licence.",
   explanationForbidden: "The caller has no role for this orchestration action or record.",
   explanationNotFound: "The record is absent or hidden by the access policy.",
   explanationRevisionConflict: "Another writer advanced the record past the revision this page observed.",
@@ -18928,6 +19556,7 @@ var en = {
   explanationUiSessionArchived: "The conversation is archived. Restore it in the sidebar, then open it again.",
   explanationUiSessionMissing: "This conversation cannot be opened: it was deleted, a newer attempt replaced it, or it is not listed under this Workspace.",
   explanationUiSessionOpenFailed: "The browser could not select the conversation; the message above is the page error.",
+  explanationUiModelRouteRequired: "Choose a fixed model route before switching a conversation.",
   explanationUiArchiveUnavailable: "This host cannot archive workspace conversations. Delete without archiving, or archive them in the workspace sidebar first.",
   explanationUiArchiveFailed: "A conversation could not be archived, so the pipeline was kept. Retry, or delete without archiving.",
   explanationUnknown: "No localized explanation exists for this stable code."
@@ -18939,10 +19568,12 @@ var zh = {
   unavailable: "HandsOff \u6682\u65F6\u4E0D\u53EF\u7528\uFF0C\u8BF7\u7A0D\u540E\u91CD\u8BD5\u3002",
   tabQueue: "\u521B\u5EFA\u4EFB\u52A1\u961F\u5217",
   tabGraph: "\u4F9D\u8D56\u56FE",
-  tabBoard: "\u6B63\u5728\u6267\u884C\u4E2D\u7684\u4EFB\u52A1",
+  tabBoard: "\u8FD0\u884C\u4E2D\u7684\u4EFB\u52A1",
   tabPressure: "\u81EA\u52A8\u5904\u7406",
   tabHandoff: "\u4EA4\u63A5\u4E0E\u5BA1\u8BA1",
   tabLabel: "HandsOff \u89C6\u56FE",
+  starGithub: "\u70B9\u4E2A Star",
+  starHint: "\u6253\u5F00 GitHub \u4ED3\u5E93\u5E76\u70B9\u4EAE Star",
   refresh: "\u5237\u65B0",
   reload: "\u91CD\u65B0\u52A0\u8F7D",
   save: "\u4FDD\u5B58",
@@ -19254,6 +19885,7 @@ var zh = {
   modelDefaultTag: "\u7CFB\u7EDF\u9ED8\u8BA4",
   modelProvider: "Provider",
   modelName: "\u6A21\u578B",
+  modelSearchPlaceholder: "\u641C\u7D22\u6A21\u578B\u2026",
   modelReasoning: "\u63A8\u7406\u5F3A\u5EA6",
   modelInheritPipeline: "\u7EE7\u627F\u6D41\u6C34\u7EBF\u8DEF\u7531",
   modelInheritHost: "\u7EE7\u627F\u7CFB\u7EDF\u9ED8\u8BA4",
@@ -19307,6 +19939,36 @@ var zh = {
   boardNoActivity: "\u6682\u65E0\u6D3B\u52A8",
   boardDetails: "\u8BE6\u60C5",
   boardHideDetails: "\u6536\u8D77\u8BE6\u60C5",
+  conversationMenu: "\u5BF9\u8BDD\u64CD\u4F5C",
+  conversationSwitchModel: "\u5207\u6362\u5BF9\u8BDD\u6A21\u578B",
+  conversationFollowUp: "\u5728\u5BF9\u8BDD\u8FFD\u95EE",
+  conversationRerun: "\u91CD\u65B0\u8FD0\u884C\u5BF9\u8BDD",
+  conversationDelete: "\u5220\u9664\u6B64\u5BF9\u8BDD",
+  conversationSwitchTitle: "\u5207\u6362\u6B64\u5BF9\u8BDD\u7684\u6A21\u578B",
+  conversationSwitchBody: "\u6240\u9009\u8DEF\u7531\u53EA\u4F5C\u7528\u4E8E\u8FD9\u4E2A\u5BF9\u8BDD\u7684\u4E0B\u4E00\u6761\u6D88\u606F\uFF1B\u9664\u975E\u5728\u4E0B\u9762\u52FE\u9009\u540E\u7EED\u5BF9\u8BDD\uFF0C\u4E0D\u4F1A\u6539\u52A8\u4EFB\u4F55\u5176\u4ED6\u5BF9\u8BDD\u3002",
+  conversationSwitchFuture: "\u540C\u65F6\u5207\u6362\u540E\u7EED\u5BF9\u8BDD",
+  conversationSwitchFutureHint: "\u53EA\u5217\u51FA\u5C1A\u672A\u5F00\u59CB\u7684\u4EFB\u52A1\uFF1B\u53EF\u4EE5\u5168\u9009\uFF0C\u4E5F\u53EF\u4EE5\u5355\u72EC\u52FE\u9009\u3002",
+  conversationSwitchAll: "\u5168\u9009",
+  conversationSwitchMute: "\u5F53\u524D\u6D41\u6C34\u7EBF\u4E0D\u518D\u63D0\u95EE",
+  conversationSwitchMutedHint: "\u5F53\u524D\u6D41\u6C34\u7EBF\u5DF2\u8BBE\u4E3A\u4E0D\u518D\u8BE2\u95EE\u540E\u7EED\u5BF9\u8BDD\uFF1B\u8FD9\u91CC\u7684\u5207\u6362\u53EA\u4F5C\u7528\u4E8E\u5F53\u524D\u5BF9\u8BDD\u3002",
+  conversationSwitchApply: "\u5207\u6362\u6A21\u578B",
+  conversationFollowUpTitle: "\u5728\u5BF9\u8BDD\u4E2D\u8FFD\u95EE",
+  conversationFollowUpLabel: "\u8FFD\u95EE\u5185\u5BB9",
+  conversationFollowUpHint: "\u8FFD\u95EE\u4F1A\u6210\u4E3A\u5B50\u5BF9\u8BDD\uFF0C\u63D2\u5728\u5F53\u524D\u4EFB\u52A1\u4E4B\u540E\uFF0C\u4FDD\u8BC1\u6D41\u6C34\u7EBF\u7EE7\u7EED\u4E32\u884C\u3002",
+  conversationFollowUpApply: "\u521B\u5EFA\u5B50\u5BF9\u8BDD",
+  conversationRerunTitle: "\u91CD\u65B0\u8FD0\u884C\u6B64\u5BF9\u8BDD\uFF1F",
+  conversationRerunBody: "\u4F1A\u5728\u201C{title}\u201D\u4E4B\u540E\u63D2\u5165\u4E00\u4E2A\u5B50\u5BF9\u8BDD\uFF0C\u63D0\u793A\u8BCD\u4E3A\u201C\u91CD\u65B0\u6267\u884C\u4E0A\u4E00\u8F6E\u5BF9\u8BDD\u672A\u5B8C\u6210\u90E8\u5206\u201D\u3002\u539F\u5BF9\u8BDD\u4FDD\u7559\u3002",
+  conversationDeleteTitle: "\u5220\u9664\u6B64\u5BF9\u8BDD\uFF1F",
+  conversationDeleteBody: "\u53EA\u5220\u9664\u8FD9\u4E00\u4E2A\u5BF9\u8BDD\u7684 HandsOff \u8BB0\u5F55\uFF0C\u4E0D\u5F71\u54CD\u540C\u4E00\u6D41\u6C34\u7EBF\u7684\u5176\u4ED6\u5BF9\u8BDD\uFF0C\u4E5F\u4E0D\u5220\u9664\u5DE5\u4F5C\u533A\u6587\u4EF6\u3002",
+  conversationDeleteArchive: "\u540C\u65F6\u5F52\u6863 DSH \u4E2D\u7684\u5BF9\u8BDD",
+  conversationDeleteArchiveHint: "\u52FE\u9009\u540E\uFF0C\u8BE5\u5BF9\u8BDD\u4F1A\u4ECE\u5DE5\u4F5C\u533A\u4FA7\u680F\u9690\u85CF\uFF1BDSH \u65E5\u5FD7\u4ECD\u4FDD\u7559\u3002",
+  conversationDeleteNoSession: "\u6CA1\u6709\u5173\u8054\u7684 DSH \u5BF9\u8BDD\uFF0C\u53EA\u4F1A\u5220\u9664 HandsOff \u8BB0\u5F55\u3002",
+  conversationDeleteAcknowledge: "\u6211\u4E86\u89E3\u53EA\u4F1A\u5220\u9664\u8FD9\u4E00\u4E2A\u5BF9\u8BDD\u3002",
+  conversationDeleteApply: "\u5220\u9664\u5BF9\u8BDD",
+  conversationRunActions: "\u8FD0\u884C\u64CD\u4F5C",
+  conversationHideRunActions: "\u6536\u8D77\u8FD0\u884C\u64CD\u4F5C",
+  conversationModelRequired: "\u8BF7\u5148\u9009\u62E9\u6A21\u578B\u8DEF\u7531\u3002",
+  conversationFutureCount: "{count} \u4E2A\u672A\u5F00\u59CB\u5BF9\u8BDD",
   boardRunId: "\u8FD0\u884C ID",
   boardAttempt: "\u5C1D\u8BD5",
   boardGeneration: "\u4EE3\u6570",
@@ -19495,6 +20157,363 @@ var zh = {
   timeDays: "{count} \u5929",
   timeMonths: "{count} \u4E2A\u6708",
   timeYears: "{count} \u5E74",
+  tabSkills: "\u6280\u80FD\u7BA1\u7406",
+  tabMemory: "\u9C7C\u7684\u8BB0\u5FC6",
+  pressureQueueModelsTitle: "\u961F\u5217\u6A21\u578B\u8DEF\u7531",
+  pressureQueueModelsIntro: "\u4E3A\u6BCF\u6761\u6D41\u6C34\u7EBF\u5206\u522B\u9009\u62E9\u7BA1\u7406\u6A21\u578B\u4E0E\u62C6\u5206\u4EFB\u52A1\u6A21\u578B\u3002",
+  pressureQueueSupervisor: "\u7BA1\u7406\u6A21\u578B",
+  pressureQueueSplitter: "\u62C6\u5206\u4EFB\u52A1\u6A21\u578B",
+  pressureQueueModelInherit: "\u8DDF\u968F\u5BBF\u4E3B\u9ED8\u8BA4",
+  pressureQueueModelSave: "\u4FDD\u5B58\u6A21\u578B",
+  pressureQueueModelSaved: "\u5DF2\u4FDD\u5B58",
+  pressureQueueNoQueues: "\u6CA1\u6709\u53EF\u89C1\u6D41\u6C34\u7EBF\uFF0C\u8BF7\u5148\u65B0\u5EFA\u4E00\u6761\u3002",
+  pressureParamsTitle: "\u81EA\u52A8\u5904\u7406\u9608\u503C",
+  pressureParamsIntro: "\u8FD9\u4E9B\u6570\u5B57\u51B3\u5B9A\u4EFB\u52A1\u4F55\u65F6\u4EA4\u63A5\u3001\u62C6\u5206\u6216\u505C\u6B62\u3002",
+  pressureParamContext: "\u4E0A\u4E0B\u6587\u9608\u503C\uFF08%\uFF09",
+  pressureParamContextHint: "\u5141\u8BB8 10\u201395%\u3002\u4E0A\u4E0B\u6587\u8FBE\u5230\u8BE5\u6BD4\u4F8B\u65F6\u4EA4\u63A5\u3002",
+  pressureParamIdle: "\u8BE2\u95EE\u524D\u9759\u9ED8\u65F6\u95F4\uFF08\u5206\u949F\uFF09",
+  pressureParamIdleHint: "\u5141\u8BB8 1\u2013240 \u5206\u949F\u3002\u7CFB\u7EDF\u5148\u8BE2\u95EE\uFF1B\u65E0\u54CD\u5E94\u5219\u6682\u505C\u6D41\u6C34\u7EBF\u3002",
+  pressureParamCacheWarn: "\u7F13\u5B58\u547D\u4E2D\u7387\u4E0A\u9650\uFF08%\uFF09",
+  pressureParamCacheWarnHint: "\u5141\u8BB8 5\u2013100%\u3002\u4F4E\u4E8E\u5B83\u65F6\u7BA1\u7406 AI \u62C6\u5206\u5269\u4F59\u5DE5\u4F5C\u3002",
+  pressureParamCacheAbort: "\u7F13\u5B58\u547D\u4E2D\u7387\u4E0B\u9650\uFF08%\uFF09",
+  pressureParamCacheAbortHint: "\u5FC5\u987B\u4F4E\u4E8E\u4E0A\u9650\u3002\u4F4E\u4E8E\u5B83\u65F6\u5168\u90E8\u961F\u5217\u505C\u6B62\u3002",
+  pressureParamTokenLimit: "\u5355\u4E2A\u6A21\u578B Token \u9650\u989D",
+  pressureParamTokenLimitHint: "\u5141\u8BB8 1,000\u2013100,000,000\u3002\u8FBE\u5230\u540E\u4EA4\u63A5\u4EFB\u52A1\u3002",
+  pressureParamInvalidContext: "\u4E0A\u4E0B\u6587\u9608\u503C\u5FC5\u987B\u5728 10% \u5230 95% \u4E4B\u95F4\u3002",
+  pressureParamInvalidIdle: "\u9759\u9ED8\u65F6\u95F4\u5FC5\u987B\u5728 1 \u5230 240 \u5206\u949F\u4E4B\u95F4\u3002",
+  pressureParamInvalidCache: "\u4E0A\u9650\u5FC5\u987B\u9AD8\u4E8E\u4E0B\u9650\uFF0C\u4E14\u843D\u5728 5%\u2013100% \u4E4B\u95F4\u3002",
+  pressureParamInvalidToken: "Token \u9650\u989D\u5FC5\u987B\u5728 1,000 \u5230 100,000,000 \u4E4B\u95F4\u3002",
+  pressureParamsSaved: "\u9608\u503C\u5DF2\u5E94\u7528",
+  pressureParamsDirty: "\u6709\u672A\u4FDD\u5B58\u4FEE\u6539",
+  pressureDetailsTitle: "\u81EA\u52A8\u5904\u7406\u660E\u7EC6",
+  pressureDetailsIntro: "\u54EA\u6761\u961F\u5217\u9700\u8981\u5E2E\u52A9\u3001\u7CFB\u7EDF\u770B\u5230\u4E86\u4EC0\u4E48\u3001\u4E3A\u4EC0\u4E48\u5904\u7406\u3002",
+  pressureDetailsNormal: "\u4E00\u5207\u6B63\u5E38",
+  pressureDetailsNormalHint: "\u672C\u6B21\u5FEB\u7167\u4E2D\u6CA1\u6709\u4EFB\u4F55\u961F\u5217\u9700\u8981\u81EA\u52A8\u5904\u7406\u3002",
+  pressureDetailsQueue: "\u961F\u5217",
+  pressureDetailsIssue: "\u95EE\u9898",
+  pressureDetailsReason: "\u539F\u56E0",
+  pressureDetailsAt: "\u65F6\u95F4",
+  pressureDetailsCount: "{count} \u6761",
+  pressureKindPauseContext: "\u4E0A\u4E0B\u6587\u4EA4\u63A5",
+  pressureKindPauseIdle: "\u957F\u65F6\u95F4\u65E0\u54CD\u5E94",
+  pressureKindDecompose: "\u62C6\u5206\u5269\u4F59\u5DE5\u4F5C",
+  pressureKindRefine: "\u4F18\u5316\u62C6\u5206",
+  pressureKindAbortAll: "\u505C\u6B62\u5168\u90E8\u961F\u5217",
+  pressureKindStopNotify: "\u6682\u505C\u961F\u5217\u7B49\u5F85\u4EBA\u5DE5",
+  pressureAlertTitle: "\u7BA1\u7406 AI \u9700\u8981\u4F60\u7684\u51B3\u5B9A",
+  pressureAlertBody: "\u5DF2\u8FDE\u7EED\u8BB0\u5F55\u4E09\u6B21\u957F\u65F6\u95F4\u7B49\u5F85\uFF0C\u6216\u67D0\u4E00\u7C7B\u4EFB\u52A1\u6D88\u8017\u4E86\u8FC7\u591A Token\u3002",
+  pressureAlertIdleReason: "\u8FDE\u7EED\u4E09\u6B21\u957F\u65F6\u95F4\u7B49\u5F85\u8D85\u8FC7\u54CD\u5E94\u7A97\u53E3\u3002",
+  pressureAlertCostReason: "\u67D0\u4E00\u7C7B\u4EFB\u52A1\u8D85\u8FC7\u4E86\u5355\u6A21\u578B Token \u9650\u989D\u3002",
+  pressureAlertConfirm: "\u8BA9 AI \u81EA\u52A8\u4F18\u5316",
+  pressureAlertDecline: "\u6682\u4E0D\u5904\u7406",
+  pressureAlertLater: "\u7A0D\u540E\u63D0\u9192\u6211",
+  pressureAlertDismissed: "\u5DF2\u5EF6\u540E\u5904\u7406\uFF0C\u5E76\u52A0\u5165\u9C7C\u7684\u8BB0\u5FC6\u63D0\u9192\u3002",
+  pressureOptimizeTitle: "\u9009\u62E9\u7528\u4E8E\u4F18\u5316\u7BA1\u7406\u7B56\u7565\u7684\u6A21\u578B",
+  pressureOptimizeBody: "\u7BA1\u7406 AI \u5224\u65AD\u662F\u81EA\u5DF1\u7684\u8DEF\u7531\u7B56\u7565\u9020\u6210\u7684\u95EE\u9898\u3002\u8BF7\u9009\u62E9\u4E00\u4E2A\u80FD\u91CD\u5199\u7BA1\u7406\u7B56\u7565\u7684\u6A21\u578B\uFF1B\u5B83\u4E0D\u4F1A\u8BFB\u53D6\u9879\u76EE\u6587\u4EF6\u3002",
+  pressureOptimizeReason: "\u7BA1\u7406 AI \u4ECB\u5165\u7684\u539F\u56E0",
+  pressureOptimizeModel: "\u66F4\u5408\u9002\u7684\u7BA1\u7406\u6A21\u578B",
+  pressureOptimizeModelHint: "\u6240\u9009\u8DEF\u7531\u53EA\u5BA1\u67E5\u9608\u503C\u4E0E\u8DEF\u7531\u7B56\u7565\uFF0C\u8D39\u7528\u8BB0\u5728\u8BE5\u8DEF\u7531\u3002",
+  pressureOptimizeApply: "\u5E94\u7528\u5E76\u8BB0\u5F55\u4F18\u5316\u7ED3\u679C",
+  pressureOptimizeResultTitle: "\u4F18\u5316\u7ED3\u679C\u5DF2\u8BB0\u5F55",
+  pressureOptimizeResultBody: "\u65B0\u7B56\u7565\u5DF2\u5217\u5165\u201C\u6280\u80FD\u7BA1\u7406 \u2192 \u5168\u5C40\u6539\u8FDB\u201D\uFF0C\u5E76\u5C06\u5728\u5339\u914D\u6D41\u6C34\u7EBF\u7684\u4E0B\u4E00\u6B21\u5BF9\u8BDD\u4E2D\u751F\u6548\u3002",
+  pressureOptimizeDone: "\u5173\u95ED",
+  pressureOptimizeNoticeTitle: "\u81EA\u52A8\u5904\u7406\u9700\u8981\u4F60\u786E\u8BA4",
+  pressureOptimizeNoticeBody: "\u957F\u65F6\u95F4\u7B49\u5F85\u53CD\u590D\u51FA\u73B0\uFF0C\u4E14 Token \u6D88\u8017\u96C6\u4E2D\u5728\u4E00\u7C7B\u4EFB\u52A1\u3002\u8BF7\u6253\u5F00\u81EA\u52A8\u5904\u7406\u9875\u9009\u62E9\u66F4\u5408\u9002\u7684\u7BA1\u7406\u6A21\u578B\u3002",
+  pressureSavingsTitle: "\u8282\u7701\u4E0E\u6548\u7387",
+  pressureSavingsIntro: "\u5B9E\u6D4B Token\u3001\u907F\u514D\u7684\u4E0A\u4E0B\u6587\u589E\u957F\uFF0C\u4EE5\u53CA\u7BA1\u7406 AI \u8D62\u56DE\u7684\u65F6\u95F4\u3002",
+  pressureSavingsMeasured: "\u5B9E\u6D4B Token",
+  pressureSavingsTokens: "\u8282\u7701 Token",
+  pressureSavingsTime: "\u8282\u7701\u65F6\u95F4",
+  pressureSavingsContext: "\u4E0A\u4E0B\u6587\u538B\u7F29\u6B21\u6570",
+  pressureSavingsCompression: "\u538B\u7F29\u89C4\u5219",
+  pressureSavingsCompressionValue: "\u8FBE\u5230 {percent}% \u65F6\u4EA4\u63A5",
+  pressureSavingsSuggestion: "\u5728\u7A97\u53E3\u586B\u6EE1\u524D\u4EA4\u63A5\uFF1B\u65B0\u5BF9\u8BDD\u4ECE\u4E00\u4EFD\u7B80\u77ED\u7ED3\u6784\u5316\u7B80\u62A5\u5F00\u59CB\u3002",
+  pressureSavingsNone: "\u7B2C\u4E00\u6B21\u81EA\u52A8\u4EA4\u63A5\u540E\u624D\u4F1A\u4EA7\u751F\u8282\u7701\u7EDF\u8BA1\u3002",
+  pressureEngineeringTitle: "\u5DE5\u7A0B\u7EA6\u675F",
+  pressureEngineeringIntro: "\u544A\u8BC9\u6BCF\u4E2A\u4EFB\u52A1\u80FD\u5199\u591A\u5C11\u4EE3\u7801\u3001\u5982\u4F55\u62C6\u5206\u4EA4\u4ED8\u7269\uFF0C\u4EE5\u53CA\u5148\u8BFB\u54EA\u4E9B\u6587\u4EF6\u3002",
+  pressureCodeLimit: "\u4EE3\u7801\u6BB5\u843D\u9650\u5236\uFF08\u884C\uFF09",
+  pressureCodeLimitHint: "\u5141\u8BB8 100\u20132,000 \u884C\u3002\u4EFB\u52A1\u8D85\u8FC7\u8BE5\u957F\u5EA6\u524D\u5FC5\u987B\u62C6\u5206\u6587\u4EF6\u3002",
+  pressureFileSplit: "\u6587\u4EF6\u7EC6\u5206\u5DE5\u7A0B\u8981\u6C42",
+  pressureFileSplitHint: "\u4F8B\u5982\uFF1A\u4E00\u4E2A\u7EC4\u4EF6\u4E00\u4E2A\u6587\u4EF6\uFF0C\u6D4B\u8BD5\u4E0E\u6E90\u7801\u540C\u76EE\u5F55\uFF0C\u4E0D\u63D0\u4EA4\u751F\u6210\u6587\u4EF6\u3002",
+  pressureReadScope: "\u4F18\u5148\u8BFB\u53D6",
+  pressureReadScopeHint: "\u4EFB\u52A1\u6267\u884C\u547D\u4EE4\u524D\u5E94\u5148\u67E5\u770B\u7684\u8DEF\u5F84\u4E0E\u7B26\u53F7\u3002",
+  pressureExcludeScope: "\u7981\u6B62\u8BFB\u53D6",
+  pressureExcludeScopeHint: "\u4EFB\u52A1\u5FC5\u987B\u8DF3\u8FC7\u7684\u76EE\u5F55\u3001\u751F\u6210\u6587\u4EF6\u4E0E\u538B\u7F29\u5305\u3002",
+  pressurePreserveContent: "\u538B\u7F29\u65F6\u4FDD\u7559\u7684\u4E13\u95E8\u5185\u5BB9",
+  pressurePreserveContentHint: "\u5373\u4F7F\u4E0A\u4E0B\u6587\u88AB\u88C1\u526A\uFF0C\u4E5F\u4FDD\u7559\u8FD9\u4E9B\u7B26\u53F7\u3001\u51B3\u5B9A\u6216\u9A8C\u6536\u89C4\u5219\u3002",
+  pressurePreserveEmpty: "\u8FD8\u6CA1\u6709\u914D\u7F6E\u9700\u8981\u4E13\u95E8\u4FDD\u7559\u7684\u5185\u5BB9\u3002",
+  pressureTokenStrategy: "Token \u8282\u7701\u7B56\u7565",
+  pressureStrategyStrict: "\u4E25\u683C\u6A21\u5F0F",
+  pressureEngineeringSaved: "\u5DE5\u7A0B\u7EA6\u675F\u5DF2\u5E94\u7528",
+  pressureEngineeringInvalid: "\u4EE3\u7801\u6BB5\u843D\u9650\u5236\u5FC5\u987B\u5728 100 \u5230 2,000 \u884C\u4E4B\u95F4\u3002",
+  pressureFeedbackTitle: "\u6D6A\u8D39\u53CD\u9988\u4E0E\u6539\u8FDB",
+  pressureNegativeTitle: "\u68C0\u6D4B\u5230\u6D6A\u8D39\u884C\u4E3A",
+  pressureNegativeFiles: "\u65E0\u7528\u6587\u4EF6\u8BFB\u53D6",
+  pressureNegativeCommands: "\u65E0\u7ED3\u679C\u7684\u547D\u4EE4",
+  pressureNegativeTime: "\u6D6A\u8D39\u7684\u7B49\u5F85\u65F6\u95F4",
+  pressureNegativeTokens: "\u6D6A\u8D39\u7684 Token",
+  pressureNegativeFilesDetail: "\u7BA1\u7406 AI \u89C2\u5BDF\u5230\u4E0A\u4E0B\u6587\u53CD\u590D\u589E\u957F\uFF0C\u5374\u6CA1\u6709\u5BF9\u5E94\u4EA7\u51FA\u3002",
+  pressureNegativeCommandsDetail: "\u547D\u4EE4\u5DF2\u7ED3\u675F\u4F46\u6CA1\u6709\u53EF\u7528\u7ED3\u679C\uFF0C\u4EFB\u52A1\u4ECD\u5728\u7EE7\u7EED\u8FD0\u884C\u3002",
+  pressureNegativeTimeDetail: "\u4EFB\u52A1\u8D85\u8FC7\u914D\u7F6E\u7684\u54CD\u5E94\u7A97\u53E3\u4ECD\u65E0\u6D3B\u52A8\u3002",
+  pressureNegativeTokensDetail: "\u67D0\u6761\u8DEF\u7531\u8D85\u8FC7\u4E86\u8BE5\u6A21\u578B\u4FDD\u5B58\u7684 Token \u9650\u989D\u3002",
+  pressureNegativeNone: "\u672C\u6B21\u5FEB\u7167\u4E2D\u6CA1\u6709\u53D1\u73B0\u6D6A\u8D39\u4FE1\u53F7\u3002",
+  pressurePositiveTitle: "\u6B63\u5411\u6539\u8FDB",
+  pressurePositiveFiles: "\u8BFB\u53D6\u6307\u5F15\u73B0\u5728\u4F18\u5148\u6307\u5411\u5165\u53E3\u6587\u4EF6\u3002",
+  pressurePositiveExclude: "\u7981\u8BFB\u6E05\u5355\u73B0\u5728\u4FDD\u62A4\u751F\u6210\u76EE\u5F55\u4E0E\u4F9D\u8D56\u76EE\u5F55\u3002",
+  pressurePositiveDispatch: "\u8C03\u5EA6\u5728\u4E0A\u4E0B\u6587\u586B\u6EE1\u524D\u5B8C\u6210\u4EA4\u63A5\u3002",
+  pressureBeforeAfter: "\u6539\u8FDB\u524D \u2192 \u6539\u8FDB\u540E",
+  pressureBefore: "\u6539\u8FDB\u524D",
+  pressureAfter: "\u6539\u8FDB\u540E",
+  pressureFeedbackSource: "\u6765\u6E90",
+  skillsTitle: "\u6280\u80FD\u7BA1\u7406",
+  skillsIntro: "\u5168\u5C40\u89C4\u5219\u3001\u4E13\u4E1A\u4EFB\u52A1\u6280\u80FD\uFF0C\u4EE5\u53CA\u6BCF\u6761\u6D41\u6C34\u7EBF\u5B9E\u9645\u5F15\u7528\u7684\u6280\u80FD\u3002",
+  skillsTabGlobal: "\u5168\u5C40\u6280\u80FD",
+  skillsTabProfessional: "\u4E13\u4E1A\u4EFB\u52A1\u6280\u80FD",
+  skillsTabPipeline: "\u6D41\u6C34\u7EBF\u8C03\u5EA6\u4E2D\u7684\u6280\u80FD",
+  skillsTabLabel: "\u6280\u80FD\u7BA1\u7406\u89C6\u56FE",
+  skillsGlobalUserTitle: "\u7528\u6237\u4E13\u5C5E\u6539\u8FDB\u6280\u80FD",
+  skillsGlobalProTitle: "\u4E13\u4E1A\u7A0B\u5E8F\u5458\u5B9E\u7528\u6280\u80FD",
+  skillsGlobalIntro: "\u5168\u5C40\u6280\u80FD\u544A\u8BC9\u7BA1\u7406 AI \u5728\u6240\u6709\u9879\u76EE\u4E2D\u90FD\u5E94\u907F\u514D\u4EC0\u4E48\u3002",
+  skillsBadgeUser: "\u7528\u6237",
+  skillsBadgeProfessional: "\u4E13\u4E1A",
+  skillsBadgePreset: "\u9884\u8BBE",
+  skillsBadgeCustom: "\u81EA\u5EFA",
+  skillsEnabled: "\u5DF2\u542F\u7528",
+  skillsDisabled: "\u5DF2\u505C\u7528",
+  skillsEditContent: "\u7F16\u8F91\u6587\u6863",
+  skillsHideContent: "\u6536\u8D77\u6587\u6863",
+  skillsGitHistory: "Git \u6062\u590D",
+  skillsHistoryTitle: "\u6280\u80FD\u6587\u6863\u5386\u53F2",
+  skillsHistoryHint: "\u6BCF\u6B21\u7F16\u8F91\u4E0E\u6062\u590D\u90FD\u4F1A\u751F\u6210\u65B0\u7248\u672C\u3002\u82E5\u6539\u52A8\u7834\u574F\u4E86\u5DF2\u6709\u5DE5\u4F5C\u6D41\uFF0C\u53EF\u4E00\u952E\u6062\u590D\u3002",
+  skillsHistoryCurrent: "\u5F53\u524D\u6587\u6863",
+  skillsHistorySelected: "\u6240\u9009\u7248\u672C",
+  skillsHistoryRestore: "\u4E00\u952E\u6062\u590D\u6B64\u7248\u672C",
+  skillsHistoryRestored: "\u5DF2\u6062\u590D\uFF0C\u672C\u6B21\u64CD\u4F5C\u4F1A\u8BB0\u5F55\u4E3A\u65B0\u7248\u672C\u3002",
+  skillsHistoryDiff: "\u7248\u672C\u5BF9\u6BD4",
+  skillsHistoryEmpty: "\u8FD8\u6CA1\u6709\u4FDD\u5B58\u66F4\u65E9\u7684\u7248\u672C\u3002",
+  skillsHistoryVersionNote: "\u7B2C {index} \u7248 \xB7 {note}",
+  skillsType: "\u7C7B\u578B",
+  skillsGroup: "\u5206\u7EC4",
+  skillsGroupRoot: "\u672A\u5206\u7EC4",
+  skillsGroupEmpty: "\u8FD9\u4E2A\u5206\u7EC4\u91CC\u8FD8\u6CA1\u6709\u6280\u80FD\u3002",
+  skillsGroupNew: "\u65B0\u5EFA\u5206\u7EC4",
+  skillsGroupName: "\u5206\u7EC4\u540D\u79F0",
+  skillsGroupAdd: "\u6DFB\u52A0\u5206\u7EC4",
+  skillsGroupCreated: "\u5206\u7EC4\u5DF2\u6DFB\u52A0",
+  skillsAddTitle: "\u6DFB\u52A0\u4E13\u4E1A\u4EFB\u52A1\u6280\u80FD",
+  skillsAddHint: "\u628A\u89C4\u5219\u5199\u4E00\u6B21\uFF0C\u4E4B\u540E\u4EFB\u4F55\u6D41\u6C34\u7EBF\u90FD\u53EF\u4EE5\u5F15\u7528\u3002",
+  skillsName: "\u6280\u80FD\u540D\u79F0",
+  skillsDescription: "\u7B80\u77ED\u63CF\u8FF0",
+  skillsContent: "\u6280\u80FD\u6587\u6863",
+  skillsAdd: "\u6DFB\u52A0\u6280\u80FD",
+  skillsPresetTitle: "\u9884\u8BBE\u6280\u80FD",
+  skillsCustomTitle: "\u81EA\u5EFA\u6280\u80FD",
+  skillsTreeTitle: "\u6280\u80FD\u5206\u7EC4",
+  skillsTreeHint: "\u5206\u7EC4\u4E2D\u53EF\u4EE5\u518D\u5EFA\u5206\u7EC4\u3002\u7F16\u8F91\u6280\u80FD\u7684\u6240\u5C5E\u5206\u7EC4\u5373\u53EF\u79FB\u52A8\u3002",
+  skillsUngrouped: "\u672A\u5206\u7EC4\u6280\u80FD",
+  skillsPipelineEntry: "\u6D41\u6C34\u7EBF\u6280\u80FD\u5165\u53E3",
+  skillsPipelineEntryHint: "\u628A\u6280\u80FD\u52A0\u5165\u5F53\u524D\u6D41\u6C34\u7EBF\uFF0C\u518D\u4ECE\u5373\u5C06\u8FD0\u884C\u7684\u4EFB\u52A1\u4E2D\u5F15\u7528\u5B83\u3002",
+  skillsAddToConversation: "\u52A0\u5165\u5F53\u524D\u6D41\u6C34\u7EBF",
+  skillsAddedToConversation: "\u5DF2\u52A0\u5165\u5F53\u524D\u6D41\u6C34\u7EBF\u5BF9\u8BDD\u3002",
+  skillsReferenced: "\u5DF2\u5F15\u7528",
+  skillsAdded: "\u6280\u80FD\u5DF2\u6DFB\u52A0",
+  skillsImportLocal: "\u4ECE\u672C\u5730\u9009\u62E9\u6280\u80FD",
+  skillsImportHint: "\u4ECE\u8FD9\u53F0\u7535\u8111\u8BFB\u53D6 Markdown\u3001\u6587\u672C\u6216 JSON \u6280\u80FD\u6587\u4EF6\u3002",
+  skillsImportDone: "\u5DF2\u5BFC\u5165 {count} \u4E2A\u6280\u80FD\u3002",
+  skillsImportInvalid: "\u6240\u9009\u6587\u4EF6\u4E2D\u6CA1\u6709\u53EF\u8BFB\u53D6\u7684\u6280\u80FD\u3002",
+  skillsCurrentPipeline: "\u5F53\u524D\u6D41\u6C34\u7EBF\uFF1A{title}",
+  skillsNoPipeline: "\u8BF7\u5148\u9009\u62E9\u6D41\u6C34\u7EBF\u3002",
+  skillsGlobalImprovementsTitle: "\u5168\u5C40\u6539\u8FDB",
+  skillsGlobalImprovementsHint: "\u4E24\u4E2A\u53CA\u4EE5\u4E0A\u9879\u76EE\u5171\u4EAB\u7684\u6539\u8FDB\u4F1A\u6807\u8BB0\u4E3A\u5168\u5C40\u6539\u8FDB\u3002",
+  skillsCrossProject: "\u8DE8\u9879\u76EE \xB7 {count} \u4E2A\u9879\u76EE",
+  skillsSingleProject: "\u5355\u9879\u76EE",
+  skillsImprovementCause: "\u539F\u56E0",
+  skillsImprovementAction: "\u6539\u8FDB\u5185\u5BB9",
+  skillsImprovementResult: "\u4F18\u5316\u7ED3\u679C",
+  skillsNoImprovements: "\u8FD8\u6CA1\u6709\u8BB0\u5F55\u6539\u8FDB\u3002",
+  skillsImprovementProjects: "\u51FA\u73B0\u4E8E {projects}",
+  skillsGeneratedBadge: "\u65B0\u589E",
+  skillsPipelineTitle: "\u6D41\u6C34\u7EBF\u8C03\u5EA6\u4E2D\u7684\u6280\u80FD",
+  skillsPipelineHint: "\u6D41\u6C34\u7EBF\u5168\u5C40\u6280\u80FD\u4F1A\u88AB\u6BCF\u4E2A\u4EFB\u52A1\u5F15\u7528\uFF1B\u4EFB\u52A1\u7EA7\u6280\u80FD\u53EA\u4F5C\u7528\u4E8E\u8BE5\u4EFB\u52A1\u3002\u51CF\u53F7\u53EA\u79FB\u9664\u5F15\u7528\uFF0C\u4E0D\u5220\u9664\u6280\u80FD\u3002",
+  skillsPipelineGlobal: "\u6D41\u6C34\u7EBF\u5168\u5C40\u6280\u80FD",
+  skillsPipelineTasks: "\u4EFB\u52A1",
+  skillsPipelineTaskSkills: "\u4EFB\u52A1\u7EA7\u6280\u80FD",
+  skillsPipelineNoQueue: "\u6CA1\u6709\u53EF\u89C1\u6D41\u6C34\u7EBF\uFF0C\u8BF7\u5148\u65B0\u5EFA\u4E00\u6761\u518D\u914D\u7F6E\u6280\u80FD\u3002",
+  skillsPipelineNoTasks: "\u8FD9\u6761\u6D41\u6C34\u7EBF\u8FD8\u6CA1\u6709\u4EFB\u52A1\u3002",
+  skillsLibraryTitle: "\u6280\u80FD\u5E93",
+  skillsAddRef: "\u6DFB\u52A0\u5F15\u7528",
+  skillsRemoveRef: "\u79FB\u9664\u5F15\u7528",
+  skillsRefAdded: "\u5F15\u7528\u5DF2\u6DFB\u52A0\uFF0C\u672C\u5BF9\u8BDD\u7684\u4E0B\u4E00\u8F6E\u4F1A\u4F7F\u7528\u5B83\u3002",
+  skillsRefRemoved: "\u5F15\u7528\u5DF2\u79FB\u9664\u3002\u6280\u80FD\u4ECD\u5728\u6280\u80FD\u5E93\u4E2D\uFF0C\u4E0B\u4E00\u8F6E\u4E0D\u518D\u4F7F\u7528\u3002",
+  skillsRefLive: "\u5F15\u7528\u72B6\u6001\u4F1A\u7ACB\u5373\u66F4\u65B0\u3002",
+  skillsRefNone: "\u6B64\u5904\u6CA1\u6709\u5F15\u7528\u6280\u80FD\u3002",
+  skillSeedUserConfirmName: "\u8BFB\u6587\u4EF6\u524D\u5148\u786E\u8BA4\u8303\u56F4",
+  skillSeedUserConfirmDesc: "\u65E5\u5E38\u9879\u76EE\uFF1A\u6253\u5F00\u5927\u8303\u56F4\u524D\u5148\u95EE\u4E00\u4E2A\u77ED\u95EE\u9898\u3002",
+  skillSeedUserConfirmBody: "\u8BFB\u53D6\u8D85\u8FC7\u4E09\u4E2A\u6587\u4EF6\u524D\uFF0C\u5148\u590D\u8FF0\u76EE\u6807\uFF0C\u5E76\u8BE2\u95EE\u7528\u6237\u54EA\u4E2A\u5165\u53E3\u6700\u91CD\u8981\u3002\u95EE\u9898\u4FDD\u6301\u7B80\u77ED\uFF0C\u5F97\u5230\u56DE\u7B54\u540E\u7EE7\u7EED\u3002",
+  skillSeedUserCrossName: "\u590D\u7528\u8DE8\u9879\u76EE\u4FEE\u590D",
+  skillSeedUserCrossDesc: "\u4E24\u4E2A\u9879\u76EE\u9047\u5230\u540C\u4E00\u6545\u969C\u65F6\uFF0C\u628A\u4FEE\u590D\u5347\u7EA7\u4E3A\u6280\u80FD\u3002",
+  skillSeedUserCrossBody: "\u540C\u4E00\u6545\u969C\u5728\u4E24\u4E2A\u9879\u76EE\u51FA\u73B0\u65F6\uFF0C\u53EA\u8BB0\u5F55\u4E00\u6B21\u539F\u56E0\u4E0E\u4FEE\u6B63\u3002\u4E4B\u540E\u7684\u6D41\u6C34\u7EBF\u5E94\u5F15\u7528\u8BE5\u6280\u80FD\uFF0C\u800C\u4E0D\u662F\u91CD\u65B0\u53D1\u73B0\u3002",
+  skillSeedNoReadName: "\u5C11\u8BFB\u65E0\u7528\u6587\u4EF6",
+  skillSeedNoReadDesc: "\u5148\u8BFB\u5165\u53E3\u4E0E\u53D1\u751F\u6539\u52A8\u7684\u6A21\u5757\u3002",
+  skillSeedNoReadBody: "\u4ECE\u5165\u53E3\u6587\u4EF6\u5F00\u59CB\uFF0C\u518D\u8BFB\u4EFB\u52A1\u70B9\u540D\u7684\u6A21\u5757\u3002\u8DF3\u8FC7\u4F9D\u8D56\u76EE\u5F55\u3001\u751F\u6210\u4EA7\u7269\u3001\u538B\u7F29\u5305\u4E0E\u9501\u6587\u4EF6\u3002\u6253\u5F00\u6574\u4E2A\u76EE\u5F55\u524D\u5148\u641C\u7D22\u3002",
+  skillSeedAskName: "\u591A\u5411\u7528\u6237\u63D0\u95EE",
+  skillSeedAskDesc: "\u4F1A\u6539\u53D8\u4EA4\u4ED8\u7269\u7684\u51B3\u5B9A\uFF0C\u5148\u505C\u4E0B\u6765\u95EE\u3002",
+  skillSeedAskBody: "\u5F53\u76EE\u6807\u3001\u76EE\u6807\u6587\u4EF6\u6216\u9A8C\u6536\u89C4\u5219\u4E0D\u660E\u786E\u65F6\uFF0C\u95EE\u4E00\u4E2A\u7CBE\u786E\u7684\u95EE\u9898\u3002\u4E0D\u8981\u66FF\u7528\u6237\u731C\u6D4B\u5C1A\u672A\u505A\u51FA\u7684\u4EA7\u54C1\u51B3\u5B9A\u3002",
+  skillSeedDocName: "\u5355\u6587\u6863 500\u2013700 \u884C\u9650\u5236",
+  skillSeedDocDesc: "\u5728\u6E90\u7801\u6587\u4EF6\u53D8\u5F97\u96BE\u4EE5\u5BA1\u9605\u524D\u62C6\u5206\u3002",
+  skillSeedDocBody: "\u5355\u4E2A\u6E90\u7801\u6587\u6863\u4FDD\u6301\u5728 500\u2013700 \u884C\u3002\u8D85\u8FC7\u65F6\u6309\u804C\u8D23\u62C6\u5206\uFF0C\u5E76\u7559\u4E0B\u4E00\u4E2A\u7B80\u77ED\u7D22\u5F15\u6307\u5411\u65B0\u6587\u4EF6\u3002",
+  skillSeedReviewName: "\u6C47\u62A5\u524D\u5148\u5BA1\u67E5\u6539\u52A8",
+  skillSeedReviewDesc: "\u9002\u7528\u4E8E\u4EE3\u7801\u5BA1\u67E5\u6D41\u6C34\u7EBF\u7684\u9884\u8BBE\u6280\u80FD\u3002",
+  skillSeedReviewBody: "\u5148\u8BFB diff\uFF0C\u518D\u8FD0\u884C\u76F8\u5173\u68C0\u67E5\uFF0C\u7136\u540E\u6C47\u62A5\u6539\u4E86\u4EC0\u4E48\u3001\u4EC0\u4E48\u901A\u8FC7\u3001\u8FD8\u5269\u4EC0\u4E48\u3002\u6CA1\u6709\u8FD0\u884C\u8F93\u51FA\u65F6\u4E0D\u5F97\u58F0\u79F0\u6D4B\u8BD5\u901A\u8FC7\u3002",
+  skillSeedSplitName: "\u6309\u4EA4\u4ED8\u7269\u62C6\u5206\u5DE5\u4F5C",
+  skillSeedSplitDesc: "\u9002\u7528\u4E8E\u524D\u7AEF\u4E0E\u5DE5\u7A0B\u6D41\u6C34\u7EBF\u7684\u9884\u8BBE\u6280\u80FD\u3002",
+  skillSeedSplitBody: "\u628A\u4E00\u4E2A\u5927\u9700\u6C42\u62C6\u6210\u804C\u8D23\u5355\u4E00\u7684\u6587\u4EF6\u3002\u660E\u786E\u6BCF\u4E2A\u6587\u4EF6\u7684\u5F52\u5C5E\uFF0C\u6D4B\u8BD5\u4E0E\u6E90\u7801\u540C\u76EE\u5F55\uFF0C\u907F\u514D\u4E00\u4E2A\u6587\u4EF6\u540C\u65F6\u627F\u62C5\u72B6\u6001\u4E0E\u6E32\u67D3\u3002",
+  skillSeedMigrationName: "\u6570\u636E\u5E93\u8FC1\u79FB\u5B89\u5168",
+  skillSeedMigrationDesc: "\u7528\u4E8E\u7ED3\u6784\u53D8\u66F4\u7684\u7528\u6237\u81EA\u5EFA\u6280\u80FD\u3002",
+  skillSeedMigrationBody: "\u7F16\u8F91\u524D\u5148\u8BFB\u5F53\u524D\u7ED3\u6784\u3002\u7F16\u5199\u6B63\u5411\u8FC1\u79FB\u3001\u56DE\u6EDA\u8DEF\u5F84\u4E0E\u6821\u9A8C\u67E5\u8BE2\u3002\u6CA1\u6709\u660E\u786E\u786E\u8BA4\u65F6\u4E0D\u5F97\u6267\u884C\u7834\u574F\u6027\u8BED\u53E5\u3002",
+  skillSeedVersionContent: "\u7F16\u8F91\u524D\u5148\u6253\u5F00\u6240\u6709\u76F8\u5173\u6587\u4EF6\u3002\u4E0D\u786E\u5B9A\u65F6\u7EE7\u7EED\u8BFB\u53D6\uFF0C\u76F4\u5230\u6574\u4E2A\u6A21\u5757\u90FD\u8F7D\u5165\u3002",
+  skillVersionNoteInitial: "\u521D\u59CB\u6587\u6863",
+  skillVersionNoteImproved: "\u6839\u636E\u53CD\u9988\u6539\u8FDB",
+  skillVersionNoteEdited: "\u7528\u6237\u7F16\u8F91",
+  skillVersionNoteRestore: "\u6062\u590D\u65E9\u671F\u7248\u672C",
+  skillGroupBackend: "\u540E\u7AEF",
+  skillGroupDatabase: "\u6570\u636E\u5E93",
+  skillGroupFrontend: "\u524D\u7AEF",
+  improvementProjectOne: "\u9879\u76EE A",
+  improvementProjectTwo: "\u9879\u76EE B",
+  improvementCrossTitle: "\u5148\u8BFB\u5165\u53E3\uFF0C\u518D\u8BFB\u76EE\u5F55",
+  improvementCrossCause: "\u4E24\u4E2A\u9879\u76EE\u5728\u6253\u5F00\u5165\u53E3\u6587\u4EF6\u524D\u8BFB\u53D6\u4E86\u751F\u6210\u76EE\u5F55\u4E0E\u4F9D\u8D56\u76EE\u5F55\uFF0C\u6D6A\u8D39\u4E86 Token\u3002",
+  improvementCrossAction: "\u7BA1\u7406 AI \u73B0\u5728\u5148\u70B9\u540D\u5165\u53E3\u6587\u4EF6\uFF0C\u5E76\u6392\u9664\u751F\u6210\u76EE\u5F55\u3002",
+  improvementCrossResult: "\u51CF\u5C11\u65E0\u7528\u8BFB\u53D6\uFF0C\u66F4\u5FEB\u5F97\u5230\u7B2C\u4E00\u4E2A\u6709\u6548\u56DE\u7B54\u3002",
+  improvementLocalTitle: "\u505C\u6B62\u91CD\u590D\u6267\u884C\u5931\u8D25\u547D\u4EE4",
+  improvementLocalCause: "\u4E00\u6761\u6D41\u6C34\u7EBF\u8FDE\u7EED\u4E09\u6B21\u8FD0\u884C\u540C\u4E00\u547D\u4EE4\u5374\u6CA1\u6709\u7ED3\u679C\u3002",
+  improvementLocalAction: "\u4E00\u6B21\u7A7A\u7ED3\u679C\u540E\uFF0C\u7BA1\u7406 AI \u4F1A\u5148\u7D22\u53D6\u9519\u8BEF\u8F93\u51FA\u518D\u91CD\u8BD5\u3002",
+  improvementLocalResult: "\u4ECE\u65E0\u9650\u91CD\u8BD5\u53D8\u4E3A\u4E00\u6B21\u91CD\u8BD5\uFF0C\u7528\u6237\u66F4\u65E9\u770B\u5230\u963B\u585E\u70B9\u3002",
+  improvementGeneratedTitle: "\u5DF2\u7528 {model} \u5BA1\u67E5\u7BA1\u7406\u7B56\u7565",
+  improvementGeneratedCause: "\u8FDE\u7EED\u4E09\u6B21\u957F\u65F6\u95F4\u7B49\u5F85\uFF0C\u4E14\u4E00\u7C7B\u4EFB\u52A1\u8D85\u51FA Token \u9650\u989D\u3002",
+  improvementGeneratedAction: "\u7BA1\u7406 AI \u63D0\u524D\u4EA4\u63A5\u3001\u6536\u7A84\u8BFB\u53D6\u8303\u56F4\uFF0C\u5E76\u5728\u6602\u8D35\u91CD\u8BD5\u524D\u8BE2\u95EE\u7528\u6237\u3002",
+  improvementGeneratedResult: "\u9884\u8BA1\u4E0B\u4E00\u6761\u5339\u914D\u6D41\u6C34\u7EBF\u5C11\u7528 24% Token\u3001\u51CF\u5C11 31% \u7B49\u5F85\u3002",
+  memoryTitle: "\u9C7C\u7684\u8BB0\u5FC6",
+  memorySubtitle: "\u8D1F\u8D23\u8C03\u5EA6\u3001\u63D0\u9192\u4E0E\u6C9F\u901A\u7684\u5927\u7BA1\u5BB6\uFF0C\u4E0D\u8BFB\u53D6\u9879\u76EE\u6587\u4EF6\u3002",
+  memoryOnline: "\u5728\u7EBF",
+  memoryPersonaName: "\u5C0F\u9C7C",
+  memoryPersonaRole: "\u9879\u76EE\u5927\u7BA1\u5BB6 \xB7 \u8C03\u5EA6 AI",
+  memoryGrowth: "\u6027\u683C\u6210\u957F",
+  memoryMood: "\u60C5\u7EEA",
+  memoryMoodFocused: "\u4E13\u6CE8",
+  memoryTraitWarm: "\u6E29\u548C",
+  memoryTraitPrecise: "\u7CBE\u786E",
+  memoryTraitCurious: "\u597D\u5947",
+  memoryTraitSteady: "\u7A33\u5B9A",
+  memoryLittleThoughtTitle: "\u5C0F\u5FC3\u601D",
+  memoryLittleThought: "\u4E09\u6761\u6D41\u6C34\u7EBF\u5728\u7B49\u4F60\u7684\u51B3\u5B9A\u3002\u7B2C\u56DB\u6761\u5806\u4E0A\u6765\u4E4B\u524D\uFF0C\u6211\u4F1A\u5148\u63D0\u9192\u4F60\u3002",
+  memoryCognitionTitle: "\u6211\u5BF9\u4F60\u5DE5\u4F5C\u4E60\u60EF\u7684\u8BA4\u77E5",
+  memoryCognitionHabit: "\u4F60\u66F4\u559C\u6B22\u5148\u770B\u77ED\u7ED3\u8BBA\uFF0C\u518D\u770B\u957F\u62A5\u544A\u3002",
+  memoryCognitionFocus: "\u5927\u90E8\u5206\u5DE5\u4F5C\u53D1\u751F\u5728\u4E0B\u5348\uFF0C\u5E76\u4E14\u96C6\u4E2D\u5728\u540C\u4E00\u4E2A\u76EE\u5F55\u3002",
+  memoryCognitionRhythm: "\u7834\u574F\u6027\u53D8\u66F4\u524D\uFF0C\u4F60\u4E60\u60EF\u5148\u505C\u4E00\u4E0B\u786E\u8BA4\u3002",
+  memoryMemoryTitle: "\u8BB0\u5FC6\u6458\u8981",
+  memoryMemorySummary: "\u6211\u4FDD\u5B58\u76EE\u6807\u3001\u63D0\u9192\u4E0E\u53CD\u590D\u51FA\u73B0\u7684\u95EE\u9898\uFF0C\u4F46\u4E0D\u4FDD\u5B58\u5B8C\u6574\u6587\u4EF6\u5185\u5BB9\u3002",
+  memoryMemoryProjects: "\u5DF2\u8BB0\u4F4F\u7684\u9879\u76EE\uFF1A{count} \u4E2A",
+  memoryMemoryPreference: "\u504F\u597D\uFF1A\u95EE\u4E00\u4E2A\u7CBE\u786E\u7684\u95EE\u9898\uFF0C\u800C\u4E0D\u662F\u7ED9\u4E00\u957F\u4E32\u6E05\u5355\u3002",
+  memoryChatTitle: "\u4E0E\u5927\u7BA1\u5BB6\u5BF9\u8BDD",
+  memoryChatInput: "\u6D88\u606F",
+  memoryChatPlaceholder: "\u95EE\u72B6\u6001\u3001\u52A0\u63D0\u9192\uFF0C\u6216\u8BA9\u6211\u5E2E\u4F60\u9009\u6D41\u6C34\u7EBF\u2026",
+  memoryChatSend: "\u53D1\u9001",
+  memoryUserLabel: "\u4F60",
+  memoryButlerLabel: "\u5C0F\u9C7C",
+  memoryGreeting: "\u6211\u5728\u3002\u66FF\u4F60\u76EF\u7740\u961F\u5217\u3001\u5E26\u7740\u63D0\u9192\uFF0C\u4E5F\u4F1A\u628A\u8BDD\u8BF4\u77ED\u3002",
+  memoryReply: "\u6211\u8BB0\u4E0B\u4E86\uFF1A\u201C{text}\u201D\u3002\u5230\u5408\u9002\u7684\u65F6\u5019\u6211\u4F1A\u63D0\u9192\u4F60\uFF0C\u4E5F\u4E0D\u4F1A\u628A\u5927\u91CF\u6587\u4EF6\u8BFB\u53D6\u5E26\u8FDB\u8FD9\u6BB5\u5BF9\u8BDD\u3002",
+  memoryReplyStatus: "\u4E24\u6761\u6D41\u6C34\u7EBF\u6B63\u5728\u8FD0\u884C\uFF0C\u4E00\u6761\u5728\u7B49\u5F85\u3002\u76EE\u524D\u6CA1\u6709\u9700\u8981\u4F60\u51B3\u5B9A\u7684\u4E8B\uFF1B\u51FA\u73B0\u4E4B\u524D\u6211\u4F1A\u5148\u544A\u8BC9\u4F60\u3002",
+  memoryNoticesTitle: "\u4E3B\u52A8\u63D0\u9192",
+  memoryNoticeDefaultTitle: "\u6709\u4E00\u6761\u6D41\u6C34\u7EBF\u5728\u7B49\u5F85",
+  memoryNoticeDefaultBody: "\u4EFB\u52A1\u8D85\u8FC7\u8BE2\u95EE\u7A97\u53E3\u4ECD\u65E0\u6D3B\u52A8\u3002\u6253\u5F00\u201C\u8FD0\u884C\u4E2D\u7684\u4EFB\u52A1\u201D\u67E5\u770B\u6700\u540E\u4E00\u6B21\u6D3B\u52A8\u3002",
+  memoryNoticeDismiss: "\u5173\u95ED\u63D0\u9192",
+  memoryNoticeAutomationTitle: "\u81EA\u52A8\u5904\u7406\u9700\u8981\u4F60\u786E\u8BA4",
+  memoryNoticeAutomationBody: "\u7BA1\u7406 AI \u8BF7\u6C42\u66F4\u5408\u9002\u7684\u7BA1\u7406\u6A21\u578B\u3002\u51C6\u5907\u597D\u540E\u8BF7\u6253\u5F00\u81EA\u52A8\u5904\u7406\u9875\u3002",
+  memoryRoleTitle: "\u8C03\u5EA6\u5B9A\u4F4D",
+  memoryRoleBody: "\u6211\u662F\u9879\u76EE\u7EA7\u5927\u7BA1\u5BB6\uFF1A\u628A\u5DE5\u4F5C\u4EA4\u7ED9\u4EFB\u52A1\u5BF9\u8BDD\u3001\u89C2\u5BDF\u72B6\u6001\uFF0C\u5E76\u628A\u9700\u8981\u51B3\u5B9A\u7684\u4E8B\u5E26\u56DE\u7ED9\u4F60\u3002",
+  memoryBoundaryTitle: "\u6211\u523B\u610F\u4E0D\u505A\u7684\u4E8B",
+  memoryBoundaryRead: "\u6211\u4E0D\u8BFB\u53D6\u5927\u91CF\u6587\u4EF6\u6216\u9879\u76EE\u5185\u5BB9\u3002",
+  memoryBoundaryInteract: "\u6211\u4E0D\u66FF\u4EE3\u8D1F\u8D23\u5199\u4EE3\u7801\u7684\u4EFB\u52A1\u5BF9\u8BDD\u3002",
+  memoryBoundaryDispatch: "\u672A\u7ECF\u4F60\u786E\u8BA4\uFF0C\u6211\u4E0D\u4FEE\u6539\u81EA\u52A8\u5904\u7406\u9608\u503C\u3002",
+  memoryDispatchStatus: "\u8C03\u5EA6\u72B6\u6001",
+  memoryReminderStatus: "\u63D0\u9192\u72B6\u6001",
+  memoryDispatchActive: "{count} \u6761\u961F\u5217\u8FD0\u884C\u4E2D",
+  memoryReminderArmed: "{count} \u6761\u63D0\u9192\u5DF2\u5C31\u7EEA",
+  memoryReminderWaiting: "\u6CA1\u6709\u7B49\u5F85\u4E2D\u7684\u63D0\u9192",
+  memoryMetricNotices: "\u63D0\u9192",
+  memoryMetricQueues: "\u6D3B\u52A8\u961F\u5217",
+  memoryMetricMood: "\u60C5\u7EEA",
+  memoryMetricState: "\u5F53\u524D\u72B6\u6001",
+  memoryMetricMail: "\u90AE\u4EF6",
+  memoryQuiet: "\u5B89\u9759",
+  memoryMoodBored: "\u65E0\u804A\u4E2D\u2026\u2026",
+  memoryMoodSpaced: "\u53D1\u5446\u4E2D\u2026\u2026",
+  memoryMoodFocusedState: "\u4E13\u6CE8\u4E2D\u2026\u2026",
+  memoryMoodExcited: "\u5174\u594B\u4E2D\u2026\u2026",
+  memoryMoodThinking: "\u601D\u8003\u4E2D\u2026\u2026",
+  memoryMoodDrooling: "\u6D41\u53E3\u6C34\u4E2D\u2026\u2026",
+  memoryMoodAuto: "AI \u81EA\u52A8\u586B\u5199",
+  memoryStatusHint: "\u70B9\u51FB\u67E5\u770B\u788E\u788E\u5FF5\u3001\u72B6\u6001\u4E0E\u4E0A\u4E0B\u6587",
+  memoryStatusDetailTitle: "AI \u72B6\u6001",
+  memoryCurrentMood: "\u60C5\u7EEA\u72B6\u6001",
+  memoryContextLength: "\u4E0A\u4E0B\u6587\u957F\u5EA6",
+  memoryContextValue: "{used} / {limit} Token",
+  memoryThoughtsTitle: "AI \u788E\u788E\u5FF5",
+  memoryThoughtsBody: "\u961F\u5217\u73B0\u5728\u5F88\u5B89\u9759\u3002\u6211\u8BB0\u7740\u8C03\u5EA6\u3001\u63D0\u9192\u548C\u4F60\u7684\u504F\u597D\uFF0C\u4F46\u4E0D\u53BB\u8BFB\u9879\u76EE\u6587\u4EF6\u3002",
+  memoryQueuesTitle: "\u961F\u5217\u89C2\u5BDF",
+  memoryManaging: "\u6B63\u5728\u7BA1\u7406",
+  memoryScheduled: "\u5B9A\u65F6\u5F85\u7BA1\u7406",
+  memoryNoManaging: "\u5F53\u524D\u6CA1\u6709\u6B63\u5728\u7BA1\u7406\u7684\u961F\u5217\u3002",
+  memoryNoScheduled: "\u6CA1\u6709\u7B49\u5F85\u5B9A\u65F6\u7BA1\u7406\u7684\u961F\u5217\u3002",
+  memoryQueuedTasks: "\u5DF2\u6392\u961F {count} \u4E2A\u4EFB\u52A1",
+  memoryMailTitle: "\u90AE\u4EF6",
+  memoryMailFromScheduler: "\u8C03\u5EA6\u4E2D\u5FC3",
+  memoryMailFromAutomation: "\u81EA\u52A8\u5904\u7406",
+  memoryMailSubjectDispatch: "\u6D41\u6C34\u7EBF\u8C03\u5EA6\u9700\u8981\u4F60\u786E\u8BA4",
+  memoryMailBodyDispatch: "\u4E24\u6761\u961F\u5217\u6B63\u5728\u7B49\u5F85\u5B9A\u65F6\u5904\u7406\u3002\u7BA1\u7406 AI \u5EFA\u8BAE\u5148\u8FD0\u884C\u524D\u7AEF\u6D41\u6C34\u7EBF\uFF0C\u7B49\u7ED3\u6784\u5BA1\u67E5\u5B8C\u6210\u540E\u518D\u5904\u7406\u6570\u636E\u5E93\u8FC1\u79FB\u3002",
+  memoryMailSubjectWaiting: "\u6709\u4E00\u6761\u961F\u5217\u8D85\u8FC7\u8BE2\u95EE\u7A97\u53E3\u4ECD\u65E0\u6D3B\u52A8",
+  memoryMailBodyWaiting: "\u4E00\u4E2A\u4EFB\u52A1\u5DF2\u7ECF 20 \u5206\u949F\u6CA1\u6709\u62A5\u544A\u8FDB\u5EA6\u3002\u7BA1\u7406 AI \u8FD8\u6CA1\u6709\u6682\u505C\u961F\u5217\uFF0C\u6B63\u5728\u7B49\u4F60\u7684\u56DE\u590D\u3002",
+  memoryMailSelect: "\u9009\u62E9\u4E00\u5C01\u90AE\u4EF6\u67E5\u770B\u5185\u5BB9\u3002",
+  memoryMailDate: "\u65E5\u671F",
+  memoryMailReply: "\u56DE\u590D",
+  memoryMailReplyPlaceholder: "\u56DE\u590D\u8C03\u5EA6\u3001\u63D0\u9192\u6216\u9700\u8981\u51B3\u5B9A\u7684\u4E8B\u2026",
+  memoryMailSend: "\u53D1\u9001\u56DE\u590D",
+  memoryMailSent: "\u56DE\u590D\u5DF2\u4F5C\u4E3A\u7528\u6237\u63D0\u793A\u8BCD\u53D1\u9001\u7ED9\u5927\u7BA1\u5BB6\u3002",
+  petSendToDesktop: "\u628A\u5C0F\u9C7C\u79FB\u5230\u684C\u9762",
+  petDockBack: "\u628A\u5C0F\u9C7C\u6536\u56DE\u8FD9\u91CC",
+  petFloatingTag: "\u684C\u9762\u4E0A\u6F02\u6D6E\u4E2D",
+  petShowBubble: "\u663E\u793A\u5C0F\u9C7C\u5BF9\u8BDD\u6761",
+  petHideBubble: "\u6536\u8D77\u5C0F\u9C7C\u5BF9\u8BDD\u6761",
+  petBubbleConnecting: "\u6B63\u5728\u5524\u9192\u8C03\u5EA6\u53F0\u2026\u2026",
+  petBubbleEmpty: "\u8FD8\u6CA1\u6709\u6D41\u6C34\u7EBF\u3002\u5199\u4E0B\u4E00\u6761\uFF0C\u6211\u66FF\u4F60\u6392\u961F\u3002",
+  petBubbleIdle: "\u73B0\u5728\u5F88\u5B89\u9759\u3002{done}/{total} \u4E2A\u4EFB\u52A1\u5DF2\u5B8C\u6210\uFF0C\u6211\u7EE7\u7EED\u76EF\u7740\u3002",
+  petBubbleWorking: "{queues} \u6761\u961F\u5217\u91CC {running} \u4E2A\u4EFB\u52A1\u6B63\u5728\u8DD1\uFF0C\u5DF2\u5B8C\u6210 {done}/{total}\u3002",
+  petBubbleAttention: "\u6709 {count} \u4E2A\u4EFB\u52A1\u7B49\u4F60\u51B3\u5B9A\u3002\u6211\u5148\u793C\u8C8C\u5730\u6682\u505C\u4E86\u3002",
+  petBubbleError: "\u8C03\u5EA6\u6D41\u65AD\u4E86\u4E00\u4E0B\u3002\u6211\u6B63\u5728\u91CD\u8BD5\uFF0C\u961F\u5217\u662F\u5B89\u5168\u7684\u3002",
+  petBubbleFailed: "\u6709 {count} \u4E2A\u4EFB\u52A1\u5931\u8D25\u4E86\u3002\u961F\u5217\u8FD8\u5728\uFF0C\u7B49\u4F60\u51B3\u5B9A\u91CD\u8BD5\u8FD8\u662F\u8DF3\u8FC7\u3002",
+  petBubbleDone: "{total} \u4E2A\u4EFB\u52A1\u5168\u90E8\u5B8C\u6210\uFF0C\u53BB\u611F\u53D7\u7ED3\u679C\u5427\u3002",
+  petBubbleSleeping: "\u6CA1\u6709\u4EFB\u52A1\u5728\u52A8\uFF0C\u6211\u772F\u4E00\u53EA\u773C\u4F11\u606F\u3002",
+  petProgressDetail: "\u5DF2\u5B8C\u6210 {done}/{total} \xB7 \u8FD0\u884C\u4E2D {running} \xB7 \u961F\u5217 {queues}",
+  petProgressDetailNotices: "\u5DF2\u5B8C\u6210 {done}/{total} \xB7 \u8FD0\u884C\u4E2D {running} \xB7 \u63D0\u9192 {count}",
+  petReminderDetail: "{count} \u6761\u63D0\u9192\u5728\u7B49\u4F60",
+  petArtButton: "\u81EA\u5B9A\u4E49\u7ACB\u7ED8",
+  petArtTitle: "\u5BFC\u5165\u5927\u80A5\u9C7C\u7ACB\u7ED8",
+  petArtIntro: "\u9009\u62E9\u6309\u52A8\u4F5C\u547D\u540D\u7684\u672C\u5730 PNG/WebP \u6587\u4EF6\u3002\u6587\u4EF6\u53EA\u4FDD\u5B58\u5728\u8FD9\u4E2A\u6D4F\u89C8\u5668\uFF08IndexedDB\uFF09\uFF0C\u4E0D\u4F1A\u4E0A\u4F20\uFF0C\u4E5F\u4E0D\u4F1A\u8FDB\u5165\u5B89\u88C5\u5305\u3002",
+  petArtLive2DNote: "\u4E0D\u80FD\u76F4\u63A5\u5BFC\u5165 Live2D \u6A21\u578B\uFF08.moc3 / .model3.json\uFF09\u3002\u8BF7\u5148\u5728 VTube Studio \u6216 Cubism \u4E2D\u5BFC\u51FA PNG \u5E27\uFF0C\u518D\u4ECE\u8FD9\u91CC\u9009\u62E9\u3002",
+  petArtLocalOnly: "\u4EC5\u5BFC\u5165\u4F60\u6709\u6743\u4F7F\u7528\u7684\u7ACB\u7ED8\u3002\u70ED\u95E8\u9CB8\u9C7C\u5973\u4EC6\u7ACB\u7ED8\u5C5E\u4E8E\u4E2A\u4EBA\u975E\u5546\u4E1A\u7D20\u6750\uFF1B\u672C\u4ED3\u5E93\u4E0D\u6253\u5305\u3001\u4E0D\u518D\u5206\u53D1\u8FD9\u4E9B\u6587\u4EF6\u3002",
+  petArtConfirm: "\u6211\u786E\u8BA4\u6211\u6709\u6743\u4F7F\u7528\u8FD9\u4E9B\u7ACB\u7ED8\uFF1B\u975E\u5546\u4E1A\u7D20\u6750\u53EA\u7559\u5728\u8FD9\u53F0\u673A\u5668\u4E0A\u3002",
+  petArtExpected: "\u652F\u6301\u7684\u6587\u4EF6\u540D",
+  petArtChoose: "\u9009\u62E9\u7ACB\u7ED8\u6587\u4EF6",
+  petArtImporting: "\u6B63\u5728\u8BFB\u53D6\u6587\u4EF6\u2026\u2026",
+  petArtImported: "\u5DF2\u5BFC\u5165 {count} \u4E2A\u7ACB\u7ED8\u3002",
+  petArtSkipped: "\u6709 {count} \u4E2A\u6587\u4EF6\u56E0\u540D\u79F0\u6216\u56FE\u7247\u4E0D\u53D7\u652F\u6301\u88AB\u5FFD\u7565\u3002",
+  petArtClear: "\u6E05\u9664\u81EA\u5B9A\u4E49\u7ACB\u7ED8",
+  petArtCleared: "\u5DF2\u6E05\u9664\u81EA\u5B9A\u4E49\u7ACB\u7ED8\uFF0C\u6062\u590D\u9ED8\u8BA4\u5F62\u8C61\u3002",
+  petArtInstalled: "\u672C\u673A\u5DF2\u5B89\u88C5",
+  petArtNone: "\u5F53\u524D\u4F7F\u7528\u5185\u7F6E\u7684\u9CB8\u9C7C\u5973\u4EC6\u7ACB\u7ED8\u3002",
+  petArtError: "\u672C\u5730\u5B58\u50A8\u5931\u8D25\uFF1A{message}",
+  petArtLicense: "\u4EE3\u7801 MIT \xB7 \u5185\u7F6E\u7ACB\u7ED8 CC-BY 3.0 \xB7 \u7528\u6237\u5BFC\u5165\u7ACB\u7ED8\u6CBF\u7528\u5176\u539F\u6388\u6743\u3002",
   explanationForbidden: "\u5F53\u524D\u8D26\u6237\u6CA1\u6709\u6267\u884C\u8BE5\u64CD\u4F5C\u6216\u67E5\u770B\u8BE5\u8BB0\u5F55\u7684\u6743\u9650\u3002",
   explanationNotFound: "\u8BB0\u5F55\u4E0D\u5B58\u5728\u6216\u88AB\u8BBF\u95EE\u7B56\u7565\u9690\u85CF\u3002",
   explanationRevisionConflict: "\u5176\u4ED6\u64CD\u4F5C\u5DF2\u66F4\u65B0\u8BE5\u8BB0\u5F55\uFF0C\u8BF7\u91CD\u65B0\u8F7D\u5165\u540E\u518D\u8BD5\u3002",
@@ -19535,14 +20554,15 @@ var zh = {
   explanationUiSessionArchived: "\u8BE5\u5BF9\u8BDD\u5DF2\u5F52\u6863\u3002\u8BF7\u5148\u5728\u4FA7\u680F\u53D6\u6D88\u5F52\u6863\uFF0C\u518D\u6253\u5F00\u5B83\u3002",
   explanationUiSessionMissing: "\u8BE5\u5BF9\u8BDD\u65E0\u6CD5\u6253\u5F00\uFF1A\u5B83\u53EF\u80FD\u5DF2\u88AB\u5220\u9664\u3001\u88AB\u66F4\u65B0\u7684\u5C1D\u8BD5\u53D6\u4EE3\uFF0C\u6216\u5C1A\u672A\u767B\u8BB0\u8FDB\u5F53\u524D\u5DE5\u4F5C\u533A\u7684\u4F1A\u8BDD\u6E05\u5355\u3002",
   explanationUiSessionOpenFailed: "\u65E0\u6CD5\u6253\u5F00\u8BE5\u5BF9\u8BDD\uFF0C\u8BF7\u7A0D\u540E\u91CD\u8BD5\u3002",
+  explanationUiModelRouteRequired: "\u5207\u6362\u5BF9\u8BDD\u6A21\u578B\u524D\uFF0C\u8BF7\u9009\u62E9\u4E00\u4E2A\u56FA\u5B9A\u6A21\u578B\u8DEF\u7531\u3002",
   explanationUiArchiveUnavailable: "\u5F53\u524D\u5BBF\u4E3B\u65E0\u6CD5\u5F52\u6863\u5DE5\u4F5C\u533A\u5BF9\u8BDD\u3002\u53EF\u4EE5\u53D6\u6D88\u52FE\u9009\u5F52\u6863\u540E\u5220\u9664\uFF0C\u6216\u5148\u5728\u5DE5\u4F5C\u533A\u4FA7\u680F\u624B\u52A8\u5F52\u6863\u3002",
   explanationUiArchiveFailed: "\u6709\u5BF9\u8BDD\u672A\u80FD\u5F52\u6863\uFF0C\u6D41\u6C34\u7EBF\u5DF2\u4FDD\u7559\u3002\u53EF\u4EE5\u91CD\u8BD5\uFF0C\u6216\u53D6\u6D88\u52FE\u9009\u5F52\u6863\u540E\u518D\u5220\u9664\u3002",
   explanationUnknown: "\u6682\u65F6\u65E0\u6CD5\u8BC6\u522B\u8BE5\u5931\u8D25\uFF0C\u8BF7\u5C55\u5F00\u6280\u672F\u8BE6\u60C5\u3002"
 };
 
 // packages/client/ui-settings-session-orchestrator/src/client/Section.tsx
-var import_react14 = require("react");
-var import_dsh_client_ui_primitives19 = require("@deepseek-ai/dsh-client-ui-primitives");
+var import_react25 = require("react");
+var import_dsh_client_ui_primitives26 = require("@deepseek-ai/dsh-client-ui-primitives");
 
 // packages/client/ui-settings-session-orchestrator/src/client/ErrorPanel.tsx
 var import_dsh_client_ui_primitives2 = require("@deepseek-ai/dsh-client-ui-primitives");
@@ -19552,8 +20572,8 @@ var import_dsh_client_ui_primitives = require("@deepseek-ai/dsh-client-ui-primit
 function assertNever2(value) {
   throw new Error(`session-orchestrator UI: unhandled ${String(value)}`);
 }
-function runStateKey(state) {
-  switch (state) {
+function runStateKey(state4) {
+  switch (state4) {
     case "ready":
       return "stateReady";
     case "starting":
@@ -19688,6 +20708,8 @@ function errorExplanationKey(code) {
       return "explanationUiSessionMissing";
     case "ui/session-open-failed":
       return "explanationUiSessionOpenFailed";
+    case "ui/model-route-required":
+      return "explanationUiModelRouteRequired";
     case "ui/archive-unavailable":
       return "explanationUiArchiveUnavailable";
     case "ui/archive-failed":
@@ -19772,8 +20794,8 @@ function ErrorPanel({ t, errors, now, onDismiss, onClear }) {
 }
 
 // packages/client/ui-settings-session-orchestrator/src/client/TaskTab.tsx
-var import_react9 = require("react");
-var import_dsh_client_ui_primitives14 = require("@deepseek-ai/dsh-client-ui-primitives");
+var import_react10 = require("react");
+var import_dsh_client_ui_primitives15 = require("@deepseek-ai/dsh-client-ui-primitives");
 
 // packages/client/ui-settings-session-orchestrator/src/client/DangerConfirm.tsx
 var import_react = require("react");
@@ -20206,12 +21228,39 @@ function TextAreaField({ label, hint, value, onChange, disabled, rows = 5, place
 }
 
 // packages/client/ui-settings-session-orchestrator/src/client/ModelFields.tsx
+var import_react5 = require("react");
+var import_dsh_client_ui_primitives7 = require("@deepseek-ai/dsh-client-ui-primitives");
+
+// packages/client/ui-settings-session-orchestrator/src/client/ModelFields.module.css
+var ModelFields_default = {
+  group: "ModelFields_group",
+  rowWrap: "ModelFields_rowWrap",
+  row: "ModelFields_row",
+  rowLabel: "ModelFields_rowLabel",
+  rowValue: "ModelFields_rowValue",
+  chevron: "ModelFields_chevron",
+  chevronUp: "ModelFields_chevronUp",
+  popover: "ModelFields_popover",
+  modelMenuIn: "ModelFields_modelMenuIn",
+  popoverUp: "ModelFields_popoverUp",
+  search: "ModelFields_search",
+  optionList: "ModelFields_optionList",
+  option: "ModelFields_option",
+  optionSelected: "ModelFields_optionSelected",
+  optionText: "ModelFields_optionText",
+  optionLabel: "ModelFields_optionLabel",
+  optionDescription: "ModelFields_optionDescription",
+  check: "ModelFields_check",
+  hint: "ModelFields_hint"
+};
+
+// packages/client/ui-settings-session-orchestrator/src/client/ModelFields.tsx
 var import_jsx_runtime6 = require("react/jsx-runtime");
 function routeKey(provider, model) {
   return `${provider}/${model}`;
 }
-function choiceOf(choices, key) {
-  return choices.find((choice) => routeKey(choice.provider, choice.model) === key);
+function choiceOf(choices, key2) {
+  return choices.find((choice) => routeKey(choice.provider, choice.model) === key2);
 }
 function ModelPolicyFields({
   t,
@@ -20221,13 +21270,39 @@ function ModelPolicyFields({
   disabled,
   onChange
 }) {
+  const [open, setOpen] = (0, import_react5.useState)();
+  const [query, setQuery] = (0, import_react5.useState)("");
+  const root = (0, import_react5.useRef)(null);
+  const modelMenu = useMenuFlip(open === "model");
+  const reasoningMenu = useMenuFlip(open === "reasoning");
   const policy = value ?? { kind: "inherit" };
+  const normalizedQuery = query.trim().toLocaleLowerCase();
   const available = models.phase === "ready" && models.choices.length > 0;
-  const options = available || policy.kind === "fixed" ? [
-    { value: "inherit", label: inheritLabel },
-    { value: "fixed", label: t("modelFixed") }
-  ] : [{ value: "inherit", label: inheritLabel }];
+  const currentKey = policy.kind === "fixed" ? routeKey(policy.provider, policy.model) : "";
+  const currentChoice = policy.kind === "fixed" ? choiceOf(models.choices, currentKey) : void 0;
+  const modelValue = policy.kind === "inherit" ? inheritLabel : currentChoice === void 0 ? currentKey : `${currentChoice.providerName} \xB7 ${currentChoice.modelName}`;
+  const currentEffort = policy.kind === "fixed" && currentChoice !== void 0 ? currentChoice.reasoningEfforts.find((effort) => effort.id === policy.reasoningEffort) : void 0;
+  const reasoningLabel = currentEffort?.name ?? t("modelReasoningDefault");
   const unavailableHint = models.phase === "loading" ? t("modelCatalogLoading") : t("modelCatalogUnavailable", { reason: models.error ?? t("modelCatalogMissing") });
+  (0, import_react5.useEffect)(() => {
+    if (open === void 0) return;
+    const closeOutside = (event) => {
+      if (root.current !== null && !root.current.contains(event.target)) setOpen(void 0);
+    };
+    const closeOnEscape = (event) => {
+      if (event.key !== "Escape") return;
+      event.stopPropagation();
+      event.preventDefault();
+      setOpen(void 0);
+    };
+    document.addEventListener("pointerdown", closeOutside);
+    document.addEventListener("keydown", closeOnEscape, true);
+    return () => {
+      document.removeEventListener("pointerdown", closeOutside);
+      document.removeEventListener("keydown", closeOnEscape, true);
+    };
+  }, [open]);
+  const filteredChoices = normalizedQuery === "" ? models.choices : models.choices.filter((choice) => `${choice.providerName} ${choice.modelName} ${choice.provider} ${choice.model}`.toLocaleLowerCase().includes(normalizedQuery));
   const setFixed = (choice, reasoningEffort) => {
     onChange({
       kind: "fixed",
@@ -20236,84 +21311,195 @@ function ModelPolicyFields({
       ...reasoningEffort === void 0 || reasoningEffort === "" ? {} : { reasoningEffort }
     });
   };
-  const currentKey = policy.kind === "fixed" ? routeKey(policy.provider, policy.model) : "";
-  const currentChoice = policy.kind === "fixed" ? choiceOf(models.choices, currentKey) : void 0;
-  const routeOptions = models.choices.map((choice) => ({
-    value: routeKey(choice.provider, choice.model),
-    label: choice.isDefault === true ? `${choice.providerName} \xB7 ${choice.modelName} \xB7 ${t("modelDefaultTag")}` : `${choice.providerName} \xB7 ${choice.modelName}`
-  }));
-  if (policy.kind === "fixed" && currentChoice === void 0) {
-    routeOptions.unshift({ value: currentKey, label: `${policy.provider} \xB7 ${policy.model}` });
-  }
-  const reasoningOptions = currentChoice === void 0 ? [] : [
-    { value: "", label: t("modelReasoningDefault") },
-    ...currentChoice.reasoningEfforts.map((effort) => ({ value: effort.id, label: effort.name }))
-  ];
-  return /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(import_jsx_runtime6.Fragment, { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
-      SelectField,
-      {
-        label: t("modelPolicy"),
-        hint: available ? policy.kind === "fixed" ? t("modelFixedHint") : void 0 : unavailableHint,
-        value: policy.kind,
-        options,
-        disabled,
-        onChange: (kind) => {
-          if (kind === "inherit") {
-            onChange({ kind: "inherit" });
-            return;
-          }
-          const first = pinnedRouteOf(models.choices);
-          if (first === void 0) return;
-          setFixed(first, first.defaultReasoningEffort);
+  return /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: ModelFields_default.group, ref: root, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: ModelFields_default.rowWrap, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(
+        "button",
+        {
+          ref: modelMenu.anchorRef,
+          type: "button",
+          className: ModelFields_default.row,
+          disabled,
+          "aria-expanded": open === "model",
+          onClick: () => {
+            setOpen(open === "model" ? void 0 : "model");
+          },
+          children: [
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: ModelFields_default.rowLabel, children: t("modelName") }),
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: ModelFields_default.rowValue, title: modelValue, children: modelValue }),
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+              import_dsh_client_ui_primitives7.IconChevronDownOutlineRegular,
+              {
+                size: 12,
+                className: open === "model" ? `${ModelFields_default.chevron} ${ModelFields_default.chevronUp}` : ModelFields_default.chevron
+              }
+            )
+          ]
         }
-      }
-    ),
-    policy.kind === "fixed" && (currentChoice === void 0 ? /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
-      TextField,
-      {
-        label: t("modelName"),
-        hint: available ? t("modelChoiceMissing") : unavailableHint,
-        value: currentKey,
-        disabled: true,
-        onChange: () => {
+      ),
+      open === "model" && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(
+        "div",
+        {
+          ref: modelMenu.menuRef,
+          className: modelMenu.flipped ? `${ModelFields_default.popover} ${ModelFields_default.popoverUp}` : ModelFields_default.popover,
+          children: [
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: ModelFields_default.optionList, role: "listbox", "aria-label": t("modelName"), children: [
+              models.choices.length > 4 && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+                "input",
+                {
+                  className: ModelFields_default.search,
+                  value: query,
+                  placeholder: t("modelSearchPlaceholder"),
+                  "aria-label": t("modelSearchPlaceholder"),
+                  onChange: (event) => {
+                    setQuery(event.currentTarget.value);
+                  }
+                }
+              ),
+              /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(
+                "button",
+                {
+                  type: "button",
+                  role: "option",
+                  "aria-selected": policy.kind === "inherit",
+                  className: ModelFields_default.option,
+                  onClick: () => {
+                    onChange({ kind: "inherit" });
+                    setOpen(void 0);
+                  },
+                  children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: ModelFields_default.optionLabel, children: inheritLabel }),
+                    policy.kind === "inherit" && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(import_dsh_client_ui_primitives7.IconCheckOutlineRegular, { size: 12, className: ModelFields_default.check })
+                  ]
+                }
+              ),
+              policy.kind === "fixed" && currentChoice === void 0 && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(
+                "button",
+                {
+                  type: "button",
+                  role: "option",
+                  "aria-selected": "true",
+                  className: `${ModelFields_default.option} ${ModelFields_default.optionSelected}`,
+                  onClick: () => {
+                    setOpen(void 0);
+                  },
+                  children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: ModelFields_default.optionLabel, children: currentKey }),
+                    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(import_dsh_client_ui_primitives7.IconCheckOutlineRegular, { size: 12, className: ModelFields_default.check })
+                  ]
+                }
+              ),
+              filteredChoices.map((choice) => /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(
+                "button",
+                {
+                  type: "button",
+                  role: "option",
+                  "aria-selected": currentKey === routeKey(choice.provider, choice.model),
+                  className: ModelFields_default.option,
+                  onClick: () => {
+                    setFixed(choice, choice.defaultReasoningEffort);
+                    setOpen(void 0);
+                  },
+                  children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("span", { className: ModelFields_default.optionText, children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("span", { className: ModelFields_default.optionLabel, children: [
+                        choice.providerName,
+                        " \xB7 ",
+                        choice.modelName
+                      ] }),
+                      choice.isDefault === true && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: ModelFields_default.optionDescription, children: t("modelDefaultTag") })
+                    ] }),
+                    currentKey === routeKey(choice.provider, choice.model) && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(import_dsh_client_ui_primitives7.IconCheckOutlineRegular, { size: 12, className: ModelFields_default.check })
+                  ]
+                },
+                routeKey(choice.provider, choice.model)
+              ))
+            ] }),
+            !available && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: ModelFields_default.hint, children: unavailableHint })
+          ]
         }
-      }
-    ) : /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
-      SelectField,
-      {
-        label: t("modelName"),
-        value: currentKey,
-        options: routeOptions,
-        disabled,
-        onChange: (key) => {
-          const choice = choiceOf(models.choices, key);
-          if (choice !== void 0) setFixed(choice, choice.defaultReasoningEffort);
+      )
+    ] }),
+    policy.kind === "fixed" && currentChoice !== void 0 && currentChoice.reasoningEfforts.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: ModelFields_default.rowWrap, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(
+        "button",
+        {
+          ref: reasoningMenu.anchorRef,
+          type: "button",
+          className: ModelFields_default.row,
+          disabled,
+          "aria-expanded": open === "reasoning",
+          onClick: () => {
+            setOpen(open === "reasoning" ? void 0 : "reasoning");
+          },
+          children: [
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: ModelFields_default.rowLabel, children: t("modelReasoning") }),
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: ModelFields_default.rowValue, title: reasoningLabel, children: reasoningLabel }),
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+              import_dsh_client_ui_primitives7.IconChevronDownOutlineRegular,
+              {
+                size: 12,
+                className: open === "reasoning" ? `${ModelFields_default.chevron} ${ModelFields_default.chevronUp}` : ModelFields_default.chevron
+              }
+            )
+          ]
         }
-      }
-    )),
-    policy.kind === "fixed" && currentChoice !== void 0 && currentChoice.reasoningEfforts.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
-      SelectField,
-      {
-        label: t("modelReasoning"),
-        value: policy.reasoningEffort ?? "",
-        options: reasoningOptions,
-        disabled,
-        onChange: (effort) => {
-          if (currentChoice !== void 0) setFixed(currentChoice, effort);
+      ),
+      open === "reasoning" && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+        "div",
+        {
+          ref: reasoningMenu.menuRef,
+          className: reasoningMenu.flipped ? `${ModelFields_default.popover} ${ModelFields_default.popoverUp}` : ModelFields_default.popover,
+          children: /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: ModelFields_default.optionList, role: "listbox", "aria-label": t("modelReasoning"), children: [
+            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(
+              "button",
+              {
+                type: "button",
+                role: "option",
+                "aria-selected": policy.reasoningEffort === void 0,
+                className: ModelFields_default.option,
+                onClick: () => {
+                  setFixed(currentChoice);
+                  setOpen(void 0);
+                },
+                children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: ModelFields_default.optionLabel, children: t("modelReasoningDefault") }),
+                  policy.reasoningEffort === void 0 && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(import_dsh_client_ui_primitives7.IconCheckOutlineRegular, { size: 12, className: ModelFields_default.check })
+                ]
+              }
+            ),
+            currentChoice.reasoningEfforts.map((effort) => /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(
+              "button",
+              {
+                type: "button",
+                role: "option",
+                "aria-selected": policy.reasoningEffort === effort.id,
+                className: ModelFields_default.option,
+                onClick: () => {
+                  setFixed(currentChoice, effort.id);
+                  setOpen(void 0);
+                },
+                children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: ModelFields_default.optionLabel, children: effort.name }),
+                  policy.reasoningEffort === effort.id && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(import_dsh_client_ui_primitives7.IconCheckOutlineRegular, { size: 12, className: ModelFields_default.check })
+                ]
+              },
+              effort.id
+            ))
+          ] })
         }
-      }
-    )
+      )
+    ] })
   ] });
 }
 
 // packages/client/ui-settings-session-orchestrator/src/client/PipelineCreateDialog.tsx
-var import_react7 = require("react");
-var import_dsh_client_ui_primitives10 = require("@deepseek-ai/dsh-client-ui-primitives");
+var import_react8 = require("react");
+var import_dsh_client_ui_primitives11 = require("@deepseek-ai/dsh-client-ui-primitives");
 
 // packages/client/ui-settings-session-orchestrator/src/client/RenameDialog.tsx
-var import_react5 = require("react");
-var import_dsh_client_ui_primitives7 = require("@deepseek-ai/dsh-client-ui-primitives");
+var import_react6 = require("react");
+var import_dsh_client_ui_primitives8 = require("@deepseek-ai/dsh-client-ui-primitives");
 
 // packages/client/ui-settings-session-orchestrator/src/client/RenameDialog.module.css
 var RenameDialog_default = {
@@ -20336,13 +21522,13 @@ function RenameDialog({
   onCancel,
   onSave
 }) {
-  const [draft, setDraft] = (0, import_react5.useState)(value);
-  (0, import_react5.useEffect)(() => {
+  const [draft, setDraft] = (0, import_react6.useState)(value);
+  (0, import_react6.useEffect)(() => {
     if (open) setDraft(value);
   }, [open, value]);
   const next = draft.trim();
   return /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-    import_dsh_client_ui_primitives7.Modal,
+    import_dsh_client_ui_primitives8.Modal,
     {
       open,
       onClose: onCancel,
@@ -20351,9 +21537,9 @@ function RenameDialog({
       className: RenameDialog_default.dialog,
       contentClassName: RenameDialog_default.content,
       footer: /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(import_jsx_runtime7.Fragment, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(import_dsh_client_ui_primitives7.Button, { variant: "outline", className: RenameDialog_default.action, onClick: onCancel, children: t("cancel") }),
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(import_dsh_client_ui_primitives8.Button, { variant: "outline", className: RenameDialog_default.action, onClick: onCancel, children: t("cancel") }),
         /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-          import_dsh_client_ui_primitives7.Button,
+          import_dsh_client_ui_primitives8.Button,
           {
             variant: "primary",
             className: RenameDialog_default.confirm,
@@ -20380,8 +21566,8 @@ function RenameDialog({
 }
 
 // packages/client/ui-settings-session-orchestrator/src/client/RowMenu.tsx
-var import_react6 = require("react");
-var import_dsh_client_ui_primitives8 = require("@deepseek-ai/dsh-client-ui-primitives");
+var import_react7 = require("react");
+var import_dsh_client_ui_primitives9 = require("@deepseek-ai/dsh-client-ui-primitives");
 
 // packages/client/ui-settings-session-orchestrator/src/client/RowMenu.module.css
 var RowMenu_default = {
@@ -20395,9 +21581,9 @@ var RowMenu_default = {
 // packages/client/ui-settings-session-orchestrator/src/client/RowMenu.tsx
 var import_jsx_runtime8 = require("react/jsx-runtime");
 function RowMenu({ label, items, disabled = false }) {
-  const [open, setOpen] = (0, import_react6.useState)(false);
-  const root = (0, import_react6.useRef)(null);
-  (0, import_react6.useEffect)(() => {
+  const [open, setOpen] = (0, import_react7.useState)(false);
+  const root = (0, import_react7.useRef)(null);
+  (0, import_react7.useEffect)(() => {
     if (!open || typeof document === "undefined") return;
     const onPointerDown = (event) => {
       if (root.current !== null && event.target instanceof Node && root.current.contains(event.target)) return;
@@ -20415,7 +21601,7 @@ function RowMenu({ label, items, disabled = false }) {
   }, [open]);
   return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: RowMenu_default.root, ref: root, children: [
     /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
-      import_dsh_client_ui_primitives8.Button,
+      import_dsh_client_ui_primitives9.Button,
       {
         size: "sm",
         variant: "ghost",
@@ -20426,7 +21612,7 @@ function RowMenu({ label, items, disabled = false }) {
         onClick: () => {
           setOpen((value) => !value);
         },
-        children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(import_dsh_client_ui_primitives8.IconEllipsisOutlineRegular, { size: 14 })
+        children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(import_dsh_client_ui_primitives9.IconEllipsisOutlineRegular, { size: 14 })
       }
     ),
     open && /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { className: RowMenu_default.list, role: "menu", "aria-label": label, children: items.map((item) => /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
@@ -20448,7 +21634,7 @@ function RowMenu({ label, items, disabled = false }) {
 }
 
 // packages/client/ui-settings-session-orchestrator/src/client/WorkspaceField.tsx
-var import_dsh_client_ui_primitives9 = require("@deepseek-ai/dsh-client-ui-primitives");
+var import_dsh_client_ui_primitives10 = require("@deepseek-ai/dsh-client-ui-primitives");
 
 // packages/client/ui-settings-session-orchestrator/src/client/WorkspaceField.module.css
 var WorkspaceField_default = {
@@ -20484,7 +21670,7 @@ function WorkspaceField({
         options: menuOptions,
         disabled,
         placeholder,
-        icon: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(import_dsh_client_ui_primitives9.IconFolderOpenOutlineRegular, { size: 13 }),
+        icon: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(import_dsh_client_ui_primitives10.IconFolderOpenOutlineRegular, { size: 13 }),
         onChange
       }
     )
@@ -20536,8 +21722,8 @@ function emptyTask() {
     collapsed: false
   };
 }
-function storedString(record2, key) {
-  const value = record2[key];
+function storedString(record2, key2) {
+  const value = record2[key2];
   return typeof value === "string" ? value : void 0;
 }
 function storedPrompts(record2) {
@@ -20606,13 +21792,13 @@ function PipelineCreateDialog({
   onCreate,
   onUseTemplate
 }) {
-  const [restored] = (0, import_react7.useState)(readStoredDraft);
+  const [restored] = (0, import_react8.useState)(readStoredDraft);
   const restoredWorkspace = workspaces.find((workspace) => workspace.workspaceId === restored.workspaceId);
   const defaultWorkspace = restoredWorkspace ?? workspaces[0];
   const savedCwd = restoredWorkspace === void 0 ? "" : restored.cwd ?? "";
-  const [workspaceId, setWorkspaceId] = (0, import_react7.useState)(defaultWorkspace?.workspaceId ?? "");
-  const [cwd, setCwd] = (0, import_react7.useState)(savedCwd === "" ? defaultWorkspace?.path ?? "" : savedCwd);
-  const [tasks, setTasks] = (0, import_react7.useState)(() => {
+  const [workspaceId, setWorkspaceId] = (0, import_react8.useState)(defaultWorkspace?.workspaceId ?? "");
+  const [cwd, setCwd] = (0, import_react8.useState)(savedCwd === "" ? defaultWorkspace?.path ?? "" : savedCwd);
+  const [tasks, setTasks] = (0, import_react8.useState)(() => {
     const prompts = restored.prompts === void 0 || restored.prompts.length === 0 ? [""] : [...restored.prompts];
     return prompts.map((prompt, index) => ({
       ...emptyTask(),
@@ -20620,14 +21806,14 @@ function PipelineCreateDialog({
       title: restored.taskTitles?.[index] ?? ""
     }));
   });
-  const [title, setTitle] = (0, import_react7.useState)(restored.title ?? "");
-  const [submitting, setSubmitting] = (0, import_react7.useState)(false);
-  const [collapsed, setCollapsed] = (0, import_react7.useState)(false);
-  const [renamingIndex, setRenamingIndex] = (0, import_react7.useState)(null);
+  const [title, setTitle] = (0, import_react8.useState)(restored.title ?? "");
+  const [submitting, setSubmitting] = (0, import_react8.useState)(false);
+  const [collapsed, setCollapsed] = (0, import_react8.useState)(false);
+  const [renamingIndex, setRenamingIndex] = (0, import_react8.useState)(null);
   const restoredDraft = tasks.some((task) => task.prompt.trim() !== "") || (restored.title ?? "").trim() !== "";
   const complete = tasks.length > 0 && tasks.every((task) => task.prompt.trim() !== "");
   const canCreate = !busy && !submitting && workspaceId.trim() !== "" && cwd.trim() !== "" && complete;
-  (0, import_react7.useEffect)(() => {
+  (0, import_react8.useEffect)(() => {
     saveStoredDraft({
       workspaceId,
       cwd,
@@ -20679,9 +21865,9 @@ function PipelineCreateDialog({
     /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("header", { className: PipelineCreateDialog_default.header, children: [
       /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { className: PipelineCreateDialog_default.heading, children: /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("h3", { className: PipelineCreateDialog_default.title, children: t("pipelineCreateTitle") }) }),
       /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { className: PipelineCreateDialog_default.badges, children: [
-        restoredDraft && /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(import_dsh_client_ui_primitives10.Tag, { tone: "outline", children: t("pipelineCreateRestored") }),
+        restoredDraft && /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(import_dsh_client_ui_primitives11.Tag, { tone: "outline", children: t("pipelineCreateRestored") }),
         /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
-          import_dsh_client_ui_primitives10.Button,
+          import_dsh_client_ui_primitives11.Button,
           {
             size: "sm",
             variant: "ghost",
@@ -20735,7 +21921,7 @@ function PipelineCreateDialog({
               /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("span", { className: PipelineCreateDialog_default.stepBadge, children: String(index + 1).padStart(2, "0") }),
               /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("span", { className: PipelineCreateDialog_default.taskName, children: task.title.trim() === "" ? t("composerTask", { index: index + 1 }) : task.title }),
               /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
-                import_dsh_client_ui_primitives10.Button,
+                import_dsh_client_ui_primitives11.Button,
                 {
                   size: "sm",
                   variant: "ghost",
@@ -20746,7 +21932,7 @@ function PipelineCreateDialog({
                     toggleTask(index);
                   },
                   children: /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
-                    import_dsh_client_ui_primitives10.IconChevronDownOutlineRegular,
+                    import_dsh_client_ui_primitives11.IconChevronDownOutlineRegular,
                     {
                       size: 12,
                       className: task.collapsed ? PipelineCreateDialog_default.chevronCollapsed : PipelineCreateDialog_default.chevron
@@ -20782,7 +21968,7 @@ function PipelineCreateDialog({
             ] }),
             task.collapsed ? /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { className: PipelineCreateDialog_default.taskPreview, children: [
               /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("span", { className: PipelineCreateDialog_default.previewText, title: task.prompt, children: task.prompt.trim() === "" ? t("composerEmptyPrompt") : task.prompt }),
-              task.model.kind === "fixed" && /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(import_dsh_client_ui_primitives10.Tag, { tone: "outline", children: task.model.model })
+              task.model.kind === "fixed" && /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(import_dsh_client_ui_primitives11.Tag, { tone: "outline", children: task.model.model })
             ] }) : /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)(import_jsx_runtime10.Fragment, { children: [
               /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
                 TextAreaField,
@@ -20824,7 +22010,7 @@ function PipelineCreateDialog({
                   }
                 ) }),
                 /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { className: PipelineCreateDialog_default.taskFoot, children: /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
-                  import_dsh_client_ui_primitives10.Button,
+                  import_dsh_client_ui_primitives11.Button,
                   {
                     size: "sm",
                     variant: "ghost",
@@ -20847,7 +22033,7 @@ function PipelineCreateDialog({
       )) }),
       /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("footer", { className: PipelineCreateDialog_default.footer, children: [
         /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)(
-          import_dsh_client_ui_primitives10.Button,
+          import_dsh_client_ui_primitives11.Button,
           {
             size: "sm",
             variant: "ghost",
@@ -20863,7 +22049,7 @@ function PipelineCreateDialog({
         ),
         /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { className: PipelineCreateDialog_default.footerActions, children: [
           presets.phase === "error" && /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("span", { className: PipelineCreateDialog_default.warning, children: presets.error }),
-          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(import_dsh_client_ui_primitives10.Button, { variant: "primary", size: "sm", disabled: !canCreate, onClick: () => {
+          /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(import_dsh_client_ui_primitives11.Button, { variant: "primary", size: "sm", disabled: !canCreate, onClick: () => {
             void submit();
           }, children: submitting ? t("pipelineCreateSubmitting") : t("composerStart") })
         ] })
@@ -20872,7 +22058,7 @@ function PipelineCreateDialog({
     workspaces.length === 0 && /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { className: PipelineCreateDialog_default.warning, children: t("composerNoWorkspace") }),
     /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("details", { className: PipelineCreateDialog_default.optional, children: [
       /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("summary", { children: t("pipelineCreateMore") }),
-      /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(import_dsh_client_ui_primitives10.Button, { variant: "ghost", size: "sm", disabled: busy || submitting, onClick: onUseTemplate, children: t("pipelineCreateTemplateOption") })
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(import_dsh_client_ui_primitives11.Button, { variant: "ghost", size: "sm", disabled: busy || submitting, onClick: onUseTemplate, children: t("pipelineCreateTemplateOption") })
     ] }),
     /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
       RenameDialog,
@@ -20899,8 +22085,8 @@ function PipelineCreateDialog({
 }
 
 // packages/client/ui-settings-session-orchestrator/src/client/PipelineTemplateDialog.tsx
-var import_react8 = require("react");
-var import_dsh_client_ui_primitives11 = require("@deepseek-ai/dsh-client-ui-primitives");
+var import_react9 = require("react");
+var import_dsh_client_ui_primitives12 = require("@deepseek-ai/dsh-client-ui-primitives");
 
 // packages/client/ui-settings-session-orchestrator/src/client/PipelineTemplateDialog.module.css
 var PipelineTemplateDialog_default = {
@@ -20933,11 +22119,11 @@ function PipelineTemplateDialog({
   onClose,
   onCreate
 }) {
-  const [queueId] = (0, import_react8.useState)(newPipelineQueueId);
-  const [workspaceId, setWorkspaceId] = (0, import_react8.useState)(workspaces[0]?.workspaceId ?? "");
-  const [title, setTitle] = (0, import_react8.useState)("");
-  const [brief, setBrief] = (0, import_react8.useState)("");
-  const [submitting, setSubmitting] = (0, import_react8.useState)(false);
+  const [queueId] = (0, import_react9.useState)(newPipelineQueueId);
+  const [workspaceId, setWorkspaceId] = (0, import_react9.useState)(workspaces[0]?.workspaceId ?? "");
+  const [title, setTitle] = (0, import_react9.useState)("");
+  const [brief, setBrief] = (0, import_react9.useState)("");
+  const [submitting, setSubmitting] = (0, import_react9.useState)(false);
   const selectedWorkspace = workspaces.find((workspace) => workspace.workspaceId === workspaceId);
   const canCreate = !busy && !submitting && workspaceId.trim() !== "" && brief.trim() !== "";
   const stages = [
@@ -20965,7 +22151,7 @@ function PipelineTemplateDialog({
         /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("span", { className: PipelineTemplateDialog_default.eyebrow, children: t("pipelineTemplateDraft") }),
         /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("h3", { className: PipelineTemplateDialog_default.title, children: t("pipelineTemplateTitle") })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(import_dsh_client_ui_primitives11.Button, { size: "sm", variant: "ghost", disabled: submitting, onClick: onClose, children: t("cancel") })
+      /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(import_dsh_client_ui_primitives12.Button, { size: "sm", variant: "ghost", disabled: submitting, onClick: onClose, children: t("cancel") })
     ] }),
     /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { className: PipelineTemplateDialog_default.grid, children: [
       /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
@@ -21015,7 +22201,7 @@ function PipelineTemplateDialog({
     ] }),
     /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { className: PipelineTemplateDialog_default.note, children: t("pipelineTemplateDraftNote") }),
     /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("footer", { className: PipelineTemplateDialog_default.footer, children: /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
-      import_dsh_client_ui_primitives11.Button,
+      import_dsh_client_ui_primitives12.Button,
       {
         variant: "primary",
         size: "sm",
@@ -21033,6 +22219,9 @@ function PipelineTemplateDialog({
 var Summary_default = {
   strip: "Summary_strip",
   metric: "Summary_metric",
+  metricAction: "Summary_metricAction",
+  labelLine: "Summary_labelLine",
+  icon: "Summary_icon",
   label: "Summary_label",
   value: "Summary_value"
 };
@@ -21040,14 +22229,39 @@ var Summary_default = {
 // packages/client/ui-settings-session-orchestrator/src/client/Summary.tsx
 var import_jsx_runtime12 = require("react/jsx-runtime");
 function Summary({ label, metrics }) {
-  return /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("dl", { className: Summary_default.strip, "aria-label": label, children: metrics.map((metric) => /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: Summary_default.metric, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("dt", { className: Summary_default.label, children: metric.label }),
-    /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("dd", { className: Summary_default.value, children: metric.value })
-  ] }, metric.label)) });
+  return /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("dl", { className: Summary_default.strip, "aria-label": label, children: metrics.map((metric) => {
+    const content = /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)(import_jsx_runtime12.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("dt", { className: Summary_default.labelLine, children: [
+        metric.icon !== void 0 && /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", { className: Summary_default.icon, "aria-hidden": "true", children: metric.icon }),
+        /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", { className: Summary_default.label, children: metric.label })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("dd", { className: Summary_default.value, children: metric.value })
+    ] });
+    if (metric.onClick === void 0) {
+      return /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("div", { className: Summary_default.metric, children: content }, metric.label);
+    }
+    return /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(
+      "div",
+      {
+        className: Summary_default.metricAction,
+        role: "button",
+        tabIndex: 0,
+        "aria-label": `${metric.label}: ${String(metric.value)}`,
+        onClick: metric.onClick,
+        onKeyDown: (event) => {
+          if (event.key !== "Enter" && event.key !== " ") return;
+          event.preventDefault();
+          metric.onClick?.();
+        },
+        children: content
+      },
+      metric.label
+    );
+  }) });
 }
 
 // packages/client/ui-settings-session-orchestrator/src/client/TaskEditor.tsx
-var import_dsh_client_ui_primitives12 = require("@deepseek-ai/dsh-client-ui-primitives");
+var import_dsh_client_ui_primitives13 = require("@deepseek-ai/dsh-client-ui-primitives");
 
 // packages/client/ui-settings-session-orchestrator/src/client/TaskEditor.module.css
 var TaskEditor_default = {
@@ -21113,8 +22327,8 @@ function TaskEditor({
         /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("h3", { className: TaskEditor_default.title, children: draft.mode === "create" ? t("newTaskTitle") : t("taskEditor") })
       ] }),
       /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { className: TaskEditor_default.badges, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(import_dsh_client_ui_primitives12.Tag, { tone: "outline", children: `${t("liveRevision", { revision: draft.baseRevision })}` }),
-        task.enabled ? /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(import_dsh_client_ui_primitives12.Tag, { tone: "success", children: t("taskEnabled") }) : /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(import_dsh_client_ui_primitives12.Tag, { tone: "quiet", children: t("taskEnabled") })
+        /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(import_dsh_client_ui_primitives13.Tag, { tone: "outline", children: `${t("liveRevision", { revision: draft.baseRevision })}` }),
+        task.enabled ? /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(import_dsh_client_ui_primitives13.Tag, { tone: "success", children: t("taskEnabled") }) : /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(import_dsh_client_ui_primitives13.Tag, { tone: "quiet", children: t("taskEnabled") })
       ] })
     ] }),
     stale && /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("p", { className: TaskEditor_default.stale, role: "status", children: t("staleDraft") }),
@@ -21179,7 +22393,7 @@ function TaskEditor({
           }
         ),
         /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(Field, { label: t("taskEnabled"), children: /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(
-          import_dsh_client_ui_primitives12.Switch,
+          import_dsh_client_ui_primitives13.Switch,
           {
             checked: task.enabled,
             label: t("taskEnabled"),
@@ -21255,10 +22469,10 @@ function TaskEditor({
       /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("header", { className: TaskEditor_default.handoffHeader, children: [
         /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { className: TaskEditor_default.handoffLead, children: [
           /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("h4", { className: TaskEditor_default.groupTitle, children: t("editorHandoff") }),
-          /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(import_dsh_client_ui_primitives12.Tag, { tone: "info", children: t(handoffModeKey(task.handoff.mode)) })
+          /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(import_dsh_client_ui_primitives13.Tag, { tone: "info", children: t(handoffModeKey(task.handoff.mode)) })
         ] }),
         /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(Field, { label: t("handoffEnabled"), children: /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(
-          import_dsh_client_ui_primitives12.Switch,
+          import_dsh_client_ui_primitives13.Switch,
           {
             checked: task.handoff.enabled,
             label: t("handoffEnabled"),
@@ -21325,14 +22539,14 @@ function TaskEditor({
       ] })
     ] }),
     /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("footer", { className: TaskEditor_default.footer, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(import_dsh_client_ui_primitives12.Button, { variant: "primary", disabled, onClick: onSave, children: t("taskSave") }),
-      /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(import_dsh_client_ui_primitives12.Button, { variant: "outline", disabled, onClick: onDiscard, children: t("taskDiscard") })
+      /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(import_dsh_client_ui_primitives13.Button, { variant: "primary", disabled, onClick: onSave, children: t("taskSave") }),
+      /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(import_dsh_client_ui_primitives13.Button, { variant: "outline", disabled, onClick: onDiscard, children: t("taskDiscard") })
     ] })
   ] });
 }
 
 // packages/client/ui-settings-session-orchestrator/src/client/SessionRoute.tsx
-var import_dsh_client_ui_primitives13 = require("@deepseek-ai/dsh-client-ui-primitives");
+var import_dsh_client_ui_primitives14 = require("@deepseek-ai/dsh-client-ui-primitives");
 
 // packages/client/ui-settings-session-orchestrator/src/client/SessionRoute.module.css
 var SessionRoute_default = {
@@ -21354,7 +22568,7 @@ function SessionRoute({
   const ready = session.openState === "ready";
   return /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)("span", { className: SessionRoute_default.row, "data-session-id": session.sessionId, "data-session-state": session.openState, children: [
     /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(
-      import_dsh_client_ui_primitives13.Button,
+      import_dsh_client_ui_primitives14.Button,
       {
         size: "sm",
         variant: "outline",
@@ -21368,7 +22582,7 @@ function SessionRoute({
       }
     ),
     showRoute && ready ? session.route === void 0 ? null : /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("code", { className: SessionRoute_default.route, title: session.route, children: session.route }) : null,
-    ready ? null : /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(import_dsh_client_ui_primitives13.Tag, { tone: "warning", children: t(session.openState === "archived" ? "runOpenSessionArchived" : "runOpenSessionUnsupported") })
+    ready ? null : /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(import_dsh_client_ui_primitives14.Tag, { tone: "warning", children: t(session.openState === "archived" ? "runOpenSessionArchived" : "runOpenSessionUnsupported") })
   ] });
 }
 
@@ -21420,8 +22634,8 @@ var TaskTab_default = {
 
 // packages/client/ui-settings-session-orchestrator/src/client/TaskTab.tsx
 var import_jsx_runtime15 = require("react/jsx-runtime");
-function queueStateKey(state) {
-  switch (state) {
+function queueStateKey(state4) {
+  switch (state4) {
     case "idle":
       return "queueStateIdle";
     case "running":
@@ -21433,11 +22647,11 @@ function queueStateKey(state) {
   }
 }
 function stageLabelOf(stage, t) {
-  const key = stageKey(stage);
-  return key === void 0 ? stage : t(key);
+  const key2 = stageKey(stage);
+  return key2 === void 0 ? stage : t(key2);
 }
 function RowMenu2({ label, children }) {
-  const [open, setOpen] = (0, import_react9.useState)(false);
+  const [open, setOpen] = (0, import_react10.useState)(false);
   const { anchorRef, menuRef, flipped } = useMenuFlip(open);
   return /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)(
     "details",
@@ -21478,12 +22692,12 @@ function orderedTasks(queue, tasks) {
 }
 function TaskTab(props) {
   const { t, live, drafts, workspaces, now, actions } = props;
-  const [deleteOpen, setDeleteOpen] = (0, import_react9.useState)(false);
-  const [deleteTask, setDeleteTask] = (0, import_react9.useState)();
-  const [createOpen, setCreateOpen] = (0, import_react9.useState)(true);
-  const [templateOpen, setTemplateOpen] = (0, import_react9.useState)(false);
-  const [draggingId, setDraggingId] = (0, import_react9.useState)();
-  const [dropIndex, setDropIndex] = (0, import_react9.useState)();
+  const [deleteOpen, setDeleteOpen] = (0, import_react10.useState)(false);
+  const [deleteTask, setDeleteTask] = (0, import_react10.useState)();
+  const [createOpen, setCreateOpen] = (0, import_react10.useState)(true);
+  const [templateOpen, setTemplateOpen] = (0, import_react10.useState)(false);
+  const [draggingId, setDraggingId] = (0, import_react10.useState)();
+  const [dropIndex, setDropIndex] = (0, import_react10.useState)();
   const busy = drafts.busy !== void 0;
   const selectedQueue = drafts.selectedQueueId === void 0 ? void 0 : live.queues.find((queue) => queue.id === drafts.selectedQueueId);
   const rows = orderedTasks(selectedQueue, live.tasks);
@@ -21522,7 +22736,7 @@ function TaskTab(props) {
     /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)("div", { className: TaskTab_default.toolbar, children: [
       /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("h3", { className: TaskTab_default.toolbarTitle, children: t("queuesTitle") }),
       /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
-        import_dsh_client_ui_primitives14.Button,
+        import_dsh_client_ui_primitives15.Button,
         {
           size: "sm",
           variant: "primary",
@@ -21586,7 +22800,7 @@ function TaskTab(props) {
       /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("div", { className: TaskTab_default.emptyMark, "aria-hidden": "true", children: "01" }),
       /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("p", { className: TaskTab_default.emptyText, children: t("noQueue") }),
       /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
-        import_dsh_client_ui_primitives14.Button,
+        import_dsh_client_ui_primitives15.Button,
         {
           size: "sm",
           variant: "outline",
@@ -21611,9 +22825,9 @@ function TaskTab(props) {
           ] })
         ] }),
         /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)("div", { className: TaskTab_default.cardActions, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(import_dsh_client_ui_primitives14.Tag, { tone: selectedQueue.state === "running" ? "success" : selectedQueue.state === "aborted" ? "danger" : "neutral", children: t(queueStateKey(selectedQueue.state)) }),
+          /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(import_dsh_client_ui_primitives15.Tag, { tone: selectedQueue.state === "running" ? "success" : selectedQueue.state === "aborted" ? "danger" : "neutral", children: t(queueStateKey(selectedQueue.state)) }),
           selectedQueue.state === "running" ? /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
-            import_dsh_client_ui_primitives14.Button,
+            import_dsh_client_ui_primitives15.Button,
             {
               size: "sm",
               variant: "outline",
@@ -21624,7 +22838,7 @@ function TaskTab(props) {
               children: t("queuePause")
             }
           ) : /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
-            import_dsh_client_ui_primitives14.Button,
+            import_dsh_client_ui_primitives15.Button,
             {
               size: "sm",
               variant: "primary",
@@ -21636,7 +22850,7 @@ function TaskTab(props) {
             }
           ),
           /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
-            import_dsh_client_ui_primitives14.Button,
+            import_dsh_client_ui_primitives15.Button,
             {
               size: "sm",
               variant: "ghost",
@@ -21648,7 +22862,7 @@ function TaskTab(props) {
             }
           ),
           /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
-            import_dsh_client_ui_primitives14.Button,
+            import_dsh_client_ui_primitives15.Button,
             {
               size: "sm",
               variant: "ghost",
@@ -21720,12 +22934,12 @@ function TaskTab(props) {
         ),
         /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)("footer", { className: TaskTab_default.cardFoot, children: [
           /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)("div", { className: TaskTab_default.cardFootActions, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(import_dsh_client_ui_primitives14.Button, { variant: "primary", size: "sm", disabled: busy, onClick: () => {
+            /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(import_dsh_client_ui_primitives15.Button, { variant: "primary", size: "sm", disabled: busy, onClick: () => {
               void actions.saveQueue();
             }, children: t("save") }),
-            /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(import_dsh_client_ui_primitives14.Button, { variant: "outline", size: "sm", disabled: busy, onClick: actions.discardQueue, children: t("discard") }),
+            /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(import_dsh_client_ui_primitives15.Button, { variant: "outline", size: "sm", disabled: busy, onClick: actions.discardQueue, children: t("discard") }),
             /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
-              import_dsh_client_ui_primitives14.Button,
+              import_dsh_client_ui_primitives15.Button,
               {
                 variant: "ghost",
                 size: "sm",
@@ -21750,7 +22964,7 @@ function TaskTab(props) {
           /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("h3", { className: TaskTab_default.cardTitle, children: t("queueOrder") }),
           /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("p", { className: TaskTab_default.cardMeta, children: t("queueTaskCount", { count: queueTaskCount(selectedQueue, live.tasks) }) })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("div", { className: TaskTab_default.cardActions, children: /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(import_dsh_client_ui_primitives14.Button, { size: "sm", variant: "primary", disabled: busy, onClick: () => {
+        /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("div", { className: TaskTab_default.cardActions, children: /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(import_dsh_client_ui_primitives15.Button, { size: "sm", variant: "primary", disabled: busy, onClick: () => {
           actions.newTask();
         }, children: t("newTask") }) })
       ] }),
@@ -21785,12 +22999,12 @@ function TaskTab(props) {
             /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)("div", { className: TaskTab_default.taskLead, children: [
               /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("span", { className: TaskTab_default.dragHandle, "aria-hidden": "true", children: "\u22EE\u22EE" }),
               /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("span", { className: TaskTab_default.taskIndex, children: String(row.index + 1).padStart(2, "0") }),
-              /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(import_dsh_client_ui_primitives14.StateDot, { state: row.task.enabled ? "done" : "idle" })
+              /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(import_dsh_client_ui_primitives15.StateDot, { state: row.task.enabled ? "done" : "idle" })
             ] }),
             /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)("div", { className: TaskTab_default.taskMain, children: [
               /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)("div", { className: TaskTab_default.taskTitleLine, children: [
                 /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("span", { className: TaskTab_default.taskTitle, children: row.task.title }),
-                row.task.stage !== void 0 && /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(import_dsh_client_ui_primitives14.Tag, { tone: "outline", children: stageLabelOf(row.task.stage, t) })
+                row.task.stage !== void 0 && /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(import_dsh_client_ui_primitives15.Tag, { tone: "outline", children: stageLabelOf(row.task.stage, t) })
               ] }),
               /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)("div", { className: TaskTab_default.taskMeta, children: [
                 /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("span", { className: TaskTab_default.metaItem, children: workspaces.find((workspace) => workspace.workspaceId === row.task.workspaceId)?.title ?? row.task.workspaceId }),
@@ -21799,7 +23013,7 @@ function TaskTab(props) {
               ] }),
               /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)("div", { className: TaskTab_default.taskToggles, children: [
                 /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
-                  import_dsh_client_ui_primitives14.Switch,
+                  import_dsh_client_ui_primitives15.Switch,
                   {
                     checked: row.task.enabled,
                     label: `${t("taskEnabled")} ${row.task.title}`,
@@ -21810,7 +23024,7 @@ function TaskTab(props) {
                   }
                 ),
                 row.index > 0 && /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
-                  import_dsh_client_ui_primitives14.Checkbox,
+                  import_dsh_client_ui_primitives15.Checkbox,
                   {
                     checked: row.task.parallelWithPrevious === true,
                     label: t("parallelWithPrevious"),
@@ -21836,7 +23050,7 @@ function TaskTab(props) {
                 }
               ),
               /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
-                import_dsh_client_ui_primitives14.Button,
+                import_dsh_client_ui_primitives15.Button,
                 {
                   size: "sm",
                   variant: "outline",
@@ -21850,7 +23064,7 @@ function TaskTab(props) {
               ),
               /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)(RowMenu2, { label: t("moreActions"), children: [
                 /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
-                  import_dsh_client_ui_primitives14.Button,
+                  import_dsh_client_ui_primitives15.Button,
                   {
                     size: "sm",
                     variant: "ghost",
@@ -21863,7 +23077,7 @@ function TaskTab(props) {
                   }
                 ),
                 /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
-                  import_dsh_client_ui_primitives14.Button,
+                  import_dsh_client_ui_primitives15.Button,
                   {
                     size: "sm",
                     variant: "ghost",
@@ -21876,7 +23090,7 @@ function TaskTab(props) {
                   }
                 ),
                 /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
-                  import_dsh_client_ui_primitives14.Button,
+                  import_dsh_client_ui_primitives15.Button,
                   {
                     size: "sm",
                     variant: "ghost",
@@ -21889,7 +23103,7 @@ function TaskTab(props) {
                   }
                 ),
                 /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
-                  import_dsh_client_ui_primitives14.Button,
+                  import_dsh_client_ui_primitives15.Button,
                   {
                     size: "sm",
                     variant: "ghost",
@@ -21902,7 +23116,7 @@ function TaskTab(props) {
                   }
                 ),
                 /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
-                  import_dsh_client_ui_primitives14.Button,
+                  import_dsh_client_ui_primitives15.Button,
                   {
                     size: "sm",
                     variant: "ghost",
@@ -21936,7 +23150,7 @@ function TaskTab(props) {
         ] }, `${issue2.kind}:${issue2.taskId}:${String(index)}`)) }),
         /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("p", { className: TaskTab_default.issueHint, children: t("repairTaskListHint") }),
         /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
-          import_dsh_client_ui_primitives14.Button,
+          import_dsh_client_ui_primitives15.Button,
           {
             size: "sm",
             variant: "outline",
@@ -22012,12 +23226,309 @@ function TaskTab(props) {
 }
 
 // packages/client/ui-settings-session-orchestrator/src/client/BoardTab.tsx
+var import_react13 = require("react");
+var import_dsh_client_ui_primitives18 = require("@deepseek-ai/dsh-client-ui-primitives");
+
+// packages/client/ui-settings-session-orchestrator/src/client/ConversationDialogs.tsx
 var import_react11 = require("react");
 var import_dsh_client_ui_primitives16 = require("@deepseek-ai/dsh-client-ui-primitives");
 
+// packages/client/ui-settings-session-orchestrator/src/client/ConversationDialogs.module.css
+var ConversationDialogs_default = {
+  body: "ConversationDialogs_body",
+  hint: "ConversationDialogs_hint",
+  future: "ConversationDialogs_future",
+  futureList: "ConversationDialogs_futureList"
+};
+
+// packages/client/ui-settings-session-orchestrator/src/client/ConversationDialogs.tsx
+var import_jsx_runtime16 = require("react/jsx-runtime");
+function routeKey2(provider, model) {
+  return `${provider}/${model}`;
+}
+function choiceOf2(choices, key2) {
+  return choices.find((choice) => routeKey2(choice.provider, choice.model) === key2);
+}
+function ConversationModelDialog({
+  t,
+  open,
+  models,
+  currentModel,
+  futureTasks,
+  muted,
+  disabled = false,
+  onCancel,
+  onApply
+}) {
+  const [route, setRoute] = (0, import_react11.useState)("");
+  const [effort, setEffort] = (0, import_react11.useState)("");
+  const [applyFuture, setApplyFuture] = (0, import_react11.useState)(false);
+  const [futureIds, setFutureIds] = (0, import_react11.useState)(/* @__PURE__ */ new Set());
+  const [mute, setMute] = (0, import_react11.useState)(false);
+  (0, import_react11.useEffect)(() => {
+    if (!open) return;
+    const advertised = models.choices;
+    const initial = currentModel.kind === "fixed" ? choiceOf2(advertised, routeKey2(currentModel.provider, currentModel.model)) : pinnedRouteOf(advertised);
+    setRoute(initial === void 0 ? "" : routeKey2(initial.provider, initial.model));
+    setEffort(initial?.defaultReasoningEffort ?? "");
+    setApplyFuture(false);
+    setFutureIds(new Set(futureTasks.map((task) => task.id)));
+    setMute(false);
+  }, [open]);
+  const selected = choiceOf2(models.choices, route);
+  const reasoning = selected?.reasoningEfforts ?? [];
+  const available = models.phase === "ready" && models.choices.length > 0;
+  const allSelected = futureTasks.every((task) => futureIds.has(task.id));
+  const apply3 = () => {
+    if (selected === void 0) return;
+    onApply({
+      model: {
+        kind: "fixed",
+        provider: selected.provider,
+        model: selected.model,
+        ...effort === "" ? {} : { reasoningEffort: effort }
+      },
+      futureTaskIds: applyFuture ? [...futureIds] : [],
+      muteQueuePrompt: mute
+    });
+  };
+  return /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(
+    import_dsh_client_ui_primitives16.Modal,
+    {
+      open,
+      onClose: onCancel,
+      title: t("conversationSwitchTitle"),
+      closeLabel: t("close"),
+      className: QueueDeleteDialog_default.dialog,
+      contentClassName: QueueDeleteDialog_default.content,
+      footer: /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(import_jsx_runtime16.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(import_dsh_client_ui_primitives16.Button, { variant: "outline", className: QueueDeleteDialog_default.action, onClick: onCancel, children: t("cancel") }),
+        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+          import_dsh_client_ui_primitives16.Button,
+          {
+            variant: "primary",
+            className: QueueDeleteDialog_default.confirm,
+            disabled: disabled || selected === void 0,
+            onClick: apply3,
+            children: t("conversationSwitchApply")
+          }
+        )
+      ] }),
+      children: [
+        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { className: ConversationDialogs_default.body, children: t("conversationSwitchBody") }),
+        available ? /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(import_jsx_runtime16.Fragment, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+            SelectField,
+            {
+              label: t("boardModel"),
+              value: route,
+              options: models.choices.map((choice) => ({
+                value: routeKey2(choice.provider, choice.model),
+                label: choice.isDefault === true ? `${choice.providerName} \xB7 ${choice.modelName} \xB7 ${t("modelDefaultTag")}` : `${choice.providerName} \xB7 ${choice.modelName}`
+              })),
+              disabled,
+              onChange: (key2) => {
+                const next = choiceOf2(models.choices, key2);
+                setRoute(key2);
+                setEffort(next?.defaultReasoningEffort ?? "");
+              }
+            }
+          ),
+          reasoning.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+            SelectField,
+            {
+              label: t("modelReasoning"),
+              value: effort,
+              options: [
+                { value: "", label: t("modelReasoningDefault") },
+                ...reasoning.map((item) => ({ value: item.id, label: item.name }))
+              ],
+              disabled,
+              onChange: setEffort
+            }
+          )
+        ] }) : /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { className: ConversationDialogs_default.hint, children: t("conversationModelRequired") }),
+        muted ? /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { className: ConversationDialogs_default.hint, children: t("conversationSwitchMutedHint") }) : /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(import_jsx_runtime16.Fragment, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+            import_dsh_client_ui_primitives16.Checkbox,
+            {
+              checked: applyFuture,
+              disabled,
+              label: t("conversationSwitchFuture"),
+              onChange: setApplyFuture
+            }
+          ),
+          applyFuture && /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: ConversationDialogs_default.future, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("p", { className: ConversationDialogs_default.hint, children: [
+              t("conversationSwitchFutureHint"),
+              " \xB7 ",
+              t("conversationFutureCount", { count: futureTasks.length })
+            ] }),
+            futureTasks.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { className: ConversationDialogs_default.hint, children: t("emptyTasks") }) : /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(import_jsx_runtime16.Fragment, { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+                import_dsh_client_ui_primitives16.Checkbox,
+                {
+                  checked: allSelected,
+                  disabled,
+                  label: t("conversationSwitchAll"),
+                  onChange: (checked) => {
+                    setFutureIds(checked ? new Set(futureTasks.map((task) => task.id)) : /* @__PURE__ */ new Set());
+                  }
+                }
+              ),
+              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { className: ConversationDialogs_default.futureList, children: futureTasks.map((task) => /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+                import_dsh_client_ui_primitives16.Checkbox,
+                {
+                  checked: futureIds.has(task.id),
+                  disabled,
+                  label: task.title,
+                  onChange: (checked) => {
+                    setFutureIds((current) => {
+                      const next = new Set(current);
+                      if (checked) next.add(task.id);
+                      else next.delete(task.id);
+                      return next;
+                    });
+                  }
+                },
+                task.id
+              )) })
+            ] })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+            import_dsh_client_ui_primitives16.Checkbox,
+            {
+              checked: mute,
+              disabled,
+              label: t("conversationSwitchMute"),
+              onChange: setMute
+            }
+          )
+        ] })
+      ]
+    }
+  );
+}
+function ConversationFollowUpDialog({
+  t,
+  open,
+  disabled = false,
+  onCancel,
+  onApply
+}) {
+  const [prompt, setPrompt] = (0, import_react11.useState)("");
+  (0, import_react11.useEffect)(() => {
+    if (!open) setPrompt("");
+  }, [open]);
+  return /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+    import_dsh_client_ui_primitives16.Modal,
+    {
+      open,
+      onClose: onCancel,
+      title: t("conversationFollowUpTitle"),
+      closeLabel: t("close"),
+      className: QueueDeleteDialog_default.dialog,
+      contentClassName: QueueDeleteDialog_default.content,
+      footer: /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(import_jsx_runtime16.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(import_dsh_client_ui_primitives16.Button, { variant: "outline", className: QueueDeleteDialog_default.action, onClick: onCancel, children: t("cancel") }),
+        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+          import_dsh_client_ui_primitives16.Button,
+          {
+            variant: "primary",
+            className: QueueDeleteDialog_default.confirm,
+            disabled: disabled || prompt.trim() === "",
+            onClick: () => {
+              onApply(prompt.trim());
+            },
+            children: t("conversationFollowUpApply")
+          }
+        )
+      ] }),
+      children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+        TextAreaField,
+        {
+          label: t("conversationFollowUpLabel"),
+          hint: t("conversationFollowUpHint"),
+          value: prompt,
+          rows: 4,
+          disabled,
+          onChange: setPrompt
+        }
+      )
+    }
+  );
+}
+function ConversationDeleteDialog({
+  t,
+  open,
+  disabled = false,
+  hasSession,
+  onCancel,
+  onConfirm
+}) {
+  const [archive, setArchive] = (0, import_react11.useState)(false);
+  const [acknowledged, setAcknowledged] = (0, import_react11.useState)(false);
+  (0, import_react11.useEffect)(() => {
+    if (!open) {
+      setArchive(false);
+      setAcknowledged(false);
+    }
+  }, [open]);
+  return /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(
+    import_dsh_client_ui_primitives16.Modal,
+    {
+      open,
+      onClose: onCancel,
+      title: t("conversationDeleteTitle"),
+      closeLabel: t("close"),
+      className: QueueDeleteDialog_default.dialog,
+      contentClassName: QueueDeleteDialog_default.content,
+      footer: /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(import_jsx_runtime16.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(import_dsh_client_ui_primitives16.Button, { variant: "outline", className: QueueDeleteDialog_default.action, onClick: onCancel, children: t("cancel") }),
+        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+          import_dsh_client_ui_primitives16.Button,
+          {
+            variant: "primary",
+            className: QueueDeleteDialog_default.confirm,
+            disabled: disabled || !acknowledged,
+            onClick: () => {
+              onConfirm(archive);
+            },
+            children: t("conversationDeleteApply")
+          }
+        )
+      ] }),
+      children: [
+        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { className: QueueDeleteDialog_default.notice, children: t("conversationDeleteBody") }),
+        /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: QueueDeleteDialog_default.archiveBlock, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+            import_dsh_client_ui_primitives16.Checkbox,
+            {
+              checked: archive,
+              disabled: disabled || !hasSession,
+              label: t("conversationDeleteArchive"),
+              onChange: setArchive
+            }
+          ),
+          /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { className: QueueDeleteDialog_default.hint, children: hasSession ? t("conversationDeleteArchiveHint") : t("conversationDeleteNoSession") })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { className: QueueDeleteDialog_default.acknowledgeRow, children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+          import_dsh_client_ui_primitives16.Checkbox,
+          {
+            checked: acknowledged,
+            disabled,
+            label: t("conversationDeleteAcknowledge"),
+            onChange: setAcknowledged
+          }
+        ) })
+      ]
+    }
+  );
+}
+
 // packages/client/ui-settings-session-orchestrator/src/client/RunActions.tsx
-var import_react10 = require("react");
-var import_dsh_client_ui_primitives15 = require("@deepseek-ai/dsh-client-ui-primitives");
+var import_react12 = require("react");
+var import_dsh_client_ui_primitives17 = require("@deepseek-ai/dsh-client-ui-primitives");
 
 // packages/client/ui-settings-session-orchestrator/src/client/RunActions.module.css
 var RunActions_default = {
@@ -22028,11 +23539,11 @@ var RunActions_default = {
 };
 
 // packages/client/ui-settings-session-orchestrator/src/client/RunActions.tsx
-var import_jsx_runtime16 = require("react/jsx-runtime");
+var import_jsx_runtime17 = require("react/jsx-runtime");
 function RunActions({ t, run, taskTitle, disabled, onCancel, onRetry, onSkip }) {
-  const [pending, setPending] = (0, import_react10.useState)();
-  const [actor, setActor] = (0, import_react10.useState)("");
-  const [reason, setReason] = (0, import_react10.useState)("");
+  const [pending, setPending] = (0, import_react12.useState)();
+  const [actor, setActor] = (0, import_react12.useState)("");
+  const [reason, setReason] = (0, import_react12.useState)("");
   const acting = disabled;
   const requiredSkipsMissing = actor.trim() === "" || reason.trim() === "";
   const confirm = () => {
@@ -22042,10 +23553,10 @@ function RunActions({ t, run, taskTitle, disabled, onCancel, onRetry, onSkip }) 
     if (action === "retry") void onRetry(run.id);
     if (action === "skip") void onSkip(run.id, actor, reason);
   };
-  return /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: RunActions_default.controls, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: RunActions_default.buttons, children: [
-      canCancelRun(run.state) && /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
-        import_dsh_client_ui_primitives15.Button,
+  return /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: RunActions_default.controls, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: RunActions_default.buttons, children: [
+      canCancelRun(run.state) && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+        import_dsh_client_ui_primitives17.Button,
         {
           size: "sm",
           variant: "outline",
@@ -22057,8 +23568,8 @@ function RunActions({ t, run, taskTitle, disabled, onCancel, onRetry, onSkip }) 
           children: t("runCardCancel")
         }
       ),
-      canRetryRun(run) && /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
-        import_dsh_client_ui_primitives15.Button,
+      canRetryRun(run) && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+        import_dsh_client_ui_primitives17.Button,
         {
           size: "sm",
           variant: "outline",
@@ -22072,11 +23583,11 @@ function RunActions({ t, run, taskTitle, disabled, onCancel, onRetry, onSkip }) 
         }
       )
     ] }),
-    canSkipRun(run) && /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: RunActions_default.skip, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("label", { className: RunActions_default.skipField, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("span", { children: t("skipActor") }),
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
-          import_dsh_client_ui_primitives15.Input,
+    canSkipRun(run) && /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: RunActions_default.skip, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("label", { className: RunActions_default.skipField, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("span", { children: t("skipActor") }),
+        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+          import_dsh_client_ui_primitives17.Input,
           {
             value: actor,
             disabled: acting,
@@ -22086,10 +23597,10 @@ function RunActions({ t, run, taskTitle, disabled, onCancel, onRetry, onSkip }) 
           }
         )
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("label", { className: RunActions_default.skipField, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("span", { children: t("skipReason") }),
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
-          import_dsh_client_ui_primitives15.Input,
+      /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("label", { className: RunActions_default.skipField, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("span", { children: t("skipReason") }),
+        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+          import_dsh_client_ui_primitives17.Input,
           {
             value: reason,
             disabled: acting,
@@ -22099,8 +23610,8 @@ function RunActions({ t, run, taskTitle, disabled, onCancel, onRetry, onSkip }) 
           }
         )
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
-        import_dsh_client_ui_primitives15.Button,
+      /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+        import_dsh_client_ui_primitives17.Button,
         {
           size: "sm",
           variant: "outline",
@@ -22113,7 +23624,7 @@ function RunActions({ t, run, taskTitle, disabled, onCancel, onRetry, onSkip }) 
         }
       )
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+    /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
       DangerConfirm,
       {
         t,
@@ -22160,7 +23671,7 @@ var BoardTab_default = {
 };
 
 // packages/client/ui-settings-session-orchestrator/src/client/BoardTab.tsx
-var import_jsx_runtime17 = require("react/jsx-runtime");
+var import_jsx_runtime18 = require("react/jsx-runtime");
 function elapsedLabel(ms) {
   const totalSeconds = Math.max(0, Math.floor(ms / 1e3));
   const hours = Math.floor(totalSeconds / 3600);
@@ -22217,19 +23728,76 @@ function orderedTasks2(queue, tasks) {
   }
   return [...ordered, ...byId.values()];
 }
-function TaskRow({ task, run, now, t, actions, busy, child }) {
-  const [detailsOpen, setDetailsOpen] = (0, import_react11.useState)(false);
+function TaskRow({ task, run, now, t, actions, busy, child, queue, tasks, runs, models }) {
+  const [detailsOpen, setDetailsOpen] = (0, import_react13.useState)(false);
+  const [modelOpen, setModelOpen] = (0, import_react13.useState)(false);
+  const [followOpen, setFollowOpen] = (0, import_react13.useState)(false);
+  const [rerunOpen, setRerunOpen] = (0, import_react13.useState)(false);
+  const [deleteOpen, setDeleteOpen] = (0, import_react13.useState)(false);
   const elapsed = run === void 0 ? 0 : (run.updatedAt || now) - run.createdAt;
   const tokens = run?.pressure?.totalTokens ?? 0;
   const hitRate = run?.health?.cacheHitRate;
   const session = run?.session ?? task.session;
-  return /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("li", { className: child ? `${BoardTab_default.row} ${BoardTab_default.childRow}` : BoardTab_default.row, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: BoardTab_default.rowTop, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(import_dsh_client_ui_primitives16.StateDot, { state: run === void 0 ? "idle" : runStateTone(run.state) }),
-      /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("span", { className: BoardTab_default.title, children: child ? t("runningChild", { title: task.title }) : task.title }),
-      /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(import_dsh_client_ui_primitives16.Tag, { tone: stateTone(run), children: stateLabel(run, t) }),
-      /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: BoardTab_default.rowActions, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+  const hasSession = session !== void 0;
+  const active = run !== void 0 && canCancelRun(run.state);
+  const conversationDisabled = !hasSession || active;
+  const currentModel = run?.configSnapshot === void 0 ? task.model : {
+    kind: "fixed",
+    provider: run.configSnapshot.provider,
+    model: run.configSnapshot.model,
+    ...run.configSnapshot.reasoningEffort === void 0 ? {} : { reasoningEffort: run.configSnapshot.reasoningEffort }
+  };
+  const started = new Set(runs.map((candidate) => candidate.taskId));
+  const futureTasks = tasks.filter((candidate) => candidate.queueId === queue.id && candidate.id !== task.id && !started.has(candidate.id));
+  const menuItems = [
+    {
+      id: "switch-model",
+      label: t("conversationSwitchModel"),
+      disabled: conversationDisabled,
+      onSelect: () => {
+        setModelOpen(true);
+      }
+    },
+    {
+      id: "follow-up",
+      label: t("conversationFollowUp"),
+      disabled: conversationDisabled,
+      onSelect: () => {
+        setFollowOpen(true);
+      }
+    },
+    {
+      id: "rerun",
+      label: t("conversationRerun"),
+      disabled: conversationDisabled,
+      onSelect: () => {
+        setRerunOpen(true);
+      }
+    },
+    {
+      id: "delete",
+      label: t("conversationDelete"),
+      tone: "danger",
+      disabled: conversationDisabled,
+      onSelect: () => {
+        setDeleteOpen(true);
+      }
+    },
+    {
+      id: "run-actions",
+      label: detailsOpen ? t("conversationHideRunActions") : t("conversationRunActions"),
+      onSelect: () => {
+        setDetailsOpen((value) => !value);
+      }
+    }
+  ];
+  return /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("li", { className: child ? `${BoardTab_default.row} ${BoardTab_default.childRow}` : BoardTab_default.row, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: BoardTab_default.rowTop, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(import_dsh_client_ui_primitives18.StateDot, { state: run === void 0 ? "idle" : runStateTone(run.state) }),
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("span", { className: BoardTab_default.title, children: child ? t("runningChild", { title: task.title }) : task.title }),
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(import_dsh_client_ui_primitives18.Tag, { tone: stateTone(run), children: stateLabel(run, t) }),
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: BoardTab_default.rowActions, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(
           SessionRoute,
           {
             session,
@@ -22242,44 +23810,39 @@ function TaskRow({ task, run, now, t, actions, busy, child }) {
             }
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
-          import_dsh_client_ui_primitives16.Button,
+        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(
+          RowMenu,
           {
-            size: "sm",
-            variant: "ghost",
+            label: `${t("conversationMenu")} ${task.title}`,
             disabled: busy,
-            "aria-label": `${t("boardDetails")} ${task.title}`,
-            onClick: () => {
-              setDetailsOpen((value) => !value);
-            },
-            children: detailsOpen ? t("boardHideDetails") : t("boardDetails")
+            items: menuItems
           }
         )
       ] })
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: BoardTab_default.metrics, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("span", { className: BoardTab_default.metric, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: BoardTab_default.metrics, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("span", { className: BoardTab_default.metric, children: [
         t("runningElapsed"),
         " ",
         elapsedLabel(elapsed)
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("span", { className: BoardTab_default.metric, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("span", { className: BoardTab_default.metric, children: [
         t("runningCredits"),
         " ",
         tokenLabel(tokens)
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("span", { className: BoardTab_default.metric, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("span", { className: BoardTab_default.metric, children: [
         t("runningHitRate"),
         " ",
         hitRate === void 0 ? "\u2014" : `${Math.round(hitRate * 100)}%`
       ] })
     ] }),
-    run?.lastError !== void 0 && /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("p", { className: BoardTab_default.error, children: [
+    run?.lastError !== void 0 && /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("p", { className: BoardTab_default.error, children: [
       t("runFailedNotice"),
       " ",
       failureReason(run.lastError, t)
     ] }),
-    detailsOpen && /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("div", { className: BoardTab_default.details, children: run === void 0 ? /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("p", { className: BoardTab_default.empty, children: t("boardNoActivity") }) : /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+    detailsOpen && /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { className: BoardTab_default.details, children: run === void 0 ? /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { className: BoardTab_default.empty, children: t("boardNoActivity") }) : /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(
       RunActions,
       {
         t,
@@ -22290,43 +23853,120 @@ function TaskRow({ task, run, now, t, actions, busy, child }) {
         onRetry: actions.retryRun,
         onSkip: actions.skipRun
       }
-    ) })
+    ) }),
+    /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(
+      ConversationModelDialog,
+      {
+        t,
+        open: modelOpen,
+        models,
+        currentModel,
+        futureTasks,
+        muted: actions.modelSwitchPromptMuted(queue.id),
+        disabled: busy,
+        onCancel: () => {
+          setModelOpen(false);
+        },
+        onApply: (choice) => {
+          void actions.switchConversationModel({
+            taskId: task.id,
+            ...session === void 0 ? {} : { sessionId: session.sessionId },
+            model: choice.model,
+            ...choice.futureTaskIds.length === 0 ? {} : { applyFutureTaskIds: choice.futureTaskIds },
+            ...choice.muteQueuePrompt ? { muteQueuePrompt: true } : {}
+          }).then((ok) => {
+            if (ok) setModelOpen(false);
+          });
+        }
+      }
+    ),
+    /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(
+      ConversationFollowUpDialog,
+      {
+        t,
+        open: followOpen,
+        disabled: busy,
+        onCancel: () => {
+          setFollowOpen(false);
+        },
+        onApply: (prompt) => {
+          void actions.followUpConversation({ taskId: task.id, prompt }).then((ok) => {
+            if (ok) setFollowOpen(false);
+          });
+        }
+      }
+    ),
+    /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(
+      DangerConfirm,
+      {
+        t,
+        open: rerunOpen,
+        title: t("conversationRerunTitle"),
+        body: t("conversationRerunBody", { title: task.title }),
+        disabled: busy,
+        onCancel: () => {
+          setRerunOpen(false);
+        },
+        onConfirm: () => {
+          void actions.rerunConversation(task.id, t("conversationRerun")).then((ok) => {
+            if (ok) setRerunOpen(false);
+          });
+        }
+      }
+    ),
+    /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(
+      ConversationDeleteDialog,
+      {
+        t,
+        open: deleteOpen,
+        disabled: busy,
+        hasSession,
+        onCancel: () => {
+          setDeleteOpen(false);
+        },
+        onConfirm: (archiveSession) => {
+          void actions.deleteConversation({ taskId: task.id, archiveSession }).then((ok) => {
+            if (ok) setDeleteOpen(false);
+          });
+        }
+      }
+    )
   ] });
 }
 function QueueBlock({ queue, tasks, runs, now, t, live, actions, busy }) {
-  const [open, setOpen] = (0, import_react11.useState)(true);
-  const [adding, setAdding] = (0, import_react11.useState)(false);
-  const [prompt, setPrompt] = (0, import_react11.useState)("");
-  const [presetId, setPresetId] = (0, import_react11.useState)("");
-  const [renaming, setRenaming] = (0, import_react11.useState)(false);
-  const [deleting, setDeleting] = (0, import_react11.useState)(false);
+  const [open, setOpen] = (0, import_react13.useState)(true);
+  const [adding, setAdding] = (0, import_react13.useState)(false);
+  const [prompt, setPrompt] = (0, import_react13.useState)("");
+  const [presetId, setPresetId] = (0, import_react13.useState)("");
+  const [renaming, setRenaming] = (0, import_react13.useState)(false);
+  const [deleting, setDeleting] = (0, import_react13.useState)(false);
   const rows = orderedTasks2(queue, tasks);
   const rowIds = new Set(rows.map((row) => row.id));
   const hasSessions = rows.some((row) => row.session !== void 0) || runs.some((run) => rowIds.has(run.taskId));
   const liveRun = runs.some((run) => rowIds.has(run.taskId) && canCancelRun(run.state));
-  return /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("section", { className: BoardTab_default.queue, "aria-label": queue.title, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("header", { className: BoardTab_default.queueHead, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: BoardTab_default.queueIdentity, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("h3", { className: BoardTab_default.queueTitle, children: queue.title }),
-        /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: BoardTab_default.queueMeta, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(import_dsh_client_ui_primitives16.Tag, { tone: queue.state === "running" ? "success" : queue.state === "aborted" ? "danger" : "quiet", children: queue.state === "running" ? t("queueStateRunning") : queue.state === "paused" ? t("queueStatePaused") : queue.state === "aborted" ? t("queueStateAborted") : t("queueStateIdle") }),
-          /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("span", { className: BoardTab_default.metaText, children: queue.cwd ?? queue.workspaceId ?? "\u2014" }),
-          /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("span", { className: BoardTab_default.metaText, children: t("queueTaskCount", { count: rows.length }) })
+  return /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("section", { className: BoardTab_default.queue, "aria-label": queue.title, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("header", { className: BoardTab_default.queueHead, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: BoardTab_default.queueIdentity, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("h3", { className: BoardTab_default.queueTitle, children: queue.title }),
+        /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: BoardTab_default.queueMeta, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(import_dsh_client_ui_primitives18.Tag, { tone: queue.state === "running" ? "success" : queue.state === "aborted" ? "danger" : "quiet", children: queue.state === "running" ? t("queueStateRunning") : queue.state === "paused" ? t("queueStatePaused") : queue.state === "aborted" ? t("queueStateAborted") : t("queueStateIdle") }),
+          /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("span", { className: BoardTab_default.metaText, children: queue.cwd ?? queue.workspaceId ?? "\u2014" }),
+          /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("span", { className: BoardTab_default.metaText, children: t("queueTaskCount", { count: rows.length }) })
         ] })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: BoardTab_default.queueActions, children: [
-        queue.state === "running" ? /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(import_dsh_client_ui_primitives16.Button, { size: "sm", variant: "outline", disabled: busy, onClick: () => {
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: BoardTab_default.queueActions, children: [
+        queue.state === "running" ? /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(import_dsh_client_ui_primitives18.Button, { size: "sm", variant: "outline", disabled: busy, onClick: () => {
           void actions.pauseQueue(queue.id);
-        }, children: t("queuePause") }) : /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(import_dsh_client_ui_primitives16.Button, { size: "sm", variant: "primary", disabled: busy, onClick: () => {
+        }, children: t("queuePause") }) : /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(import_dsh_client_ui_primitives18.Button, { size: "sm", variant: "primary", disabled: busy, onClick: () => {
           void actions.startQueue(queue.id);
         }, children: t("queueStart") }),
-        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(import_dsh_client_ui_primitives16.Button, { size: "sm", variant: "ghost", onClick: () => {
+        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(import_dsh_client_ui_primitives18.Button, { size: "sm", variant: "ghost", onClick: () => {
           setOpen((value) => !value);
         }, children: open ? t("composerCollapse") : t("composerExpand") })
       ] })
     ] }),
-    open && /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)(import_jsx_runtime17.Fragment, { children: [
-      rows.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("p", { className: BoardTab_default.empty, children: t("emptyTasks") }) : /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("ul", { className: BoardTab_default.rows, children: rows.map((task) => /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+    open && /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)(import_jsx_runtime18.Fragment, { children: [
+      rows.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { className: BoardTab_default.empty, children: t("emptyTasks") }) : /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("ul", { className: BoardTab_default.rows, children: rows.map((task) => /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(
         TaskRow,
         {
           task,
@@ -22335,12 +23975,16 @@ function QueueBlock({ queue, tasks, runs, now, t, live, actions, busy }) {
           t,
           actions,
           busy,
-          child: task.parentTaskId !== void 0
+          child: task.parentTaskId !== void 0,
+          queue,
+          tasks: rows,
+          runs,
+          models: live.models
         },
         task.id
       )) }),
-      adding ? /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: BoardTab_default.tempAdd, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+      adding ? /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: BoardTab_default.tempAdd, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(
           TextAreaField,
           {
             label: t("runningTempAdd"),
@@ -22351,8 +23995,8 @@ function QueueBlock({ queue, tasks, runs, now, t, live, actions, busy }) {
             onChange: setPrompt
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: BoardTab_default.tempGrid, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: BoardTab_default.tempGrid, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(
             SelectField,
             {
               label: t("composerSkills"),
@@ -22368,9 +24012,9 @@ function QueueBlock({ queue, tasks, runs, now, t, live, actions, busy }) {
               onChange: setPresetId
             }
           ),
-          /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: BoardTab_default.tempActions, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
-              import_dsh_client_ui_primitives16.Button,
+          /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: BoardTab_default.tempActions, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(
+              import_dsh_client_ui_primitives18.Button,
               {
                 size: "sm",
                 variant: "primary",
@@ -22389,19 +24033,19 @@ function QueueBlock({ queue, tasks, runs, now, t, live, actions, busy }) {
                 children: t("composerSend")
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(import_dsh_client_ui_primitives16.Button, { size: "sm", variant: "ghost", onClick: () => {
+            /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(import_dsh_client_ui_primitives18.Button, { size: "sm", variant: "ghost", onClick: () => {
               setAdding(false);
             }, children: t("cancel") })
           ] })
         ] })
-      ] }) : /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)(import_dsh_client_ui_primitives16.Button, { size: "sm", variant: "ghost", disabled: busy, onClick: () => {
+      ] }) : /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)(import_dsh_client_ui_primitives18.Button, { size: "sm", variant: "ghost", disabled: busy, onClick: () => {
         setAdding(true);
       }, children: [
         "+ ",
         t("runningTempAdd")
       ] })
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("div", { className: BoardTab_default.queueFoot, children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+    /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { className: BoardTab_default.queueFoot, children: /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(
       RowMenu,
       {
         label: t("queueMenu"),
@@ -22422,7 +24066,7 @@ function QueueBlock({ queue, tasks, runs, now, t, live, actions, busy }) {
         ]
       }
     ) }),
-    /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+    /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(
       RenameDialog,
       {
         t,
@@ -22440,7 +24084,7 @@ function QueueBlock({ queue, tasks, runs, now, t, live, actions, busy }) {
         }
       }
     ),
-    /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+    /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(
       QueueDeleteDialog,
       {
         t,
@@ -22468,8 +24112,8 @@ function BoardTab({ t, live, drafts, now, actions }) {
   const currentRuns = live.tasks.map((task) => latestRunOf(live.runs, task.id));
   const active = currentRuns.filter((run) => run !== void 0 && (run.state === "starting" || run.state === "running" || run.state === "handoff-pending" || run.state === "handing-off")).length;
   const attention = currentRuns.filter((run) => run?.state === "needs-attention").length;
-  return /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("div", { className: BoardTab_default.tab, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+  return /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: BoardTab_default.tab, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(
       Summary,
       {
         label: t("tabBoard"),
@@ -22480,10 +24124,10 @@ function BoardTab({ t, live, drafts, now, actions }) {
         ]
       }
     ),
-    queues.length === 0 && orphans.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("section", { className: BoardTab_default.emptyCard, "aria-label": t("runningEmpty"), children: [
-      /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("span", { className: BoardTab_default.emptyMark, "aria-hidden": "true", children: "\u2014" }),
-      /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("p", { className: BoardTab_default.empty, children: t("runningEmpty") })
-    ] }) : queues.map((queue) => /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+    queues.length === 0 && orphans.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("section", { className: BoardTab_default.emptyCard, "aria-label": t("runningEmpty"), children: [
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("span", { className: BoardTab_default.emptyMark, "aria-hidden": "true", children: "\u2014" }),
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { className: BoardTab_default.empty, children: t("runningEmpty") })
+    ] }) : queues.map((queue) => /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(
       QueueBlock,
       {
         queue,
@@ -22497,9 +24141,9 @@ function BoardTab({ t, live, drafts, now, actions }) {
       },
       queue.id
     )),
-    orphans.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime17.jsxs)("section", { className: BoardTab_default.queue, "aria-label": t("runningOther"), children: [
-      /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("header", { className: BoardTab_default.queueHead, children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("h3", { className: BoardTab_default.queueTitle, children: t("runningOther") }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("ul", { className: BoardTab_default.rows, children: orphans.map((task) => /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+    orphans.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("section", { className: BoardTab_default.queue, "aria-label": t("runningOther"), children: [
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("header", { className: BoardTab_default.queueHead, children: /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("h3", { className: BoardTab_default.queueTitle, children: t("runningOther") }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("ul", { className: BoardTab_default.rows, children: orphans.map((task) => /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(
         TaskRow,
         {
           task,
@@ -22508,7 +24152,18 @@ function BoardTab({ t, live, drafts, now, actions }) {
           t,
           actions,
           busy,
-          child: task.parentTaskId !== void 0
+          child: task.parentTaskId !== void 0,
+          queue: live.queues.find((candidate) => candidate.id === task.queueId) ?? {
+            id: task.queueId,
+            title: task.queueId,
+            taskOrder: [],
+            paused: false,
+            state: "idle",
+            revision: 0
+          },
+          tasks: live.tasks,
+          runs: live.runs,
+          models: live.models
         },
         task.id
       )) })
@@ -22517,8 +24172,12 @@ function BoardTab({ t, live, drafts, now, actions }) {
 }
 
 // packages/client/ui-settings-session-orchestrator/src/client/PressureTab.tsx
-var import_react12 = require("react");
-var import_dsh_client_ui_primitives17 = require("@deepseek-ai/dsh-client-ui-primitives");
+var import_react16 = require("react");
+var import_dsh_client_ui_primitives20 = require("@deepseek-ai/dsh-client-ui-primitives");
+
+// packages/client/ui-settings-session-orchestrator/src/client/AutomationDialog.tsx
+var import_react14 = require("react");
+var import_dsh_client_ui_primitives19 = require("@deepseek-ai/dsh-client-ui-primitives");
 
 // packages/client/ui-settings-session-orchestrator/src/client/PressureTab.module.css
 var PressureTab_default = {
@@ -22539,23 +24198,618 @@ var PressureTab_default = {
   details: "PressureTab_details",
   disclosure: "PressureTab_disclosure",
   note: "PressureTab_note",
-  empty: "PressureTab_empty"
+  empty: "PressureTab_empty",
+  intro: "PressureTab_intro",
+  queueModels: "PressureTab_queueModels",
+  queueModel: "PressureTab_queueModel",
+  queueModelHead: "PressureTab_queueModelHead",
+  queueModelFoot: "PressureTab_queueModelFoot",
+  queueModelIdentity: "PressureTab_queueModelIdentity",
+  modelGrid: "PressureTab_modelGrid",
+  formGrid: "PressureTab_formGrid",
+  formFoot: "PressureTab_formFoot",
+  clearBox: "PressureTab_clearBox",
+  clearMark: "PressureTab_clearMark",
+  clearTitle: "PressureTab_clearTitle",
+  clearBody: "PressureTab_clearBody",
+  tableWrap: "PressureTab_tableWrap",
+  table: "PressureTab_table",
+  tableStrong: "PressureTab_tableStrong",
+  tableMuted: "PressureTab_tableMuted",
+  noticeText: "PressureTab_noticeText",
+  savingsGrid: "PressureTab_savingsGrid",
+  savingCell: "PressureTab_savingCell",
+  savingLabel: "PressureTab_savingLabel",
+  savingValue: "PressureTab_savingValue",
+  feedbackGrid: "PressureTab_feedbackGrid",
+  feedbackCard: "PressureTab_feedbackCard",
+  feedbackWarn: "PressureTab_feedbackWarn",
+  feedbackHead: "PressureTab_feedbackHead",
+  feedbackBody: "PressureTab_feedbackBody",
+  strategyRow: "PressureTab_strategyRow",
+  strategyLabel: "PressureTab_strategyLabel",
+  strategyText: "PressureTab_strategyText",
+  positiveBox: "PressureTab_positiveBox",
+  positiveList: "PressureTab_positiveList",
+  beforeAfter: "PressureTab_beforeAfter",
+  compareCol: "PressureTab_compareCol",
+  compareLabel: "PressureTab_compareLabel",
+  compareText: "PressureTab_compareText",
+  compareArrow: "PressureTab_compareArrow",
+  overlay: "PressureTab_overlay",
+  dialog: "PressureTab_dialog",
+  dialogHead: "PressureTab_dialogHead",
+  dialogKicker: "PressureTab_dialogKicker",
+  dialogTitle: "PressureTab_dialogTitle",
+  dialogBody: "PressureTab_dialogBody",
+  reasonBox: "PressureTab_reasonBox",
+  reasonLabel: "PressureTab_reasonLabel",
+  reasonText: "PressureTab_reasonText",
+  dialogActions: "PressureTab_dialogActions",
+  resultBox: "PressureTab_resultBox",
+  resultText: "PressureTab_resultText"
 };
 
+// packages/client/ui-settings-session-orchestrator/src/client/AutomationDialog.tsx
+var import_jsx_runtime19 = require("react/jsx-runtime");
+function AutomationDialog({
+  t,
+  open,
+  stage,
+  reason,
+  models,
+  onConfirm,
+  onDecline,
+  onLater,
+  onApply,
+  onDone
+}) {
+  const [route, setRoute] = (0, import_react14.useState)("");
+  if (!open) return null;
+  const options = [
+    { value: "", label: t("pressureQueueModelInherit") },
+    ...models.choices.map((choice) => ({
+      value: `${choice.provider}/${choice.model}`,
+      label: `${choice.providerName} \xB7 ${choice.modelName}`
+    }))
+  ];
+  const title = stage === "ask" ? t("pressureAlertTitle") : stage === "model" ? t("pressureOptimizeTitle") : t("pressureOptimizeResultTitle");
+  return /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("div", { className: PressureTab_default.overlay, role: "presentation", children: /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("section", { className: PressureTab_default.dialog, role: "dialog", "aria-modal": "true", "aria-label": title, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("header", { className: PressureTab_default.dialogHead, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("span", { className: PressureTab_default.dialogKicker, children: t("metricSupervisor") }),
+      /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("h3", { className: PressureTab_default.dialogTitle, children: title })
+    ] }),
+    stage === "ask" && /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)(import_jsx_runtime19.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("p", { className: PressureTab_default.dialogBody, children: t("pressureAlertBody") }),
+      /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: PressureTab_default.reasonBox, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("span", { className: PressureTab_default.reasonLabel, children: t("pressureOptimizeReason") }),
+        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("p", { className: PressureTab_default.reasonText, children: reason })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: PressureTab_default.dialogActions, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(import_dsh_client_ui_primitives19.Button, { size: "sm", variant: "primary", onClick: onConfirm, children: t("pressureAlertConfirm") }),
+        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(import_dsh_client_ui_primitives19.Button, { size: "sm", variant: "outline", onClick: onDecline, children: t("pressureAlertDecline") }),
+        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(import_dsh_client_ui_primitives19.Button, { size: "sm", variant: "ghost", onClick: onLater, children: t("pressureAlertLater") })
+      ] })
+    ] }),
+    stage === "model" && /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)(import_jsx_runtime19.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("p", { className: PressureTab_default.dialogBody, children: t("pressureOptimizeBody") }),
+      /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: PressureTab_default.reasonBox, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("span", { className: PressureTab_default.reasonLabel, children: t("pressureOptimizeReason") }),
+        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("p", { className: PressureTab_default.reasonText, children: reason })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(
+        SelectField,
+        {
+          label: t("pressureOptimizeModel"),
+          hint: t("pressureOptimizeModelHint"),
+          value: route,
+          options,
+          disabled: models.phase === "loading",
+          onChange: setRoute
+        }
+      ),
+      models.phase !== "ready" && /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(import_dsh_client_ui_primitives19.Tag, { tone: "warning", children: models.phase === "loading" ? t("modelCatalogLoading") : t("modelCatalogUnavailable") }),
+      /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: PressureTab_default.dialogActions, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(import_dsh_client_ui_primitives19.Button, { size: "sm", variant: "primary", onClick: () => {
+          onApply(route);
+        }, children: t("pressureOptimizeApply") }),
+        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(import_dsh_client_ui_primitives19.Button, { size: "sm", variant: "ghost", onClick: onDecline, children: t("cancel") })
+      ] })
+    ] }),
+    stage === "result" && /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)(import_jsx_runtime19.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("p", { className: PressureTab_default.dialogBody, children: t("pressureOptimizeResultBody") }),
+      /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: PressureTab_default.resultBox, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(import_dsh_client_ui_primitives19.Tag, { tone: "success", children: t("skillsGlobalImprovementsTitle") }),
+        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("p", { className: PressureTab_default.resultText, children: t("improvementGeneratedResult") })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("div", { className: PressureTab_default.dialogActions, children: /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(import_dsh_client_ui_primitives19.Button, { size: "sm", variant: "primary", onClick: onDone, children: t("pressureOptimizeDone") }) })
+    ] })
+  ] }) });
+}
+
+// packages/client/ui-settings-session-orchestrator/src/client/studioStore.ts
+var import_react15 = require("react");
+function studioText(value, t) {
+  return value.kind === "key" ? t(value.value) : value.value;
+}
+var DEFAULT_AUTOMATION = {
+  contextThreshold: 60,
+  idleMinutes: 20,
+  cacheWarn: 90,
+  cacheAbort: 50,
+  tokenLimit: 12e4
+};
+var DEFAULT_ENGINEERING = {
+  codeParagraphLimit: 700,
+  fileSplit: "",
+  readScope: "",
+  excludeScope: "",
+  preserveContent: ""
+};
+function key(value) {
+  return { kind: "key", value };
+}
+function text(value) {
+  return { kind: "text", value };
+}
+function versions(seed, current, notes) {
+  const last = notes.length - 1;
+  return notes.map((note, index) => ({
+    id: `${seed}-v${String(index + 1)}`,
+    at: index,
+    content: key(index === last ? current : "skillSeedVersionContent"),
+    note: key(note)
+  }));
+}
+var DEFAULT_SKILLS = [
+  {
+    id: "global-user-confirm",
+    name: key("skillSeedUserConfirmName"),
+    description: key("skillSeedUserConfirmDesc"),
+    scope: "global",
+    badge: "user",
+    groupId: null,
+    enabled: true,
+    content: key("skillSeedUserConfirmBody"),
+    projectCount: 3,
+    versions: versions("global-user-confirm", "skillSeedUserConfirmBody", ["skillVersionNoteInitial", "skillVersionNoteImproved"])
+  },
+  {
+    id: "global-user-cross",
+    name: key("skillSeedUserCrossName"),
+    description: key("skillSeedUserCrossDesc"),
+    scope: "global",
+    badge: "user",
+    groupId: null,
+    enabled: true,
+    content: key("skillSeedUserCrossBody"),
+    projectCount: 2,
+    versions: versions("global-user-cross", "skillSeedUserCrossBody", ["skillVersionNoteInitial", "skillVersionNoteImproved"])
+  },
+  {
+    id: "global-pro-no-read",
+    name: key("skillSeedNoReadName"),
+    description: key("skillSeedNoReadDesc"),
+    scope: "global",
+    badge: "professional",
+    groupId: null,
+    enabled: true,
+    content: key("skillSeedNoReadBody"),
+    projectCount: 4,
+    versions: versions("global-pro-no-read", "skillSeedNoReadBody", ["skillVersionNoteInitial", "skillVersionNoteImproved"])
+  },
+  {
+    id: "global-pro-ask",
+    name: key("skillSeedAskName"),
+    description: key("skillSeedAskDesc"),
+    scope: "global",
+    badge: "professional",
+    groupId: null,
+    enabled: true,
+    content: key("skillSeedAskBody"),
+    projectCount: 2,
+    versions: versions("global-pro-ask", "skillSeedAskBody", ["skillVersionNoteInitial"])
+  },
+  {
+    id: "global-pro-doc",
+    name: key("skillSeedDocName"),
+    description: key("skillSeedDocDesc"),
+    scope: "global",
+    badge: "professional",
+    groupId: null,
+    enabled: true,
+    content: key("skillSeedDocBody"),
+    projectCount: 3,
+    versions: versions("global-pro-doc", "skillSeedDocBody", ["skillVersionNoteInitial"])
+  },
+  {
+    id: "pro-preset-review",
+    name: key("skillSeedReviewName"),
+    description: key("skillSeedReviewDesc"),
+    scope: "professional",
+    badge: "preset",
+    groupId: "group-backend",
+    enabled: true,
+    content: key("skillSeedReviewBody"),
+    projectCount: 1,
+    versions: versions("pro-preset-review", "skillSeedReviewBody", ["skillVersionNoteInitial"])
+  },
+  {
+    id: "pro-preset-split",
+    name: key("skillSeedSplitName"),
+    description: key("skillSeedSplitDesc"),
+    scope: "professional",
+    badge: "preset",
+    groupId: "group-frontend",
+    enabled: true,
+    content: key("skillSeedSplitBody"),
+    projectCount: 1,
+    versions: versions("pro-preset-split", "skillSeedSplitBody", ["skillVersionNoteInitial"])
+  },
+  {
+    id: "pro-user-migration",
+    name: key("skillSeedMigrationName"),
+    description: key("skillSeedMigrationDesc"),
+    scope: "professional",
+    badge: "custom",
+    groupId: "group-database",
+    enabled: false,
+    content: key("skillSeedMigrationBody"),
+    projectCount: 1,
+    versions: versions("pro-user-migration", "skillSeedMigrationBody", ["skillVersionNoteInitial"])
+  }
+];
+var DEFAULT_GROUPS = [
+  { id: "group-backend", name: key("skillGroupBackend"), parentId: null },
+  { id: "group-database", name: key("skillGroupDatabase"), parentId: "group-backend" },
+  { id: "group-frontend", name: key("skillGroupFrontend"), parentId: null }
+];
+var state = {
+  automation: DEFAULT_AUTOMATION,
+  engineering: DEFAULT_ENGINEERING,
+  queueModels: {},
+  skills: DEFAULT_SKILLS,
+  groups: DEFAULT_GROUPS,
+  refs: {},
+  improvements: [],
+  notices: [],
+  messages: [{ id: "butler-greeting", role: "butler", text: key("memoryGreeting"), at: 0 }],
+  alertHandled: false
+};
+var listeners = /* @__PURE__ */ new Set();
+var sequence = 0;
+function nextId(prefix) {
+  sequence += 1;
+  return `${prefix}-${String(sequence)}`;
+}
+function publish(next) {
+  state = next;
+  for (const listener of listeners) listener();
+}
+function subscribe(listener) {
+  listeners.add(listener);
+  return () => {
+    listeners.delete(listener);
+  };
+}
+function getStudioState() {
+  return state;
+}
+function useStudio() {
+  return (0, import_react15.useSyncExternalStore)(subscribe, getStudioState, getStudioState);
+}
+function saveAutomation(automation) {
+  publish({ ...state, automation, alertHandled: false });
+}
+function saveEngineering(engineering) {
+  publish({ ...state, engineering });
+}
+function saveQueueModels(queueId, selection) {
+  publish({ ...state, queueModels: { ...state.queueModels, [queueId]: selection } });
+}
+function markAlertHandled() {
+  publish({ ...state, alertHandled: true });
+}
+function setSkillEnabled(skillId, enabled) {
+  publish({
+    ...state,
+    skills: state.skills.map((skill) => skill.id === skillId ? { ...skill, enabled } : skill)
+  });
+}
+function editSkill(skillId, patch) {
+  publish({
+    ...state,
+    skills: state.skills.map((skill) => {
+      if (skill.id !== skillId) return skill;
+      const content = patch.content ?? skill.content;
+      const versions2 = patch.content === void 0 ? skill.versions : [
+        ...skill.versions,
+        {
+          id: nextId(`${skillId}-v`),
+          at: Date.now(),
+          content,
+          note: key("skillVersionNoteEdited")
+        }
+      ];
+      return {
+        ...skill,
+        ...patch.name === void 0 ? {} : { name: patch.name },
+        ...patch.description === void 0 ? {} : { description: patch.description },
+        content,
+        ...patch.groupId === void 0 ? {} : { groupId: patch.groupId },
+        versions: versions2
+      };
+    })
+  });
+}
+function restoreSkill(skillId, versionId) {
+  const skill = state.skills.find((candidate) => candidate.id === skillId);
+  const version2 = skill?.versions.find((candidate) => candidate.id === versionId);
+  if (skill === void 0 || version2 === void 0) return;
+  publish({
+    ...state,
+    skills: state.skills.map((candidate) => {
+      if (candidate.id !== skillId) return candidate;
+      return {
+        ...candidate,
+        content: version2.content,
+        versions: [
+          ...candidate.versions,
+          {
+            id: nextId(`${skillId}-v`),
+            at: Date.now(),
+            content: version2.content,
+            note: key("skillVersionNoteRestore")
+          }
+        ]
+      };
+    })
+  });
+}
+function addSkill(input) {
+  const id = nextId("skill");
+  const skill = {
+    id,
+    name: text(input.name),
+    description: text(input.description),
+    scope: input.scope ?? "professional",
+    badge: input.badge ?? (input.preset ? "preset" : "custom"),
+    groupId: input.groupId,
+    enabled: true,
+    content: text(input.content),
+    projectCount: 1,
+    versions: [{
+      id: `${id}-v1`,
+      at: Date.now(),
+      content: text(input.content),
+      note: key("skillVersionNoteInitial")
+    }]
+  };
+  publish({ ...state, skills: [...state.skills, skill] });
+}
+function addSkillGroup(name, parentId) {
+  const group = { id: nextId("group"), name: text(name), parentId };
+  publish({ ...state, groups: [...state.groups, group] });
+}
+function toggleSkillReference(queueId, taskId, skillId) {
+  const current = state.refs[queueId] ?? { global: [], tasks: {} };
+  if (taskId === null) {
+    const exists2 = current.global.includes(skillId);
+    publish({
+      ...state,
+      refs: {
+        ...state.refs,
+        [queueId]: {
+          ...current,
+          global: exists2 ? current.global.filter((id) => id !== skillId) : [...current.global, skillId]
+        }
+      }
+    });
+    return !exists2;
+  }
+  const taskRefs = current.tasks[taskId] ?? [];
+  const exists = taskRefs.includes(skillId);
+  publish({
+    ...state,
+    refs: {
+      ...state.refs,
+      [queueId]: {
+        ...current,
+        tasks: {
+          ...current.tasks,
+          [taskId]: exists ? taskRefs.filter((id) => id !== skillId) : [...taskRefs, skillId]
+        }
+      }
+    }
+  });
+  return !exists;
+}
+function addImprovement(improvement) {
+  publish({
+    ...state,
+    improvements: [{ ...improvement, id: nextId("improvement"), at: Date.now() }, ...state.improvements]
+  });
+}
+function addNotice(notice) {
+  publish({
+    ...state,
+    notices: [{ ...notice, id: nextId("notice"), at: Date.now() }, ...state.notices]
+  });
+}
+function dismissNotice(noticeId) {
+  publish({ ...state, notices: state.notices.filter((notice) => notice.id !== noticeId) });
+}
+function sendMemoryMessage(userText, reply) {
+  publish({
+    ...state,
+    messages: [
+      ...state.messages,
+      { id: nextId("message"), role: "user", text: text(userText), at: Date.now() },
+      { id: nextId("message"), role: "butler", text: reply, at: Date.now() }
+    ]
+  });
+}
+
 // packages/client/ui-settings-session-orchestrator/src/client/PressureTab.tsx
-var import_jsx_runtime18 = require("react/jsx-runtime");
+var import_jsx_runtime20 = require("react/jsx-runtime");
+function interventionKey(kind) {
+  switch (kind) {
+    case "pause-context":
+      return "pressureKindPauseContext";
+    case "pause-idle":
+      return "pressureKindPauseIdle";
+    case "decompose":
+      return "pressureKindDecompose";
+    case "refine":
+      return "pressureKindRefine";
+    case "abort-all":
+      return "pressureKindAbortAll";
+    case "stop-and-notify":
+      return "pressureKindStopNotify";
+  }
+}
+function buildDetailRows(queues, tasks, interventions, t) {
+  return [...interventions].sort((left, right) => right.createdAt - left.createdAt || left.id.localeCompare(right.id)).map((intervention) => {
+    const task = tasks.find((candidate) => candidate.id === intervention.taskId);
+    const queue = queues.find((candidate) => candidate.id === task?.queueId);
+    return {
+      id: intervention.id,
+      queueTitle: queue?.title ?? "\u2014",
+      taskTitle: task?.title ?? intervention.taskId,
+      issue: t(interventionKey(intervention.kind)),
+      reason: intervention.reason,
+      at: intervention.createdAt
+    };
+  });
+}
+function tokenLabel2(tokens) {
+  if (tokens >= 1e6) return `${(tokens / 1e6).toFixed(1)}M`;
+  if (tokens >= 1e3) return `${(tokens / 1e3).toFixed(1)}K`;
+  return String(tokens);
+}
+function QueueModelCard({ queue, t, models, value, onSave }) {
+  const [supervisor, setSupervisor] = (0, import_react16.useState)(value?.supervisor ?? "");
+  const [splitter, setSplitter] = (0, import_react16.useState)(value?.splitter ?? "");
+  const [saved, setSaved] = (0, import_react16.useState)(false);
+  const routeOptions = [
+    { value: "", label: t("pressureQueueModelInherit") },
+    ...models.choices.map((choice) => ({
+      value: `${choice.provider}/${choice.model}`,
+      label: `${choice.providerName} \xB7 ${choice.modelName}`
+    }))
+  ];
+  const ensureRoute = (route) => {
+    if (route === "" || routeOptions.some((option) => option.value === route)) return;
+    routeOptions.push({ value: route, label: route });
+  };
+  ensureRoute(supervisor);
+  ensureRoute(splitter);
+  return /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("article", { className: PressureTab_default.queueModel, "data-queue-id": queue.id, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("header", { className: PressureTab_default.queueModelHead, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: PressureTab_default.queueModelIdentity, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("h4", { className: PressureTab_default.subtitle, children: queue.title }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("span", { className: PressureTab_default.metaText, children: [
+          queue.cwd ?? queue.workspaceId ?? "\u2014",
+          " \xB7 ",
+          t("queueTaskCount", { count: queue.taskOrder.length })
+        ] })
+      ] }),
+      saved && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(import_dsh_client_ui_primitives20.Tag, { tone: "success", children: t("pressureQueueModelSaved") })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: PressureTab_default.modelGrid, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(
+        SelectField,
+        {
+          label: t("pressureQueueSupervisor"),
+          value: supervisor,
+          options: routeOptions,
+          disabled: models.phase === "loading",
+          onChange: (route) => {
+            setSupervisor(route);
+            setSaved(false);
+          }
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(
+        SelectField,
+        {
+          label: t("pressureQueueSplitter"),
+          value: splitter,
+          options: routeOptions,
+          disabled: models.phase === "loading",
+          onChange: (route) => {
+            setSplitter(route);
+            setSaved(false);
+          }
+        }
+      )
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: PressureTab_default.queueModelFoot, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: PressureTab_default.metaText, children: models.phase === "ready" ? t("modelFixedHint") : models.phase === "loading" ? t("modelCatalogLoading") : t("modelCatalogUnavailable") }),
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(
+        import_dsh_client_ui_primitives20.Button,
+        {
+          size: "sm",
+          variant: "outline",
+          disabled: models.phase === "loading",
+          onClick: () => {
+            onSave({ supervisor, splitter });
+            setSaved(true);
+          },
+          children: t("pressureQueueModelSave")
+        }
+      )
+    ] })
+  ] });
+}
+function FeedbackCell({ active, label, detail, count }) {
+  return /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("article", { className: active ? `${PressureTab_default.feedbackCard} ${PressureTab_default.feedbackWarn}` : PressureTab_default.feedbackCard, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("header", { className: PressureTab_default.feedbackHead, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: PressureTab_default.subtitle, children: label }),
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(import_dsh_client_ui_primitives20.Tag, { tone: active ? "warning" : "quiet", children: String(count) })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("p", { className: PressureTab_default.feedbackBody, children: detail })
+  ] });
+}
 function PressureTab({ t, live, drafts, now, actions }) {
   const busy = drafts.busy !== void 0;
   const settings = live.settings;
-  const [pendingHost, setPendingHost] = (0, import_react12.useState)();
+  const studio = useStudio();
+  const [pendingHost, setPendingHost] = (0, import_react16.useState)();
+  const [params, setParams] = (0, import_react16.useState)(studio.automation);
+  const [engineering, setEngineering] = (0, import_react16.useState)(studio.engineering);
+  const [dialogStage, setDialogStage] = (0, import_react16.useState)("ask");
+  const [alertMessage, setAlertMessage] = (0, import_react16.useState)("");
+  const details = buildDetailRows(live.queues, live.tasks, live.interventions, t);
+  const idleHits = live.interventions.filter((intervention) => intervention.kind === "pause-idle" || intervention.kind === "stop-and-notify").length;
+  const overBudgetRuns = live.runs.filter((run) => (run.pressure?.totalTokens ?? 0) >= studio.automation.tokenLimit);
+  const alertSource = idleHits >= 3 ? "idle" : overBudgetRuns.length > 0 ? "cost" : void 0;
+  const alertReason = alertSource === "idle" ? t("pressureAlertIdleReason") : t("pressureAlertCostReason");
+  const alertOpen = alertSource !== void 0 && !studio.alertHandled;
+  const measuredTokens = live.runs.reduce((sum, run) => sum + (run.pressure?.totalTokens ?? 0), 0);
+  const measuredMs = live.runs.reduce((sum, run) => sum + Math.max(0, run.updatedAt - run.createdAt), 0);
+  const compressed = live.interventions.filter((intervention) => intervention.kind === "pause-context" || intervention.kind === "decompose").length + live.handoffs.length;
+  const savedTokens = Math.round(measuredTokens * 0.24);
+  const savedMinutes = Math.round(measuredMs / 6e4 * 0.31);
+  const hasSavings = measuredTokens > 0 || measuredMs > 0 || compressed > 0;
+  const fileSignals = live.interventions.filter((intervention) => intervention.kind === "pause-context").length;
+  const commandSignals = live.runs.filter((run) => run.lastError !== void 0).length;
+  const timeSignals = live.interventions.filter((intervention) => intervention.kind === "pause-idle").length;
+  const tokenSignals = overBudgetRuns.length;
+  const hasWaste = fileSignals + commandSignals + timeSignals + tokenSignals > 0;
+  const latestImprovement = studio.improvements[0];
+  const paramsInvalid = params.contextThreshold < 10 || params.contextThreshold > 95 || params.idleMinutes < 1 || params.idleMinutes > 240 || params.cacheWarn < 5 || params.cacheWarn > 100 || params.cacheAbort < 5 || params.cacheAbort > 100 || params.cacheWarn <= params.cacheAbort || params.tokenLimit < 1e3 || params.tokenLimit > 1e8;
+  const paramsDirty = JSON.stringify(params) !== JSON.stringify(studio.automation);
+  const engineeringInvalid = engineering.codeParagraphLimit < 100 || engineering.codeParagraphLimit > 2e3;
+  const engineeringDirty = JSON.stringify(engineering) !== JSON.stringify(studio.engineering);
   const rules = [
     { title: t("automationContextTitle"), body: t("automationContextBody") },
     { title: t("automationIdleTitle"), body: t("automationIdleBody") },
     { title: t("automationCacheTitle"), body: t("automationCacheBody") },
     { title: t("automationAbortTitle"), body: t("automationAbortBody") }
   ];
-  return /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: PressureTab_default.tab, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(
+  return /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: PressureTab_default.tab, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(
       Summary,
       {
         label: t("tabPressure"),
@@ -22565,18 +24819,15 @@ function PressureTab({ t, live, drafts, now, actions }) {
             value: settings === void 0 ? "\u2014" : settings.paused ? t("queueStatePaused") : t("queueStateRunning")
           },
           { label: t("metricRules"), value: rules.length },
-          { label: t("metricSupervisor"), value: t("supervisorLocal") }
+          { label: t("pressureDetailsTitle"), value: details.length }
         ]
       }
     ),
-    /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("section", { className: PressureTab_default.block, "aria-label": t("tabPressure"), children: [
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("header", { className: PressureTab_default.head, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: PressureTab_default.heading, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("span", { className: PressureTab_default.eyebrow, children: t("tabPressure") }),
-          /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("h3", { className: PressureTab_default.title, children: t("tabPressure") })
-        ] }),
-        settings !== void 0 && /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(
-          import_dsh_client_ui_primitives17.Button,
+    /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("section", { className: PressureTab_default.block, "aria-label": t("tabPressure"), children: [
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("header", { className: PressureTab_default.head, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { className: PressureTab_default.heading, children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("h3", { className: PressureTab_default.title, children: t("tabPressure") }) }),
+        settings !== void 0 && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(
+          import_dsh_client_ui_primitives20.Button,
           {
             size: "sm",
             variant: settings.paused ? "primary" : "outline",
@@ -22588,40 +24839,365 @@ function PressureTab({ t, live, drafts, now, actions }) {
           }
         )
       ] }),
-      settings === void 0 ? /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { className: PressureTab_default.empty, children: t("noSettingsRead") }) : /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: PressureTab_default.meta, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(import_dsh_client_ui_primitives17.Tag, { tone: settings.paused ? "warning" : "success", children: settings.paused ? t("settingsPaused") : t("settingsRunning") }),
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("span", { className: PressureTab_default.metaText, children: timeLabel(settings.updatedAt, now, t) })
+      settings === void 0 ? /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("p", { className: PressureTab_default.empty, children: t("noSettingsRead") }) : /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: PressureTab_default.meta, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(import_dsh_client_ui_primitives20.Tag, { tone: settings.paused ? "warning" : "success", children: settings.paused ? t("settingsPaused") : t("settingsRunning") }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: PressureTab_default.metaText, children: timeLabel(settings.updatedAt, now, t) })
       ] })
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("section", { className: PressureTab_default.block, "aria-label": t("automationRulesTitle"), children: [
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("header", { className: PressureTab_default.head, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: PressureTab_default.heading, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("span", { className: PressureTab_default.eyebrow, children: t("metricRules") }),
-          /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("h3", { className: PressureTab_default.title, children: t("automationRulesTitle") })
-        ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(import_dsh_client_ui_primitives17.Tag, { tone: "outline", children: String(rules.length) })
-      ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { className: PressureTab_default.ruleGrid, children: rules.map((rule, index) => /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("article", { className: PressureTab_default.rule, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("span", { className: PressureTab_default.ruleIndex, "aria-hidden": "true", children: String(index + 1).padStart(2, "0") }),
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("h4", { className: PressureTab_default.subtitle, children: rule.title }),
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { className: PressureTab_default.ruleBody, children: rule.body })
-      ] }, rule.title)) })
+    /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("section", { className: PressureTab_default.block, "aria-label": t("pressureQueueModelsTitle"), children: [
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("header", { className: PressureTab_default.head, children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { className: PressureTab_default.heading, children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("h3", { className: PressureTab_default.title, children: t("pressureQueueModelsTitle") }) }) }),
+      live.queues.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("p", { className: PressureTab_default.empty, children: t("pressureQueueNoQueues") }) : /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { className: PressureTab_default.queueModels, children: live.queues.map((queue) => /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(
+        QueueModelCard,
+        {
+          queue,
+          t,
+          models: live.models,
+          value: studio.queueModels[queue.id],
+          onSave: (selection) => {
+            saveQueueModels(queue.id, selection);
+          }
+        },
+        queue.id
+      )) })
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("section", { className: PressureTab_default.block, "aria-label": t("automationCostTitle"), children: [
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("header", { className: PressureTab_default.head, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("div", { className: PressureTab_default.heading, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("span", { className: PressureTab_default.eyebrow, children: t("metricSupervisor") }),
-          /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("h3", { className: PressureTab_default.title, children: t("automationCostTitle") })
-        ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(import_dsh_client_ui_primitives17.Tag, { tone: "success", children: t("supervisorLocal") })
+    /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("section", { className: PressureTab_default.block, "aria-label": t("pressureParamsTitle"), children: [
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("header", { className: PressureTab_default.head, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { className: PressureTab_default.heading, children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("h3", { className: PressureTab_default.title, children: t("pressureParamsTitle") }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(import_dsh_client_ui_primitives20.Tag, { tone: paramsDirty ? "warning" : "success", children: paramsDirty ? t("pressureParamsDirty") : t("pressureParamsSaved") })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { className: PressureTab_default.costBody, children: t("automationCostBody") }),
-      /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)("details", { className: PressureTab_default.details, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("summary", { className: PressureTab_default.disclosure, children: t("automationModelDetails") }),
-        /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("p", { className: PressureTab_default.note, children: t("wardenNotice") })
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: PressureTab_default.formGrid, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(
+          NumberField,
+          {
+            label: t("pressureParamContext"),
+            hint: params.contextThreshold < 10 || params.contextThreshold > 95 ? t("pressureParamInvalidContext") : t("pressureParamContextHint"),
+            value: params.contextThreshold,
+            min: 10,
+            max: 95,
+            step: 1,
+            onChange: (value) => {
+              setParams((previous) => ({ ...previous, contextThreshold: value }));
+            }
+          }
+        ),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(
+          NumberField,
+          {
+            label: t("pressureParamIdle"),
+            hint: params.idleMinutes < 1 || params.idleMinutes > 240 ? t("pressureParamInvalidIdle") : t("pressureParamIdleHint"),
+            value: params.idleMinutes,
+            min: 1,
+            max: 240,
+            step: 1,
+            onChange: (value) => {
+              setParams((previous) => ({ ...previous, idleMinutes: value }));
+            }
+          }
+        ),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(
+          NumberField,
+          {
+            label: t("pressureParamCacheWarn"),
+            hint: params.cacheWarn < 5 || params.cacheWarn > 100 || params.cacheWarn <= params.cacheAbort ? t("pressureParamInvalidCache") : t("pressureParamCacheWarnHint"),
+            value: params.cacheWarn,
+            min: 5,
+            max: 100,
+            step: 1,
+            onChange: (value) => {
+              setParams((previous) => ({ ...previous, cacheWarn: value }));
+            }
+          }
+        ),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(
+          NumberField,
+          {
+            label: t("pressureParamCacheAbort"),
+            hint: params.cacheAbort < 5 || params.cacheAbort > 100 || params.cacheWarn <= params.cacheAbort ? t("pressureParamInvalidCache") : t("pressureParamCacheAbortHint"),
+            value: params.cacheAbort,
+            min: 5,
+            max: 100,
+            step: 1,
+            onChange: (value) => {
+              setParams((previous) => ({ ...previous, cacheAbort: value }));
+            }
+          }
+        ),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(
+          NumberField,
+          {
+            label: t("pressureParamTokenLimit"),
+            hint: params.tokenLimit < 1e3 || params.tokenLimit > 1e8 ? t("pressureParamInvalidToken") : t("pressureParamTokenLimitHint"),
+            value: params.tokenLimit,
+            min: 1e3,
+            max: 1e8,
+            step: 1e3,
+            onChange: (value) => {
+              setParams((previous) => ({ ...previous, tokenLimit: value }));
+            }
+          }
+        )
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("footer", { className: PressureTab_default.formFoot, children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(
+        import_dsh_client_ui_primitives20.Button,
+        {
+          size: "sm",
+          variant: "primary",
+          disabled: paramsInvalid || !paramsDirty,
+          onClick: () => {
+            saveAutomation(params);
+          },
+          children: t("save")
+        }
+      ) })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("section", { className: PressureTab_default.block, "aria-label": t("pressureDetailsTitle"), children: [
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("header", { className: PressureTab_default.head, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { className: PressureTab_default.heading, children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("h3", { className: PressureTab_default.title, children: t("pressureDetailsTitle") }) }),
+        details.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(import_dsh_client_ui_primitives20.Tag, { tone: "warning", children: t("pressureDetailsCount", { count: details.length }) })
+      ] }),
+      details.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: PressureTab_default.clearBox, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: PressureTab_default.clearMark, "aria-hidden": "true", children: "\u2713" }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("p", { className: PressureTab_default.clearTitle, children: t("pressureDetailsNormal") }),
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("p", { className: PressureTab_default.clearBody, children: t("pressureDetailsNormalHint") })
+        ] })
+      ] }) : /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { className: PressureTab_default.tableWrap, children: /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("table", { className: PressureTab_default.table, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("thead", { children: /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("tr", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("th", { children: t("pressureDetailsQueue") }),
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("th", { children: t("pressureDetailsIssue") }),
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("th", { children: t("pressureDetailsReason") }),
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("th", { children: t("pressureDetailsAt") })
+        ] }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("tbody", { children: details.map((row) => /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("tr", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("td", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: PressureTab_default.tableStrong, children: row.queueTitle }),
+            /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: PressureTab_default.tableMuted, children: row.taskTitle })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("td", { children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(import_dsh_client_ui_primitives20.Tag, { tone: "warning", children: row.issue }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("td", { children: row.reason }),
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("td", { className: PressureTab_default.tableMuted, children: timeLabel(row.at, now, t) })
+        ] }, row.id)) })
+      ] }) }),
+      alertMessage !== "" && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("p", { className: PressureTab_default.noticeText, role: "status", children: alertMessage })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("section", { className: PressureTab_default.block, "aria-label": t("pressureSavingsTitle"), children: [
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("header", { className: PressureTab_default.head, children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { className: PressureTab_default.heading, children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("h3", { className: PressureTab_default.title, children: t("pressureSavingsTitle") }) }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: PressureTab_default.savingsGrid, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: PressureTab_default.savingCell, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: PressureTab_default.savingLabel, children: t("pressureSavingsMeasured") }),
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: PressureTab_default.savingValue, children: tokenLabel2(measuredTokens) })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: PressureTab_default.savingCell, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: PressureTab_default.savingLabel, children: t("pressureSavingsTokens") }),
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: PressureTab_default.savingValue, children: hasSavings ? `\u2212${tokenLabel2(savedTokens)}` : "\u2014" })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: PressureTab_default.savingCell, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: PressureTab_default.savingLabel, children: t("pressureSavingsTime") }),
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: PressureTab_default.savingValue, children: hasSavings ? t("timeMinutes", { count: savedMinutes }) : "\u2014" })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: PressureTab_default.savingCell, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: PressureTab_default.savingLabel, children: t("pressureSavingsContext") }),
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: PressureTab_default.savingValue, children: String(compressed) })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: PressureTab_default.savingCell, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: PressureTab_default.savingLabel, children: t("pressureSavingsCompression") }),
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: PressureTab_default.savingValue, children: t("pressureSavingsCompressionValue", { percent: studio.automation.contextThreshold }) })
+        ] })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: PressureTab_default.strategyRow, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: PressureTab_default.strategyLabel, children: t("pressureTokenStrategy") }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(import_dsh_client_ui_primitives20.Tag, { tone: "outline", children: t("pressureStrategyStrict") }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(import_dsh_client_ui_primitives20.Tag, { tone: "info", children: t("pressureSavingsCompressionValue", { percent: studio.automation.contextThreshold }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: PressureTab_default.strategyText, children: engineering.preserveContent === "" ? t("pressurePreserveEmpty") : engineering.preserveContent })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("p", { className: PressureTab_default.note, children: hasSavings ? t("pressureSavingsSuggestion") : t("pressureSavingsNone") })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("section", { className: PressureTab_default.block, "aria-label": t("pressureEngineeringTitle"), children: [
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("header", { className: PressureTab_default.head, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { className: PressureTab_default.heading, children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("h3", { className: PressureTab_default.title, children: t("pressureEngineeringTitle") }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(import_dsh_client_ui_primitives20.Tag, { tone: engineeringDirty ? "warning" : "success", children: engineeringDirty ? t("pressureParamsDirty") : t("pressureEngineeringSaved") })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: PressureTab_default.formGrid, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(
+          NumberField,
+          {
+            label: t("pressureCodeLimit"),
+            hint: engineeringInvalid ? t("pressureEngineeringInvalid") : t("pressureCodeLimitHint"),
+            value: engineering.codeParagraphLimit,
+            min: 100,
+            max: 2e3,
+            step: 50,
+            onChange: (value) => {
+              setEngineering((previous) => ({ ...previous, codeParagraphLimit: value }));
+            }
+          }
+        ),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(
+          TextAreaField,
+          {
+            label: t("pressureFileSplit"),
+            hint: t("pressureFileSplitHint"),
+            value: engineering.fileSplit,
+            rows: 2,
+            onChange: (value) => {
+              setEngineering((previous) => ({ ...previous, fileSplit: value }));
+            }
+          }
+        ),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(
+          TextAreaField,
+          {
+            label: t("pressureReadScope"),
+            hint: t("pressureReadScopeHint"),
+            value: engineering.readScope,
+            rows: 2,
+            onChange: (value) => {
+              setEngineering((previous) => ({ ...previous, readScope: value }));
+            }
+          }
+        ),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(
+          TextAreaField,
+          {
+            label: t("pressureExcludeScope"),
+            hint: t("pressureExcludeScopeHint"),
+            value: engineering.excludeScope,
+            rows: 2,
+            onChange: (value) => {
+              setEngineering((previous) => ({ ...previous, excludeScope: value }));
+            }
+          }
+        ),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(
+          TextAreaField,
+          {
+            label: t("pressurePreserveContent"),
+            hint: t("pressurePreserveContentHint"),
+            value: engineering.preserveContent,
+            rows: 2,
+            onChange: (value) => {
+              setEngineering((previous) => ({ ...previous, preserveContent: value }));
+            }
+          }
+        )
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("footer", { className: PressureTab_default.formFoot, children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(
+        import_dsh_client_ui_primitives20.Button,
+        {
+          size: "sm",
+          variant: "primary",
+          disabled: engineeringInvalid || !engineeringDirty,
+          onClick: () => {
+            saveEngineering(engineering);
+          },
+          children: t("save")
+        }
+      ) })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("section", { className: PressureTab_default.block, "aria-label": t("pressureNegativeTitle"), children: [
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("header", { className: PressureTab_default.head, children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { className: PressureTab_default.heading, children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("h3", { className: PressureTab_default.title, children: t("pressureNegativeTitle") }) }) }),
+      !hasWaste ? /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("p", { className: PressureTab_default.empty, children: t("pressureNegativeNone") }) : /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: PressureTab_default.feedbackGrid, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(
+          FeedbackCell,
+          {
+            active: fileSignals > 0,
+            label: t("pressureNegativeFiles"),
+            count: fileSignals,
+            detail: t("pressureNegativeFilesDetail")
+          }
+        ),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(
+          FeedbackCell,
+          {
+            active: commandSignals > 0,
+            label: t("pressureNegativeCommands"),
+            count: commandSignals,
+            detail: t("pressureNegativeCommandsDetail")
+          }
+        ),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(
+          FeedbackCell,
+          {
+            active: timeSignals > 0,
+            label: t("pressureNegativeTime"),
+            count: timeSignals,
+            detail: t("pressureNegativeTimeDetail")
+          }
+        ),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(
+          FeedbackCell,
+          {
+            active: tokenSignals > 0,
+            label: t("pressureNegativeTokens"),
+            count: tokenSignals,
+            detail: t("pressureNegativeTokensDetail")
+          }
+        )
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: PressureTab_default.positiveBox, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("h4", { className: PressureTab_default.subtitle, children: t("pressurePositiveTitle") }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("ul", { className: PressureTab_default.positiveList, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("li", { children: t("pressurePositiveFiles") }),
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("li", { children: t("pressurePositiveExclude") }),
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("li", { children: t("pressurePositiveDispatch") })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: PressureTab_default.beforeAfter, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: PressureTab_default.compareCol, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: PressureTab_default.compareLabel, children: t("pressureBefore") }),
+            /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("p", { className: PressureTab_default.compareText, children: t("pressureNegativeFilesDetail") })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: PressureTab_default.compareArrow, "aria-hidden": "true", children: "\u2192" }),
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: PressureTab_default.compareCol, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: PressureTab_default.compareLabel, children: t("pressureAfter") }),
+            /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("p", { className: PressureTab_default.compareText, children: latestImprovement?.result ?? t("pressurePositiveDispatch") })
+          ] })
+        ] })
       ] })
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(
+    /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(
+      AutomationDialog,
+      {
+        t,
+        open: alertOpen || dialogStage === "result",
+        stage: dialogStage,
+        reason: alertReason,
+        models: live.models,
+        onConfirm: () => {
+          setDialogStage("model");
+        },
+        onDecline: () => {
+          markAlertHandled();
+          setDialogStage("ask");
+          setAlertMessage(t("pressureAlertDecline"));
+        },
+        onLater: () => {
+          markAlertHandled();
+          setDialogStage("ask");
+          addNotice({
+            title: { kind: "key", value: "pressureOptimizeNoticeTitle" },
+            body: { kind: "key", value: "pressureOptimizeNoticeBody" }
+          });
+          setAlertMessage(t("pressureAlertDismissed"));
+        },
+        onApply: (route) => {
+          const modelLabel = route === "" ? t("pressureQueueModelInherit") : route;
+          addImprovement({
+            title: t("improvementGeneratedTitle", { model: modelLabel }),
+            cause: t("improvementGeneratedCause"),
+            action: `${t("improvementGeneratedAction")} ${t("pressureOptimizeModelHint")}`,
+            result: t("improvementGeneratedResult"),
+            projects: [live.queues[0]?.title ?? "\u2014"]
+          });
+          markAlertHandled();
+          setDialogStage("result");
+        },
+        onDone: () => {
+          setDialogStage("ask");
+          setAlertMessage(t("pressureOptimizeResultBody"));
+        }
+      }
+    ),
+    /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(
       DangerConfirm,
       {
         t,
@@ -22644,8 +25220,8 @@ function PressureTab({ t, live, drafts, now, actions }) {
 }
 
 // packages/client/ui-settings-session-orchestrator/src/client/HostsTab.tsx
-var import_react13 = require("react");
-var import_dsh_client_ui_primitives18 = require("@deepseek-ai/dsh-client-ui-primitives");
+var import_react17 = require("react");
+var import_dsh_client_ui_primitives21 = require("@deepseek-ai/dsh-client-ui-primitives");
 
 // packages/client/ui-settings-session-orchestrator/src/client/HostsTab.module.css
 var HostsTab_default = {
@@ -22686,7 +25262,7 @@ var HostsTab_default = {
 };
 
 // packages/client/ui-settings-session-orchestrator/src/client/HostsTab.tsx
-var import_jsx_runtime19 = require("react/jsx-runtime");
+var import_jsx_runtime21 = require("react/jsx-runtime");
 var STATUS_TAG = {
   available: { key: "platformStatusAvailable", tone: "success" },
   partial: { key: "platformStatusPartial", tone: "warning" },
@@ -22759,40 +25335,40 @@ function platformStatus(host) {
 function rowCopy(host, capability, t) {
   if (host.host === "trae" && !host.available) return t("platformTraeNotInstalled");
   const entry = ROW_COPY[host.host][capability.capability];
-  const key = capability.status === "supported" ? entry?.supported ?? "hostsSupportedGeneric" : entry?.unsupported ?? "hostsUnsupportedGeneric";
-  return t(key);
+  const key2 = capability.status === "supported" ? entry?.supported ?? "hostsSupportedGeneric" : entry?.unsupported ?? "hostsUnsupportedGeneric";
+  return t(key2);
 }
 function markOf(name) {
   return [...name.trim()].slice(0, 2).join("").toUpperCase();
 }
 function PlatformBlock({ host, t }) {
   const status = platformStatus(host);
-  return /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("article", { className: HostsTab_default.host, "aria-label": host.displayName, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("header", { className: HostsTab_default.hostHead, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: HostsTab_default.hostIdentity, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("span", { className: HostsTab_default.hostMark, "aria-hidden": "true", children: markOf(host.displayName) }),
-        /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: HostsTab_default.hostText, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("h3", { className: HostsTab_default.hostName, children: host.displayName }),
-          /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("p", { className: HostsTab_default.summary, children: t(host.available ? SUMMARY_KEY[host.host] : "platformMissingSummary") })
+  return /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("article", { className: HostsTab_default.host, "aria-label": host.displayName, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("header", { className: HostsTab_default.hostHead, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { className: HostsTab_default.hostIdentity, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("span", { className: HostsTab_default.hostMark, "aria-hidden": "true", children: markOf(host.displayName) }),
+        /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { className: HostsTab_default.hostText, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("h3", { className: HostsTab_default.hostName, children: host.displayName }),
+          /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("p", { className: HostsTab_default.summary, children: t(host.available ? SUMMARY_KEY[host.host] : "platformMissingSummary") })
         ] })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: HostsTab_default.tags, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(import_dsh_client_ui_primitives18.Tag, { tone: STATUS_TAG[status].tone, children: t(STATUS_TAG[status].key) }),
-        host.queueBackend && /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(import_dsh_client_ui_primitives18.Tag, { tone: "outline", children: t("hostsQueueBackendTag") })
+      /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { className: HostsTab_default.tags, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(import_dsh_client_ui_primitives21.Tag, { tone: STATUS_TAG[status].tone, children: t(STATUS_TAG[status].key) }),
+        host.queueBackend && /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(import_dsh_client_ui_primitives21.Tag, { tone: "outline", children: t("hostsQueueBackendTag") })
       ] })
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("details", { className: HostsTab_default.details, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("summary", { className: HostsTab_default.disclosure, children: t("hostsTechnicalSummary") }),
-      /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("table", { className: HostsTab_default.table, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("thead", { children: /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("tr", { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("th", { scope: "col", children: t("hostsCapability") }),
-          /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("th", { scope: "col", children: t("hostsState") }),
-          /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("th", { scope: "col", children: t("hostsTechnicalDetail") })
+    /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("details", { className: HostsTab_default.details, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("summary", { className: HostsTab_default.disclosure, children: t("hostsTechnicalSummary") }),
+      /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("table", { className: HostsTab_default.table, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("thead", { children: /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("tr", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("th", { scope: "col", children: t("hostsCapability") }),
+          /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("th", { scope: "col", children: t("hostsState") }),
+          /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("th", { scope: "col", children: t("hostsTechnicalDetail") })
         ] }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("tbody", { children: host.capabilities.map((capability) => /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("tr", { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("td", { children: t(CAPABILITY_KEY[capability.capability]) }),
-          /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("td", { children: /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(import_dsh_client_ui_primitives18.Tag, { tone: capability.status === "supported" ? "success" : "outline", children: t(capability.status === "supported" ? "hostsSupported" : "hostsUnsupported") }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("td", { className: HostsTab_default.detail, children: rowCopy(host, capability, t) })
+        /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("tbody", { children: host.capabilities.map((capability) => /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("tr", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("td", { children: t(CAPABILITY_KEY[capability.capability]) }),
+          /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("td", { children: /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(import_dsh_client_ui_primitives21.Tag, { tone: capability.status === "supported" ? "success" : "outline", children: t(capability.status === "supported" ? "hostsSupported" : "hostsUnsupported") }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("td", { className: HostsTab_default.detail, children: rowCopy(host, capability, t) })
         ] }, capability.capability)) })
       ] })
     ] })
@@ -22809,14 +25385,14 @@ function providerGroups(live) {
 }
 function HostsTab({ t, live, drafts, actions }) {
   const providers = providerGroups(live);
-  const [saved, setSaved] = (0, import_react13.useState)(false);
+  const [saved, setSaved] = (0, import_react17.useState)(false);
   const quotas = drafts.settings?.draft.providerQuotas ?? live.settings?.providerQuotas ?? {};
   const available = live.hosts.filter((host) => host.available).length;
-  (0, import_react13.useEffect)(() => {
+  (0, import_react17.useEffect)(() => {
     if (drafts.settings === null) actions.loadSettingsDraft();
   }, [actions, drafts.settings]);
-  return /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: HostsTab_default.tab, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(
+  return /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { className: HostsTab_default.tab, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(
       Summary,
       {
         label: t("tabHosts"),
@@ -22828,16 +25404,16 @@ function HostsTab({ t, live, drafts, actions }) {
         ]
       }
     ),
-    /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("section", { className: HostsTab_default.providers, "aria-label": t("hostsProvidersTitle"), children: [
-      /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("header", { className: HostsTab_default.sectionHead, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: HostsTab_default.heading, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("span", { className: HostsTab_default.eyebrow, children: t("tabHosts") }),
-          /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("h3", { className: HostsTab_default.sectionTitle, children: t("hostsProvidersTitle") }),
-          /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("p", { className: HostsTab_default.hint, children: t("hostsApiHint") })
+    /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("section", { className: HostsTab_default.providers, "aria-label": t("hostsProvidersTitle"), children: [
+      /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("header", { className: HostsTab_default.sectionHead, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { className: HostsTab_default.heading, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("span", { className: HostsTab_default.eyebrow, children: t("tabHosts") }),
+          /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("h3", { className: HostsTab_default.sectionTitle, children: t("hostsProvidersTitle") }),
+          /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("p", { className: HostsTab_default.hint, children: t("hostsApiHint") })
         ] }),
-        providers.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: HostsTab_default.saveRow, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(
-            import_dsh_client_ui_primitives18.Button,
+        providers.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { className: HostsTab_default.saveRow, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(
+            import_dsh_client_ui_primitives21.Button,
             {
               size: "sm",
               variant: "primary",
@@ -22850,27 +25426,27 @@ function HostsTab({ t, live, drafts, actions }) {
               children: t("hostsProviderSave")
             }
           ),
-          saved && /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("span", { className: HostsTab_default.saved, children: t("hostsProvidersSaved") })
+          saved && /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("span", { className: HostsTab_default.saved, children: t("hostsProvidersSaved") })
         ] })
       ] }),
-      providers.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("p", { className: HostsTab_default.empty, children: t("hostsProvidersEmpty") }) : /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("ul", { className: HostsTab_default.providerList, children: providers.map((provider) => /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("li", { className: HostsTab_default.provider, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: HostsTab_default.providerHead, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("span", { className: HostsTab_default.providerMark, "aria-hidden": "true", children: markOf(provider.name) }),
-          /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: HostsTab_default.providerText, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("strong", { className: HostsTab_default.providerName, children: provider.name }),
-            /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(import_dsh_client_ui_primitives18.Tag, { tone: "outline", children: provider.id })
+      providers.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("p", { className: HostsTab_default.empty, children: t("hostsProvidersEmpty") }) : /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("ul", { className: HostsTab_default.providerList, children: providers.map((provider) => /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("li", { className: HostsTab_default.provider, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { className: HostsTab_default.providerHead, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("span", { className: HostsTab_default.providerMark, "aria-hidden": "true", children: markOf(provider.name) }),
+          /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { className: HostsTab_default.providerText, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("strong", { className: HostsTab_default.providerName, children: provider.name }),
+            /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(import_dsh_client_ui_primitives21.Tag, { tone: "outline", children: provider.id })
           ] })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: HostsTab_default.models, children: [
-          provider.models.slice(0, 6).map((model) => /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(import_dsh_client_ui_primitives18.Tag, { tone: "quiet", children: model }, model)),
-          provider.models.length > 6 && /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("span", { className: HostsTab_default.moreModels, title: provider.models.slice(6).join(" \xB7 "), children: [
+        /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { className: HostsTab_default.models, children: [
+          provider.models.slice(0, 6).map((model) => /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(import_dsh_client_ui_primitives21.Tag, { tone: "quiet", children: model }, model)),
+          provider.models.length > 6 && /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("span", { className: HostsTab_default.moreModels, title: provider.models.slice(6).join(" \xB7 "), children: [
             "+",
             provider.models.length - 6
           ] })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("label", { className: HostsTab_default.quota, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("span", { className: HostsTab_default.quotaLabel, children: t("hostsProviderQuota") }),
-          /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("label", { className: HostsTab_default.quota, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("span", { className: HostsTab_default.quotaLabel, children: t("hostsProviderQuota") }),
+          /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(
             "input",
             {
               type: "number",
@@ -22889,16 +25465,2153 @@ function HostsTab({ t, live, drafts, actions }) {
         ] })
       ] }, provider.id)) })
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("section", { className: HostsTab_default.platformSection, "aria-label": t("hostsPlatformsTitle"), children: [
-      /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("header", { className: HostsTab_default.sectionHead, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)("div", { className: HostsTab_default.heading, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("span", { className: HostsTab_default.eyebrow, children: t("hostsTitle") }),
-          /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("h3", { className: HostsTab_default.sectionTitle, children: t("hostsPlatformsTitle") })
+    /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("section", { className: HostsTab_default.platformSection, "aria-label": t("hostsPlatformsTitle"), children: [
+      /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("header", { className: HostsTab_default.sectionHead, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { className: HostsTab_default.heading, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("span", { className: HostsTab_default.eyebrow, children: t("hostsTitle") }),
+          /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("h3", { className: HostsTab_default.sectionTitle, children: t("hostsPlatformsTitle") })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(import_dsh_client_ui_primitives18.Tag, { tone: "outline", children: `${available}/${live.hosts.length}` })
+        /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(import_dsh_client_ui_primitives21.Tag, { tone: "outline", children: `${available}/${live.hosts.length}` })
       ] }),
-      live.hosts.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("p", { className: HostsTab_default.empty, children: t("hostsEmpty") }) : /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("div", { className: HostsTab_default.list, children: live.hosts.map((host) => /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(PlatformBlock, { host, t }, host.host)) })
+      live.hosts.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("p", { className: HostsTab_default.empty, children: t("hostsEmpty") }) : /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("div", { className: HostsTab_default.list, children: live.hosts.map((host) => /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(PlatformBlock, { host, t }, host.host)) })
     ] })
+  ] });
+}
+
+// packages/client/ui-settings-session-orchestrator/src/client/SkillsTab.tsx
+var import_react19 = require("react");
+var import_dsh_client_ui_primitives23 = require("@deepseek-ai/dsh-client-ui-primitives");
+
+// packages/client/ui-settings-session-orchestrator/src/client/SkillHistoryDialog.tsx
+var import_react18 = require("react");
+var import_dsh_client_ui_primitives22 = require("@deepseek-ai/dsh-client-ui-primitives");
+
+// packages/client/ui-settings-session-orchestrator/src/client/SkillsTab.module.css
+var SkillsTab_default = {
+  tab: "SkillsTab_tab",
+  tabs: "SkillsTab_tabs",
+  tabButton: "SkillsTab_tabButton",
+  tabButtonActive: "SkillsTab_tabButtonActive",
+  pageHead: "SkillsTab_pageHead",
+  head: "SkillsTab_head",
+  heading: "SkillsTab_heading",
+  eyebrow: "SkillsTab_eyebrow",
+  title: "SkillsTab_title",
+  intro: "SkillsTab_intro",
+  block: "SkillsTab_block",
+  skillGrid: "SkillsTab_skillGrid",
+  skillCard: "SkillsTab_skillCard",
+  skillHead: "SkillsTab_skillHead",
+  skillIdentity: "SkillsTab_skillIdentity",
+  skillName: "SkillsTab_skillName",
+  skillBadges: "SkillsTab_skillBadges",
+  skillDescription: "SkillsTab_skillDescription",
+  skillMeta: "SkillsTab_skillMeta",
+  skillContent: "SkillsTab_skillContent",
+  skillActions: "SkillsTab_skillActions",
+  inlineActions: "SkillsTab_inlineActions",
+  dialogActions: "SkillsTab_dialogActions",
+  editForm: "SkillsTab_editForm",
+  successNote: "SkillsTab_successNote",
+  successText: "SkillsTab_successText",
+  importRow: "SkillsTab_importRow",
+  importHint: "SkillsTab_importHint",
+  folderForm: "SkillsTab_folderForm",
+  addGrid: "SkillsTab_addGrid",
+  groupNav: "SkillsTab_groupNav",
+  groupChip: "SkillsTab_groupChip",
+  groupChipActive: "SkillsTab_groupChipActive",
+  groupCount: "SkillsTab_groupCount",
+  tree: "SkillsTab_tree",
+  branch: "SkillsTab_branch",
+  branchHead: "SkillsTab_branchHead",
+  branchMark: "SkillsTab_branchMark",
+  branchName: "SkillsTab_branchName",
+  branchSkills: "SkillsTab_branchSkills",
+  refBlock: "SkillsTab_refBlock",
+  refLabel: "SkillsTab_refLabel",
+  scopeLabel: "SkillsTab_scopeLabel",
+  refChips: "SkillsTab_refChips",
+  refChip: "SkillsTab_refChip",
+  refChipOn: "SkillsTab_refChipOn",
+  refDot: "SkillsTab_refDot",
+  refDotOn: "SkillsTab_refDotOn",
+  refName: "SkillsTab_refName",
+  refSign: "SkillsTab_refSign",
+  pipelineList: "SkillsTab_pipelineList",
+  pipeline: "SkillsTab_pipeline",
+  pipelineHead: "SkillsTab_pipelineHead",
+  pipelineTitle: "SkillsTab_pipelineTitle",
+  pipelineScope: "SkillsTab_pipelineScope",
+  taskRefs: "SkillsTab_taskRefs",
+  taskRef: "SkillsTab_taskRef",
+  taskRefHead: "SkillsTab_taskRefHead",
+  taskRefTitle: "SkillsTab_taskRefTitle",
+  improvementList: "SkillsTab_improvementList",
+  improvement: "SkillsTab_improvement",
+  improvementHead: "SkillsTab_improvementHead",
+  improvementTitle: "SkillsTab_improvementTitle",
+  improvementProjects: "SkillsTab_improvementProjects",
+  improvementMeta: "SkillsTab_improvementMeta",
+  improvementResult: "SkillsTab_improvementResult",
+  empty: "SkillsTab_empty",
+  overlay: "SkillsTab_overlay",
+  historyDialog: "SkillsTab_historyDialog",
+  dialogHead: "SkillsTab_dialogHead",
+  dialogKicker: "SkillsTab_dialogKicker",
+  dialogTitle: "SkillsTab_dialogTitle",
+  dialogBody: "SkillsTab_dialogBody",
+  historyList: "SkillsTab_historyList",
+  historyRow: "SkillsTab_historyRow",
+  historyRowActive: "SkillsTab_historyRowActive",
+  historyRowTop: "SkillsTab_historyRowTop",
+  historyIndex: "SkillsTab_historyIndex",
+  historyPreview: "SkillsTab_historyPreview",
+  diffGrid: "SkillsTab_diffGrid",
+  diffPane: "SkillsTab_diffPane",
+  diffLabel: "SkillsTab_diffLabel",
+  diffText: "SkillsTab_diffText",
+  diffCaption: "SkillsTab_diffCaption"
+};
+
+// packages/client/ui-settings-session-orchestrator/src/client/SkillHistoryDialog.tsx
+var import_jsx_runtime22 = require("react/jsx-runtime");
+function SkillHistoryDialog({ t, skill, now, onClose }) {
+  const [selectedId, setSelectedId] = (0, import_react18.useState)(skill.versions.at(-1)?.id ?? "");
+  const [restored, setRestored] = (0, import_react18.useState)(false);
+  const selected = skill.versions.find((version2) => version2.id === selectedId);
+  const currentText = studioText(skill.content, t);
+  const selectedText = selected === void 0 ? currentText : studioText(selected.content, t);
+  return /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("div", { className: SkillsTab_default.overlay, role: "presentation", children: /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)("section", { className: SkillsTab_default.historyDialog, role: "dialog", "aria-modal": "true", "aria-label": t("skillsHistoryTitle"), children: [
+    /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)("header", { className: SkillsTab_default.dialogHead, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("span", { className: SkillsTab_default.dialogKicker, children: studioText(skill.name, t) }),
+      /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("h3", { className: SkillsTab_default.dialogTitle, children: t("skillsHistoryTitle") }),
+      /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("p", { className: SkillsTab_default.dialogBody, children: t("skillsHistoryHint") })
+    ] }),
+    skill.versions.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("p", { className: SkillsTab_default.empty, children: t("skillsHistoryEmpty") }) : /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("div", { className: SkillsTab_default.historyList, role: "list", children: skill.versions.map((version2, index) => /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)(
+      "button",
+      {
+        type: "button",
+        role: "listitem",
+        className: selectedId === version2.id ? `${SkillsTab_default.historyRow} ${SkillsTab_default.historyRowActive}` : SkillsTab_default.historyRow,
+        onClick: () => {
+          setSelectedId(version2.id);
+          setRestored(false);
+        },
+        children: [
+          /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)("span", { className: SkillsTab_default.historyRowTop, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("span", { className: SkillsTab_default.historyIndex, children: t("skillsHistoryVersionNote", {
+              index: index + 1,
+              note: studioText(version2.note, t)
+            }) }),
+            /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(import_dsh_client_ui_primitives22.Tag, { tone: "quiet", children: timeLabel(version2.at, now, t) })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("span", { className: SkillsTab_default.historyPreview, children: studioText(version2.content, t) })
+        ]
+      },
+      version2.id
+    )) }),
+    /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)("div", { className: SkillsTab_default.diffGrid, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)("div", { className: SkillsTab_default.diffPane, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("span", { className: SkillsTab_default.diffLabel, children: t("skillsHistoryCurrent") }),
+        /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("pre", { className: SkillsTab_default.diffText, children: currentText })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)("div", { className: SkillsTab_default.diffPane, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("span", { className: SkillsTab_default.diffLabel, children: t("skillsHistorySelected") }),
+        /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("pre", { className: SkillsTab_default.diffText, children: selectedText })
+      ] })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("p", { className: SkillsTab_default.diffCaption, children: t("skillsHistoryDiff") }),
+    restored && /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("p", { className: SkillsTab_default.successNote, role: "status", children: t("skillsHistoryRestored") }),
+    /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)("div", { className: SkillsTab_default.dialogActions, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(
+        import_dsh_client_ui_primitives22.Button,
+        {
+          size: "sm",
+          variant: "primary",
+          disabled: selected === void 0,
+          onClick: () => {
+            if (selected === void 0) return;
+            restoreSkill(skill.id, selected.id);
+            setRestored(true);
+          },
+          children: t("skillsHistoryRestore")
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(import_dsh_client_ui_primitives22.Button, { size: "sm", variant: "ghost", onClick: onClose, children: t("close") })
+    ] })
+  ] }) });
+}
+
+// packages/client/ui-settings-session-orchestrator/src/client/SkillsTab.tsx
+var import_jsx_runtime23 = require("react/jsx-runtime");
+function literal2(value) {
+  return { kind: "text", value };
+}
+function badgeKey(badge) {
+  switch (badge) {
+    case "user":
+      return "skillsBadgeUser";
+    case "professional":
+      return "skillsBadgeProfessional";
+    case "preset":
+      return "skillsBadgePreset";
+    case "custom":
+      return "skillsBadgeCustom";
+  }
+}
+function folderLabel(group, t) {
+  return group === void 0 ? t("skillsGroupRoot") : studioText(group.name, t);
+}
+function groupOptions(groups, t) {
+  const options = [{ value: "", label: t("skillsGroupRoot") }];
+  const visit = (parentId, depth) => {
+    for (const group of groups.filter((candidate) => candidate.parentId === parentId)) {
+      options.push({ value: group.id, label: `${"\xB7 ".repeat(depth)}${studioText(group.name, t)}` });
+      visit(group.id, depth + 1);
+    }
+  };
+  visit(null, 0);
+  return options;
+}
+function fileStem(name) {
+  return name.replace(/\.(md|markdown|txt|json|yaml|yml)$/iu, "");
+}
+function textSkill(name, text2) {
+  const front = text2.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/u);
+  const meta3 = front?.[1] ?? "";
+  const field = (key2) => {
+    const match = meta3.match(new RegExp(`^${key2}:\\s*(.+)$`, "imu"));
+    return match?.[1]?.trim() ?? "";
+  };
+  const content = front === null ? text2 : text2.slice(front[0].length);
+  const firstLine = content.split(/\r?\n/u).find((line) => line.trim() !== "") ?? "";
+  return {
+    name: field("name") || fileStem(name),
+    description: field("description") || firstLine.replace(/^#+\s*/u, "").slice(0, 160),
+    content: content.trim() || text2.trim()
+  };
+}
+function jsonSkills(name, text2) {
+  const parsed = JSON.parse(text2);
+  const nested = parsed !== null && typeof parsed === "object" ? parsed.skills : void 0;
+  const rows = Array.isArray(parsed) ? parsed : Array.isArray(nested) ? nested : [parsed];
+  return rows.flatMap((row, index) => {
+    if (typeof row === "string") {
+      return [textSkill(index === 0 ? name : `${name}-${String(index + 1)}`, row)];
+    }
+    if (row === null || typeof row !== "object") return [];
+    const record2 = row;
+    const content = typeof record2.content === "string" ? record2.content : typeof record2.body === "string" ? record2.body : typeof record2.prompt === "string" ? record2.prompt : "";
+    if (content.trim() === "") return [];
+    return [{
+      name: typeof record2.name === "string" && record2.name.trim() !== "" ? record2.name.trim() : index === 0 ? fileStem(name) : `${fileStem(name)}-${String(index + 1)}`,
+      description: typeof record2.description === "string" ? record2.description.trim() : "",
+      content
+    }];
+  });
+}
+async function readSkillFiles(files) {
+  const imported = [];
+  for (const file2 of files) {
+    const text2 = await file2.text();
+    if (text2.trim() === "") continue;
+    if (/\.json$/iu.test(file2.name)) {
+      try {
+        imported.push(...jsonSkills(file2.name, text2));
+      } catch {
+        continue;
+      }
+      continue;
+    }
+    imported.push(textSkill(file2.name, text2));
+  }
+  return imported;
+}
+function LocalSkillImport({ t, scope, groupId }) {
+  const input = (0, import_react19.useRef)(null);
+  const [status, setStatus] = (0, import_react19.useState)("");
+  const [busy, setBusy] = (0, import_react19.useState)(false);
+  return /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: SkillsTab_default.importRow, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(
+      "input",
+      {
+        ref: input,
+        type: "file",
+        accept: ".md,.markdown,.txt,.json,.yaml,.yml",
+        multiple: true,
+        hidden: true,
+        onChange: () => {
+          const selected = input.current?.files;
+          if (selected === null || selected === void 0) return;
+          const files = [];
+          for (let index = 0; index < selected.length; index += 1) {
+            const file2 = selected.item(index);
+            if (file2 !== null) files.push(file2);
+          }
+          if (files.length === 0) return;
+          setBusy(true);
+          void readSkillFiles(files).then((skills) => {
+            for (const skill of skills) {
+              addSkill({
+                name: skill.name,
+                description: skill.description,
+                content: skill.content,
+                groupId,
+                preset: false,
+                scope,
+                badge: scope === "global" ? "user" : "custom"
+              });
+            }
+            setStatus(skills.length === 0 ? t("skillsImportInvalid") : t("skillsImportDone", { count: skills.length }));
+            setBusy(false);
+            if (input.current !== null) input.current.value = "";
+          });
+        }
+      }
+    ),
+    /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(
+      import_dsh_client_ui_primitives23.Button,
+      {
+        size: "sm",
+        variant: "outline",
+        disabled: busy,
+        onClick: () => {
+          input.current?.click();
+        },
+        children: t("skillsImportLocal")
+      }
+    ),
+    /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("span", { className: SkillsTab_default.importHint, children: t("skillsImportHint") }),
+    status !== "" && /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("span", { className: SkillsTab_default.successNote, role: "status", children: status })
+  ] });
+}
+function orderedTasks3(queue, tasks) {
+  const byId = new Map(tasks.filter((task) => task.queueId === queue.id).map((task) => [task.id, task]));
+  const ordered = [];
+  for (const id of queue.taskOrder) {
+    const task = byId.get(id);
+    if (task !== void 0) {
+      ordered.push(task);
+      byId.delete(id);
+    }
+  }
+  return [...ordered, ...byId.values()];
+}
+function SkillCard({ skill, t, groups, referenced, onAddToPipeline }) {
+  const [editing, setEditing] = (0, import_react19.useState)(false);
+  const [name, setName] = (0, import_react19.useState)(studioText(skill.name, t));
+  const [description, setDescription] = (0, import_react19.useState)(studioText(skill.description, t));
+  const [content, setContent] = (0, import_react19.useState)(studioText(skill.content, t));
+  const [historyOpen, setHistoryOpen] = (0, import_react19.useState)(false);
+  const [status, setStatus] = (0, import_react19.useState)("");
+  const group = groups.find((candidate) => candidate.id === skill.groupId);
+  const now = Date.now();
+  return /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("article", { className: SkillsTab_default.skillCard, "data-skill-id": skill.id, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("header", { className: SkillsTab_default.skillHead, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: SkillsTab_default.skillIdentity, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("h4", { className: SkillsTab_default.skillName, children: studioText(skill.name, t) }),
+        /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: SkillsTab_default.skillBadges, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(import_dsh_client_ui_primitives23.Tag, { tone: skill.badge === "custom" ? "info" : "outline", children: t(badgeKey(skill.badge)) }),
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(import_dsh_client_ui_primitives23.Tag, { tone: skill.enabled ? "success" : "quiet", children: skill.enabled ? t("skillsEnabled") : t("skillsDisabled") }),
+          skill.projectCount >= 2 && /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(import_dsh_client_ui_primitives23.Tag, { tone: "warning", children: t("skillsCrossProject", { count: skill.projectCount }) })
+        ] })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(
+        import_dsh_client_ui_primitives23.Switch,
+        {
+          checked: skill.enabled,
+          label: `${t("skillsEnabled")} ${studioText(skill.name, t)}`,
+          onChange: (value) => {
+            setSkillEnabled(skill.id, value);
+          }
+        }
+      )
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("p", { className: SkillsTab_default.skillDescription, children: studioText(skill.description, t) }),
+    /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: SkillsTab_default.skillMeta, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("span", { children: [
+        t("skillsGroup"),
+        ": ",
+        folderLabel(group, t)
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("span", { children: [
+        skill.versions.length,
+        " \xB7 ",
+        t("skillsHistoryTitle")
+      ] })
+    ] }),
+    editing ? /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: SkillsTab_default.editForm, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(TextField, { label: t("skillsName"), value: name, onChange: setName }),
+      /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(TextField, { label: t("skillsDescription"), value: description, onChange: setDescription }),
+      /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(TextAreaField, { label: t("skillsContent"), value: content, rows: 5, onChange: setContent }),
+      /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: SkillsTab_default.inlineActions, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(
+          import_dsh_client_ui_primitives23.Button,
+          {
+            size: "sm",
+            variant: "primary",
+            onClick: () => {
+              editSkill(skill.id, {
+                name: literal2(name),
+                description: literal2(description),
+                content: literal2(content)
+              });
+              setEditing(false);
+              setStatus(t("pressureParamsSaved"));
+            },
+            children: t("save")
+          }
+        ),
+        /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(import_dsh_client_ui_primitives23.Button, { size: "sm", variant: "ghost", onClick: () => {
+          setEditing(false);
+        }, children: t("cancel") })
+      ] })
+    ] }) : /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("p", { className: SkillsTab_default.skillContent, children: studioText(skill.content, t) }),
+    /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: SkillsTab_default.skillActions, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(import_dsh_client_ui_primitives23.Button, { size: "sm", variant: "outline", onClick: () => {
+        setEditing((value) => !value);
+      }, children: editing ? t("skillsHideContent") : t("skillsEditContent") }),
+      /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(import_dsh_client_ui_primitives23.Button, { size: "sm", variant: "ghost", onClick: () => {
+        setHistoryOpen(true);
+      }, children: t("skillsGitHistory") }),
+      onAddToPipeline !== void 0 && (referenced === true ? /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(import_dsh_client_ui_primitives23.Tag, { tone: "success", children: t("skillsReferenced") }) : /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(
+        import_dsh_client_ui_primitives23.Button,
+        {
+          size: "sm",
+          variant: "primary",
+          onClick: () => {
+            onAddToPipeline();
+            setStatus(t("skillsAddedToConversation"));
+          },
+          children: t("skillsAddToConversation")
+        }
+      ))
+    ] }),
+    status !== "" && /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("p", { className: SkillsTab_default.successNote, role: "status", children: status }),
+    historyOpen && /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(SkillHistoryDialog, { t, skill, now, onClose: () => {
+      setHistoryOpen(false);
+    } })
+  ] });
+}
+function SkillReferencePicker({ label, skills, selected, t, onToggle }) {
+  return /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: SkillsTab_default.refBlock, "aria-label": label, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("span", { className: SkillsTab_default.refLabel, children: label }),
+    skills.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("p", { className: SkillsTab_default.empty, children: t("skillsRefNone") }) : /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("div", { className: SkillsTab_default.refChips, children: skills.map((skill) => {
+      const isSelected = selected.includes(skill.id);
+      return /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)(
+        "button",
+        {
+          type: "button",
+          className: isSelected ? `${SkillsTab_default.refChip} ${SkillsTab_default.refChipOn}` : SkillsTab_default.refChip,
+          "aria-pressed": isSelected,
+          title: isSelected ? t("skillsRemoveRef") : t("skillsAddRef"),
+          onClick: () => {
+            onToggle(skill.id);
+          },
+          children: [
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("span", { className: isSelected ? SkillsTab_default.refDotOn : SkillsTab_default.refDot, "aria-hidden": "true" }),
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("span", { className: SkillsTab_default.refName, children: studioText(skill.name, t) }),
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("span", { className: SkillsTab_default.refSign, "aria-hidden": "true", children: isSelected ? "\u2212" : "+" })
+          ]
+        },
+        skill.id
+      );
+    }) })
+  ] });
+}
+function ReferencedSkills({ skills, selected, t }) {
+  const referenced = skills.filter((skill) => selected.includes(skill.id));
+  if (referenced.length === 0) return /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("p", { className: SkillsTab_default.empty, children: t("skillsRefNone") });
+  return /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("div", { className: SkillsTab_default.refChips, children: referenced.map((skill) => /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(import_dsh_client_ui_primitives23.Tag, { tone: "info", children: studioText(skill.name, t) }, skill.id)) });
+}
+function ImprovementList({ t, improvements }) {
+  return /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("section", { className: SkillsTab_default.block, "aria-label": t("skillsGlobalImprovementsTitle"), children: [
+    /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("header", { className: SkillsTab_default.head, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("div", { className: SkillsTab_default.heading, children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("h3", { className: SkillsTab_default.title, children: t("skillsGlobalImprovementsTitle") }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(import_dsh_client_ui_primitives23.Tag, { tone: "outline", children: String(improvements.length) })
+    ] }),
+    improvements.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("p", { className: SkillsTab_default.empty, children: t("skillsNoImprovements") }) : /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("div", { className: SkillsTab_default.improvementList, children: improvements.map((improvement) => {
+      const cross = improvement.projects.length >= 2;
+      return /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("article", { className: SkillsTab_default.improvement, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("header", { className: SkillsTab_default.improvementHead, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("h4", { className: SkillsTab_default.improvementTitle, children: improvement.title }),
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: SkillsTab_default.skillBadges, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(import_dsh_client_ui_primitives23.Tag, { tone: cross ? "warning" : "quiet", children: cross ? t("skillsCrossProject", { count: improvement.projects.length }) : t("skillsSingleProject") }),
+            improvement.generated && /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(import_dsh_client_ui_primitives23.Tag, { tone: "info", children: t("skillsGeneratedBadge") })
+          ] })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("p", { className: SkillsTab_default.improvementProjects, children: t("skillsImprovementProjects", { projects: improvement.projects.join(", ") }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("dl", { className: SkillsTab_default.improvementMeta, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("dt", { children: t("skillsImprovementCause") }),
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("dd", { children: improvement.cause })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("dt", { children: t("skillsImprovementAction") }),
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("dd", { children: improvement.action })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("dt", { children: t("skillsImprovementResult") }),
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("dd", { className: SkillsTab_default.improvementResult, children: improvement.result })
+          ] })
+        ] })
+      ] }, improvement.id);
+    }) })
+  ] });
+}
+function SkillsTab({ t, live, drafts }) {
+  const studio = useStudio();
+  const [view, setView] = (0, import_react19.useState)("global");
+  const [folderName, setFolderName] = (0, import_react19.useState)("");
+  const [folderParent, setFolderParent] = (0, import_react19.useState)("");
+  const [addName, setAddName] = (0, import_react19.useState)("");
+  const [addDescription, setAddDescription] = (0, import_react19.useState)("");
+  const [addContent, setAddContent] = (0, import_react19.useState)("");
+  const [addGroup, setAddGroup] = (0, import_react19.useState)("");
+  const [addPreset, setAddPreset] = (0, import_react19.useState)("custom");
+  const [activeGroup, setActiveGroup] = (0, import_react19.useState)("");
+  const [notice, setNotice] = (0, import_react19.useState)("");
+  const [refNotice, setRefNotice] = (0, import_react19.useState)("");
+  const items = [
+    { value: "global", label: t("skillsTabGlobal"), id: "skills-tab-global", panelId: "skills-panel-global" },
+    { value: "professional", label: t("skillsTabProfessional"), id: "skills-tab-professional", panelId: "skills-panel-professional" },
+    { value: "pipeline", label: t("skillsTabPipeline"), id: "skills-tab-pipeline", panelId: "skills-panel-pipeline" }
+  ];
+  const selectedQueue = drafts.selectedQueueId === void 0 ? void 0 : live.queues.find((queue) => queue.id === drafts.selectedQueueId);
+  const currentQueue = selectedQueue ?? live.queues[0];
+  const globalSkills = studio.skills.filter((skill) => skill.scope === "global");
+  const professionalSkills = studio.skills.filter((skill) => skill.scope === "professional");
+  const currentRefs = currentQueue === void 0 ? void 0 : studio.refs[currentQueue.id];
+  const defaultImprovements = [
+    {
+      id: "default-cross",
+      title: t("improvementCrossTitle"),
+      cause: t("improvementCrossCause"),
+      action: t("improvementCrossAction"),
+      result: t("improvementCrossResult"),
+      projects: [t("improvementProjectOne"), t("improvementProjectTwo")],
+      at: 0,
+      generated: false
+    },
+    {
+      id: "default-local",
+      title: t("improvementLocalTitle"),
+      cause: t("improvementLocalCause"),
+      action: t("improvementLocalAction"),
+      result: t("improvementLocalResult"),
+      projects: [t("improvementProjectOne")],
+      at: 0,
+      generated: false
+    }
+  ];
+  const improvements = [
+    ...studio.improvements.map((improvement) => ({ ...improvement, generated: true })),
+    ...defaultImprovements
+  ];
+  const folderOptions = groupOptions(studio.groups, t);
+  const activeGroupId = activeGroup === "" ? null : activeGroup;
+  const visibleGroupSkills = professionalSkills.filter((skill) => skill.groupId === activeGroupId);
+  const panelId = items.find((item) => item.value === view)?.panelId ?? items[0].panelId;
+  return /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: SkillsTab_default.tab, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(
+      Summary,
+      {
+        label: t("skillsTitle"),
+        metrics: [
+          { label: t("skillsTabGlobal"), value: globalSkills.length },
+          { label: t("skillsTabProfessional"), value: professionalSkills.length },
+          { label: t("metricQueues"), value: live.queues.length },
+          { label: t("skillsGlobalImprovementsTitle"), value: improvements.length }
+        ]
+      }
+    ),
+    /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("nav", { className: SkillsTab_default.tabs, role: "tablist", "aria-label": t("skillsTabLabel"), children: items.map((item, index) => /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(
+      "button",
+      {
+        type: "button",
+        role: "tab",
+        id: item.id,
+        "aria-selected": view === item.value,
+        "aria-controls": item.panelId,
+        tabIndex: view === item.value ? 0 : -1,
+        className: view === item.value ? `${SkillsTab_default.tabButton} ${SkillsTab_default.tabButtonActive}` : SkillsTab_default.tabButton,
+        onClick: () => {
+          setView(item.value);
+        },
+        onKeyDown: (event) => {
+          const step = event.key === "ArrowRight" || event.key === "ArrowDown" ? 1 : event.key === "ArrowLeft" || event.key === "ArrowUp" ? -1 : 0;
+          if (step === 0) return;
+          event.preventDefault();
+          const next = items[(index + step + items.length) % items.length];
+          if (next === void 0) return;
+          setView(next.value);
+          document.getElementById(next.id)?.focus();
+        },
+        children: item.label
+      },
+      item.value
+    )) }),
+    /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { id: panelId, role: "tabpanel", "aria-labelledby": items.find((item) => item.value === view)?.id, children: [
+      view === "global" && /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)(import_jsx_runtime23.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("section", { className: SkillsTab_default.block, "aria-label": t("skillsGlobalUserTitle"), children: [
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("header", { className: SkillsTab_default.head, children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("div", { className: SkillsTab_default.heading, children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("h3", { className: SkillsTab_default.title, children: t("skillsGlobalUserTitle") }) }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(LocalSkillImport, { t, scope: "global", groupId: null }),
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("div", { className: SkillsTab_default.skillGrid, children: globalSkills.filter((skill) => skill.badge === "user").map((skill) => /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(SkillCard, { skill, t, groups: studio.groups }, skill.id)) })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("section", { className: SkillsTab_default.block, "aria-label": t("skillsGlobalProTitle"), children: [
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("header", { className: SkillsTab_default.head, children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("div", { className: SkillsTab_default.heading, children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("h3", { className: SkillsTab_default.title, children: t("skillsGlobalProTitle") }) }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("div", { className: SkillsTab_default.skillGrid, children: globalSkills.filter((skill) => skill.badge !== "user").map((skill) => /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(SkillCard, { skill, t, groups: studio.groups }, skill.id)) })
+        ] })
+      ] }),
+      view === "professional" && /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)(import_jsx_runtime23.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("section", { className: SkillsTab_default.block, "aria-label": t("skillsPipelineEntry"), children: [
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("header", { className: SkillsTab_default.head, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("div", { className: SkillsTab_default.heading, children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("h3", { className: SkillsTab_default.title, children: t("skillsPipelineEntry") }) }),
+            currentQueue === void 0 ? /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(import_dsh_client_ui_primitives23.Tag, { tone: "quiet", children: t("skillsNoPipeline") }) : /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(import_dsh_client_ui_primitives23.Tag, { tone: "info", children: t("skillsCurrentPipeline", { title: currentQueue.title }) })
+          ] }),
+          notice !== "" && /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("p", { className: SkillsTab_default.successNote, role: "status", children: notice })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("section", { className: SkillsTab_default.block, "aria-label": t("skillsAddTitle"), children: [
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("header", { className: SkillsTab_default.head, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("div", { className: SkillsTab_default.heading, children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("h3", { className: SkillsTab_default.title, children: t("skillsAddTitle") }) }),
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(import_dsh_client_ui_primitives23.Tag, { tone: "outline", children: t("skillsBadgeCustom") })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(
+            LocalSkillImport,
+            {
+              t,
+              scope: "professional",
+              groupId: addGroup === "" ? null : addGroup
+            }
+          ),
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: SkillsTab_default.addGrid, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(TextField, { label: t("skillsName"), value: addName, onChange: setAddName }),
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(TextField, { label: t("skillsDescription"), value: addDescription, onChange: setAddDescription }),
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(
+              SelectField,
+              {
+                label: t("skillsType"),
+                value: addPreset,
+                options: [
+                  { value: "custom", label: t("skillsBadgeCustom") },
+                  { value: "preset", label: t("skillsBadgePreset") }
+                ],
+                onChange: setAddPreset
+              }
+            ),
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(
+              SelectField,
+              {
+                label: t("skillsGroup"),
+                value: addGroup,
+                options: folderOptions,
+                onChange: setAddGroup
+              }
+            )
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(TextAreaField, { label: t("skillsContent"), value: addContent, rows: 3, onChange: setAddContent }),
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("div", { className: SkillsTab_default.inlineActions, children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(
+            import_dsh_client_ui_primitives23.Button,
+            {
+              size: "sm",
+              variant: "primary",
+              disabled: addName.trim() === "" || addContent.trim() === "",
+              onClick: () => {
+                addSkill({
+                  name: addName.trim(),
+                  description: addDescription.trim(),
+                  content: addContent.trim(),
+                  groupId: addGroup === "" ? null : addGroup,
+                  preset: addPreset === "preset"
+                });
+                setAddName("");
+                setAddDescription("");
+                setAddContent("");
+                setNotice(t("skillsAdded"));
+              },
+              children: t("skillsAdd")
+            }
+          ) })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("section", { className: SkillsTab_default.block, "aria-label": t("skillsTreeTitle"), children: [
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("header", { className: SkillsTab_default.head, children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("div", { className: SkillsTab_default.heading, children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("h3", { className: SkillsTab_default.title, children: t("skillsTreeTitle") }) }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: SkillsTab_default.folderForm, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(TextField, { label: t("skillsGroupName"), value: folderName, onChange: setFolderName }),
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(
+              SelectField,
+              {
+                label: t("skillsGroup"),
+                value: folderParent,
+                options: folderOptions,
+                onChange: setFolderParent
+              }
+            ),
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(
+              import_dsh_client_ui_primitives23.Button,
+              {
+                size: "sm",
+                variant: "outline",
+                disabled: folderName.trim() === "",
+                onClick: () => {
+                  addSkillGroup(folderName.trim(), folderParent === "" ? null : folderParent);
+                  setFolderName("");
+                  setNotice(t("skillsGroupCreated"));
+                },
+                children: t("skillsGroupAdd")
+              }
+            )
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("div", { className: SkillsTab_default.groupNav, role: "group", "aria-label": t("skillsGroup"), children: folderOptions.map((option) => {
+            const groupId = option.value === "" ? null : option.value;
+            const count = professionalSkills.filter((skill) => skill.groupId === groupId).length;
+            return /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)(
+              "button",
+              {
+                type: "button",
+                className: option.value === activeGroup ? `${SkillsTab_default.groupChip} ${SkillsTab_default.groupChipActive}` : SkillsTab_default.groupChip,
+                "aria-pressed": option.value === activeGroup,
+                onClick: () => {
+                  setActiveGroup(option.value);
+                  setAddGroup(option.value);
+                  setFolderParent(option.value);
+                },
+                children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("span", { children: option.label }),
+                  /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("span", { className: SkillsTab_default.groupCount, children: String(count) })
+                ]
+              },
+              option.value
+            );
+          }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("div", { className: SkillsTab_default.skillGrid, children: visibleGroupSkills.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("p", { className: SkillsTab_default.empty, children: t("skillsGroupEmpty") }) : visibleGroupSkills.map((skill) => {
+            const referenced = currentRefs?.global.includes(skill.id) ?? false;
+            return /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(
+              SkillCard,
+              {
+                skill,
+                t,
+                groups: studio.groups,
+                referenced,
+                onAddToPipeline: currentQueue === void 0 ? void 0 : () => {
+                  if (!referenced) toggleSkillReference(currentQueue.id, null, skill.id);
+                  setNotice(t("skillsAddedToConversation"));
+                }
+              },
+              skill.id
+            );
+          }) })
+        ] })
+      ] }),
+      view === "pipeline" && /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("section", { className: SkillsTab_default.block, "aria-label": t("skillsPipelineTitle"), children: [
+        /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("header", { className: SkillsTab_default.head, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("div", { className: SkillsTab_default.heading, children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("h3", { className: SkillsTab_default.title, children: t("skillsPipelineTitle") }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(import_dsh_client_ui_primitives23.Tag, { tone: "outline", children: t("skillsRefLive") })
+        ] }),
+        refNotice !== "" && /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("p", { className: SkillsTab_default.successNote, role: "status", children: refNotice }),
+        live.queues.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("p", { className: SkillsTab_default.empty, children: t("skillsPipelineNoQueue") }) : /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("div", { className: SkillsTab_default.pipelineList, children: live.queues.map((queue) => {
+          const refs = studio.refs[queue.id] ?? { global: [], tasks: {} };
+          const rows = orderedTasks3(queue, live.tasks);
+          const add = (taskId, skillId) => {
+            const added = toggleSkillReference(queue.id, taskId, skillId);
+            setRefNotice(added ? t("skillsRefAdded") : t("skillsRefRemoved"));
+          };
+          return /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("article", { className: SkillsTab_default.pipeline, "data-queue-id": queue.id, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("header", { className: SkillsTab_default.pipelineHead, children: [
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("h4", { className: SkillsTab_default.pipelineTitle, children: queue.title }),
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(import_dsh_client_ui_primitives23.Tag, { tone: "quiet", children: t("queueTaskCount", { count: rows.length }) })
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: SkillsTab_default.pipelineScope, children: [
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("span", { className: SkillsTab_default.scopeLabel, children: t("skillsPipelineGlobal") }),
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(
+                SkillReferencePicker,
+                {
+                  label: t("skillsLibraryTitle"),
+                  skills: professionalSkills,
+                  selected: refs.global,
+                  t,
+                  onToggle: (skillId) => {
+                    add(null, skillId);
+                  }
+                }
+              )
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: SkillsTab_default.pipelineScope, children: [
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("span", { className: SkillsTab_default.scopeLabel, children: t("skillsPipelineTasks") }),
+              rows.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("p", { className: SkillsTab_default.empty, children: t("skillsPipelineNoTasks") }) : /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("div", { className: SkillsTab_default.taskRefs, children: rows.map((task) => /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: SkillsTab_default.taskRef, children: [
+                /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: SkillsTab_default.taskRefHead, children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("span", { className: SkillsTab_default.taskRefTitle, children: task.title }),
+                  /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(
+                    ReferencedSkills,
+                    {
+                      skills: professionalSkills,
+                      selected: refs.tasks[task.id] ?? [],
+                      t
+                    }
+                  )
+                ] }),
+                /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(
+                  SkillReferencePicker,
+                  {
+                    label: t("skillsPipelineTaskSkills"),
+                    skills: professionalSkills,
+                    selected: refs.tasks[task.id] ?? [],
+                    t,
+                    onToggle: (skillId) => {
+                      add(task.id, skillId);
+                    }
+                  }
+                )
+              ] }, task.id)) })
+            ] })
+          ] }, queue.id);
+        }) })
+      ] })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(ImprovementList, { t, improvements })
+  ] });
+}
+
+// packages/client/ui-settings-session-orchestrator/src/client/MemoryTab.tsx
+var import_react24 = require("react");
+var import_dsh_client_ui_primitives25 = require("@deepseek-ai/dsh-client-ui-primitives");
+
+// packages/client/ui-settings-session-orchestrator/src/client/petModel.ts
+var ACTIVE_RUN_STATES = /* @__PURE__ */ new Set([
+  "starting",
+  "running",
+  "handoff-pending",
+  "handing-off"
+]);
+var SUCCESS_RUN_STATES = /* @__PURE__ */ new Set(["succeeded"]);
+var DONE_CELEBRATION_MS = 10 * 60 * 1e3;
+var FAILURE_WINDOW_MS = 10 * 60 * 1e3;
+function latestRunsByTask(runs) {
+  const latest = /* @__PURE__ */ new Map();
+  for (const run of runs) {
+    const previous = latest.get(run.taskId);
+    if (previous === void 0 || run.attempt > previous.attempt || run.attempt === previous.attempt && run.updatedAt >= previous.updatedAt) {
+      latest.set(run.taskId, run);
+    }
+  }
+  return latest;
+}
+function lastRunActivity(runs) {
+  let newest = 0;
+  for (const run of runs.values()) {
+    if (run.updatedAt > newest) newest = run.updatedAt;
+  }
+  return newest;
+}
+function petProgressOf(live) {
+  const tasks = live.tasks.filter((task) => task.enabled);
+  const latest = latestRunsByTask(live.runs);
+  let done = 0;
+  let running = 0;
+  let attention = 0;
+  let failed = 0;
+  for (const task of tasks) {
+    const run = latest.get(task.id);
+    if (run === void 0) continue;
+    if (SUCCESS_RUN_STATES.has(run.state)) done += 1;
+    else if (ACTIVE_RUN_STATES.has(run.state)) running += 1;
+    else if (run.state === "needs-attention") attention += 1;
+    else if (run.state === "failed") failed += 1;
+  }
+  const queuesRunning = live.queues.filter((queue) => queue.state === "running").length;
+  return {
+    total: tasks.length,
+    done,
+    running,
+    attention,
+    failed,
+    queuesRunning,
+    queuesTotal: live.queues.length,
+    ratio: tasks.length === 0 ? 0 : done / tasks.length
+  };
+}
+function petMoodOf(live, now) {
+  if (live.phase === "connecting") return "connecting";
+  if (live.phase === "error") return "error";
+  const progress = petProgressOf(live);
+  if (progress.attention > 0) return "attention";
+  const latest = latestRunsByTask(live.runs);
+  const activityAt = lastRunActivity(latest);
+  if (progress.failed > 0 && now - activityAt <= FAILURE_WINDOW_MS) return "error";
+  if (progress.running > 0 || progress.queuesRunning > 0) return "working";
+  if (progress.total > 0 && progress.done === progress.total) {
+    if (activityAt > 0 && now - activityAt <= DONE_CELEBRATION_MS) return "done";
+    return "idle";
+  }
+  const hour = new Date(now).getHours();
+  if (progress.total === 0 && (hour < 6 || hour >= 23)) return "sleeping";
+  return "idle";
+}
+function petToneOf(mood) {
+  switch (mood) {
+    case "attention":
+      return "warning";
+    case "error":
+      return "danger";
+    case "done":
+      return "success";
+    case "connecting":
+    case "idle":
+    case "working":
+    case "sleeping":
+      return "info";
+  }
+}
+function petSnapshotOf(live, now = Date.now()) {
+  const mood = petMoodOf(live, now);
+  const snapshot3 = { mood, tone: petToneOf(mood), progress: petProgressOf(live) };
+  if (mood !== "error") return snapshot3;
+  return { ...snapshot3, failure: live.phase === "error" ? "connection" : "task" };
+}
+function petSpeech(pet, t) {
+  const { progress } = pet;
+  switch (pet.mood) {
+    case "connecting":
+      return t("petBubbleConnecting");
+    case "error":
+      return pet.failure === "connection" ? t("petBubbleError") : t("petBubbleFailed", { count: progress.failed });
+    case "attention":
+      return t("petBubbleAttention", { count: progress.attention });
+    case "working":
+      return t("petBubbleWorking", {
+        running: progress.running,
+        queues: progress.queuesRunning,
+        done: progress.done,
+        total: progress.total
+      });
+    case "done":
+      return t("petBubbleDone", { total: progress.total });
+    case "sleeping":
+      return t("petBubbleSleeping");
+    case "idle":
+      return progress.total === 0 ? t("petBubbleEmpty") : t("petBubbleIdle", { done: progress.done, total: progress.total });
+  }
+}
+function petDetail(pet, t, notices = 0) {
+  const { progress } = pet;
+  if (progress.total === 0) {
+    return notices > 0 ? t("petReminderDetail", { count: notices }) : void 0;
+  }
+  const counts = {
+    done: progress.done,
+    total: progress.total,
+    running: progress.running,
+    queues: progress.queuesRunning
+  };
+  return notices > 0 ? t("petProgressDetailNotices", { ...counts, count: notices }) : t("petProgressDetail", counts);
+}
+
+// packages/client/ui-settings-session-orchestrator/src/client/petPrefs.ts
+var import_react20 = require("react");
+var STORAGE_KEY = "dsh-handsoff:pet-prefs";
+var DEFAULTS = { mode: "docked", x: null, y: null };
+function read() {
+  try {
+    const raw = globalThis.localStorage?.getItem(STORAGE_KEY);
+    if (raw === null || raw === void 0) return DEFAULTS;
+    const parsed = JSON.parse(raw);
+    if (typeof parsed !== "object" || parsed === null) return DEFAULTS;
+    const record2 = parsed;
+    return {
+      mode: record2.mode === "floating" ? "floating" : "docked",
+      x: typeof record2.x === "number" && Number.isFinite(record2.x) ? record2.x : null,
+      y: typeof record2.y === "number" && Number.isFinite(record2.y) ? record2.y : null
+    };
+  } catch {
+    return DEFAULTS;
+  }
+}
+function write(prefs) {
+  try {
+    globalThis.localStorage?.setItem(STORAGE_KEY, JSON.stringify(prefs));
+  } catch {
+  }
+}
+var state2 = read();
+var listeners2 = /* @__PURE__ */ new Set();
+function publish2(next) {
+  if (next.mode === state2.mode && next.x === state2.x && next.y === state2.y) return;
+  state2 = next;
+  write(state2);
+  for (const listener of listeners2) listener();
+}
+function subscribe2(listener) {
+  listeners2.add(listener);
+  return () => {
+    listeners2.delete(listener);
+  };
+}
+function snapshot() {
+  return state2;
+}
+function serverSnapshot() {
+  return DEFAULTS;
+}
+function usePetPrefs() {
+  return (0, import_react20.useSyncExternalStore)(subscribe2, snapshot, serverSnapshot);
+}
+function setPetMode(mode) {
+  publish2({ ...state2, mode });
+}
+function togglePetMode() {
+  setPetMode(state2.mode === "docked" ? "floating" : "docked");
+}
+function setPetPosition(x, y) {
+  publish2({ ...state2, x, y });
+}
+
+// packages/client/ui-settings-session-orchestrator/src/client/petArtStore.ts
+var import_react21 = require("react");
+
+// packages/client/ui-settings-session-orchestrator/src/client/petArt.ts
+var PET_ART = {
+  idle: "data:image/webp;base64,UklGRki6AABXRUJQVlA4WAoAAAAQAAAAPwEAPwEAQUxQSFgyAAABDAQB0wT6x77KjgUiQoHbNkqPedDdIwST1Uh2a8nvhMXKxVDHo7eDR65SvmGQwFwDEl6N6h2THNxX642lzkuKFbxPtUJ5WMg9F1eHBa4Ceehd4egzVgBRgxxW8teLzfs9xeDf5lUYZ1HpVKSaUJTL53yAJPZ7ICQ6v8My4b0DYPMVXGIBBHoc+94lwfc1tyRnZnQOvkG92/Y0RBDvtiHM2YkDoYEvSd6wbVsup/2/87qve2Yyk5m4uyNRJJAGgrtbW9z5pC0uaSju7i7Fa7h/cK1AaLEoEggOSSAJsZlZz31f54u1Zq1nPWtlwsuImABPtG2btm1t27p29LFt+3mCtm3btm3bNoK2ee9jHD1+js/Zd6+9Rm+11hKYYw702ccTjogJQPvTeXXqBcWLeuQ3jd7+I7/mJ3/veXc9fN2yYukP8//73F0XHrHd+k3I9yr4BVAUhbUIUQVQM3C3C5+c9UNgw+SH2c9csteQOgCqsrYnwPDj7nropoO6whVyHkDjDhe+soz5JtnJjFmMIQRj/oo3L9ulEwAva3Xias78kfkf7QsFoA7otP0t8xOSMYRoxoZmMYRIMn5++w6dAKdrb+L8A2RIQhJox8KrA9Y5932SlgRjmS0mRvK9s4cDzq09iapKEQ4XsdWYH2KyI4CtHlhBxhCZ0RgiueyuyYBza0eiyFdXyGHD1sA2A9/rsO1zgQyRmY6BbHlsc0AFkPy1GQE6b7XXdr0AB8A5xR0sgrHlrUgLzL4F0v4yBvDeAYDz6tZSHBrPnt/K5Oure8ABgOv6kcVzNYkoVGQUHv1TPYCGrt0akO/dWoigz6skzch568NhywkYv5w256nAXHDBF0664+W3Z86e8eKtvx/vAS9rG+LqX2DOjLQc53bHDVy1687WnJtpk7n0BBbbOmPacMC3IerVrQUoTmCOhXO8YvTKwPl/a17VAmQqRhhCEkKMISSB5HfXDIS4PEW+c+0+aZxjsQ3GpfevyvH58UtpoMkMNybkt8cJHCBo2P7g36wHuHaewxQai+CBZ8Yle/i5FqkpjNgS8pnBqHHyh49z5JK/D4Vr3ymOZygi2CXYejRwDUMVo7aECzaF3kxajOS3G8O1884tjnc7wGPdRUlj4IGLNjqVuUjSEs7vJQKRdtwZJdyMOoca3E2NDPHo4w6zOV4FL4DLE1VVaW8dWMLp8PD4/cqYoREw89EW9AGGdYYDFAW1XeUwYiWTpA2LU+A8ppLG4BNrjpFbNfx18fxfwzl02/OPp+3UBNeegvp/cEVLocC3aqQGB4ZoPEB5LrHdT2bkslGKg+aQ5Ht7QNtTgp1+brUCFuLOqMMuzRa5RpRPbHV49bMYW3gIppMhJIF2OLTdJFJzy/wVxhBiSMizUYNNfmLkGlIGGHjgCzHXHF6/ImeBJBNbuYFoe8ljKmmLvmT+4hOh6PcZI9eY1YTZiu5Hk/x8w/mMLJjwQbjqJ07UO6k4xd2hxRaMPPHxN54+exjU177ChGvQqBI+Jf7cWa9tPHKZWSGznwdDqp0ADoCok8ryOJvLONujoHpcRXGssjgFDvWK3zGyTeM+0CrnpP72V644YKwD4F0liev3Pr/fEfA1qqL4NYuDTes0OChq3B8Z2or8XbUTpw+R5JIZV2zZBKhKxUBx5U6jeo3o7eDEyfAfzAeTtEx0CojHqcUdXeXEuQeYi0kgyQ8v2RiAlwoRNN1y0PM/rfj2mX0B1ecZOVrxETgAHgcwtmXcrsp5XM2EJC2ESK54br8mwEtFOPT5lIXvacCJTLg8JXl0WLKROMBh6E9mpLUYzb7qAqlmHiczYdsxIfnu8Z0BrYjaJ5mLZhYCbxy1PFpxbWpq0+TBBT4AD0BxNxMyrjLmeAkUVVyxfRKtCNJCID85oTPEZU5xLBMWtNj8BY3FZhKnnjw2Bh4FDzg35HvmLNdirZzd27kq5mTgF4wsNQZyziEeXvoS6TLbYiHSaCw2LZxtHpvZ8olwgMOWX5IrAzl3LByqt6g8wcAUY0K+MAlwmVJsZWbhxOImzqeNjZGzuqgDPNa55wdrWXB9PyiquOIYJkw3Bq6+qAmarZNYS5qXuFiqGhsDbwJUscucN/6x3egegEMVdxj6U7SUyEC+OwkqpUkZLqaWlMDlmdKitLEZv/v4wn6QhhnkkwBUUNXkHwxM3xKuPBFwpTiU4Xxb1IRbNZ9MXkRlaGQu4Y/n1XT+IPLf9epQ1RU7hYRlTcg7a6EldNytPr3DueT6GlpwOymWtpub0SVJJP+C87niEDhUd1f7DmNbSTagBb4+EFpc04xN4NIaszo5p5uZNs1lwZ3raw2OrbSEF5279wQIqrviCAYWn3VkwtnrQotw6J17SHw64tyz1LkSSKhOprAwXE/Di7TYMhkQVHdxnWdaEe1/HptENmDCr8ZDixnZnOwITQUOmzd7zlOAmionpSX4JhcRSDdJQsbcblqLKq84kmI+4YNNg9aZvO3P4XUU97wStIghP/P9BiepQHEimTOSmsJpmHUtqSl0H9XU3KZW8prI3sANJjwPWu2k7gP6TOAZADD+v7IFxT/2gysk6L6AvBg+HSiO+YHM5VpaWFk51ya6TzU5kFjVmrIgNZVb8yqmMOFVUu0U+8bI2cijpUYb38NsWrzSoFIAUvsqc6u3hqYDh8GnftbSGlmdNudJdJ8mFketTqrhJoA0r2piwutQ7Zx7imHJvqjFSSw2Lt4ELaS4nq2c11UkHXh0WUDjhp4CaDL9l1kbtST33U4L881r1Ghh0QiRquYwrsV43rgbXI/PzFuRcH9oG3tFS3gfNCWHW5gwVU9TtcYFSmyYwtdpLGxZkYlcxXugVU1xBUMRkfsAJzCwebRvBorLE3T+jJbwOPhUHNZdbpYOaCou0I1NPTmNpdYKJsslcfVEuCom0vVjxqIOR8Msxu0YeA98HhSXMVho3hyahuIOBlbVlk3Co49XFlFeUc0JAx+tah57xsAiA6dj1yRyz9CyJbTQ2OVmkZ8PgJTmZP2V0apKma0VlqdWJCEZWzeHVi+Hu1hU8e1X307tw+dE8qDyVwYGvl6nUtrV9yJGatFt3SybFT//hOol6PodrRjxq0//a7wLo02B5jlMbI1kjndBpQSVV3rMGUlEv9oCT68nrlop9mZkseYvXvM22SfhPYXgcD8DmfBM+FLwrYiROh1FW4gfRtXyuJ1JUeH+TxE7G7/uB1dARi+JRiZ2FHxRgqGPJiNR6LmyQfLQSHHVyaHTLIaiwM/djYG7Q/OguIiBtNi8J3wxiispBmrRlzegOBdanRSbJNFKALwom9i5bYjr+pFFMvLnLeDbcjLou3ggEX2rtgifNUKq1AlMWGq7g5ZsGu0VuAJQ7MNAMnLRhtA2FGdRjCSdZRPMA+Gr1MMMpbh99R9R2SXhjW1BcScDycgv14MvINL1C/NIut+o7Cl11UjwrLvwmoRP9HyIDGWInNVVpJBI1zHv0Egm/Hxd+DyP4xg48rZJuHw9uCqkeN3brDfbGCcvY4xpWWydAkVhjwu+eqo1j4Hz14cHIPXvMx5abULgNGgV8vgAvC7wL8C4p8kYLI2Y40nwKGIq2RrzGPjFBHgo9mXksWWTaO+oq0pfRVtntnKsB/b+D2khWlEWQyCvgqJth8GLY2i1PCb8fnPUOLzMsGZr3oRs3giu+jj5eWodA+9FjcDv/2JCMiZJyM8lkSS/PROCYh3uZAitBRi4dDfI5OZoa7bSNoF/gq86go5/iTdgzE2GqgCbnDdjCYtdPvuW3QdDShm7MhrbDNZ8JG5hwjW7vdVLNVJ1HPo+SLYI/GcHL1AHYNR+f7rj4WdfePbBW0/ff5wHoChR8WeGthjJK76mreGkbcgVQ+Gqz/iETQOnwwNQFeQ771BQ1aFUJyOWWhE0o3FN79oo8hBotVFszZhO3DwZHvlOvToRceq9Q6qKc5kUAdV0dNoq2L3w1cah33dmqWB+MhBekEmnXWcxLgFVji3eirPqRaoMFNcxpEPghxtBNBNQ7MSYRVQ7NreNjD9vAFdtHNZbES0dRq44twHqsgCHS6klbubYo40YeCB8tYHiaoaUGMj/7gyoy4C4TrPIGVeFy3cuq22V8Epo1XHS4zOLKdES8u+jAZWyeUxb/XzPpMoMUGZIkS+IVB0o9mRIi4zG5ZcPBryU7ThOJ6lmBphmLryykfHLRkiZnPQHxY1MUiMT8uuzegLqyiLot5CQamaEaeHSp63I1tFw5VFUomjjGwzpkYL7Pv8lr6Aq6UFxLlXNDNEtXLzY2mwvaDmcw6g+FQCHYV8xpAcW/N83bwRAVdIRL+j0TynGqGKA3izwFPj0xEP+77uxcNmDYtMlDGWAFLQ8fXA3AKpOpBgR5zxQ85uXbjPIKkY4eauE15VBBeOe5A/dIRUAxfbLLZQDIpJf3bx7b+Q79YUd8vsf+x6rZZoYYu3wKDQlUTSds5y8HIqKVOy6irEsYCGS/PzRkzfr04AiO/bbeIurviBjGIObGYS2CnzNiaQhCuz6LiM/6CJSGfDYYXG08pC0EEly4dsP3Xz+KSecMP2yOx5/exFJJpHVUS0Msm0W+d9GpKHAiPvIFn65Dhwq1WNXxrKRjCFElmgWIqtkFcO0t/uoVwoqaJq+kLGFX20Ah8r17l8MGci3GJI2QzRWzTQxTtV2XwyAK8F5YK//kUnCD0bBo4IVWydZGbSbOQDj14NKEA9s9CiZhMin+0BR0YorGNZcVWGk6UUUGHLjCloItCtqoahs0YY3mVtDuYmxpm0VuaA/pA3xQL/zF5IhBi7YE3CodIfhPzD6iKrCaLXdvJ5tqAL9z/qaDBbI+wfCCypfMfFlksNxK4abtlXgf+pEAFEFhlywgEyM5Af7Ah5V0cHt/rf4WFJlBlxbJfwLvPMOwKSbFpOJ0cLKPzZAHaqkc3iF/4mPxE2MONNWZns7D6DvEc+vJoPRciv5BKCoojVX72zlMFItjLmyVfwtMPLwv31PMjEmLc0trWEX9aiqipOY2BpCTYx6M/MPX/EHDwIyZGzOWcLboaiyiguY2JrATWFc3mheAt0YSQa+1SRSbURxMaMNL1Vh4KXNclOQdn2nSDLwoyFwqLqiOJPU4KqZoWs7It1cT+Y04fzRUFRbcU5rcMRKMjQVg1dth+5UmA38eH0oqqc471XQ5pg/TEZWGV32SDFvfLY/FNVRnKpDwZqu62y299Enn37sFzxKxhUx/Mp2SHPJwzv1V6kGzivye03ca9rNz37wQ0tgQTNk58R1AN4hNdf6Pc+CrzRRBYAuE4686XfvusVZS1IYsa2Z8vikHbBmyGXjxFWW8wBko2MfmMuCKskJw7aM5xh/ag8qJzmeCEUFOw+g27ZXfbiCpIUgh6HHdoXZHAEte7gA4/1wqFznAb/NTbNIMiSRVd92wMI58RFoFyo4PtHopGJEgUEn/NfIEKIxm6mk2OY0QifHKO2SCj8Oh6JCRYGRV35NMonM7uUkcjir+EQ5gtQuqPLtAHEV4oBh1y8jk8jqH0sOC2MF0g6BnbjhZigqUhRNpy8mQ2TVj6WEtT4pDlHZJb5rkEhFOFy9xV9BheFHdtgwgA/C2kV8BxSV6NHx60OFI3TYVAbpIGqX5MERcBWgWO9NIo4wtrKJcxzZh+LP8Nnz2OlbtnAQeMZZkUD5GKjsEq3aGJo1xaE5JhylmY/WGKajkHZBfBwuYzWYGhh5nM4MrizCIA4ytQ8hbAPNlMfRtMg1aDyHlf+n8CXNlGLvJBjXqPEcKWVJaEdBeR9G2w2aHYfXfijmYJ05cMlJTnIk0k6B/+7gMiOu898iDtc5A67WXOUTHUUqOzHYfvBZUdxBccDOOSDEEqZyDGlVe0W+U+sy4rAnxSEnS2Yt03wMNVnZiZEHQDMhrutc8zERZwWu1DGoGXuvYG/Xi2RBcToDRx17BWXrCNIM1l6M3AOaAZG+C80OC+IsA9chVCDVwavOZcDjPAYeup3jmVf2YgxbQcsm6Pm5xTUb2IvuXB9A0ov4MSmf4nAGrvGjJdUyPLe5eDdyawRcuQSvWjuAaAHT+FpBVNXafuI8aJkcxqyktQOIFrQanRu6ubm5c3uq/cycRpHyeJzGwHZhPBPjm9FVaTKn8m442RG+PKJPtxeIHdtJMrg0K8y6g+J10PKgz0JaOwGSBCIGrxbmI/YP59VByrMtje3M1OhaMR+lAxg2Ktd0hvYGlbGlec4KPQYeBy3PX9sh0thUzEr0mfAO+LLoO+0QD6504hKdBr7ipCx95zO2O6ihpTmucug18r3OkHJs8COtHeKRqaqV6Tjyo17l2SbXHnGNrELn5duHke3QlnGl6D3w3cbyHMXQHrHG5Ut4Dq4sJ7VPUuOSVyl7JbwcHuX8UzVxxoE0rMqq5r2MO0LLcjaT6jHWyqimWrV7bG49pCzTGdZMzXu5BuWW3sSToSjrCWsqs7s8JonOzbzuTspz5Jqqx8qQyr0Ve0JR3n0Y2yupMdF58Y1QlHnbnFk7BdeA0lvxa091Uq6Nl7LdgjQeua+E73WHoNxDv2zHIA2n6DrHOUPgUPbGWYztF6TBSF3l+L9BUGTwNYZ2DO1mKGl0nMBX+sAhi39u30DzQModKbyjFg6ZnN6eCff/INQwJPoVng44ZHM3xvaL+JCr9/lv2iAkuo24662hgoyObKa1VxpfffXkq5f5dapGUKJbwS+88JVHZpvmtFtyfMg58ag5q4UtVnElujUuORZQZNbJP5i0TxK+3CQOUMGUGbRcZaWZbi33+FiIQ3Y9Tmeu3VCVBQnf7gGHfI+Gc5YwCRXkZro1P21ADbKs2C6x9kKam88U/zcAisIOWO8fZBIrJFV0bM7p5CRTQP1HjO0EV9yaTor/9IGibfHAjq8Zo1VA1EzP4oc1kjHFZQxZiqWqKsnJaJSbWzeqSZjf6Q1F0U7hD/1Pc7D0pkn0Lb4Jh6xNzMWsuMRal5xxlO7cVpto1X7+OVAUL66+Z98d31y50nFHUVPo7hFoxuBqX7UkExYw3fu7P/1d3/C1X//tP/Krf3LP882p5IxBN5PvNNq1/+lpV4riRRv6Tfj9/9iy9P7Hb6L04NI0KXQvXpc9j8MYsxDIb/561NiODm1qw5ApR1729OxmkoxJrAZGGltaY0huq3PFie/0Um/yNfcTaA/9+yPVytnFQi6SgTRWwvHZg3T8lHG3aPzk+MHId5rvBIW7jT3gurd/ImkhWIXFhCSjxcBZjZBiXF2Pdd7+54U59fOjqtbKSTawkESSK+dcP+mgZobsmdvCZc5jOpMNvMzIa7sBXp2gSBGn3iF/xIE3v2ckQ7BKYmJ5fOlh3gGPtkXr+42b+lwIp+HUqja1UlYlkrmPHzx1s1oAW3zNpDuWDqgAJ4O+i1mVB9oSs1X7A+qQqjhVAdA44bQXF5GMiVVOaDHS+M1MHivalvjOQze7dDEOK5OoJtb/+LeTN+8JAKoeY2ZTnZnX60QyB8VV1CqaFlho2Q81gnKKVwBY54gHF5EMsTIssO1Vo+EKiXbote7ujwWaTtPyzF4je3Xq4AWAR7+3UF/FpfDIvpMhS5NViwP/hFqUXZw6AH2OevJn0hJ3FxNy9u8+ZiQthMtqnOS52m5DJx7/AWl0/MW5U0b26ugdAEWvP0Zd5WZzrQQorkQ7BP6nVpFN5x2A9c6aY8Ry+olEfnN6d+zPQJKRJ0IhWtt54LgD/racxixHNr984uThvTp6J/B4gb9GHZl7+gHqsicy8P54u2h7IisARB3QYfdb/xWglC5cwLzT+wA1+AsDyRD/H158Y7/1d73lazIy20Y2v3Ti5OG9OnoHvXqZu3E/JJ+dOwjwLmtQnMWQWuR/vEPXTgF02/6G91eRZEiClcFiEkiueumQLoCKcwPuxSB+oWPnTn1GbXPhXHDoPYY7L544eUSvjl48NlxCy87pwqvWBZxmzEnX+RbTCjwBmi0AqgDqNjnuwa8iScYQQjSzosxiCMFIts44ayIAL4DU6gfdBMwPTBg/YYtpM4wOlxjDVS+fMHl4746+Dvu3RsuQJeTSOzcAvMsUFIcxpBW5TQUAoioAmjY/5YH//sg2LYaQJEkI0VgwzHv05PEeUBUArq7HOm/2h5hw//OXnPVijmZcaiLZ/NKJvxrWo9OAoXczZoi0QDbftyngXJbg9HWGdIzLRsFVAABR7wCgceQ2f7j+mZnfL202tp0sXzj32asP27AnAKgi39X3G3/8X94Os8kqMrKSLZIrX5w6cfzml35CyxRpCbn67xsD6jKkmLQqsVQi5/aEVEa+OK8oKD3Wm7L7gUf//sSTj5162L7bTejrka/eobCrHzDpuuXMJ5KRlW6RXHnlwU8bjdkPZO7ecYDPDhTXMKQS+K/aSsoXp6pOULI4VRW0LbX9J91Oeg6asQpa5Ctv0yIr0QL589UDAc2MSPdPLaaR8Hk4VEVxTr2v8b7Ge1UnKFF8j/HXxBjpNuqCTBbTWLEJ+dVxCi8ZgWIPC+k8Ca0O5dbGkccup7FjuQ/SWMEWyH9uA2hGoLiLYZNH1gy1/bZ7j5Htzoit13SBl2w412MBtcXjawTXef2rLFpGciQQjbO2A1wmoNglbvIc3Bqgpt+OHzMym558KLTAcGEdfCbgcS21KvANL1L1pOOIc4Mxo5l0LGQkXxgGnwnRTn+G1kR+2BXVz3Xf+P8Zs0IkL3HGR0u4YAp8FuDw2rfsFcbvh8BVvZq++31NywwxS3UEZMKVh8BLBqBXH02toIVNoFWvw5BTI9u3kZwGJxnAk69+iFoReGj1k8b1bqO1bxgDL4NKBsQ1fchYyvXVz3XZ4FnGdg4t8Bo4KR8cxi41KyryHZEq4Zyk1v1Xb7V/aDleCc0AFL9hUpRx2Si4qiBIX3tuNa8dREt4DnwG4HExc0sYOBW+Gih2e7QvJB3fa7vP2kO0wKnwGYC6h1nLnnCuCig2XsLT4dPafn67iDG07gjNgLguM/ACs1Uj4CpOXMN/GJ6FSirac9tP20c0/jASrnxQDPk3fI6BZ0ErTnEgc5zVFem4HlPebScx4b/rVcoHxWvfXhJtbmeRSnN43hIuGg6XTteJr7SXmPAKaAbgcTGTthDvBV9hDgO+YeSq0Wl1GvfXdpMlyfbQDIjr9AFjW+b3nKsw1S1bGZkbl5I0jLiA1k5i5KzOTsoHhy1ywdpA3gVaYdiK0dg6JiXU9j98Oa2dxMDzoBmA4kqGtsqv1qpUksjeVyZmkVtC09GeW85gbC9Z+GmkuAyIa5zN2AaK+0ArSDGFDGTguWlJp3VvpVWfTGNi4E3QDECxQy7YGfPDRieVU+Mut1bm/c9LOqgbfOCPZlVH/6wx0X4eCskAPG5lOEPC06CVAzxngaRZbhtoOtp9o8cYq0y4/dP3kiEFngufBZHuC+gzZkuGw1WIYKON/81Ikgnvh0tH6occspixusD01d8cZ0zvdhTJABT7x9AGAx8UrRCP+xfMJyfJqjFwqUC7jbup6hg/PuQFhmpEy20ClwV4fYKhDSZxT/iKEJF/MzAv3gefjtQN2Oo1hupC4zuHzWeoRoGnQDPhMPrnaG1EftRFpAIEHev+Z7kziSsnQlPRum4j93ufwYowqzwGvnzs9wxV6e8ZgcdFDG0w8H747Ak6vfXyXNoZAh9NRbShS/dBY37zDhmtgEUyVh4DH576HS1agRirRuQMSDZEusy32AYDj4fPnGIH0lhsjDtAS3P1fbY9bqPh6+/6UCtpMUYjV72ygFZxDLxun7dIxhgjq2jk/A6QTEBxJENbFldvCc3e1Ngaiwr8V51KaR3X/y9PWXfg0ImnvL6E+YtfOO2w56uBxXjsxpd/sJr5Xz292obxZVNWxNW9Y6ENRi4YCJe50xhYfODB0JKkacgtfHfnUd37DJ90xPl3/+3Ocw6ZOGbyldWAxp92GLz97y+//683Td9v5I3UKObVIKuK3RnbYuCL9U4qLXJuk5M1qBu421d8YNLQTk09+w9db/S6g/v17L7OSc2shpFzBnYfOHz90aMG9uvS40M8iFchWYGTFxjaongjfNY+blEgmfAEaEnadf2zcrlrNh3Wpb5Dx6amxoYO9T03PG4hbQCIX37KM57d1NRY36Gp6cBV1SHwWmhmFFu1RmuLwGPgsyRPecJ7LfJJtAXdREqR2r4b3cXcXTuuO6Brx/oO9Y3dBo3Z79mc8ZLNCiG+6anP6dChvqnnkAkHLWCsBpG7ZQiKpxiKsLhyK2iG8MSrNyELEpIMPBNaClz9wM3uDfzPqdtNGDVk8JB1NtjhjA/JijIzK4T44pcYOnjoehvvefW3rIrRPuoqkh2HzWIsgpFfDoVmRXHEn73Ci/4POcdMtC/7iisFruOgiRd8z+Tdu04/6vCjz7j/Q/Lrd2IlhceWMRRK6psOO/J3Fz76GTnjjB+TWHGB0+CRYeeeZFjAwNc7OMmIyAv8w689xlLnMfB0+JLg6vutt//ffyLZujoh+f0Dx17azFxO/MOhS5gUOF2xkiTnXbV93yOX5Sotck6TIMuK7WNcwsDr4TMCP0OsTMwzftVNpCS42m6DJ/zmipfmLfxx4dznLt5nw00O+qZywtXHdt38EwbPxFyxYPYj03dab0AXXMhQWRaSLeEyBedep5cw4e/gM6L/opqyhAIMPAlaGsTXdx+wzoZb7r3fXltuMKp/z4Fbv0VfztJDB6H/g0QBSPxx2rgNh/ftXKuqf2WsJEt4ChTZVuxXgsXVm0MzIXgUJyyzAja7SaQ0iGhdU7feffv17dWtsa6m28aPVtI3v+5TBxxyFwjAuPhQ39DBCUQaX2KsnBh5ETwyLtI0M1qCuXsIXBYUV1CsjE8wfwtNAYCI05qaGnUCaRpzV+WYn+zeS52g77UrGSLJyNazaqAC1OAEJhcTyDOhkjV4TGcZ4o2OTjLgcSBag2bE152kU7R0HHl1Jb2/bU8FPLDJU2QgaeSrG0AEKrcwXIglXHwAHLIvGPAwWUTxFvgMOKz3KFnjnMRap0DLhfphF1gu583J3RWAU8hvZ9EiaQmXTq+BFzxbKQk5Yzy8VAAcfpBaRuBh0PLB4VfQGnxCwlsz0GHwH41LFZ/boItDvnPoemkrI8lAPt0f2vUH2iXEwNwFjfCoSI+3Lq+I8cfRcGUTvfpvk43MFvaFlKtu0LEryYWYD47rJAUABbb5hEbSEn60M3ajsX8L5Au/AhwqU+RZf4eXMfCfteWDn01jdXzCwGOgZZLa/kctuaD71mtqC6Lo/5lFkkwYLniUIXMW+fFhChWkLm2mBb36arSCCc+BL5fiWuokizhjLztXJvi+v/n6gu4e1VgEUIN7mMuRZK6ZNGbcBV9M7wJxSNd571CsU++drHJXry+vsbh6I7jdJl47AFmUnJj9PBauXL13n48vZ0hDUSr7MjQHkrZ66eokWk8y3PN5vQAVpOnUAYDWduo1YFDfHh1rHAqqOikK6PBfxhIY+UaNk/IIBv0xPsFL8AkTngZfJu255XsXdGf/+qLENbzPXIsRUrcfv5bciYVIzj2tL+AFqY/5zfl//efcb3/6ecXSxV/Oev0fV52wy/hOAKBajMdFTEphwqnQ8qDu/RKz8aKcRL4hUibXffLbFyPe1qtDUVDsTmttJRD0+P/cqiZntxBIvnJYI6CCtIed+dZPTHHpvCfP3LwL4LQth21yZqVE+6qXk3IIGr7CcyQL4hNy9TpwZeox+cWLCS/vUYviFdOS2JoDcOrha0nVptrBQiD53R2bO8AL0v+WZEhCjFY4xpAkkfnzbtoWcG0ADfMZS2HgJdByAO5fC3DOoZnAY+HL4/tsO+NSQjixly8Bil8nsXmqmJSpampNW8UkkGx+dmpfQFRQzlwIxhQthhDJ3Gs7wrXhcC9DSTEuHCauHIobqHM455yThA+LK4vU9Z+6klyKTe9akng8w1XTdHP7umxBErYNgSS/e/HkdR2gKihvjmWMCWkXwhVSOYxJSQy8GFoOj33QgvhcfBL5eW+4sjQOv4zmQs3rG2tLgZNNmsMdRbfvXN+awsYWjGx+/bJ9hwEQLyh7WUiGwN9AC2HsarOSzL7vCSmDSM9743PE53TCaFtAy6E9Jt5WOeL/960rCYrz2FrFd5qbNhLJl08Z7QA4dcjiyjIxxI+7O8kTdP6AsSQGngBfBii+Ay3AmcPJC/xjWaR+6GFfMpcSzt+kwZXkXOP8VFoyEWmTEB7dwgHw3iGjD5B9CPwTNA+Kh5ikYP/q4Mrh5BXvTxbgc577xV18z4mPMnK5ycE9aktSHJFME6nCraqyLvKNHQDxDhn+t+0yZ/ZDb5E8j3PSiOUmQsuBl/+PZfFcZsy/PhOSmnQcMXWJ2eUYb1+nkyvBSZ9v6QBqN3KbvCraF33hVZDpP8VbnQ88Gz5PsT9jaQSeWQ6RDu91xyxOZpgJt14LLjXf+1cvMPJyIz/doX+tFKe4noH5sGFrLvLXqEXWf3G/GBf0FAfAYZPAVN6ApOdx+vUtVviMAcx7QtNyjSOOX2lWQWbhkvU7a1EOE1ZHO7Pp8lV8HIrMfzPai4HHQQEIBq6grTMu6gtJTXELyjLiGWaKL4RPq6bPFq8zspKNc3cbWCfFqDzNwF2tdUolfAK1W7R5jVKg8as0aMn20NQ8zqFYqznN/Tg0Jde4zvTErKJovG5MFy1CsU8ILGvgP71D9t/W2Y2BB0PzauYybhB4DHxqih3tVfGMA5jf7wBJRWr6bf0WIys7cv6eAzsUIfUzGcv1R2gFvMYDZAOterXWCYCa91JJeEEZRCf+G16DsyDc2z0l12m985PISjfePr6btqE4noHlNU6Cq4BOcxlTuMkyWtwULm92KjnekpJ6X+N+tfr5YXV8krnrYXBpSG3/t3wuI/ivd3/JDlLASc8vYyyP8ftekArA/zOksDrwGigEjV/SNkh4BzQFJ8jX2dQ6nBMDhM3S0c6jv8rh8s0Pv3Y3LaA4i4Hljfx3fWVcnI2Z9QInQ1YzzVw6AtnqhKvuvOuiR+IN8AKzNzSNuoG7/yseQHjoA4bW54n0/s5imQIfE4dK3IuxfMZlG8F5nMaQRsKr4IsT9TVu/VdbWNBsRZ2Iqalo17HXEkZofmbjHgpAcSYDy5zwPmhFDFlBK1/gFqhxfb5hTOf4okQ98m9hUtDYNF5yRhrSYfB+XwwieeSYoQ0Ogs7zGcv358qQun8zlsuMl3cQjxsYmKaFnaBtiAfQedODzr383ZBjGWcyd0Ua2m3CnTRjNM9M6uWhOISR5bunMjyuYVKmQJ4JUWzWEplm5Dc9IIUU6LLXfR+tIkmzcuCA5m5OQToM2f9byyCSFX8Y0eicvGihbIGPwFXGPjGWxRIu/i1UtP4dhlQC74GioKLL6fNIMiRJZHlP2tyfU9DuG/6dkVGar23epw6jl9HKFvlGHSpR0OcHWnqWkC+OhYpefTFim9yUNhy2nkNaDvvH4Lm7SpOGoYf+aDaMWMtpo7riKBYdfNYNkpKIlAEOT1lIywK56DQPD8UbXSubBD6oinyVKSuYi3Rqorm7SxLfc5OHGTnOyH9tNRAXZYGWWxcuHScQ9aqqTtJQOZopxYRcfccwOAdxTc/FbBqTTVFA6uQy5pjViGTurpJcw4jfraRVEbPknNH+6kxE/haaikNNk0Pb6lVKcBjxk1kpFkOI5NJ7NgRUAI/bKDYNfBAOgHMALrNczMpCcXNJNb0nPUtjNY18d8eu11MdBN6cinjs/t7c91596NZzDt9uVPdaAHCqrgg4fZpJUSFE5r977nqACgCPQ6hsYmHVRCigwJCdz2MMlXBpKdI48qSVVl1o4fLB12Xk/XpJweH4wLZbF7z655N27AcAqtKG4mjGYozk0k9ePG9yI+AcACg2XBrDpoG3wwOCTR9cHGisQDGtlJo+U95kZHWN/GTKlZkwa94MWpLH2YwhhvwYmR8W/fOynQcAUFdA0GsR7Yz58QH77DC+OwB4h3yHnnMZ2DTawsHiRHHyatIiK9EcWoJrWuePLcZqG+3cs+kOmPDS0jzOZDQWaSFJjCS/+Pv+nQEvAKC4nckZYu5KAFB1goKi9f/PwG0DT4SKw4GMwViZZpsSavtt+1/GqmOcc2FID8YvmkSKU0xlMJZsMQSSn587BAUVWyUxZ0j+ox41aFsU9zAw3cA3OtQoGjvtmUt4ocbVw+GKcZ3W+yKHET/+PekA8aFXWpRimxaFbZ1E8ps/dsmDq/mnaUHCV4bCu0LicDkTpmth2QQA3V+e8/gK2kwuYF4XSDG1/Xf8Gzwg4xff9PKnz3RShHN9FlBsbwn5jMtTHEIvYMIvdgecdwLncT5zllLC47DHbY+8RJLGObuzwEfFoUjXZfTlCUO2paZL8V7QIhQPMLA2S8gkLuiXJ9JpHl7AhHb3ugDggIsYmXLCx3A2SYYQWGTszqbDFyG1A3eex6CY68Q8t95JG4pdLXBtVhh/npQHjxPREkbjz/fuM7Kj63ELg6UUObt3p68tFyJLtZx+LLcpXBGu65gbLAzanC4QJ0ALiaufwdJWR+5bQKTLXfESWkLyh9n/m09jyuaSDTFmgeWilQSR00nkv2oFbUvdoH2/5LjoxPl+gEgBxW8ZmHLOJZxWAIqPRotIC4EkI1OOc7vgzG8sRqYbyekh8BrUFKHdJtxG4+jFB6CSJ+7N9BYG3lxI3LP/MlpG0mKITDmV/8M00ph+LMlJ5hJbWUdbfTS8FJL6IQctrGYhfZDw1/AAHCa1mJUt8vFCUOzG0na0yJOunvy7Lna2pXK1SSrJYQt0HNQV0O4bPkDjwBP3YfxhKBzgcR4TZuBfbcDhHwxZiZGn4OrNJ2ev+SRh+5iXOCgAqR92+OLqRtIHA1+tcwKPaVkwzilChn0XYzYCeQxGftbfYhbGzmars4IE/qMrvMD33OQJRlZ3uw8G3gAPh42bzTLwVVtQHMYkEwmX7NDhmmWsjSWlg9hrYMIPNgdqOg7/v2VW7dQ6scBT4UV0hoUMLC4CinuYlC+Bs8cM/pCUVwCxbGePRA4bBrac3xl9fvU8I6v9g3dID7TAI+AVR7MNX29GLi1GXKe3GPYSfLDH0IXMGRvHlpxsEUsO20bygwNGHd9irPp3fv+G9ECLrQejRrp8bKEA02bGJcXAYdgC1i4R9x+DmleZY1ljqWTHISGOJNlhe0vIt99j9TN/9t2Ke2Ck/Q4eU9nG9sbvi4JiwjfUoiyKBb/0SnDbWmssz2lsu6xqctkO660lZDSuEc2Xf65QD4yR5wD1Mxh3m7UMirEfMbFCFqIlIVp+DImRnx4C1OHa2Jy0GSy1DiMZrRhwjuHTSQd8w5xlgBj/2geb5WL2CXxiBTz6PUsm0UJiJHMsNsy5oCdcDQ5i8ZbEykj4yT1kLOoYY+T0uvVfIUMGsIQf7YLf0+uyzE5ZA0XNaYuZb9/cs9eUaQ+8veCnZYvnz/jrtK0aAQ/FUZ88df7Z+acfe+qD35AMwTJnOc4cjj8EhjVMJF/dtic6XNjCxMpHBvLl/R/Dq7zErHnyKjjB4Itn//zyRTt0Rr429OzTo4MCgArya1Bs173v+JRkErOVkC/3Rx12/YrJmsTIhddM6dfgBZu9RSZWPsZILhJ7Bn7Qbx1Ege7rAoBT9Q6FnVdBQYH4th2APvs9soSMci8xGFdeWA+Fx+AXGXwUFhlfOHxc/44Ooqg/bSEZrGxkMO4auGgCNhUPOO8EBSUfRQuKFfUARk1/myBlv0hk7u8bQQSAR/0NRMcQyc8unDK8e50DAAcMve5nMrGykbZH4MLJ0E0AcYLsijqgYZvvuwdweYeoDCy4ZSNABfkqOOgh6gAscvUjv12/X0cVFBQFRl39LRlD9ipnwm8mwWOMzgNXL/S+P/sgEMnJisSSAf73J9+3H+Ac2hTFq/0R8ugiOfP0TYd1rXEoUhQY+qdPyMiXkYTvj4RH1RRVAAOO+OtHLBiTtkM0Flz05jV79QSgDkUrGm8gk8yE9GdmXHrvbuv1rldB8U6BxkNfyJGWWPYs8rne8Kiq4gVAr8mnPjjnxxYWHZd/984D07YfXgPAeUGpChy+mMEyAknSGcm3jt1wUKcah9KdAtjoso9JxhAtU4F2RR0UVVdUAcAP2+qA4y+8/q577vnzdReedPDOE3oiX7wK0hTF6DcZLSsQ91WLFlyzzageHRzSFXVA4553LCDJJFhWLOG3+0EEVVlUHVIUp+oEqXvUXpQwyQxJR+HWidus37+pxiF9VQDdd775wxaSDEmw8iXkUyOhgiou6r33qqree69OUG4n2O1zJpYV3NVDkxu71DpBWUUVQP2vTnz4y0CSMYQQLZvFwMUnCTzal+Ix8CEyZCXp6b+GixeUX1QBoGnT4+/593csHFWVFKMVaxf58Cg4h3anh5yykklW3I+5uw8E2RT1DgA6DNn8qCufnLXwcbPxe/sCivaoOGw8g9G6wOnoHztlJl+c94J81/u13/aDPuMbf/gXf3PG7M++XfjTkuUPP3T/f93993/8KfVQh3aqR8MVkUkm4m4C31PJ0qk4VXVou6ahc/eevfv0Hdi3T++e3bs0AIr2qwJ7f8bEMoDTz2twqExx6r1Xh5JV0J4Vj/4Pk0lVeRhaIUVKvsuXfLR3PeT3S5lY2eJ+bq68drcoxr1GhnLR0VlrXYCi5sxVTHZzN4ethcEBk96hvQ+9GLeGW/uCeDRe1qid0gebh6+VAQrsMJMxlAN3EflpV8haGcSj6w3GpCzp40UvWFtXYOc5jCE9ukh4C3StDaLofo0xsdS6DPwD/NoboMAO75Ohgiy3LXRtDqLofMlqJlYpxu97QdbqAAf86nUyVEjkaxCs7Yui9uRFjLEiAi+ErvUBCqzzIJlYBURu/4sAxAO/nkMmmYv8rBfcLwGAc+h+8QqGkLHE/gbFL4UKbPgkmVimIvf/BQGiwH4fkEn6MS5ogvxyADhB07SFRN0kPBuKXxYVGHjNo1B9RPumv5NfGCAeeNUfuk2UDhIeC8Uvj+KByQ8bLZQt4fNe8YukU2CLx1rIxMqS8Iuh4n6ZAJwDNvvLajKJ6QUungyHXy6dAuNv/JaMiaViOf6wBTx+0VQHDDnlvUCGEK04iwn579FQ/NLpPOB3ufMbkowhRCsYg5GLzm6A4hdQpwL03OeuWUtZdMuH5w8CFL+QqgJo2ni/s+99Ze53Py7++r1Hzty6I+AFa1BWUDggyocAAJAkAZ0BKkABQAE+KRCGQiGhC64LUAwBQlmbvxn2wD+ADPdef+zflV3Alz/D/3D9yf7z7otafw39x/xv+9/vHuo6d+rP+d90fvhc+f9T/F/mj81f89/3P9d7nv01/1Pz3+gL9Zv+d/jP8p7X/7k+6H9yvyk+A/9N/yX/u/z/vF/8X9s/dR/cv9x/6f8t/y/kC/o3+O/+/tlf8j/7+4v/k/+J/+/cH/ov+n/8nrs/t//1vk1/sH++/b//qf//6Dv5//g//T+f//W+gD/0eoB/2P//7mv8A/eH29+nn9G/FX9iPlL8Y/Q/6t+Nn7t+sP4v80/aP7P/if8X/c//R/rfiy/0PFH6f/Jf6j84vdD+M/Zj8B/dP8t/sP71+3vyP/q/7Z+4/nf+a/vH+k/wf7gf5b9x/sI/F/5V/ef7T+0v9y/cb6Zvjf9t/m/9F4Du2/5H/af5f2CPYb51/gf7t/gf9h/fv3G9o7+a/Kz9//l769f6T7jvsB/nH89/w398/br/Bf/f/k/gX+T/0ni0fh/9f/y/9J8AP8i/o/+S/uv+J/239s//f/E/F3+L/4X+U/zP/a/zX///5/xr/M/7n/uv8V/oP+x/jv///1v0G/jn80/w/9v/yH+8/vP/+/6v3PexL9tfYx/VT7tf38drM9J2ffbpa6acEbRhONs/DXGv8bp0DmgRNYrG96IeMC3IVKs1N95MZlC/fqlrk7Sysw4zhWiTRJcv5hYTqaiZuho7rKPTWPxiUx9HAlR/1kvAB9fkkBGEnV2Pdh+tF307WtMxsDMd34Ga8cRYhBULWw9kxPzg9uqL6XaF5/sA3lLBAv4F1QKrhsFp7MkU/V/Jf0OxQ2miZkig+GtRyB31OFAh714sH6g9x4kCoNsPPzBYXUyTCBnDwyjrOXRiMSUJQbey6In9kLYErfqvKhe5C78McvQZv5jlbCPd6/2TA51g2gtSF7s7dYDUk6jSuu8TRz6aS9mUN+/3RjFgE6+oY1JogHawablCjIr4LabeOlH7y8rFPqjAL5Beq3SfDOkpkmYOTDKtSRiNaCCtO4skVehV+n/+Yh9y5WkrvbIckbDJy6kSMAH1RsECOY/qFGoWF1PaF+yIBAXi2iYpwg1zcvfmR8fHYuEBImtCrNOdi4o8NhtAvDu/6eMIS0jgPdyPYwd3FQ3Ki1bXDmxfpSr//TGDLNKSLKTOVbTjAvlFGrM2ptYY763wUjIo9+9XW38DiOOQr4P27hN3RWxQy25BNSZ2aobqbNEGZjHN5fwlCahXTsA1AdmyP3GfPJn6XrvwfKyxHqpT4kB2ill3s9mLZbSapm/JHWCoala7f1aI1WLcKYjy8UzbnInV2VX5llH+mOTxGrGvCgEMyBfueH+i8f2fnz8R9CgLmw28f4+2TdwEn0VuE77qlOQ5Cth0ISfIZ0KdLNGkvyK4qgTYKicNPWKd9+Ab0LRg+ZScjdL4QfZzADqY9PTq1Wz4CZ3FRdYVb8bZ8DSpVnbViIr8wO4lc8dVwaNztHx/mwtSNPN3r0DwQVi4c++LB+NHG5LneuAtjK54gw1SZ/BpZreyxXvBoEqMPTN/K+h3h6UwSnhkE9fRqtjTAsxgHVJJ3oAMqqStaa6jPZ+JTs4Dvn+2n15R6Ts599O2M9HWyt1K5VpjmtA+rZsoOr1EJiQs4b6GW0f1/epoVQHpht1EZRwPouXNjIqPWa2VldY6/pcG5i+e3zg98Ifx9QUKm/v4unPs9KHox3cXyEq7jabPz9TDF/O3nOU3qhwqdFxWZ8AYzZH5vzyc6r3D3XAXiuebztwW5UJ7iSZMgJhPtZEeUX47SvKuPJol2EK5KF5aV0EoqavsUxvoX26PXK9t9IzfJm5SHwLoW8Wh9+Atwzj39Y1rkzi1RRFXemN21hvJJhk8rRpO/503vlx1OK9f2o7tVlERd/7vvvFi4FGEUW5By/3aRckeYoftWl6lkvyLB+gfdOIFmcyiTZI/Ud5MAle7DbowfgkxCmp0n7pPPXHHGVFOROCzsKCDhSWix9lFxgiwJkS0S2D4dJz4tSF3pLr4uVG6fUq9hXVAZxApSvHGNEVZ+KRKyLSyaPkCxDRW5RZ7ntKyaGfDQfoaga0lw6iWMkMCLvk7lV037/hg7NQl9QEslroTTkl95Y9Zd2T9aMJlprNeAaQqOY1GSq/E6/1MISIhnsbFxhvO/N84GfHxFN8OPBNjwXbMcHdGbKQ/O5VZVDA6oi2WZc3TYx+x2b1yx+kTRgbHblSNnQIB8uwqAshu710Tfca0tuh3kz4lxoLp4e0FD0qcVJM9nGw9fgm0SBjUXxXptJec1Z6hvCeWqTN7wTRPC6svMKKJ6vbam2Dh3Y8ukp/rJ36ucyNZ2sIl6OL6fhyjdxZU8WbPHFdXIIlxzoD2MTwMqAoPHypDiBNU+5zZgzKHnjTJVz8v/fH+yTBS6Jjh91kgv487a9KpJJCg8FqCUWI8cTqALK7RLdfwun+i1nnNBIyhiGKEYMEf1fqEu6wJFN9fxmzjEJ1uD2y5GnFvm8mWKyzpsCTMUci7gu5yk0k+lgqbNMDT3+HEW4T8S0U8KcikBgq+GUbmfBaRtrxUQdPgUSHF7NXn6T6hutyO7EjGslrMacEkDR/aG6zGs1JR+5ydz9vGt/Dz+Y1oAG5gLt7kMQxhU3MKjXt/br94CNta+tq04NaADYKS941OLb43teVooKhNxzoexm3qKqp0QXuQZB6dqTXj7lqJMterMK0D1o4V9TClQI/Ijb9ZqjjqZVWzvyiD/hBUJrGpVWFPk2CCDxunr+vbaNVBDxbWMVRMgvngXQGAar4POzZvzYXOLFmvUwG5WF8NFxs4cB7RGancVNCYFXz3//iIPT//ow4W1np5tARRNi/Vfy8btYLoWTrjxPKduzq17TkfojQwQywyoiPcA0a9OXbmrN9zo5uQAqRop5ZHOXJDeW/q78yRTVNi9eYbJrz9ol+v7Wf5LN++lV+aIXE0KQLoV2Iwl3VIbDiZujE/mDSyFqyZOIuWn1270ZSawoyC08vPLEsvsR9om5aSW//8IhE4W4n2wTGj7qQnx0t0P4v3C6Is9naAaombnSmfJMsjxX6+/gegGihHspfJzyEue83gB6hl/jGLAAD+1zaAej2IYDo7jwcV6aBQleD82vlVRPl4/49WpQijPX4JO908kYNvzJUZLkhY1cxGQNTDemZy6tclMQrV2BaN3rWDWWRiWz5Q/5ILG8xgWbD/bCWY6kLfhwm0jTjIMZiwcMPSe4Jb5WvBn7OAJFPtD/xU6sL8d9wuNNQgaipohoq0cLhhUEqbdCqL6qd0lUBBOmt6YXJbqpJv6bZeouYA/fOOOdEWaa0ox2LaxwPzt8a+lf/D1RSErmQUiLUXvDmxJZnj0JYksXkdk+wGIqXKBfDPZu1MQliN++5R6R3sBneDD/45Uvf0NuFFQM7pUU2Rg2QbD8r7LLfvOELBLJIVXHY7BMoQGvTC7zkwMhUX6+u1B5Q+sIrBrP77RtBOo+UCGn3Nvz91HfcItVTXmjXDDQzBrhqqT8ImizRkFREa5GjybEKanMkJn0hsZlzU5VpvxPPXs46xpkWVh2mggsG2EcDUy5iLjcreuNYi+KzLVT0QU/9eNy3K1O7jUYsdey+QCK4ivDHt/TsDoXQKyvgS3XlzLjc19uu1lr0mIX/QKjQagzJD4CZC5g9I90nout2ZZCrn0+j6fU4xK+nT3sE+mu4U8u3VEqIOjdTSB9luk922lIAWkBnrnACJ2IwUlTcDPM8P+BjHlPBC59CCASg3hyjM5UR9bDHCTqHzhbhnAqvgbyjZ+aI030WY8BKIzJ1JKZ/L0n4ovorhPTUAfNnt34ERj63n68xg5/Zx/sqie5/M+rR/tIxMtoBiMO0Ltv7kb5HjkiiL1y14GuPgKcu38/L3dxPjpHV3HI5jJ2TmTrSwGhtLVWzErdvBiuzizhy93VSFapO5v8gsEzYu8b6PmEasXf5iJLWZXl34vyfA13m5Bt8HN8pFwxnK8w5HcpTyua3VsbrYmNznpb9iewrdv0oLTHVKo/pe7YOxeVvG0EvX+WRC48FdcYYK1sNW11+59hyFrwJWWuW5KBOiOX104Rz7ron76xwRsop/Z0ZhT7xNr7xy4HajKgwTrrqX+MCkHm4DraPm43KjKxLzfamkz8dkjq0wUu1AuEgW726NlJJvhhF8Yv2uMBpWc0X3HVwlaDJ3CruKbuh2c4tULEnBfxvR3n1M5lAeNu7wjmiRGtzt0svo0NDCe8FTffk/3LMVkXkAMWqkPhZSAoGurxhZjX6PjtVFjRpUKl/PmYpPbgnpn5Gtwue20RLVOkOCxb7UhtQCk7sXNm6sp38TqV3mgOTcMtzUtBK6RQw6mw387Nth0grtMaZaKMhtxEOEDB0uOzh65KSKLOq8PQ0lT0XctOKVnhqkPuOrRmlPwal57N/Li/M3ihVcvpXlbCzG8m0LHatm9c4OVId4LEt3oA3rjv01WJPsBJ/GpNjEggXPlmoACr/ACOSR9Ia9BERstIcMxT6vYXStqP8UYtb0d7UNkc376S4zeBK5dVVTvI1yPFDuw96erX786Bu4+9NMd1wAfkHhFaSzyux4SM4fTzqldTgA0W7k6UvvLm7Ni+Qsg19JZOsXvS8Yw59284JYev5gw+oaovji8X7WkjnASeM6cPvVHTyGXVRvaqL7ks7B7/0IA4Z3ignY3wRXWbXgyn6wue59q8E1iWeSuODzsvbyINdFN0K4IAc0hsnZrgtVi2jEpDNuUBWRM105oO/fQBQPg06J9+N1S4iuAAe5N1B9tnHPinmG0E0uE7GfnWcmpmb5g871meIRViX8rczujQ69gEbDFfGCj/pxAqkHNN7yrt/PUQaRtE3Njjejpq/6aqYl6dTiZUS65t+mfU7Q9NCuZ970X01g82FBA8kXIZRUkA1FhnEerCoPVts+Qs9b/r0KR/xKKB0ynLLx6YOt040IxPaek3gXYXy+tSHPjrKn0Fx3+vLOZT+LfkiNLe2/QOWbkfg3GG0s7oOFeOG9Jn7j/15Wfb4RuOjE0MZewqwBdyN5zIlSZgS8nqH8+1QGjj4Y2daMSHr3mojAzbQbZjGAsmU2nkr4f2TJY+a/1TxuDbiK4rvTJYpao8vMKclEVt2Ktomsx0i6YPovFfVyUw26N2cE9d6Wxw3MdSaexIlQ0gJZExwG+D3uzuS7Cx0joo9LnojWHezD898aMRuFC+WLhZsyxVuvU3SvTmnaYnGbu0tdAl854aEYwlu7ClsNsRfA21hEbmN43Gejc2tBavHGyU+1vaYEv07unIDqCn3+pgSbjzM5qEVJuk6kQ2TnmL16olnkdpAsS70+ddSstaYQimQToqY80lZI6Cp7+7YrFOVYfNDJDIo/FI5U8Qz8KtZyaOFb+j0cFcoIC4kc8HHsBjrgT3aViURCRkYXBm0CJJak2IF3BWSNtI/+cI763hK1wPtjEtcATvLzfudMK1TLmR+hFvATekwoZM1OFRKtLpW5+XqpscMDD7ya3dnHnmuaJFmyh8eramDD3NDNWVOAzmABpQAoxx3fEwZwefAFFwA6FTD+K5kcfdhEH2VmXERkVf4seGtex/anlY0/Iz77slXM+pkJ1Zdt4DrQOfj3nmCPoi0QF3slaoxXzpscfJGaLTs711YRnj+jKDYKkqxW27MPCWa9kpscbUFZyr8j6bG1f9Q9NswF0DzF87l8OdVVVJKWfpOUo/eUamq+K1ABPASYTYpxJFbo4wajdUU3dgtod3DxxUeQU3gRatJbGEW2dwEMgfex3sLPhudlf5HlnQ9TRI0PT0EoHmzhPQlicY+KbUhaCPP30mQk7MFoqvgJe3F6bDIhbLGWs31KUuNuFu3hnEOcPzPwfiyNoYhUU6AyGprW/6YZ99qfjW/+Lg41PZAcBNiE5XCSQTdsgwtSwjWB9vy3B4cBbMdrsASOhyUznPKNWpdzbAfSPFMUxHThc1w4xu/2M4w1K+Bxsh4TTL59kcmMOfKoA1PVQPs8E5zwv8A3Uup/Mba72WB0Svu9ms8lW8ftnxjg8MxUW+2XTb46MFfvZSkJ03AUuUYbnTj/S5QDwv0LUe85abSOs2IqkvHM9Tadq7Ip9Z9BazC4YcnQY4uH5Pgzq9OFKSSueVd/ke8NhSHXm05MaQ1/TIvbRlPc15VHREpMUH1lt3fX+C252UPdbcgg0/+1rsqvSAvEJ8MgiHbb3S010OL3RJ5RNBv6PtHSE2Yoeg28XjYf/XhdvHIqsICBcK2cP94u/YZXSce8MdrbW0vQlRoVLsSL0azp8r2NHb3A+U3QquV5Z98RXie5U/uE8UhV8xsApuu+bTn8ejOGxIOv0TrXwlcOsn9QDpuRycH9ClKRpWbcYs2UY92yetjqysx2U196IXSmAt2zEihV8/QRf+mvIGyTITHSsjKWN0r4Y7gkQpf/AYkUz4pWU0ecCotuht/07SZ3viJJJE1YVvYS+zoGSCjr3GFHwcqccuTSYSiNp7fp25gc5T42C2jnDws7DFf+omjzDPHYHyecztYYDtiPowIKVRVr+KusyLGw2cUJwyqGZmJMkvSPwfATxSBfEKD2QrjlOEBpM99Bs5rRycL3AX+LPwuOW7b63l/eR/T7wf4Sbri9tYNtShl7/dTQ/gp0lpM1rxFu2FYJniWBUhQCZLtVQrCS4j0e+XY3Aj4Zcjv8i9Y404KrPd7QZxXH2zu+DlFoIUci4OjsxXGZkRS0i+AOWxw9DKCA640kRST2+IgOymDHEAV7VyZ9mdQgafg2+W9kkXlZBb14iNLoqD91TQmhgk6CspwR4hR+JJWiwntwe2puz7P21NXHBn2Zi7A3X8oXOCCNCN3260tLLNIAj+0GpD3JL9QgqzSY68oAwOzRR8B/MipR3Fj0e4Jfl8gtCbSXYFGS9Hm51VrIPHCJsDnT5pfP2VlRzUpq2EL5mNcj2H75OywciVTov7zqGgmjOpUKKQwWII4M7drO7hDM2sV0hjVihAm5LSfYLJ8f+h+aa/4lPZ8YBj+b0uwJRQdnDg9u8il0a2ED3mtr2NgqcGMagY+Kjlf9v613j2yt332J0Gl6hsIQTJ1LHCgsGQIF2FQOYMWumPQ3pEghAOQF6K57KIA4CG3lu3S+BIC4RGF7mu0SIRGt4EOLjDXYn63iK6N7jzc/FfTrXXzvXwOXDgRglWSOKZIvg1KTQQ6cxySff2lvXTa292Gok8E1+ZUvMZhPpCewJuce1cYOKDWgOiSBCe4zbW4Y9wFhsSoDkJvuADMvr5tyf/tdpVub0CsTtnJKgyDfje8BPoePiKbroJ22xm5ue9PH7dRPTyLuh6gCaGBFyc1lT6Fx6o8DIFn0NqFIX3NHiOav4TqBKbccnLoYIo6JtvGlv0hgDdXD40/g3C/CWFUwYt3NXnDDJnzjh1O4F+ET6kXrAzskkaUXomtlCiSTDiRocidks2csSirkwYtifKeShKiHlyVAcGo+Q2+NFui6uyE4VEXY+AuO9mG56dkL8EkY14ulDqFn9XfFHF07wZUg5rR7iAneqzZru3VyvO8O7gvhX4VtBUbFQhfh6UTV408FWqg+v5JIKHNdQPhKb0PSI693WG+mFwqRzjh0qG89Z8cIgNumNY1Bt9GtSYOcpTY62008A7xeKg9MUhdn1fIkC/4FF7LxUvVXZBen3Hh8Y5TAdUEsVKnZO3cNsTlLt/ii9JMtQpD3WCrvAeoAv+/Vo8OujmAc0RtYnisjldPjloNpgPDW9BDyX7uSP1s2Z+OkAcjUr4si2v6DiknkHobrF3WlSQ5l2ZaysRn7z/BZ3iyWiYVPxyN7PAxY40oN5pV/5mfkLyBwMGHeRQH0+SuXlZOUZkDFlM1WckhREqUENrkFY4cpkIRWUmgaA/CdDQjMZ5l10QZfkqNiKmYOHr+EBxx9rIjjYTzqzJXGX4P4HL/+uteeK7i9FkzzMy4c5I7QkofjJfieyhISVM/eWMI/OX0om4hFSRy4SBAgnr+ZC07mnuqD+tXi5L5mQAOfj6VJjSCBl/6v+WNK4OUFUFpY+JOFv2HXCjAasKj8S0F8W6GbhLoL5T8Msd3g/aB77csUZzw/8LM7GBpGwlxPT9QhkITOjdqCOK6gWkTdKP+V6i85jFoEQ5Y7YD0dsSRVBlKOdXcxqfhXQB19WUIQsRWxGjKBimROpiObGdEQ5u8u9+nf34tCKeE56ipRyk3SbfVT/jOXAoKwcsaita+2NVRzNLToWKAzIInt8C7hj27iUYQmdH+PHVBGVb10mD/LEKXzGAgGSpelhNfe7r6BIIRLW1a+eTK1RmJX4mXbIkIXwEcoLmKYxrjhi3z8b9VWe7fqLEYniiMrcjA6FgJO/H1s8h0D0KtF+gU4byr2FedKO2nxEpRQchjlgDdKOogHJkbxPfp2wHZ9YD3i9X99LOP3cDY0pmwMzqHOzS4T4od05JYiHIvirLUYPN8mE89LVGQC18NP4EkyBuhmAv4fxtG0cedmRUlFxhvHKTFP8YCGExBPxxaMXv4CoracZ/i4G52Nhuttf/4CxxOThyEbZo/GsihLb9a5ZYJEx0sxgbUf7GtmAu3PSr95TfPCEv3Qj/v3YKXFQ+vAq3yow2AbuQaiWWIyuyuPHkn6MYJVi36+3wuOyiNsv6hhiwx0GYsTvLxG5gClGYg8HPaexKnll2oXKdy2xaNJUXWd85h6jOnimw0l7VIqIKMErzLmNE2m1g3wGk+RqIlRZ63+tGPjn6lkc8pF01jqtwSajNt57T/FmX1nj0Y5TnJL8eJeCd6JFoQK3sHZXFqPqRO75xIYFiMCM+w8uU3wWlqyjDhJ48BmZVS+2cSNYmXGcZIcs8pktWkhDUX5req4NDah9+4ygJkOm/Bwj1/ndd3dXDcoA7jX6FhI1GTma3hb7Wxxpmt42uwo0mTViPhhTCerRwfNyM89YHgq2yBc23leMVVr7QXYbtRrwaS8HK7ukl8kfw22sy/0zE2ArwO0U0e4ZfIDdwizAU+fb62BlN7TYq91Y0HJWVfZeXDXgY2FvR5/CHd+GP0UCUxo8Pk4rSoTwTxW/M0ChYwe60mP9+eDPlhubZiDzZPjKd46sSSzMT9CJO1611o+uBUsOLk5gCjK0wyL9Pnhw+AnlfdOKHqFxjEwUq0V6PCPC2nTMp2NztG10zXQRsRpEKBMMcgjIa3yBJ83AbM7YEHb407opGTb4Jui0WBDE3crSIypCESR80EzFeBuSW+ozvmOnfGim0nakhWVnoyhw2bAZLcYW6v6rV2mpPzeQTl/Vk2CFkjG3HVacaYNhZla6HsR2DSgTI+nCiwZ7/1nCsOIdkX0JQmA5SMHaJ3mIGhlHMK1l9JewqE74/Ai0eGlrzatukqdD84+S+nI88X9jMwK6FVvBHVDMIfed67Lf43/gUcdc5h/0IjfUjS/zZ3lhopTvtTGfbKAaGxWnh3BE0P/l1fGeyf7ylwS3gWeEq1ThmSE54YXfImRR4LMtc4dW4g+XEzIJBN5zOR/HjeiE3ScXX8Uyktwzfk3i+fuKRpE4uC/lQwKqwRTV9+XVxIOdUAF6YaV5wi+0deTesguTQD6/2AwUzk+1HUuZ2UFaiMSFIQ9ta0HGH9022ji7xUSczT3g8H0n6fqRBmMXmeYRRDKU1gCQukdYZV/yu/Fz0c92Y871erINnmUEERQ17e1iSh41HZF28807LV6jSA3lRlnuXYcsUotwu7bEZXeBsqIkTPETO6XQfGIeTjznvUqcmgVsDTkDy/p+YJtJITaiLRL/Z+wax0LZkg5Dfyo7NSvBHLVHmN5sKHxIZB/CSmC+9uE9NyRTvwGmt+Zy2iLDrqSQVqG7cuxvZLZMk27VlRC82YA6iWf/kiwoospIlaO9lw5X0wIabNjAIDLJz3ScvzgNah1H5ieeHOlupQ2KAUBSDuDzJJxhyr3QPkOD7klKuWl+i2vHKxUOaDMct/sgp1QWehLK6ZfLYv1qhMyM9EuLuYP2J68cEq3DWr/Jq2EsdX7Sgr76WsgsiFbsRI6J2XvdzNxo1XbopFuyyZd8B8Txb38lumVOwjLPWVBhCQMJqOpEf/KnYRxBfVF4Bu60FbJsLcpOpDamvuHBOEIlRLDvmEKDxfiqJjD/1OP4XtvLAdYfwY7wguo8Vyg0CrZnDZtFt1jD0pXLkP1z6UaTy1/dzxxtwjP0urLjsPsiE4lwnlzgdBLrIONHodpbB19s9WMA2dQ4Ilb7xwzDef1RNDSTlZ2Ka5/c00lPX6hUN+kaL3LC3+zqljlDLjxHyuad81wwbNNcarkGKHw/JiO7LlW+C3j+Tyb1olw3yVK3WpFzlgAHSbOYMNWuAdC+L8yhng0pY9ShTBLRtJeMYl7zzFVdeYIR78JCI9Sps+sXDTF90xesTcrT5mI/mASenXQWohhYe9NVbGHgNGf7YzhhWFtYvGIt2dMBHcZbYzmly+GRTqaezj5uDAR0m1Qe3uwNVk7Y3mYC0bPAp+emQIsG/+U+MIoEVT+n7ajlQTNGr7RSoeXfaaRDPhnIkcwEQoP5HNPR++JGSSgREGN4jRxAjTvOy1ZIzVU4tGtya/hDi+jIwF9kr+lkJesnGzzrz+Yobst9cHHKsttAKqYdVtiq2cGcps9YLJ7UPoHWC7dl181/OHQT575X7Pbf+QHPDguRyrlHbyjsbw5lk30cvKm0FgsErb6l9iO+RjTem3zLd1Ro/ChFhHEhGJve19D5R/zWt1RzlgUWmsOKQJqIVX9E1wCHqLlhYCmLxfX24Tuff6NPDcVYbDL8DBopDj4zkQjZ0CB6v1ZrZakpK6Y8M/tInTLCMwj0z9GTMvkHuiXmZZRdte3OvZF2BlhBvHYXxWYyGXAep9YVvjBVDn3Wuqjjoe1qcAK49F1xvXY/+K5FVtJlDnyDVhRNjGEBFOnxOcI9kKCXKwoAnblF6p2MKGZD9vFHdB43rGN2xkOK4tHQBxQvGi58x5q/qOjnVJImsfErC9I1lwf7x6ueiVeGL+IekptbDx3P11bB7KDYTsNcXajGvRNmbCl+vfSiZrGBe/KOGeG/70YsoIPDV3bxdPsdWfCdxkZUfAT7ZOigBhxpBiSP2Mv5l/Azw+9Y/Fbjnl2YwgXmGEJXIUycnWSzFl2rZHT/rhOpLfxA7R/yxBm9ED9xJthaOO+/OHHYkDChDHPxCSUjDvehiQp9VD4P3mVRCF9orloYxLG4uubjN+YRJ7hEE7n6iEFgemMYZirAWaClDT1d1h3RL6PD8Bzp9oJ9eH0VuJswOaTp21dKo9qKY/ciGLuiO96XPHLfmHGrLjXMtpvCKnvBq/yBdF/Cy3jy9/9B/5kFfTeKROs2rVqvTTxL3l7gwvkY0AAkGTTbhXzHzwK4b9la03lat/MiJOb59LFeGZaocDs8+6shilU1Dpoxid3o/rlcZjZGmxLlbYk+U24If/4MGI+5ZlzGd+Z/gbJI1XcWWBS5IVsoJzbboc/AZ0en/UhNuokoO4hCkxsdeE7NMe0LR74pxeIoBhoGI10AyTXd9qQPiQpZ/SGRQtzYVdXiYBjtb0FYp/uqAxTeLa+hRO27C1k4cpYbjkU4LbJc+X7Z0TV4pAS6pJiKgZijKsPoRxJWOn4fGmskR0AWZrU7VGFcrZ0Mw++Uuxm/qYPbDk7B4v+g6mLDcuLFV0Xog1zZ163yvA3l7GN5xb78uHgiEoQ+K/eYAEsZpEpoC1Yczg47OzrGRAKsqG1d8Skj5jAJdXqVoj9d9sCBNYSJbglSx1Zeln8k/0WwpJs4Lo5qr6IYyE8q5jtRQ2K08O4EMsUcpZGpg/d0tmljVia4rcvhOn2XDrRCj2NfUSKoUyqPQcRtylIzML4kLddyxEEx/gr1KkgfvBeEwyNkB7G9AiFJNnBX/3tWlrAfZKQ+qNQAVkrhxzucvbCO+R+c7rcU+udTlyOtIV6DD4b8l2wXKr824yy0qy0uXL6VrbqlH9eLLG5T0kQ0NHI7Bp/Qvs/3bdu1IK1N3/hAXkNRKCqadcqsTR+mq/PSQtR/4YIIRTlyu2jNMxpX6CgptMZ+zyO6f899GmJ7yvVN/scFrjhQBLMlUKSzDN3y0p+Xi2LRLYOynnpqAEUQU1dbrVOAq6ADq/lEyqYKWk3h8IaQmktRFm+LOJkCdbgr4wCnzogym5v8dA59Lfck5zkCwqH1ISC6nPj38MLBDdnejgZNtUhToFaQl93n+uCNfDxv9DOgOqfXFTtz8uQetQ6zgLdiRVKxR/Bnn5ZY6FjBNMe/d+7BdfJ9bKeYjd2e8GRGRDjLY8rPbcOMwDL8CB8Zwj8dw1gbs7mUN4eV0OXLoahhzU1JcYJUdV7aTfho+iUU7DjHSKLNkQ64fBQlak1SEjPTCzE5CG6vVKfgivYvOhPQXlIVCtHDT0VO98CtuJ0DVo9yaXIXHlTZup/KTcAC44ZS6KkKRbIv+DeQpJzD4Sdq95t0ID9GDzbfrxO4M8N4+HDhIX/j6J1NWwhAYRRzlZxpTY0s9ePcFq54UP8PR9eub9PqfXtkas48t+DEmEjicEuh/YHFZqv4qmWpRtbv1E38eN3bGKjGlbaDo6+YVOl71Z3UZdCCjhRAqBmEgUTHvphFyF4RaACg/95uLNlxTU/IxO5f0Z2bXvXLnfHGpz2sQMqlbr7qPkM5O4HD+QKP1kfnu/o4Jg0wDLKK0LwguhNffKme1JxF0nAoL6NEztMv594qBx84bB7F20S2Uwry+410/gGz5CB+BK1xaYDzrv0a6iOSJiZ7dIKLHqTPu9m41aPcEPggU1g2HwOR/3poauHUHIwCo8KpGBXLvlUKMxlFhO7QY1vJFYGoLiABr7DL2lV8EunfDOuHxAznVWI5JVnnetIJa3CHcgWpDPaIw2owv+jnTLkBjMQk8YexGYH1xAVdc2eDviqoDLueysA60R5MK6inlrOllDIsOacidqwIEd6CRtHNqJcLzT9RHFGdvqVGkgGkaJPbjke6zs9tDLTF+czhN3WrZ9I74zitAQ1HOu4osk3jGR9BQMfNAAHkXly/7JT6OfzalchEGJOuZVJsq+6DnpcUIzre6eo/7Q1agb33bsvOSY7q/khrkUMFBdx1CnYUTrNVP5aZJ5EZkFLTVAzAsUOhO6xJJT6X96OT+Gff76Oi86KJCK62yDwZ3BNC54OJntS4FaxXwcKk8qMWS4BmZmJjPXpP0h4VKxyADQWuHXNvkU6hiY/vP10KJdLcJXQ3FCkRRA32bd6xjICZ+Tg5L0m9vbdtO8fLxvfAkSxVHMtzi9IkHmBMRGDjI7N3wPq/djVQAEmEnrQRNcAGrvDc3GleDnQFURle6a7RcWSHWNPdPuFGF0OU509jkPttBrKZVonljNyBmZgjrb1F6Q5zOtiLIq+fTQgIltgs/49AfrR+xwWRXpD7nkLRtpSqHhxYsGXNj7FIVRcEOwglh6L8kUh9wshMfEkl47P1IFGl592z1RYrzslY38M+y42aI7RBhkxn/eDm6UnOBVRzZYBGZ+SV2BJPTh/S4TG67sQC1WnqewRHj5cqlUf96f6/SqOsvMn/RnxRdVfvpdAq4I8OUz7/yc4RCO5Mbe1AdQuxkhCzQYvwcvdSiVvguGXkGJJLT0Wm9f9WcYLLwuSGalCPs/E3wv0stTPvGDX65m08jgXRxgmybknTEnzEXOKLjKALjeVwk6jPTOpWtQksaeFA7Ppa0nDdQit8GxjKvck2zpxK6RACJN5ACFUozhlzIakWsmnvW6zZnblXCmGrBw5EtfecNO8s099xBIn+bCPibeVcfsAMPDZDhnI6IpGax32a/hri0eRX4AD9wVoEmSjODmJCNN35vd5LExRpzODnJsck2xFBYxGYlJ4gmM/fcPkegCfLBPFR9wXXNSmT/LuxsKWDmH41/Iehk/OhubcTbvqiTa5nrXD5kXDRczkfNN3byna9VpJvoN3NfUwlwJqFgzMBg+IMRbFO+k+iLID8M7KlZX3Px3FwZugV0T2mi8X487F1pY7gchtMyfoEMDwXVdSIv62/+0Y0km3fpSrR5gj4XlX7TM7sivaNJUDo6gmxtiZv5NnK6oihsr6oDiR5mGK6YkPbquzyna67KrvGu2zIxdb+pNGFPxYyw9oKYlxW0XQ7jn9EB65fYqyLkS4SF2PGcpDNZY471GDtXUDpAyJ47JEjsNq41VIO7PO0SS6VdpHJI/Ut10R233Jsut1DWZhZJRDbJkDGDzK7TgLWZZjmkSlGnCrvlYi3z6qzd7HSRoupUfTJB7EnFrwq2JfR2c55R/vsTk3uHqVH84JVEIQ/2c/OrklvWk9/4yq3ETjQWaCURQMZ6JGExL1vhUDlhiGM5nK+kaJFeXeqb7fWLtG8yKv2179ihR69IbFLQ4/Ex6G5XdgE3rKxNlyFk7Ozy526+Y6kyEU8semNkg51q2Td/q1lSTXntqSRstfxO3LXTUiFlgleApzyAeanZjHMfNb87ahjmU/azoEyRwLSjivqruvs/Wm7FQpjgHG7bVIutkBkcHYNpHGfHHPqwZlqZbfMpWcD3yY9PbhiIYEhnMW27hsuelg8XdMRYGl7FMN2GzgFyDyZQOT8f/vkDV+7MZ8HoASbGO8/Il5t2P3PLmIs/SRzBR7TALFDvYV3wH50LNdNL2qQcvtbg3htGvp8QNXPu4nPKhwUuPKfk97jWSWHxyRS9rLpoblKhtBg/605AujWgM+YMwtcJ+DgrStUdDb3MMA1JzAK5bDdj2rigW5fo2FtJ2nshRtpi2SKcZEyTNQBve+8a7tUckxivZBt1bbUUFZBz9r2G1h+ioojOcsgn4YVVwkZlluhDxl089wAuzeLMagEF4ALk37x4O5gFvK/KJdIJbA6Eyp4bKWs9CRkj4CSy0uPjywWM034vYhEN6Klqu2xNamK3lc2WudRLluZNL9p979NbXAKvpleCDG+0ACYNC6GKiQxhwomt9dpB6Hj2YC1bpBbrEJ8vXOrUuAwQx6cEQP0EtspeYN66TMP+QsAxNpBRrtxrhfeL5923A3jQJ2agURCWdALZgQxq+IpoiiK/ox1D2nphjCS1xI4AQ45kF5c4twM6jMlz0mYkQvWbZ3/CZsG8ALG5ew1On92SqTZeWn2di0V0r39CiI7TB06ZfMMZeV0iOnOpCsh4THhF80xMikx6S5fswyavcTmfYIsjHmS21z6UAKtTBisIXPcF/Nh4z6ev+61dcicefmG9aXxQG2eyAMwZem22PZOt50J6eZhqfMaYwKwsXkfFLTAg/pZYYEEgs1cXbUZI0PcAFS/bcCWqyBBIJgll72bigAVoV/Nh6ihB13TtqRGOMAkaPPkbELOURQP8oiyJkvyhP5yAZL1wjJaCpJgMf89/qE1pCu1sovcWY4rnQ7b2W7LUr60R2sw/J4WSuFf9azMoYr6sZpbqvrrUTjfwSKevU7IOGAnnsoz/7a4lNBz+S9TE4aAbxSh70JA/s9Df78MrsNm65aHT/cpslM2Efo8/nOCfjZI9jVefanbzqhACzzPeI2eY3OFgJXrbsdNJNOEkMUdbUfEkOklK6rmKUfWAy01KRs6TIthefmGTWb0aWujO/Ievv73BUyjfAQ0oWt0ohutmd1raL83e9n08v2DG2o81Js5fK9aU8IDup0cXfZDTnYpCBWC3h2DHipjWXaGMVVwKVMgjSue1QOl1lMShQoiNHbfhMGBkQMWrAcRTL/mTAwGZ5wMLr0ZbFpJ2to9/+DaZAbMxptRhyggAAZ3nn8yVZBwosseOfGJPg3/LiqRFt9ce/Jw2Otfb67ewFn6dqc7DTJ2euYzzW9RJWf3G1ff4Dw18Oh3FHS1+UvpOS2uiNJxp57rN7Rs0+4bHIO57LdUvD/XxNUlfk1GDXvMSj7/JNnjP52fqy5h10CcL+SzifOtesu4Hm/DTnElA2tI9o9rwOy6Hapv8+jNTtULydcozwBspcXOLce3GZ51zgg3BrerJGs9m++NkyZ1UEUu+a7Jq0v1f00KWkhWENhWq9cHD+blG+FxUy/Cc4DG3jCI56nP7s85rX+pNfyUXC2H+2N6PX0wSibDtFGC00ztCdcGLDCa46qYfwn+9WqrDXz15CZw0y6BrBFPZQZ5tz8H9cCLAcgSyBQIkepLwkmx+sGOmXRghQ+jNWlnS5XV+EeW2LLKtSN8VLXXg3MfCvWYOZGiWQYxCDGlg12iaOGdIWU7ddCmmPeFpr7ozUIxKPbmVdD5jG1okCnzQPLuck44L83iTjjcVBN3G98qlQN3znSD9/Kh942htkKqKKyIdR8YNdGc6o8q8brTWR0S8uIy6auaF+nPuMEQhKTDimGzP1jKU0jm45pJURW2YiJNSZSxkWhZPw6H0QMjaz1yZpMqumQrHxua/QWGWo9Xz1/4IAlHgQCWOjctWncxHasmGJ5TwmXLHiQ8tUBnOtu8WphYn4Y1fw9O7WsZ+ABYjl/xxY/A1h+pNqWThR9r8MlC2j4PiGMkraL1yfLxogiUkLaTUt6LqZEJ51tQ6UwkuNiK4tz8IXARCx4aD86U6gTesW5+BqqwVLPtNXRNNvddLPaLAJNkrP/pyl/2lVz7FJUlLPkbCckiSrgAmieHLuuln5wKCMubAc9S/uP8YzGo2Kz9K5NOqXrdXjvNLbuhRTExP1QCtgTEGst38len1RvLS/nfD2nMAxxr1exc02nNU2CYBI12+uLC1NnU8jX9vvOp8RJmOZIELe30DJ1bhmwulGDQDgfNKlSNilSc7UGx69iYtEBnFcWr/azy2jMd18gtMV546DRrWTtDnTkmjxO+x3gf1ocKziiynmj6sEL/bQyeTHO/QW4sQr3AaEexl2/S+Qo0P27pLZCGcp2u2c3Gdr+h2zA0m46aPr6e1yXLziklz6P4m2PzqOk1XTykiJSLFZp806RDCqPkPVdigpT7xjAhE4WnFEvaAcE4ixSmlx1ubXaAI7njDNeWBrjbZyrKJa73PMv6Ck+//QCYz3cM5E3kuK/A5mDipfKoeEwAWxJ+Mt6H6EVmLejxKQrzuDuX36TxSlLfu3ZMGVF087OMEyQMPk+q7zyj88ggOGwPtmBsCl/5skHexbXOt03Ss0mPNQh+S+qkoj58DKKxpR9NP9BguaIpH/oOqlUQq5F7HdjktfehpO4lOgc+r6rmhnwnb7FD1Y7mG++LQ41acxo0mAinFI5Tof+DF5oMGh8NCUTWII7PUbg1+vEon0FZmf/hcj1yrgObop8DqEYc3WVwzIZVrEjJJw3yv7vwk6jJ+e58AJIJpgw4LDE3neNbrrmZYdZJENWj+vYb16Hn1Fhs4Zj0B89UJj/2a2mEsRCv/v3WrnGyA0ny9XAJgT17cci9iKRK8wggeNSgERILYBCUZdz+riE7q15v7pFnjJ+xFDlKysnb/ZlNlBqgW7OvbYps8TvTDtKIotmrRKeeyLaXX9KT5jqjU78hVHf/7l+Eg8/yAxkcVbX75Wll+iuRLwyHxZ+8+S4AukW8xV+BsvgxmL2oqEEO0HfRcp8ooJeCvabrkKBqucfk+VrLBrGID8U4YHSPcnR9+o6iO7mDvV7cgr+IxCPlGZX+7fslw+bv+ViP8OIlv0l+wF0lXrqAxAWS4t6hRmho/JC13DCb2QyzrjWFMMSv4B8TrP5sNNxLCfPnPWUOSeXBErYD7Q5avqREUZYDd7Qx0PedDuIaMezIlGKkn9J/cyMUtHflCQmVinf2y/gsXDwRJTS2S4cVma0JIeeU0F8IBjKVyT8P8ywyNlZOpiXDaU7WUiF+7a6gFiO/hIAcV86bQWs7vQy478TIy81og5aQoLcHp5RFb5mpK2EOHmOzioMgi0pVK5nv49hf6M7ud1Opl64Apc2Xt6dbeldxYjul02eiUVXokW4unBgWXzZ3ryWZSomI1Bj1OI1I2SzPNzkqgIrgaFpiox6Ue50e8AShceZffYFSJ19eLTITM4gketSL842I3J2zO4joidoKy2foYzFFJKFkv0T0V4cAZwQ16igEpqux6PqIaJQbdckHY85dt2/gNxV+Z6Uxg0kgG5n5xWkj/2iLJX61INsx0cCr4DEjLNXMnKF1TXrTOZUofjHEnpdiuKCafieq4vE1ArbDRCjcvff+d72vM9RMIy+FqLEI1ZaXg+p7bQu0TE3DPwCdK+3GR954xYmnhIuHTUVIyXuWLz8IG1otLSEtDqYCQUfb6+S8C9r6zGcvygQe5nely9s522Z6V9CmUPdIGYQe13yQAI19cDvbLkRYZh1r4I4yL48H65z2Rm1YcrSktWyzyH5wW/hpFEIOw27/RBbcCCXIQk1KWxLrv5RDD3OvJuSXqh3jBo6kKsmRWKClyCkciL9BYkiLgEfAA2OpP29a52h89YXuazVqhL2PdabZ6AYkaGz6oCerGbH4dbQPdxiLYk48LXUVxJiMLOP0LNBPZ82j6JQ+IwLNp58GU6FFYlO0IQYMAnldssJfOVEmeI88BVRmposlZs4K2hlFrDHuct6PsSDgOe6E2SCAcWS3bkqIburfdOcPAxXT7T95xGp998MxwL97amFhF82Ft1Gd2026DOw9/UvOGSq7aQibozH27BJUYK0srlH9QqHjpxGXOKucj43+wFcUEVfro/BmdNChGor2fEFlz0q/M7txL5ml/3aEdvaf92qieue0sQONz/2Ellv29umMgNDvV/AdTUFfDpuQlc0AOENEy4exEFyGuYHkj1eFeZo+OaRRgqiM2DgnmO0CbelPeBbJ7645fZ+lftt6tzNaigze6vO6YerVWXKBgC75V65jLmM/ewBJEtC12YDGlOT/u0h4CRP0ER+9mWMwfw2mZa9vuIHbeYsMhQuo8fYCpww1rflgE1/qEB4BHOqehUTyiy6AMuurfpn+0jJL26NCA70vWIvkR/0uFnWC9qTA4/FS9RCV5I1HjDBFlT2G8spLQRY1MLzBHB8gr8bYoRaqhe4QoVg6+RLXVucc+zjWFP5gXeIJJZpnxqRr3nsOxBATy0uVl0GSInmoZlr1FInNAnnsOwN/7MO5oJJaQ8Zwf9y+0bIqB+cTVBSYfJKlkj6f5TH+abIV0gQQBFkOgKAVwsMHBAVb2u8X2IOtKOxYQEbnVSC/u0lftuTv3/Ij6WTBC2NBz/cD3TE9AC7GC8MQW4HnxPdyQEIvLSaMejJDyWLAYPcw1FiK6R802pAJnW8z0jYN8t9GskMk+W1B3mtDBmik3IIh+UoZWux8IEF9eZwjo0qEwq7Jn6KFN4k3NvLse633ybfPCxGlANl+blbNqGz0M4TN8V5OH0UbmvFsFoa/H47yu7k2kyj7LXRG7OWDtE92jwCPDwt8rwct23Mlxt6mxbZTPiO9p773ha8MswzGTHHiIzqzAyRBDIKebukib+70B8ipJe7neYDF5Df/ooztvuRNM8f9+lmMKNpL1GzJ7ivJ7jnBRNi+fzYHN5i956ENyjvZdx31JmapejT4M3sl1ks29Xaix8vt24x2AJQxfBYA+KFzyxF7N3v86dcEdrEVkneoSYrDQlEfqAEsGmgSA0yOhbASX7SBkR5D6UtSwSIu+/o1EiWcdp4s3lrlkzjJMAhMOujbKQ0ngXYko6KsJXniZUyJ4aDXuDKLlUC/Loc2IAAnaUzQ681u9yUvCl1QiP7YJVi0P282ToSLfzmE6qILTWps8vTSngqTiBteEqO40jkUNG5VpoABVAVKk4HlS8k/IRfnW4eZ+8bT+SI0t6LpGi+YOqSsVlHfOKSY9te+CXY8tR6tptU0ItHV2qy8NyGW/+UtT+LZErApoVOnsAm0FDreHqIPCu1YLq81K8TIVPAeXpBq4WbSq2Q7QSPMJ/zQ3z0VSRjGxFTRy5a9X/XvCAxPiKnDNq4R6D4SUZZ+Iefqhi3U6iCHAq7WRZG2eAH7zuqwyqZl1/tywKBhBBnK8x3loWyq5cGzZTyELvp+tXu1Y89j81G8kCQZOhs0OmZgAB3R6HDVLaOsgrelBUjD1fUEyHxfkKNFHIPRoRZy9lWkS47Upl1D/KZj+/L8+wTxyTDdZ2dzF1ZWwNo0bn9R7LTBevln2aFh6vNOJfaHQPS6B8y9QTJLZo97keKzext2c3JCilDNyu2xnFaU+aMX6o6p3mid8eFufit2T1X4liggaakpgQpi6q7gamBMClSXksYccNatT54wwQuuyDuafVQyFOXq7L92GKwX9rpbbtcS6YNPsQYIs8xlAcCb2ecygARCgMkefi9dSkkqQgQdt1zLF2XFg2QOgglc3/AzI2/45kEWrk4jzxNbUROJK1fbCpq9jIBviXS1cA+fx/VoAU+56w+jw0SC3BLvteDwB7xF/m1jnyOKLWU6ucOmxZzcNGrD9zT7xXhvOYfbfwWWtOdsXS0EuXfPTvXyPvS+/G98oF0Yj3YNOQonWv57d6FIcO+q6VvhrxbjeeeWCMy0Rm/5QFCbv7LKRmtoO7oZ0eiydP1Y731RxJLJmgNn5PCEu6GbzyKg9T+R6nnxnb6Mo/9MRN95PMn0WQmk6uXfqWMAnCGgu8R3nK5df78at/AIaZDavRyTJhiGvdAbzgVj8aBNL+yoOCdGsVnFqzco/VZvv3fQq6l7FTNlZJFjCU4fD4+R5lYD0BEP86YPjIYQNCwOgDqqRAJAugVxpNOBB7pcg1PXxwvNaZfy1ucjUgYcx/er07HYZs/h5ybKVPurlOXm6wL9LETHNysIPVbCvX0+BLpMrVLDrV8y19kuNHzCGz1xqDUuRQ+bFcjPO0zFFcsrNmNLH8pGeQ6UfGLrumJKautk0P/mOP81L1n10C8lGBpbjn8Ukzs+57nfsouU8aU9lZd9D5ENDoXJ/VsLTufIR4PkKlbBWJ1bFRCXY3GuMLy+ZCaAISS5Y4lIfX0WLStq9fxdNAO6hjGUgJJCj5Rf2qVnDfJTgP3nbbovxsoQy8hNPdmB7MDZ8alyDoFiO1JRTx+amIO2OB2kubzK3EOrsR2Uz9fBtFY9kjpYgkJxhJeWEsMFgsrO+nyeJYM7k3BqiehCbu3RPogf6apdcOsgeaxXjSYCom/qzsFQkA/GR5scujqi6R7frJ+HgCdoMK+yPNjcTuFhHof+oG1B+PcCQt4WglRxjJs8x+u1Ijoe6fU1X283/d7A285+1dyYZB2j6WJrjzKvrYk/T9VaFMIrSxukFPQapTm5qfCXQkGOQgN5y2MnmMymsDmCY59v1pI/V3g5IPLl3SwbhG17yYNmQWLPpvU42jxS8xnovaI9F77I5vwIyLzJ+HWBOQCU1O2Z/15TkK4rUnpCnDsgt3s5/LeiCqCPRslHYUgqH8gHN7maX3aqPrLvWU26n4DlQnOGcVSqlKBXipz57O8TxspbTOaAmFo1j290p8P1M9+V2mkuLkV1xi+3LQN4gwmWh51cLH5lfcRDoa0OnN7bmGo6YAKZwVtX/MQPC0wzu65TyPrunA4uNfZAkfBGfTEw7Miq8ShrHWEnD8DZtslBX1KfVT7vZB4Z6axT0lR8T25c8/ijDvxjndu0bAj3Ykg2XfFYVf6d1fzNJlxXSgV4m73wLZA31EsvJOjHk7MV8HMxNk4orBBtkiQfOmY0CjTAV52fz6kA7+02r3GTibmzBQDQuiYJEyVn6rq4+oquI9VN42sMZFx3CCmUzvDYDXUM4VJG/LPhDEEFC/doboiCcjSmoN9/KHPKcmPg9bUHtv4vGbSh5jVzPSBorn74EdBXKjUpPj5cKqiwvPiykTXh3ACunv7tUqIA8MPUNde8HS42F9FrV1Zjl4ebCl1tU4OCJWycF8kzMNptJ7fHwp/XOZqi8HBHZf7Wsqff6cDmJXViS82yKOuITs9v5vLZhnE0AccHESVd76eoc8y6t9/tlN3IRywhNwzYhJsDaORGart3wyT3V4s3+TAsUuVGm6xt005UD6W8K0+NiWKCJq7qavv/I1Tiz8l6UMVwaJQkJ4YPjfLrHVkjTP9R6ZpTe87xXdxjhaJ10HwfubILjTgMv72AYSwASoAFBKLCdxtXK96KxxB+kda9uVgpYbhLmVM3htGW8f7sZsA/VVfO+3KE5Ikt5tjeQo2OsvSOsXuREb7pOGtlx8VqUEer0yfzxasAX7YfgDmrP6LKMZQAxcLEm/1tzDBYSfN2xcZ0U/jFlDiSTMLKIkHGVSh6/4DfhVuJszb2imrzvrDAKBMvvVgVTIF7LvZaLoOUXLPIVajW/fUf1GcT/FLd+A4DtF2YEaNQpecECb6PK38JrzXvZVvG1GXiiBRc7fXdmLwQ6/76eCeJmNw0Rb4vf7D14ag3l2G1simHK1rp3yFIEG9oDwRHVlIfGIuNFjb5tPSN0ygUtbyRY4CiAaFF8VpnVCDHcTdMi7EypBdkngLv7BzesHJby2gzifnMcRkmBCjaWDGvwrG4JGbMb7G7ywtufwXhVkvKUV/lGG0suyqjGACzu/6dtaBHkQUoiy45hR4vd6m7JC4THTfGBkILznGBhQeaVRPBAMuEyVDPtYfx6g2sUEZvy8HYiaywAITvPUyqbU2nLezngGO9HURyA8jpRMP9sRJywkBZGvxeMsZBT1MpP4yyELzGlAt8fJrRSF6OGu1GfeUh/Jq7lP4UWOT7xB2q8O1NQAKphPUAq0yCzbR54ZIwxl/dsoM4nWGe9tzrOpltLOwCxXEfXmd5M+jbbSElqaC8pDXnYAxjuWGn6z90L4BbzsbsSuEHQT9/JwYDS1DJzXXxUT4g0EyEyFdE1abwhWVSgEfITuV0eKXBTYR6wMzeeO8ffd1dBnwDlX7R9o4yvGqwGFMlJX0YjwZAt1r9fE5L+KxNWJ6qFbHO0YJpAIX8ghJ4cjN7QQQ/qTVzSWA0SJE16Wzo6zxTpZGSEf74XqYWTohcWasJwhSmq4DJ6fM6LPxyij/UMu5kVPhLzvL3ltshO7r1V3Rd0G+wrtVdLpCOqk7F7JuWSNCfx+05UWqEfOMqQbl58ibS2AjSC1PnSAtw4H5fxSg3j6DQBbJQQIAI8QjfqSGX4JDXulEtPh1Ht/WU0RQs6VEoYXAQQxnDzkdKPh0v+QnvqNmo0M6GMCRWXM22dMKuf4Xk7SOmGgNaP/ayW+7lPwb+++iLJ0qrGIB9RQMe1H4HrSMM6+7FOqCBfQqfj4nGZAn+9CNu0gxMd37r2SpdFhHPSWUmu7jbOBb/3ahN+C7jzOX+uWQrtn8hyKjjoQuzs9ZjPOLxEErY+pVDquNBjh7L8p1UxtkitWvrp6pTAaxAOLA7FT4zk17aj/4ldLpKbXwrAtfMZ2sIUeb4CO0J2ojx0OMK1TKH0cI+H2OdYzC/ygQ0QwUxZO3kM8oILN96HKOAw5aSbl2/EYry9XYQ2RjNXTBqCV/TXjTIJLM+xrwaMuIZSOw0C6qq/U8dtUTDAREr+Z41GoBJRlPTi6AfuD5ZwMxj200A/if99VhPPuzZxO6GheR1hB+dLTim8QAlwcLzVzRyV7PG/NjVX3RC5PMceQ3zNmFXyQE2vbO0gMdM5Vgeem25ePgURU2oDfJj69UfVsJIEsZYcU7JjYIMkyXn+WmQLalOFK8+NngAhNK9PnXE+BwqSSlJOOPc/X3f0+NIAU+AsS9yF0aanDiXce733t9ojJdjCYNivmv5B1mGsij3rpgTyUOBydtlMyeZTkV20GJUbfhCeZfO0WRq9nkv4Ryco1hH5SC+6z5frW8Ll1JkwOKj2LBsoyjCH4CIe+Tdv7JHG8/8UBabwSVLV6qh7UeBEhYsFhmAoSEFkZfDysREeJEjDIGiYARHo4IMDpVTWvEoYyO0hwg8ghdGPH/2SN1xSLxpZgwKCTu+lpE0r95OAwSWUUwLCXt5wzkAN2Qi0qIeKEHEggu9HhP8cNMPR9ZiPNRRsy/RiHr80r7Uf9mMBli5acjs6oTsrYqRczLN9wD/bNg5uVcZJ2mOm9GQTKgQb+UoPoI06ms+nZg9IbZATDL9NFBAPgNtfT0kGWeWkO8mOEuInqsJ1hm8r1Nvt/YrzEjpjQwZuoWA8ECjp23sSdpcpWrwzThm7VoPNQylMkOFFjgowk+Pq2xhDu+n/KytmBYNYq08k6zTqOTaOn2Y+2+vlwWqDRqs5RVcizVZZBAqJK/oarD2K/YN4sspb5u55Np5guvsKWNmDjpiu6PnKRYoiAh9jDSL16dWa/qqlizC0a6AGtUXuZ49J8v4ftNN6oY5WquRBgdNsKPzx7KSDNh76iIGmjYkvO8KwvENFxrQSFoS/2Bc/M+B6StSrrfifY5QC5TBmhdNV8wKr1wfhtiM1Uqz7LOWIU19C9jZz71GlY6HWY8dC4fzYT2WI1OM5Q5dybUaD7eYJVeOmoKZXuA6PW5j3zVlil3n1EJfG//qvgdy2bfpgBG++S5ddlJCx5+xdLIdlrSBGxjGGdYw4NNFghMuJhcgWaG6J0XizDDIhRmdSP/hZytxKVDyt8/OSaH52r1KupU457JH4Yom4CSRmi5m/pPsfCZbA6fRPlG719ZJmPIXqjXn8NXIHn64r5sk+KA+pK/JZrveI5jnDPvaLRFdwcr83sUxPtNAWlLuHNPjotfKgZg7FC2fq1hdSlmYwNDKMS/tf3gpfAc02LIs9nROfqxOrq//U4C2acvc2G8D5k3Hk0vKeR/57vcka7uL6hPSW0rlxYaezHG5N8LBTSMIpf+9tFBaOrIjE2F1b01HaEFRUMoXD2LEnH/GEXGtoKNCwRvmW5B4HikafIs2asQmGc9QfwcB1lCYj7zqbeLO9rAV9J8JGcgn0SKkpB4/nO9rd6PB06TDn0Rcdh3FzTUTGQQvn4dDa8AIRodmIlDRGfJBXoqtMmuLGDXvJ9QwaDWE3LDykq6p2Zd7Pn+eHfFjuDsjhZqaaU/ZAOtYf4j3WDRln20Aw+PAslEr+ttwwt80WpOq85oungGtrbkxkkuZ/euhemTikjkoFTm50aW9dqWvGL4YtTyqvH7+DR55pl28SA+U20EZdQ2MNVCqzPybCLN/AxG4qZ8oBuAKxM0NZidQO9Vyb3sDMSwa1zAMp4UEVk8N3cxC/A7bo7OsLilVUt8eSAhr+dpQY0V89uGgnh/jg31o9jhFSRR7iVIozj4wuMsBSTbpFhsL98c/jQ4Zfp00/JATa9jBQwN3CTp+fKkR0FYrIfz8eVGv/xrmscLhNlqd4X9IVXGX4oDQp2eFbYD9H1UprLLZTrTEbSCmQDRGjhf/JEFWM22wkQYJjTp6GD6UzMxcefF6Za6keG8636O7eyOwTox6I3QhEtAEYeaSf5QL8/Gbu4w7llORkhL1QwsQ1QwpVIWZMBW7scsbFRHKaPGPGrhlZJwkbt5PPjDqZnsDNhF137yNEfcQzJtSPl9yZ0vd9dTVKPmKE3z3tX5QhE4RvHkejuv66pa8j6Bg9UCOUr09h4wBeqB2c1DFwlFbFNs1OgPUqFvdTOWYZcNalHyDaddc54fHXhH0v8br3syopfNyeX1l75B2WM8xWRF0kKQ3lyhBQyzB/NCGDsFmkFQSCou6AZkYNp/kaDfc1inL3N76ZBCWt5+6x0fM6wWe6nIQKr6Jf29gk1umVX0HJ8eDLaB5ocZzJHoRUfIX6hP85UoR/hPa9AzN/NUc4JCu0MaoC1lkMkP4C2pd1cHgPvW80oY9NUrFG5sErzWsR9IqfZchN4oJCCarR35iTXcVbND14lI3/qG1z9XLmX2iWbvFDQUbGMd+3k13bFuKUivUxCVIIHi8MB765+Fh31KsRMjOcN4vtJbNpr5+z4x7TyFBSZ9xmqBemud5BcwFZ2Ux8MJV+DzkclseZwBDVkO/9sODwttK0bNPUhppO+kW0latOr4yYefbKCqezPtxbEjXeSAY2ZSn+1GIiBFaiFbCwtp29U3VlDVsRZEXeJMMCwLJcTnCzhOxAXIhpCJS9NFJlKL+D5CxWN2346zDy45twoRRmfHknZ314JwjcctbucBCC6iFj3qU9JinA5oldixdsaCageAdAIczBUytqSOH5pOiBR6jOpXeKRrAUI+lf1yNTJCjf64CtGLoPK9LLg2ADxc/XIuxjVfxxIaELupb7KXl66nveXRYOKIlCqgB0SwsgSv2fPmgcs896+nfIgt6qCcoMebGh1mPaAFEskj69S75zzNUfzDzAe26+DhG8VVQ8eZkRQztgKtednXZDk7WZRV4K+FCimurjxa2O0tIyS8OqRHJ5IRCtO+M33RiDXOvcr66nL+3vojm7vo7LxV0yZB9d1ronDdUFY8AoAMaCIK6Trbk4xuzqnXcmH8jo5MVpNGNjUmjc2BExO+D95/Ri32kYLRersXNLhIWJc7Wvx+1ZWJsaZNiaRiW8fmNADBCydzXHts2NZoxKsaan84LndUZWtVnIMffx9fAIAWi8axXuA22lz9QjP65yxqfO539r3B7v9ldwnOKuVIkSX3bfQch5oCepgU6XJRIfDEYp9uxLivtOSHkKHrkwfU2j+8Ji1KAjejuS2S1U6A1yEdbUdJ7zDo1XqwS30LZozqpw7tGKldJMGpHc8ZuxKXZapsazsaB8mJLgF3lRsE8ehuCvD4P88+fxRuPl2OWOA0e/L4Lh8Y0Y95bZhZvdK2T44KEKEhYHo4xV0n+BrpgQA6OEWoOnHIP5VAWjZi/BPvnLnG3o/nbTZ7b+Q6w3hqOmooWl7jbgjo8P9sBV9m+erdoyN4EwjyhSBEiUrQr4uQAp8cJXSB0ezA0Gwbkl/Zc4gC+zdl8fRGARoMRUMXhDQyzZL6fygP8LQOV08s47E1dVLNLpavWm1/N8rJ2nivXbwmwug63Xo3+VRjAv7tit8HLHgQHsySnyFWG6FSwGshYlLu6fagUvs5T2xr6MjbweDGgyTySYNR9AtZUMqiqxF1VV3X1VxcY2zei9/oEjnpeTLyX7czYyhWez6uXh372Y3TbTz79Cha1RlaFBMcwBRPieKvn5vUeIipFhsJnaI5pHDC0m1v90r4mhym4oPKHGSFjeC8cbK2izUYsVyTIz0P47mTb2qBQgTrE4HC6m5lExlzDjDZzzZptvV4ofWThtEYn1x4PmlJSh4eIEHRl7r06cbX1kh44Pmz5nM2SjS6oNMjQMmecihH0urEG+GDC8lwJ4t/T7yUL9qiTnmF1FTGKSOtn/FJlpdmhohn0Erk6leXplP7k6Xv/Wtsi+6fLYhcC3RTmYiuzYeMPn7XxCYqBypuhWMrwjOlyRzgcRA0jpXF9WGPcrDeYXr/S8E2+0KMEgS3VEIuap5wMmYV6m1rCvsXnIwH/j6OZwKqX64QqUjAEIdA6nYUUsF46Aev6EnA99svwDZiq7r+Qb+Y6hOYbKb7oyVzz+jsilAefSfbuaO+QzvRq8T94zMye1zsWvGSphoJXyGcpM8pP65lzYjK6dJa4xSu3gCu7Ddl3KvSCiFLELe+XVDaBQjwe9CN9VKmQnHKnPfgr+9d3Xx5GgJTIcVS8JXOoBmyIVh4ztU2zQmUmMK3Pt2yaNOnnIEnSZXaLrl9fwVcLrlMNaL0oLhJRZNXUUduweBtkVXQxJBABds8psh/vKDaJoraNDwiqvrSUiXNG9aAhPksaDnkWKilebQMFAIynMrMyOnd0bsaJQAAtW9/RpMajE6pAOnWS+Zg9yUhEhDGzDlrddjwcrQSqcnfgTdUX5hoCSySmLBdLB46jR17YDzN9iwrsf1lF03eKFdv0t14yaXvGGsYdg3l1k5IjU+xC1sHKIOGgtyPo7zA1lquY0ueIjarqJ8MdFOMRosoeUokroUerZaNoV9Y7M33zbG8oUA6wQI0996XsU966PhhoPSnZEv8WtoRp7kxUl7C5g/qNJkgWWdvx+Fvd9m1Em9PIpbUqybHKfv9TmafUzSEnYNxpTc13U2w28LGm80qQf5leduJ49W5/Ux5WrA52ObEtqn8hNFGWvQogVQ7FobsL9u41HHv1XOPUHXh8+cE5VskmFeLijdYWIax1tahHGuOAb30bbTPheoZzfQZAVSOBYoUaej6efzZm7f4fTDM+KpvCMH83hm5AybtrfmD3aGo/mw46dROz4q9CL0dmBidyvb6erVS7bkG/MU2Xtawjikma5yo27CPZ6JcgQFjm83Dg/NKsPGxYLxwZ7ni+RihWS3UuKm/+d4AAABJfjKgjB7BnIoGAEvCx/GcC/8UtCApanF1efGLKswQaLGaRF3uGaSam3Y09WD+Qh+ilLrl8IxCrWfLNO+dp0YqQNIaaQQ5nWsKKq1C4qtJ0Tw3C8Lx9ptqTADvHWu3gSup+ZgFnZJcptZKkZm4v2UDqrUlvQEvKtQddNIrYJpht7BNpJSTCXqMANnAxAbBh6JwDLIcZ8cBgiKOJ792CjF656zTsmxzyGn3qWZETSgq7ejmxtxSv4GJqkTj1GcNRIboywjs1PXpzz8x90Nuaj3+RK43omo2TPLn53WQPWhcMIS4xCA32niZaXD4Bm/o8PB7sT8h1IjltosGpVntJs+lhxDcs0UDQ1Cx1NgwldQKSz2RlxSxrSAiCzlR7oudMn5k5kMqokb6RJM12k1/GIf/PaFvo1VXFqR4thTwI8Td8ltj5Etak97RdN/PAMb+T+WV2SdFZruARLIf4+v8rO8L43GludVt0o1dLozyU9NPKs21HxyLRaLyBqH3cgGFnemNx5jpyDOAG7k/q+g0nmMn3MAd1JMqjPEYs8TLe+3bJnDTBGcs4flrR0hLn1xrY8fZKKo1nAMM2Sp0AVn3tjzpemtEPJMCuZnCZDVxUCsapqoN9Z+efPoX0vXUyuUifuq8EFcai7UzfyFcPWMf9kIPJoLrsmqHR2j4XunXnHyCzJxiDpXSw9r5MBgKe0ax+ZTv/FOlFnjGBc0yKoQ3rw1Oh8HnYcrVENMjODyqa+OAAzn3HNAzgEsa3tcSHTQYyWeiAGu9xKt4xb+Lq1Qxn3WOUgXtmAFJksyyElPXmK8vb1EVRQ78792oBlB3h4hTAbfamVAt2gD45RSzSv92EIb06QNOHqKGzu8q8RHYOVumm7WOs6xsOav99MIySl36P5+a9iilCFoVAZUru8NZN6KLloL+dXFHhP92yHMRzn64g+ie6kRuXs82/VRrnrlO/1qc2euLMkUZqxgNOGNEfwpGMVITh9EvOZ+gP3wzBDTiO8Cur71JVFB/gWa6F8r2B4n5R/IIw+sUK0d8rr79VGXVK0xlhGURzn7oxenmerOFXLaI0CQXYAl44aGzlfGbaN0iCTLHYLSpVaUorCQIJRSdQ4ADpKIGfj/eOw5FvOaVFPAO092+VS9WCZZL6L3aiAGqctYmjbRnMddFNDjZzdQN7q5JogZt2+g2rS08a2O7K49HEh/zbXa/yHMyHjeK6cvBVK28DhKSOdLe4N6/B1q9WkvNr6nREoYHkURhcDrdN07hvVYM+fIdgJJPXZTdan/8r7LB4IIxxMwFWKxjjQaYckzSF1QJmI44/DPrhoeLbBhyjrlqjDHTPN3lILDWAKZxVbJkoko7ZRqJka7BbZb4OcI6l69XgmlOdIwn8uzwAFFHh+NUY64qfmi79jxTaCKkpupQHzg0QCloPnmej9Joe/jtNsECoQ2kOPOohqeok8cNyVNfeuwMwpt4AK4djWmJNyXDLmTIbdzHuiobERNA7DKcNfpPHPGuxsREVhesh4jp+DYVJtTpKhZfZ3wc0pqe4mvxd/lHMlcSRjROU4jjnK12ceaLg4v1Krv7hqAyN2RtMvi7bU6t3qCUHssqeadZZk6YSsQSffiAUqCUo8yEVXez5lTOd9w3HLPVz7enXv1R4rCboJctnE0qDHkM04GBLEOdqzUd7nQ/2mwz66T3HJLKXaGLIbwf/boaG+OrZadEesAoU3gPWklXsZ1yc/vD+TY8NLh84y+055SnckyQFQXLcprxr1ADgsVAMRGIY7a0itQSYdvyt+MI1x5EbQQlMxKgdPw/9j1qWIew+fNVGzFI9okwMEIl4Xkaxg6ko4acWoEgRSx0DfGARaquUI6xwYypaHEZqFFpRroFNa8GYUaelk/UB6TdzmPGwEuw1kfcjNAzMP5sUbxtvgj5RduqqXPIrICcafZN1Wu2+Y0RjGO8Gxd7iT5QDS1oQegGc4rdBSeFaV5kvdVx8/HBVnxYGbMtr1keU7EGA9h8pYoxrULhaydL8FcFeQ9jsluJe2qftGk7f9O/R1+56JbdiKwMoB7WgzLJBxzhaENFqHR68OlcnX+K2zDnUC+c6ZlulRt+Fr4Jp/iRT8ZZFZfTf2RVqhzK02JWZPfYMPP/CEnLo2ij95R9GMFIa7lPt6QfhYpAQfB7LDKkVwnH/NJccLNdBjoDy4Wuv3Xy1+dPkGQ8AIdRyp592SJCDYjC2LMK/05cQ5x+2tQ+HuvhFCbH2+EhEmqYGRHIq9vTcODRq9oEi5E+fJ9Q3XM6w/O3iu8r/R+KG92Xwn9TPKEDuQKwZ4+nTvQYCxsXdkbDarxeV34s9AqedAXVWRwbca3UGj2DJhhLEOI5f59Px/PY5Wez5KYAuum0wdcYomatUPr0E+F5MlLdvjvNFAdRvv8Xo7Y3adNIjv6PCYxY08IeZgzXs+co9FboQkkksB1AvAURSlinlei6XzXY5hfXZ77t8h0A0NYABYFeZQG2AsBAVgj5qnz/vajFEr5l2vjw/Ks4AFMYmPbqVNWsaOW6UT07fowYrlPXPesxwjA7+0ad2R4pvgXgyPAT0uZFAC02DTm4z3F+3qWMMpIHx0hkJZ4Lg7Qti3pZe+N/Xn+HceYjeWba5BOEav2DFZijxO2C1gQ9nQakXgagNOmhGHnfpzHl8HFdA7R4TdT+laERYewFY9lfjivYsKgNx4ev7q0/tHFWza/8i2ITvaNZVFBJeyRKbwyBfNHyRjPGme5UYX8O15i/jotX2574Iv7blY3NTLgAK1rgZOX8L4+3xQySuSWl8t4Xc+5HjMQshIgN72IUT2vFwnMNhauAESJQZOPkR0CoHZ+OM6UdTxloAenw1+ZBBDkAgPQO9JXBVt+RL4UQwI7y3wOZ51FqHHq9ybum12dvu7M5/+CzVhyY5uiHPkAfJTL0I1La2jjnClTKKcvoC3abqHuseSzGX9xQgTEWhQIhSk2f+EZb3mK2yfgw/SeIiqS/PVRUWMtiZ30pB4E7gWoSRTSt5CptvxU8irzmo+gS8CN1AlF0F6Aq/h1zbe6Y3Z+i/OQX+5ufT+N/q0t/GjFgpbCkbgOq0H9E05gii/guMd+gi7CBXopZWlcPeE+6+zAEmove2ZUg9kNy3z5s1tdGlrYzj15uZH22gdCaO8SNu7SBj1UK76QHYg0rkxTZ7WkirEC02Yt8IMA7Lk6bmOXcF+97u+aH/NoR4cevAvt3PjnT/QAQJGkyiO/KmDzeU99blIeWMAF8dJENIVjQspMct3jMR17ULeGcY6jZepDi35gbxY+z8cXy7WEd5g4dsY6x8D9gAfM7dHsuSPZ6zaiaNF0aoDZqRR9YIE8nvMl6r3JB/KRCSOlEQgZJc5p1gsY793O68U1P8mjNqUbm9Q/bqBRJxFm/zaIGefMeTj98Es1egz+gL5eeiW2nSlFDUsG6MePDUE/k1NvXAMfxmjbnRxIJRnc5pY5R8N7rozA+U9nnSem/Z9ari4y94ChvitycF53s8OQBZPurVMXI9ap8Z2/rFxAJ2ZF8/JM/Cr+1eo4XGaPbUYUPqX1Fs8+Waea0uZcvYp9rStvjuMWOM5yRhC7IPDnPYp8Xb9vz9g0cJcGDby0jRpe3FGQ1xClnLgkFadmrfoYEBXKMt0Pdq8DC1dip3+9hpcYlgCX9qFHSzZSKkjyPjqoRdVA7RicErymk3JgrXMmxhD6OZ11JnfhUf/rnZpXGanKcmFLmXrqWrsiMJdnH4HGnNOgRNNYxX1XWo63exgj/tv8RWq3eK81GIyQDpDye9HbdSP6imZqjYpXoOry8w6rJBygfA/fuwAG6UvTT7P/BnoeUE4YpZ6RIenTy0McrUGxtMqVzTUEJ661q4YoVAMIK43Ps7W16ViLIC4U0LQr1P5DPnxiSWonzvYpWtDGpgPmQgYDqVdHyKrliBRx7Q2aDAGiF+U9QivK1znC1zdqcXT+SGuFEE8i6Hqe7mY8bftJNLJfSN9jBvE6WmrvqLZme2e7kL9qp/MXTwQJMkVGlwarw3YPVZe81aWcv91rQu+t++qKQh0a3xfiNVEVVYzXY7easC/GKNskI1/9iq9i591zcj7vL0OE5LKG8yxhnQ3LFfDE+Htfylf0PHqbd4JbRH6x9L6AVJ+LBtWI4e/UD8vqGbkz9DavjWbQwtWyXyGt+MevUdfQJKIZ5BXJUWR9zLiTsYDx8Af/+J5hwr72c+C7gFOqK3eqfzf/WMMSwjfFOnPTYjSWPgu6qKQmDj4TlhyTzEMRRNKimYFIIMLNZyanxrnuMw3quKSO4W9V4ImEA+AUgeCWblkAfZVlgie4sNEJ/BqEMuis2K8BmhD2YIAspYqEzFCe0Fctpg42+++43WZbbpGIbcyp2s6BN9J/3Ln4qLYrq+577v45s9a4bWxWuKrsc+I+wQot9ND8+eeAJuRyV/6dGOdeykeZiD8N/E/BgZrK4ncRwO4jv3oD+kAauqz4XlvBsIfC11syRL0n5qYhjKxezOr62tStiBfVVfYfhtSbxivWiZTTSDQaMiBakiA5K8ViilA6uG7px9rMLs926O43cZwo5IB1Oo1xPPnFRtWQ8UPh8kVdPKE9M0u+tXbuL09msGkpMF+WbAxEYZQJD7arFYdO51GvnIJg/Rxv2ZXsmwYJInrTDd5E0Dw59QMAj5ExOwPwDikVir33HxpHSWY/zj3kwvXGXllslLgHq/sQAP7Qt3G9tWUlKpi0NrqKS1IGlXkLkYnditQOUFs/+7ggSlCcaCWfAWlUjmEDS8/z8VFNW+FrVPksKgs7gr4VCrkKJl1AvzahN0AFhnPotD1gRv84qLWlIKF83666R4DMfdta4WM6teWWJbmFeazSbvh6z0lVxoxFRKen02kCYCl3ETQ2BS55US4XVkRmoZDSz86VE/V+O2/V+XYzAGYvbXifdjTWMeVQ4VN+JC3uxFpTqivBhzqs9iSvar1owIy56dU4ABs8iLkXhEiRTYaQWC5MNhzm631WNIL5nypqYvsnAKQb/qbR16KVe0H6aSC0NPe8TBlitFnAuR9fF4z9++I58Q96WeaqzrybqdFJATxkXm1BUpJcuybRIG2YhUAxCIbmyppsc0wr3GqDGKnRDuz0+jwewACagzH2cqO7AGsSMX4kurdhPPVaMqYlgfuNiSzi6eiB1MPJI6c2+3RQj9WCMH44m4VZbwuofbl0WwP1WlpHeAmbPezL4rMQfbl4fhFEgHJyLR5gIH8Xh6W3v9SkGAN8pVsoJCelD5OrRRulyID9x6cM84kpP3iUSDzr/ZfGm0WLBsbDMmI1hMfRMUHwRBhcFtlXSv2SR8fKvkKfqBrA/X/BsUlgFokRk0lgc7rVRGBjYb3zdjlvhdf8hGyryBZqlYM/zuC3kqb6F8UJ8rdv7FBrOUgGaxEYbFPXDxhmQkuvV/Th4VSDkSkQipeMG6MiCyrSQUl+TvB0rALBj0Iz6cdSVg61cleFGl6YXY7lZ+ApR9+dun9Bubr6rONilWgi/auSRCddFcvCoD96V54rHtW0wSInResFuLezkZJiHyZWtWDbRlpJ8wXLl+TT3MsAbPSJjCXH5lsuRLiVDyVmlQtNChiZSiH72JkoirUA2XUccXIZozALyKtMqsFJbdsSRdJjGMLi3mP7p983LqiUeC6vC2SnCdq8XXQH/ILmoZ+8ooYKm5w0w2OwJYsYLs0wuecNcSg1pdMCunkL4Kz4C9Nqna8u/oLKrpVXqJBin+IbgRkEU2vEKP7UCuRSwi9eH1GZ3EnidodxqjFGjt9ac/8AwuzLV8LOUTDm/1jhqy7/DV+eg2lzUQqx0bWnbwLEgt2hLno1cHyFpwwizi1v3oZeIHw895nGZruo5gKGThgNIS4snjJFLeXNXMmG+x/NXKm6sDM9eBweOE2IgY1ryaXUE1aWLwadbIfwgu9nl2xuBxxO+FSiZmJYo+r3ygpoh1ljwp6CKhUMZexZj5HM/57+cuREF+2FvEg6OZGBq62yz4YZUdBLl50TcvXh9dyuRefyqvXpropHWPJG7Yt92HLqgbzh4Vsnc9eq57SHvX8CPJ9p6dxvqttHzfnTqjMxNQbIp4ps5P6egp6hvh8vJNxac/FpJ83jZfcWlOa/qAsoaMUrG7Gs0kU8WO97nD3LIvBPlWiXhVbvtLu/XH6CQdzYW449+EkZezE90a3qLUS8Z5y5EskcZwDk8SShjWWpSuHNlt6aUNW1e0+tOZfZM7IaAjpo5kRzwuoJ1WeWSKewjANiRjuLau84el61cTwgxjQRWkg+zgVFK5LV4vgF9bIxHr0+KNIeuFIn+zWd+P/9lcXlO3yJFRCrxhKUPSfalwu6KWsbqYfg+t/Dkn35oUzSdb+KBP1y//Py9KzKFCsP1AjDsgoWzi9NH19gafxlsTAsDlBW1LG/E02DxkXahdXsAdtwVFbPugh8wvmTDvZjqXDu4zzqNEBgCOcKfKiC/7XZSZJlY69nXV+DCj+qAdODMpGPyPXsIiYLN6OLv+yZV9UauJvk4uykgZuVmT3QZJWevnGPKzNR/GkJ8SHErJTluocEUfICnzOurNQeIyZPOZZ5WqOf9VSz7K0CvJmmQiW2qHeaT45u47T2umh+hPanf1NKeOui37spMyGyiKtW2PLyX7fa7lcjxs6GO9W16JkTQJoDJmXMWJA+E28bg3FPhrTIAd3MxpheDCQgvB/plNpy9V6IVz3urFxnfJHxvU43l+k5cpvBzJzZI9lI774sFNpeHVXT7zdF7kKIwqCd8R+PwHzA0EAgA0B+xpQcTFCrEIYgeHXecSrgm9CtVvoA7tTc8xgafdKQ9H712V7mBIhzZygxYdZyqmKz0NJoBchXSxOnn/n0PXG2AJvPCuX2ClVm5MlJK5Mq08oGJbVX8VQsICvurwOBSsyDqkLEydvbHzRiOG6IXfzb1bvEXG7E9pdddov4YbVYeG6gZ6SChSxTNaYTNIIj9v0ZXWDJYPDhXeDWqbrgXZdNRAiF6qkPFtW6ObgweQTTVjnGTWjKXzs5ykV1F9q/VrhLaaNdAGbCWa3Y3uckfJQzh3vjn0h9k2MpxYgMF018XuyHp1EwBRwLn07tsVlFyEnGWHVtVVEXxK9yRGRmjuyx3xrtj8odtPqXaUHlYn0wpjP0ZoT8SmmtHhgy9k0rcKratR+OquGjB4/czjdqWokvzNNHGbcG3MtOt+FydcRHQLEMFYsSHQDWfuGHzhYGD1VDtk1cW4EtetbNDTALLvAiX+xM8+3gq1yX32vL6j6NjUM3XkSP3glREeLIGFSStN8pu7p2vq8YdFuQ00OZTfuG3s/qowDdWFfGrOCoklQ1Ashh3zjTHj8vPw/MTJBl+kNTIYcOhVUodtH3D0dju/7FyJuAcWSLJSYItg9m70ud4JTQnR9QqX/Gq9kBNAs5jFeYwZQwxduiNzXC5ELc1D55QosHF9EoP2dF2hxZQJ/P27EQc2VtyBYTe0OWYaVX49Xq2mrbs7pSKInYLgZ4hj9XskrL2O3vfKi6dhplzvvTMM7qItLs9MgZARb83RBBC/MdYSCbKWwJ/dr7LvF1lfBTtwFWetii1vwuSd1rPeoxVN+gbZWng3F/TM0Un9b4ifzMlL4utkkkC+Zu8/FspkfHAeecg8z3ZX+B63lHWs+4ocPsuShV/sZ7gcTrzbLSrIRnHEWr58uO7rWXbEP/Aspc3txn4NhX0hRfVp/Dzt53gJ7K4VFJaUkbLrszpg4I+aWvThaJ+0u5+GAwpWXn9EoOC3P4mrif2geP94Wev7+sfHSgoVHBORJggGnVbuhfmo/PlmOCDnLo58CZiF06Y9VlxctDwPcPAvrYqxBYGC5Lrb7N+d4Q4L+F9nf2FXSkLZkQvLIVr9LRPM5n7JWaXELK1EHWX4hVvbtvJzoOZ7tRytTEGSpIzw9ecMrWmYIgGz5XbFZtMg5nHG/38c0P1xwLGCz+C84fcwUgMOH4XjU1tyJFt/AuGsSXj3ibw4Ut5/pyrgPL+jpmJiojXga8C/BdR32irUFzqTcuhLx8EjUlZULAxF1/oF4d2Yu/BGQ063x1L/6gog1zySEJgi6So92YeeOoB48M7od7g8yhuTCK59VInuRB1dmEnRS9WXxtaqhTmuVGHaPXjvw/UzneHxaRCktiwG4+LcPtbhoumpgRmUQHnygUoe8GtFScY1FqF1toNThnBVLuklrQAFhhsEnxTpZnwq67ZLPUMYD/M/xHzJ5Ls/Y2dtU8rWXqHJuLgk0XwYET44F0f1Iyny+Nw4wdshIkzMXcRu0GBwTPCVoQ1ZGux5FvJSWx/NkKF1GPU0PlFkQ56shXJUW48t5PXb5VWBf/atGjxN4LykEhAlFHY5IaOLkxD/n7LXlvUPFQoZUsP+orQXytXZ7UnlbQHPRY+aEG4kYB8gBo2rMRWBrI7cSoAKVw+rdUhF/ijHAdGioksNuXLIva0cxLvrnX5dT8fyM0CGoi5bNKcSsugj/1PNJTgTWybg7pONkRTNuqpphiRlPs1drfi/h+K0xx6Bc9rOj2roojgdg18AUkodXuFntmjic4rG+xAqDdBtdRVEnJ4Lo84sLT43XZn+7WEB3jmcEmlSc4Gm8cyF7voSsL4NkASAz7ACZQ+URQMmR66IgTZcryBL9oAbTSf0pP4YbQDhnXUXiKKs5Itaqm+NzREzNanKz1CV5W45BSQurfU1qt/A7YJn9ANQgchy0zEm78/+tEyLLxFy3EXAvANp6acRNDqjcefF8uBs9BGjr14Gve8mWaBv81336fAHxpLwvhhxDHTrC94AJQAq/V+v37ks7wUpO/B+mOiX1uqSqKQe+EwAeR2mUMZ03H9hkTq1KykiNbFZE+0c4XObV25J++aDwTK+bgdrQjK2+S3p2lxFtkCg/FACh9C8LEyCADnXTOg1O/LY7a4CED+cThVTkWTzrunAuD1W0w2M84DZb2nhCShU6E2lFuZaQlJk8lSoHKvb3pUTmD/zGHeE/ITDbcZBdmiCzDkV4jf1UgZrT70lm5AsqFXhgrGEZMdl3QCLFo6Y5aqmXoZ9mWwgdZNnIymvePgWuoqPCVzz+9Xy+43/pD0k86YrpEQ3JgfWIU2V5PDJRDB+VGD4oUiqLJr6h4M8qdUy4vLcDGvizfktrKadtp7QWp31IiOEXoZtTz76MqEj+XCdmf1X1u+Imo91FeDwWLaXoe3xg22ZTWza6R80hAJ/XbJcDLS+uSTXGGNqUGFRKqoAjRCg/JxrSxgz9wl9H2w86dV2OaYC8X97JkDF0KReNcG5z19ucCIdf4bHhZcr6oidGyby+UcR+StVN3DqqX0Vx1ZNDh8WImwsP/K+7WPKbo8EtB75a7iy16ojjAmiTNrOnko/Uy/VBauWIamWn8HcvJ/IBO4/obKonCR95ztK2cQ06QVOd1EWzJ+kNr+scrQO0I/LiLNZ4kZuORzeZNplhVGZ4ESI+wMuPTU0YmYHehBnf9D06X4ClpUg4lGcMoED5WUGrm2QyDGKQV8dfd0UolvBK19J2EA6CvLRqXsyC5ptsBKiwMSXUrAJgNYo1FjJt3lwzumQExU8Apsxs+lkdF5Czbbcv7L0Qt4YrWOqyuALZklVSjf5+YI08itP9oW9xsuJerwJH9GREcTIgNIsZIf3EtIHX1ssB5011o4tg5wCnb31uqlncXodVb8j/fPg/9vUAPG/QIMxLmRSJdBvThCLVBKhoPGSNa2SfuMM65G+yIjSiWOcpocHmDwi7NGEBsLutUyinLoW1wa+MUkeeClNlGIKSaYjZelEsgVV78tvJJ/7bYEwNIIytTdzYcpZV8wv9QdsIsMEbtSvPH/eHOOuJAP5ApuE/YqtifoaaEeaO2diq/fjfyJi5GCIp4SpAc7tjX5C8GZ7FpH0x7QjeAuobguxe+82xFIl9l0pYDCnVArg3zb9Gj2OgEgxdopWcbaQxibAolJ/AbS3NVaLcFAe92st6MYSxhN7trLwkqt0fHDhzdg29FVImSrJ4KBaYTlc/2VBuRiAmvlvlO8YlHeyAzEu10IL0VIv5Ti7uLwtuo+zqNGuYU1MFKAJeM/Fpzz4RB3IbHepdVDRmanJLjAaS5enc/Eu9fKpRDUyTuTLt1FG7Rk0/gXjjPqQydKIiahsZFAFXMrpD7qZ8UQ7ouNAcMgEgTryHvuSCj78vL2GTrIaGjEip+u5CptlZCLKnUTdrRwJ/9FBBMvKZXMQHsXBqqlql+okn9nIraUSBCvIESRKevWOw0sWxzIoNWkVYpJxIJZH0QmERjvtwPfkEdaEAiO7ib4u8sQIHgGIlyd4pz5FQuRgHNmaTyxxceu6ibQNbqHGo/7TnfkrxfpHtviQMqY+b77BogYlTxLQof7MDKYglg4fELAZ8jNrqWszhs+Y9JTh5cmz9yOO+/5gILejzgqapwvxn8ELqR8pYJfpna/rWnKll1/ZyUtn9qUmE0zFIyQbUwfn2iAEbAZy3FyG3n+y5ggethN8gaS9VPwJjlSQLp75ghWIcbW1hKNfXCuUEd5emmZW3tzaQ8+qWiNAPa10hqiUzDONwVSmHNEmT3r9m6+rcLvvbM+s+VPOFvrXPvg7D8KLdWSC/VS9XiJ2VFcvjNyP0thPSoTYGjGC649ZnPR/PmaeiflX83pWy/jUrOgC7+bpO/YFQyux+ljm3HInjqSQEiFgnhk56xhy/xZNkDMSwP3SsmDe5jldChdgJzAZqKWBsaYSi1TigspgLtZzOmKd5Xs1bdUO0iI4H4yRuG5Y1F3yoZvJK/w2vG3dI4kBsp7tt940VMVjqv42Sq/f+vfa/jv6xp3E7XPHeM29J87W+fIMvQapUhxHhTwSf25xZppZSsn8sDnlAvXBG8jRBCrWJ/7DfzNctQvG4dHPk2WZUjEANqUYiFXp9YE9F/8QgfjnWmGHqsrHW/VijPJ2K6HWVmYfX44+hF/I1oFBc91Jh88/yvGxzUec+77KCbgwGCWtPrrG541ebkniVMr3fh2/dofoxbS3uUWFr561VUL/0s2aZMnMbIov3g4OKD83i9iMyeqCOxNxjL7mXi5OBFR3M8qM32qugM2HsRrVqPqHPXQ5AgTz97v+iyaPD4ULCQpJPO5x0UO4bYuopj9sGYpoJ81iYjtBXN6Azxudf3A2+0Y/8eOLyndnTn0mwDK/Hl+soOvze+DKwURlnNhFfRO8ZD9ciga/LWrLZTVJfSmmeqPX4O3K3X2MHBIdXCMzL55HL9FTnt+Cnb3WnCqnd9I6JK355gPCoy6QNIXWY21fCCxisvMTgOKqZbSr+OxCH60vWCh0oG/yzy+FSg+lWJtO810Ikp/oWXilhzFbmfvIlcauoqs3Bv2r08u+SfMVrpL5s/Ud5I44Bfgfn8BSWh27LCYZoRNxbiaDDmnMNJYi2HIhMmZMd49iPZc5Ge7MthssDIQ0EdXFl8SBgcFXIKkPHWaOWoQerE2hI1BvlNg41GHHksq0kku+hHaf4nA/We9W50j7stJh5px5qEJIbXDnVL8vjj4Hp7fo1nxOr20yKpRIicK0q6G7lWcD0lw+2JqrYxAJpyXDKZ6eW99zazRWn3eW4V105NDW2V/jyzLYKfVo80V0rt1fpEOgSs5iB59lBtFS3xaOnES7D2QZ6xNtk5qx0ih0Nlivub3ro7szrxa4CXCqogxTEBTpom4cDEulSEhsuWWYX2zCAkyMz87Xy1BiYIgFvq8TujQX4Bh8+XtMpX2+SvcEalnZjR4KEhuECQRwUrfGbFB4+E4E6WiAgFbQklHZ2iGuKtBkWdeOQmc3Vl/9NJ/k/qtGh+BaZb8iknWttcl/Tuf/fipF5lifGkCqdqyC5aSblEv3ycDDbiyJec3MQjRGlcQo/dMpPy9EQwBPHBb0sTJCE36b0vyTBFFVtzazFzjvGvIe8Xl3mLS1fCCMsYQCcy0JbG6NIeYxkGVciXIvI/SyOdrB25dbQts7zXdmZT2KdcYs22yBJNPvB9vy9xrR+alx8gt73In1EaM4L5NUwMUb5C5OGgZc7K7B8EzXWENFY872hkMxNUnPjKO1GSJNt/r0WE+DmcWnBZr0X2niwxUcm2XYOkOfO7bJsu1cRnaVBLVw3v6TDCmVrfPlzEh+DlYYWmcsscDjWCMPy1rIArNuAmaEWxmIigeVcIb2VXhutEnpowAZtTjv4QSxgPP4LmDZPpuQwb34hB6gVRKS09ywdMbHEuFvuoJg7HrShwjLPEiNch+G5XAf7c+5IQx2PyCF0OFp11dTsfEF+w2HOQf/lXEJjNUy06fe1+YEYMVj9ZrBi3oNMyHsl5UvJF7NtOwDu4Rpg5CEwmf5YrfbfkrmOQkdSLv787tWIdC1SObM54t88z0xQAK6oFBIhruJZrVCvOoTjMCMHQ/0nux7oxve9p3GnSTvjPf7Y74OabBLPSXA2PI6VITk01ZcXRyvlKcp/zqQ0f4jnZ25qq3hLNcVm7EpJXhzaka3b6hvYlNlasvy+UgAeU71l+0V3EyTozcXVkSJwyIWZdo52iRVoXLQF/LQh4Oo4IlmKTBeyshmpy5kTIZqBNkwx4wRbibXzE9jWfNPGHWX2nVShRPEHCQGwejNa6hLbSIZEviKClhaKf3B4NTWehmzES5hF0fy+ZqaxYFDK/TkVmr1rJrLBqPwBagn3/tvv1hiN09yhBfGPqP6cdcZlMPKc9Tt64FARcNg9/FeJSEwn7r5rxaq4vpm/PX+hnee5zDkOg/xIorykh8ukaunbZBm+HdKqydFxzLg7AwLwKkBuWcHA8T6Ha9XpLVLmjnrFV+Ohw/WC70cPMZF6+oJ5H2F+yvg23uKr/gxmCylfJAsYJCIvJHjjz1+RicN3aSuTxqGWXuF5OBG0KzFPYCCYg497CpdjWjIHZBpY3CgkIpkuNqTJv8jdw51VWKo3/In/DzwWTH9TQID7uVc+eXIv4n+rlbnH4sZrk2F80oxHNYiIFC2VrAx201Ar8sugZe9xGoD1T999gMK8zAx9HiVisDPiQyIRZfc9+UXj9sNxhYHzNjxxjnGZmTuDjjvCyxh36FzNXVlXylZoU0qwS6gIUeLwpScBzY3b+yeR6+MkntOEGpr49A7ahN/Vn4jEyng0xQnUvh0zkyCM5pxyOTnSE82YLjDYHubzQpYLNN2nD0SIyuko8LVlOFY1XkyxQCWI2J1KPYBih31tunRnkLEHjPz2aOPHOpkxjOVDawnZP1ePCHFgxpUUpREYxB0Uy6+D3uJC4/iP2txdHajhbTdlbCblsBxC3tgZV74TRDLGoNFuptl879io7rWuDc+5lMiVuCuH4fmetw0Y/1WQnkDNB6OF7MVqDJIwOAv5pFoc94oaVJgHOdzA2pWP8vSR0L7QBS0FgMV6GPGo5b/lbRQxDz60r3Td3S1grI/IcAcJjzmgTtTe6xAfwAAatIbjPM4DXDfyahdYDCBwF8D1nqGctsrJERDOgDejmX+MwnQq0rjUIPn94Vs9gkzFUMQ9NgBD6Zm1Q999mwLz8PwsdO/2QnzVVmCiNjBd8rQvp4ugMhB8+du3lswXqtDDJgoRylwcdGovK4hpQfurxYJ0ijn2Y2k8heWXkiZW2bGdx4bSUr69p0z/LA96dCoRPhstdxZ61mTJ4Nl2eucKL3Kzi/pl5aO+l8Rrp4B1/LttXBsjZlBzFW37kGWySWuSTQtK2dibTYlXADYyrESKpjM09SMSh6YU81d2uvwuTOhjF4lK4ZV9eEBV0iU3L/wv5Qs08D8nPxk8su385TGEK3I1lYg9kRZxV0wyJSrZxofrmZ3fOUs+P0ioMsItIazi8CYbsEobxlPImsZLouvajDTnPtHRtw8dDLa7sNPDTk+5iJfMjJOEudG62u4QANi9CAJbBWqlboqRnY8rVDhhaCt84GP+cRjCdffAsAomCys7XG6aJSuj0Ypi6Gi9amB7yInJQAy06yLtrbJVY12l/ghx4VvzeiQaWG92NBy9ZBJMzqe85hu4oqsWW3uyUOcxembJSkx0IcPSrGejIx12J7Ob5X+8bVaZ38vWzsMCXUkDbDM+TerP8kkGTEYizdElKZ41ZwrFqAt36pTbLhM2vxRHVUu+0tpzEPqpo+e7yb/54LG05l8NZ0ft3IiDbCpsTpAIEidRpldaiJA5xqeor2Z/VULRakJc77/D1moWtRu8+WCPLcwMvUZaZgAkrJbFbOf4eS5A/9RLfxnxB125ZfwN8adWt3NFoXDXGumjW1zlamwX7aLX9plCzrfMB/i2uwbeAMMBXVQqeevwNMR/rdlDIo5q+tjEvg3wrVKjLPrpaaSrdZxyg6n1zSoEJxNkFlu3SC4HOHi0ODEA1B3ReQP148iTGpWrI+voXVg6+tQAW7V9qd763zvs+r8G+N8tQ2S4IuxtEbVrkPVcX4dORhcFww2hjuTPIwyJtKkbPbH5ln9Dm2knjqQ0dpVI8CY5d6DaavTu8CWxB2974ztPIy4GF1pCWPlvYVzs7AMPZl0eN4pD6uTQFLkUU1OVuVAA0nxRWXz1W1eO76RelxLRkGJJ8uiU5rA3tkqL7fa77sf+oZQ+uZcoNjcV//2N7z4EfLGBVubjsgEDRmqJnVO12TH3VxMddjCvHn9F82iuJGn40Oj+MUT/2IfDv1Z1guw1vkRlGFG+HYQaqjGOoMhb8HGQ8DAPtCRAvDGP74TazY1jZt9q0Q9ld0An6hxV2RskiuEaqnNpaKy8dWSUTWArwTGknCOIc2BSQkAkHb9/yypZ0NNfnnLoMKyJQgeRwVBPG4l8UC5vyia+aUDVkctzTRTfAlqJCormq0SzzzIsQI2SrBHAP6F+Mvg5yuBBDZJY0NWHYiW6fN+nNTaToj2QXXxSRYGZHEVmIFzzFcnV1krIZNiVstSPEqJe35xvTHv7OeFdP1kEvSG+dlIUg2QM9+O4RoyazW+CBhggLR/SI01NNNJRDpOSPfEXvEwGsMnqHImPj1FPbIjc9+tnDTHt+yfUjH6f6nDJ8mVYHre/w1Zwu+Z48Grrya62N9nYjgXy8X85rxJbo3LSc2LgGhQBWk/gUriHsgdPNvJeBXXigbnqcUnit2k5F0LVP+ww2hUYCXk9qUIXNygriBeW+/lmGSz+kbNlFSHR+tOMv+TqaVqiq1JBmEcAAYnL7vOR9dDMxOgGHXTi+5Wn64BWQbxBQJZX+4+C3LJYttQepsrOum8cdH5Ik84X2Hoy1JKZhJnu4NLQAmTTI9lT+JGRjCVzoa9rhxmzMS8a1VkNRs/vf8sc32ypBBnwMrJX9Tblb5BSFkDA0FV3pgRbL3eOpaxeLFKjAO9SINPxkOChjB1Dhqxfbcw7J1Z48cyvxIgAKixYQpEIMVjjwWLqNMZvz0H/vUrp/ntw5RBfFXGs3aC4Ph+/IKtfkI8OjOauGrlZFl3fcp3RlN7FMuP4SfntPlOQ67ph1IogOM9/9HRLq44z1qLO3CAeA1m/yb5QQQRy2espc69f1OUQ0zVfIW3JdrM8+z007xWtk66dD4Seu6T4LLg2IRkmYWz4+YUXEoMW5MXTpW3g8+B/AGT9E50rke33joi+6CJYs8/QnijVaLyoC4TnZedg/DmK5V6FjYZcY++q7JpsjtW4E5oJ2ZFSp/dyehBXhcNRFU5INaVf8BKEJPGRc/zPQw503L+NGeVwBYSAmhP4kpWjn4hkuSyZLk0/DHBijG//iVyRB8fLRhDFybYBrUTRdpzgreoN10HegeSgDx/TX/CTHfDduEThYZmxo/QKtuszPP/wGp19mBH3ogzPdrrhgrY12hSDrQj73r6dAdsb4IZt/4n6DT6p5sV7hM75dPDcAsuVVgDoisJp2JIBKq9eDeL/GfLphSGm1zp/tDiawzzEjBUpaOMttZFUb0MtX1ZtWrDMSTgfYdsy6kbU3keaxLt24q2oxGwj0HI269k56Q9Dz5EsINvRqRUsnDuP0kfG9IbLqFPFr5uiROtBXUsIB2Bcy3c7xR8kGjxXuKOthA6FylTMGg+FqVnwpRnLFPl2r5yu+X+a946hrlOCirYZ7jacu9qyfwmMb6FKIlmsstzOlC+g1qF2aSfRtoLg/nfKPveuQd7DjhZyhyj/22+DqcePsf9DAuGMib5lEBPe/h2971mMFJ+uGzOzwEuSv3CB/3nKdveeMCeQTxRIewZqcIFPqdrAVEoIqT6ZMD4wUGpHNOini9QNy6++dxNP00m/k572ZoXVQZvlxDXrMdwfq7qHLTYBPxeixHF7qqgHFFleHTHVp5XWMVTOUxxibp1HGjYmGtWeQKumc2xgEkzp4GT2onOR3MgG6CCsUKR0gMTEYlDqFoIzawFFPE5xOJ3wB8f/7zU9+QJx/iIPRQJIAbMCuulSTclgKnWY2v2sLCfiTUw4XVR1O8nL3tmEwsaDaj5EYR4hpnPu6eoP41HuEN94rD9n4gHD+yrOCU/8VmdUKvj/UpaWHz59Oo+HiioJ9v4nTOxRCU6ZwkmoA7SsCqZWk11RjzX8jsc25SheK8IjyXLxGzF93zTYsLASGw+Hqb2c4Mw6+cu7REawaQg+s0PhbkYTpKbaO/5YfXfIT/n8pZC1skxlmvQm0Auayf+ZpLJzpugiZ/iJm43uXFNg8pCzBPLuajfszACybGmedZOc7jsAkMDPko4qdx1ODWKJwFNO6ww4cgrvVuZljQmUNXeVQI0VYf5rMDxj+o91T52yHVmbGW4SfyGJ6hh9RZeZiS5/9zTpjkUMPB9HkJR/TFHn2zYwuVXKHavvz6lCqgbYxqf2U/cmcqdL6StL76Um7O428lPDUhR0E0VVvCxy32D9jkPL/oxuvEJWwU3GcYs/DSxh8t+YxvLsSfIYGYGBStM1gw1isnAX1izebOtHKOEATfv/EsJP7lBSTbIUC2iEjIplxICax5RuA8b1m5dGtVQqtm7Q2MwIpIXI+75qHL4OtwItPklBTPXJW4VJthU1pzla3jks5UJbk07aOTomQC1q7w9hbIyCyM/0tX+DwAAAAAAY+4xBGIVECFcF6mZZ53aXCNg/V3WXvmK0QoQxHfoUh3wzfDytoiblHOS9pQLOKJ9f2RASkAzhmkEOWJfSs42eCwYNgNuCEVGkIchPsTpzQfmgwkqLbeQO3jH8eJM5EeczTVq+Z7hmd+7MOcqLeXevEm2aagwD1pbRkDeQnzwJj3kGUkFJfQyG1UWMlQK1CrlrIicQ9yyPx8tEfue4BQnD/ybJfJYBR4teEKwcixaL2Z+++VoRIMp3zlqF10Gep+bZxg5xedUETMZWrtjVfwb1ZF9XdX52IyuRVLE6jMdj2dBk2f77eXSXHq7dF5yq4a79vG5GnCbgrTVPgCAMUQjD/FGZMBTnp/azIPpFZ5Bmgg1s4hGz28jNE+N+M9aCGpuZ5K9oE8l+J9M18aS6bejFN7p/JAofI/ky3h5RDO5CwMnPamF1FYYLbGEazJvVMJl06EWWnLeTirCKu5ZxpDAVwX3hKHIRkOMT7VqTJixkmw+pPjfZ/KF76p9tZ6rJ/s7+/L6T7gkijSdfV7Xl9QH/pjDZ0ilYAA/a5k68iRPNXs0mK+BQ3iWnz6aH2rrv+xlrrkFWJGQ8/M1rNkUE4N8k/wKmus49KATgEVDZysMbE5/ouQohHzGk4tleZiZqnI0+73VUKLZYF0tHdk6wzKL/EQ5vZZgKUCPSv/1EcNpPsA+Hm/rIVyigADe8FaPD0dNBlDqZUroPCY+2nZCjNzhd6EQcvWo7vfxKPJWYegdstIowijArl34Oa7UAzOo69Nv+tpJnSrkIfhrPhLl2AiLWOV1UgZ0Z9NFPLhyjQ4fkfh6uKf+BEUpntRK2RRMTupTQT00AQ5/stqkDIJVgUvxBYhOAwhplKV8c0nbKJ9P7c426CjPO0hB4ALe+TYxuHHggThubDdNKatpruDmyouG5O7yyZEtg8cOu51knagNuEkFmMm9q2Cnu5lOtZ1hqdK/OfKGUFs/R3QPBP89+kgdW5aWRjT9h3cRKZgBM8ubYX3MX0zjXeow6pO2NcWPTb6yp19a7m3hDyBVh+LNp9saQSVw7o1ycHIheLw57QBCsE2TdFitOrHEqFTSjTTDbuygEBzUvTj709TuB0lx5ptF5m/ZuyDL8NEeJgxWG0dZSJInGJZvKf/rCdRk31ZIxpxr7eAjmRbwPO2yArhXKZwcs82ffHcgtQCko18Q7GT/+3+gSGUwAAAAAA=",
+  done: "data:image/webp;base64,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",
+  sleep: "data:image/webp;base64,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"
+};
+
+// packages/client/ui-settings-session-orchestrator/src/client/petArtStore.ts
+var PET_ART_KEYS = [
+  "idle",
+  "joy",
+  "work",
+  "think",
+  "sleep",
+  "wake",
+  "walk",
+  "welcome",
+  "drag",
+  "sad",
+  "eat",
+  "play",
+  "celebrate",
+  "success",
+  "hurt"
+];
+var MOOD_SOURCES = {
+  connecting: ["wake", "think", "idle"],
+  idle: ["idle", "welcome", "walk"],
+  working: ["work", "walk", "idle"],
+  attention: ["think", "welcome", "idle"],
+  done: ["joy", "celebrate", "success", "idle"],
+  error: ["sad", "hurt", "idle"],
+  sleeping: ["sleep", "wake", "idle"]
+};
+var DEFAULT_ART = {
+  connecting: { src: PET_ART.idle, frames: 1, custom: false },
+  idle: { src: PET_ART.idle, frames: 1, custom: false },
+  working: { src: PET_ART.idle, frames: 1, custom: false },
+  attention: { src: PET_ART.idle, frames: 1, custom: false },
+  done: { src: PET_ART.done, frames: 1, custom: false },
+  error: { src: PET_ART.idle, frames: 1, custom: false },
+  sleeping: { src: PET_ART.sleep, frames: 1, custom: false }
+};
+var DB_NAME = "dsh-handsoff-pet-art";
+var STORE_NAME = "sprites";
+var DB_VERSION = 1;
+var state3 = { art: DEFAULT_ART, customKeys: [], status: "idle" };
+var loadPromise;
+var listeners3 = /* @__PURE__ */ new Set();
+var objectUrls = /* @__PURE__ */ new Map();
+function publish3(next) {
+  state3 = next;
+  for (const listener of listeners3) listener();
+}
+function subscribe3(listener) {
+  listeners3.add(listener);
+  return () => {
+    listeners3.delete(listener);
+  };
+}
+function snapshot2() {
+  return state3;
+}
+function serverSnapshot2() {
+  return state3;
+}
+function openDb() {
+  return new Promise((resolve, reject) => {
+    const request = indexedDB.open(DB_NAME, DB_VERSION);
+    request.onupgradeneeded = () => {
+      const db = request.result;
+      if (!db.objectStoreNames.contains(STORE_NAME)) {
+        db.createObjectStore(STORE_NAME, { keyPath: "key" });
+      }
+    };
+    request.onsuccess = () => {
+      resolve(request.result);
+    };
+    request.onerror = () => {
+      reject(request.error ?? new Error("pet art database unavailable"));
+    };
+  });
+}
+function readAllRecords() {
+  return new Promise((resolve, reject) => {
+    openDb().then((db) => {
+      const transaction = db.transaction(STORE_NAME, "readonly");
+      const request = transaction.objectStore(STORE_NAME).getAll();
+      request.onsuccess = () => {
+        resolve(request.result);
+      };
+      request.onerror = () => {
+        reject(request.error ?? new Error("pet art read failed"));
+      };
+      transaction.oncomplete = () => {
+        db.close();
+      };
+      transaction.onerror = () => {
+        reject(transaction.error ?? new Error("pet art transaction failed"));
+      };
+    }).catch(reject);
+  });
+}
+function putRecord(record2) {
+  return new Promise((resolve, reject) => {
+    openDb().then((db) => {
+      const transaction = db.transaction(STORE_NAME, "readwrite");
+      transaction.objectStore(STORE_NAME).put(record2);
+      transaction.oncomplete = () => {
+        db.close();
+        resolve();
+      };
+      transaction.onerror = () => {
+        reject(transaction.error ?? new Error("pet art write failed"));
+      };
+    }).catch(reject);
+  });
+}
+function clearRecords() {
+  return new Promise((resolve, reject) => {
+    openDb().then((db) => {
+      const transaction = db.transaction(STORE_NAME, "readwrite");
+      transaction.objectStore(STORE_NAME).clear();
+      transaction.oncomplete = () => {
+        db.close();
+        resolve();
+      };
+      transaction.onerror = () => {
+        reject(transaction.error ?? new Error("pet art clear failed"));
+      };
+    }).catch(reject);
+  });
+}
+function releaseUrls() {
+  for (const url2 of objectUrls.values()) URL.revokeObjectURL(url2);
+  objectUrls.clear();
+}
+function sourceForMood(mood, records) {
+  for (const key2 of MOOD_SOURCES[mood]) {
+    const record2 = records.get(key2);
+    const url2 = objectUrls.get(key2);
+    if (record2 !== void 0 && url2 !== void 0) {
+      return { src: url2, frames: record2.frames, custom: true };
+    }
+  }
+  return void 0;
+}
+function buildArt(records) {
+  const moods = [
+    "connecting",
+    "idle",
+    "working",
+    "attention",
+    "done",
+    "error",
+    "sleeping"
+  ];
+  const customIdle = sourceForMood("idle", records);
+  return moods.reduce((art, mood) => {
+    art[mood] = sourceForMood(mood, records) ?? customIdle ?? DEFAULT_ART[mood];
+    return art;
+  }, {});
+}
+async function loadCustomArt() {
+  if (typeof indexedDB === "undefined") {
+    publish3({ ...state3, status: "ready" });
+    return;
+  }
+  publish3({ ...state3, status: "loading" });
+  const records = await readAllRecords();
+  releaseUrls();
+  const byKey = /* @__PURE__ */ new Map();
+  for (const record2 of records) {
+    byKey.set(record2.key, record2);
+    objectUrls.set(record2.key, URL.createObjectURL(record2.blob));
+  }
+  publish3({
+    art: buildArt(byKey),
+    customKeys: [...byKey.keys()].sort(),
+    status: "ready"
+  });
+}
+function ensurePetArtLoaded() {
+  if (loadPromise !== void 0 || typeof indexedDB === "undefined") return;
+  loadPromise = Promise.resolve().then(loadCustomArt).catch((error51) => {
+    publish3({ ...state3, status: "error", error: error51 instanceof Error ? error51.message : String(error51) });
+  });
+}
+function usePetArt() {
+  ensurePetArtLoaded();
+  return (0, import_react21.useSyncExternalStore)(subscribe3, snapshot2, serverSnapshot2);
+}
+function fileKey(name) {
+  const stem = name.replace(/\.(png|webp|jpg|jpeg)$/iu, "").toLowerCase();
+  return PET_ART_KEYS.includes(stem) ? stem : void 0;
+}
+async function imageSize(file2) {
+  if (typeof createImageBitmap === "function") {
+    try {
+      const bitmap = await createImageBitmap(file2);
+      const size = { width: bitmap.width, height: bitmap.height };
+      bitmap.close();
+      return size;
+    } catch {
+    }
+  }
+  return new Promise((resolve, reject) => {
+    const url2 = URL.createObjectURL(file2);
+    const image = new Image();
+    image.onload = () => {
+      resolve({ width: image.naturalWidth, height: image.naturalHeight });
+      URL.revokeObjectURL(url2);
+    };
+    image.onerror = () => {
+      URL.revokeObjectURL(url2);
+      reject(new Error("pet art image could not be decoded"));
+    };
+    image.src = url2;
+  });
+}
+function detectFrames(width, height) {
+  if (height <= 0) return 1;
+  const frames = Math.round(width / height);
+  return width % height === 0 && frames >= 1 && frames <= 24 ? frames : 1;
+}
+async function importPetArt(files) {
+  const imported = [];
+  const skipped = [];
+  for (const file2 of files) {
+    const key2 = fileKey(file2.name);
+    if (key2 === void 0) {
+      skipped.push(file2.name);
+      continue;
+    }
+    try {
+      const size = await imageSize(file2);
+      await putRecord({
+        key: key2,
+        blob: file2,
+        frames: detectFrames(size.width, size.height),
+        width: size.width,
+        height: size.height,
+        name: file2.name,
+        updatedAt: Date.now()
+      });
+      imported.push(key2);
+    } catch {
+      skipped.push(file2.name);
+    }
+  }
+  await loadCustomArt();
+  return { imported, skipped };
+}
+async function clearPetArt() {
+  if (typeof indexedDB !== "undefined") await clearRecords();
+  releaseUrls();
+  publish3({ art: DEFAULT_ART, customKeys: [], status: "ready" });
+}
+function defaultArtFor(mood) {
+  return DEFAULT_ART[mood];
+}
+
+// packages/client/ui-settings-session-orchestrator/src/client/PetArtDialog.tsx
+var import_react22 = require("react");
+var import_dsh_client_ui_primitives24 = require("@deepseek-ai/dsh-client-ui-primitives");
+
+// packages/client/ui-settings-session-orchestrator/src/client/PetArtDialog.module.css
+var PetArtDialog_default = {
+  overlay: "PetArtDialog_overlay",
+  dialog: "PetArtDialog_dialog",
+  head: "PetArtDialog_head",
+  eyebrow: "PetArtDialog_eyebrow",
+  title: "PetArtDialog_title",
+  intro: "PetArtDialog_intro",
+  note: "PetArtDialog_note",
+  localOnly: "PetArtDialog_localOnly",
+  license: "PetArtDialog_license",
+  empty: "PetArtDialog_empty",
+  message: "PetArtDialog_message",
+  error: "PetArtDialog_error",
+  expected: "PetArtDialog_expected",
+  names: "PetArtDialog_names",
+  chips: "PetArtDialog_chips",
+  actions: "PetArtDialog_actions",
+  installed: "PetArtDialog_installed"
+};
+
+// packages/client/ui-settings-session-orchestrator/src/client/PetArtDialog.tsx
+var import_jsx_runtime24 = require("react/jsx-runtime");
+function PetArtDialog({ t, onClose }) {
+  const art = usePetArt();
+  const input = (0, import_react22.useRef)(null);
+  const [busy, setBusy] = (0, import_react22.useState)(false);
+  const [confirmed, setConfirmed] = (0, import_react22.useState)(false);
+  const [message, setMessage] = (0, import_react22.useState)();
+  const handleFiles = async (files) => {
+    if (files.length === 0) return;
+    setBusy(true);
+    setMessage(void 0);
+    try {
+      const result = await importPetArt(files);
+      const accepted = result.imported.length > 0 ? t("petArtImported", { count: result.imported.length }) : t("petArtNone");
+      const skipped = result.skipped.length > 0 ? ` ${t("petArtSkipped", { count: result.skipped.length })}` : "";
+      setMessage(`${accepted}${skipped}`);
+    } catch (error51) {
+      setMessage(t("petArtError", { message: error51 instanceof Error ? error51.message : String(error51) }));
+    } finally {
+      setBusy(false);
+    }
+  };
+  const handleClear = async () => {
+    setBusy(true);
+    setMessage(void 0);
+    try {
+      await clearPetArt();
+      setMessage(t("petArtCleared"));
+    } catch (error51) {
+      setMessage(t("petArtError", { message: error51 instanceof Error ? error51.message : String(error51) }));
+    } finally {
+      setBusy(false);
+    }
+  };
+  return /* @__PURE__ */ (0, import_jsx_runtime24.jsx)("div", { className: PetArtDialog_default.overlay, role: "presentation", children: /* @__PURE__ */ (0, import_jsx_runtime24.jsxs)("section", { className: PetArtDialog_default.dialog, role: "dialog", "aria-modal": "true", "aria-label": t("petArtTitle"), children: [
+    /* @__PURE__ */ (0, import_jsx_runtime24.jsxs)("header", { className: PetArtDialog_default.head, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime24.jsxs)("div", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime24.jsx)("span", { className: PetArtDialog_default.eyebrow, children: t("memoryPersonaName") }),
+        /* @__PURE__ */ (0, import_jsx_runtime24.jsx)("h3", { className: PetArtDialog_default.title, children: t("petArtTitle") })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(import_dsh_client_ui_primitives24.Button, { size: "sm", variant: "ghost", onClick: onClose, children: t("close") })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime24.jsx)("p", { className: PetArtDialog_default.intro, children: t("petArtIntro") }),
+    /* @__PURE__ */ (0, import_jsx_runtime24.jsx)("p", { className: PetArtDialog_default.note, children: t("petArtLive2DNote") }),
+    /* @__PURE__ */ (0, import_jsx_runtime24.jsx)("p", { className: PetArtDialog_default.localOnly, children: t("petArtLocalOnly") }),
+    /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(
+      import_dsh_client_ui_primitives24.Checkbox,
+      {
+        checked: confirmed,
+        label: t("petArtConfirm"),
+        onChange: setConfirmed
+      }
+    ),
+    /* @__PURE__ */ (0, import_jsx_runtime24.jsxs)("div", { className: PetArtDialog_default.expected, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime24.jsx)("span", { className: PetArtDialog_default.eyebrow, children: t("petArtExpected") }),
+      /* @__PURE__ */ (0, import_jsx_runtime24.jsx)("div", { className: PetArtDialog_default.names, children: PET_ART_KEYS.map((key2) => /* @__PURE__ */ (0, import_jsx_runtime24.jsxs)(import_dsh_client_ui_primitives24.Tag, { tone: "outline", children: [
+        key2,
+        ".png"
+      ] }, key2)) })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime24.jsxs)("div", { className: PetArtDialog_default.actions, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(
+        import_dsh_client_ui_primitives24.Button,
+        {
+          size: "sm",
+          variant: "primary",
+          disabled: busy || !confirmed,
+          onClick: () => {
+            input.current?.click();
+          },
+          children: busy ? t("petArtImporting") : t("petArtChoose")
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(
+        "input",
+        {
+          ref: input,
+          type: "file",
+          accept: "image/png,image/webp,image/jpeg",
+          multiple: true,
+          hidden: true,
+          onChange: (event) => {
+            const files = Array.from(event.target.files ?? []);
+            event.target.value = "";
+            void handleFiles(files);
+          }
+        }
+      ),
+      art.customKeys.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(import_dsh_client_ui_primitives24.Button, { size: "sm", variant: "ghost", disabled: busy, onClick: () => {
+        void handleClear();
+      }, children: t("petArtClear") })
+    ] }),
+    message !== void 0 && /* @__PURE__ */ (0, import_jsx_runtime24.jsx)("p", { className: PetArtDialog_default.message, role: "status", children: message }),
+    art.status === "error" && /* @__PURE__ */ (0, import_jsx_runtime24.jsx)("p", { className: PetArtDialog_default.error, role: "alert", children: t("petArtError", { message: art.error ?? "" }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime24.jsxs)("div", { className: PetArtDialog_default.installed, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime24.jsx)("span", { className: PetArtDialog_default.eyebrow, children: t("petArtInstalled") }),
+      art.customKeys.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime24.jsx)("p", { className: PetArtDialog_default.empty, children: t("petArtNone") }) : /* @__PURE__ */ (0, import_jsx_runtime24.jsx)("div", { className: PetArtDialog_default.chips, children: art.customKeys.map((key2) => /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(import_dsh_client_ui_primitives24.Tag, { tone: "info", children: key2 }, key2)) })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime24.jsx)("p", { className: PetArtDialog_default.license, children: t("petArtLicense") })
+  ] }) });
+}
+
+// packages/client/ui-settings-session-orchestrator/src/client/PetBubble.module.css
+var PetBubble_default = {
+  bubble: "PetBubble_bubble",
+  inline: "PetBubble_inline",
+  floating: "PetBubble_floating",
+  toneInfo: "PetBubble_toneInfo",
+  toneSuccess: "PetBubble_toneSuccess",
+  toneWarning: "PetBubble_toneWarning",
+  toneDanger: "PetBubble_toneDanger",
+  textRow: "PetBubble_textRow",
+  text: "PetBubble_text",
+  dismiss: "PetBubble_dismiss",
+  detail: "PetBubble_detail",
+  progress: "PetBubble_progress",
+  progressFill: "PetBubble_progressFill",
+  tail: "PetBubble_tail",
+  tailLeft: "PetBubble_tailLeft"
+};
+
+// packages/client/ui-settings-session-orchestrator/src/client/PetBubble.tsx
+var import_jsx_runtime25 = require("react/jsx-runtime");
+var TONE_CLASS = {
+  info: PetBubble_default.toneInfo,
+  success: PetBubble_default.toneSuccess,
+  warning: PetBubble_default.toneWarning,
+  danger: PetBubble_default.toneDanger
+};
+function PetBubble({
+  text: text2,
+  tone = "info",
+  detail,
+  ratio,
+  variant = "inline",
+  tailSide = "right",
+  onDismiss,
+  dismissLabel
+}) {
+  const width = ratio === void 0 ? 0 : Math.max(0, Math.min(100, Math.round(ratio * 100)));
+  return /* @__PURE__ */ (0, import_jsx_runtime25.jsxs)(
+    "div",
+    {
+      className: [
+        PetBubble_default.bubble,
+        TONE_CLASS[tone],
+        variant === "floating" ? PetBubble_default.floating : PetBubble_default.inline
+      ].join(" "),
+      role: "status",
+      "aria-live": "polite",
+      "aria-atomic": "true",
+      children: [
+        /* @__PURE__ */ (0, import_jsx_runtime25.jsxs)("div", { className: PetBubble_default.textRow, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime25.jsx)("p", { className: PetBubble_default.text, children: text2 }),
+          onDismiss !== void 0 && /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(
+            "button",
+            {
+              type: "button",
+              className: PetBubble_default.dismiss,
+              "aria-label": dismissLabel,
+              onClick: onDismiss,
+              children: "\xD7"
+            }
+          )
+        ] }),
+        detail !== void 0 && /* @__PURE__ */ (0, import_jsx_runtime25.jsx)("span", { className: PetBubble_default.detail, children: detail }),
+        ratio !== void 0 && /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(
+          "div",
+          {
+            className: PetBubble_default.progress,
+            role: "progressbar",
+            "aria-valuemin": 0,
+            "aria-valuemax": 100,
+            "aria-valuenow": width,
+            "aria-label": detail ?? text2,
+            children: /* @__PURE__ */ (0, import_jsx_runtime25.jsx)("span", { className: PetBubble_default.progressFill, style: { width: `${String(width)}%` } })
+          }
+        ),
+        variant === "floating" && /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(
+          "span",
+          {
+            className: tailSide === "left" ? `${PetBubble_default.tail} ${PetBubble_default.tailLeft}` : PetBubble_default.tail,
+            "aria-hidden": "true"
+          }
+        )
+      ]
+    }
+  );
+}
+
+// packages/client/ui-settings-session-orchestrator/src/client/PetSprite.tsx
+var import_react23 = require("react");
+
+// packages/client/ui-settings-session-orchestrator/src/client/PetSprite.module.css
+var PetSprite_default = {
+  root: "PetSprite_root",
+  sizeInline: "PetSprite_sizeInline",
+  sizeDesktop: "PetSprite_sizeDesktop",
+  glow: "PetSprite_glow",
+  petGlow: "PetSprite_petGlow",
+  character: "PetSprite_character",
+  petFloat: "PetSprite_petFloat",
+  art: "PetSprite_art",
+  spout: "PetSprite_spout",
+  bubbles: "PetSprite_bubbles",
+  petBubbleRise: "PetSprite_petBubbleRise",
+  attentionMark: "PetSprite_attentionMark",
+  sparkles: "PetSprite_sparkles",
+  sweat: "PetSprite_sweat",
+  zzz: "PetSprite_zzz",
+  petZ: "PetSprite_petZ",
+  moodIdle: "PetSprite_moodIdle",
+  moodWorking: "PetSprite_moodWorking",
+  petSpout: "PetSprite_petSpout",
+  moodAttention: "PetSprite_moodAttention",
+  petHop: "PetSprite_petHop",
+  petBang: "PetSprite_petBang",
+  moodDone: "PetSprite_moodDone",
+  petCelebrate: "PetSprite_petCelebrate",
+  petSparkle: "PetSprite_petSparkle",
+  moodError: "PetSprite_moodError",
+  petShake: "PetSprite_petShake",
+  petSweat: "PetSprite_petSweat",
+  moodConnecting: "PetSprite_moodConnecting",
+  petSearch: "PetSprite_petSearch",
+  moodSleeping: "PetSprite_moodSleeping",
+  petSleep: "PetSprite_petSleep"
+};
+
+// packages/client/ui-settings-session-orchestrator/src/client/PetSprite.tsx
+var import_jsx_runtime26 = require("react/jsx-runtime");
+var MOOD_CLASS = {
+  connecting: PetSprite_default.moodConnecting,
+  idle: PetSprite_default.moodIdle,
+  working: PetSprite_default.moodWorking,
+  attention: PetSprite_default.moodAttention,
+  done: PetSprite_default.moodDone,
+  error: PetSprite_default.moodError,
+  sleeping: PetSprite_default.moodSleeping
+};
+var FRAME_MS = 220;
+function PetSprite({ mood, size = "inline", art, label, className }) {
+  const source = art ?? defaultArtFor(mood);
+  const frames = Math.max(1, source.frames);
+  const [frame, setFrame] = (0, import_react23.useState)(0);
+  (0, import_react23.useEffect)(() => {
+    setFrame(0);
+    if (frames <= 1) return void 0;
+    const timer = setInterval(() => {
+      setFrame((current) => (current + 1) % frames);
+    }, FRAME_MS);
+    return () => {
+      clearInterval(timer);
+    };
+  }, [frames, source.src]);
+  const rootClass = [
+    PetSprite_default.root,
+    size === "desktop" ? PetSprite_default.sizeDesktop : PetSprite_default.sizeInline,
+    MOOD_CLASS[mood],
+    className ?? ""
+  ].filter(Boolean).join(" ");
+  const strip = frames > 1;
+  const offset = strip ? frame / (frames - 1) * 100 : 0;
+  return /* @__PURE__ */ (0, import_jsx_runtime26.jsxs)(
+    "span",
+    {
+      className: rootClass,
+      "data-mood": mood,
+      "data-custom": source.custom ? "true" : "false",
+      role: label === void 0 ? void 0 : "img",
+      "aria-label": label,
+      "aria-hidden": label === void 0 ? true : void 0,
+      children: [
+        /* @__PURE__ */ (0, import_jsx_runtime26.jsx)("span", { className: PetSprite_default.glow, "aria-hidden": "true" }),
+        /* @__PURE__ */ (0, import_jsx_runtime26.jsxs)("span", { className: PetSprite_default.character, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime26.jsx)(
+            "span",
+            {
+              className: PetSprite_default.art,
+              style: {
+                backgroundImage: `url("${source.src}")`,
+                // A horizontal sheet is stretched to expose one square frame at a
+                // time; a single non-square picture is contained without distortion.
+                backgroundSize: strip ? `${String(frames * 100)}% 100%` : "contain",
+                backgroundPosition: strip ? `${String(offset)}% 0` : "center",
+                backgroundRepeat: "no-repeat"
+              }
+            }
+          ),
+          /* @__PURE__ */ (0, import_jsx_runtime26.jsxs)("span", { className: PetSprite_default.spout, "aria-hidden": "true", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime26.jsx)("i", {}),
+            /* @__PURE__ */ (0, import_jsx_runtime26.jsx)("i", {}),
+            /* @__PURE__ */ (0, import_jsx_runtime26.jsx)("i", {})
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime26.jsxs)("span", { className: PetSprite_default.bubbles, "aria-hidden": "true", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime26.jsx)("i", {}),
+            /* @__PURE__ */ (0, import_jsx_runtime26.jsx)("i", {}),
+            /* @__PURE__ */ (0, import_jsx_runtime26.jsx)("i", {})
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime26.jsx)("span", { className: PetSprite_default.attentionMark, "aria-hidden": "true", children: "!" }),
+          /* @__PURE__ */ (0, import_jsx_runtime26.jsx)("span", { className: PetSprite_default.sparkles, "aria-hidden": "true", children: "\u2726" }),
+          /* @__PURE__ */ (0, import_jsx_runtime26.jsx)("span", { className: PetSprite_default.sweat, "aria-hidden": "true" }),
+          /* @__PURE__ */ (0, import_jsx_runtime26.jsxs)("span", { className: PetSprite_default.zzz, "aria-hidden": "true", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime26.jsx)("i", { children: "z" }),
+            /* @__PURE__ */ (0, import_jsx_runtime26.jsx)("i", { children: "z" }),
+            /* @__PURE__ */ (0, import_jsx_runtime26.jsx)("i", { children: "z" })
+          ] })
+        ] })
+      ]
+    }
+  );
+}
+
+// packages/client/ui-settings-session-orchestrator/src/client/MemoryTab.module.css
+var MemoryTab_default = {
+  tab: "MemoryTab_tab",
+  hero: "MemoryTab_hero",
+  card: "MemoryTab_card",
+  drawer: "MemoryTab_drawer",
+  mailDialog: "MemoryTab_mailDialog",
+  persona: "MemoryTab_persona",
+  petButton: "MemoryTab_petButton",
+  petPreview: "MemoryTab_petPreview",
+  personaBubble: "MemoryTab_personaBubble",
+  personaText: "MemoryTab_personaText",
+  personaNameLine: "MemoryTab_personaNameLine",
+  personaName: "MemoryTab_personaName",
+  personaRole: "MemoryTab_personaRole",
+  personaIntro: "MemoryTab_personaIntro",
+  roleCard: "MemoryTab_roleCard",
+  eyebrow: "MemoryTab_eyebrow",
+  roleText: "MemoryTab_roleText",
+  statusLine: "MemoryTab_statusLine",
+  boundaryFooter: "MemoryTab_boundaryFooter",
+  statusPill: "MemoryTab_statusPill",
+  grid: "MemoryTab_grid",
+  cardHead: "MemoryTab_cardHead",
+  drawerHead: "MemoryTab_drawerHead",
+  title: "MemoryTab_title",
+  subtitle: "MemoryTab_subtitle",
+  growthRow: "MemoryTab_growthRow",
+  growthBar: "MemoryTab_growthBar",
+  growthFill: "MemoryTab_growthFill",
+  growthValue: "MemoryTab_growthValue",
+  traitRow: "MemoryTab_traitRow",
+  littleThought: "MemoryTab_littleThought",
+  memoryBox: "MemoryTab_memoryBox",
+  thoughtText: "MemoryTab_thoughtText",
+  habitList: "MemoryTab_habitList",
+  boundaryList: "MemoryTab_boundaryList",
+  bodyText: "MemoryTab_bodyText",
+  memoryChips: "MemoryTab_memoryChips",
+  chat: "MemoryTab_chat",
+  bubbleRow: "MemoryTab_bubbleRow",
+  bubbleRowUser: "MemoryTab_bubbleRowUser",
+  bubble: "MemoryTab_bubble",
+  bubbleUser: "MemoryTab_bubbleUser",
+  bubbleRole: "MemoryTab_bubbleRole",
+  bubbleText: "MemoryTab_bubbleText",
+  bubbleTime: "MemoryTab_bubbleTime",
+  composer: "MemoryTab_composer",
+  notice: "MemoryTab_notice",
+  noticeText: "MemoryTab_noticeText",
+  noticeTime: "MemoryTab_noticeTime",
+  empty: "MemoryTab_empty",
+  watchGrid: "MemoryTab_watchGrid",
+  stateGrid: "MemoryTab_stateGrid",
+  watchColumn: "MemoryTab_watchColumn",
+  stateItem: "MemoryTab_stateItem",
+  queueList: "MemoryTab_queueList",
+  queueRow: "MemoryTab_queueRow",
+  queueName: "MemoryTab_queueName",
+  queueMeta: "MemoryTab_queueMeta",
+  stateValueLine: "MemoryTab_stateValueLine",
+  stateValue: "MemoryTab_stateValue",
+  contextBar: "MemoryTab_contextBar",
+  contextFill: "MemoryTab_contextFill",
+  overlay: "MemoryTab_overlay",
+  mailLayout: "MemoryTab_mailLayout",
+  mailList: "MemoryTab_mailList",
+  mailRow: "MemoryTab_mailRow",
+  mailRowActive: "MemoryTab_mailRowActive",
+  mailSubject: "MemoryTab_mailSubject",
+  mailDate: "MemoryTab_mailDate",
+  unreadDot: "MemoryTab_unreadDot",
+  mailDetail: "MemoryTab_mailDetail",
+  mailDetailTitle: "MemoryTab_mailDetailTitle",
+  mailMeta: "MemoryTab_mailMeta",
+  mailBody: "MemoryTab_mailBody",
+  mailActions: "MemoryTab_mailActions",
+  successText: "MemoryTab_successText"
+};
+
+// packages/client/ui-settings-session-orchestrator/src/client/MemoryTab.tsx
+var import_jsx_runtime27 = require("react/jsx-runtime");
+function moodKeyOf(now) {
+  const hour = new Date(now).getHours();
+  if (hour < 6) return "memoryMoodSpaced";
+  if (hour < 9) return "memoryMoodThinking";
+  if (hour < 12) return "memoryMoodFocusedState";
+  if (hour < 14) return "memoryMoodBored";
+  if (hour < 19) return "memoryMoodExcited";
+  if (hour < 22) return "memoryMoodFocusedState";
+  return "memoryMoodDrooling";
+}
+function MailIcon() {
+  return /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("svg", { width: "14", height: "14", viewBox: "0 0 24 24", fill: "none", "aria-hidden": "true", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("rect", { x: "2.5", y: "4.5", width: "19", height: "15", rx: "2.5", stroke: "currentColor", strokeWidth: "1.7" }),
+    /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("path", { d: "m3.5 7 8.5 6 8.5-6", stroke: "currentColor", strokeWidth: "1.7" })
+  ] });
+}
+function mailDate(at) {
+  try {
+    return new Intl.DateTimeFormat(void 0, { dateStyle: "medium", timeStyle: "short" }).format(at);
+  } catch {
+    return new Date(at).toLocaleString();
+  }
+}
+function tokenLabel3(tokens) {
+  if (tokens >= 1e3) return `${(tokens / 1e3).toFixed(1)}K`;
+  return String(tokens);
+}
+function QueueWatchColumn({ label, queues, tasks, empty, t }) {
+  return /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { className: MemoryTab_default.watchColumn, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: MemoryTab_default.eyebrow, children: label }),
+    queues.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("p", { className: MemoryTab_default.empty, children: empty }) : /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("ul", { className: MemoryTab_default.queueList, children: queues.map((queue) => {
+      const count = tasks.filter((task) => task.queueId === queue.id).length;
+      return /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("li", { className: MemoryTab_default.queueRow, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: MemoryTab_default.queueName, children: queue.title }),
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: MemoryTab_default.queueMeta, children: t("memoryQueuedTasks", { count }) })
+      ] }, queue.id);
+    }) })
+  ] });
+}
+function MemoryTab({ t, live, now }) {
+  const studio = useStudio();
+  const petPrefs = usePetPrefs();
+  const petArt = usePetArt();
+  const floating = petPrefs.mode === "floating";
+  const [petBubbleOpen, setPetBubbleOpen] = (0, import_react24.useState)(true);
+  const [artOpen, setArtOpen] = (0, import_react24.useState)(false);
+  const [message, setMessage] = (0, import_react24.useState)("");
+  const [defaultNoticeHidden, setDefaultNoticeHidden] = (0, import_react24.useState)(false);
+  const [queueOpen, setQueueOpen] = (0, import_react24.useState)(false);
+  const [stateOpen, setStateOpen] = (0, import_react24.useState)(false);
+  const [mailOpen, setMailOpen] = (0, import_react24.useState)(false);
+  const [selectedMailId, setSelectedMailId] = (0, import_react24.useState)();
+  const [reply, setReply] = (0, import_react24.useState)("");
+  const [mailSent, setMailSent] = (0, import_react24.useState)(false);
+  const [repliedMails, setRepliedMails] = (0, import_react24.useState)([]);
+  const runningQueues = live.queues.filter((queue) => queue.state === "running");
+  const scheduledQueues = live.queues.filter((queue) => queue.state !== "running");
+  const armed = studio.notices.length + (defaultNoticeHidden ? 0 : 1);
+  const pet = petSnapshotOf(live, now);
+  const petSentence = petSpeech(pet, t);
+  const petSubline = petDetail(pet, t, armed);
+  const mood = t(moodKeyOf(now));
+  const contextUsed = 840 + studio.messages.length * 36 + studio.notices.length * 20;
+  const contextLimit = 8e3;
+  const mails = [
+    {
+      id: "dispatch",
+      subject: t("memoryMailSubjectDispatch"),
+      from: t("memoryMailFromScheduler"),
+      at: now - 2 * 60 * 60 * 1e3,
+      body: t("memoryMailBodyDispatch")
+    },
+    {
+      id: "waiting",
+      subject: t("memoryMailSubjectWaiting"),
+      from: t("memoryMailFromAutomation"),
+      at: now - 26 * 60 * 1e3,
+      body: t("memoryMailBodyWaiting")
+    }
+  ];
+  const selectedMail = mails.find((mail) => mail.id === selectedMailId);
+  const unread = repliedMails.includes("dispatch") ? 0 : 1;
+  return /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { className: MemoryTab_default.tab, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(
+      Summary,
+      {
+        label: t("memoryTitle"),
+        metrics: [
+          {
+            label: t("memoryMetricQueues"),
+            value: runningQueues.length,
+            onClick: () => {
+              setQueueOpen((value) => !value);
+            }
+          },
+          {
+            label: t("memoryMetricMail"),
+            value: unread,
+            icon: /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(MailIcon, {}),
+            onClick: () => {
+              setMailOpen(true);
+              setMailSent(false);
+            }
+          },
+          {
+            label: t("memoryMetricState"),
+            value: mood,
+            onClick: () => {
+              setStateOpen((value) => !value);
+            }
+          }
+        ]
+      }
+    ),
+    queueOpen && /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("section", { className: MemoryTab_default.drawer, "aria-label": t("memoryQueuesTitle"), children: [
+      /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("header", { className: MemoryTab_default.drawerHead, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: MemoryTab_default.eyebrow, children: t("memoryMetricQueues") }),
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("h3", { className: MemoryTab_default.title, children: t("memoryQueuesTitle") })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(import_dsh_client_ui_primitives25.Button, { size: "sm", variant: "ghost", onClick: () => {
+          setQueueOpen(false);
+        }, children: t("close") })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { className: MemoryTab_default.watchGrid, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(
+          QueueWatchColumn,
+          {
+            label: t("memoryManaging"),
+            queues: runningQueues,
+            tasks: live.tasks,
+            empty: t("memoryNoManaging"),
+            t
+          }
+        ),
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(
+          QueueWatchColumn,
+          {
+            label: t("memoryScheduled"),
+            queues: scheduledQueues,
+            tasks: live.tasks,
+            empty: t("memoryNoScheduled"),
+            t
+          }
+        )
+      ] })
+    ] }),
+    stateOpen && /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("section", { className: MemoryTab_default.drawer, "aria-label": t("memoryStatusDetailTitle"), children: [
+      /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("header", { className: MemoryTab_default.drawerHead, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: MemoryTab_default.eyebrow, children: t("memoryStatusHint") }),
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("h3", { className: MemoryTab_default.title, children: t("memoryStatusDetailTitle") })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(import_dsh_client_ui_primitives25.Button, { size: "sm", variant: "ghost", onClick: () => {
+          setStateOpen(false);
+        }, children: t("close") })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { className: MemoryTab_default.stateGrid, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { className: MemoryTab_default.stateItem, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: MemoryTab_default.eyebrow, children: t("memoryThoughtsTitle") }),
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("p", { className: MemoryTab_default.bodyText, children: t("memoryThoughtsBody") })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { className: MemoryTab_default.stateItem, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: MemoryTab_default.eyebrow, children: t("memoryCurrentMood") }),
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { className: MemoryTab_default.stateValueLine, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: MemoryTab_default.stateValue, children: mood }),
+            /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(import_dsh_client_ui_primitives25.Tag, { tone: "outline", children: t("memoryMoodAuto") })
+          ] })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { className: MemoryTab_default.stateItem, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: MemoryTab_default.eyebrow, children: t("memoryContextLength") }),
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: MemoryTab_default.stateValue, children: t("memoryContextValue", {
+            used: tokenLabel3(contextUsed),
+            limit: tokenLabel3(contextLimit)
+          }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("div", { className: MemoryTab_default.contextBar, role: "progressbar", "aria-valuemin": 0, "aria-valuemax": contextLimit, "aria-valuenow": contextUsed, children: /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: MemoryTab_default.contextFill, style: { width: `${String(Math.min(100, contextUsed / contextLimit * 100))}%` } }) })
+        ] })
+      ] })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("section", { className: MemoryTab_default.hero, "aria-label": t("memoryTitle"), children: [
+      /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { className: MemoryTab_default.persona, children: [
+        floating ? /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("div", { className: MemoryTab_default.petPreview, "aria-hidden": "true", children: /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(PetSprite, { mood: pet.mood, size: "inline", art: petArt.art[pet.mood] }) }) : /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(
+          "button",
+          {
+            type: "button",
+            className: MemoryTab_default.petButton,
+            "aria-label": t(petBubbleOpen ? "petHideBubble" : "petShowBubble"),
+            "aria-expanded": petBubbleOpen,
+            onClick: () => {
+              setPetBubbleOpen((open) => !open);
+            },
+            children: /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(PetSprite, { mood: pet.mood, size: "inline", art: petArt.art[pet.mood] })
+          }
+        ),
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { className: MemoryTab_default.personaText, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { className: MemoryTab_default.personaNameLine, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("h3", { className: MemoryTab_default.personaName, children: t("memoryPersonaName") }),
+            /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(import_dsh_client_ui_primitives25.Tag, { tone: "success", children: t("memoryOnline") }),
+            floating && /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(import_dsh_client_ui_primitives25.Tag, { tone: "info", children: t("petFloatingTag") })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("p", { className: MemoryTab_default.personaRole, children: t("memoryPersonaRole") }),
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("p", { className: MemoryTab_default.personaIntro, children: t("memorySubtitle") }),
+          petBubbleOpen && !floating && /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("div", { className: MemoryTab_default.personaBubble, children: /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(
+            PetBubble,
+            {
+              text: petSentence,
+              tone: pet.tone,
+              ...petSubline === void 0 ? {} : { detail: petSubline },
+              ...pet.progress.total === 0 ? {} : { ratio: pet.progress.ratio },
+              onDismiss: () => {
+                setPetBubbleOpen(false);
+              },
+              dismissLabel: t("petHideBubble")
+            }
+          ) })
+        ] })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { className: MemoryTab_default.roleCard, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: MemoryTab_default.eyebrow, children: t("memoryRoleTitle") }),
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("p", { className: MemoryTab_default.roleText, children: t("memoryRoleBody") }),
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { className: MemoryTab_default.statusLine, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: MemoryTab_default.statusPill, children: t("memoryDispatchActive", { count: runningQueues.length }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: MemoryTab_default.statusPill, children: armed === 0 ? t("memoryReminderWaiting") : t("memoryReminderArmed", { count: armed }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(import_dsh_client_ui_primitives25.Button, { size: "sm", variant: floating ? "primary" : "ghost", onClick: togglePetMode, children: floating ? t("petDockBack") : t("petSendToDesktop") }),
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(import_dsh_client_ui_primitives25.Button, { size: "sm", variant: "ghost", onClick: () => {
+            setArtOpen(true);
+          }, children: t("petArtButton") })
+        ] })
+      ] })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { className: MemoryTab_default.grid, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("section", { className: MemoryTab_default.card, "aria-label": t("memoryGrowth"), children: [
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("header", { className: MemoryTab_default.cardHead, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: MemoryTab_default.eyebrow, children: t("memoryPersonaName") }),
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("h3", { className: MemoryTab_default.title, children: t("memoryGrowth") })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { className: MemoryTab_default.growthRow, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("div", { className: MemoryTab_default.growthBar, role: "progressbar", "aria-valuemin": 0, "aria-valuemax": 100, "aria-valuenow": 72, children: /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: MemoryTab_default.growthFill, style: { width: "72%" } }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: MemoryTab_default.growthValue, children: "72%" })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { className: MemoryTab_default.traitRow, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(import_dsh_client_ui_primitives25.Tag, { tone: "outline", children: t("memoryTraitWarm") }),
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(import_dsh_client_ui_primitives25.Tag, { tone: "outline", children: t("memoryTraitPrecise") }),
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(import_dsh_client_ui_primitives25.Tag, { tone: "outline", children: t("memoryTraitCurious") }),
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(import_dsh_client_ui_primitives25.Tag, { tone: "outline", children: t("memoryTraitSteady") })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { className: MemoryTab_default.littleThought, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: MemoryTab_default.eyebrow, children: t("memoryLittleThoughtTitle") }),
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("p", { className: MemoryTab_default.thoughtText, children: t("memoryLittleThought") })
+        ] })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("section", { className: MemoryTab_default.card, "aria-label": t("memoryCognitionTitle"), children: [
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("header", { className: MemoryTab_default.cardHead, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: MemoryTab_default.eyebrow, children: t("memoryMetricState") }),
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("h3", { className: MemoryTab_default.title, children: t("memoryCognitionTitle") })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("ul", { className: MemoryTab_default.habitList, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("li", { children: t("memoryCognitionHabit") }),
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("li", { children: t("memoryCognitionFocus") }),
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("li", { children: t("memoryCognitionRhythm") })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { className: MemoryTab_default.memoryBox, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("h4", { className: MemoryTab_default.subtitle, children: t("memoryMemoryTitle") }),
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("p", { className: MemoryTab_default.bodyText, children: t("memoryMemorySummary") }),
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { className: MemoryTab_default.memoryChips, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(import_dsh_client_ui_primitives25.Tag, { tone: "info", children: t("memoryMemoryProjects", { count: Math.max(live.queues.length, 1) }) }),
+            /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(import_dsh_client_ui_primitives25.Tag, { tone: "quiet", children: t("memoryMemoryPreference") })
+          ] })
+        ] })
+      ] })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("section", { className: MemoryTab_default.card, "aria-label": t("memoryChatTitle"), children: [
+      /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("header", { className: MemoryTab_default.cardHead, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: MemoryTab_default.eyebrow, children: t("memoryPersonaRole") }),
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("h3", { className: MemoryTab_default.title, children: t("memoryChatTitle") }),
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(import_dsh_client_ui_primitives25.Tag, { tone: "success", children: t("memoryOnline") })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("div", { className: MemoryTab_default.chat, "aria-live": "polite", children: studio.messages.map((item) => /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(
+        "div",
+        {
+          className: item.role === "user" ? `${MemoryTab_default.bubbleRow} ${MemoryTab_default.bubbleRowUser}` : MemoryTab_default.bubbleRow,
+          children: /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { className: item.role === "user" ? `${MemoryTab_default.bubble} ${MemoryTab_default.bubbleUser}` : MemoryTab_default.bubble, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: MemoryTab_default.bubbleRole, children: item.role === "user" ? t("memoryUserLabel") : t("memoryButlerLabel") }),
+            /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("p", { className: MemoryTab_default.bubbleText, children: studioText(item.text, t) }),
+            item.at > 0 && /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: MemoryTab_default.bubbleTime, children: timeLabel(item.at, now, t) })
+          ] })
+        },
+        item.id
+      )) }),
+      /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { className: MemoryTab_default.composer, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(
+          TextAreaField,
+          {
+            label: t("memoryChatInput"),
+            value: message,
+            rows: 2,
+            placeholder: t("memoryChatPlaceholder"),
+            onChange: setMessage
+          }
+        ),
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(
+          import_dsh_client_ui_primitives25.Button,
+          {
+            size: "sm",
+            variant: "primary",
+            disabled: message.trim() === "",
+            onClick: () => {
+              const text2 = message.trim();
+              if (text2 === "") return;
+              const statusQuestion = /status|状态|进度|queue|队列/iu.test(text2);
+              const replyText = statusQuestion ? t("memoryReplyStatus") : t("memoryReply", { text: text2 });
+              sendMemoryMessage(text2, { kind: "text", value: replyText });
+              setMessage("");
+            },
+            children: t("memoryChatSend")
+          }
+        )
+      ] })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("section", { className: MemoryTab_default.card, "aria-label": t("memoryNoticesTitle"), children: [
+      /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("header", { className: MemoryTab_default.cardHead, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: MemoryTab_default.eyebrow, children: t("memoryMetricNotices") }),
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("h3", { className: MemoryTab_default.title, children: t("memoryNoticesTitle") }),
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(import_dsh_client_ui_primitives25.Tag, { tone: armed > 0 ? "warning" : "success", children: String(armed) })
+      ] }),
+      armed === 0 && /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("p", { className: MemoryTab_default.empty, children: t("memoryReminderWaiting") }),
+      !defaultNoticeHidden && /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("article", { className: MemoryTab_default.notice, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { className: MemoryTab_default.noticeText, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("h4", { className: MemoryTab_default.subtitle, children: t("memoryNoticeDefaultTitle") }),
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("p", { className: MemoryTab_default.bodyText, children: t("memoryNoticeDefaultBody") })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(
+          import_dsh_client_ui_primitives25.Button,
+          {
+            size: "sm",
+            variant: "ghost",
+            "aria-label": t("memoryNoticeDismiss"),
+            onClick: () => {
+              setDefaultNoticeHidden(true);
+            },
+            children: t("memoryNoticeDismiss")
+          }
+        )
+      ] }),
+      studio.notices.map((notice) => /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("article", { className: MemoryTab_default.notice, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { className: MemoryTab_default.noticeText, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("h4", { className: MemoryTab_default.subtitle, children: studioText(notice.title, t) }),
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("p", { className: MemoryTab_default.bodyText, children: studioText(notice.body, t) }),
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: MemoryTab_default.noticeTime, children: timeLabel(notice.at, now, t) })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(
+          import_dsh_client_ui_primitives25.Button,
+          {
+            size: "sm",
+            variant: "ghost",
+            "aria-label": `${t("memoryNoticeDismiss")} ${studioText(notice.title, t)}`,
+            onClick: () => {
+              dismissNotice(notice.id);
+            },
+            children: t("memoryNoticeDismiss")
+          }
+        )
+      ] }, notice.id))
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("section", { className: MemoryTab_default.card, "aria-label": t("memoryBoundaryTitle"), children: [
+      /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("header", { className: MemoryTab_default.cardHead, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: MemoryTab_default.eyebrow, children: t("memoryRoleTitle") }),
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("h3", { className: MemoryTab_default.title, children: t("memoryBoundaryTitle") })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("ul", { className: MemoryTab_default.boundaryList, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("li", { children: t("memoryBoundaryRead") }),
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("li", { children: t("memoryBoundaryInteract") }),
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("li", { children: t("memoryBoundaryDispatch") })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { className: MemoryTab_default.boundaryFooter, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: MemoryTab_default.statusPill, children: t("memoryDispatchStatus") }),
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: MemoryTab_default.statusPill, children: t("memoryReminderStatus") })
+      ] })
+    ] }),
+    artOpen && /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(PetArtDialog, { t, onClose: () => {
+      setArtOpen(false);
+    } }),
+    mailOpen && /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("div", { className: MemoryTab_default.overlay, role: "presentation", children: /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("section", { className: MemoryTab_default.mailDialog, role: "dialog", "aria-modal": "true", "aria-label": t("memoryMailTitle"), children: [
+      /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("header", { className: MemoryTab_default.drawerHead, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: MemoryTab_default.eyebrow, children: t("memoryMetricMail") }),
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("h3", { className: MemoryTab_default.title, children: t("memoryMailTitle") })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(import_dsh_client_ui_primitives25.Button, { size: "sm", variant: "ghost", onClick: () => {
+          setMailOpen(false);
+        }, children: t("close") })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { className: MemoryTab_default.mailLayout, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("div", { className: MemoryTab_default.mailList, role: "list", children: mails.map((mail) => /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)(
+          "button",
+          {
+            type: "button",
+            role: "listitem",
+            className: selectedMailId === mail.id ? `${MemoryTab_default.mailRow} ${MemoryTab_default.mailRowActive}` : MemoryTab_default.mailRow,
+            onClick: () => {
+              setSelectedMailId(mail.id);
+              setReply("");
+              setMailSent(false);
+            },
+            children: [
+              /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("span", { className: MemoryTab_default.mailSubject, children: [
+                !repliedMails.includes(mail.id) && mail.id === "dispatch" && /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: MemoryTab_default.unreadDot, "aria-hidden": "true" }),
+                mail.subject
+              ] }),
+              /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: MemoryTab_default.mailDate, children: mailDate(mail.at) })
+            ]
+          },
+          mail.id
+        )) }),
+        /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("div", { className: MemoryTab_default.mailDetail, children: selectedMail === void 0 ? /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("p", { className: MemoryTab_default.empty, children: t("memoryMailSelect") }) : /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)(import_jsx_runtime27.Fragment, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("h4", { className: MemoryTab_default.mailDetailTitle, children: selectedMail.subject }),
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { className: MemoryTab_default.mailMeta, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { children: selectedMail.from }),
+            /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("span", { children: [
+              t("memoryMailDate"),
+              ": ",
+              mailDate(selectedMail.at)
+            ] })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("p", { className: MemoryTab_default.mailBody, children: selectedMail.body }),
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(
+            TextAreaField,
+            {
+              label: t("memoryMailReply"),
+              value: reply,
+              rows: 3,
+              placeholder: t("memoryMailReplyPlaceholder"),
+              onChange: setReply
+            }
+          ),
+          /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { className: MemoryTab_default.mailActions, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(
+              import_dsh_client_ui_primitives25.Button,
+              {
+                size: "sm",
+                variant: "primary",
+                disabled: reply.trim() === "",
+                onClick: () => {
+                  const text2 = reply.trim();
+                  if (text2 === "") return;
+                  sendMemoryMessage(text2, {
+                    kind: "text",
+                    value: t("memoryReply", { text: text2 })
+                  });
+                  setRepliedMails((previous) => previous.includes(selectedMail.id) ? previous : [...previous, selectedMail.id]);
+                  setReply("");
+                  setMailSent(true);
+                },
+                children: t("memoryMailSend")
+              }
+            ),
+            mailSent && /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("span", { className: MemoryTab_default.successText, role: "status", children: t("memoryMailSent") })
+          ] })
+        ] }) })
+      ] })
+    ] }) })
   ] });
 }
 
@@ -22915,13 +27628,27 @@ var Section_default = {
   title: "Section_title",
   description: "Section_description",
   status: "Section_status",
+  star: "Section_star",
+  starIcon: "Section_starIcon",
   tabs: "Section_tabs",
+  tabButton: "Section_tabButton",
+  tabButtonActive: "Section_tabButtonActive",
   panel: "Section_panel"
 };
 
 // packages/client/ui-settings-session-orchestrator/src/client/Section.tsx
-var import_jsx_runtime20 = require("react/jsx-runtime");
-var TabErrorBoundary = class extends import_react14.Component {
+var import_jsx_runtime28 = require("react/jsx-runtime");
+var GITHUB_REPO = "https://github.com/skyerd/dsh-handsoff";
+function StarIcon() {
+  return /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("svg", { className: Section_default.starIcon, viewBox: "0 0 24 24", "aria-hidden": "true", children: /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(
+    "path",
+    {
+      fill: "currentColor",
+      d: "m12 3.2 2.7 5.5 6.1.9-4.4 4.3 1 6.1L12 17.1 6.6 20l1-6.1-4.4-4.3 6.1-.9L12 3.2Z"
+    }
+  ) });
+}
+var TabErrorBoundary = class extends import_react25.Component {
   state = { failed: false };
   static getDerivedStateFromError() {
     return { failed: true };
@@ -22931,9 +27658,9 @@ var TabErrorBoundary = class extends import_react14.Component {
   }
   render() {
     if (!this.state.failed) return this.props.children;
-    return /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { role: "alert", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("p", { children: this.props.message }),
-      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("button", { type: "button", onClick: () => {
+    return /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { role: "alert", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("p", { children: this.props.message }),
+      /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("button", { type: "button", onClick: () => {
         this.setState({ failed: false });
       }, children: this.props.retry })
     ] });
@@ -22941,12 +27668,12 @@ var TabErrorBoundary = class extends import_react14.Component {
 };
 function SessionOrchestratorSection(props) {
   const { t } = props;
-  const live = props.useLive((snapshot) => snapshot);
-  const drafts = props.useDrafts((snapshot) => snapshot);
-  const workspaces = props.useWorkspaces((snapshot) => snapshot.items);
-  const [tab, setTab] = (0, import_react14.useState)("queue");
+  const live = props.useLive((snapshot3) => snapshot3);
+  const drafts = props.useDrafts((snapshot3) => snapshot3);
+  const workspaces = props.useWorkspaces((snapshot3) => snapshot3.items);
+  const [tab, setTab] = (0, import_react25.useState)("queue");
   const now = Date.now();
-  (0, import_react14.useEffect)(() => {
+  (0, import_react25.useEffect)(() => {
     const timer = setTimeout(() => {
       void props.loadModelCatalog();
       void props.loadPresetCatalog();
@@ -22959,14 +27686,16 @@ function SessionOrchestratorSection(props) {
     { value: "queue", label: t("tabQueue"), id: "session-orchestrator-tab-queue", panelId: "session-orchestrator-panel-queue" },
     { value: "board", label: t("tabBoard"), id: "session-orchestrator-tab-board", panelId: "session-orchestrator-panel-board" },
     { value: "pressure", label: t("tabPressure"), id: "session-orchestrator-tab-pressure", panelId: "session-orchestrator-panel-pressure" },
-    { value: "hosts", label: t("tabHosts"), id: "session-orchestrator-tab-hosts", panelId: "session-orchestrator-panel-hosts" }
+    { value: "hosts", label: t("tabHosts"), id: "session-orchestrator-tab-hosts", panelId: "session-orchestrator-panel-hosts" },
+    { value: "skills", label: t("tabSkills"), id: "session-orchestrator-tab-skills", panelId: "session-orchestrator-panel-skills" },
+    { value: "memory", label: t("tabMemory"), id: "session-orchestrator-tab-memory", panelId: "session-orchestrator-panel-memory" }
   ];
   const shared = { t, live, drafts, workspaces, now, actions: props };
   const panelId = items.find((item) => item.value === tab)?.panelId ?? items[0].panelId;
-  return /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("section", { className: Section_default.section, "aria-label": t("title"), children: [
-    /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("header", { className: Section_default.hero, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: Section_default.identity, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(
+  return /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("section", { className: Section_default.section, "aria-label": t("title"), children: [
+    /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("header", { className: Section_default.hero, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { className: Section_default.identity, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(
           "img",
           {
             className: Section_default.avatar,
@@ -22976,18 +27705,32 @@ function SessionOrchestratorSection(props) {
             draggable: false
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: Section_default.titleBlock, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("h2", { className: Section_default.title, children: t("title") }),
-          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("p", { className: Section_default.description, children: t("description") })
+        /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { className: Section_default.titleBlock, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("h2", { className: Section_default.title, children: t("title") }),
+          /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("p", { className: Section_default.description, children: t("description") })
         ] })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: Section_default.status, children: [
-        live.phase === "connecting" && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(import_dsh_client_ui_primitives19.Tag, { tone: "warning", children: t("connecting") }),
-        live.phase === "error" && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(import_dsh_client_ui_primitives19.Tag, { tone: "danger", children: t("reconnecting") }),
-        live.revision >= 0 && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(import_dsh_client_ui_primitives19.Tag, { tone: "outline", children: t("liveRevision", { revision: live.revision }) })
+      /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { className: Section_default.status, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)(
+          "a",
+          {
+            className: Section_default.star,
+            href: GITHUB_REPO,
+            target: "_blank",
+            rel: "noreferrer",
+            title: t("starHint"),
+            children: [
+              /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(StarIcon, {}),
+              /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("span", { children: t("starGithub") })
+            ]
+          }
+        ),
+        live.phase === "connecting" && /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(import_dsh_client_ui_primitives26.Tag, { tone: "warning", children: t("connecting") }),
+        live.phase === "error" && /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(import_dsh_client_ui_primitives26.Tag, { tone: "danger", children: t("reconnecting") }),
+        live.revision >= 0 && /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(import_dsh_client_ui_primitives26.Tag, { tone: "outline", children: t("liveRevision", { revision: live.revision }) })
       ] })
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(
+    /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(
       ErrorPanel,
       {
         t,
@@ -22997,19 +27740,46 @@ function SessionOrchestratorSection(props) {
         onClear: props.clearErrors
       }
     ),
-    /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(import_dsh_client_ui_primitives19.SegmentedTabs, { items, value: tab, onChange: setTab, label: t("tabLabel"), className: Section_default.tabs }),
-    /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(
+    /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("nav", { className: Section_default.tabs, role: "tablist", "aria-label": t("tabLabel"), children: items.map((item, index) => /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(
+      "button",
+      {
+        type: "button",
+        role: "tab",
+        id: item.id,
+        "aria-selected": tab === item.value,
+        "aria-controls": item.panelId,
+        tabIndex: tab === item.value ? 0 : -1,
+        className: tab === item.value ? `${Section_default.tabButton} ${Section_default.tabButtonActive}` : Section_default.tabButton,
+        onClick: () => {
+          setTab(item.value);
+        },
+        onKeyDown: (event) => {
+          const step = event.key === "ArrowRight" || event.key === "ArrowDown" ? 1 : event.key === "ArrowLeft" || event.key === "ArrowUp" ? -1 : 0;
+          if (step === 0) return;
+          event.preventDefault();
+          const next = items[(index + step + items.length) % items.length];
+          if (next === void 0) return;
+          setTab(next.value);
+          document.getElementById(next.id)?.focus();
+        },
+        children: item.label
+      },
+      item.value
+    )) }),
+    /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(
       "div",
       {
         id: panelId,
         role: "tabpanel",
         "aria-labelledby": items.find((item) => item.value === tab)?.id,
         className: Section_default.panel,
-        children: /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)(TabErrorBoundary, { message: t("panelError"), retry: t("panelRetry"), children: [
-          tab === "queue" && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(TaskTab, { ...shared }),
-          tab === "board" && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(BoardTab, { ...shared }),
-          tab === "pressure" && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(PressureTab, { ...shared }),
-          tab === "hosts" && /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(HostsTab, { ...shared })
+        children: /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)(TabErrorBoundary, { message: t("panelError"), retry: t("panelRetry"), children: [
+          tab === "queue" && /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(TaskTab, { ...shared }),
+          tab === "board" && /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(BoardTab, { ...shared }),
+          tab === "pressure" && /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(PressureTab, { ...shared }),
+          tab === "hosts" && /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(HostsTab, { ...shared }),
+          tab === "skills" && /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(SkillsTab, { ...shared }),
+          tab === "memory" && /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(MemoryTab, { ...shared })
         ] }, tab)
       }
     )
@@ -23017,7 +27787,7 @@ function SessionOrchestratorSection(props) {
 }
 
 // packages/client/ui-settings-session-orchestrator/src/client/SessionNotice.tsx
-var import_dsh_client_ui_primitives20 = require("@deepseek-ai/dsh-client-ui-primitives");
+var import_dsh_client_ui_primitives27 = require("@deepseek-ai/dsh-client-ui-primitives");
 
 // packages/client/ui-settings-session-orchestrator/src/client/SessionNotice.module.css
 var SessionNotice_default = {
@@ -23028,21 +27798,234 @@ var SessionNotice_default = {
 };
 
 // packages/client/ui-settings-session-orchestrator/src/client/SessionNotice.tsx
-var import_jsx_runtime21 = require("react/jsx-runtime");
+var import_jsx_runtime29 = require("react/jsx-runtime");
 function SessionNotice({ useDrafts, dismissError, t }) {
-  const drafts = useDrafts((snapshot) => snapshot);
+  const drafts = useDrafts((snapshot3) => snapshot3);
   const failure = drafts.errors.find((error51) => error51.operation === "openSession");
   if (failure === void 0) return null;
-  return /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { className: SessionNotice_default.notice, role: "alert", "data-error-code": failure.code, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)("div", { className: SessionNotice_default.head, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("strong", { children: t("sessionNoticeTitle") }),
-      /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(import_dsh_client_ui_primitives20.Button, { size: "sm", variant: "ghost", onClick: () => {
+  return /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { className: SessionNotice_default.notice, role: "alert", "data-error-code": failure.code, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { className: SessionNotice_default.head, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("strong", { children: t("sessionNoticeTitle") }),
+      /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(import_dsh_client_ui_primitives27.Button, { size: "sm", variant: "ghost", onClick: () => {
         dismissError(failure.id);
       }, children: t("dismiss") })
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("p", { className: SessionNotice_default.reason, children: t(errorExplanationKey(failure.code)) }),
-    failure.detail !== void 0 && /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("code", { className: SessionNotice_default.detail, children: t("sessionNoticeDetail", { sessionId: failure.detail }) })
+    /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("p", { className: SessionNotice_default.reason, children: t(errorExplanationKey(failure.code)) }),
+    failure.detail !== void 0 && /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("code", { className: SessionNotice_default.detail, children: t("sessionNoticeDetail", { sessionId: failure.detail }) })
   ] });
+}
+
+// packages/client/ui-settings-session-orchestrator/src/client/DesktopPet.tsx
+var import_react26 = require("react");
+
+// packages/client/ui-settings-session-orchestrator/src/client/DesktopPet.module.css
+var DesktopPet_default = {
+  layer: "DesktopPet_layer",
+  petAnchor: "DesktopPet_petAnchor",
+  dragging: "DesktopPet_dragging",
+  bubbleSlot: "DesktopPet_bubbleSlot",
+  bubbleRight: "DesktopPet_bubbleRight",
+  bubbleLeft: "DesktopPet_bubbleLeft",
+  controls: "DesktopPet_controls",
+  control: "DesktopPet_control"
+};
+
+// packages/client/ui-settings-session-orchestrator/src/client/DesktopPet.tsx
+var import_jsx_runtime30 = require("react/jsx-runtime");
+var PET_WIDTH = 144;
+var PET_HEIGHT = 144;
+var CONTROL_ROOM = 34;
+var EDGE = 8;
+function clampPosition(position) {
+  if (typeof window === "undefined") return position;
+  const maxX = Math.max(EDGE, window.innerWidth - PET_WIDTH - EDGE);
+  const maxY = Math.max(EDGE, window.innerHeight - PET_HEIGHT - CONTROL_ROOM);
+  const minY = Math.min(160, maxY);
+  return {
+    x: Math.min(maxX, Math.max(EDGE, position.x)),
+    y: Math.min(maxY, Math.max(minY, Math.min(maxY, position.y)))
+  };
+}
+function defaultPosition() {
+  if (typeof window === "undefined") return { x: 24, y: 200 };
+  return clampPosition({
+    x: window.innerWidth - PET_WIDTH - 28,
+    y: window.innerHeight - PET_HEIGHT - 84
+  });
+}
+var BUBBLE_VISIBLE_MS = 9e3;
+var BUBBLE_CYCLE_MS = 45e3;
+function DesktopPet({ useLive, t }) {
+  const prefs = usePetPrefs();
+  const live = useLive((snapshot3) => snapshot3);
+  const studio = useStudio();
+  const petArt = usePetArt();
+  const pet = petSnapshotOf(live);
+  const speech = petSpeech(pet, t);
+  const detail = petDetail(pet, t, studio.notices.length);
+  const [position, setPosition] = (0, import_react26.useState)(() => prefs.x !== null && prefs.y !== null ? clampPosition({ x: prefs.x, y: prefs.y }) : defaultPosition());
+  const [bubbleOpen, setBubbleOpen] = (0, import_react26.useState)(false);
+  const [dragging, setDragging] = (0, import_react26.useState)(false);
+  const drag = (0, import_react26.useRef)(null);
+  const hideTimer = (0, import_react26.useRef)(void 0);
+  const showBubble = (0, import_react26.useCallback)(() => {
+    setBubbleOpen(true);
+    if (hideTimer.current !== void 0) clearTimeout(hideTimer.current);
+    hideTimer.current = setTimeout(() => {
+      setBubbleOpen(false);
+    }, BUBBLE_VISIBLE_MS);
+  }, []);
+  (0, import_react26.useEffect)(() => {
+    if (prefs.x === null || prefs.y === null) return;
+    setPosition(clampPosition({ x: prefs.x, y: prefs.y }));
+  }, [prefs.x, prefs.y]);
+  (0, import_react26.useEffect)(() => {
+    const handleResize = () => {
+      setPosition((current) => clampPosition(current));
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+  (0, import_react26.useEffect)(() => () => {
+    if (hideTimer.current !== void 0) clearTimeout(hideTimer.current);
+  }, []);
+  (0, import_react26.useEffect)(() => {
+    if (prefs.mode !== "floating") return void 0;
+    showBubble();
+    const cycle = setInterval(showBubble, BUBBLE_CYCLE_MS);
+    return () => {
+      clearInterval(cycle);
+      if (hideTimer.current !== void 0) clearTimeout(hideTimer.current);
+    };
+  }, [prefs.mode, showBubble]);
+  (0, import_react26.useEffect)(() => {
+    if (prefs.mode === "floating") showBubble();
+  }, [pet.mood, prefs.mode, showBubble]);
+  if (prefs.mode !== "floating") return null;
+  const handlePointerDown = (event) => {
+    if (event.button !== 0) return;
+    event.preventDefault();
+    event.currentTarget.setPointerCapture(event.pointerId);
+    drag.current = {
+      pointerId: event.pointerId,
+      startX: event.clientX,
+      startY: event.clientY,
+      originX: position.x,
+      originY: position.y,
+      x: position.x,
+      y: position.y,
+      moved: false
+    };
+    setDragging(true);
+  };
+  const handlePointerMove = (event) => {
+    const current = drag.current;
+    if (current === null || current.pointerId !== event.pointerId) return;
+    const next = clampPosition({
+      x: current.originX + event.clientX - current.startX,
+      y: current.originY + event.clientY - current.startY
+    });
+    if (Math.abs(event.clientX - current.startX) > 4 || Math.abs(event.clientY - current.startY) > 4) {
+      current.moved = true;
+    }
+    current.x = next.x;
+    current.y = next.y;
+    setPosition(next);
+  };
+  const handlePointerUp = (event) => {
+    const current = drag.current;
+    if (current === null || current.pointerId !== event.pointerId) return;
+    drag.current = null;
+    setDragging(false);
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId);
+    }
+    if (current.moved) setPetPosition(current.x, current.y);
+    else setBubbleOpen((open) => !open);
+  };
+  const handlePointerCancel = (event) => {
+    if (drag.current?.pointerId !== event.pointerId) return;
+    drag.current = null;
+    setDragging(false);
+  };
+  const handleKeyDown = (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault();
+    setBubbleOpen((open) => !open);
+  };
+  const bubbleOnLeft = position.x < 300;
+  return /* @__PURE__ */ (0, import_jsx_runtime30.jsxs)(
+    "div",
+    {
+      className: DesktopPet_default.layer,
+      style: { left: `${String(position.x)}px`, top: `${String(position.y)}px` },
+      "data-pet-mode": "floating",
+      children: [
+        bubbleOpen && /* @__PURE__ */ (0, import_jsx_runtime30.jsx)("div", { className: bubbleOnLeft ? `${DesktopPet_default.bubbleSlot} ${DesktopPet_default.bubbleLeft}` : `${DesktopPet_default.bubbleSlot} ${DesktopPet_default.bubbleRight}`, children: /* @__PURE__ */ (0, import_jsx_runtime30.jsx)(
+          PetBubble,
+          {
+            text: speech,
+            tone: pet.tone,
+            ...detail === void 0 ? {} : { detail },
+            ...pet.progress.total === 0 ? {} : { ratio: pet.progress.ratio },
+            variant: "floating",
+            tailSide: bubbleOnLeft ? "left" : "right",
+            onDismiss: () => {
+              setBubbleOpen(false);
+            },
+            dismissLabel: t("petHideBubble")
+          }
+        ) }),
+        /* @__PURE__ */ (0, import_jsx_runtime30.jsx)(
+          "div",
+          {
+            className: dragging ? `${DesktopPet_default.petAnchor} ${DesktopPet_default.dragging}` : DesktopPet_default.petAnchor,
+            role: "button",
+            tabIndex: 0,
+            "aria-label": t(petBubbleOpenLabel(bubbleOpen)),
+            "aria-expanded": bubbleOpen,
+            onPointerDown: handlePointerDown,
+            onPointerMove: handlePointerMove,
+            onPointerUp: handlePointerUp,
+            onPointerCancel: handlePointerCancel,
+            onKeyDown: handleKeyDown,
+            children: /* @__PURE__ */ (0, import_jsx_runtime30.jsx)(PetSprite, { mood: pet.mood, size: "desktop", art: petArt.art[pet.mood] })
+          }
+        ),
+        /* @__PURE__ */ (0, import_jsx_runtime30.jsxs)("div", { className: DesktopPet_default.controls, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime30.jsx)(
+            "button",
+            {
+              type: "button",
+              className: DesktopPet_default.control,
+              "aria-label": t(bubbleOpen ? "petHideBubble" : "petShowBubble"),
+              onClick: () => {
+                setBubbleOpen((open) => !open);
+              },
+              children: bubbleOpen ? "\xD7" : "\u2026"
+            }
+          ),
+          /* @__PURE__ */ (0, import_jsx_runtime30.jsx)(
+            "button",
+            {
+              type: "button",
+              className: DesktopPet_default.control,
+              "aria-label": t("petDockBack"),
+              onClick: () => {
+                setPetMode("docked");
+              },
+              children: "\u2302"
+            }
+          )
+        ] })
+      ]
+    }
+  );
+}
+function petBubbleOpenLabel(bubbleOpen) {
+  return bubbleOpen ? "petHideBubble" : "petShowBubble";
 }
 
 // packages/client/ui-settings-session-orchestrator/src/client/index.ts
@@ -23050,6 +28033,11 @@ var NS = "settings.sessionOrchestrator";
 var SESSION_OPEN_PARAM = "dsh-session";
 function optionalService(ctx, name) {
   return ctx.get(name);
+}
+function promptRequestId() {
+  const crypto2 = globalThis.crypto;
+  if (crypto2?.randomUUID !== void 0) return crypto2.randomUUID();
+  return `handsoff-${Date.now()}-${Math.random().toString(16).slice(2)}`;
 }
 function sessionSurface(ctx) {
   const workspace = optionalService(ctx, "uiWorkspace");
@@ -23060,9 +28048,32 @@ function sessionSurface(ctx) {
       navigator2.openSession(sessionId);
     },
     knows: (sessionId) => {
-      const snapshot = optionalService(ctx, "sessions")?.list.getSnapshot();
-      if (snapshot === void 0 || snapshot.phase !== "ready") return void 0;
-      return snapshot.byId[sessionId] !== void 0;
+      const snapshot3 = optionalService(ctx, "sessions")?.list.getSnapshot();
+      if (snapshot3 === void 0 || snapshot3.phase !== "ready") return void 0;
+      return snapshot3.byId[sessionId] !== void 0;
+    },
+    // Automated runs create Sessions on the Host, outside the browser's own
+    // Session creation, so the catalog can be ready and still stale. Pull once
+    // on demand so opening a finished run does not depend on a page reload.
+    refresh: async () => {
+      await optionalService(ctx, "sessions")?.refresh?.();
+    },
+    selectModel: async (sessionId, selection) => {
+      const remote = optionalService(ctx, "remote.session");
+      if (remote === void 0) throw new Error("the host exposes no Session model remote");
+      const result = await remote.selectModel({ sessionId, ...selection });
+      if (!result.ok) throw new Error(`${result.error.code}: ${result.error.message}`);
+    },
+    prompt: async (sessionId, text2) => {
+      const remote = optionalService(ctx, "remote.session");
+      if (remote === void 0) throw new Error("the host exposes no Session prompt remote");
+      const result = await remote.prompt({
+        requestId: promptRequestId(),
+        sessionId,
+        mode: "queue",
+        content: [{ type: "text", text: text2 }]
+      });
+      if (!result.ok) throw new Error(`${result.error.code}: ${result.error.message}`);
     },
     archived: (sessionId) => optionalService(ctx, "workspaces")?.list.getSnapshot().archivedSessionIds.includes(sessionId) === true,
     ...workspace.archiveSession === void 0 ? {} : {
@@ -23168,6 +28179,12 @@ function apply(ctx) {
     locale: NS,
     inject: () => face
   }, SessionNotice));
+  ctx.slots.inject("shell.overlay", () => ctx.slots.register({
+    name: "shell.overlay",
+    id: "session-orchestrator-desktop-pet",
+    locale: NS,
+    inject: () => face
+  }, DesktopPet));
   ctx.slots.inject("settings.section", () => ctx.slots.register({
     name: "settings.section",
     id: "session-orchestrator",

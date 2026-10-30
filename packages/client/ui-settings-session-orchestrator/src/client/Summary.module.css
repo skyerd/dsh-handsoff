@@ -9,7 +9,8 @@
   box-shadow: var(--dsw-shadow-lv1-blur);
 }
 
-.metric {
+.metric,
+.metricAction {
   display: flex;
   flex-direction: column-reverse;
   justify-content: flex-end;
@@ -18,8 +19,40 @@
   padding: 10px 14px;
 }
 
-.metric + .metric {
+.metric + .metric,
+.metricAction + .metric,
+.metric + .metricAction,
+.metricAction + .metricAction {
   border-left: 1px solid var(--dsw-alias-separator-primary);
+}
+
+.metricAction {
+  cursor: pointer;
+  transition: background-color 140ms ease;
+}
+
+.metricAction:hover {
+  background: var(--dsw-alias-bg-module-platform);
+}
+
+.metricAction:focus-visible {
+  outline: 2px solid var(--dsw-alias-border-l3);
+  outline-offset: -2px;
+}
+
+.labelLine {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  color: var(--dsw-alias-label-secondary);
 }
 
 .label {

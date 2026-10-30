@@ -25,7 +25,9 @@
     "cordis.patch.yml",
     "README.md",
     "README.en.md",
-    "LICENSE"
+    "LICENSE",
+    "ASSETS-LICENSE.md",
+    "THIRD_PARTY_NOTICES.md"
   ],
   "scripts": {
     "build:standalone": "node scripts/build-standalone.mjs",
@@ -40,7 +42,7 @@
     "orchestration",
     "task-queue"
   ],
-  "license": "MIT",
+  "license": "MIT AND CC-BY-3.0",
   "publishConfig": {
     "access": "public"
   },

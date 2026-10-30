@@ -24,6 +24,7 @@ import {
 import { en, zh, type SessionOrchestratorSettingsLocaleKey } from './locales.ts'
 import { SessionOrchestratorSection } from './Section.tsx'
 import { SessionNotice } from './SessionNotice.tsx'
+import { DesktopPet } from './DesktopPet.tsx'
 
 export type { SessionOrchestratorSectionProps } from './Section.tsx'
 export type {
@@ -70,6 +71,30 @@ interface SessionCatalog {
     }
     subscribe(listener: () => void): () => void
   }
+  /** Pull the Host catalog again; absent on a controller without an on-demand refresh. */
+  refresh?(): Promise<void>
+}
+
+/** The structural slice of the native Session remote the page drives. */
+interface HostSessionRemote {
+  selectModel(request: {
+    readonly sessionId: string
+    readonly provider: string
+    readonly model: string
+    readonly reasoningEffort?: string
+  }): Promise<{ readonly ok: true; readonly value: unknown } | {
+    readonly ok: false
+    readonly error: { readonly code: string; readonly message: string }
+  }>
+  prompt(request: {
+    readonly requestId: string
+    readonly sessionId: string
+    readonly mode: 'queue' | 'steer'
+    readonly content: readonly { readonly type: 'text'; readonly text: string }[]
+  }): Promise<{ readonly ok: true; readonly value: unknown } | {
+    readonly ok: false
+    readonly error: { readonly code: string; readonly message: string }
+  }>
 }
 
 /** The structural slice of `ctx.workspaces` this plugin reads archive state from. */
@@ -82,6 +107,13 @@ interface WorkspaceArchive {
 /** Read one optional service without a hard package dependency. */
 function optionalService<T>(ctx: ClientContext, name: string): T | undefined {
   return (ctx as unknown as { get(key: string): unknown }).get(name) as T | undefined
+}
+
+/** Mint one prompt admission identity the Host can deduplicate. */
+function promptRequestId(): string {
+  const crypto = globalThis.crypto as { randomUUID?: () => string } | undefined
+  if (crypto?.randomUUID !== undefined) return crypto.randomUUID()
+  return `handsoff-${Date.now()}-${Math.random().toString(16).slice(2)}`
 }
 
 /**
@@ -112,6 +144,29 @@ function sessionSurface(ctx: ClientContext): SessionOpenSurface | undefined {
       // proceeds and the Session controller resolves it.
       if (snapshot === undefined || snapshot.phase !== 'ready') return undefined
       return snapshot.byId[sessionId] !== undefined
+    },
+    // Automated runs create Sessions on the Host, outside the browser's own
+    // Session creation, so the catalog can be ready and still stale. Pull once
+    // on demand so opening a finished run does not depend on a page reload.
+    refresh: async () => {
+      await optionalService<SessionCatalog>(ctx, 'sessions')?.refresh?.()
+    },
+    selectModel: async (sessionId, selection) => {
+      const remote = optionalService<HostSessionRemote>(ctx, 'remote.session')
+      if (remote === undefined) throw new Error('the host exposes no Session model remote')
+      const result = await remote.selectModel({ sessionId, ...selection })
+      if (!result.ok) throw new Error(`${result.error.code}: ${result.error.message}`)
+    },
+    prompt: async (sessionId, text) => {
+      const remote = optionalService<HostSessionRemote>(ctx, 'remote.session')
+      if (remote === undefined) throw new Error('the host exposes no Session prompt remote')
+      const result = await remote.prompt({
+        requestId: promptRequestId(),
+        sessionId,
+        mode: 'queue',
+        content: [{ type: 'text', text }],
+      })
+      if (!result.ok) throw new Error(`${result.error.code}: ${result.error.message}`)
     },
     archived: (sessionId) =>
       optionalService<WorkspaceArchive>(ctx, 'workspaces')
@@ -314,6 +369,14 @@ export function apply(ctx: ClientContext): void {
     locale: NS,
     inject: () => face,
   }, SessionNotice))
+  // The fish can leave the settings page and float over the whole Harness
+  // desktop window. Its placement and opt-in live in browser-local storage.
+  ctx.slots.inject('shell.overlay', () => ctx.slots.register({
+    name: 'shell.overlay',
+    id: 'session-orchestrator-desktop-pet',
+    locale: NS,
+    inject: () => face,
+  }, DesktopPet))
   ctx.slots.inject('settings.section', () => ctx.slots.register({
     name: 'settings.section',
     id: 'session-orchestrator',

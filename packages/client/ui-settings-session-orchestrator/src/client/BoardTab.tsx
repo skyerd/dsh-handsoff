@@ -9,16 +9,23 @@
 
 import { useState } from 'react'
 import { Button, StateDot, Tag } from '@deepseek-ai/dsh-client-ui-primitives'
-import type { QueueDto, RunDto, TaskSummaryDto } from './contract.ts'
+import type { ModelPolicy, QueueDto, RunDto, TaskSummaryDto } from './contract.ts'
 import { runStateKey, type OrchestratorTranslate } from './copy.ts'
 import { canCancelRun, latestRunOf, runStateTone } from './model.ts'
 import { SelectField, TextAreaField } from './Fields.tsx'
+import {
+  ConversationDeleteDialog,
+  ConversationFollowUpDialog,
+  ConversationModelDialog,
+} from './ConversationDialogs.tsx'
+import { DangerConfirm } from './DangerConfirm.tsx'
 import { QueueDeleteDialog } from './QueueDeleteDialog.tsx'
 import { RenameDialog } from './RenameDialog.tsx'
 import { RowMenu } from './RowMenu.tsx'
 import { RunActions } from './RunActions.tsx'
 import { SessionRoute } from './SessionRoute.tsx'
 import { Summary } from './Summary.tsx'
+import type { ModelCatalogState } from './service.ts'
 import type { OrchestrationTabProps } from './TaskTab.tsx'
 import css from './BoardTab.module.css'
 
@@ -95,7 +102,7 @@ function orderedTasks(queue: QueueDto, tasks: readonly TaskSummaryDto[]): TaskSu
 }
 
 /** One task row with elapsed time, tokens, cache hit rate and conversation link. */
-function TaskRow({ task, run, now, t, actions, busy, child }: {
+function TaskRow({ task, run, now, t, actions, busy, child, queue, tasks, runs, models }: {
   readonly task: TaskSummaryDto
   readonly run: RunDto | undefined
   readonly now: number
@@ -103,12 +110,70 @@ function TaskRow({ task, run, now, t, actions, busy, child }: {
   readonly actions: OrchestrationTabProps['actions']
   readonly busy: boolean
   readonly child: boolean
+  readonly queue: QueueDto
+  readonly tasks: readonly TaskSummaryDto[]
+  readonly runs: readonly RunDto[]
+  readonly models: ModelCatalogState
 }) {
   const [detailsOpen, setDetailsOpen] = useState(false)
+  const [modelOpen, setModelOpen] = useState(false)
+  const [followOpen, setFollowOpen] = useState(false)
+  const [rerunOpen, setRerunOpen] = useState(false)
+  const [deleteOpen, setDeleteOpen] = useState(false)
   const elapsed = run === undefined ? 0 : (run.updatedAt || now) - run.createdAt
   const tokens = run?.pressure?.totalTokens ?? 0
   const hitRate = run?.health?.cacheHitRate
   const session = run?.session ?? task.session
+  const hasSession = session !== undefined
+  const active = run !== undefined && canCancelRun(run.state)
+  const conversationDisabled = !hasSession || active
+  const currentModel: ModelPolicy = run?.configSnapshot === undefined
+    ? task.model
+    : {
+      kind: 'fixed',
+      provider: run.configSnapshot.provider,
+      model: run.configSnapshot.model,
+      ...(run.configSnapshot.reasoningEffort === undefined
+        ? {}
+        : { reasoningEffort: run.configSnapshot.reasoningEffort }),
+    }
+  const started = new Set(runs.map(candidate => candidate.taskId))
+  const futureTasks = tasks.filter(candidate =>
+    candidate.queueId === queue.id
+    && candidate.id !== task.id
+    && !started.has(candidate.id))
+  const menuItems = [
+    {
+      id: 'switch-model',
+      label: t('conversationSwitchModel'),
+      disabled: conversationDisabled,
+      onSelect: () => { setModelOpen(true) },
+    },
+    {
+      id: 'follow-up',
+      label: t('conversationFollowUp'),
+      disabled: conversationDisabled,
+      onSelect: () => { setFollowOpen(true) },
+    },
+    {
+      id: 'rerun',
+      label: t('conversationRerun'),
+      disabled: conversationDisabled,
+      onSelect: () => { setRerunOpen(true) },
+    },
+    {
+      id: 'delete',
+      label: t('conversationDelete'),
+      tone: 'danger' as const,
+      disabled: conversationDisabled,
+      onSelect: () => { setDeleteOpen(true) },
+    },
+    {
+      id: 'run-actions',
+      label: detailsOpen ? t('conversationHideRunActions') : t('conversationRunActions'),
+      onSelect: () => { setDetailsOpen(value => !value) },
+    },
+  ]
   return (
     <li className={child ? `${css.row} ${css.childRow}` : css.row}>
       <div className={css.rowTop}>
@@ -126,15 +191,11 @@ function TaskRow({ task, run, now, t, actions, busy, child }: {
             disabled={busy}
             onOpen={(link) => { void actions.openSession(link) }}
           />
-          <Button
-            size="sm"
-            variant="ghost"
+          <RowMenu
+            label={`${t('conversationMenu')} ${task.title}`}
             disabled={busy}
-            aria-label={`${t('boardDetails')} ${task.title}`}
-            onClick={() => { setDetailsOpen(value => !value) }}
-          >
-            {detailsOpen ? t('boardHideDetails') : t('boardDetails')}
-          </Button>
+            items={menuItems}
+          />
         </div>
       </div>
       <div className={css.metrics}>
@@ -167,6 +228,57 @@ function TaskRow({ task, run, now, t, actions, busy, child }: {
             )}
         </div>
       )}
+      <ConversationModelDialog
+        t={t}
+        open={modelOpen}
+        models={models}
+        currentModel={currentModel}
+        futureTasks={futureTasks}
+        muted={actions.modelSwitchPromptMuted(queue.id)}
+        disabled={busy}
+        onCancel={() => { setModelOpen(false) }}
+        onApply={(choice) => {
+          void actions.switchConversationModel({
+            taskId: task.id,
+            ...(session === undefined ? {} : { sessionId: session.sessionId }),
+            model: choice.model,
+            ...(choice.futureTaskIds.length === 0 ? {} : { applyFutureTaskIds: choice.futureTaskIds }),
+            ...(choice.muteQueuePrompt ? { muteQueuePrompt: true } : {}),
+          }).then((ok) => { if (ok) setModelOpen(false) })
+        }}
+      />
+      <ConversationFollowUpDialog
+        t={t}
+        open={followOpen}
+        disabled={busy}
+        onCancel={() => { setFollowOpen(false) }}
+        onApply={(prompt) => {
+          void actions.followUpConversation({ taskId: task.id, prompt })
+            .then((ok) => { if (ok) setFollowOpen(false) })
+        }}
+      />
+      <DangerConfirm
+        t={t}
+        open={rerunOpen}
+        title={t('conversationRerunTitle')}
+        body={t('conversationRerunBody', { title: task.title })}
+        disabled={busy}
+        onCancel={() => { setRerunOpen(false) }}
+        onConfirm={() => {
+          void actions.rerunConversation(task.id, t('conversationRerun')).then((ok) => { if (ok) setRerunOpen(false) })
+        }}
+      />
+      <ConversationDeleteDialog
+        t={t}
+        open={deleteOpen}
+        disabled={busy}
+        hasSession={hasSession}
+        onCancel={() => { setDeleteOpen(false) }}
+        onConfirm={(archiveSession) => {
+          void actions.deleteConversation({ taskId: task.id, archiveSession })
+            .then((ok) => { if (ok) setDeleteOpen(false) })
+        }}
+      />
     </li>
   )
 }
@@ -240,6 +352,10 @@ function QueueBlock({ queue, tasks, runs, now, t, live, actions, busy }: {
                     actions={actions}
                     busy={busy}
                     child={task.parentTaskId !== undefined}
+                    queue={queue}
+                    tasks={rows}
+                    runs={runs}
+                    models={live.models}
                   />
                 ))}
               </ul>
@@ -410,6 +526,17 @@ export function BoardTab({ t, live, drafts, now, actions }: OrchestrationTabProp
                 actions={actions}
                 busy={busy}
                 child={task.parentTaskId !== undefined}
+                queue={live.queues.find(candidate => candidate.id === task.queueId) ?? {
+                  id: task.queueId,
+                  title: task.queueId,
+                  taskOrder: [],
+                  paused: false,
+                  state: 'idle',
+                  revision: 0,
+                }}
+                tasks={live.tasks}
+                runs={live.runs}
+                models={live.models}
               />
             ))}
           </ul>

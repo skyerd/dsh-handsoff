@@ -5,10 +5,47 @@
   padding: 16px;
   border: 1px solid var(--dsw-alias-border-l2);
   border-radius: var(--dsw-radius-lg);
-  background:
-    linear-gradient(180deg, color-mix(in srgb, var(--dsw-alias-state-business-tertiary) 42%, transparent) 0%, transparent 112px),
-    var(--dsw-alias-bg-layer-1);
+  background: var(--dsw-alias-bg-layer-1);
   box-shadow: var(--dsw-shadow-lv1-blur);
+}
+
+/* The composer's fields float on the panel: no outlines unless the pointer or
+ * keyboard focus reaches one of them. */
+.panel input,
+.panel textarea,
+.panel [aria-haspopup='listbox'] {
+  border: none;
+  border-radius: var(--dsw-radius-md);
+  background: transparent;
+  box-shadow: none;
+  transition: background-color 140ms ease, box-shadow 140ms ease;
+}
+
+.panel input:hover:not(:disabled),
+.panel textarea:hover:not(:disabled),
+.panel [aria-haspopup='listbox']:hover:not(:disabled),
+.panel [aria-haspopup='listbox'][aria-expanded='true'] {
+  background: var(--dsw-alias-bg-layer-1);
+  box-shadow: var(--dsw-shadow-lv1-blur);
+}
+
+.panel input:focus-visible,
+.panel textarea:focus-visible,
+.panel [aria-haspopup='listbox']:focus-visible {
+  outline: none;
+  background: var(--dsw-alias-bg-layer-1);
+  box-shadow:
+    0 0 0 1px var(--dsw-alias-border-l3),
+    var(--dsw-shadow-lv1-blur);
+}
+
+.panel [aria-haspopup='listbox'] > span {
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.panel [aria-haspopup='listbox'] > svg:last-child {
+  margin-left: 2px;
 }
 
 .header {
@@ -74,23 +111,30 @@
 .promptList {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0;
 }
 
 .taskRow {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 12px;
+  padding: 12px 4px;
   box-sizing: border-box;
-  border: 1px solid var(--dsw-alias-border-l2);
+  border: none;
+  border-top: 1px solid var(--dsw-alias-separator-primary);
   border-radius: var(--dsw-radius-md);
-  background: var(--dsw-alias-bg-layer-2);
-  transition: border-color 160ms ease;
+  background: transparent;
+  transition: background-color 140ms ease, box-shadow 140ms ease;
 }
 
+.taskRow:first-child {
+  border-top: none;
+}
+
+.taskRow:hover,
 .taskRow:focus-within {
-  border-color: var(--dsw-alias-border-l3);
+  background: var(--dsw-alias-bg-layer-1);
+  box-shadow: var(--dsw-shadow-lv1-blur);
 }
 
 .taskHead {
@@ -103,15 +147,13 @@
 .stepBadge {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
+  justify-content: flex-start;
+  min-width: 18px;
   flex: none;
-  border: 1px solid var(--dsw-alias-border-l2);
-  border-radius: 50%;
-  background: var(--dsw-alias-bg-layer-1);
-  color: var(--dsw-alias-label-secondary);
-  font-size: 11px;
+  border: none;
+  background: transparent;
+  color: var(--dsw-alias-label-tertiary);
+  font-size: 10.5px;
   font-weight: 600;
   font-variant-numeric: tabular-nums;
 }
@@ -146,7 +188,7 @@
 
 .taskRowCollapsed {
   gap: 7px;
-  padding: 10px 12px;
+  padding: 10px 4px;
 }
 
 .taskPreview {

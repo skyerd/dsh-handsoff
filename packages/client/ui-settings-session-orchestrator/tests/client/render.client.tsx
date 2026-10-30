@@ -118,6 +118,12 @@ export function createActions(): OrchestratorActions {
     retryRun: vi.fn(async (_runId: string) => {}),
     skipRun: vi.fn(async (_runId: string, _actor: string, _reason: string) => {}),
     openSession: vi.fn(async (_session: SessionLinkDto) => {}),
+    switchConversationModel: vi.fn(async () => true),
+    followUpConversation: vi.fn(async () => true),
+    rerunConversation: vi.fn(async () => true),
+    deleteConversation: vi.fn(async () => true),
+    modelSwitchPromptMuted: vi.fn(() => false),
+    muteModelSwitchPrompt: vi.fn(() => {}),
     dismissError: vi.fn((_id: string) => {}),
     clearErrors: vi.fn(() => {}),
   }
