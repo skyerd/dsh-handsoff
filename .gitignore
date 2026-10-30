@@ -2,6 +2,8 @@
 # so that git-source installs need no build scripts)
 packages/**/lib/
 standalone/.build/
+# generated typert Remote face (rebuilt by scripts/build-standalone.mjs)
+standalone/vendor/
 dist/
 *.tsbuildinfo
 

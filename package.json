@@ -1,7 +1,6 @@
 {
   "name": "dsh-handsoff",
   "version": "0.1.0",
-  "private": true,
   "type": "module",
   "description": "HandsOff — 把任务流水线交给 AI 自己排队执行、自己盯进度、自己纠偏；dsh（deepseek-harness）的会话编排插件。Write pipelines up front, let AI run, watch and correct itself.",
   "repository": {
@@ -20,6 +19,19 @@
     "./package.json": "./package.json",
     "./cordis.patch.yml": "./cordis.patch.yml"
   },
+  "files": [
+    "lib/",
+    "client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "README.en.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build:standalone": "node scripts/build-standalone.mjs",
+    "check:standalone": "node scripts/check-standalone.mjs",
+    "prepublishOnly": "npm run build:standalone && npm run check:standalone"
+  },
   "keywords": [
     "dsh",
     "dsh-plugin",
@@ -29,6 +41,9 @@
     "task-queue"
   ],
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "node": ">=22"
   },
@@ -49,6 +64,10 @@
         "@deepseek-ai/dsh-client-ui-workspace"
       ]
     }
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "zod": "^4.4.3"
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "^4.0.2",

@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="docs/images/handsoff-avatar.png" width="140" alt="HandsOff — dsh 会话编排插件头像"/>
+<img src="https://raw.githubusercontent.com/skyerd/dsh-handsoff/main/docs/images/handsoff-avatar.png" width="140" alt="HandsOff — dsh 会话编排插件头像"/>
 
 # dsh-handsoff
 
-**简体中文** | [English](README.en.md)
+**简体中文** | [English](https://github.com/skyerd/dsh-handsoff/blob/main/README.en.md)
 
 ![license](https://img.shields.io/badge/license-MIT-2631463) ![dsh](https://img.shields.io/badge/dsh-0.2.0--rc.2-2f6f4f) ![status](https://img.shields.io/badge/status-%E5%AE%9E%E9%AA%8C%E9%98%B6%E6%AE%B5-f0a441) ![i18n](https://img.shields.io/badge/i18n-%E4%B8%AD%E6%96%87%20%C2%B7%20English-4b6fff)
 
@@ -55,17 +55,32 @@
 
 **创建任务队列**——写好提示词，点「开始执行」：
 
-<img src="docs/images/queue-create.png" width="820" alt="HandsOff 创建任务队列界面"/>
+<img src="https://raw.githubusercontent.com/skyerd/dsh-handsoff/main/docs/images/queue-create.png" width="820" alt="HandsOff 创建任务队列界面"/>
 
 **自动处理**——四条本地规则盯着每一次运行：
 
-<img src="docs/images/auto-handling.png" width="820" alt="HandsOff 自动处理规则界面"/>
+<img src="https://raw.githubusercontent.com/skyerd/dsh-handsoff/main/docs/images/auto-handling.png" width="820" alt="HandsOff 自动处理规则界面"/>
 
 ## 安装
 
 插件针对 **deepseek-harness 0.2.0-rc.2** 开发（上游迭代很快，更高版本请先核对补丁是否仍适用）。
 
-### 方式 A：挂载到 harness 源码构建（当前推荐）
+### 方式 A：npm 一键安装（推荐）
+
+安装者只下载运行时产物（`lib/`、`client.js` 与插件清单），不含源码和构建脚本：
+
+```bash
+dsh plugin --profile web add dsh-handsoff
+```
+
+安装完成后重启一次 dsh web。`--profile` 填你实际使用的 profile 名称。
+
+> 也可以先本地试用：`dsh plugin --profile <name> add <包路径>`。
+> 兼容范围：dsh 0.2.x（按 0.2.0-rc.2 开发）。
+
+### 方式 B：源码挂载（贡献者 / 本地调试）
+
+只有要改插件源码时才需要 clone 仓库，并把两个包挂进 harness 源码构建：
 
 ```bash
 # 1. 获取与插件匹配的上游源码
@@ -86,20 +101,8 @@ pnpm install
 pnpm run build:web      # 或 pnpm run dev:web 一边改一边看
 ```
 
-> Windows 用户：第 2 步直接用资源管理器复制两个文件夹即可；第 3 步若 `git apply` 失败，可按 [docs/integration.md](docs/integration.md) 手动修改 4 个上游文件，改动都很小。
-
-### 方式 B：一键安装（推荐）
-
-仓库根目录已是一个可直接安装的 dsh 组合包——构建产物随仓库提交，安装零构建脚本、零依赖下载：
-
-```bash
-dsh plugin --profile web add skyerd/dsh-handsoff
-```
-
-安装完成后重启一次 dsh web。`--profile` 填你实际使用的 profile 名称。
-
-> 也可以先本地试用：`dsh plugin --profile <name> add <本仓库路径>`。
-> 兼容范围：dsh 0.2.x（按 0.2.0-rc.2 开发）。
+> Windows 用户：第 2 步直接用资源管理器复制两个文件夹即可；第 3 步若 `git apply` 失败，可按 [docs/integration.md](https://github.com/skyerd/dsh-handsoff/blob/main/docs/integration.md) 手动修改 4 个上游文件，改动都很小。
+> clone 与安装互不影响：最终用户走 npm 安装，源码路线只用于开发和贡献。
 
 本仓库已按 [DSH Plugin Hub](https://dsh-plugin.org) 的收录要求发布：公开仓库、`dsh-plugin` topic、可复制的安装命令、标准 `apply(ctx)` 插件形态。
 
@@ -136,7 +139,7 @@ dsh plugin --profile web add skyerd/dsh-handsoff
 
 ```
 dsh-handsoff/
-├── package.json / cordis.patch.yml / client.js / lib/   # 仓库根即独立插件包（git 安装零构建）
+├── package.json / cordis.patch.yml / client.js / lib/   # 仓库根即插件包：npm 只发运行时（files 白名单），git 安装零构建
 ├── packages/
 │   ├── orchestrator/session-orchestrator/          # 宿主侧：队列、调度、监工、交接
 │   │   ├── src/                                    #   34 个源文件（pipeline/scheduler/pressure/warden…）
@@ -153,6 +156,30 @@ dsh-handsoff/
 ```
 
 测试随 harness 工作区运行：挂载后执行 `pnpm run typecheck`，再按上游 vitest 配置运行两个包的测试。
+
+### 维护者：重建仓库根构建产物
+
+根目录的 `lib/` 与 `client.js` 随仓库提交，安装时零构建；只有改动两个包的源码后才需要重建：
+
+```bash
+npm install                 # 构建依赖：esbuild、zod
+npm run build:standalone    # 重新生成 lib/index.js、lib/host.js、client.js
+npm run check:standalone    # 校验 bundle 结构与 Remote 方法覆盖
+```
+
+`standalone/vendor/typert.remote-client.js` 由 harness 的 typert generator 生成，不纳入版本控制。脚本在文件缺失时，会从 `packages/orchestrator/session-orchestrator/lib/`（就地构建产物）或 `DSH_HARNESS_ROOT` 指向的 harness 工作区复制。
+
+### 维护者：发布到 npm
+
+`package.json` 的 `files` 白名单只放行运行时：`lib/`、`client.js`、`cordis.patch.yml`、两份 README 与 `LICENSE`；源码、测试、`scripts/`、`docs/` 都不会进入 tarball。
+
+```bash
+npm pack --dry-run    # 检查 tarball，应只包含白名单文件
+npm version patch     # 或 minor / major
+npm publish           # prepublishOnly 会先重建产物并跑结构校验
+```
+
+发布后安装者执行 `dsh plugin --profile web add dsh-handsoff`，无需 clone 仓库。
 
 ## 参与贡献
 

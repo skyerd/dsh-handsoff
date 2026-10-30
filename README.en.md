@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="docs/images/handsoff-avatar.png" width="140" alt="HandsOff — a session orchestration plugin for dsh"/>
+<img src="https://raw.githubusercontent.com/skyerd/dsh-handsoff/main/docs/images/handsoff-avatar.png" width="140" alt="HandsOff — a session orchestration plugin for dsh"/>
 
 # dsh-handsoff
 
-[简体中文](README.md) | **English**
+[简体中文](https://github.com/skyerd/dsh-handsoff/blob/main/README.md) | **English**
 
 ![license](https://img.shields.io/badge/license-MIT-2631463) ![dsh](https://img.shields.io/badge/dsh-0.2.0--rc.2-2f6f4f) ![status](https://img.shields.io/badge/status-experimental-f0a441) ![i18n](https://img.shields.io/badge/i18n-%E4%B8%AD%E6%96%87%20%C2%B7%20English-4b6fff)
 
@@ -52,17 +52,32 @@ So we turned the supervisor into a plugin: stop staring at progress bars; agree 
 
 **Create task queue** — write the prompts, press start:
 
-<img src="docs/images/queue-create.png" width="820" alt="HandsOff queue creation"/>
+<img src="https://raw.githubusercontent.com/skyerd/dsh-handsoff/main/docs/images/queue-create.png" width="820" alt="HandsOff queue creation"/>
 
 **Automation** — four local rules watching every run:
 
-<img src="docs/images/auto-handling.png" width="820" alt="HandsOff automation rules"/>
+<img src="https://raw.githubusercontent.com/skyerd/dsh-handsoff/main/docs/images/auto-handling.png" width="820" alt="HandsOff automation rules"/>
 
 ## Install
 
 The plugin targets **deepseek-harness 0.2.0-rc.2** (upstream moves fast — re-check the patch against newer versions).
 
-### Option A: overlay into a harness source build (recommended today)
+### Option A: one-command npm install (recommended)
+
+Installers only download the runtime artifacts (`lib/`, `client.js` and the plugin manifest) — no sources, no build scripts:
+
+```bash
+dsh plugin --profile web add dsh-handsoff
+```
+
+Restart dsh web once after installing. Replace `--profile` with the profile you actually use.
+
+> To try it out locally first: `dsh plugin --profile <name> add <path to this package>`.
+> Compatibility: dsh 0.2.x (developed against 0.2.0-rc.2).
+
+### Option B: overlay into a harness source build (contributors / local debugging)
+
+Clone the repository only when you need to change plugin sources, then overlay both packages onto a harness checkout:
 
 ```bash
 # 1. Get a matching upstream checkout
@@ -83,20 +98,8 @@ pnpm install
 pnpm run build:web      # or pnpm run dev:web while iterating
 ```
 
-> On Windows: copy the two folders with Explorer in step 2; if `git apply` fails in step 3, follow [docs/integration.md](docs/integration.md) to edit the 4 upstream files by hand — each change is small.
-
-### Option B: one-command install (recommended)
-
-The repository root IS an installable dsh bundle — build artifacts are committed, so installation runs no build scripts and downloads nothing:
-
-```bash
-dsh plugin --profile web add skyerd/dsh-handsoff
-```
-
-Restart dsh web once after installing. Replace `--profile` with the profile you actually use.
-
-> To try it out locally first: `dsh plugin --profile <name> add <path to this repo>`.
-> Compatibility: dsh 0.2.x (developed against 0.2.0-rc.2).
+> On Windows: copy the two folders with Explorer in step 2; if `git apply` fails in step 3, follow [docs/integration.md](https://github.com/skyerd/dsh-handsoff/blob/main/docs/integration.md) to edit the 4 upstream files by hand — each change is small.
+> Clone and install are separate: end users install from npm; the source route is for development and contributions.
 
 This repository follows the [DSH Plugin Hub](https://dsh-plugin.org) listing requirements: public repo, `dsh-plugin` topic, a copyable install command, and a standard `apply(ctx)` plugin form.
 
@@ -133,7 +136,7 @@ This project is **experimental**:
 
 ```
 dsh-handsoff/
-├── package.json / cordis.patch.yml / client.js / lib/   # repo root = installable bundle (zero-build git install)
+├── package.json / cordis.patch.yml / client.js / lib/   # repo root = plugin package: npm ships runtime only (files whitelist); zero-build git install
 ├── packages/
 │   ├── orchestrator/session-orchestrator/          # host: queues, scheduler, supervisor, handoff
 │   │   ├── src/                                    #   34 source files (pipeline/scheduler/pressure/warden…)
@@ -150,6 +153,30 @@ dsh-handsoff/
 ```
 
 Tests run inside the harness workspace: after overlaying, run `pnpm run typecheck`, then run both packages' suites with the upstream vitest config.
+
+### Maintainers: rebuilding the root bundle
+
+`lib/` and `client.js` at the repo root are committed, so installs need no build. Rebuild only after changing either package's source:
+
+```bash
+npm install                 # build deps: esbuild, zod
+npm run build:standalone    # regenerates lib/index.js, lib/host.js, client.js
+npm run check:standalone    # structural + Remote coverage checks
+```
+
+`standalone/vendor/typert.remote-client.js` is emitted by the harness typert generator and is not committed. When missing, the script copies it from `packages/orchestrator/session-orchestrator/lib/` (in-place build) or from the workspace pointed to by `DSH_HARNESS_ROOT`.
+
+### Maintainers: publishing to npm
+
+The `files` whitelist in `package.json` ships runtime only: `lib/`, `client.js`, `cordis.patch.yml`, both READMEs and `LICENSE`. Sources, tests, `scripts/` and `docs/` never enter the tarball.
+
+```bash
+npm pack --dry-run    # inspect the tarball — whitelisted files only
+npm version patch     # or minor / major
+npm publish           # prepublishOnly rebuilds and runs the structural check
+```
+
+After publishing, installers run `dsh plugin --profile web add dsh-handsoff` — no clone required.
 
 ## Contributing
 
