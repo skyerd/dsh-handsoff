@@ -182,10 +182,23 @@ export interface RunSupervisorOptions {
   /** Agent creation seam; pass `ctx.agents` in production. */
   readonly agents: SupervisorAgents
   /**
-   * Optional real Workspace registry. Production passes `ctx.workspaceRegistry`;
-   * without it the supervisor keeps the legacy cwd-only behavior.
+   * Optional real Workspace registry, resolved once at composition time.
+   *
+   * Prefer {@link workspaceSource} in a live host: a service read at composition
+   * time can still be absent because Cordis starts entries concurrently and
+   * publishes a service only after its own initialization finished.
    */
   readonly workspaces?: SupervisorWorkspaces
+  /**
+   * Resolve the real Workspace registry at the moment a Session is created.
+   *
+   * The source is re-read for every launch and resume, so a composition that
+   * mounts the registry after this supervisor was composed still attaches each
+   * Session to the selected Workspace. Takes precedence over
+   * {@link workspaces}; `undefined` keeps the legacy cwd-only behavior for a
+   * host that mounted no registry at all.
+   */
+  readonly workspaceSource?: () => SupervisorWorkspaces | undefined
   /**
    * Optional agent preset registry. Production passes `ctx.agentPresets`; a
    * fixed preset is then resolved before creation and mounted on the Agent's
@@ -515,6 +528,7 @@ export class RunSupervisor {
   private readonly liveSessions: SupervisorLiveSessions
   private readonly agents: SupervisorAgents
   private readonly workspaces: SupervisorWorkspaces | undefined
+  private readonly workspaceSource: (() => SupervisorWorkspaces | undefined) | undefined
   private readonly presets: SupervisorPresets | undefined
   private readonly now: () => number
   private readonly convergenceRounds: number
@@ -542,6 +556,7 @@ export class RunSupervisor {
     this.liveSessions = options.liveSessions
     this.agents = options.agents
     this.workspaces = options.workspaces
+    this.workspaceSource = options.workspaceSource
     this.presets = options.presets
     this.now = options.now ?? (() => Date.now())
     this.convergenceRounds = options.convergenceRounds ?? 8
@@ -879,7 +894,9 @@ export class RunSupervisor {
    * When the registry is mounted, a stale or hand-typed workspace id is a hard
    * pre-submission failure: creating a Session outside every Workspace is the
    * exact behavior this gate exists to prevent. A composition without the
-   * registry keeps the legacy cwd-only path for tests and headless hosts.
+   * registry keeps the legacy cwd-only path for tests and headless hosts. The
+   * registry is read through {@link currentWorkspaces} rather than a value
+   * captured at composition, because a live host may mount it later.
    * @param task - task whose workspace must be resolved.
    * @returns the Workspace, or undefined when no registry is mounted.
    * @throws OrchestratorError when the registry is mounted and the id is unknown.
@@ -891,8 +908,9 @@ export class RunSupervisor {
         `task '${task.id}' has no prompt; refusing to create an empty session`,
       )
     }
-    if (this.workspaces === undefined) return undefined
-    const workspace = this.workspaces.get(task.workspaceId)
+    const workspaces = this.currentWorkspaces()
+    if (workspaces === undefined) return undefined
+    const workspace = workspaces.get(task.workspaceId)
     if (workspace === undefined) {
       throw new OrchestratorError(
         'not-found',
@@ -900,6 +918,19 @@ export class RunSupervisor {
       )
     }
     return workspace
+  }
+
+  /**
+   * Read the Workspace registry a launch must validate against.
+   *
+   * A source is preferred over the static composition value: Cordis starts
+   * profile entries concurrently, so the registry may be published after this
+   * supervisor was built. Re-reading it per attempt means the very first task
+   * launched after startup still joins the Workspace the user selected.
+   * @returns the registry as it exists now, or undefined when none is mounted.
+   */
+  private currentWorkspaces(): SupervisorWorkspaces | undefined {
+    return this.workspaceSource === undefined ? this.workspaces : this.workspaceSource()
   }
 
   /**

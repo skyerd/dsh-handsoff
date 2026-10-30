@@ -133,6 +133,33 @@ describe('DshHostSessionAdapter', () => {
     if (!usage.ok) expect(usage.failure.reason).toBe('unsupported')
   })
 
+  it('sees a workspace registry that mounts after the adapter was composed', async () => {
+    const ctx = new Context()
+    const agents = new FakeAgents(ctx)
+    const ws = workspace()
+    let mounted: DshHostWorkspaces | undefined
+    const adapter = createDshHostSessionAdapter({
+      agents,
+      events: { onSessionEvent: listener => ctx.on('session/event', listener) },
+      workspaces: () => mounted,
+    })
+
+    expect(adapter.capabilities().capabilities.listWorkspaces.status).toBe('unsupported')
+    mounted = workspaces(ws)
+    expect(await adapter.listWorkspaces()).toMatchObject({
+      ok: true,
+      value: [{ id: 'ws-1', name: 'Harness project', path: 'C:/work/harness' }],
+    })
+
+    const created = await adapter.createSession({
+      sessionId: 'session-host-late',
+      workspaceId: 'ws-1',
+      prompt: 'implement the parser',
+    })
+    expect(created.ok).toBe(true)
+    expect(ws.attached.map(id => String(id))).toEqual(['session-host-late'])
+  })
+
   it('maps Session events and reads measured usage', async () => {
     const ctx = new Context()
     const agents = new FakeAgents(ctx)

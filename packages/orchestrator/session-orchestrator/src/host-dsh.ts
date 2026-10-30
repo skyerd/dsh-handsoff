@@ -70,6 +70,16 @@ export interface DshHostWorkspaces {
   get(id: string): DshHostWorkspace | undefined
 }
 
+/**
+ * The Workspace registry, or a resolver read at the moment the adapter needs it.
+ *
+ * A live composition may publish `workspaceRegistry` after this adapter was
+ * composed, because Cordis starts entries concurrently and a service becomes
+ * visible only after its own initialization finished. A resolver therefore
+ * reports the registry that exists now instead of freezing a startup-time miss.
+ */
+export type DshHostWorkspaceSource = DshHostWorkspaces | (() => DshHostWorkspaces | undefined)
+
 /** Agent creation face the adapter needs; `ctx.agents` satisfies it. */
 export interface DshHostAgents {
   /**
@@ -147,8 +157,8 @@ export interface DshHostSessionOptions {
   readonly agents: DshHostAgents
   /** Session event source; pass `ctx.on('session/event', ...)`. */
   readonly events: DshHostEventSource
-  /** Optional workspace registry; absent disables workspace listing and binding. */
-  readonly workspaces?: DshHostWorkspaces
+  /** Optional workspace registry, or a resolver read per call; absent disables workspace listing and binding. */
+  readonly workspaces?: DshHostWorkspaceSource
   /** Optional live Session directory; absent disables usage reads. */
   readonly liveSessions?: DshHostLiveSessions
   /** Optional token meter; absent disables usage reads. */
@@ -259,8 +269,9 @@ export class DshHostSessionAdapter implements HostSessionAdapter {
   /** Complete capability matrix derived from the services actually supplied. */
   capabilities(): HostSessionCapabilityReport {
     const support = this.options.support
+    const workspaces = this.workspaces()
     const states: Record<HostSessionCapability, HostCapabilityState> = {
-      listWorkspaces: this.options.workspaces === undefined
+      listWorkspaces: workspaces === undefined
         ? { status: 'unsupported', reason: 'the host mounted no Workspace registry' }
         : { status: 'supported', detail: 'registered Workspaces only' },
       createSession: { status: 'supported', detail: 'creates one real Agent and delivers the first prompt' },
@@ -310,7 +321,7 @@ export class DshHostSessionAdapter implements HostSessionAdapter {
           : 'the host mounted no Workspace registry',
       )
     }
-    return succeeded((this.options.workspaces?.list() ?? []).map(workspace => ({
+    return succeeded((this.workspaces()?.list() ?? []).map(workspace => ({
       id: workspace.id,
       name: workspace.name,
       path: workspace.path,
@@ -323,9 +334,10 @@ export class DshHostSessionAdapter implements HostSessionAdapter {
     if (request.prompt.trim() === '') {
       return failedCapability(this.host, capability, 'invalid-request', 'a host session needs a non-empty first prompt')
     }
+    const workspaces = this.workspaces()
     const workspace = request.workspaceId === undefined
       ? undefined
-      : this.options.workspaces?.get(request.workspaceId)
+      : workspaces?.get(request.workspaceId)
     if (request.workspaceId !== undefined && workspace === undefined) {
       return failedCapability(
         this.host,
@@ -505,6 +517,12 @@ export class DshHostSessionAdapter implements HostSessionAdapter {
     }
     this.pendingModels.set(sessionId, selection)
     return succeeded(undefined)
+  }
+
+  /** Read the Workspace registry this adapter validates against. */
+  private workspaces(): DshHostWorkspaces | undefined {
+    const source = this.options.workspaces
+    return typeof source === 'function' ? source() : source
   }
 }
 

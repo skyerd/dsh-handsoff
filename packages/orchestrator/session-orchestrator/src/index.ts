@@ -149,6 +149,7 @@ export type {
   DshHostSessionOptions,
   DshHostTokenMeter,
   DshHostWorkspace,
+  DshHostWorkspaceSource,
   DshHostWorkspaces,
 } from './host-dsh.ts'
 export { WorkBuddyHostSessionAdapter, createWorkBuddyHostSessionAdapter, discoverWorkBuddyCli } from './host-workbuddy.ts'

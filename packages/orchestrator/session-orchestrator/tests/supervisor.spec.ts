@@ -226,6 +226,33 @@ describe('RunSupervisor workspace binding', () => {
       await f.close()
     }
   })
+
+  it('attaches a session to a registry that mounts after the supervisor was composed', async () => {
+    const workspaces = new FakeWorkspaces({ 'workspace-1': '/canonical/workspace' })
+    let mounted: SupervisorWorkspaces | undefined
+    const f = await fixture({ supervisor: { workspaceSource: () => mounted } })
+    try {
+      // Cordis starts profile entries concurrently: the registry is still absent
+      // when the supervisor is composed, and becomes available before a launch.
+      mounted = workspaces
+      const { agent } = await begin(f)
+      expect(f.agents.createOptions[0]?.meta).toMatchObject({ cwd: '/canonical/workspace' })
+      expect(workspaces.attached).toEqual([agent.session.id])
+    } finally {
+      await f.close()
+    }
+  })
+
+  it('keeps the cwd-only path when the composition mounted no workspace registry', async () => {
+    const f = await fixture({ supervisor: { workspaceSource: () => undefined } })
+    try {
+      const { agent } = await begin(f)
+      expect(f.agents.createOptions[0]?.meta).toMatchObject({ cwd: '/work/one' })
+      expect(agent.session.id).toBeDefined()
+    } finally {
+      await f.close()
+    }
+  })
 })
 
 describe('RunSupervisor success boundary', () => {

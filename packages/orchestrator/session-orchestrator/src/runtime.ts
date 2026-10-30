@@ -2020,7 +2020,6 @@ export async function apply(ctx: Context, config: RuntimeOptions): Promise<() =>
   const hostInstanceId = store.getSettings().hostInstanceId
   const modelWarden = modelReviewerOf(ctx, config)
   const defaults = optionalService<ModelSelectionPort>(ctx, 'agentDefaultModel')
-  const workspaces = optionalService<SupervisorWorkspaces>(ctx, 'workspaceRegistry')
   const presets = optionalService<SupervisorPresets>(ctx, 'agentPresets')
   const supervisor = new Supervisor({
     ctx,
@@ -2028,7 +2027,12 @@ export async function apply(ctx: Context, config: RuntimeOptions): Promise<() =>
     sessions: durability,
     liveSessions: live,
     agents: defaultingAgents(ctx.agents, defaults),
-    ...(workspaces === undefined ? {} : { workspaces }),
+    // Read on every launch, not once here: Cordis starts profile entries
+    // concurrently and publishes `workspaceRegistry` only after its own storage
+    // initialization finished. A value captured at mount time can therefore be
+    // undefined even though the user just selected a registered Workspace, and
+    // every Session would then be created outside it and surface as ungrouped.
+    workspaceSource: () => optionalService<SupervisorWorkspaces>(ctx, 'workspaceRegistry'),
     ...(presets === undefined ? {} : { presets }),
   })
   const durableSessions = durability as unknown as LocalSessionOrchestratorOptions['durableSessions']
@@ -2041,7 +2045,6 @@ export async function apply(ctx: Context, config: RuntimeOptions): Promise<() =>
     hostInstanceId: hostInstanceId === 'unclaimed' ? 'session-orchestrator-runtime' : hostInstanceId,
   })
   const meter = optionalService<TokenMeterPort>(ctx, 'tokenMeter')
-  const hostWorkspaces = optionalService<DshHostWorkspaces>(ctx, 'workspaceRegistry')
   // Capability facts are read once from the composition. The adapter reports a
   // feature only when this Context really mounted the service behind it; a
   // missing service stays disabled with its reason instead of being assumed.
@@ -2058,7 +2061,9 @@ export async function apply(ctx: Context, config: RuntimeOptions): Promise<() =>
       agents: ctx.agents,
       events: { onSessionEvent: listener => ctx.on('session/event', listener) },
       liveSessions: live as DshHostLiveSessions,
-      ...(hostWorkspaces === undefined ? {} : { workspaces: hostWorkspaces }),
+      // The adapter reads the resolver per call for the same reason the
+      // supervisor does: a registry that mounts later is still reachable.
+      workspaces: () => optionalService<DshHostWorkspaces>(ctx, 'workspaceRegistry'),
       ...(meter === undefined ? {} : { meter }),
       ...(optionalService<unknown>(ctx, 'webServer') === undefined
         ? {}
