@@ -1,5 +1,6 @@
-/* Chibi whale-maid sprite. The character image is embedded or user-supplied;
-   every motion here is CSS so imported strips stay lightweight. */
+/* “ds鲸鲸娘 / 大肥鱼” sprite grid. The character image is the MIT sheet from
+   zhouwu97/ds-pet; every motion here is frame timing plus CSS, so the package
+   stays light and imported strips keep working. */
 
 .root {
   position: relative;
@@ -15,21 +16,35 @@
 
 .sizeInline {
   width: 96px;
-  height: 96px;
+  height: 104px;
 }
 
 .sizeDesktop {
   width: 144px;
-  height: 144px;
+  height: 156px;
 }
 
 .glow {
   position: absolute;
-  inset: 8% 6% 2%;
+  inset: 4% 2% 10%;
   z-index: 0;
   border-radius: 50%;
-  background: radial-gradient(circle at 50% 45%, rgb(91 164 255 / 26%) 0%, rgb(91 164 255 / 8%) 45%, transparent 70%);
-  animation: petGlow 4.4s ease-in-out infinite;
+  background: radial-gradient(circle at 50% 46%, rgb(86 146 255 / 30%) 0%, rgb(86 146 255 / 9%) 46%, transparent 70%);
+  animation: petGlow 4.6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.shadow {
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  z-index: 0;
+  width: 54%;
+  height: 10%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgb(16 34 79 / 26%) 0%, rgb(16 34 79 / 10%) 55%, transparent 72%);
+  transform: translateX(-50%);
+  animation: petShadow 4.6s ease-in-out infinite;
   pointer-events: none;
 }
 
@@ -37,9 +52,9 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  transform-origin: 50% 85%;
-  filter: drop-shadow(0 8px 10px rgb(18 36 92 / 16%));
-  animation: petFloat 4.4s ease-in-out infinite;
+  transform-origin: 50% 88%;
+  filter: drop-shadow(0 7px 9px rgb(17 38 92 / 18%));
+  animation: petFloat 4.6s ease-in-out infinite;
   will-change: transform;
 }
 
@@ -52,13 +67,13 @@
   image-rendering: auto;
 }
 
-/* Working: faster bob and a little water spout. */
+/* Working: a small water spout over the whale hood. */
 .spout {
   position: absolute;
   top: 2%;
-  left: 16%;
-  width: 46%;
-  height: 28%;
+  left: 40%;
+  width: 22%;
+  height: 20%;
   opacity: 0;
   pointer-events: none;
 }
@@ -66,78 +81,80 @@
 .spout i {
   position: absolute;
   display: block;
-  width: 18%;
-  height: 38%;
+  width: 24%;
+  height: 34%;
   border-radius: 50% 50% 45% 45%;
-  background: linear-gradient(180deg, #b8f2ff 0%, #6fdcff 100%);
-  transform: rotate(-8deg);
+  background: linear-gradient(180deg, #c8f5ff 0%, #66c8ff 100%);
+  transform: rotate(-10deg);
+  box-shadow: 0 0 6px rgb(115 206 255 / 55%);
 }
 
 .spout i:nth-child(2) {
-  left: 34%;
-  top: -8%;
-  height: 52%;
-  transform: rotate(7deg);
+  left: 38%;
+  top: -22%;
+  height: 44%;
+  transform: rotate(8deg);
 }
 
 .spout i:nth-child(3) {
-  left: 66%;
-  top: 12%;
-  height: 30%;
-  transform: rotate(16deg);
+  left: 72%;
+  top: 8%;
+  height: 26%;
+  transform: rotate(20deg);
 }
 
+/* Idle bubbles drifting beside the whale tail. */
 .bubbles {
   position: absolute;
   inset: 0;
-  opacity: 0.35;
+  opacity: 0.28;
   pointer-events: none;
 }
 
 .bubbles i {
   position: absolute;
   display: block;
+  width: 7px;
+  height: 7px;
+  left: 84%;
+  top: 42%;
   border-radius: 50%;
-  background: rgb(255 255 255 / 85%);
+  background: rgb(255 255 255 / 88%);
   box-shadow: 0 0 0 1px rgb(111 192 255 / 45%);
-  width: 8px;
-  height: 8px;
-  left: 82%;
-  top: 38%;
-  animation: petBubbleRise 5.5s ease-in-out infinite;
+  animation: petBubbleRise 5.6s ease-in-out infinite;
 }
 
 .bubbles i:nth-child(2) {
   width: 5px;
   height: 5px;
-  left: 90%;
-  top: 28%;
-  animation-delay: -1.8s;
+  left: 91%;
+  top: 32%;
+  animation-delay: -1.9s;
 }
 
 .bubbles i:nth-child(3) {
-  width: 10px;
-  height: 10px;
-  left: 74%;
-  top: 18%;
-  animation-delay: -3.4s;
+  width: 9px;
+  height: 9px;
+  left: 77%;
+  top: 24%;
+  animation-delay: -3.6s;
 }
 
 .attentionMark {
   position: absolute;
-  top: 1%;
-  right: 3%;
+  top: 4%;
+  right: 5%;
   display: grid;
   place-items: center;
-  width: 23px;
-  height: 23px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
-  background: #f0a441;
+  background: linear-gradient(180deg, #ffc95b 0%, #f0a12f 100%);
   color: #fff;
   font-size: 14px;
   font-weight: 800;
   line-height: 1;
-  box-shadow: 0 3px 10px rgb(208 133 23 / 35%);
+  box-shadow: 0 3px 10px rgb(208 133 23 / 38%);
   opacity: 0;
   pointer-events: none;
 }
@@ -149,7 +166,7 @@
   color: #ffe08a;
   font-size: 20px;
   line-height: 1;
-  text-shadow: 0 0 8px rgb(255 224 138 / 70%);
+  text-shadow: 0 0 8px rgb(255 224 138 / 75%);
   opacity: 0;
   pointer-events: none;
 }
@@ -157,11 +174,11 @@
 .sweat {
   position: absolute;
   top: 28%;
-  right: 7%;
-  width: 10px;
-  height: 14px;
+  right: 8%;
+  width: 9px;
+  height: 13px;
   border-radius: 55% 55% 60% 0;
-  background: linear-gradient(180deg, #cdefff 0%, #84d7ff 100%);
+  background: linear-gradient(180deg, #d6f5ff 0%, #7fd2ff 100%);
   transform: rotate(-42deg);
   opacity: 0;
   pointer-events: none;
@@ -169,17 +186,17 @@
 
 .zzz {
   position: absolute;
-  top: 6%;
-  right: 2%;
+  top: 8%;
+  right: 3%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 1px;
-  color: #7fb5ff;
+  color: #9cc8ff;
   font-size: 15px;
   font-weight: 800;
   line-height: 0.9;
-  text-shadow: 0 0 6px rgb(180 220 255 / 80%);
+  text-shadow: 0 0 6px rgb(180 220 255 / 85%);
   opacity: 0;
   pointer-events: none;
 }
@@ -200,20 +217,20 @@
 }
 
 .moodIdle .bubbles {
-  opacity: 0.3;
+  opacity: 0.32;
 }
 
 .moodWorking .character {
-  animation-duration: 1.55s;
+  animation-duration: 1.65s;
 }
 
 .moodWorking .spout {
   opacity: 1;
-  animation: petSpout 1.2s ease-in-out infinite;
+  animation: petSpout 1.15s ease-in-out infinite;
 }
 
 .moodWorking .bubbles {
-  opacity: 0.9;
+  opacity: 0.85;
 }
 
 .moodWorking .bubbles i {
@@ -221,16 +238,16 @@
 }
 
 .moodAttention .character {
-  animation: petHop 0.9s cubic-bezier(0.28, 0.7, 0.35, 1) infinite;
+  animation: petHop 0.95s cubic-bezier(0.28, 0.7, 0.35, 1) infinite;
 }
 
 .moodAttention .attentionMark {
   opacity: 1;
-  animation: petBang 0.9s ease-in-out infinite;
+  animation: petBang 0.95s ease-in-out infinite;
 }
 
 .moodDone .character {
-  animation: petCelebrate 1.1s cubic-bezier(0.3, 0.75, 0.35, 1) 2;
+  animation: petCelebrate 1.15s cubic-bezier(0.3, 0.75, 0.35, 1) 2;
 }
 
 .moodDone .sparkles {
@@ -239,7 +256,7 @@
 }
 
 .moodDone .bubbles {
-  opacity: 0.75;
+  opacity: 0.8;
 }
 
 .moodError .character {
@@ -268,17 +285,22 @@
 }
 
 .moodSleeping .bubbles {
-  opacity: 0.18;
+  opacity: 0.16;
 }
 
 @keyframes petGlow {
-  0%, 100% { opacity: 0.6; transform: scale(1); }
-  50% { opacity: 0.95; transform: scale(1.04); }
+  0%, 100% { opacity: 0.62; transform: scale(1); }
+  50% { opacity: 0.96; transform: scale(1.05); }
+}
+
+@keyframes petShadow {
+  0%, 100% { opacity: 0.8; transform: translateX(-50%) scaleX(1); }
+  50% { opacity: 0.55; transform: translateX(-50%) scaleX(0.9); }
 }
 
 @keyframes petFloat {
-  0%, 100% { transform: translateY(0) rotate(-1.2deg); }
-  50% { transform: translateY(-5px) rotate(1.2deg); }
+  0%, 100% { transform: translateY(0) rotate(-1.1deg); }
+  50% { transform: translateY(-4px) rotate(1.1deg); }
 }
 
 @keyframes petBubbleRise {
@@ -289,12 +311,12 @@
 
 @keyframes petSpout {
   0%, 100% { transform: translateY(0) scaleY(0.9); opacity: 0.65; }
-  50% { transform: translateY(-6px) scaleY(1.08); opacity: 1; }
+  50% { transform: translateY(-5px) scaleY(1.08); opacity: 1; }
 }
 
 @keyframes petHop {
   0%, 100% { transform: translateY(0) rotate(0); }
-  35% { transform: translateY(-10px) rotate(-2deg); }
+  35% { transform: translateY(-9px) rotate(-2deg); }
   60% { transform: translateY(0) rotate(1deg); }
 }
 
@@ -306,9 +328,9 @@
 
 @keyframes petCelebrate {
   0%, 100% { transform: translateY(0) rotate(0); }
-  25% { transform: translateY(-12px) rotate(-7deg); }
+  25% { transform: translateY(-11px) rotate(-7deg); }
   55% { transform: translateY(-4px) rotate(6deg); }
-  75% { transform: translateY(-9px) rotate(-3deg); }
+  75% { transform: translateY(-8px) rotate(-3deg); }
 }
 
 @keyframes petSparkle {

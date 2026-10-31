@@ -12,6 +12,8 @@
 import type { RunDto, TaskSummaryDto } from './contract.ts'
 import type { OrchestratorTranslate } from './copy.ts'
 import type { OrchestratorLiveState } from './service.ts'
+import type { StudioState } from './studioStore.ts'
+import { studioText } from './studioStore.ts'
 
 /** Visual state of the butler fish. */
 export type PetMood =
@@ -242,4 +244,39 @@ export function petDetail(pet: PetSnapshot, t: OrchestratorTranslate, notices = 
   return notices > 0
     ? t('petProgressDetailNotices', { ...counts, count: notices })
     : t('petProgressDetail', counts)
+}
+
+/**
+ * The line the AI currently wants to say in the shared chat bubble.
+ *
+ * The butler conversation and proactive notices are front-end owned, so the
+ * bubble can speak them both inside the settings page and out on the desktop.
+ * When the butler has not spoken yet, the caller falls back to the progress
+ * sentence from {@link petSpeech}; the progress bar and detail line still
+ * report the live queue state either way.
+ * @param studio - local butler conversation and reminders.
+ * @param t - the page's dictionary function.
+ * @returns the newest butler line, the newest reminder body, or undefined.
+ */
+export function petChatLine(
+  studio: Pick<StudioState, 'messages' | 'notices'>,
+  t: OrchestratorTranslate,
+): string | undefined {
+  let latest: StudioState['messages'][number] | undefined
+  for (let index = studio.messages.length - 1; index >= 0; index -= 1) {
+    const message = studio.messages[index]
+    if (message !== undefined && message.role === 'butler' && message.at > 0) {
+      latest = message
+      break
+    }
+  }
+  const notice = studio.notices[0]
+  // A newer reminder outranks an older reply, so the bubble always carries the
+  // most recent thing the AI wanted the user to know.
+  if (notice !== undefined && (latest === undefined || notice.at >= latest.at)) {
+    return studioText(notice.body, t)
+  }
+  if (latest !== undefined) return studioText(latest.text, t)
+  if (notice !== undefined) return studioText(notice.body, t)
+  return undefined
 }

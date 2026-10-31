@@ -10,7 +10,7 @@ import { Summary } from './Summary.tsx'
 import {
   dismissNotice, sendMemoryMessage, studioText, useStudio,
 } from './studioStore.ts'
-import { petDetail, petSnapshotOf, petSpeech } from './petModel.ts'
+import { petChatLine, petDetail, petSnapshotOf, petSpeech } from './petModel.ts'
 import { togglePetMode, usePetPrefs } from './petPrefs.ts'
 import { usePetArt } from './petArtStore.ts'
 import { PetArtDialog } from './PetArtDialog.tsx'
@@ -121,7 +121,7 @@ export function MemoryTab({ t, live, now }: OrchestrationTabProps) {
   const scheduledQueues = live.queues.filter(queue => queue.state !== 'running')
   const armed = studio.notices.length + (defaultNoticeHidden ? 0 : 1)
   const pet = petSnapshotOf(live, now)
-  const petSentence = petSpeech(pet, t)
+  const petSentence = petChatLine(studio, t) ?? petSpeech(pet, t)
   const petSubline = petDetail(pet, t, armed)
   const mood = t(moodKeyOf(now))
   const contextUsed = 840 + studio.messages.length * 36 + studio.notices.length * 20
@@ -239,7 +239,7 @@ export function MemoryTab({ t, live, now }: OrchestrationTabProps) {
           {floating
             ? (
               <div className={css.petPreview} aria-hidden="true">
-                <PetSprite mood={pet.mood} size="inline" art={petArt.art[pet.mood]} />
+                <PetSprite mood={pet.mood} size="inline" art={petArt.art[pet.mood]} glow={petPrefs.glow} />
               </div>
             )
             : (
@@ -250,7 +250,7 @@ export function MemoryTab({ t, live, now }: OrchestrationTabProps) {
                 aria-expanded={petBubbleOpen}
                 onClick={() => { setPetBubbleOpen(open => !open) }}
               >
-                <PetSprite mood={pet.mood} size="inline" art={petArt.art[pet.mood]} />
+                <PetSprite mood={pet.mood} size="inline" art={petArt.art[pet.mood]} glow={petPrefs.glow} />
               </button>
             )}
           <div className={css.personaText}>

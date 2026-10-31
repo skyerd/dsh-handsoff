@@ -1,32 +1,66 @@
 # Third-party notices
 
-HandsOff is a **split-licence** project:
+HandsOff is an **MIT-licensed** project:
 
 - **Code:** MIT — see [`LICENSE`](LICENSE).
-- **Bundled default artwork:** CC-BY 3.0 — see [`ASSETS-LICENSE.md`](ASSETS-LICENSE.md).
+- **Bundled default artwork:** MIT — the `ds鲸鲸娘 / 大肥鱼` sprite sheet from
+  [`zhouwu97/ds-pet`](https://github.com/zhouwu97/ds-pet); see
+  [`ASSETS-LICENSE.md`](ASSETS-LICENSE.md).
 - **User-imported artwork:** not bundled and not sublicensed; it stays in the
   user’s browser and keeps its own licence.
 
-The package manifest therefore declares `MIT AND CC-BY-3.0`.
+The package manifest therefore declares `MIT`.
 
 This file records the projects we reviewed while choosing the pet architecture,
 the licensing reason each one was or was not reused, and the required
 attribution. Reviews were checked against public sources on 2026-10-30.
 
-## Bundled artwork and required attribution
+## Bundled artwork and attribution
 
-### Q-style cartoon mermaid — **used**
+### `zhouwu97/ds-pet` — **used**
 
-- **Author:** Aeihu
-- **Source:** <https://opengameart.org/content/q-style-cartoon-mermaid>
-- **Licence:** CC-BY 3.0 — <https://creativecommons.org/licenses/by/3.0/>
-- **What we used:** the base chibi mermaid illustration, cropped and downscaled.
-- **Changes:** we composited an original navy/white maid bodice, skirt, apron,
-  lace headdress, puffed sleeves and whale emblem; selected three expressions
-  (`idle`, `done`, `sleep`); encoded them as WebP data URIs.
-- **Where:** `packages/client/ui-settings-session-orchestrator/src/client/petArt.ts`
-- **Attribution requirement:** credit “Q-style cartoon mermaid by Aeihu,
-  CC-BY 3.0, via OpenGameArt.org” when redistributing the artwork.
+- **Author:** zhouwu97 and ds-pet contributors.
+- **Source:** <https://github.com/zhouwu97/ds-pet>
+- **Licence:** **MIT** — <https://github.com/zhouwu97/ds-pet/blob/main/LICENSE>
+- **What it is:** the “ds鲸鲸娘 / 大肥鱼” Work Pets v2 sprite sheet for Codex,
+  DeepSeek Harness and the web: 1536 × 2288 px, 8 × 11 cells of 192 × 208,
+  57 action frames and 16 gaze frames.
+- **What we used:** the sprite sheet as the bundled default character.
+  We cleared the tiny baked-in “哦鲸鲸…” label from each cell, downscaled the
+  sheet to 1152 × 1716, and encoded it as a quality-92 WebP data URI
+  (about 0.56 MB) so the npm package stays under 10 MB.
+- **Where:** `packages/client/ui-settings-session-orchestrator/src/client/petArt.ts`;
+  timing table in `petFrames.ts`.
+- **Attribution requirement:** keep the MIT notice and credit the source
+  repository when redistributing the artwork. The character is fan-made and is
+  not an official DeepSeek asset; nothing here implies endorsement by DeepSeek.
+- **Source asset hash:** `codex/asset-info.json` records SHA-256
+  `9ddd3bcaad42ee348f9afce7ed12a39c14541b40cfdbf654c2880017e70be6ee` for the
+  original PNG.
+
+### Lucide — icon vocabulary **used as reference**
+
+- **Source:** <https://github.com/lucide-icons/lucide>
+- **Licence:** **ISC** — <https://github.com/lucide-icons/lucide/blob/main/LICENSE>
+- **What it is:** a 24 × 24, 1.8-stroke outline icon set.
+- **What we used:** the rail icons (`EllipsisIcon`, `HomeIcon`, `EyeIcon`,
+  `EyeOffIcon`, `ExpandIcon`, `MinimizeIcon`) are inline SVG paths written in
+  that vocabulary. No Lucide package, font or sprite is bundled; the icons are
+  ordinary MIT-licensed source files under `PetIcons.tsx`.
+- **Where:** `packages/client/ui-settings-session-orchestrator/src/client/PetIcons.tsx`.
+- **ISC notice (retained because the geometry is derived from Lucide):**
+
+  ```text
+  ISC License
+
+  Copyright (c) for portions of Lucide are held by Cole Bemis 2013-2022 as
+  part of Feather (MIT). All other copyright (c) for Lucide are held by
+  Lucide Contributors 2022.
+
+  Permission to use, copy, modify, and/or distribute this software for any
+  purpose with or without fee is hereby granted, provided that the above
+  copyright notice and this permission notice appear in all copies.
+  ```
 
 ## User-supplied Live2D model — not bundled
 
@@ -51,10 +85,10 @@ attribution. Reviews were checked against public sources on 2026-10-30.
   PNG/WebP frames only; it does not read `.moc3` / `.model3.json` directly. A
   user who wants to use the model should keep it in VTube Studio (the author’s
   recommended software) or export frames locally and import them.
-- **If you want the model embedded as the default:** obtain written permission
-  from the original author first and accept the much larger runtime and memory
-  footprint. Without that permission, even a “personal non-commercial” label
-  cannot replace the licence the author actually granted.
+- **If you want the Live2D model embedded:** obtain written permission from the
+  original author first and accept the much larger runtime and memory footprint.
+  Without that permission, even a “personal non-commercial” label cannot replace
+  the licence the author actually granted.
 
 ## Projects reviewed, not bundled
 
@@ -125,22 +159,23 @@ in this repository or its npm package would be redistribution.
 
 Two supported paths instead:
 
-1. **Bundled default:** the CC-BY 3.0 chibi whale maid above, which permits
-   commercial use and modifications with attribution.
+1. **Bundled default:** the MIT-licensed `ds鲸鲸娘 / 大肥鱼` sprite sheet above,
+   which permits reuse, modification and redistribution with the MIT notice.
 2. **Local personal import:** the “Custom artwork” dialog stores the user’s
    selected whale-maid PNGs only in that browser. Nothing is uploaded, bundled
    or redistributed. The user is responsible for having permission to use them.
 
-“DeepSeek” is a trademark of DeepSeek. The bundled chibi whale maid is a
-project mascot derived from a CC-BY 3.0 mermaid, not an official DeepSeek asset,
-and nothing here implies endorsement by DeepSeek.
+“DeepSeek” is a trademark of DeepSeek. The bundled whale maid is a community
+fan work from `zhouwu97/ds-pet`, not an official DeepSeek asset, and nothing
+here implies endorsement by DeepSeek.
 
 ## Assets in this repository
 
 | Asset | Location | Licence |
 |---|---|---|
-| Bundled whale-maid artwork (derived from Aeihu’s mermaid) | `PetSprite` data URIs in `petArt.ts` | CC-BY 3.0, © Aeihu; modifications © skyerd and dsh-handsoff contributors |
-| Pet code (sprite renderer, bubble, overlay, state model, local importer) | `PetSprite.*`, `PetBubble.*`, `DesktopPet.*`, `petModel.ts`, `petPrefs.ts`, `petArtStore.ts`, `PetArtDialog.*` | MIT, © skyerd and dsh-handsoff contributors |
+| Bundled ds鲸鲸娘 / 大肥鱼 sprite sheet | `PetSprite` data URI in `petArt.ts` | MIT, © zhouwu97 and ds-pet contributors; derivative © skyerd and dsh-handsoff contributors |
+| Pet code (sprite renderer, frame timing, bubble, right-click rail, overlay, state model, local importer) | `PetSprite.*`, `petFrames.ts`, `PetBubble.*`, `PetRail.*`, `PetIcons.tsx`, `DesktopPet.*`, `petModel.ts`, `petPrefs.ts`, `petArtStore.ts`, `PetArtDialog.*` | MIT, © skyerd and dsh-handsoff contributors |
+| Rail line icons (inline SVG) | `PetIcons.tsx` | ISC-style geometry from [Lucide](https://github.com/lucide-icons/lucide); paths authored inline, © skyerd and dsh-handsoff contributors |
 | User-imported sprite files | Browser IndexedDB only; never committed or published | Not licensed by this project; follows the user’s own licence |
 
 If you later add a third-party sprite sheet, sound or font, record the exact

@@ -41,7 +41,6 @@ So we turned the supervisor into a plugin: stop staring at progress bars; agree 
 ## What it does
 
 - **Task queue**: create a pipeline with a name, a folder and an ordered list of prompts. Tasks run top-to-bottom, with an optional "run with previous item" for parallelism.
-- **Fish-memory pet**: a CC-BY 3.0 chibi whale maid (derived from Aeihu's Q-style mermaid, with an original maid outfit) reacts to queue progress with six moods (`idle / working / attention / done / error / sleeping`) and a compact speech bubble. It can be dragged out of the settings page into a floating layer over the whole Harness desktop window; placement stays in browser-local storage. A local "Custom artwork" importer accepts PNG/WebP sprite files, stores them in IndexedDB only, and never bundles or redistributes them. Live2D `.moc3` / `model3.json` models are not imported directly: the popular DeepSeek-chan model forbids redistributing its complete files, its runtime is about 60 MB, and the recommended route is VTube Studio or exporting PNG frames locally for the importer.
 - **Four-stage template**: opt in via "More options" to generate Architecture → Breakdown → Implement → Test acceptance in one click; every stage prompt embeds your brief and reads the artifacts the previous stage left in `docs/pipeline`.
 - **Parallel board**: every task under five fixed statuses (running / needs response / waiting / paused / ended), with one-click access to its conversation.
 - **Automation (local rules, 0 tokens)**: context at 60% triggers a reorganization and re-queue; 20 minutes of silence triggers a progress question, then a pause; cache hit rate below 90% splits the remaining work, below 50% interrupts immediately; globally stop every queue when usable samples fall below 50%.
@@ -115,7 +114,9 @@ This repository follows the [DSH Plugin Hub](https://dsh-plugin.org) listing req
 
 > Queues, tasks and supervision records live in the local `session_orchestrator` storage domain and back up with your session data.
 
-## ⚠️ Experimental
+The **Fish memory** tab hosts the butler fish. Its speech card is comic-style: a black border, white paper and black ink in light mode, inverted to a white border, near-black paper and white ink in dark mode. Move the fish to the desktop and **right-click it** to open the left-side control rail — resize (96–240 px), hide or show the aura, show or hide the bubble, or dock it back. Left-click is deliberately unused and reserved for a future character interaction. Placement, size and glow preferences are stored in the browser only.
+
+## Experimental
 
 This project is **experimental**:
 
@@ -187,7 +188,7 @@ Issues and PRs are welcome — rule tuning, host adapters and translations are g
 
 **Code: [MIT](LICENSE) © skyerd and dsh-handsoff contributors.**
 
-**Bundled pet artwork: [CC-BY 3.0](ASSETS-LICENSE.md), derived from Aeihu's “Q-style cartoon mermaid”, © Aeihu; modifications © skyerd and dsh-handsoff contributors.** The package therefore declares `MIT AND CC-BY-3.0`. Files imported through the local “Custom artwork” dialog are not bundled, are not sublicensed here, and keep their own licence.
+**Bundled pet artwork: [MIT](ASSETS-LICENSE.md), the “ds鲸鲸娘 / 大肥鱼” sprite sheet from [`zhouwu97/ds-pet`](https://github.com/zhouwu97/ds-pet), © zhouwu97 and ds-pet contributors; derivative © skyerd and dsh-handsoff contributors.** The package therefore declares `MIT`. Files imported through the local “Custom artwork” dialog are not bundled, are not sublicensed here, and keep their own licence.
 
 Upstream [deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) is also MIT-licensed, Copyright (c) 2026 DeepSeek. The page avatar is the project's own artwork. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for third-party references, licence differences and the local-import policy.
 

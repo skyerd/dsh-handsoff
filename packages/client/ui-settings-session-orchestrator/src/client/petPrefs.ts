@@ -13,20 +13,46 @@ import { useSyncExternalStore } from 'react'
 /** Where the fish currently lives. */
 export type PetMode = 'docked' | 'floating'
 
-/** Persisted pet placement. */
+/** Smallest and largest desktop sprite width, in CSS pixels. */
+export const PET_SCALE_MIN = 96
+
+/** Default desktop sprite width, in CSS pixels. */
+export const PET_SCALE_DEFAULT = 144
+
+/** Largest desktop sprite width, in CSS pixels. */
+export const PET_SCALE_MAX = 240
+
+/** Persisted pet placement and appearance. */
 export interface PetPrefs {
   readonly mode: PetMode
   /** Viewport x in CSS pixels, or null to use the default corner. */
   readonly x: number | null
   /** Viewport y in CSS pixels, or null to use the default corner. */
   readonly y: number | null
+  /** Desktop sprite width in CSS pixels. */
+  readonly scale: number
+  /** Whether the soft aura and ground shadow are drawn behind the fish. */
+  readonly glow: boolean
 }
 
 /** Storage key owned by this plugin. */
 const STORAGE_KEY = 'dsh-handsoff:pet-prefs'
 
 /** Stable default shared by every subscriber. */
-const DEFAULTS: PetPrefs = { mode: 'docked', x: null, y: null }
+const DEFAULTS: PetPrefs = {
+  mode: 'docked',
+  x: null,
+  y: null,
+  scale: PET_SCALE_DEFAULT,
+  glow: true,
+}
+
+/** Clamp a width to the range the rail exposes. */
+function scaleValue(value: unknown): number {
+  return typeof value === 'number' && Number.isFinite(value)
+    ? Math.min(PET_SCALE_MAX, Math.max(PET_SCALE_MIN, Math.round(value)))
+    : PET_SCALE_DEFAULT
+}
 
 /** Read the stored placement, tolerating private mode and malformed JSON. */
 function read(): PetPrefs {
@@ -40,6 +66,8 @@ function read(): PetPrefs {
       mode: record.mode === 'floating' ? 'floating' : 'docked',
       x: typeof record.x === 'number' && Number.isFinite(record.x) ? record.x : null,
       y: typeof record.y === 'number' && Number.isFinite(record.y) ? record.y : null,
+      scale: scaleValue(record.scale),
+      glow: record.glow !== false,
     }
   } catch {
     return DEFAULTS
@@ -60,7 +88,13 @@ const listeners = new Set<() => void>()
 
 /** Replace state and notify the two mounted trees. */
 function publish(next: PetPrefs): void {
-  if (next.mode === state.mode && next.x === state.x && next.y === state.y) return
+  if (
+    next.mode === state.mode
+    && next.x === state.x
+    && next.y === state.y
+    && next.scale === state.scale
+    && next.glow === state.glow
+  ) return
   state = next
   write(state)
   for (const listener of listeners) listener()
@@ -110,6 +144,24 @@ export function togglePetMode(): void {
  */
 export function setPetPosition(x: number, y: number): void {
   publish({ ...state, x, y })
+}
+
+/**
+ * Remember the desktop sprite width.
+ * @param scale - width in CSS pixels; clamped to the rail's range.
+ */
+export function setPetScale(scale: number): void {
+  publish({ ...state, scale: scaleValue(scale) })
+}
+
+/** Flip the soft aura and ground shadow behind the fish. */
+export function togglePetGlow(): void {
+  publish({ ...state, glow: !state.glow })
+}
+
+/** Show or hide the soft aura and ground shadow. */
+export function setPetGlow(glow: boolean): void {
+  publish({ ...state, glow })
 }
 
 /** Forget the saved position so the next desktop show uses the default corner. */

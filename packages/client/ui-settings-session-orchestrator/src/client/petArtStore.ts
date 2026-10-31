@@ -1,25 +1,27 @@
 /**
  * Default and user-supplied artwork for the butler fish.
  *
- * The bundled art is CC-BY 3.0 (see `ASSETS-LICENSE.md`). User-supplied sprite
- * sheets are kept only in this browser's IndexedDB; they are never uploaded,
- * never embedded in the package and never leave the machine. This keeps the
- * code MIT while letting a person use a locally licensed, non-commercial
- * character such as the `dsh-whale-maid` sprites.
+ * The bundled art is the MIT-licensed “ds鲸鲸娘 / 大肥鱼” 8×11 sprite grid
+ * (see `ASSETS-LICENSE.md`). User-supplied sprite sheets are kept only in this
+ * browser's IndexedDB; they are never uploaded, never embedded in the package
+ * and never leave the machine. This keeps the code MIT while letting a person
+ * use a locally licensed, non-commercial character.
  *
  * @module @deepseek-ai/dsh-client-ui-settings-session-orchestrator/client/petArtStore
  */
 
 import { useSyncExternalStore } from 'react'
-import { PET_ART } from './petArt.ts'
+import { PET_SPRITE } from './petArt.ts'
 import type { PetMood } from './petModel.ts'
 
-/** One drawable image: a static picture or a horizontal frame strip. */
+/** One drawable image: a static picture, a strip, or the bundled sprite grid. */
 export interface PetArtSource {
   /** Object URL or bundled data URI. */
   readonly src: string
-  /** Number of square frames laid out horizontally. */
-  readonly frames: number
+  /** Number of cells laid out horizontally. */
+  readonly columns: number
+  /** Number of rows; user-imported strips always use one. */
+  readonly rows: number
   /** Whether this image came from local user storage. */
   readonly custom: boolean
 }
@@ -64,15 +66,23 @@ const MOOD_SOURCES: Readonly<Record<PetMood, readonly string[]>> = {
   sleeping: ['sleep', 'wake', 'idle'],
 }
 
+/** The bundled MIT sprite grid, shared by every mood. */
+const BUNDLED_ART: PetArtSource = {
+  src: PET_SPRITE.src,
+  columns: PET_SPRITE.columns,
+  rows: PET_SPRITE.rows,
+  custom: false,
+}
+
 /** Bundled fallback for each mood. */
 const DEFAULT_ART: PetArtMap = {
-  connecting: { src: PET_ART.idle, frames: 1, custom: false },
-  idle: { src: PET_ART.idle, frames: 1, custom: false },
-  working: { src: PET_ART.idle, frames: 1, custom: false },
-  attention: { src: PET_ART.idle, frames: 1, custom: false },
-  done: { src: PET_ART.done, frames: 1, custom: false },
-  error: { src: PET_ART.idle, frames: 1, custom: false },
-  sleeping: { src: PET_ART.sleep, frames: 1, custom: false },
+  connecting: BUNDLED_ART,
+  idle: BUNDLED_ART,
+  working: BUNDLED_ART,
+  attention: BUNDLED_ART,
+  done: BUNDLED_ART,
+  error: BUNDLED_ART,
+  sleeping: BUNDLED_ART,
 }
 
 /** IndexedDB identity. */
@@ -175,7 +185,7 @@ function sourceForMood(
     const record = records.get(key)
     const url = objectUrls.get(key)
     if (record !== undefined && url !== undefined) {
-      return { src: url, frames: record.frames, custom: true }
+      return { src: url, columns: record.frames, rows: 1, custom: true }
     }
   }
   return undefined

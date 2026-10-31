@@ -1,0 +1,140 @@
+/* Right-click control rail. It sits just outside the sprite, vertically
+   centred, and only mounts while the fish menu is open. */
+
+.rail {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.railLeft {
+  right: calc(100% + 8px);
+}
+
+.railRight {
+  left: calc(100% + 8px);
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  /* Leaves room for future actions without overflowing a short viewport. */
+  max-height: min(60vh, 420px);
+  overflow-y: auto;
+  pointer-events: auto;
+  scrollbar-width: thin;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid var(--dsw-alias-border-l2);
+  border-radius: 10px;
+  background: var(--dsw-alias-bg-layer-1);
+  color: var(--dsw-alias-label-primary);
+  box-shadow: 0 3px 10px rgb(0 0 0 / 14%);
+  cursor: pointer;
+  transition:
+    transform 140ms ease,
+    background 140ms ease,
+    border-color 140ms ease,
+    box-shadow 140ms ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  background: var(--dsw-alias-bg-layer-2);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 14px rgb(0 0 0 / 18%);
+}
+
+.button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.button[data-active='true'] {
+  border-color: currentColor;
+  box-shadow:
+    0 3px 10px rgb(0 0 0 / 14%),
+    inset 0 0 0 1px currentColor;
+}
+
+.scalePanel {
+  position: absolute;
+  top: 0;
+  width: 154px;
+  padding: 9px 10px;
+  border: 1px solid var(--dsw-alias-border-l2);
+  border-radius: 12px;
+  background: var(--dsw-alias-bg-layer-1);
+  color: var(--dsw-alias-label-primary);
+  box-shadow: 0 8px 22px rgb(0 0 0 / 20%);
+  pointer-events: auto;
+}
+
+.panelLeft {
+  right: calc(100% + 6px);
+}
+
+.panelRight {
+  left: calc(100% + 6px);
+}
+
+.scaleHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.scaleValue {
+  font-size: 10px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.62;
+}
+
+.scaleRange {
+  width: 100%;
+  margin: 6px 0 4px;
+  accent-color: var(--dsw-alias-label-primary);
+  cursor: pointer;
+}
+
+.scaleReset {
+  width: 100%;
+  padding: 3px 0 1px;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-size: 10px;
+  line-height: 1.4;
+  text-align: left;
+  opacity: 0.62;
+  cursor: pointer;
+}
+
+.scaleReset:hover,
+.scaleReset:focus-visible {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+}

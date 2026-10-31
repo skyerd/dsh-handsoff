@@ -161,17 +161,29 @@ pnpm run build:web      # 或 pnpm run dev:web 一边改一边看
 
 #### 大肥鱼桌宠
 
-「鱼的记忆」页里的形象现在是一位 Q 版鲸鱼女仆「小鱼」：蓝色长发、鲸鳍耳、鱼尾，配深蓝/白色女仆装、围裙和鲸鱼徽章。内置立绘由 **Aeihu** 的 CC-BY 3.0 Q 版美人鱼改造而来（缩小、重绘女仆装、生成三个表情）；**代码仍是 MIT，内置立绘按 CC-BY 3.0 授权**，npm 包声明为 `MIT AND CC-BY-3.0`。
+「鱼的记忆」页里的形象现在是一位 Q 版鲸鱼娘「小鱼」：蓝色长发、鲸鳍耳、鲸尾，配深蓝/白色女仆裙、围裙和鲸鱼徽章。内置立绘来自 **MIT 授权**的开源项目 [`zhouwu97/ds-pet`](https://github.com/zhouwu97/ds-pet) 的「ds鲸鲸娘 / 大肥鱼」精灵图：8 列 × 11 行、57 个动作帧 + 16 向视线帧。仓库把它裁掉每格内置的小字、缩小到 144×156 的格子并压成约 **0.56 MB** 的 WebP，内置在 `petArt.ts` 里，因此仍是**代码与素材统一 MIT**、npm 包体积远低于 10 MB。
 
-它会根据队列与最新运行状态切换 `idle / working / attention / done / error / sleeping` 六种姿态，并用对话条汇报「已完成 / 运行中 / 队列数量」。点击「把小鱼移到桌面」后，它会变成整个 Harness 桌面窗口上的可拖拽悬浮层，位置保存在浏览器本地，也能一键收回。
+它会根据队列与最新运行状态切换 `idle / working / attention / done / error / sleeping` 六种姿态，走路、招手、跳跃、发呆、眨眼、跟随鼠标视线都是真正的逐帧动画；工作、完成、出错、睡觉时再叠加水花、气泡、星星、汗滴和 `z` 特效。对话条会优先说出大管家最新的一句话或提醒（AI 回复后立刻更新），没有新话时退回「已完成 / 运行中 / 队列数量」的进度播报，下方的进度条和明细始终反映实时队列。
+
+对话条是漫画风：**白天黑边、白底、黑字；夜间白边、黑底、白字**。它直接读取 Harness 的主题 token，所以切换深浅色时边框和纸面会自动反色，不需要单独设置。这条气泡与桌宠共用同一个组件：在「鱼的记忆」页内显示，也能在小鱼离开页面后跟着它一起出现在桌面上。
+
+点击「把小鱼移到桌面」后，它会变成整个 Harness 桌面窗口上的可拖拽悬浮层。**右键点击小鱼**才会打开角色左侧的控制栏；左键刻意留空，留给未来的人物互动。控制栏当前有四个按钮：自由调整大小（96–240 px 滑杆和「恢复默认」）、隐藏/显示背景光、显示/收起对话条、收回「鱼的记忆」页。拖动、位置、大小与光效偏好都保存在浏览器本地。
 
 **自定义立绘**：点击「自定义立绘」可以导入本地 PNG/WebP 文件，文件名使用 `idle`、`joy`、`work`、`think`、`sleep`、`sad`、`wake` 等动作名。文件只写入当前浏览器的 IndexedDB，**不会上传、不会进入安装包、也不会随 npm 发布**。这样你可以把个人非商业的鲸鱼女仆立绘放在本机使用，而仓库本身不需要再分发这些素材。
 
-> **关于 Live2D 皮肤**：「DeepSeek-chan / 大肥鱼」Live2D 模型（`.moc3` + `model3.json`）不能直接导入本插件。它的使用须知允许个人直播、视频与署名二创，但**禁止重新分发完整模型文件**，也不适合作为商业产品的一部分；并且运行时资源约 60MB（另有 125MB PSD），远超 10MB 的轻量目标。建议在 VTube Studio 里使用，或先在 VTube Studio / Cubism 中导出 PNG 帧，再用「自定义立绘」本地导入。若要把它内置为默认形象，需要先取得原画/建模作者的书面许可。
+#### 给左侧控制栏加新图标
+
+控制栏是数据驱动的，新增一个动作不需要改布局：
+
+1. 在 `DesktopPet.tsx` 的 `actions` 数组里追加一项（当前在 `dock` 之后），字段为 `id`、`label`、`icon`、可选的 `active` 和 `onPress`。按钮顺序就是数组顺序，`onPress` 里直接写点击行为。
+2. 需要新图形时，在 `PetIcons.tsx` 里加一个 24×24、`stroke="currentColor"` 的线性 SVG，再从上面的 `actions` 引用它。所有图标会自动继承控制栏的主题色与悬停效果。
+3. 需要记住新开关时，在 `petPrefs.ts` 的 `PetPrefs` 接口、`read()`、`publish()` 比较和对应 setter 中各加一个字段；`locales.ts` 的 `en` 与 `zh` 各补一条文案即可。
+4. 如果新按钮需要展开面板（像「大小」滑杆那样），在 `PetRail.tsx` 里加一个受控面板组件，并在 `PetRail.module.css` 里复用 `.scalePanel` 的定位方式。
+
 
 > **边界说明**：桌面模式是 Harness 桌面窗口内的置顶悬浮层，不是操作系统级窗口——浏览器端无法创建后者。若需要 OS 级透明置顶窗，可搭配原生桌宠项目；本仓库不启动、不打包任何第三方桌宠二进制。
 
-> **素材声明**：内置立绘按 [CC-BY 3.0](ASSETS-LICENSE.md) 使用并署名 Aeihu；`dsh-whale-maid` / `deepseek-dafeiyu-pet` 的提取立绘本身禁止再分发，因此只支持本地导入，不随包分发。完整记录见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+> **素材声明**：内置精灵图来自 [`zhouwu97/ds-pet`](https://github.com/zhouwu97/ds-pet)（MIT），已按该许可做裁切、缩放与 WebP 压缩并保留署名；`dsh-whale-maid` / `deepseek-dafeiyu-pet` 的提取立绘本身禁止再分发，因此只支持本地导入，不随包分发。完整记录见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
 而更远处，我们还希望：
 
@@ -234,6 +246,6 @@ npm publish           # prepublishOnly 会先重建产物并跑结构校验
 
 **代码：[MIT](LICENSE) © skyerd and dsh-handsoff contributors。**
 
-**内置桌宠立绘：[CC-BY 3.0](ASSETS-LICENSE.md)，基于 Aeihu 的 “Q-style cartoon mermaid” 改造，© Aeihu；改造部分 © skyerd and dsh-handsoff contributors。** 因此 npm 包声明为 `MIT AND CC-BY-3.0`。用户通过「自定义立绘」导入的文件不随包分发、不在此授权范围内，沿用其原授权。
+**内置桌宠精灵图：[MIT](ASSETS-LICENSE.md)，来自 [`zhouwu97/ds-pet`](https://github.com/zhouwu97/ds-pet) 的 “ds鲸鲸娘 / 大肥鱼” 素材，© zhouwu97 与 ds-pet contributors；裁切与压缩部分 © skyerd and dsh-handsoff contributors。** 因此 npm 包声明为 `MIT`。用户通过「自定义立绘」导入的文件不随包分发、不在此授权范围内，沿用其原授权。
 
 上游 [deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) 同为 MIT 许可，Copyright (c) 2026 DeepSeek。页面头像为项目自有素材。第三方项目、许可差异与本地导入说明见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。

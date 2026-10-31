@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest'
 import { en } from '../../src/client/locales.ts'
 import type { OrchestratorTranslate } from '../../src/client/copy.ts'
 import type { OrchestratorLiveState } from '../../src/client/service.ts'
-import { petDetail, petProgressOf, petSnapshotOf, petSpeech } from '../../src/client/petModel.ts'
+import { petChatLine, petDetail, petProgressOf, petSnapshotOf, petSpeech } from '../../src/client/petModel.ts'
 import { queue, run, taskSummary } from './fixtures.client.ts'
 
 /** A ready snapshot with nothing recorded. */
@@ -102,5 +102,21 @@ describe('butler fish model', () => {
     expect(snapshot.mood).toBe('error')
     expect(snapshot.failure).toBe('task')
     expect(petSpeech(snapshot, t)).toBe('1 task(s) failed. The queue is intact; decide whether to retry or skip.')
+  })
+
+  it('lets the newest butler line speak through the shared bubble', () => {
+    const studio = {
+      messages: [
+        { id: 'greeting', role: 'butler' as const, text: { kind: 'text' as const, value: 'hello' }, at: 0 },
+        { id: 'reply', role: 'butler' as const, text: { kind: 'text' as const, value: 'all queues are safe' }, at: 2 },
+      ],
+      notices: [],
+    }
+    expect(petChatLine(studio, t)).toBe('all queues are safe')
+    expect(petChatLine({
+      messages: [],
+      notices: [{ id: 'n1', title: { kind: 'key' as const, value: 'memoryNoticesTitle' as const }, body: { kind: 'text' as const, value: 'remember to review' }, at: 3 }],
+    }, t)).toBe('remember to review')
+    expect(petChatLine({ messages: [], notices: [] }, t)).toBeUndefined()
   })
 })
